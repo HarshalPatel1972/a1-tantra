@@ -49,11 +49,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Remix Icon CDN - Lightweight & Reliable Icon Set */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+        />
+      </head>
       <body
         className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased font-sans bg-cream text-deep-brown`}
       >
         <Navbar />
-        <main className="pt-[96px] md:pt-[220px]">{children}</main>
+        <main className="pt-24 md:pt-32">{children}</main>
       </body>
     </html>
   );

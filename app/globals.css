@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Bigilla Display - Custom serif typeface by Jérémie Gauthier */
+/* Bigilla Display - Custom serif typeface */
 @font-face {
   font-family: "Bigilla Display";
   src: url("/fonts/BigillaDisplay-Regular.woff2") format("woff2"),
@@ -36,6 +36,7 @@
   font-display: swap;
 }
 
+/* Root theme */
 :root {
   --background: #f9f2e8;
   --foreground: #3f2f27;
@@ -62,3 +63,19 @@ button {
 .serif-heading {
   font-family: var(--font-playfair), serif;
 }
+
+/* ------------------------------------------------ */
+/* FINAL FIX: MAKE REMIX ICONS ALWAYS VISIBLE       */
+/* ------------------------------------------------ */
+
+i[class^="ri-"],
+i[class*=" ri-"] {
+  color: #f9f2e8 !important; /* cream default icon color */
+  opacity: 1 !important;
+  visibility: visible !important;
+  line-height: 1 !important;
+}
+
+/* ------------------------------------------------ */
+/* OPTIONAL: hover color controlled in Footer       */
+/* ------------------------------------------------ */
