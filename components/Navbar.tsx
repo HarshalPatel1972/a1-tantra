@@ -77,7 +77,7 @@ export default function Navbar() {
         fixed top-0 w-full z-50 transition-all duration-500 ease-out
         ${
           scrolled
-            ? "bg-stone-100 backdrop-blur-sm border-b border-stone-300 shadow-md"
+            ? "bg-stone-100/80 backdrop-blur-md border-b border-stone-300/50 shadow-md"
             : "bg-transparent border-transparent"
         }
       `}
@@ -106,8 +106,8 @@ export default function Navbar() {
             drop-shadow-sm hover:drop-shadow-md
             ${
               scrolled
-                ? "text-3xl lg:text-4xl top-1/2 -translate-y-1/2"
-                : "text-6xl lg:text-[70px] top-1/2 -translate-y-1/2"
+                ? "text-3xl lg:text-4xl top-1/2 translate-y-1"
+                : "text-6xl lg:text-[70px] top-1/2 translate-y-2"
             }
           `}
           style={{
@@ -160,7 +160,7 @@ export default function Navbar() {
         {/* MOBILE LOGO */}
         <Link
           href="/"
-          className="font-bold text-xl text-[#E43A1D]"
+          className="font-bold text-xl text-[#E43A1D] mt-1"
           style={{ fontFamily: '"Vegawanty", sans-serif' }}
         >
           A1 TANTRA
