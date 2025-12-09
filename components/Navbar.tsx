@@ -107,7 +107,7 @@ export default function Navbar() {
             ${
               scrolled
                 ? "text-3xl lg:text-4xl top-1/2 -translate-y-1/2"
-                : "text-6xl lg:text-[70px] top-1/2 -translate-y-1/2"
+                : "text-6xl lg:text-[70px] top-[55%] -translate-y-1/2"
             }
           `}
           style={{

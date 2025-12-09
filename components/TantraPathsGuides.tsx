@@ -1,76 +1,182 @@
 "use client";
 
-import Link from "next/link";
-import { tantraPaths, tantricTools } from "@/data/content";
+import Image from "next/image";
+import { tantricTools } from "@/data/content";
 
 export default function TantraPathsGuides() {
+  // Tantra paths with images and pricing
+  const tantraPathsWithImages = [
+    {
+      name: "Shakta Tantra",
+      icon: "🔱",
+      description:
+        "The Divine Feminine path that worships the universal creative power through the goddess. Focuses on the dynamic energy of the cosmos and the sacred feminine principle.",
+      image: "/images/shakti-tantra.jpg",
+      pricing: [
+        { duration: "90 min", price: "₹20,000" },
+        { duration: "120 min", price: "₹25,000" },
+      ],
+    },
+    {
+      name: "Kundalini Tantra",
+      icon: "🐍",
+      description:
+        "Works with the serpent energy coiled at the base of the spine. Through practices and initiation, awakens this latent force and guides it upward through the energy channels.",
+      image: "/images/Kundalini-Tantra.jpg",
+      pricing: [
+        { duration: "120 min", price: "₹25,000" },
+        { duration: "150 min", price: "₹35,000" },
+      ],
+    },
+    {
+      name: "Kaula Tantra",
+      icon: "👥",
+      description:
+        "The 'family path' that embraces household life and partnerships. Practices are done with a partner or within spiritual communities, celebrating the sacred in everyday relationships.",
+      image: "/images/Kaula-Tantra.jpg",
+      pricing: [
+        { duration: "120 min", price: "₹25,000" },
+        { duration: "3 hours", price: "₹45,000" },
+      ],
+    },
+    {
+      name: "Tibetan Tantra",
+      icon: "🏔️",
+      description:
+        "The Buddhist tantric tradition emphasizing visualization of deities and the union of wisdom and compassion. Highly systematic and deeply connected to monastic practice.",
+      image: "/images/Tibetan-Tantra.jpg",
+      pricing: [
+        { duration: "90 min", price: "₹20,000" },
+        { duration: "150 min", price: "₹35,000" },
+      ],
+    },
+    {
+      name: "Right-Hand Tantra",
+      icon: "✋",
+      description:
+        "The traditional, conservative approach emphasizing ethical conduct and alignment with societal norms. Uses internal visualization and meditation within socially acceptable frameworks.",
+      image: "/images/Right-Hand-Tantra.jpg",
+      pricing: [
+        { duration: "90 min", price: "₹20,000" },
+        { duration: "120 min", price: "₹25,000" },
+      ],
+    },
+    {
+      name: "Left-Hand Tantra",
+      icon: "🌙",
+      description:
+        "The transgressive path that deliberately works with taboo practices to transcend conventional limits. Uses unconventional methods to break through spiritual barriers and ego-attachments.",
+      image: "/images/Left-Hand-Tantra.jpg",
+      pricing: [
+        { duration: "150 min", price: "₹35,000" },
+        { duration: "3 hours", price: "₹45,000" },
+      ],
+    },
+  ];
+
   return (
     <section className="py-12 md:py-16 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <h2 className="serif-heading text-4xl font-bold text-deep-brown mb-16">
-          What you really need
-          <br className="hidden md:block" />
-          <span className="text-accent-red">
-            (because we've studied every Tantra path).
-          </span>
+        <h2 className="font-title text-4xl lg:text-5xl font-bold text-deep-brown mb-4 text-center">
+          Tantra Paths
         </h2>
+        <p className="text-center text-deep-brown/70 text-lg mb-16 max-w-2xl mx-auto">
+          Discover the different traditions and approaches to tantric practice
+        </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Left: Tantra Paths List - takes 2 columns on desktop */}
-          <div className="lg:col-span-2">
-            <div className="space-y-6">
-              {tantraPaths.map((path) => (
-                <Link
-                  key={path.id}
-                  href={`/paths/${path.id}`}
-                  className="group block p-6 border-l-4 border-accent-red hover:border-soft-gold bg-white/40 hover:bg-white/60 transition rounded"
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="text-3xl">{path.icon}</span>
-                    <div className="flex-1">
-                      <h3 className="serif-heading text-2xl font-bold text-deep-brown mb-2 group-hover:text-accent-red transition">
-                        {path.name}
-                      </h3>
-                      <p className="text-deep-brown/70 leading-relaxed">
-                        {path.description}
-                      </p>
-                    </div>
-                    <span className="text-2xl text-accent-red opacity-0 group-hover:opacity-100 transition">
-                      →
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+        {/* Grid of Tantra Paths with Images */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {tantraPathsWithImages.map((path, idx) => (
+            <div
+              key={idx}
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+            >
+              {/* Background Image */}
+              <Image
+                src={path.image}
+                alt={path.name}
+                fill
+                className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                quality={90}
+              />
 
-          {/* Right: Tools Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-32">
-              <h3 className="serif-heading text-2xl font-bold text-deep-brown mb-6">
-                Tools we love
-              </h3>
-              <div className="space-y-4">
-                {tantricTools.map((tool) => (
-                  <div
-                    key={tool.id}
-                    className="p-4 bg-white/50 border border-deep-brown/20 rounded-sm hover:border-accent-red hover:bg-white/70 transition"
-                  >
-                    <div className="text-2xl mb-2">{tool.icon}</div>
-                    <h4 className="serif-heading text-lg font-bold text-deep-brown mb-1">
-                      {tool.name}
-                    </h4>
-                    <p className="text-sm text-deep-brown/60 mb-2">
-                      {tool.description}
-                    </p>
-                    <p className="text-accent-red font-semibold">
-                      {tool.price}
-                    </p>
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+
+              {/* Content Container */}
+              <div className="absolute inset-0 flex flex-col justify-between p-6">
+                {/* Top: Icon and Title */}
+                <div>
+                  <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform">
+                    {path.icon}
                   </div>
-                ))}
+                  <h3 className="font-title text-2xl font-bold text-white mb-2">
+                    {path.name}
+                  </h3>
+                </div>
+
+                {/* Bottom: Description and Pricing */}
+                <div className="space-y-4">
+                  {/* Description */}
+                  <p className="font-body text-sm text-cream/90 leading-relaxed line-clamp-2">
+                    {path.description}
+                  </p>
+
+                  {/* Pricing Tiers */}
+                  <div className="space-y-2 pt-3 border-t border-cream/30">
+                    {path.pricing.map((tier, tierIdx) => (
+                      <div
+                        key={tierIdx}
+                        className="flex justify-between items-center"
+                      >
+                        <span className="text-xs uppercase tracking-wider text-cream/70 font-semibold">
+                          {tier.duration}
+                        </span>
+                        <span className="font-title font-bold text-soft-gold text-lg">
+                          {tier.price}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Hover CTA */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
+                <button className="bg-accent-red hover:bg-accent-red/90 text-white font-bold py-3 px-8 rounded-full transition-all transform scale-75 group-hover:scale-100">
+                  Learn More
+                </button>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Tools Sidebar - Below Grid on Mobile, Separate on Desktop */}
+        <div className="mt-16 pt-16 border-t border-deep-brown/20">
+          <h3 className="font-title text-3xl font-bold text-deep-brown mb-8 text-center">
+            Tools We Love
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {tantricTools.map((tool) => (
+              <div
+                key={tool.id}
+                className="group p-6 bg-white/50 hover:bg-white/80 border border-deep-brown/20 hover:border-accent-red rounded-lg transition-all duration-300 hover:shadow-lg"
+              >
+                <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform">
+                  {tool.icon}
+                </div>
+                <h4 className="font-title text-lg font-bold text-deep-brown mb-2">
+                  {tool.name}
+                </h4>
+                <p className="text-sm text-deep-brown/70 mb-3 leading-relaxed">
+                  {tool.description}
+                </p>
+                <p className="text-accent-red font-bold text-sm">
+                  {tool.price}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
