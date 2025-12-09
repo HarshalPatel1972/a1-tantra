@@ -46,7 +46,9 @@ export default function WelcomeHome() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
               {features.map((feature, idx) => (
                 <div key={idx} className="group">
-                  <div className="text-4xl md:text-5xl mb-3">{feature.icon}</div>
+                  <div className="text-4xl md:text-5xl mb-3">
+                    {feature.icon}
+                  </div>
                   <h3 className="serif-heading text-lg md:text-xl font-bold text-deep-brown mb-2">
                     {feature.title}
                   </h3>

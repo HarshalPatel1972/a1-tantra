@@ -51,7 +51,16 @@ export default function Hero() {
 
                 <Link
                   href="/paths"
-                  className="px-8 py-4 border-2 border-white text-white font-nav font-semibold uppercase tracking-wide rounded-lg hover:bg-white hover:text-deep-brown transition shadow-lg hover:shadow-xl text-center font-bold"
+                  className="
+    px-8 py-4 
+    border-2 border-white 
+    text-white 
+    font-nav font-semibold uppercase tracking-wide 
+    rounded-lg 
+    hover:bg-[#FDACB4] hover:border-[#FDACB4] hover:text-deep-brown 
+    transition shadow-lg hover:shadow-xl 
+    text-center font-bold
+  "
                 >
                   LEARN A TANTRA PATH
                 </Link>
