@@ -98,14 +98,14 @@ Please send me personalized guidance to begin my Tantra journey.
                   className={`flex items-center justify-center w-10 h-10 rounded-full font-semibold ${
                     s <= step
                       ? "bg-accent-red text-cream"
-                      : "bg-deep-brown/10 text-deep-brown"
+                      : "bg-mystique-taupe/10 text-mystique-taupe"
                   }`}
                 >
                   {s}
                 </div>
               ))}
             </div>
-            <div className="h-2 bg-deep-brown/10 rounded-full overflow-hidden">
+            <div className="h-2 bg-mystique-taupe/10 rounded-full overflow-hidden">
               <div
                 className="h-full bg-accent-red transition-all duration-300"
                 style={{ width: `${(step / 4) * 100}%` }}
@@ -114,7 +114,7 @@ Please send me personalized guidance to begin my Tantra journey.
           </div>
 
           {submitted && (
-            <div className="mb-8 p-4 bg-soft-gold/20 border border-soft-gold text-deep-brown rounded-lg text-center">
+            <div className="mb-8 p-4 bg-soft-gold/20 border border-soft-gold text-mystique-taupe rounded-lg text-center">
               Thank you! We'll send you personalized guidance to your email
               shortly.
             </div>
@@ -124,11 +124,11 @@ Please send me personalized guidance to begin my Tantra journey.
             {/* Step 1: Basic Info */}
             {step === 1 && (
               <div className="space-y-6">
-                <h2 className="serif-heading text-3xl font-bold text-deep-brown">
+                <h2 className="serif-heading text-3xl font-bold text-mystique-taupe">
                   Let's begin your journey.
                 </h2>
                 <div>
-                  <label className="block text-sm font-semibold text-deep-brown mb-2">
+                  <label className="block text-sm font-semibold text-mystique-taupe mb-2">
                     Your Name
                   </label>
                   <input
@@ -138,11 +138,11 @@ Please send me personalized guidance to begin my Tantra journey.
                       setFormData({ ...formData, name: e.target.value })
                     }
                     required
-                    className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red"
+                    className="w-full px-4 py-3 border border-mystique-taupe/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-deep-brown mb-2">
+                  <label className="block text-sm font-semibold text-mystique-taupe mb-2">
                     Your Email
                   </label>
                   <input
@@ -152,7 +152,7 @@ Please send me personalized guidance to begin my Tantra journey.
                       setFormData({ ...formData, email: e.target.value })
                     }
                     required
-                    className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red"
+                    className="w-full px-4 py-3 border border-mystique-taupe/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red"
                   />
                 </div>
               </div>
@@ -161,14 +161,14 @@ Please send me personalized guidance to begin my Tantra journey.
             {/* Step 2: Experience Level */}
             {step === 2 && (
               <div className="space-y-6">
-                <h2 className="serif-heading text-3xl font-bold text-deep-brown">
+                <h2 className="serif-heading text-3xl font-bold text-mystique-taupe">
                   Your experience with Tantra?
                 </h2>
                 <div className="space-y-3">
                   {["beginner", "intermediate", "advanced"].map((level) => (
                     <label
                       key={level}
-                      className="flex items-center gap-3 cursor-pointer p-4 border border-deep-brown/20 rounded hover:bg-deep-brown/5 transition"
+                      className="flex items-center gap-3 cursor-pointer p-4 border border-mystique-taupe/20 rounded hover:bg-mystique-taupe/5 transition"
                     >
                       <input
                         type="radio"
@@ -183,7 +183,7 @@ Please send me personalized guidance to begin my Tantra journey.
                         }
                         className="w-4 h-4"
                       />
-                      <span className="font-semibold text-deep-brown capitalize">
+                      <span className="font-semibold text-mystique-taupe capitalize">
                         {level === "beginner"
                           ? "I'm new to Tantra"
                           : level === "intermediate"
@@ -199,17 +199,17 @@ Please send me personalized guidance to begin my Tantra journey.
             {/* Step 3: Goals */}
             {step === 3 && (
               <div className="space-y-6">
-                <h2 className="serif-heading text-3xl font-bold text-deep-brown">
+                <h2 className="serif-heading text-3xl font-bold text-mystique-taupe">
                   What are your goals?
                 </h2>
-                <p className="text-deep-brown/70">
+                <p className="text-mystique-taupe/70">
                   Select all that resonate with you.
                 </p>
                 <div className="space-y-3">
                   {goals.map((goal) => (
                     <label
                       key={goal}
-                      className="flex items-center gap-3 cursor-pointer p-4 border border-deep-brown/20 rounded hover:bg-deep-brown/5 transition"
+                      className="flex items-center gap-3 cursor-pointer p-4 border border-mystique-taupe/20 rounded hover:bg-mystique-taupe/5 transition"
                     >
                       <input
                         type="checkbox"
@@ -217,7 +217,7 @@ Please send me personalized guidance to begin my Tantra journey.
                         onChange={() => handleGoalToggle(goal)}
                         className="w-4 h-4"
                       />
-                      <span className="font-semibold text-deep-brown">
+                      <span className="font-semibold text-mystique-taupe">
                         {goal}
                       </span>
                     </label>
@@ -229,14 +229,14 @@ Please send me personalized guidance to begin my Tantra journey.
             {/* Step 4: Path Resonance */}
             {step === 4 && (
               <div className="space-y-6">
-                <h2 className="serif-heading text-3xl font-bold text-deep-brown">
+                <h2 className="serif-heading text-3xl font-bold text-mystique-taupe">
                   Which path resonates with you?
                 </h2>
                 <div className="space-y-3">
                   {paths.map((path) => (
                     <label
                       key={path.id}
-                      className="flex items-start gap-4 cursor-pointer p-4 border border-deep-brown/20 rounded hover:bg-deep-brown/5 transition"
+                      className="flex items-start gap-4 cursor-pointer p-4 border border-mystique-taupe/20 rounded hover:bg-mystique-taupe/5 transition"
                     >
                       <input
                         type="radio"
@@ -253,7 +253,7 @@ Please send me personalized guidance to begin my Tantra journey.
                       />
                       <div>
                         <span className="text-2xl">{path.icon}</span>
-                        <span className="font-semibold text-deep-brown block">
+                        <span className="font-semibold text-mystique-taupe block">
                           {path.name}
                         </span>
                       </div>
@@ -269,7 +269,7 @@ Please send me personalized guidance to begin my Tantra journey.
                 type="button"
                 onClick={() => setStep(Math.max(1, step - 1))}
                 disabled={step === 1}
-                className="px-6 py-3 border-2 border-deep-brown text-deep-brown font-semibold rounded-sm hover:bg-deep-brown hover:text-cream transition disabled:opacity-50"
+                className="px-6 py-3 border-2 border-mystique-taupe text-mystique-taupe font-semibold rounded-sm hover:bg-mystique-taupe hover:text-cream transition disabled:opacity-50"
               >
                 BACK
               </button>
@@ -277,7 +277,7 @@ Please send me personalized guidance to begin my Tantra journey.
                 <button
                   type="button"
                   onClick={() => setStep(step + 1)}
-                  className="px-6 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition"
+                  className="px-6 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-mystique-taupe transition"
                 >
                   CONTINUE
                 </button>
@@ -291,7 +291,7 @@ Please send me personalized guidance to begin my Tantra journey.
                     formData.goals.length === 0 ||
                     !formData.resonance
                   }
-                  className="px-6 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition disabled:opacity-50"
+                  className="px-6 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-mystique-taupe transition disabled:opacity-50"
                 >
                   {loading ? "SUBMITTING..." : "BEGIN MY JOURNEY"}
                 </button>
@@ -304,3 +304,4 @@ Please send me personalized guidance to begin my Tantra journey.
     </div>
   );
 }
+

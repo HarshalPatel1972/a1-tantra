@@ -9,37 +9,37 @@ export default function OriginStory() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Story */}
           <div>
-            <h2 className="serif-heading text-4xl font-bold text-deep-brown mb-8 leading-tight">
+            <h2 className="serif-heading text-4xl font-bold text-mystique-taupe mb-8 leading-tight">
               Our Story
             </h2>
-            <p className="text-lg text-deep-brown/80 leading-relaxed mb-6">
+            <p className="text-lg text-mystique-taupe/80 leading-relaxed mb-6">
               Born from a search for truth, we created A1 Tantra to illuminate
               ancient Tantra with clarity and respect. In a world of confusion
               and appropriation, we believed there needed to be a space where
               Tantric wisdom could be taught authentically, thoughtfully, and
               accessibly.
             </p>
-            <p className="text-lg text-deep-brown/80 leading-relaxed mb-8">
+            <p className="text-lg text-mystique-taupe/80 leading-relaxed mb-8">
               Every teaching here has been reviewed by practitioners and
               scholars of various Tantra lineages. Our mission is to make the
               sacred path accessible without diluting its depth.
             </p>
             <Link
               href="/about"
-              className="inline-block px-8 py-3 bg-deep-brown text-cream font-semibold rounded-sm hover:bg-accent-red transition"
+              className="inline-block px-8 py-3 bg-mystique-taupe text-cream font-semibold rounded-sm hover:bg-accent-red transition"
             >
               READ OUR STORY
             </Link>
           </div>
 
           {/* Right: Key Message Box */}
-          <div className="bg-deep-brown text-cream p-12 rounded-lg">
+          <div className="bg-mystique-taupe text-cream p-12 rounded-lg">
             <h3 className="serif-heading text-3xl font-bold mb-6">
               There's a lot of confusion about Tantra.
             </h3>
             <p className="text-lg text-cream/90 leading-relaxed mb-8">
               We ensure every teaching is reviewed by practitioners and
-              scholars. Tantra is not what pop culture makes it out to be—it's a
+              scholars. Tantra is not what pop culture makes it out to beâ€”it's a
               profound spiritual science with depth, rigor, and real
               transformative potential.
             </p>
@@ -47,7 +47,7 @@ export default function OriginStory() {
               href="/advisory"
               className="inline-flex items-center gap-2 font-semibold text-soft-gold hover:text-cream transition"
             >
-              MEET OUR ADVISORY PANEL →
+              MEET OUR ADVISORY PANEL â†’
             </Link>
           </div>
         </div>
@@ -55,3 +55,4 @@ export default function OriginStory() {
     </section>
   );
 }
+

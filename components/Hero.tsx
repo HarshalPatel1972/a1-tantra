@@ -9,7 +9,7 @@ export default function Hero() {
       {/* Content Wrapper */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         {/* Hero Image Container with Rounded Edges and Border */}
-        <div className="relative mb-8 rounded-3xl overflow-hidden border-2 border-deep-brown shadow-2xl">
+        <div className="relative mb-8 rounded-3xl overflow-hidden border-2 border-mystique-taupe shadow-2xl">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -57,7 +57,7 @@ export default function Hero() {
     text-white 
     font-nav font-semibold uppercase tracking-wide 
     rounded-lg 
-    hover:bg-[#FDACB4] hover:border-[#FDACB4] hover:text-deep-brown 
+    hover:bg-[#FDACB4] hover:border-[#FDACB4] hover:text-mystique-taupe 
     transition shadow-lg hover:shadow-xl 
     text-center font-bold
   "
@@ -106,3 +106,4 @@ export default function Hero() {
     </section>
   );
 }
+

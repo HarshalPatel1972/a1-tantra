@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Hook to determine if text should be light or dark based on gradient luminance at element position
@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
  */
 export const useDynamicTextColor = () => {
   const elementRef = useRef<HTMLDivElement>(null);
-  const [textColor, setTextColor] = useState<'light' | 'dark'>('light');
+  const [textColor, setTextColor] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     const element = elementRef.current;
@@ -30,25 +30,25 @@ export const useDynamicTextColor = () => {
             // Top (0): Very dark (#1a0f0a) - use light text
             // Middle (0.5): Medium dark - use light text
             // Bottom (1): Slightly lighter - use light text (gradient is always dark)
-            
+
             // Since our gradient is always quite dark, light text (white) is always best
             // But we'll add logic for future flexibility
-            
+
             if (relativePosition < 0.3) {
               // Very dark zone at top
-              setTextColor('light');
+              setTextColor("light");
             } else if (relativePosition > 0.7) {
               // Slightly lighter zone at bottom (if gradient becomes lighter)
-              setTextColor('light');
+              setTextColor("light");
             } else {
               // Middle zone
-              setTextColor('light');
+              setTextColor("light");
             }
           }
         });
       },
       {
-        rootMargin: '50px',
+        rootMargin: "50px",
         threshold: 0.25,
       }
     );
@@ -66,11 +66,11 @@ export const useDynamicTextColor = () => {
 
       // Update color based on position
       if (relativePosition < 0.3) {
-        setTextColor('light');
+        setTextColor("light");
       } else if (relativePosition > 0.7) {
-        setTextColor('light');
+        setTextColor("light");
       } else {
-        setTextColor('light');
+        setTextColor("light");
       }
     };
 
@@ -81,16 +81,17 @@ export const useDynamicTextColor = () => {
       throttleTimeout = setTimeout(handleScrollResize, 100);
     };
 
-    window.addEventListener('scroll', throttledHandler, { passive: true });
-    window.addEventListener('resize', throttledHandler, { passive: true });
+    window.addEventListener("scroll", throttledHandler, { passive: true });
+    window.addEventListener("resize", throttledHandler, { passive: true });
 
     return () => {
       observer.unobserve(element);
-      window.removeEventListener('scroll', throttledHandler);
-      window.removeEventListener('resize', throttledHandler);
+      window.removeEventListener("scroll", throttledHandler);
+      window.removeEventListener("resize", throttledHandler);
       clearTimeout(throttleTimeout);
     };
   }, []);
 
   return { elementRef, textColor };
 };
+

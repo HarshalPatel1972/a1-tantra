@@ -23,7 +23,7 @@ export default function BuildJourneyCTA() {
             </p>
             <Link
               href="/start-journey"
-              className="inline-block px-8 py-4 bg-cream text-accent-red font-semibold rounded-sm hover:bg-deep-brown hover:text-cream transition"
+              className="inline-block px-8 py-4 bg-cream text-accent-red font-semibold rounded-sm hover:bg-mystique-taupe hover:text-cream transition"
             >
               GET STARTED
             </Link>
@@ -32,13 +32,13 @@ export default function BuildJourneyCTA() {
           {/* Right - Floating Elements */}
           <div className="relative h-96">
             <div className="absolute top-0 left-0 text-6xl animate-pulse opacity-70">
-              📿
+              ðŸ“¿
             </div>
             <div
               className="absolute top-1/3 right-0 text-5xl animate-bounce opacity-60"
               style={{ animationDelay: "0.2s" }}
             >
-              ✨
+              âœ¨
             </div>
             <div
               className="absolute bottom-0 left-1/4 text-5xl animate-pulse opacity-70"
@@ -51,3 +51,4 @@ export default function BuildJourneyCTA() {
     </section>
   );
 }
+

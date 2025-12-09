@@ -46,7 +46,7 @@ export default function TantraTypesSection() {
     <section className="py-12 md:py-16 bg-transparent">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
-        <h2 className="font-title text-5xl lg:text-6xl font-bold text-deep-brown mb-16 text-center">
+        <h2 className="font-title text-5xl lg:text-6xl font-bold text-mystique-taupe mb-16 text-center">
           Tantra Paths
         </h2>
 
@@ -77,12 +77,18 @@ export default function TantraTypesSection() {
                 {/* Top Section */}
                 <div>
                   {/* Title - With enhanced visibility */}
-                  <h3 style={{ mixBlendMode: 'lighten' }} className="font-title text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
+                  <h3
+                    style={{ mixBlendMode: "lighten" }}
+                    className="font-title text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg"
+                  >
                     {tantra.name}
                   </h3>
 
                   {/* Subtitle - Dynamic bright color for maximum contrast */}
-                  <p style={{ mixBlendMode: 'lighten' }} className="font-nav text-xs font-bold uppercase tracking-widest text-yellow-200 drop-shadow-lg">
+                  <p
+                    style={{ mixBlendMode: "lighten" }}
+                    className="font-nav text-xs font-bold uppercase tracking-widest text-yellow-200 drop-shadow-lg"
+                  >
                     {tantra.subtitle}
                   </p>
                 </div>
@@ -90,7 +96,10 @@ export default function TantraTypesSection() {
                 {/* Bottom Section */}
                 <div className="space-y-4">
                   {/* Description */}
-                  <p style={{ mixBlendMode: 'lighten' }} className="font-body text-sm md:text-base text-white leading-relaxed line-clamp-3 drop-shadow-md">
+                  <p
+                    style={{ mixBlendMode: "lighten" }}
+                    className="font-body text-sm md:text-base text-white leading-relaxed line-clamp-3 drop-shadow-md"
+                  >
                     {tantra.description}
                   </p>
 
@@ -109,7 +118,10 @@ export default function TantraTypesSection() {
                       <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
                         From
                       </span>
-                      <span style={{ mixBlendMode: 'screen' }} className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg">
+                      <span
+                        style={{ mixBlendMode: "screen" }}
+                        className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg"
+                      >
                         {tantra.price}
                       </span>
                     </div>
@@ -123,3 +135,4 @@ export default function TantraTypesSection() {
     </section>
   );
 }
+

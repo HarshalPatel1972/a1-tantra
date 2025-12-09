@@ -45,7 +45,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
       {submitted && (
-        <div className="p-4 bg-soft-gold/20 border border-soft-gold text-deep-brown rounded-lg">
+        <div className="p-4 bg-soft-gold/20 border border-soft-gold text-mystique-taupe rounded-lg">
           Thank you for reaching out. We&apos;ll be in touch soon.
         </div>
       )}
@@ -53,7 +53,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="block text-sm font-semibold text-deep-brown mb-2"
+          className="block text-sm font-semibold text-mystique-taupe mb-2"
         >
           Your Name
         </label>
@@ -64,14 +64,14 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
+          className="w-full px-4 py-3 border border-mystique-taupe/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
         />
       </div>
 
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-semibold text-deep-brown mb-2"
+          className="block text-sm font-semibold text-mystique-taupe mb-2"
         >
           Your Email
         </label>
@@ -82,14 +82,14 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
+          className="w-full px-4 py-3 border border-mystique-taupe/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
         />
       </div>
 
       <div>
         <label
           htmlFor="subject"
-          className="block text-sm font-semibold text-deep-brown mb-2"
+          className="block text-sm font-semibold text-mystique-taupe mb-2"
         >
           Subject
         </label>
@@ -100,14 +100,14 @@ export default function ContactForm() {
           value={formData.subject}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
+          className="w-full px-4 py-3 border border-mystique-taupe/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
         />
       </div>
 
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-semibold text-deep-brown mb-2"
+          className="block text-sm font-semibold text-mystique-taupe mb-2"
         >
           Message
         </label>
@@ -118,17 +118,18 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={6}
-          className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white resize-none"
+          className="w-full px-4 py-3 border border-mystique-taupe/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white resize-none"
         />
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition disabled:opacity-50"
+        className="w-full px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-mystique-taupe transition disabled:opacity-50"
       >
         {loading ? "Sending..." : "SEND MESSAGE"}
       </button>
     </form>
   );
 }
+

@@ -9,13 +9,13 @@ export default function PrivacyPage() {
       <Navbar />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="serif-heading text-4xl font-bold text-deep-brown mb-8">
+          <h1 className="serif-heading text-4xl font-bold text-mystique-taupe mb-8">
             Privacy Policy
           </h1>
 
-          <div className="prose prose-lg max-w-none text-deep-brown/80 space-y-6">
+          <div className="prose prose-lg max-w-none text-mystique-taupe/80 space-y-6">
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 1. Introduction
               </h2>
               <p>
@@ -26,7 +26,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 2. Information We Collect
               </h2>
               <p>
@@ -48,7 +48,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 3. Use of Your Information
               </h2>
               <p>
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 4. Disclosure of Your Information
               </h2>
               <p>
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 5. Security of Your Information
               </h2>
               <p>
@@ -98,7 +98,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 6. Contact Us
               </h2>
               <p>
@@ -113,3 +113,4 @@ export default function PrivacyPage() {
     </div>
   );
 }
+

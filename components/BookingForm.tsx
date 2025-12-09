@@ -62,7 +62,7 @@ export default function BookingForm() {
   return (
     <div className="max-w-2xl mx-auto">
       {submitted && (
-        <div className="mb-6 p-4 bg-soft-gold/20 border border-soft-gold text-deep-brown rounded-lg">
+        <div className="mb-6 p-4 bg-soft-gold/20 border border-soft-gold text-mystique-taupe rounded-lg">
           Booking request submitted! We&apos;ll confirm your session soon.
         </div>
       )}
@@ -72,7 +72,7 @@ export default function BookingForm() {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-semibold text-deep-brown mb-2"
+              className="block text-sm font-semibold text-mystique-taupe mb-2"
             >
               Full Name
             </label>
@@ -83,14 +83,14 @@ export default function BookingForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
+              className="w-full px-4 py-3 border border-mystique-taupe/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
             />
           </div>
 
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-semibold text-deep-brown mb-2"
+              className="block text-sm font-semibold text-mystique-taupe mb-2"
             >
               Email Address
             </label>
@@ -101,7 +101,7 @@ export default function BookingForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
+              className="w-full px-4 py-3 border border-mystique-taupe/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
             />
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function BookingForm() {
           <div>
             <label
               htmlFor="date"
-              className="block text-sm font-semibold text-deep-brown mb-2"
+              className="block text-sm font-semibold text-mystique-taupe mb-2"
             >
               Preferred Date
             </label>
@@ -121,14 +121,14 @@ export default function BookingForm() {
               value={formData.date}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
+              className="w-full px-4 py-3 border border-mystique-taupe/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
             />
           </div>
 
           <div>
             <label
               htmlFor="sessionType"
-              className="block text-sm font-semibold text-deep-brown mb-2"
+              className="block text-sm font-semibold text-mystique-taupe mb-2"
             >
               Session Type
             </label>
@@ -137,7 +137,7 @@ export default function BookingForm() {
               name="sessionType"
               value={formData.sessionType}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
+              className="w-full px-4 py-3 border border-mystique-taupe/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
             >
               {sessionTypes.map((type) => (
                 <option key={type} value={type}>
@@ -151,7 +151,7 @@ export default function BookingForm() {
         <div>
           <label
             htmlFor="notes"
-            className="block text-sm font-semibold text-deep-brown mb-2"
+            className="block text-sm font-semibold text-mystique-taupe mb-2"
           >
             Additional Notes
           </label>
@@ -162,7 +162,7 @@ export default function BookingForm() {
             onChange={handleChange}
             rows={4}
             placeholder="Tell us about your experience level, intentions, or any questions..."
-            className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white resize-none"
+            className="w-full px-4 py-3 border border-mystique-taupe/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white resize-none"
           />
         </div>
 
@@ -170,7 +170,7 @@ export default function BookingForm() {
           <button
             type="submit"
             disabled={loading}
-            className="flex-1 px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition disabled:opacity-50"
+            className="flex-1 px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-mystique-taupe transition disabled:opacity-50"
           >
             {loading ? "Submitting..." : "REQUEST BOOKING"}
           </button>
@@ -187,3 +187,4 @@ export default function BookingForm() {
     </div>
   );
 }
+

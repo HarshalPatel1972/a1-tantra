@@ -26,7 +26,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-12 md:py-16 bg-deep-brown text-cream">
+    <section className="py-12 md:py-16 bg-mystique-taupe text-cream">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="serif-heading text-4xl font-bold mb-4">
           Feeling overwhelmed about Tantra?
@@ -51,14 +51,14 @@ export default function Newsletter() {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 px-4 py-3 rounded-sm bg-cream text-deep-brown placeholder-deep-brown/50 focus:outline-none focus:ring-2 focus:ring-accent-red"
+            className="flex-1 px-4 py-3 rounded-sm bg-cream text-mystique-taupe placeholder-mystique-taupe/50 focus:outline-none focus:ring-2 focus:ring-accent-red"
             required
             disabled={loading}
           />
           <button
             type="submit"
             disabled={loading}
-            className="px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-soft-gold hover:text-deep-brown transition disabled:opacity-50"
+            className="px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-soft-gold hover:text-mystique-taupe transition disabled:opacity-50"
           >
             {loading ? "Subscribing..." : "SUBSCRIBE"}
           </button>
@@ -71,3 +71,4 @@ export default function Newsletter() {
     </section>
   );
 }
+

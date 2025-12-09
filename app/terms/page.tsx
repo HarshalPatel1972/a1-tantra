@@ -9,13 +9,13 @@ export default function TermsPage() {
       <Navbar />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="serif-heading text-4xl font-bold text-deep-brown mb-8">
+          <h1 className="serif-heading text-4xl font-bold text-mystique-taupe mb-8">
             Terms of Service
           </h1>
 
-          <div className="prose prose-lg max-w-none text-deep-brown/80 space-y-6">
+          <div className="prose prose-lg max-w-none text-mystique-taupe/80 space-y-6">
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 1. Agreement to Terms
               </h2>
               <p>
@@ -25,7 +25,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 2. Use License
               </h2>
               <p>
@@ -57,7 +57,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 3. Disclaimer
               </h2>
               <p>
@@ -72,7 +72,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 4. Limitations
               </h2>
               <p>
@@ -84,7 +84,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 5. Accuracy of Materials
               </h2>
               <p>
@@ -96,7 +96,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 6. Links
               </h2>
               <p>
@@ -109,7 +109,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 7. Modifications
               </h2>
               <p>
@@ -121,7 +121,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
                 8. Governing Law
               </h2>
               <p>
@@ -138,3 +138,4 @@ export default function TermsPage() {
     </div>
   );
 }
+

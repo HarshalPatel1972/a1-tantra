@@ -33,7 +33,7 @@ export default function SessionsPage() {
     {
       id: "sound-healing",
       title: "Sound Healing + Tantra Flow",
-      icon: "🔊",
+      icon: "ðŸ”Š",
       description: "Sacred sounds for transformation.",
       details:
         "Experience the transformative power of sacred sounds, mantras, and vibrational healing.",
@@ -45,10 +45,10 @@ export default function SessionsPage() {
       <Navbar />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="serif-heading text-5xl font-bold text-deep-brown mb-8 text-center">
+          <h1 className="serif-heading text-5xl font-bold text-mystique-taupe mb-8 text-center">
             Our Sessions
           </h1>
-          <p className="text-lg text-deep-brown/70 text-center max-w-2xl mx-auto mb-16">
+          <p className="text-lg text-mystique-taupe/70 text-center max-w-2xl mx-auto mb-16">
             Choose a session that aligns with your current journey and
             intentions.
           </p>
@@ -57,23 +57,23 @@ export default function SessionsPage() {
             {sessions.map((session) => (
               <div
                 key={session.id}
-                className="group p-8 border-2 border-deep-brown/20 hover:border-accent-red bg-white rounded-lg transition"
+                className="group p-8 border-2 border-mystique-taupe/20 hover:border-accent-red bg-white rounded-lg transition"
               >
                 <div className="flex items-start gap-6">
                   <div className="text-5xl flex-shrink-0">{session.icon}</div>
                   <div className="flex-1">
-                    <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-2 group-hover:text-accent-red transition">
+                    <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-2 group-hover:text-accent-red transition">
                       {session.title}
                     </h2>
                     <p className="text-sm text-accent-red font-semibold mb-3">
                       {session.description}
                     </p>
-                    <p className="text-deep-brown/70 leading-relaxed mb-4">
+                    <p className="text-mystique-taupe/70 leading-relaxed mb-4">
                       {session.details}
                     </p>
                     <Link
                       href="/book-session"
-                      className="inline-block px-6 py-2 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition"
+                      className="inline-block px-6 py-2 bg-accent-red text-cream font-semibold rounded-sm hover:bg-mystique-taupe transition"
                     >
                       BOOK NOW
                     </Link>
@@ -84,7 +84,7 @@ export default function SessionsPage() {
           </div>
 
           {/* Additional Info */}
-          <div className="mt-16 p-8 bg-deep-brown text-cream rounded-lg">
+          <div className="mt-16 p-8 bg-mystique-taupe text-cream rounded-lg">
             <h3 className="serif-heading text-2xl font-bold mb-4">
               Custom Sessions
             </h3>
@@ -94,7 +94,7 @@ export default function SessionsPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-block px-6 py-2 bg-accent-red text-cream font-semibold rounded-sm hover:bg-soft-gold hover:text-deep-brown transition"
+              className="inline-block px-6 py-2 bg-accent-red text-cream font-semibold rounded-sm hover:bg-soft-gold hover:text-mystique-taupe transition"
             >
               INQUIRE ABOUT CUSTOM SESSIONS
             </Link>
@@ -105,3 +105,4 @@ export default function SessionsPage() {
     </div>
   );
 }
+
