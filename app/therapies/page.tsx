@@ -24,7 +24,7 @@ export default function TherapiesPage() {
       <Navbar />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="serif-heading text-5xl font-bold text-mystique-taupe mb-8">
+          <h1 className="serif-heading text-5xl font-bold text-deep-brown mb-8">
             Therapies
           </h1>
 
@@ -32,12 +32,12 @@ export default function TherapiesPage() {
             {therapies.map((therapy, idx) => (
               <div
                 key={idx}
-                className="p-8 bg-white border-2 border-mystique-taupe/20 hover:border-accent-red rounded-lg transition"
+                className="p-8 bg-white border-2 border-deep-brown/20 hover:border-accent-red rounded-lg transition"
               >
-                <h3 className="serif-heading text-2xl font-bold text-mystique-taupe mb-2">
+                <h3 className="serif-heading text-2xl font-bold text-deep-brown mb-2">
                   {therapy.title}
                 </h3>
-                <p className="text-mystique-taupe/70">{therapy.description}</p>
+                <p className="text-deep-brown/70">{therapy.description}</p>
               </div>
             ))}
           </div>
@@ -54,4 +54,3 @@ export default function TherapiesPage() {
     </div>
   );
 }
-

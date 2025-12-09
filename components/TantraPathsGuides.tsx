@@ -78,10 +78,10 @@ export default function TantraPathsGuides() {
     <section className="py-12 md:py-16 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <h2 className="font-title text-4xl lg:text-5xl font-bold text-mystique-taupe mb-4 text-center">
+        <h2 className="font-title text-4xl lg:text-5xl font-bold text-deep-brown mb-4 text-center">
           Tantra Paths
         </h2>
-        <p className="text-center text-mystique-taupe/80 text-lg mb-16 max-w-2xl mx-auto">
+        <p className="text-center text-deep-brown/70 text-lg mb-16 max-w-2xl mx-auto">
           Discover the different traditions and approaches to tantric practice
         </p>
 
@@ -162,23 +162,23 @@ export default function TantraPathsGuides() {
         </div>
 
         {/* Tools Sidebar - Below Grid on Mobile, Separate on Desktop */}
-        <div className="mt-16 pt-16 border-t border-mystique-taupe/20">
-          <h3 className="font-title text-3xl font-bold text-mystique-taupe mb-8 text-center">
+        <div className="mt-16 pt-16 border-t border-deep-brown/20">
+          <h3 className="font-title text-3xl font-bold text-deep-brown mb-8 text-center">
             Tools We Love
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {tantricTools.map((tool) => (
               <div
                 key={tool.id}
-                className="group p-6 bg-white/50 hover:bg-white/80 border border-mystique-taupe/20 hover:border-accent-red rounded-lg transition-all duration-300 hover:shadow-lg"
+                className="group p-6 bg-white/50 hover:bg-white/80 border border-deep-brown/20 hover:border-accent-red rounded-lg transition-all duration-300 hover:shadow-lg"
               >
                 <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform">
                   {tool.icon}
                 </div>
-                <h4 className="font-title text-lg font-bold text-mystique-taupe mb-2">
+                <h4 className="font-title text-lg font-bold text-deep-brown mb-2">
                   {tool.name}
                 </h4>
-                <p className="text-sm text-mystique-taupe/80 mb-3 leading-relaxed">
+                <p className="text-sm text-deep-brown/70 mb-3 leading-relaxed">
                   {tool.description}
                 </p>
                 <p className="text-accent-red font-bold text-sm">
@@ -192,4 +192,3 @@ export default function TantraPathsGuides() {
     </section>
   );
 }
-

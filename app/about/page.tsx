@@ -10,13 +10,13 @@ export default function AboutPage() {
       <Navbar />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="serif-heading text-5xl font-bold text-mystique-taupe mb-8">
+          <h1 className="serif-heading text-5xl font-bold text-deep-brown mb-8">
             About A1 Tantra
           </h1>
 
-          <div className="prose prose-lg text-mystique-taupe/80 space-y-8 max-w-none">
+          <div className="prose prose-lg text-deep-brown/80 space-y-8 max-w-none">
             <section>
-              <h2 className="serif-heading text-3xl font-bold text-mystique-taupe mb-4">
+              <h2 className="serif-heading text-3xl font-bold text-deep-brown mb-4">
                 Our Mission
               </h2>
               <p>
@@ -29,7 +29,7 @@ export default function AboutPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-3xl font-bold text-mystique-taupe mb-4">
+              <h2 className="serif-heading text-3xl font-bold text-deep-brown mb-4">
                 Our Story
               </h2>
               <p>
@@ -50,38 +50,38 @@ export default function AboutPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-3xl font-bold text-mystique-taupe mb-4">
+              <h2 className="serif-heading text-3xl font-bold text-deep-brown mb-4">
                 Our Values
               </h2>
               <ul className="space-y-3">
                 <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">â€¢</span>
+                  <span className="text-accent-red text-xl">•</span>
                   <div>
-                    <strong className="text-mystique-taupe">Authenticity:</strong>{" "}
+                    <strong className="text-deep-brown">Authenticity:</strong>{" "}
                     We honor the lineages and traditions from which these
                     teachings come.
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">â€¢</span>
+                  <span className="text-accent-red text-xl">•</span>
                   <div>
-                    <strong className="text-mystique-taupe">Clarity:</strong> We
+                    <strong className="text-deep-brown">Clarity:</strong> We
                     make complex teachings accessible without diluting their
                     depth.
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">â€¢</span>
+                  <span className="text-accent-red text-xl">•</span>
                   <div>
-                    <strong className="text-mystique-taupe">Compassion:</strong> We
+                    <strong className="text-deep-brown">Compassion:</strong> We
                     meet seekers where they are, honoring all levels of
                     practice.
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">â€¢</span>
+                  <span className="text-accent-red text-xl">•</span>
                   <div>
-                    <strong className="text-mystique-taupe">Safety:</strong> We
+                    <strong className="text-deep-brown">Safety:</strong> We
                     create a space where sacred sexuality and transformation are
                     discussed openly, respectfully, and responsibly.
                   </div>
@@ -90,11 +90,11 @@ export default function AboutPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-3xl font-bold text-mystique-taupe mb-4">
+              <h2 className="serif-heading text-3xl font-bold text-deep-brown mb-4">
                 The Advisory Panel
               </h2>
               <p>
-                At the heart of our authenticity is our Advisory Panelâ€”a council
+                At the heart of our authenticity is our Advisory Panel—a council
                 of accomplished Tantra practitioners, scholars, and lineage
                 holders who review all teachings on A1 Tantra. This diverse
                 group ensures that our content honors traditional knowledge
@@ -109,14 +109,14 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/advisory"
-                className="inline-block mt-6 px-6 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-mystique-taupe transition"
+                className="inline-block mt-6 px-6 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition"
               >
                 MEET THE ADVISORY PANEL
               </Link>
             </section>
 
             <section>
-              <h2 className="serif-heading text-3xl font-bold text-mystique-taupe mb-4">
+              <h2 className="serif-heading text-3xl font-bold text-deep-brown mb-4">
                 Contact Us
               </h2>
               <p>
@@ -125,7 +125,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-block mt-4 px-6 py-3 border-2 border-mystique-taupe text-mystique-taupe font-semibold rounded-sm hover:bg-mystique-taupe hover:text-cream transition"
+                className="inline-block mt-4 px-6 py-3 border-2 border-deep-brown text-deep-brown font-semibold rounded-sm hover:bg-deep-brown hover:text-cream transition"
               >
                 SEND A MESSAGE
               </Link>
@@ -137,4 +137,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

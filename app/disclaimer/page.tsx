@@ -9,13 +9,13 @@ export default function DisclaimerPage() {
       <Navbar />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="serif-heading text-4xl font-bold text-mystique-taupe mb-8">
+          <h1 className="serif-heading text-4xl font-bold text-deep-brown mb-8">
             Disclaimer
           </h1>
 
-          <div className="prose prose-lg max-w-none text-mystique-taupe/80 space-y-6">
+          <div className="prose prose-lg max-w-none text-deep-brown/80 space-y-6">
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
                 Medical Disclaimer
               </h2>
               <p>
@@ -34,7 +34,7 @@ export default function DisclaimerPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
                 Individual Results Vary
               </h2>
               <p>
@@ -47,7 +47,7 @@ export default function DisclaimerPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
                 Content Accuracy
               </h2>
               <p>
@@ -59,7 +59,7 @@ export default function DisclaimerPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
                 Limitation of Liability
               </h2>
               <p>
@@ -72,7 +72,7 @@ export default function DisclaimerPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
                 Age Restriction
               </h2>
               <p>
@@ -83,7 +83,7 @@ export default function DisclaimerPage() {
             </section>
 
             <section>
-              <h2 className="serif-heading text-2xl font-bold text-mystique-taupe mb-3">
+              <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-3">
                 Cultural Respect
               </h2>
               <p>
@@ -100,4 +100,3 @@ export default function DisclaimerPage() {
     </div>
   );
 }
-

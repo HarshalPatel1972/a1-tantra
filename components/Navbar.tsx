@@ -150,7 +150,7 @@ export default function Navbar() {
       <div className="md:hidden flex relative max-w-7xl mx-auto px-6 h-16 items-center justify-between">
         {/* HAMBURGER MENU */}
         <button
-          className="text-mystique-taupe hover:text-accent-red transition-colors"
+          className="text-deep-brown hover:text-accent-red transition-colors"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -169,13 +169,13 @@ export default function Navbar() {
         {/* MOBILE RIGHT ICONS */}
         <div className="flex gap-4">
           <button
-            className="text-mystique-taupe hover:text-accent-red transition-colors"
+            className="text-deep-brown hover:text-accent-red transition-colors"
             aria-label="Search"
           >
             <SearchIcon className="w-5 h-5" />
           </button>
           <button
-            className="text-mystique-taupe hover:text-accent-red transition-colors"
+            className="text-deep-brown hover:text-accent-red transition-colors"
             aria-label="User account"
           >
             <UserIcon className="w-5 h-5" />
@@ -190,7 +190,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="block font-nav text-base font-semibold uppercase tracking-wide text-mystique-taupe hover:text-accent-red transition-colors py-2"
+              className="block font-nav text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
@@ -200,7 +200,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="block font-nav text-base font-semibold uppercase tracking-wide text-mystique-taupe hover:text-accent-red transition-colors py-2"
+              className="block font-nav text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors py-2"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
@@ -208,7 +208,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="block font-nav text-base font-semibold uppercase tracking-wide text-mystique-taupe hover:text-accent-red transition-colors py-2"
+            className="block font-nav text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors py-2"
             onClick={() => setIsOpen(false)}
           >
             CONTACT
@@ -218,4 +218,3 @@ export default function Navbar() {
     </nav>
   );
 }
-

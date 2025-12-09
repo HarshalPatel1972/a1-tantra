@@ -9,9 +9,9 @@ const config: Config = {
     extend: {
       colors: {
         cream: "#F9F2E8",
+        "deep-brown": "#3F2F27",
         "accent-red": "#E44426",
         "soft-gold": "#D4AF37",
-        "mystique-taupe": "#A68968", // Lighter warm taupe for visible text in both dark & light
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "Georgia", "serif"],
@@ -83,4 +83,3 @@ const config: Config = {
 };
 
 export default config;
-

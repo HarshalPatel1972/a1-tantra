@@ -94,4 +94,3 @@ export const useDynamicTextColor = () => {
 
   return { elementRef, textColor };
 };
-

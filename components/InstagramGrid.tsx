@@ -23,11 +23,11 @@ export default function InstagramGrid() {
             rel="noopener noreferrer"
             className="inline-block"
           >
-            <h2 className="serif-heading text-3xl font-bold text-mystique-taupe hover:text-accent-red transition">
+            <h2 className="serif-heading text-3xl font-bold text-deep-brown hover:text-accent-red transition">
               @A1TantraOfficial
             </h2>
           </a>
-          <p className="text-mystique-taupe/70 mt-2">
+          <p className="text-deep-brown/70 mt-2">
             Follow for daily wisdom & sacred practices
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function InstagramGrid() {
             href="https://instagram.com/a1tantraofficial"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-mystique-taupe transition"
+            className="inline-block px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition"
           >
             FOLLOW ON INSTAGRAM
           </a>
@@ -64,4 +64,3 @@ export default function InstagramGrid() {
     </section>
   );
 }
-

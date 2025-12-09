@@ -80,4 +80,3 @@ export default function WelcomeHome() {
     </section>
   );
 }
-

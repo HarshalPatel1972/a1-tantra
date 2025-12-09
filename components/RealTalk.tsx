@@ -51,7 +51,7 @@ export default function RealTalk() {
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="px-8 py-3 bg-accent-red text-white font-semibold rounded-sm hover:bg-white hover:text-mystique-taupe transition">
+          <button className="px-8 py-3 bg-accent-red text-white font-semibold rounded-sm hover:bg-white hover:text-deep-brown transition">
             SEE MORE
           </button>
         </div>
@@ -59,4 +59,3 @@ export default function RealTalk() {
     </section>
   );
 }
-
