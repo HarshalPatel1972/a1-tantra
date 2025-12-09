@@ -27,15 +27,15 @@ export default function WelcomeHome() {
   return (
     <section className="py-16 md:py-20 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div>
             {/* Header */}
             <div className="mb-12">
-              <h2 className="serif-heading text-4xl md:text-5xl font-bold text-deep-brown mb-4">
+              <h2 className="serif-heading text-4xl md:text-5xl font-bold text-white mb-4">
                 Welcome home.
               </h2>
-              <p className="text-base md:text-lg text-deep-brown/70 leading-relaxed">
+              <p className="text-base md:text-lg text-white/70 leading-relaxed">
                 We're glad you found us. Whether you're new to Tantra or deep in
                 your spiritual journey, A1 Tantra guides you gently, safely, and
                 respectfully toward inner awakening.
@@ -49,13 +49,13 @@ export default function WelcomeHome() {
                   <div className="text-4xl md:text-5xl mb-3">
                     {feature.icon}
                   </div>
-                  <h3 className="serif-heading text-lg md:text-xl font-bold text-deep-brown mb-2">
+                  <h3 className="serif-heading text-lg md:text-xl font-bold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-sm md:text-base text-deep-brown/70 leading-relaxed mb-3">
+                  <p className="text-sm md:text-base text-white/70 leading-relaxed mb-3">
                     {feature.description}
                   </p>
-                  <button className="text-accent-red font-semibold hover:text-deep-brown transition inline-flex items-center gap-2 text-sm">
+                  <button className="text-soft-gold font-semibold hover:text-white transition inline-flex items-center gap-2 text-sm">
                     Learn more →
                   </button>
                 </div>
@@ -63,9 +63,9 @@ export default function WelcomeHome() {
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="hidden lg:flex justify-center items-center">
-            <div className="relative w-full max-w-xs h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-2 border-deep-brown/20">
+          {/* Right Image - Visible on All Devices */}
+          <div className="flex justify-center items-center order-first md:order-0">
+            <div className="relative w-full max-w-xs h-80 sm:h-96 md:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20">
               <Image
                 src="/images/candle.png"
                 alt="Meditation candle - spiritual practice"
