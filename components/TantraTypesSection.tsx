@@ -66,20 +66,23 @@ export default function TantraTypesSection() {
                 quality={90}
               />
 
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-transparent"></div>
+              {/* Dark Overlay - Enhanced for Text Readability */}
+              <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/70 to-black/30"></div>
+              
+              {/* Additional Overlay for Better Text Contrast */}
+              <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/40"></div>
 
               {/* Content Container */}
-              <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8">
+              <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8 z-10">
                 {/* Top Section */}
                 <div>
                   {/* Title */}
-                  <h3 className="font-title text-2xl md:text-3xl font-bold text-white mb-2">
+                  <h3 className="font-title text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
                     {tantra.name}
                   </h3>
 
                   {/* Subtitle */}
-                  <p className="font-nav text-xs font-semibold uppercase tracking-widest text-soft-gold">
+                  <p className="font-nav text-xs font-semibold uppercase tracking-widest text-soft-gold drop-shadow-md">
                     {tantra.subtitle}
                   </p>
                 </div>
@@ -87,26 +90,26 @@ export default function TantraTypesSection() {
                 {/* Bottom Section */}
                 <div className="space-y-4">
                   {/* Description */}
-                  <p className="font-body text-sm md:text-base text-cream/90 leading-relaxed line-clamp-3">
+                  <p className="font-body text-sm md:text-base text-white leading-relaxed line-clamp-3 drop-shadow-md">
                     {tantra.description}
                   </p>
 
                   {/* Duration & Price Row */}
-                  <div className="flex items-center justify-between gap-4 pt-4 border-t border-cream/30">
+                  <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/30">
                     <div className="flex flex-col gap-1">
-                      <span className="text-xs uppercase tracking-wider text-cream/70 font-semibold">
+                      <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
                         Duration
                       </span>
-                      <span className="font-nav text-base font-bold text-white">
+                      <span className="font-nav text-base font-bold text-white drop-shadow-lg">
                         {tantra.duration}
                       </span>
                     </div>
 
                     <div className="flex flex-col gap-1 items-end">
-                      <span className="text-xs uppercase tracking-wider text-cream/70 font-semibold">
+                      <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
                         From
                       </span>
-                      <span className="font-title text-xl md:text-2xl font-bold text-soft-gold">
+                      <span className="font-title text-2xl md:text-3xl font-bold text-soft-gold drop-shadow-lg">
                         {tantra.price}
                       </span>
                     </div>

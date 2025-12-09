@@ -43,10 +43,8 @@ export default function BuildJourneyCTA() {
             <div
               className="absolute bottom-0 left-1/4 text-5xl animate-pulse opacity-70"
               style={{ animationDelay: "0.4s" }}
-            >
-            </div>
-            <div className="absolute bottom-1/4 right-1/4 text-6xl opacity-50">
-            </div>
+            ></div>
+            <div className="absolute bottom-1/4 right-1/4 text-6xl opacity-50"></div>
           </div>
         </div>
       </div>

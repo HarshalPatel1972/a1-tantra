@@ -101,14 +101,17 @@ export default function TantraPathsGuides() {
                 quality={90}
               />
 
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent"></div>
+              {/* Gradient Overlay - Enhanced for Text Readability */}
+              <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/70 to-black/30"></div>
+              
+              {/* Additional Overlay for Better Text Contrast */}
+              <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/40"></div>
 
               {/* Content Container */}
-              <div className="absolute inset-0 flex flex-col justify-between p-6">
+              <div className="absolute inset-0 flex flex-col justify-between p-6 z-10">
                 {/* Top: Title */}
                 <div>
-                  <h3 className="font-title text-2xl font-bold text-white mb-2">
+                  <h3 className="font-title text-3xl font-bold text-white drop-shadow-lg">
                     {path.name}
                   </h3>
                 </div>
@@ -116,21 +119,21 @@ export default function TantraPathsGuides() {
                 {/* Bottom: Description and Pricing */}
                 <div className="space-y-4">
                   {/* Description */}
-                  <p className="font-body text-sm text-cream/90 leading-relaxed line-clamp-2">
+                  <p className="font-body text-sm text-white leading-relaxed line-clamp-2 drop-shadow-md">
                     {path.description}
                   </p>
 
                   {/* Pricing Tiers */}
-                  <div className="space-y-2 pt-3 border-t border-cream/30">
+                  <div className="space-y-2 pt-3 border-t border-white/30">
                     {path.pricing.map((tier, tierIdx) => (
                       <div
                         key={tierIdx}
                         className="flex justify-between items-center"
                       >
-                        <span className="text-xs uppercase tracking-wider text-cream/70 font-semibold">
+                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
                           {tier.duration}
                         </span>
-                        <span className="font-title font-bold text-soft-gold text-lg">
+                        <span className="font-title font-bold text-soft-gold text-lg drop-shadow-lg">
                           {tier.price}
                         </span>
                       </div>
