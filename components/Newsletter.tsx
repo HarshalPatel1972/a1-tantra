@@ -26,7 +26,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-24 bg-deep-brown text-cream">
+    <section className="py-12 md:py-16 bg-deep-brown text-cream">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="serif-heading text-4xl font-bold mb-4">
           Feeling overwhelmed about Tantra?

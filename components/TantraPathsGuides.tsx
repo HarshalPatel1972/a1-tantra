@@ -5,7 +5,7 @@ import { tantraPaths, tantricTools } from "@/data/content";
 
 export default function TantraPathsGuides() {
   return (
-    <section className="py-24 bg-cream">
+    <section className="py-12 md:py-16 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="serif-heading text-4xl font-bold text-deep-brown mb-16">

@@ -43,10 +43,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-deep-brown text-cream pt-20 pb-8">
+    <footer className="bg-deep-brown text-cream pt-12 md:pt-16 pb-6 md:pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* TOP GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Tantra Paths */}
           <div>
             <h4 className="font-title text-lg font-bold mb-4">Tantra Paths</h4>

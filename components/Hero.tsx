@@ -5,11 +5,11 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] pb-24 pt-8 overflow-hidden bg-cream">
+    <section className="relative min-h-screen pb-16 pt-4 overflow-hidden bg-cream">
       {/* Content Wrapper */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         {/* Hero Image Container with Rounded Edges and Border */}
-        <div className="relative mb-12 rounded-3xl overflow-hidden border-2 border-deep-brown shadow-2xl">
+        <div className="relative mb-8 rounded-3xl overflow-hidden border-2 border-deep-brown shadow-2xl">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -21,13 +21,13 @@ export default function Hero() {
               quality={90}
             />
             {/* Dark overlay for text readability - darker gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/60 to-black/50"></div>
             {/* Additional overlay for bottom area */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40"></div>
+            <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black/40"></div>
           </div>
 
           {/* Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center relative z-20 min-h-[600px] px-8 sm:px-12 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center relative z-20 min-h-[700px] md:min-h-[750px] px-6 sm:px-12 py-20 md:py-24">
             {/* LEFT CONTENT */}
             <div className="lg:col-span-2">
               <h1 className="font-title text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-2xl drop-shadow-lg">

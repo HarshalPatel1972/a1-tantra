@@ -6,24 +6,24 @@ export default function RealTalk() {
       category: "A1 Guidance",
       title: "What Is Tantra Really About?",
       excerpt:
-        "Exploring the true essence of Tantra beyond misconceptions and stereotypes...",
+        "Tantra is not what pop culture suggests. It's an ancient spiritual science focused on transforming energy, consciousness, and everyday experience. Rooted in reverence for the sacred within all things, Tantra teaches integration—uniting mind, body, and spirit—to awaken your full potential and live with authenticity and presence.",
     },
     {
       category: "Real Talk",
       title: "Can Tantra Help With Emotional Healing?",
       excerpt:
-        "Understanding how tantric practices support emotional processing and transformation...",
+        "Yes. Tantra creates a framework for processing emotions by teaching you to witness feelings without judgment and move stagnant energy. Through breathwork, meditation, and ritualistic practice, you learn to transform pain into wisdom. Many seekers report profound emotional shifts—releasing trauma patterns and cultivating resilience and self-compassion.",
     },
     {
       category: "What to Expect",
       title: "Your First Tantra Meditation Session",
       excerpt:
-        "A beginner's guide to preparing for and understanding your first meditation...",
+        "Expect to be guided into a state of deep relaxation and heightened awareness. You'll learn foundational breathwork, visualization techniques, and how to work with subtle energy centers. There's no performance required—only openness and curiosity. Most beginners experience a profound sense of calm, clarity, and connection.",
     },
   ];
 
   return (
-    <section className="py-24 bg-deep-brown text-cream">
+    <section className="py-12 md:py-16 bg-deep-brown text-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="serif-heading text-5xl font-bold text-center mb-16 max-w-3xl mx-auto leading-tight">
