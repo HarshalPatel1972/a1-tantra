@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { tantricTools } from "@/data/content";
+// import { tantricTools } from "@/data/content";
 
 export default function TantraPathsGuides() {
   // Tantra paths with images and pricing
@@ -162,7 +162,7 @@ export default function TantraPathsGuides() {
         </div>
 
         {/* Tools Sidebar - Below Grid on Mobile, Separate on Desktop */}
-        <div className="mt-16 pt-16 border-t border-deep-brown/20">
+        {/* <div className="mt-16 pt-16 border-t border-deep-brown/20">
           <h3 className="font-title text-3xl font-bold text-deep-brown mb-8 text-center">
             Tools We Love
           </h3>
@@ -187,7 +187,7 @@ export default function TantraPathsGuides() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

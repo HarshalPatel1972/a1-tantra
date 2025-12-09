@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import AnimatedGradientBg from "@/components/AnimatedGradientBg";
+// import AnimatedGradientBg from "@/components/AnimatedGradientBg";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -58,9 +58,9 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased font-sans bg-[#0d0621] text-white`}
+        className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased font-sans bg-[#1a0f0a] text-white`}
       >
-        <AnimatedGradientBg />
+        {/* <AnimatedGradientBg /> */}
         <Navbar />
         <main className="pt-24 md:pt-32 relative z-0">{children}</main>
       </body>
