@@ -75,7 +75,7 @@ export default function TantraPathsGuides() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-cream">
+    <section className="py-12 md:py-16 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="font-title text-4xl lg:text-5xl font-bold text-deep-brown mb-4 text-center">
@@ -103,7 +103,7 @@ export default function TantraPathsGuides() {
 
               {/* Gradient Overlay - Enhanced for Text Readability */}
               <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/70 to-black/30"></div>
-              
+
               {/* Additional Overlay for Better Text Contrast */}
               <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/40"></div>
 

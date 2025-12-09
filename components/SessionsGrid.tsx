@@ -31,7 +31,7 @@ export default function SessionsGrid() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-cream">
+    <section className="py-12 md:py-16 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="serif-heading text-4xl font-bold text-deep-brown mb-16 text-center">

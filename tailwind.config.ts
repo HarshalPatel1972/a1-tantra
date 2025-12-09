@@ -49,6 +49,34 @@ const config: Config = {
           },
         },
       },
+      keyframes: {
+        "gradient-shift": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+        "blob": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+          "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+        },
+        "blob-slow": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(-40px, 30px) scale(0.9)" },
+          "66%": { transform: "translate(20px, -30px) scale(1.1)" },
+        },
+        "blob-reverse": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1.1)" },
+          "33%": { transform: "translate(50px, 20px) scale(0.9)" },
+          "66%": { transform: "translate(-30px, -40px) scale(1.05)" },
+        },
+      },
+      animation: {
+        "gradient-shift": "gradient-shift 15s ease infinite",
+        "blob": "blob 7s infinite",
+        "blob-slow": "blob-slow 9s infinite",
+        "blob-reverse": "blob-reverse 11s infinite",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

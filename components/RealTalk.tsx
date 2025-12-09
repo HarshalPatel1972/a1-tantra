@@ -23,7 +23,7 @@ export default function RealTalk() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-deep-brown text-cream">
+    <section className="py-12 md:py-16 bg-transparent text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="serif-heading text-5xl font-bold text-center mb-16 max-w-3xl mx-auto leading-tight">
@@ -36,22 +36,22 @@ export default function RealTalk() {
           {cards.map((card, idx) => (
             <div
               key={idx}
-              className="group bg-cream/10 border border-cream/20 p-8 rounded-lg hover:bg-cream/20 hover:border-cream/40 transition"
+              className="group bg-white/10 border border-white/20 p-8 rounded-lg hover:bg-white/20 hover:border-white/40 transition"
             >
               <p className="text-soft-gold text-sm font-semibold uppercase tracking-wide mb-2">
                 {card.category}
               </p>
-              <h3 className="serif-heading text-2xl font-bold text-cream mb-4 group-hover:text-soft-gold transition">
+              <h3 className="serif-heading text-2xl font-bold text-white mb-4 group-hover:text-soft-gold transition">
                 {card.title}
               </h3>
-              <p className="text-cream/70 leading-relaxed">{card.excerpt}</p>
+              <p className="text-white/70 leading-relaxed">{card.excerpt}</p>
             </div>
           ))}
         </div>
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-cream hover:text-deep-brown transition">
+          <button className="px-8 py-3 bg-accent-red text-white font-semibold rounded-sm hover:bg-white hover:text-deep-brown transition">
             SEE MORE
           </button>
         </div>
