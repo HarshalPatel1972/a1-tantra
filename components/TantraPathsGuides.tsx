@@ -133,7 +133,7 @@ export default function TantraPathsGuides() {
                         <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
                           {tier.duration}
                         </span>
-                        <span className="font-title font-bold text-soft-gold text-lg drop-shadow-lg">
+                        <span className="font-title font-bold text-yellow-100 text-lg drop-shadow-lg">
                           {tier.price}
                         </span>
                       </div>

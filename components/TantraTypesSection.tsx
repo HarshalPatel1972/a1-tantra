@@ -82,7 +82,7 @@ export default function TantraTypesSection() {
                   </h3>
 
                   {/* Subtitle */}
-                  <p className="font-nav text-xs font-semibold uppercase tracking-widest text-soft-gold drop-shadow-md">
+                  <p className="font-nav text-xs font-bold uppercase tracking-widest text-yellow-200 drop-shadow-lg">
                     {tantra.subtitle}
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export default function TantraTypesSection() {
                       <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
                         From
                       </span>
-                      <span className="font-title text-2xl md:text-3xl font-bold text-soft-gold drop-shadow-lg">
+                      <span className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg">
                         {tantra.price}
                       </span>
                     </div>
