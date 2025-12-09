@@ -76,13 +76,13 @@ export default function TantraTypesSection() {
               <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8 z-10">
                 {/* Top Section */}
                 <div>
-                  {/* Title */}
-                  <h3 className="font-title text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
+                  {/* Title - With enhanced visibility */}
+                  <h3 style={{ mixBlendMode: 'lighten' }} className="font-title text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
                     {tantra.name}
                   </h3>
 
-                  {/* Subtitle */}
-                  <p className="font-nav text-xs font-bold uppercase tracking-widest text-yellow-200 drop-shadow-lg">
+                  {/* Subtitle - Dynamic bright color for maximum contrast */}
+                  <p style={{ mixBlendMode: 'lighten' }} className="font-nav text-xs font-bold uppercase tracking-widest text-yellow-200 drop-shadow-lg">
                     {tantra.subtitle}
                   </p>
                 </div>
@@ -90,7 +90,7 @@ export default function TantraTypesSection() {
                 {/* Bottom Section */}
                 <div className="space-y-4">
                   {/* Description */}
-                  <p className="font-body text-sm md:text-base text-white leading-relaxed line-clamp-3 drop-shadow-md">
+                  <p style={{ mixBlendMode: 'lighten' }} className="font-body text-sm md:text-base text-white leading-relaxed line-clamp-3 drop-shadow-md">
                     {tantra.description}
                   </p>
 
@@ -109,7 +109,7 @@ export default function TantraTypesSection() {
                       <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
                         From
                       </span>
-                      <span className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg">
+                      <span style={{ mixBlendMode: 'screen' }} className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg">
                         {tantra.price}
                       </span>
                     </div>

@@ -111,7 +111,7 @@ export default function TantraPathsGuides() {
               <div className="absolute inset-0 flex flex-col justify-between p-6 z-10">
                 {/* Top: Title */}
                 <div>
-                  <h3 className="font-title text-3xl font-bold text-white drop-shadow-lg">
+                  <h3 style={{ mixBlendMode: 'lighten' }} className="font-title text-3xl font-bold text-white drop-shadow-lg">
                     {path.name}
                   </h3>
                 </div>
@@ -119,7 +119,7 @@ export default function TantraPathsGuides() {
                 {/* Bottom: Description and Pricing */}
                 <div className="space-y-4">
                   {/* Description */}
-                  <p className="font-body text-sm text-white leading-relaxed line-clamp-2 drop-shadow-md">
+                  <p style={{ mixBlendMode: 'lighten' }} className="font-body text-sm text-white leading-relaxed line-clamp-2 drop-shadow-md">
                     {path.description}
                   </p>
 
@@ -133,7 +133,7 @@ export default function TantraPathsGuides() {
                         <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
                           {tier.duration}
                         </span>
-                        <span className="font-title font-bold text-yellow-100 text-lg drop-shadow-lg">
+                        <span style={{ mixBlendMode: 'screen' }} className="font-title font-bold text-yellow-100 text-lg drop-shadow-lg">
                           {tier.price}
                         </span>
                       </div>
