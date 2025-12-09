@@ -67,7 +67,7 @@ export default function TantraTypesSection() {
               />
 
               {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-transparent"></div>
 
               {/* Content Container */}
               <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8">

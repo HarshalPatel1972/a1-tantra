@@ -9,7 +9,7 @@ export default function SessionsPage() {
     {
       id: "meditation",
       title: "Tantra Meditation Session",
-      icon: "🧘",
+      icon: "",
       description: "Deep meditative practices rooted in tantra.",
       details:
         "Explore guided Tantric meditations that help you access deeper states of consciousness and inner peace.",
@@ -17,7 +17,7 @@ export default function SessionsPage() {
     {
       id: "breathwork",
       title: "Tantric Breathwork Session",
-      icon: "🌬️",
+      icon: "",
       description: "Pranayama techniques for energy activation.",
       details:
         "Learn pranayama techniques to awaken and circulate vital life force through your energetic body.",
@@ -25,7 +25,7 @@ export default function SessionsPage() {
     {
       id: "chakra",
       title: "Chakra Balancing Session",
-      icon: "⚡",
+      icon: "",
       description: "Align and balance your energy centers.",
       details:
         "Work with the seven chakras to clear blockages and harmonize your energetic system.",

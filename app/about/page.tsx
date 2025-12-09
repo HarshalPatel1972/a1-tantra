@@ -55,7 +55,7 @@ export default function AboutPage() {
               </h2>
               <ul className="space-y-3">
                 <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">🌸</span>
+                  <span className="text-accent-red text-xl">•</span>
                   <div>
                     <strong className="text-deep-brown">Authenticity:</strong>{" "}
                     We honor the lineages and traditions from which these
@@ -63,7 +63,7 @@ export default function AboutPage() {
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">✨</span>
+                  <span className="text-accent-red text-xl">•</span>
                   <div>
                     <strong className="text-deep-brown">Clarity:</strong> We
                     make complex teachings accessible without diluting their
@@ -71,7 +71,7 @@ export default function AboutPage() {
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">💜</span>
+                  <span className="text-accent-red text-xl">•</span>
                   <div>
                     <strong className="text-deep-brown">Compassion:</strong> We
                     meet seekers where they are, honoring all levels of
@@ -79,7 +79,7 @@ export default function AboutPage() {
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">🕉️</span>
+                  <span className="text-accent-red text-xl">•</span>
                   <div>
                     <strong className="text-deep-brown">Safety:</strong> We
                     create a space where sacred sexuality and transformation are

@@ -8,7 +8,7 @@ export default function TantraPathsGuides() {
   const tantraPathsWithImages = [
     {
       name: "Shakta Tantra",
-      icon: "🔱",
+      icon: "",
       description:
         "The Divine Feminine path that worships the universal creative power through the goddess. Focuses on the dynamic energy of the cosmos and the sacred feminine principle.",
       image: "/images/shakti-tantra.jpg",
@@ -19,7 +19,7 @@ export default function TantraPathsGuides() {
     },
     {
       name: "Kundalini Tantra",
-      icon: "🐍",
+      icon: "",
       description:
         "Works with the serpent energy coiled at the base of the spine. Through practices and initiation, awakens this latent force and guides it upward through the energy channels.",
       image: "/images/Kundalini-Tantra.jpg",
@@ -30,7 +30,7 @@ export default function TantraPathsGuides() {
     },
     {
       name: "Kaula Tantra",
-      icon: "👥",
+      icon: "",
       description:
         "The 'family path' that embraces household life and partnerships. Practices are done with a partner or within spiritual communities, celebrating the sacred in everyday relationships.",
       image: "/images/Kaula-Tantra.jpg",
@@ -41,7 +41,7 @@ export default function TantraPathsGuides() {
     },
     {
       name: "Tibetan Tantra",
-      icon: "🏔️",
+      icon: "",
       description:
         "The Buddhist tantric tradition emphasizing visualization of deities and the union of wisdom and compassion. Highly systematic and deeply connected to monastic practice.",
       image: "/images/Tibetan-Tantra.jpg",
@@ -52,7 +52,7 @@ export default function TantraPathsGuides() {
     },
     {
       name: "Right-Hand Tantra",
-      icon: "✋",
+      icon: "",
       description:
         "The traditional, conservative approach emphasizing ethical conduct and alignment with societal norms. Uses internal visualization and meditation within socially acceptable frameworks.",
       image: "/images/Right-Hand-Tantra.jpg",
@@ -63,7 +63,7 @@ export default function TantraPathsGuides() {
     },
     {
       name: "Left-Hand Tantra",
-      icon: "🌙",
+      icon: "",
       description:
         "The transgressive path that deliberately works with taboo practices to transcend conventional limits. Uses unconventional methods to break through spiritual barriers and ego-attachments.",
       image: "/images/Left-Hand-Tantra.jpg",
@@ -90,7 +90,7 @@ export default function TantraPathsGuides() {
           {tantraPathsWithImages.map((path, idx) => (
             <div
               key={idx}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-96"
             >
               {/* Background Image */}
               <Image
@@ -102,15 +102,12 @@ export default function TantraPathsGuides() {
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent"></div>
 
               {/* Content Container */}
               <div className="absolute inset-0 flex flex-col justify-between p-6">
-                {/* Top: Icon and Title */}
+                {/* Top: Title */}
                 <div>
-                  <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform">
-                    {path.icon}
-                  </div>
                   <h3 className="font-title text-2xl font-bold text-white mb-2">
                     {path.name}
                   </h3>

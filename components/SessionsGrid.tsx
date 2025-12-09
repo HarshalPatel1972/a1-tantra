@@ -7,7 +7,7 @@ export default function SessionsGrid() {
     {
       id: "meditation",
       title: "Tantra Meditation Session",
-      icon: "🧘",
+      icon: "",
       description: "Deep meditative practices rooted in tantra.",
     },
     {

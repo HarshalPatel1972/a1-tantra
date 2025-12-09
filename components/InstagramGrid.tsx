@@ -2,14 +2,14 @@
 
 export default function InstagramGrid() {
   const posts = [
-    { id: 1, emoji: "🕉️", alt: "Sacred Om symbol" },
-    { id: 2, emoji: "🕯️", alt: "Meditation candles" },
-    { id: 3, emoji: "📿", alt: "Mala beads" },
-    { id: 4, emoji: "✨", alt: "Spiritual energy" },
-    { id: 5, emoji: "🌸", alt: "Lotus flower" },
-    { id: 6, emoji: "🧘", alt: "Meditation pose" },
-    { id: 7, emoji: "💜", alt: "Heart energy" },
-    { id: 8, emoji: "🌙", alt: "Moon energy" },
+    { id: 1, emoji: "", alt: "Sacred Om symbol" },
+    { id: 2, emoji: "", alt: "Meditation candles" },
+    { id: 3, emoji: "", alt: "Mala beads" },
+    { id: 4, emoji: "", alt: "Spiritual energy" },
+    { id: 5, emoji: "", alt: "Lotus flower" },
+    { id: 6, emoji: "", alt: "Meditation pose" },
+    { id: 7, emoji: "", alt: "Heart energy" },
+    { id: 8, emoji: "", alt: "Moon energy" },
   ];
 
   return (

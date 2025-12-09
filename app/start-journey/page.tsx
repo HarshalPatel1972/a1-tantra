@@ -28,14 +28,14 @@ export default function StartJourneyPage() {
   ];
 
   const paths = [
-    { id: "shakta", name: "Shakta Tantra (Divine Feminine)", icon: "🌸" },
+    { id: "shakta", name: "Shakta Tantra (Divine Feminine)", icon: "" },
     {
       id: "kundalini",
       name: "Kundalini Tantra (Energy Awakening)",
-      icon: "🐍",
+      icon: "",
     },
-    { id: "kaula", name: "Kaula Tantra (Life Integration)", icon: "💑" },
-    { id: "tibetan", name: "Tibetan Tantra (Buddhist Path)", icon: "🕉️" },
+    { id: "kaula", name: "Kaula Tantra (Life Integration)", icon: "" },
+    { id: "tibetan", name: "Tibetan Tantra (Buddhist Path)", icon: "" },
   ];
 
   const handleGoalToggle = (goal: string) => {
