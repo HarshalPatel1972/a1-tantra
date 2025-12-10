@@ -1,31 +1,32 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SessionsGrid() {
   const sessions = [
     {
       id: "meditation",
       title: "Tantra Meditation Session",
-      icon: "",
+      image: "/images/Tantra-Meditation-Session.jpg",
       description: "Deep meditative practices rooted in tantra.",
     },
     {
       id: "breathwork",
       title: "Tantric Breathwork Session",
-      icon: "🌬️",
+      image: "/images/Tantric-Breathwork-Session.jpg",
       description: "Pranayama techniques for energy activation.",
     },
     {
       id: "chakra",
       title: "Chakra Balancing Session",
-      icon: "⚡",
+      image: "/images/Chakra-Balancing-Session.jpg",
       description: "Align and balance your energy centers.",
     },
     {
       id: "sound-healing",
       title: "Sound Healing + Tantra Flow",
-      icon: "🔊",
+      image: "/images/Sound-Tantra.jpg",
       description: "Sacred sounds for transformation.",
     },
   ];
@@ -46,13 +47,17 @@ export default function SessionsGrid() {
               href={`/sessions/${session.id}`}
               className="group block"
             >
-              <div className="relative h-80 bg-gradient-to-br from-accent-red/20 to-soft-gold/20 rounded-lg overflow-hidden mb-4">
-                <div className="absolute inset-0 flex items-center justify-center text-6xl group-hover:scale-110 transition duration-500">
-                  {session.icon}
-                </div>
-                <div className="absolute inset-0 bg-deep-brown/0 group-hover:bg-deep-brown/20 transition"></div>
+              <div className="relative h-80 rounded-lg overflow-hidden mb-4 shadow-lg hover:shadow-xl transition-all duration-300">
+                <Image
+                  src={session.image}
+                  alt={session.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  quality={90}
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
               </div>
-              <h3 className="serif-heading text-xl font-bold text-deep-brown mb-2 group-hover:text-accent-red transition">
+              <h3 className="font-title text-xl font-bold text-deep-brown mb-2 group-hover:text-accent-red transition">
                 {session.title}
               </h3>
               <p className="text-sm text-deep-brown/70 mb-3">
