@@ -77,7 +77,7 @@ export default function Navbar() {
         fixed top-0 w-full z-50 transition-all duration-500 ease-out
         ${
           scrolled
-            ? "bg-black/40 backdrop-blur-lg border-b border-white/20 shadow-lg"
+            ? "bg-stone-100/80 backdrop-blur-lg border-b border-deep-brown/20 shadow-lg"
             : "bg-transparent border-transparent"
         }
       `}
@@ -90,7 +90,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-nav text-sm lg:text-base font-semibold uppercase tracking-wide text-white hover:text-soft-gold transition-colors duration-200 whitespace-nowrap"
+              className="font-nav text-sm lg:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -126,7 +126,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-nav text-sm lg:text-base font-semibold uppercase tracking-wide text-white hover:text-soft-gold transition-colors duration-200 whitespace-nowrap"
+              className="font-nav text-sm lg:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
             </Link>

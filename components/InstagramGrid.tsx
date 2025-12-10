@@ -1,22 +1,22 @@
 "use client";
 
 export default function InstagramGrid() {
-  const posts = [
-    { id: 1, emoji: "", alt: "Sacred Om symbol" },
-    { id: 2, emoji: "", alt: "Meditation candles" },
-    { id: 3, emoji: "", alt: "Mala beads" },
-    { id: 4, emoji: "", alt: "Spiritual energy" },
-    { id: 5, emoji: "", alt: "Lotus flower" },
-    { id: 6, emoji: "", alt: "Meditation pose" },
-    { id: 7, emoji: "", alt: "Heart energy" },
-    { id: 8, emoji: "", alt: "Moon energy" },
-  ];
+  // const posts = [
+  //   { id: 1, emoji: "", alt: "Sacred Om symbol" },
+  //   { id: 2, emoji: "", alt: "Meditation candles" },
+  //   { id: 3, emoji: "", alt: "Mala beads" },
+  //   { id: 4, emoji: "", alt: "Spiritual energy" },
+  //   { id: 5, emoji: "", alt: "Lotus flower" },
+  //   { id: 6, emoji: "", alt: "Meditation pose" },
+  //   { id: 7, emoji: "", alt: "Heart energy" },
+  //   { id: 8, emoji: "", alt: "Moon energy" },
+  // ];
 
   return (
-    <section className="py-12 md:py-16 bg-transparent border-t border-white/20">
+    <section className="py-12 md:py-16 bg-cream border-t border-deep-brown/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
+        {/* Header - Instagram Section Commented Out */}
+        {/* <div className="text-center mb-16">
           <a
             href="https://instagram.com/a1tantraofficial"
             target="_blank"
@@ -30,10 +30,10 @@ export default function InstagramGrid() {
           <p className="text-deep-brown/70 mt-2">
             Follow for daily wisdom & sacred practices
           </p>
-        </div>
+        </div> */}
 
-        {/* Instagram Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* Instagram Grid - Commented Out */}
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {posts.map((post) => (
             <a
               key={post.id}
@@ -47,10 +47,10 @@ export default function InstagramGrid() {
               </span>
             </a>
           ))}
-        </div>
+        </div> */}
 
-        {/* CTA */}
-        <div className="text-center mt-12">
+        {/* CTA - Commented Out */}
+        {/* <div className="text-center mt-12">
           <a
             href="https://instagram.com/a1tantraofficial"
             target="_blank"
@@ -59,7 +59,7 @@ export default function InstagramGrid() {
           >
             FOLLOW ON INSTAGRAM
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

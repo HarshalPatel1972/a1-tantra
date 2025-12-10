@@ -58,7 +58,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased font-sans bg-[#1a0f0a] text-white`}
+        className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased font-sans bg-cream text-deep-brown`}
       >
         {/* <AnimatedGradientBg /> */}
         <Navbar />

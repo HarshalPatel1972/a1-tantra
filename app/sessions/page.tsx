@@ -33,7 +33,7 @@ export default function SessionsPage() {
     {
       id: "sound-healing",
       title: "Sound Healing + Tantra Flow",
-      icon: "🔊",
+      icon: "",
       description: "Sacred sounds for transformation.",
       details:
         "Experience the transformative power of sacred sounds, mantras, and vibrational healing.",
