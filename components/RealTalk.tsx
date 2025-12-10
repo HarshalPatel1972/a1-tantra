@@ -23,35 +23,39 @@ export default function RealTalk() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-transparent text-white">
+    <section className="py-16 md:py-24 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <h2 className="serif-heading text-5xl font-bold text-center mb-16 max-w-3xl mx-auto leading-tight">
-          Honest insights, ancient wisdom, and stories from seekers who walk the
-          path.
+        <h2 className="font-title text-4xl md:text-5xl font-bold text-deep-brown text-center mb-4 max-w-3xl mx-auto leading-tight">
+          Honest Insights, Ancient Wisdom
         </h2>
+        <p className="text-center text-deep-brown/70 text-lg mb-16 max-w-2xl mx-auto">
+          Stories from seekers who walk the path
+        </p>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {cards.map((card, idx) => (
             <div
               key={idx}
-              className="group bg-white/10 border border-white/20 p-8 rounded-lg hover:bg-white/20 hover:border-white/40 transition"
+              className="group bg-white border-2 border-deep-brown/10 hover:border-accent-red p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
             >
-              <p className="text-soft-gold text-sm font-semibold uppercase tracking-wide mb-2">
+              <p className="text-accent-red text-xs font-bold uppercase tracking-widest mb-3">
                 {card.category}
               </p>
-              <h3 className="serif-heading text-2xl font-bold text-white mb-4 group-hover:text-soft-gold transition">
+              <h3 className="font-title text-2xl font-bold text-deep-brown mb-4 group-hover:text-accent-red transition">
                 {card.title}
               </h3>
-              <p className="text-white/70 leading-relaxed">{card.excerpt}</p>
+              <p className="text-deep-brown/80 leading-relaxed font-body text-lg">
+                {card.excerpt}
+              </p>
             </div>
           ))}
         </div>
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="px-8 py-3 bg-accent-red text-white font-semibold rounded-sm hover:bg-white hover:text-deep-brown transition">
+          <button className="px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition-colors">
             SEE MORE
           </button>
         </div>

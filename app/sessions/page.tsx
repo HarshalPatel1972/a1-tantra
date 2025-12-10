@@ -3,13 +3,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SessionsPage() {
   const sessions = [
     {
       id: "meditation",
       title: "Tantra Meditation Session",
-      icon: "",
+      image: "/images/Yoga-Tantra.jpg",
       description: "Deep meditative practices rooted in tantra.",
       details:
         "Explore guided Tantric meditations that help you access deeper states of consciousness and inner peace.",
@@ -17,7 +18,7 @@ export default function SessionsPage() {
     {
       id: "breathwork",
       title: "Tantric Breathwork Session",
-      icon: "",
+      image: "/images/Kundalini-Tantra.jpg",
       description: "Pranayama techniques for energy activation.",
       details:
         "Learn pranayama techniques to awaken and circulate vital life force through your energetic body.",
@@ -25,7 +26,7 @@ export default function SessionsPage() {
     {
       id: "chakra",
       title: "Chakra Balancing Session",
-      icon: "",
+      image: "/images/shakti-tantra.jpg",
       description: "Align and balance your energy centers.",
       details:
         "Work with the seven chakras to clear blockages and harmonize your energetic system.",
@@ -33,7 +34,7 @@ export default function SessionsPage() {
     {
       id: "sound-healing",
       title: "Sound Healing + Tantra Flow",
-      icon: "",
+      image: "/images/Kriya-Tantra.jpg",
       description: "Sacred sounds for transformation.",
       details:
         "Experience the transformative power of sacred sounds, mantras, and vibrational healing.",
@@ -57,25 +58,37 @@ export default function SessionsPage() {
             {sessions.map((session) => (
               <div
                 key={session.id}
-                className="group p-8 border-2 border-deep-brown/20 hover:border-accent-red bg-white rounded-lg transition"
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-deep-brown/10"
               >
-                <div className="flex items-start gap-6">
-                  <div className="text-5xl flex-shrink-0">{session.icon}</div>
-                  <div className="flex-1">
-                    <h2 className="serif-heading text-2xl font-bold text-deep-brown mb-2 group-hover:text-accent-red transition">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  {/* Image Side */}
+                  <div className="relative h-80 md:h-96 overflow-hidden">
+                    <Image
+                      src={session.image}
+                      alt={session.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      quality={90}
+                    />
+                    <div className="absolute inset-0 bg-linear-to-r from-black/30 to-transparent"></div>
+                  </div>
+
+                  {/* Content Side */}
+                  <div className="p-8 md:p-10 bg-white flex flex-col justify-center">
+                    <h2 className="font-title text-3xl md:text-4xl font-bold text-deep-brown mb-3 group-hover:text-accent-red transition">
                       {session.title}
                     </h2>
-                    <p className="text-sm text-accent-red font-semibold mb-3">
+                    <p className="text-sm text-accent-red font-semibold uppercase tracking-widest mb-4">
                       {session.description}
                     </p>
-                    <p className="text-deep-brown/70 leading-relaxed mb-4">
+                    <p className="text-deep-brown/80 leading-relaxed mb-6 text-lg">
                       {session.details}
                     </p>
                     <Link
                       href="/book-session"
-                      className="inline-block px-6 py-2 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition"
+                      className="inline-block w-fit px-8 py-3 bg-linear-to-r from-accent-red to-deep-brown text-cream font-semibold rounded-sm hover:shadow-lg transition-all"
                     >
-                      BOOK NOW
+                      BOOK NOW →
                     </Link>
                   </div>
                 </div>

@@ -132,13 +132,13 @@ export default function Navbar() {
             </Link>
           ))}
           <button
-            className="text-white hover:text-soft-gold transition-colors duration-200"
+            className="text-deep-brown hover:text-accent-red transition-colors duration-200"
             aria-label="Search"
           >
             <SearchIcon className="w-5 lg:w-6 h-5 lg:h-6" />
           </button>
           <button
-            className="text-white hover:text-soft-gold transition-colors duration-200"
+            className="text-deep-brown hover:text-accent-red transition-colors duration-200"
             aria-label="User account"
           >
             <UserIcon className="w-5 lg:w-6 h-5 lg:h-6" />
