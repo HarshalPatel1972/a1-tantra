@@ -10,7 +10,7 @@ export default function SessionsPage() {
     {
       id: "meditation",
       title: "Tantra Meditation Session",
-      image: "/images/Yoga-Tantra.jpg",
+      image: "/images/Tantra-Meditation-Session.jpg",
       description: "Deep meditative practices rooted in tantra.",
       details:
         "Explore guided Tantric meditations that help you access deeper states of consciousness and inner peace.",
@@ -18,7 +18,7 @@ export default function SessionsPage() {
     {
       id: "breathwork",
       title: "Tantric Breathwork Session",
-      image: "/images/Kundalini-Tantra.jpg",
+      image: "/images/Tantric-Breathwork-Session.jpg",
       description: "Pranayama techniques for energy activation.",
       details:
         "Learn pranayama techniques to awaken and circulate vital life force through your energetic body.",
@@ -26,7 +26,7 @@ export default function SessionsPage() {
     {
       id: "chakra",
       title: "Chakra Balancing Session",
-      image: "/images/shakti-tantra.jpg",
+      image: "/images/Chakra-Balancing-Session.jpg",
       description: "Align and balance your energy centers.",
       details:
         "Work with the seven chakras to clear blockages and harmonize your energetic system.",
@@ -34,7 +34,7 @@ export default function SessionsPage() {
     {
       id: "sound-healing",
       title: "Sound Healing + Tantra Flow",
-      image: "/images/Kriya-Tantra.jpg",
+      image: "/images/Sound-Tantra.jpg",
       description: "Sacred sounds for transformation.",
       details:
         "Experience the transformative power of sacred sounds, mantras, and vibrational healing.",

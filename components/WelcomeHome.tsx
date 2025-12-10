@@ -45,8 +45,8 @@ export default function WelcomeHome() {
             {/* Features Grid */}
             <div className="space-y-8">
               {features.map((feature, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="group p-6 bg-white border-l-4 border-accent-red rounded-lg shadow-md hover:shadow-lg transition-all"
                 >
                   <h3 className="font-title text-xl md:text-2xl font-bold text-deep-brown mb-3 group-hover:text-accent-red transition">
