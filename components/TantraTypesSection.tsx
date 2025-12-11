@@ -246,34 +246,34 @@ export default function TantraTypesSection() {
       {/* DETAILED MODAL */}
       {selectedTantra !== null && (
         <div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 pt-20 sm:pt-24 md:pt-16"
+          className="fixed top-0 left-0 right-0 bottom-0 bg-black/60 backdrop-blur-sm z-40 pt-32 sm:pt-40 flex items-start justify-center overflow-y-auto p-3 sm:p-4"
           onClick={() => setSelectedTantra(null)}
         >
-          {/* Close Button - Positioned for both mobile and desktop */}
-          <button
-            onClick={() => setSelectedTantra(null)}
-            className="fixed top-20 sm:top-24 md:top-16 right-4 sm:right-6 text-white hover:text-accent-red hover:bg-black/20 rounded-full p-2 transition z-60"
-            aria-label="Close modal"
-          >
-            <svg
-              className="w-6 h-6 sm:w-8 sm:h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-
           <div
-            className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-4xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-4xl overflow-y-auto relative"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close Button - On the image */}
+            <button
+              onClick={() => setSelectedTantra(null)}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white bg-accent-red hover:bg-accent-red/80 rounded-full p-3 sm:p-4 transition-all duration-300 z-50 shadow-2xl"
+              aria-label="Close modal"
+            >
+              <svg
+                className="w-8 h-8 sm:w-10 sm:h-10 stroke-current"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={3}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
             {/* Header with Image - Responsive height */}
             <div className="relative h-48 sm:h-64 md:h-96">
               <Image
