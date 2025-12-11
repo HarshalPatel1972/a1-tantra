@@ -15,7 +15,7 @@ export default function CallMeButton() {
           onClick={() => window.open(`tel:${phoneNumber}`)}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="relative group flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-linear-to-br from-deep-brown to-deep-brown/70 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
+          className="relative group flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-deep-brown rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
         >
           {/* Phone Icon */}
           <svg
