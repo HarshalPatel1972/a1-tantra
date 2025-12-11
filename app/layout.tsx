@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import CallMeButton from "@/components/CallMeButton";
 // import AnimatedGradientBg from "@/components/AnimatedGradientBg";
 
 const playfair = Playfair_Display({
@@ -63,6 +64,7 @@ export default function RootLayout({
         {/* <AnimatedGradientBg /> */}
         <Navbar />
         <main className="pt-24 md:pt-32 relative z-0">{children}</main>
+        <CallMeButton />
       </body>
     </html>
   );

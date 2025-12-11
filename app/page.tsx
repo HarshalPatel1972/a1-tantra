@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import WelcomeHome from "@/components/WelcomeHome";
 import RealTalk from "@/components/RealTalk";
-import TantraPathsGuides from "@/components/TantraPathsGuides";
 import TantraTypesSection from "@/components/TantraTypesSection";
 import SessionsGrid from "@/components/SessionsGrid";
 import BuildJourneyCTA from "@/components/BuildJourneyCTA";
@@ -18,7 +17,6 @@ export default function Home() {
       <Hero />
       <WelcomeHome />
       <RealTalk />
-      <TantraPathsGuides />
       <TantraTypesSection />
       <SessionsGrid />
       <BuildJourneyCTA />

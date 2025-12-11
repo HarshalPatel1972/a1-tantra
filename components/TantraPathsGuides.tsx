@@ -13,8 +13,8 @@ export default function TantraPathsGuides() {
         "The Divine Feminine path that worships the universal creative power through the goddess. Focuses on the dynamic energy of the cosmos and the sacred feminine principle.",
       image: "/images/shakti-tantra.jpg",
       pricing: [
-        { duration: "90 min", price: "₹20,000" },
-        { duration: "120 min", price: "₹25,000" },
+        { duration: "90 min", price: "₹25,000" },
+        { duration: "120 min", price: "₹30,000" },
       ],
     },
     {
@@ -24,52 +24,8 @@ export default function TantraPathsGuides() {
         "Works with the serpent energy coiled at the base of the spine. Through practices and initiation, awakens this latent force and guides it upward through the energy channels.",
       image: "/images/Kundalini-Tantra.jpg",
       pricing: [
-        { duration: "120 min", price: "₹25,000" },
-        { duration: "150 min", price: "₹35,000" },
-      ],
-    },
-    {
-      name: "Kaula Tantra",
-      icon: "",
-      description:
-        "The 'family path' that embraces household life and partnerships. Practices are done with a partner or within spiritual communities, celebrating the sacred in everyday relationships.",
-      image: "/images/Kaula-Tantra.jpg",
-      pricing: [
-        { duration: "120 min", price: "₹25,000" },
-        { duration: "3 hours", price: "₹45,000" },
-      ],
-    },
-    {
-      name: "Tibetan Tantra",
-      icon: "",
-      description:
-        "The Buddhist tantric tradition emphasizing visualization of deities and the union of wisdom and compassion. Highly systematic and deeply connected to monastic practice.",
-      image: "/images/Tibetan-Tantra.jpg",
-      pricing: [
-        { duration: "90 min", price: "₹20,000" },
-        { duration: "150 min", price: "₹35,000" },
-      ],
-    },
-    {
-      name: "Right-Hand Tantra",
-      icon: "",
-      description:
-        "The traditional, conservative approach emphasizing ethical conduct and alignment with societal norms. Uses internal visualization and meditation within socially acceptable frameworks.",
-      image: "/images/Right-Hand-Tantra.jpg",
-      pricing: [
-        { duration: "90 min", price: "₹20,000" },
-        { duration: "120 min", price: "₹25,000" },
-      ],
-    },
-    {
-      name: "Left-Hand Tantra",
-      icon: "",
-      description:
-        "The transgressive path that deliberately works with taboo practices to transcend conventional limits. Uses unconventional methods to break through spiritual barriers and ego-attachments.",
-      image: "/images/Left-Hand-Tantra.jpg",
-      pricing: [
-        { duration: "150 min", price: "₹35,000" },
-        { duration: "3 hours", price: "₹45,000" },
+        { duration: "150 min", price: "₹40,000" },
+        { duration: "3 hours", price: "₹55,000" },
       ],
     },
   ];
@@ -86,7 +42,7 @@ export default function TantraPathsGuides() {
         </p>
 
         {/* Grid of Tantra Paths with Images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {tantraPathsWithImages.map((path, idx) => (
             <div
               key={idx}

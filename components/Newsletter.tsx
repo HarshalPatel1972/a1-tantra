@@ -26,45 +26,68 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-12 md:py-16 bg-deep-brown text-cream">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="serif-heading text-4xl font-bold mb-4">
-          Feeling overwhelmed about Tantra?
-        </h2>
-        <p className="text-lg text-cream/80 mb-12">
-          We can help. Subscribe to our newsletter for weekly insights,
-          guidance, and sacred practices.
-        </p>
+    <section className="py-12 md:py-20 bg-deep-brown text-cream">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="serif-heading text-4xl md:text-5xl font-bold mb-6">
+            Feeling overwhelmed about Tantra?
+          </h2>
+          <p className="text-lg text-cream/80 leading-relaxed">
+            We can help. Subscribe to our newsletter for weekly insights,
+            guidance, and sacred practices.
+          </p>
+        </div>
 
         {submitted && (
-          <div className="mb-8 p-4 bg-soft-gold/20 border border-soft-gold rounded-lg text-soft-gold">
+          <div className="mb-8 p-4 bg-soft-gold/20 border border-soft-gold rounded-lg text-soft-gold text-center">
             Thank you! Check your email to confirm your subscription.
           </div>
         )}
 
+        {/* Newsletter Form - Styled Box */}
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row gap-3"
+          className="bg-cream/10 border-2 border-cream/30 rounded-lg p-6 md:p-8 backdrop-blur-sm"
         >
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 px-4 py-3 rounded-sm bg-cream text-deep-brown placeholder-deep-brown/50 focus:outline-none focus:ring-2 focus:ring-accent-red"
-            required
-            disabled={loading}
-          />
-          <button
-            type="submit"
-            disabled={loading}
-            className="px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-soft-gold hover:text-deep-brown transition disabled:opacity-50"
-          >
-            {loading ? "Subscribing..." : "SUBSCRIBE"}
-          </button>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex-1 relative">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-5 py-4 rounded-lg bg-cream text-deep-brown placeholder-deep-brown/50 focus:outline-none focus:ring-2 focus:ring-accent-red focus:ring-offset-2 focus:ring-offset-deep-brown transition font-medium"
+                required
+                disabled={loading}
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="px-8 py-4 bg-linear-to-r from-deep-brown to-deep-brown/80 text-cream font-bold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap"
+            >
+              {loading ? "Subscribing..." : "SUBSCRIBE"}
+              {!loading && (
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </form>
 
-        <p className="text-xs text-cream/60 mt-4">
+        <p className="text-xs text-cream/60 mt-6 text-center">
           We respect your privacy. Unsubscribe at any time.
         </p>
       </div>

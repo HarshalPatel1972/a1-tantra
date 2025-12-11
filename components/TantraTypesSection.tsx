@@ -10,7 +10,7 @@ export default function TantraTypesSection() {
       description:
         "Emphasizes external practices and ritual action: physical purity, ritual bathing, mantra recitation, offerings, and carefully structured ceremonial conduct. It is about aligning body and behavior with sacred intention.",
       duration: "90 min",
-      price: "₹20,000",
+      price: "₹25,000",
       image: "/images/Kriya-Tantra.jpg",
     },
     {
@@ -19,7 +19,7 @@ export default function TantraTypesSection() {
       description:
         "Balances outer ritual with inner meditative stability. Practitioners still perform ceremonies and symbolic actions, but the focus shifts more strongly toward devotion, visualization, and maintaining mindful awareness during activity.",
       duration: "120 min",
-      price: "₹25,000",
+      price: "₹30,000",
       image: "/images/Carya-Tantra.jpg",
     },
     {
@@ -28,7 +28,7 @@ export default function TantraTypesSection() {
       description:
         "Centers on internal practice and the union of mind with enlightened qualities. Visualization of deities, mantra, and subtle-energy awareness become primary, with less emphasis on elaborate external ritual and more on continuous meditative presence.",
       duration: "150 min",
-      price: "₹35,000",
+      price: "₹40,000",
       image: "/images/Yoga-Tantra.jpg",
     },
     {
@@ -37,7 +37,7 @@ export default function TantraTypesSection() {
       description:
         "Represents the most advanced level of tantra, working directly with subtle body, channels, winds, and innate awareness. It involves special internal practices aimed at complete union of wisdom and compassion, and realization of the nature of mind.",
       duration: "3 hours",
-      price: "₹45,000",
+      price: "₹55,000",
       image: "/images/Anuttarayoga-Tantra.jpg",
     },
   ];
@@ -87,7 +87,7 @@ export default function TantraTypesSection() {
                   {/* Subtitle - Dynamic bright color for maximum contrast */}
                   <p
                     style={{ mixBlendMode: "lighten" }}
-                    className="font-nav text-xs font-bold uppercase tracking-widest text-yellow-200 drop-shadow-lg"
+                    className="font-nav text-xs font-bold uppercase tracking-widest text-yellow-100 drop-shadow-lg"
                   >
                     {tantra.subtitle}
                   </p>
@@ -98,7 +98,7 @@ export default function TantraTypesSection() {
                   {/* Description */}
                   <p
                     style={{ mixBlendMode: "lighten" }}
-                    className="font-body text-sm md:text-base text-white leading-relaxed line-clamp-3 drop-shadow-md"
+                    className="font-body text-sm md:text-base text-yellow-200 leading-relaxed line-clamp-3 drop-shadow-md"
                   >
                     {tantra.description}
                   </p>
