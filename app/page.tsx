@@ -8,6 +8,7 @@ import TantraTypesSection from "@/components/TantraTypesSection";
 import SessionsGrid from "@/components/SessionsGrid";
 import BuildJourneyCTA from "@/components/BuildJourneyCTA";
 import OriginStory from "@/components/OriginStory";
+import InstagramInvite from "@/components/InstagramInvite";
 import Newsletter from "@/components/Newsletter";
 import InstagramGrid from "@/components/InstagramGrid";
 
@@ -21,6 +22,7 @@ export default function Home() {
       <SessionsGrid />
       <BuildJourneyCTA />
       <OriginStory />
+      <InstagramInvite />
       <Newsletter />
       <InstagramGrid />
       <Footer />
