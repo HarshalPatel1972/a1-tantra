@@ -50,7 +50,7 @@ export default function Hero() {
                 </Link>
 
                 <Link
-                  href="/paths"
+                  href="#tantra-paths"
                   className="
     px-8 py-4 
     border-2 border-white 
