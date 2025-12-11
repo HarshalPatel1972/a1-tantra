@@ -62,9 +62,19 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   const navLinks = [
     { label: "RESOURCES", href: "/resources" },
-    { label: "TANTRA PATHS", href: "/paths" },
+    { label: "TANTRA PATHS", href: "#tantra-paths" },
     { label: "THERAPIES", href: "/therapies" },
     { label: "SESSIONS", href: "/sessions" },
   ];
@@ -90,6 +100,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={(e) => handleSmoothScroll(e, link.href)}
               className="font-nav text-sm lg:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
@@ -190,8 +201,11 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={(e) => {
+                handleSmoothScroll(e, link.href);
+                setIsOpen(false);
+              }}
               className="block font-nav text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors py-2"
-              onClick={() => setIsOpen(false)}
             >
               {link.label}
             </Link>
