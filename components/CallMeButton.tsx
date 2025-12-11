@@ -15,7 +15,8 @@ export default function CallMeButton() {
           onClick={() => window.open(`tel:${phoneNumber}`)}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="relative group flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-accent-red rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
+          style={{ backgroundColor: "#E44426" }}
+          className="relative group flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
         >
           {/* Phone Icon */}
           <svg
@@ -32,19 +33,21 @@ export default function CallMeButton() {
 
         {/* Tooltip on Desktop */}
         <div
-          className={`absolute bottom-full right-0 mb-3 px-4 py-2 bg-accent-red text-cream rounded-lg whitespace-nowrap font-bold text-sm transition-all duration-300 pointer-events-none shadow-lg ${
+          style={{ backgroundColor: "#E44426" }}
+          className={`absolute bottom-full right-0 mb-3 px-4 py-2 text-cream rounded-lg whitespace-nowrap font-bold text-sm transition-all duration-300 pointer-events-none shadow-lg ${
             isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
           } hidden md:block`}
         >
           Call Me Now
-          <div className="absolute top-full right-2 w-2 h-2 bg-accent-red transform rotate-45"></div>
+          <div style={{ backgroundColor: "#E44426" }} className="absolute top-full right-2 w-2 h-2 transform rotate-45"></div>
         </div>
       </div>
 
       {/* Mobile Tooltip */}
       <div className="fixed bottom-24 right-6 md:hidden z-40 pointer-events-none">
         <div
-          className={`px-3 py-2 bg-accent-red text-cream rounded-lg text-xs font-bold transition-all duration-300 shadow-lg ${
+          style={{ backgroundColor: "#E44426" }}
+          className={`px-3 py-2 text-cream rounded-lg text-xs font-bold transition-all duration-300 shadow-lg ${
             isHovered ? "opacity-100" : "opacity-0"
           }`}
         >
