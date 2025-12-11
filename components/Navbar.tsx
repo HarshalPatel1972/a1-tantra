@@ -185,7 +185,7 @@ export default function Navbar() {
 
       {/* MOBILE DROPDOWN MENU */}
       {isOpen && (
-        <div className="md:hidden bg-cream/98 backdrop-blur-sm border-t border-black/10 pb-4 px-6 space-y-3">
+        <div className="md:hidden bg-cream/95 backdrop-blur-sm border-t border-black/10 pb-4 px-6 space-y-3">
           {navLinks.map((link) => (
             <Link
               key={link.href}
