@@ -246,13 +246,13 @@ export default function TantraTypesSection() {
       {/* DETAILED MODAL */}
       {selectedTantra !== null && (
         <div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4 pt-20 sm:pt-24 md:pt-16"
           onClick={() => setSelectedTantra(null)}
         >
           {/* Close Button - Positioned for both mobile and desktop */}
           <button
             onClick={() => setSelectedTantra(null)}
-            className="fixed top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-accent-red hover:bg-black/20 rounded-full p-2 transition z-60"
+            className="fixed top-20 sm:top-24 md:top-16 right-4 sm:right-6 text-white hover:text-accent-red hover:bg-black/20 rounded-full p-2 transition z-60"
             aria-label="Close modal"
           >
             <svg
