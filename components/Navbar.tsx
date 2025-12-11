@@ -62,7 +62,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       const element = document.querySelector(href);
@@ -196,7 +199,7 @@ export default function Navbar() {
 
       {/* MOBILE DROPDOWN MENU */}
       {isOpen && (
-        <div className="md:hidden bg-cream/95 backdrop-blur-sm border-t border-black/10 pb-4 px-6 space-y-3">
+        <div className="md:hidden bg-stone-100/80 backdrop-blur-lg border-t border-deep-brown/20 pb-4 px-6 space-y-3">
           {navLinks.map((link) => (
             <Link
               key={link.href}
