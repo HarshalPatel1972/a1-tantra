@@ -16,7 +16,8 @@ export default function InstagramInvite() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              background: "linear-gradient(45deg, #feda75 0%, #fa7e1e 25%, #d92e7f 50%, #9b36b7 75%, #515bd4 100%)",
+              background:
+                "linear-gradient(45deg, #feda75 0%, #fa7e1e 25%, #d92e7f 50%, #9b36b7 75%, #515bd4 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",

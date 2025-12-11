@@ -36,7 +36,8 @@ export default function TantraTypesSection() {
           "Ideal for beginners, individuals seeking structured practices, those with strong devotional inclinations, and practitioners who benefit from external rituals.",
         prerequisites:
           "Basic understanding of tantric philosophy, openness to ritual, physical mobility for ceremonial practices",
-        practiceSchedule: "90-minute guided sessions covering theory, ritual instruction, and supervised practice",
+        practiceSchedule:
+          "90-minute guided sessions covering theory, ritual instruction, and supervised practice",
       },
     },
     {
@@ -68,7 +69,8 @@ export default function TantraTypesSection() {
           "Practitioners who have mastered Kriya Tantra basics, those seeking to integrate action with awareness, individuals drawn to both ritual and meditation.",
         prerequisites:
           "Completion of Kriya Tantra or equivalent foundational practice, ability to sustain attention during extended sessions",
-        practiceSchedule: "120-minute sessions with 30 minutes of foundational theory, 50 minutes of guided ritual, and 40 minutes of integrated meditation",
+        practiceSchedule:
+          "120-minute sessions with 30 minutes of foundational theory, 50 minutes of guided ritual, and 40 minutes of integrated meditation",
       },
     },
     {
@@ -100,7 +102,8 @@ export default function TantraTypesSection() {
           "Advanced practitioners with strong meditation foundation, those serious about rapid spiritual transformation, individuals committed to daily practice.",
         prerequisites:
           "Mastery of Carya Tantra, established meditation practice (minimum 1 year), ability to maintain focus for extended periods",
-        practiceSchedule: "150-minute advanced sessions with 20 minutes of theory, 40 minutes of visualization instruction, and 90 minutes of guided meditation practice",
+        practiceSchedule:
+          "150-minute advanced sessions with 20 minutes of theory, 40 minutes of visualization instruction, and 90 minutes of guided meditation practice",
       },
     },
     {
@@ -133,7 +136,8 @@ export default function TantraTypesSection() {
           "Highly committed practitioners with substantial experience, those with unwavering dedication to enlightenment, advanced meditators ready for the most profound teachings.",
         prerequisites:
           "Mastery of Yoga Tantra, minimum 3+ years serious daily meditation practice, proper guru-student relationship, ethical foundation, intellectual understanding of emptiness",
-        practiceSchedule: "3-hour intensive sessions with advanced theory, complex visualization practices, subtle energy manipulation, and deep meditation states",
+        practiceSchedule:
+          "3-hour intensive sessions with advanced theory, complex visualization practices, subtle energy manipulation, and deep meditation states",
       },
     },
   ];
@@ -227,7 +231,9 @@ export default function TantraTypesSection() {
 
                     {/* Click to Learn More */}
                     <div className="pt-2">
-                      <span className="text-xs text-white/70 italic">Click to learn more →</span>
+                      <span className="text-xs text-white/70 italic">
+                        Click to learn more →
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -240,25 +246,36 @@ export default function TantraTypesSection() {
       {/* DETAILED MODAL */}
       {selectedTantra !== null && (
         <div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-3 sm:p-4"
           onClick={() => setSelectedTantra(null)}
         >
+          {/* Close Button - Positioned for both mobile and desktop */}
           <button
             onClick={() => setSelectedTantra(null)}
-            className="absolute top-4 right-4 text-white hover:text-accent-red transition z-60"
+            className="fixed top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-accent-red hover:bg-black/20 rounded-full p-2 transition z-60"
             aria-label="Close modal"
           >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <svg
+              className="w-6 h-6 sm:w-8 sm:h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
 
           <div
-            className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-4xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header with Image */}
-            <div className="relative h-64 md:h-96">
+            {/* Header with Image - Responsive height */}
+            <div className="relative h-48 sm:h-64 md:h-96">
               <Image
                 src={tantraTypes[selectedTantra].image}
                 alt={tantraTypes[selectedTantra].name}
@@ -268,98 +285,137 @@ export default function TantraTypesSection() {
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
 
-              {/* Title Over Image */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <h1 className="font-title text-4xl md:text-5xl font-bold mb-2">
+              {/* Title Over Image - Responsive text */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
+                <h1 className="font-title text-2xl sm:text-3xl md:text-5xl font-bold mb-1 sm:mb-2">
                   {tantraTypes[selectedTantra].name}
                 </h1>
-                <p className="font-nav text-lg uppercase tracking-widest text-soft-gold">
+                <p className="font-nav text-xs sm:text-sm md:text-lg uppercase tracking-widest text-soft-gold">
                   {tantraTypes[selectedTantra].subtitle}
                 </p>
               </div>
             </div>
 
-            {/* Content */}
-            <div className="p-8 md:p-12 space-y-8">
+            {/* Content - Responsive padding */}
+            <div className="p-4 sm:p-6 md:p-12 space-y-6 sm:space-y-8">
               {/* Overview */}
               <div>
-                <h2 className="font-title text-2xl md:text-3xl font-bold text-deep-brown mb-4">Overview</h2>
-                <p className="text-lg text-deep-brown/80 leading-relaxed">
+                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-deep-brown mb-3 sm:mb-4">
+                  Overview
+                </h2>
+                <p className="text-sm sm:text-base md:text-lg text-deep-brown/80 leading-relaxed">
                   {tantraTypes[selectedTantra].fullDetails.overview}
                 </p>
               </div>
 
               {/* Key Focus */}
               <div>
-                <h2 className="font-title text-2xl md:text-3xl font-bold text-deep-brown mb-4">Key Focus Areas</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {tantraTypes[selectedTantra].fullDetails.keyFocus.map((focus, i) => (
-                    <div key={i} className="flex gap-3 items-start p-4 bg-cream rounded-lg border-l-4 border-accent-red">
-                      <svg className="w-5 h-5 text-accent-red shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <p className="text-deep-brown font-body">{focus}</p>
-                    </div>
-                  ))}
+                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-deep-brown mb-3 sm:mb-4">
+                  Key Focus Areas
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
+                  {tantraTypes[selectedTantra].fullDetails.keyFocus.map(
+                    (focus, i) => (
+                      <div
+                        key={i}
+                        className="flex gap-2 sm:gap-3 items-start p-3 sm:p-4 bg-cream rounded-lg border-l-4 border-accent-red"
+                      >
+                        <svg
+                          className="w-4 h-4 sm:w-5 sm:h-5 text-accent-red shrink-0 mt-0.5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <p className="text-xs sm:text-sm md:text-base text-deep-brown font-body">
+                          {focus}
+                        </p>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
 
               {/* Benefits */}
               <div>
-                <h2 className="font-title text-2xl md:text-3xl font-bold text-deep-brown mb-4">Key Benefits</h2>
-                <div className="space-y-2">
-                  {tantraTypes[selectedTantra].fullDetails.benefits.map((benefit, i) => (
-                    <div key={i} className="flex gap-3 items-start">
-                      <svg className="w-5 h-5 text-soft-gold shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                      <p className="text-deep-brown/80 font-body">{benefit}</p>
-                    </div>
-                  ))}
+                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-deep-brown mb-3 sm:mb-4">
+                  Key Benefits
+                </h2>
+                <div className="space-y-2 sm:space-y-3">
+                  {tantraTypes[selectedTantra].fullDetails.benefits.map(
+                    (benefit, i) => (
+                      <div key={i} className="flex gap-2 sm:gap-3 items-start">
+                        <svg
+                          className="w-4 h-4 sm:w-5 sm:h-5 text-soft-gold shrink-0 mt-0.5"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <p className="text-xs sm:text-sm md:text-base text-deep-brown/80 font-body">
+                          {benefit}
+                        </p>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
 
               {/* Who Should Take This */}
-              <div className="bg-soft-gold/10 border-l-4 border-soft-gold p-6 rounded-lg">
-                <h2 className="font-title text-xl font-bold text-deep-brown mb-3">Who Should Take This Path</h2>
-                <p className="text-deep-brown/80 font-body leading-relaxed">
+              <div className="bg-soft-gold/10 border-l-4 border-soft-gold p-4 sm:p-6 rounded-lg">
+                <h2 className="font-title text-lg sm:text-xl font-bold text-deep-brown mb-2 sm:mb-3">
+                  Who Should Take This Path
+                </h2>
+                <p className="text-xs sm:text-sm md:text-base text-deep-brown/80 font-body leading-relaxed">
                   {tantraTypes[selectedTantra].fullDetails.whotakes}
                 </p>
               </div>
 
               {/* Prerequisites */}
-              <div className="bg-accent-red/10 border-l-4 border-accent-red p-6 rounded-lg">
-                <h2 className="font-title text-xl font-bold text-deep-brown mb-3">Prerequisites</h2>
-                <p className="text-deep-brown/80 font-body leading-relaxed">
+              <div className="bg-accent-red/10 border-l-4 border-accent-red p-4 sm:p-6 rounded-lg">
+                <h2 className="font-title text-lg sm:text-xl font-bold text-deep-brown mb-2 sm:mb-3">
+                  Prerequisites
+                </h2>
+                <p className="text-xs sm:text-sm md:text-base text-deep-brown/80 font-body leading-relaxed">
                   {tantraTypes[selectedTantra].fullDetails.prerequisites}
                 </p>
               </div>
 
               {/* Session Details */}
               <div>
-                <h2 className="font-title text-2xl md:text-3xl font-bold text-deep-brown mb-4">Session Details</h2>
-                <p className="text-deep-brown/80 font-body mb-6 leading-relaxed">
+                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-deep-brown mb-3 sm:mb-4">
+                  Session Details
+                </h2>
+                <p className="text-xs sm:text-sm md:text-base text-deep-brown/80 font-body mb-4 sm:mb-6 leading-relaxed">
                   {tantraTypes[selectedTantra].fullDetails.practiceSchedule}
                 </p>
 
-                {/* Duration & Price Display */}
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="bg-cream p-6 rounded-lg text-center border-2 border-deep-brown/20">
-                    <span className="text-sm uppercase text-deep-brown/60 font-semibold">Duration</span>
-                    <p className="text-2xl md:text-3xl font-bold text-deep-brown mt-2">
+                {/* Duration & Price Display - Responsive grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
+                  <div className="bg-cream p-3 sm:p-6 rounded-lg text-center border-2 border-deep-brown/20">
+                    <span className="text-xs uppercase text-deep-brown/60 font-semibold block">
+                      Duration
+                    </span>
+                    <p className="text-lg sm:text-2xl md:text-3xl font-bold text-deep-brown mt-1 sm:mt-2">
                       {tantraTypes[selectedTantra].duration}
                     </p>
                   </div>
-                  <div className="bg-cream p-6 rounded-lg text-center border-2 border-deep-brown/20">
-                    <span className="text-sm uppercase text-deep-brown/60 font-semibold">From</span>
-                    <p className="text-2xl md:text-3xl font-bold text-accent-red mt-2">
+                  <div className="bg-cream p-3 sm:p-6 rounded-lg text-center border-2 border-deep-brown/20">
+                    <span className="text-xs uppercase text-deep-brown/60 font-semibold block">
+                      From
+                    </span>
+                    <p className="text-lg sm:text-2xl md:text-3xl font-bold text-accent-red mt-1 sm:mt-2">
                       {tantraTypes[selectedTantra].price}
                     </p>
                   </div>
-                  <div className="bg-deep-brown p-6 rounded-lg text-center">
+                  <div className="bg-deep-brown p-3 sm:p-6 rounded-lg text-center col-span-2 sm:col-span-1">
                     <a
                       href="/book-session"
-                      className="inline-block w-full text-center px-6 py-3 bg-accent-red text-white font-semibold rounded-lg hover:bg-accent-red/90 transition-all duration-300"
+                      className="inline-block w-full text-center px-4 sm:px-6 py-2 sm:py-3 bg-accent-red text-white text-xs sm:text-sm font-semibold rounded-lg hover:bg-accent-red/90 transition-all duration-300"
                     >
                       Book Now
                     </a>
