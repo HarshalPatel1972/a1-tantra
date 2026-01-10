@@ -7,20 +7,23 @@ export default function CallMeButton() {
   return (
     <>
       {/* Fixed WhatsApp Icon */}
-      <div className="fixed bottom-6 right-6 z-40">
+      <div className="fixed bottom-6 right-6 z-50">
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center w-16 h-16 md:w-24 md:h-24 transition-all duration-300 transform hover:scale-110 active:scale-95"
+          className="inline-flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95"
           title="Chat with us on WhatsApp"
           aria-label="Open WhatsApp chat"
         >
           <i
-            className="ri-whatsapp-fill text-[#25D366]"
+            className="ri-whatsapp-fill"
             style={{
-              fontSize: "2rem",
-              lineHeight: "1",
+              fontSize: "56px",
+              color: "#25D366",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           ></i>
         </a>
