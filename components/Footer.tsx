@@ -10,36 +10,36 @@ export default function Footer() {
       href: "https://instagram.com",
       color: "#E4405F",
     },
-    {
-      name: "Facebook",
-      icon: "ri-facebook-fill",
-      href: "https://facebook.com",
-      color: "#1877F2",
-    },
+    // {
+    //   name: "Facebook",
+    //   icon: "ri-facebook-fill",
+    //   href: "https://facebook.com",
+    //   color: "#1877F2",
+    // },
     {
       name: "WhatsApp",
       icon: "ri-whatsapp-fill",
       href: "https://wa.me/919217821866?text=Hello%20A1%20Tantra",
       color: "#25D366",
     },
-    {
-      name: "Twitter",
-      icon: "ri-twitter-x-fill",
-      href: "https://twitter.com",
-      color: "#1DA1F2",
-    },
-    {
-      name: "LinkedIn",
-      icon: "ri-linkedin-box-fill",
-      href: "https://linkedin.com",
-      color: "#0A66C2",
-    },
-    {
-      name: "Email",
-      icon: "ri-mail-fill",
-      href: "mailto:hello@a1tantra.com",
-      color: "#E43A1D",
-    },
+    // {
+    //   name: "Twitter",
+    //   icon: "ri-twitter-x-fill",
+    //   href: "https://twitter.com",
+    //   color: "#1DA1F2",
+    // },
+    // {
+    //   name: "LinkedIn",
+    //   icon: "ri-linkedin-box-fill",
+    //   href: "https://linkedin.com",
+    //   color: "#0A66C2",
+    // },
+    // {
+    //   name: "Email",
+    //   icon: "ri-mail-fill",
+    //   href: "mailto:hello@a1tantra.com",
+    //   color: "#E43A1D",
+    // },
   ];
 
   return (
