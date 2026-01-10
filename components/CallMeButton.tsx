@@ -6,20 +6,17 @@ export default function CallMeButton() {
 
   return (
     <>
-      {/* Fixed WhatsApp Button - Modern flat-plus UI */}
+      {/* Fixed WhatsApp Icon */}
       <div className="fixed bottom-6 right-6 z-40">
-        {/* Main Button - Perfect circle with vibrant WhatsApp green */}
+        {/* WhatsApp Icon - Large and interactive */}
         <button
           onClick={() => window.open(whatsappUrl)}
-          style={{
-            background: "linear-gradient(135deg, #25D366 0%, #20BA58 100%)",
-            boxShadow: "0 8px 24px rgba(37, 211, 102, 0.3)",
-          }}
-          className="relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-2xl active:scale-95"
+          className="flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95"
+          title="Chat with us on WhatsApp"
         >
-          {/* WhatsApp Icon - White for maximum contrast */}
+          {/* WhatsApp Icon - Green with large size */}
           <svg
-            className="w-7 h-7 md:w-9 md:h-9 text-white transition-transform duration-300 hover:scale-110"
+            className="w-16 h-16 md:w-24 md:h-24 text-[#25D366] transition-transform duration-300 hover:scale-110"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
