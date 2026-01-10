@@ -24,7 +24,7 @@ export default function CallMeButton() {
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-button inline-flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95"
-          title="Open WhatsApp"
+          title="Call me"
           aria-label="Open WhatsApp chat"
         >
           <i className="ri-whatsapp-fill"></i>
