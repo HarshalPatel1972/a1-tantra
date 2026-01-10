@@ -12,25 +12,19 @@ export default function CallMeButton() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95"
+          className="flex items-center justify-center w-16 h-16 md:w-24 md:h-24 transition-all duration-300 transform hover:scale-110 active:scale-95"
           title="Chat with us on WhatsApp"
           aria-label="Open WhatsApp chat"
         >
           <i
-            className="ri-whatsapp-fill"
+            className="ri-whatsapp-fill text-[#25D366]"
             style={{
-              fontSize: "64px",
-              color: "#25D366",
+              fontSize: "2rem",
+              lineHeight: "1",
             }}
           ></i>
         </a>
       </div>
-
-      {/* Link to Remix Icon CSS */}
-      <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-        rel="stylesheet"
-      />
     </>
   );
 }
