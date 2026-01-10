@@ -2,7 +2,7 @@
 
 export default function CallMeButton() {
   const phoneNumber = "919217821866";
-  const callUrl = `tel:${phoneNumber}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
   return (
     <>
@@ -16,14 +16,16 @@ export default function CallMeButton() {
           line-height: 1 !important;
         }
       `}</style>
-      
+
       {/* Fixed WhatsApp Icon */}
       <div className="fixed bottom-6 right-6 z-50">
         <a
-          href={callUrl}
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="whatsapp-button inline-flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95"
-          title="Call me"
-          aria-label="Call us"
+          title="Message us on WhatsApp"
+          aria-label="Open WhatsApp chat"
         >
           <i className="ri-whatsapp-fill"></i>
         </a>
