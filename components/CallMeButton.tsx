@@ -1,7 +1,7 @@
 "use client";
 
 export default function CallMeButton() {
-  const phoneNumber = "919217821866";
+  const phoneNumber = "9217795928";
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
   return (

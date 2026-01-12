@@ -19,7 +19,7 @@ export default function Footer() {
     {
       name: "WhatsApp",
       icon: "ri-whatsapp-fill",
-      href: "https://wa.me/919217821866",
+      href: "https://wa.me/9217795928",
       color: "#25D366",
     },
     // {
