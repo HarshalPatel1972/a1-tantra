@@ -96,15 +96,15 @@ export default function Navbar() {
       `}
     >
       {/* DESKTOP NAVBAR */}
-      <div className="hidden md:flex relative w-full h-28 items-center px-8 md:px-8 lg:px-12 xl:px-14 2xl:px-16 gap-4">
+      <div className="hidden md:flex relative w-full h-[80px] md:h-[96px] lg:h-[104px] xl:h-[112px] 2xl:h-[120px] items-center px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 gap-3 md:gap-4 lg:gap-5 xl:gap-6 2xl:gap-7">
         {/* LEFT LINKS - FLEX LEFT SIDE */}
-        <div className="flex gap-3 md:gap-4 lg:gap-4 xl:gap-5 2xl:gap-5 items-center flex-1">
+        <div className="flex gap-[10px] md:gap-[12px] lg:gap-[14px] xl:gap-[16px] 2xl:gap-[20px] items-center flex-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={(e) => handleSmoothScroll(e, link.href)}
-              className="font-nav text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+              className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -120,8 +120,8 @@ export default function Navbar() {
             drop-shadow-sm hover:drop-shadow-md
             ${
               scrolled
-                ? "text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl"
-                : "text-4xl md:text-5xl lg:text-6xl xl:text-[70px] 2xl:text-[70px]"
+                ? "text-[24px] md:text-[28px] lg:text-[32px] xl:text-[40px] 2xl:text-[48px]"
+                : "text-[40px] md:text-[54px] lg:text-[62px] xl:text-[70px] 2xl:text-[84px]"
             }
           `}
           style={{
@@ -135,12 +135,12 @@ export default function Navbar() {
         </Link>
 
         {/* RIGHT LINKS - FLEX RIGHT SIDE */}
-        <div className="flex gap-4 md:gap-5 lg:gap-6 xl:gap-8 2xl:gap-10 items-center justify-end flex-1">
+        <div className="flex gap-[10px] md:gap-[12px] lg:gap-[14px] xl:gap-[16px] 2xl:gap-[20px] items-center justify-end flex-1">
           {rightLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-nav text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+              className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -149,13 +149,13 @@ export default function Navbar() {
             className="text-deep-brown hover:text-accent-red transition-colors duration-200"
             aria-label="Search"
           >
-            <SearchIcon className="w-5 lg:w-6 h-5 lg:h-6" />
+            <SearchIcon className="w-[18px] md:w-[20px] lg:w-[22px] xl:w-[24px] 2xl:w-[28px] h-[18px] md:h-[20px] lg:h-[22px] xl:h-[24px] 2xl:h-[28px]" />
           </button>
           <button
             className="text-deep-brown hover:text-accent-red transition-colors duration-200"
             aria-label="User account"
           >
-            <UserIcon className="w-5 lg:w-6 h-5 lg:h-6" />
+            <UserIcon className="w-[18px] md:w-[20px] lg:w-[22px] xl:w-[24px] 2xl:w-[28px] h-[18px] md:h-[20px] lg:h-[22px] xl:h-[24px] 2xl:h-[28px]" />
           </button>
         </div>
       </div>
