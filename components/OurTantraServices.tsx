@@ -44,11 +44,7 @@ export default function OurTantraServices() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, idx) => (
-            <Link
-              key={idx}
-              href={service.link}
-              className="group"
-            >
+            <Link key={idx} href={service.link} className="group">
               <div className="h-full p-8 bg-white border-2 border-deep-brown/10 hover:border-accent-red rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer">
                 {/* Icon */}
                 <div className="text-4xl mb-4">{service.icon}</div>

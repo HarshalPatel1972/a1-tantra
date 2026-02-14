@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 // SVG Icon Components
@@ -131,15 +132,21 @@ export default function Navbar() {
             fontWeight: "700",
           }}
         >
-          <img
-            src="/images/Logo.png"
-            alt="A1 Tantra Logo"
-            className={`flex-shrink-0 transition-all duration-700 ease-out object-contain ${
-              scrolled
-                ? "w-[32px] md:w-[36px] lg:w-[40px] xl:w-[50px] 2xl:w-[64px] h-[32px] md:h-[36px] lg:h-[40px] xl:h-[50px] 2xl:h-[64px]"
-                : "w-[56px] md:w-[70px] lg:w-[80px] xl:w-[90px] 2xl:w-[110px] h-[56px] md:h-[70px] lg:h-[80px] xl:h-[90px] 2xl:h-[110px]"
-            }`}
-          />
+          <div className="relative">
+            <Image
+              src="/images/logo-main.png"
+              alt="A1 Tantra Logo"
+              width={110}
+              height={110}
+              priority
+              unoptimized
+              className={`flex-shrink-0 transition-all duration-700 ease-out object-contain ${
+                scrolled
+                  ? "w-[32px] md:w-[36px] lg:w-[40px] xl:w-[50px] 2xl:w-[64px] h-[32px] md:h-[36px] lg:h-[40px] xl:h-[50px] 2xl:h-[64px]"
+                  : "w-[56px] md:w-[70px] lg:w-[80px] xl:w-[90px] 2xl:w-[110px] h-[56px] md:h-[70px] lg:h-[80px] xl:h-[90px] 2xl:h-[110px]"
+              }`}
+            />
+          </div>
           <span>A1 TANTRA</span>
         </Link>
 
