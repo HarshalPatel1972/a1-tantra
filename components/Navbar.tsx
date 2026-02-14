@@ -173,7 +173,7 @@ export default function Navbar() {
       </div>
 
       {/* MOBILE NAVBAR */}
-      <div className="md:hidden flex relative max-w-7xl mx-auto px-6 pt-8 pb-4 items-center justify-between">
+      <div className="md:hidden flex relative max-w-7xl mx-auto px-6 pt-4 pb-3 items-center justify-between">
         {/* HAMBURGER MENU */}
         <button
           className="text-deep-brown hover:text-accent-red transition-colors"
