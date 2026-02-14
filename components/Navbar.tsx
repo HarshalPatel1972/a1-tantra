@@ -96,36 +96,32 @@ export default function Navbar() {
       `}
     >
       {/* DESKTOP NAVBAR */}
-      <div className="hidden md:flex relative w-full h-28 items-center px-8 md:px-8 lg:px-12 xl:px-14 2xl:px-16">
-        {/* LEFT LINKS - FLUSH LEFT */}
-        <div className="flex gap-3 md:gap-4 lg:gap-4 xl:gap-5 2xl:gap-5 items-center shrink-0">
+      <div className="hidden md:flex relative w-full h-28 items-center px-8 md:px-8 lg:px-12 xl:px-14 2xl:px-16 gap-4">
+        {/* LEFT LINKS - FLEX LEFT SIDE */}
+        <div className="flex gap-3 md:gap-4 lg:gap-4 xl:gap-5 2xl:gap-5 items-center flex-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={(e) => handleSmoothScroll(e, link.href)}
-              className={`font-nav text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap ${
-                (link.label === "TANTRA PATHS" || link.label === "THERAPIES") 
-                  ? "hidden lg:inline-block" 
-                  : ""
-              }`}
+              className="font-nav text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
             </Link>
           ))}
         </div>
 
-        {/* CENTER LOGO - ABSOLUTE CENTER */}
+        {/* CENTER LOGO - FLEX CENTER */}
         <Link
           href="/"
           className={`
-            font-bold tracking-tight text-[#E43A1D] select-none
-            absolute left-1/2 -translate-x-1/2 transition-all duration-700 ease-out
+            font-bold tracking-tight text-[#E43A1D] select-none flex-shrink-0
+            transition-all duration-700 ease-out
             drop-shadow-sm hover:drop-shadow-md
             ${
               scrolled
-                ? "text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl top-1/2 -translate-y-1/2"
-                : "text-4xl md:text-5xl lg:text-6xl xl:text-[70px] 2xl:text-[70px] top-[55%] -translate-y-1/2"
+                ? "text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-4xl"
+                : "text-4xl md:text-5xl lg:text-6xl xl:text-[70px] 2xl:text-[70px]"
             }
           `}
           style={{
@@ -138,8 +134,8 @@ export default function Navbar() {
           A1 TANTRA
         </Link>
 
-        {/* RIGHT LINKS - FLUSH RIGHT */}
-        <div className="flex gap-4 md:gap-5 lg:gap-6 xl:gap-8 2xl:gap-10 items-center ml-auto shrink-0">
+        {/* RIGHT LINKS - FLEX RIGHT SIDE */}
+        <div className="flex gap-4 md:gap-5 lg:gap-6 xl:gap-8 2xl:gap-10 items-center justify-end flex-1">
           {rightLinks.map((link) => (
             <Link
               key={link.href}
