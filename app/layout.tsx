@@ -42,6 +42,9 @@ export const metadata: Metadata = {
     siteName: "A1 Tantra",
     type: "website",
   },
+  verification: {
+    google: "WhDnZ2n4fhioUkkNSKitD12Xj-8syFzF0PIySqty8bM",
+  },
 };
 
 export default function RootLayout({
