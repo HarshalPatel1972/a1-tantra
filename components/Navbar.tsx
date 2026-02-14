@@ -173,7 +173,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/auth/signup"
-                className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide px-3 py-1 md:px-4 md:py-2 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-lg hover:from-amber-700 hover:to-amber-800 transition-colors duration-200 whitespace-nowrap"
+                className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide px-3 py-1 md:px-4 md:py-2 bg-accent-red text-cream rounded-sm hover:bg-deep-brown transition-colors duration-200 whitespace-nowrap"
               >
                 Join
               </Link>
@@ -285,7 +285,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/auth/signup"
-                  className="block w-full text-center py-2 bg-gradient-to-r from-amber-600 to-amber-700 text-white font-semibold uppercase rounded-lg hover:from-amber-700 hover:to-amber-800 transition-colors"
+                  className="block w-full text-center py-2 bg-accent-red text-cream font-semibold uppercase rounded-sm hover:bg-deep-brown transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Join Now

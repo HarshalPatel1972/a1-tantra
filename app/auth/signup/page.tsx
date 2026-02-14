@@ -58,19 +58,24 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-cream flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-lg shadow-2xl p-8">
+        {/* Form Card */}
+        <div className="bg-white rounded-sm border border-deep-brown/20 shadow-lg p-8">
           {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-slate-900 mb-2">Join A1 Tantra</h1>
-            <p className="text-slate-600">Create your spiritual journey account</p>
+          <div className="mb-8">
+            <h1 className="serif-heading text-4xl font-bold text-deep-brown mb-2">
+              Join A1 Tantra
+            </h1>
+            <p className="text-deep-brown/70">
+              Create your spiritual journey account
+            </p>
           </div>
 
           {/* Error Message */}
           {error && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-red-700 text-sm">{error}</p>
+            <div className="mb-6 p-4 bg-accent-red/10 border border-accent-red text-accent-red rounded-sm text-sm">
+              {error}
             </div>
           )}
 
@@ -78,7 +83,10 @@ export default function SignupPage() {
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Name */}
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+              <label
+                htmlFor="name"
+                className="block text-sm font-semibold text-deep-brown mb-2"
+              >
                 Full Name
               </label>
               <input
@@ -88,14 +96,17 @@ export default function SignupPage() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white text-deep-brown"
                 placeholder="Your name"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-semibold text-deep-brown mb-2"
+              >
                 Email Address
               </label>
               <input
@@ -105,14 +116,17 @@ export default function SignupPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white text-deep-brown"
                 placeholder="you@example.com"
               />
             </div>
 
             {/* Password */}
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-slate-700 mb-2">
+              <label
+                htmlFor="password"
+                className="block text-sm font-semibold text-deep-brown mb-2"
+              >
                 Password
               </label>
               <input
@@ -122,15 +136,18 @@ export default function SignupPage() {
                 value={formData.password}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white text-deep-brown"
                 placeholder="••••••••"
               />
-              <p className="text-xs text-slate-500 mt-1">At least 6 characters</p>
+              <p className="text-xs text-deep-brown/60 mt-1">At least 6 characters</p>
             </div>
 
             {/* Confirm Password */}
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-slate-700 mb-2">
+              <label
+                htmlFor="confirmPassword"
+                className="block text-sm font-semibold text-deep-brown mb-2"
+              >
                 Confirm Password
               </label>
               <input
@@ -140,7 +157,7 @@ export default function SignupPage() {
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white text-deep-brown"
                 placeholder="••••••••"
               />
             </div>
@@ -149,7 +166,7 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-2 rounded-lg transition duration-200"
+              className="w-full px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide"
             >
               {loading ? "Creating account..." : "Create Account"}
             </button>
@@ -158,32 +175,35 @@ export default function SignupPage() {
           {/* Divider */}
           <div className="my-6 relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-slate-300"></div>
+              <div className="w-full border-t border-deep-brown/20"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-slate-500">Or</span>
+              <span className="px-2 bg-white text-deep-brown/50">Or</span>
             </div>
           </div>
 
           {/* Login Link */}
-          <div className="text-center">
-            <p className="text-slate-600 text-sm">
+          <div className="text-center mb-6">
+            <p className="text-deep-brown/70 text-sm">
               Already have an account?{" "}
-              <Link href="/auth/login" className="text-amber-600 hover:text-amber-700 font-semibold">
+              <Link
+                href="/auth/login"
+                className="text-accent-red hover:text-deep-brown font-semibold transition"
+              >
                 Sign in
               </Link>
             </p>
           </div>
 
           {/* Terms */}
-          <div className="mt-6 pt-6 border-t border-slate-200">
-            <p className="text-xs text-slate-500 text-center">
+          <div className="pt-6 border-t border-deep-brown/20">
+            <p className="text-xs text-deep-brown/60 text-center">
               By signing up, you agree to our{" "}
-              <Link href="/terms" className="text-amber-600 hover:text-amber-700">
+              <Link href="/terms" className="text-accent-red hover:text-deep-brown">
                 Terms of Service
               </Link>
               {" "}and{" "}
-              <Link href="/privacy" className="text-amber-600 hover:text-amber-700">
+              <Link href="/privacy" className="text-accent-red hover:text-deep-brown">
                 Privacy Policy
               </Link>
             </p>
