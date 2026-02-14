@@ -28,7 +28,7 @@ export default function OurTantraServices() {
   ];
 
   return (
-    <section className="py-8 md:py-12 bg-cream">
+    <section className="py-4 md:py-6 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
