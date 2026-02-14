@@ -186,13 +186,13 @@ export default function Navbar() {
         {/* MOBILE LOGO */}
         <Link
           href="/"
-          className="font-bold text-3xl sm:text-4xl text-[#E43A1D] flex items-center gap-3 leading-none px-2"
+          className="font-bold text-4xl sm:text-5xl text-[#E43A1D] flex items-center gap-4 leading-none px-2"
           style={{ fontFamily: '"Vegawanty", sans-serif' }}
         >
           <img
             src="/images/logo-main.png"
             alt="A1 Tantra Logo"
-            className="w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 object-contain relative -top-[2px]"
+            className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 object-contain relative -top-[3px]"
           />
           <span>A1 TANTRA</span>
         </Link>
