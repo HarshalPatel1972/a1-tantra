@@ -47,7 +47,7 @@ export default function SessionsPage() {
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="serif-heading text-5xl font-bold text-deep-brown mb-8 text-center">
-            Our Sessions
+            Tantra Services in India
           </h1>
           <p className="text-lg text-deep-brown/70 text-center max-w-2xl mx-auto mb-16">
             Choose a session that aligns with your current journey and

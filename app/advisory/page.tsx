@@ -10,7 +10,7 @@ export default function AdvisoryPage() {
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="serif-heading text-5xl font-bold text-deep-brown mb-8">
-            Advisory Panel
+            Relationship Tantra Consultation
           </h1>
           <p className="text-lg text-deep-brown/70 mb-12">
             Meet the accomplished practitioners and scholars who ensure the
