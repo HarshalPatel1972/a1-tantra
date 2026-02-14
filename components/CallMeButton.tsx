@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function CallMeButton() {
   const phoneNumber = "919217821866";
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
@@ -16,11 +18,15 @@ export default function CallMeButton() {
           title="Message us on WhatsApp"
           aria-label="Open WhatsApp chat"
         >
-          {/* Using WhatsApp PNG from public/images */}
-          <img 
-            src="/images/whatsapp.png" 
-            alt="WhatsApp" 
+          {/* Using Next.js Image for better handling and performance */}
+          <Image
+            src="/images/whatsapp.png"
+            alt="WhatsApp"
+            width={80}
+            height={80}
             className="w-16 h-16 md:w-20 md:h-20 object-contain"
+            priority
+            unoptimized
           />
         </a>
       </div>
