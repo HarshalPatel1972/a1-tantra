@@ -34,7 +34,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-cream flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-cream flex items-start justify-center px-4 pt-8 md:pt-12 pb-20">
       <div className="w-full max-w-md">
         {/* Form Card */}
         <div className="bg-white rounded-sm border border-deep-brown/20 shadow-lg p-8">
