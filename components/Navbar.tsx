@@ -104,7 +104,11 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleSmoothScroll(e, link.href)}
-              className="font-nav text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+              className={`font-nav text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap ${
+                (link.label === "TANTRA PATHS" || link.label === "THERAPIES") 
+                  ? "hidden lg:inline-block" 
+                  : ""
+              }`}
             >
               {link.label}
             </Link>
