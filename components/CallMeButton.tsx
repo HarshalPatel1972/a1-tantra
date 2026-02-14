@@ -22,9 +22,9 @@ export default function CallMeButton() {
           <Image
             src="/images/whatsapp.png"
             alt="WhatsApp"
-            width={80}
-            height={80}
-            className="w-16 h-16 md:w-20 md:h-20 object-contain"
+            width={64}
+            height={64}
+            className="w-12 h-12 md:w-16 md:h-16 object-contain"
             priority
             unoptimized
           />
