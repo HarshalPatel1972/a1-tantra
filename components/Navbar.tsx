@@ -118,7 +118,6 @@ export default function Navbar() {
           className={`
             font-bold tracking-tight text-[#E43A1D] select-none flex-shrink-0 flex items-center gap-[8px] md:gap-[10px] lg:gap-[12px] xl:gap-[14px] 2xl:gap-[16px]
             transition-all duration-700 ease-out
-            drop-shadow-sm hover:drop-shadow-md
             ${
               scrolled
                 ? "text-[24px] md:text-[28px] lg:text-[32px] xl:text-[40px] 2xl:text-[48px]"
@@ -128,7 +127,6 @@ export default function Navbar() {
           style={{
             fontFamily: '"Vegawanty", sans-serif',
             letterSpacing: "0.02em",
-            textShadow: "0 3px 12px rgba(228, 58, 29, 0.25)",
             fontWeight: "700",
           }}
         >
@@ -142,8 +140,8 @@ export default function Navbar() {
               unoptimized
               className={`flex-shrink-0 transition-all duration-700 ease-out object-contain ${
                 scrolled
-                  ? "w-[32px] md:w-[36px] lg:w-[40px] xl:w-[50px] 2xl:w-[64px] h-[32px] md:h-[36px] lg:h-[40px] xl:h-[50px] 2xl:h-[64px]"
-                  : "w-[56px] md:w-[70px] lg:w-[80px] xl:w-[90px] 2xl:w-[110px] h-[56px] md:h-[70px] lg:h-[80px] xl:h-[90px] 2xl:h-[110px]"
+                  ? "w-[24px] md:w-[28px] lg:w-[32px] xl:w-[40px] 2xl:w-[48px] h-[24px] md:h-[28px] lg:h-[32px] xl:h-[40px] 2xl:h-[48px]"
+                  : "w-[40px] md:w-[54px] lg:w-[62px] xl:w-[70px] 2xl:w-[84px] h-[40px] md:h-[54px] lg:h-[62px] xl:h-[70px] 2xl:h-[84px]"
               }`}
             />
           </div>
