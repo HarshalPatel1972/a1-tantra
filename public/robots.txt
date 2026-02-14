@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /private
 
-Sitemap: https://a1tantra.com/sitemap.xml
+Sitemap: https://a1-tantra.vercel.app/sitemap.xml

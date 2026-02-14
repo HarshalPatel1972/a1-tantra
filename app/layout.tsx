@@ -27,7 +27,10 @@ const inter = Inter({
 // Note: To use Bigilla Display, add the font files to /public/fonts/
 // Then uncomment the @font-face rule in globals.css
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://a1-tantra.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "A1 Tantra - Sacred Tantric Wisdom & Healing Practices",
   description:
     "Discover tantric wisdom, healing practices, and transformational paths guided with clarity, depth, and compassion.",
@@ -38,7 +41,7 @@ export const metadata: Metadata = {
     title: "A1 Tantra - Explore Tantra Together",
     description:
       "A place to explore Tantra, together. Discover sacred wisdom and transformational practices.",
-    url: "https://a1tantra.com",
+    url: siteUrl,
     siteName: "A1 Tantra",
     type: "website",
   },
