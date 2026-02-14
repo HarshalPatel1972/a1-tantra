@@ -117,7 +117,7 @@ export default function Navbar() {
           href="/"
           className={`
             font-bold tracking-tight text-[#E43A1D] select-none flex-shrink-0 flex items-center gap-[8px] md:gap-[10px] lg:gap-[12px] xl:gap-[14px] 2xl:gap-[16px]
-            transition-all duration-700 ease-out
+            transition-all duration-700 ease-out leading-none
             ${
               scrolled
                 ? "text-[24px] md:text-[28px] lg:text-[32px] xl:text-[40px] 2xl:text-[48px]"
@@ -130,21 +130,19 @@ export default function Navbar() {
             fontWeight: "700",
           }}
         >
-          <div className="relative">
-            <Image
-              src="/images/logo-main.png"
-              alt="A1 Tantra Logo"
-              width={110}
-              height={110}
-              priority
-              unoptimized
-              className={`flex-shrink-0 transition-all duration-700 ease-out object-contain ${
-                scrolled
-                  ? "w-[24px] md:w-[28px] lg:w-[32px] xl:w-[40px] 2xl:w-[48px] h-[24px] md:h-[28px] lg:h-[32px] xl:h-[40px] 2xl:h-[48px]"
-                  : "w-[40px] md:w-[54px] lg:w-[62px] xl:w-[70px] 2xl:w-[84px] h-[40px] md:h-[54px] lg:h-[62px] xl:h-[70px] 2xl:h-[84px]"
-              }`}
-            />
-          </div>
+          <Image
+            src="/images/logo-main.png"
+            alt="A1 Tantra Logo"
+            width={110}
+            height={110}
+            priority
+            unoptimized
+            className={`flex-shrink-0 transition-all duration-700 ease-out object-contain relative -top-[0.05em] ${
+              scrolled
+                ? "w-[24px] md:w-[28px] lg:w-[32px] xl:w-[40px] 2xl:w-[48px] h-[24px] md:h-[28px] lg:h-[32px] xl:h-[40px] 2xl:h-[48px]"
+                : "w-[40px] md:w-[54px] lg:w-[62px] xl:w-[70px] 2xl:w-[84px] h-[40px] md:h-[54px] lg:h-[62px] xl:h-[70px] 2xl:h-[84px]"
+            }`}
+          />
           <span>A1 TANTRA</span>
         </Link>
 
@@ -188,13 +186,13 @@ export default function Navbar() {
         {/* MOBILE LOGO */}
         <Link
           href="/"
-          className="font-bold text-xl text-[#E43A1D] flex items-center gap-2"
+          className="font-bold text-xl text-[#E43A1D] flex items-center gap-2 leading-none"
           style={{ fontFamily: '"Vegawanty", sans-serif' }}
         >
           <img
-            src="/images/Logo.png"
+            src="/images/logo-main.png"
             alt="A1 Tantra Logo"
-            className="w-8 h-8 flex-shrink-0 object-contain"
+            className="w-8 h-8 flex-shrink-0 object-contain relative -top-[1px]"
           />
           <span>A1 TANTRA</span>
         </Link>
