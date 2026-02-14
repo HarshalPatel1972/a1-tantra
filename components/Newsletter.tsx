@@ -65,10 +65,10 @@ export default function Newsletter() {
             <button
               type="submit"
               disabled={loading}
-              className="px-8 py-4 bg-transparent text-deep-brown font-bold rounded-xl border-2 border-deep-brown disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap relative overflow-hidden group"
+              className="px-8 py-4 bg-transparent text-deep-brown font-bold rounded-xl border-2 border-deep-brown disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap relative overflow-hidden group shadow-sm"
             >
-              <span className="absolute inset-0 bg-accent-red -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
-              <span className="relative z-10 flex items-center gap-3">
+              <span className="absolute inset-0 bg-deep-brown -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
+              <span className="relative z-10 flex items-center gap-3 group-hover:text-cream transition-colors duration-500">
                 {loading ? "Subscribing..." : "SUBSCRIBE"}
                 {!loading && (
                   <svg
