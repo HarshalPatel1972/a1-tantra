@@ -127,27 +127,6 @@ export default function LoginPage() {
               </Link>
             </p>
           </div>
-
-          {/* Demo Credentials */}
-          <div className="pt-6 border-t border-deep-brown/20">
-            <p className="text-xs text-deep-brown/60 text-center mb-3">
-              Demo Credentials:
-            </p>
-            <div className="space-y-2 text-xs text-deep-brown/70">
-              <p>
-                Email:{" "}
-                <code className="bg-cream px-2 py-1 rounded text-deep-brown">
-                  demo@tantra.com
-                </code>
-              </p>
-              <p>
-                Password:{" "}
-                <code className="bg-cream px-2 py-1 rounded text-deep-brown">
-                  demo123
-                </code>
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
