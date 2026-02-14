@@ -110,7 +110,7 @@ export default function TantraPathsGuides() {
               {/* Hover CTA */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
                 <button className="bg-accent-red text-white font-bold py-3 px-8 rounded-full relative overflow-hidden group/btn transition-all transform scale-75 group-hover:scale-100">
-                  <span className="absolute inset-0 bg-deep-brown -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
+                  <span className="absolute inset-0 bg-accent-red/90 -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
                   <span className="relative z-10">Learn More</span>
                 </button>
               </div>

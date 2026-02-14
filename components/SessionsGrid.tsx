@@ -76,7 +76,7 @@ export default function SessionsGrid() {
             href="/sessions"
             className="inline-block px-8 py-4 bg-accent-red text-cream font-bold rounded-lg relative overflow-hidden group shadow-lg hover:shadow-xl"
           >
-            <span className="absolute inset-0 bg-deep-brown -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
+            <span className="absolute inset-0 bg-red-600 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
             <span className="relative z-10">View All Sessions →</span>
           </Link>
         </div>
