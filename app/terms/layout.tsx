@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: "Terms & Conditions | A1 Tantra",
   description: "Read the terms and conditions governing the use of A1 Tantra services and website.",
   keywords: "terms of service, terms and conditions, legal agreement",
-  canonical: `${siteUrl}/terms`,
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsLayout({

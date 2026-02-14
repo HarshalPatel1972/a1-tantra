@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: "Tantra Services in India | Book Online Tantra Sessions | A1 Tantra",
   description: "Explore tantra services in India. Book secure online tantra sessions for healing, relationship support, and guidance.",
   keywords: "tantra services, tantra sessions, online tantra, tantra healing, spiritual healing India",
-  canonical: `${siteUrl}/sessions`,
+  alternates: {
+    canonical: "/sessions",
+  },
 };
 
 export default function SessionsLayout({

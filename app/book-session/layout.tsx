@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: "Book Tantra Session | Schedule Online Consultation | A1 Tantra",
   description: "Book your online tantra session today. Choose from meditation, breathwork, chakra balancing, and other healing services.",
   keywords: "book tantra session, schedule consultation, tantra booking, online sessions, healing appointments",
-  canonical: `${siteUrl}/book-session`,
+  alternates: {
+    canonical: "/book-session",
+  },
 };
 
 export default function BookSessionLayout({

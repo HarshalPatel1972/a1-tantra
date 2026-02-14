@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: "Relationship Tantra Consultation | Online Guidance | A1 Tantra",
   description: "Get expert relationship tantra consultation online to improve connection, resolve conflicts, and restore harmony.",
   keywords: "tantra consultation, relationship guidance, couples tantra, online consultation, spiritual partnership",
-  canonical: `${siteUrl}/advisory`,
+  alternates: {
+    canonical: "/advisory",
+  },
 };
 
 export default function AdvisoryLayout({
