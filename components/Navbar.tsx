@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 // SVG Icon Components
@@ -115,7 +116,7 @@ export default function Navbar() {
         <Link
           href="/"
           className={`
-            font-bold tracking-tight text-[#E43A1D] select-none flex-shrink-0
+            font-bold tracking-tight text-[#E43A1D] select-none flex-shrink-0 flex items-center gap-[8px] md:gap-[10px] lg:gap-[12px] xl:gap-[14px] 2xl:gap-[16px]
             transition-all duration-700 ease-out
             drop-shadow-sm hover:drop-shadow-md
             ${
@@ -131,7 +132,19 @@ export default function Navbar() {
             fontWeight: "700",
           }}
         >
-          A1 TANTRA
+          <Image
+            src="/images/Logo.png"
+            alt="A1 Tantra Logo"
+            width={scrolled ? 32 : 56}
+            height={scrolled ? 32 : 56}
+            className={`flex-shrink-0 transition-all duration-700 ease-out ${
+              scrolled
+                ? "w-[32px] md:w-[36px] lg:w-[40px] xl:w-[50px] 2xl:w-[64px] h-[32px] md:h-[36px] lg:h-[40px] xl:h-[50px] 2xl:h-[64px]"
+                : "w-[56px] md:w-[70px] lg:w-[80px] xl:w-[90px] 2xl:w-[110px] h-[56px] md:h-[70px] lg:h-[80px] xl:h-[90px] 2xl:h-[110px]"
+            }`}
+            priority
+          />
+          <span>A1 TANTRA</span>
         </Link>
 
         {/* RIGHT LINKS - FLEX RIGHT SIDE */}
@@ -174,10 +187,18 @@ export default function Navbar() {
         {/* MOBILE LOGO */}
         <Link
           href="/"
-          className="font-bold text-xl text-[#E43A1D]"
+          className="font-bold text-xl text-[#E43A1D] flex items-center gap-2"
           style={{ fontFamily: '"Vegawanty", sans-serif' }}
         >
-          A1 TANTRA
+          <Image
+            src="/images/Logo.png"
+            alt="A1 Tantra Logo"
+            width={32}
+            height={32}
+            className="w-8 h-8 flex-shrink-0"
+            priority
+          />
+          <span>A1 TANTRA</span>
         </Link>
 
         {/* MOBILE RIGHT ICONS */}
