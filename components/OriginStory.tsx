@@ -26,9 +26,10 @@ export default function OriginStory() {
             </p>
             <Link
               href="/about"
-              className="inline-block px-8 py-3 bg-deep-brown text-cream font-semibold rounded-sm hover:bg-accent-red transition"
+              className="inline-block px-8 py-3 bg-deep-brown text-cream font-semibold rounded-sm relative overflow-hidden group transition shadow-lg"
             >
-              READ OUR STORY
+              <span className="absolute inset-0 bg-accent-red translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
+              <span className="relative z-10">READ OUR STORY</span>
             </Link>
           </div>
 

@@ -37,7 +37,7 @@ export default function BuildJourneyCTA() {
                 href="/start-journey"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-cream text-deep-brown font-bold rounded-lg w-fit relative overflow-hidden group"
               >
-                <span className="absolute inset-0 bg-deep-brown -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
+                <span className="absolute inset-0 bg-deep-brown translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
                 <span className="relative z-10 flex items-center gap-2 group-hover:text-cream transition-colors duration-500">
                   GET STARTED
                   <svg
@@ -71,7 +71,7 @@ export default function BuildJourneyCTA() {
               href="/start-journey"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-deep-brown text-cream font-bold text-lg rounded-lg relative overflow-hidden group"
             >
-              <span className="absolute inset-0 bg-accent-red -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
+              <span className="absolute inset-0 bg-red-600 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
               <span className="relative z-10 flex items-center gap-3">
                 GET STARTED
                 <svg

@@ -5,19 +5,19 @@ import Image from "next/image";
 export default function WelcomeHome() {
   const features = [
     {
-      icon: "",
+      icon: "🕉️",
       title: "Explore Tantra Wisdom",
       description:
         "Teachings from traditional Tantra lineages, written simply and clearly.",
     },
     {
-      icon: "",
+      icon: "🕯️",
       title: "Learn Sacred Practices",
       description:
         "Breathwork, yantra, mantra, mudras, meditations, and rituals explained for modern seekers.",
     },
     {
-      icon: "",
+      icon: "✨",
       title: "Find Your Tantra Path",
       description:
         "Build a personalized path based on Shakta, Kundalini, Kaula, Tibetan Tantra & more.",
@@ -49,6 +49,7 @@ export default function WelcomeHome() {
                   key={idx}
                   className="group p-6 bg-white border-l-4 border-accent-red rounded-lg shadow-md hover:shadow-lg transition-all"
                 >
+                  <div className="text-3xl mb-3">{feature.icon}</div>
                   <h3 className="font-title text-xl md:text-2xl font-bold text-deep-brown mb-3 group-hover:text-accent-red transition">
                     {feature.title}
                   </h3>
