@@ -142,6 +142,7 @@ export default function Navbar() {
                 ? "w-[32px] md:w-[36px] lg:w-[40px] xl:w-[50px] 2xl:w-[64px] h-[32px] md:h-[36px] lg:h-[40px] xl:h-[50px] 2xl:h-[64px]"
                 : "w-[56px] md:w-[70px] lg:w-[80px] xl:w-[90px] 2xl:w-[110px] h-[56px] md:h-[70px] lg:h-[80px] xl:h-[90px] 2xl:h-[110px]"
             }`}
+            unoptimized
             priority
           />
           <span>A1 TANTRA</span>
@@ -196,6 +197,7 @@ export default function Navbar() {
             width={64}
             height={64}
             className="w-8 h-8 flex-shrink-0 object-contain"
+            unoptimized
             priority
           />
           <span>A1 TANTRA</span>
