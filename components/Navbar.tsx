@@ -96,15 +96,15 @@ export default function Navbar() {
       `}
     >
       {/* DESKTOP NAVBAR */}
-      <div className="hidden md:flex relative w-full h-28 items-center px-8 md:px-12 lg:px-16">
+      <div className="hidden md:flex relative w-full h-28 items-center px-8 md:px-8 lg:px-16">
         {/* LEFT LINKS - FLUSH LEFT */}
-        <div className="flex gap-6 lg:gap-5 items-center shrink-0">
+        <div className="flex gap-3 md:gap-4 lg:gap-5 items-center shrink-0">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={(e) => handleSmoothScroll(e, link.href)}
-              className="font-nav text-sm lg:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+              className="font-nav text-xs md:text-sm lg:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -120,8 +120,8 @@ export default function Navbar() {
             drop-shadow-sm hover:drop-shadow-md
             ${
               scrolled
-                ? "text-3xl lg:text-4xl top-1/2 -translate-y-1/2"
-                : "text-6xl lg:text-[70px] top-[55%] -translate-y-1/2"
+                ? "text-2xl md:text-3xl lg:text-4xl top-1/2 -translate-y-1/2"
+                : "text-4xl md:text-5xl lg:text-[70px] top-[55%] -translate-y-1/2"
             }
           `}
           style={{
@@ -135,12 +135,12 @@ export default function Navbar() {
         </Link>
 
         {/* RIGHT LINKS - FLUSH RIGHT */}
-        <div className="flex gap-6 lg:gap-10 items-center ml-auto shrink-0">
+        <div className="flex gap-4 md:gap-5 lg:gap-10 items-center ml-auto shrink-0">
           {rightLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-nav text-sm lg:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+              className="font-nav text-xs md:text-sm lg:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
             >
               {link.label}
             </Link>
