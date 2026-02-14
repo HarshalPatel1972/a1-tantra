@@ -146,7 +146,7 @@ export default function TantraTypesSection() {
     <>
       <section
         id="tantra-paths"
-        className="py-8 md:py-12 bg-cream scroll-mt-24 sm:scroll-mt-32"
+        className="py-4 md:py-6 bg-cream scroll-mt-24 sm:scroll-mt-32"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Heading */}
