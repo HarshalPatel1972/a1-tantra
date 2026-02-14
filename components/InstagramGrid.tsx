@@ -13,7 +13,7 @@ export default function InstagramGrid() {
   // ];
 
   return (
-    <section className="py-3 md:py-6 bg-cream border-t border-deep-brown/20">
+    <section className="py-2 md:py-3 bg-cream border-t border-deep-brown/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header - Instagram Section Commented Out */}
         {/* <div className="text-center mb-16">
