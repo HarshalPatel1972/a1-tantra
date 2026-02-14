@@ -173,9 +173,10 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/auth/signup"
-                className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide px-3 py-1 md:px-4 md:py-2 bg-accent-red text-cream rounded-sm hover:bg-deep-brown transition-colors duration-200 whitespace-nowrap"
+                className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide px-3 py-1 md:px-4 md:py-2 bg-accent-red text-cream rounded-sm relative overflow-hidden group whitespace-nowrap"
               >
-                Join
+                <span className="absolute inset-0 bg-deep-brown -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                <span className="relative z-10">Join</span>
               </Link>
             </div>
           )}
@@ -285,10 +286,11 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/auth/signup"
-                  className="block w-full text-center py-2 bg-accent-red text-cream font-semibold uppercase rounded-sm hover:bg-deep-brown transition-colors"
+                  className="block w-full text-center py-2 bg-accent-red text-cream font-semibold uppercase rounded-sm relative overflow-hidden group"
                   onClick={() => setIsOpen(false)}
                 >
-                  Join Now
+                  <span className="absolute inset-0 bg-deep-brown -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                  <span className="relative z-10">Join Now</span>
                 </Link>
               </>
             )}

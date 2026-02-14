@@ -35,22 +35,25 @@ export default function BuildJourneyCTA() {
               </p>
               <Link
                 href="/start-journey"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r from-cream/90 to-cream/70 text-deep-brown font-bold rounded-lg w-fit"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-cream text-deep-brown font-bold rounded-lg w-fit relative overflow-hidden group"
               >
-                GET STARTED
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
+                <span className="absolute inset-0 bg-deep-brown -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+                <span className="relative z-10 flex items-center gap-2 group-hover:text-cream transition-colors duration-500">
+                  GET STARTED
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </span>
               </Link>
             </div>
           </div>
@@ -66,22 +69,25 @@ export default function BuildJourneyCTA() {
             </p>
             <Link
               href="/start-journey"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-linear-to-r from-deep-brown to-deep-brown/70 text-cream font-bold text-lg rounded-lg"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-deep-brown text-cream font-bold text-lg rounded-lg relative overflow-hidden group"
             >
-              GET STARTED
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
+              <span className="absolute inset-0 bg-accent-red -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+              <span className="relative z-10 flex items-center gap-3">
+                GET STARTED
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </span>
             </Link>
           </div>
 

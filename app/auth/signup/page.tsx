@@ -166,9 +166,12 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide"
+              className="w-full px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wide"
             >
-              {loading ? "Creating account..." : "Create Account"}
+              <span className="absolute inset-0 bg-deep-brown -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
+              <span className="relative z-10">
+                {loading ? "Creating account..." : "Create Account"}
+              </span>
             </button>
           </form>
 
