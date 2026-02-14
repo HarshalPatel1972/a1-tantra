@@ -22,22 +22,6 @@ const SearchIcon = ({ className = "w-5 h-5" }) => (
   </svg>
 );
 
-const UserIcon = ({ className = "w-5 h-5" }) => (
-  <svg
-    className={className}
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-    />
-  </svg>
-);
-
 const HamburgerIcon = ({ className = "w-6 h-6" }) => (
   <svg
     className={className}
@@ -200,18 +184,19 @@ export default function Navbar() {
 
       {/* MOBILE NAVBAR */}
       <div className="md:hidden flex relative max-w-7xl mx-auto px-6 pt-4 pb-3 items-center justify-between">
-        {/* HAMBURGER MENU */} items-center">
-          <button
-            className="text-deep-brown hover:text-accent-red transition-colors"
-            aria-label="Search"
-          >
-            <SearchIcon className="w-5 h-5" />
-          </button>
-          {isAuthenticated && (
-            <div className="text-xs text-deep-brown font-semibold">
-              {user?.name?.split(' ')[0]}
-            </div>
-          )}="font-bold text-4xl sm:text-5xl text-[#E43A1D] flex items-center gap-4 leading-none px-2"
+        {/* HAMBURGER MENU */}
+        <button
+          className="text-deep-brown hover:text-accent-red transition-colors"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          <HamburgerIcon className="w-6 h-6" />
+        </button>
+
+        {/* MOBILE LOGO */}
+        <Link
+          href="/"
+          className="font-bold text-4xl sm:text-5xl text-[#E43A1D] flex items-center gap-4 leading-none px-2"
           style={{ fontFamily: '"Vegawanty", sans-serif' }}
         >
           <img
@@ -223,19 +208,18 @@ export default function Navbar() {
         </Link>
 
         {/* MOBILE RIGHT ICONS */}
-        <div className="flex gap-4">
+        <div className="flex gap-4 items-center">
           <button
             className="text-deep-brown hover:text-accent-red transition-colors"
             aria-label="Search"
           >
             <SearchIcon className="w-5 h-5" />
           </button>
-          <button
-            className="text-deep-brown hover:text-accent-red transition-colors"
-            aria-label="User account"
-          >
-            <UserIcon className="w-5 h-5" />
-          </button>
+          {isAuthenticated && (
+            <div className="text-xs text-deep-brown font-semibold">
+              {user?.name?.split(' ')[0]}
+            </div>
+          )}
         </div>
       </div>
 
@@ -272,7 +256,6 @@ export default function Navbar() {
           >
             CONTACT
           </Link>
-        </div>
 
           {/* Mobile Auth Section */}
           <div className="border-t border-deep-brown/20 pt-3 mt-3 space-y-2">
@@ -310,6 +293,7 @@ export default function Navbar() {
               </>
             )}
           </div>
+        </div>
       )}
     </nav>
   );
