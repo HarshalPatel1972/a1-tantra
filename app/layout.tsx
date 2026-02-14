@@ -3,6 +3,7 @@ import { Playfair_Display, Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import CallMeButton from "@/components/CallMeButton";
+import { AuthProvider } from "@/contexts/AuthContext";
 // import AnimatedGradientBg from "@/components/AnimatedGradientBg";
 
 const playfair = Playfair_Display({
@@ -68,10 +69,12 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased font-sans bg-cream text-deep-brown`}
       >
-        {/* <AnimatedGradientBg /> */}
-        <Navbar />
-        <main className="pt-24 md:pt-32 relative z-0">{children}</main>
-        <CallMeButton />
+        <AuthProvider>
+          {/* <AnimatedGradientBg /> */}
+          <Navbar />
+          <main className="pt-24 md:pt-32 relative z-0">{children}</main>
+          <CallMeButton />
+        </AuthProvider>
       </body>
     </html>
   );

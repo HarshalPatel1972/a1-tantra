@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 
 // SVG Icon Components
 const SearchIcon = ({ className = "w-5 h-5" }) => (
@@ -56,6 +57,7 @@ const HamburgerIcon = ({ className = "w-6 h-6" }) => (
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { isAuthenticated, user, logout } = useAuth();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -163,30 +165,53 @@ export default function Navbar() {
           >
             <SearchIcon className="w-[18px] md:w-[20px] lg:w-[22px] xl:w-[24px] 2xl:w-[28px] h-[18px] md:h-[20px] lg:h-[22px] xl:h-[24px] 2xl:h-[28px]" />
           </button>
-          <button
-            className="text-deep-brown hover:text-accent-red transition-colors duration-200"
-            aria-label="User account"
-          >
-            <UserIcon className="w-[18px] md:w-[20px] lg:w-[22px] xl:w-[24px] 2xl:w-[28px] h-[18px] md:h-[20px] lg:h-[22px] xl:h-[24px] 2xl:h-[28px]" />
-          </button>
+
+          {/* Auth Buttons */}
+          {isAuthenticated ? (
+            <div className="flex gap-[10px] md:gap-[12px] lg:gap-[14px] items-center">
+              <div className="text-[11px] md:text-[13px] lg:text-[14px] text-deep-brown font-semibold">
+                {user?.name}
+              </div>
+              <button
+                onClick={logout}
+                className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="flex gap-[10px] md:gap-[12px] lg:gap-[14px] items-center">
+              <Link
+                href="/auth/login"
+                className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+              >
+                Login
+              </Link>
+              <Link
+                href="/auth/signup"
+                className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide px-3 py-1 md:px-4 md:py-2 bg-gradient-to-r from-amber-600 to-amber-700 text-white rounded-lg hover:from-amber-700 hover:to-amber-800 transition-colors duration-200 whitespace-nowrap"
+              >
+                Join
+              </Link>
+            </div>
+          )}
         </div>
       </div>
 
       {/* MOBILE NAVBAR */}
       <div className="md:hidden flex relative max-w-7xl mx-auto px-6 pt-4 pb-3 items-center justify-between">
-        {/* HAMBURGER MENU */}
-        <button
-          className="text-deep-brown hover:text-accent-red transition-colors"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          <HamburgerIcon className="w-6 h-6" />
-        </button>
-
-        {/* MOBILE LOGO */}
-        <Link
-          href="/"
-          className="font-bold text-4xl sm:text-5xl text-[#E43A1D] flex items-center gap-4 leading-none px-2"
+        {/* HAMBURGER MENU */} items-center">
+          <button
+            className="text-deep-brown hover:text-accent-red transition-colors"
+            aria-label="Search"
+          >
+            <SearchIcon className="w-5 h-5" />
+          </button>
+          {isAuthenticated && (
+            <div className="text-xs text-deep-brown font-semibold">
+              {user?.name?.split(' ')[0]}
+            </div>
+          )}="font-bold text-4xl sm:text-5xl text-[#E43A1D] flex items-center gap-4 leading-none px-2"
           style={{ fontFamily: '"Vegawanty", sans-serif' }}
         >
           <img
@@ -248,6 +273,43 @@ export default function Navbar() {
             CONTACT
           </Link>
         </div>
+
+          {/* Mobile Auth Section */}
+          <div className="border-t border-deep-brown/20 pt-3 mt-3 space-y-2">
+            {isAuthenticated ? (
+              <>
+                <div className="text-sm text-deep-brown font-semibold py-2">
+                  Welcome, {user?.name}!
+                </div>
+                <button
+                  onClick={() => {
+                    logout();
+                    setIsOpen(false);
+                  }}
+                  className="block w-full text-left font-nav text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors py-2"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/auth/login"
+                  className="block font-nav text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Login
+                </Link>
+                <Link
+                  href="/auth/signup"
+                  className="block w-full text-center py-2 bg-gradient-to-r from-amber-600 to-amber-700 text-white font-semibold uppercase rounded-lg hover:from-amber-700 hover:to-amber-800 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Join Now
+                </Link>
+              </>
+            )}
+          </div>
       )}
     </nav>
   );
