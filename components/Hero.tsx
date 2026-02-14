@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen pb-16 pt-4 overflow-hidden bg-transparent">
+    <section className="relative min-h-screen pb-8 pt-4 overflow-hidden bg-transparent">
       {/* Content Wrapper */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         {/* Hero Image Container with Rounded Edges and Border */}
