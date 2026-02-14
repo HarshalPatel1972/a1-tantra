@@ -69,6 +69,16 @@ export default function SessionsGrid() {
             </Link>
           ))}
         </div>
+
+        {/* View All Sessions CTA */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/sessions"
+            className="inline-block px-8 py-4 bg-accent-red text-cream font-bold rounded-lg hover:bg-red-600 transition shadow-lg hover:shadow-xl"
+          >
+            View All Sessions →
+          </Link>
+        </div>
       </div>
     </section>
   );
