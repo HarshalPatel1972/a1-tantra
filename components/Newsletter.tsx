@@ -65,11 +65,19 @@ export default function Newsletter() {
             <button
               type="submit"
               disabled={loading}
-              className="px-8 py-4 bg-transparent text-deep-brown font-bold rounded-xl border-2 border-deep-brown disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap relative overflow-hidden group shadow-sm"
+              className="relative flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-deep-brown font-bold rounded-xl border-2 border-deep-brown overflow-hidden group transition-all duration-300 disabled:opacity-50"
             >
-              <span className="absolute inset-0 bg-deep-brown -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
-              <span className="relative z-10 flex items-center gap-3 group-hover:text-cream transition-colors duration-500">
-                {loading ? "Subscribing..." : "SUBSCRIBE"}
+              {/* Background Fill Layer */}
+              <div 
+                className="absolute top-0 left-0 w-full h-full bg-accent-red -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"
+                style={{ zIndex: 0 }}
+              ></div>
+
+              {/* Content Layer */}
+              <div className="relative z-10 flex items-center gap-2 group-hover:text-cream transition-colors duration-300">
+                <span className="font-bold tracking-wide">
+                  {loading ? "Subscribing..." : "SUBSCRIBE"}
+                </span>
                 {!loading && (
                   <svg
                     className="w-5 h-5 group-hover:translate-x-1 transition-transform"
@@ -85,7 +93,7 @@ export default function Newsletter() {
                     />
                   </svg>
                 )}
-              </span>
+              </div>
             </button>
           </div>
         </form>
