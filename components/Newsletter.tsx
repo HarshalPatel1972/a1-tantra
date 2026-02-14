@@ -67,8 +67,8 @@ export default function Newsletter() {
               disabled={loading}
               className="px-8 py-4 bg-deep-brown text-cream font-bold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap relative overflow-hidden group border border-cream/20"
             >
-              <span className="absolute inset-0 bg-[#4A3B33] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
-              <span className="relative z-10 flex items-center gap-2 group-hover:text-cream transition-colors duration-500">
+              <span className="absolute inset-0 bg-white/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
+              <span className="relative z-10 flex items-center gap-2">
                 {loading ? "Subscribing..." : "SUBSCRIBE"}
                 {!loading && (
                   <svg
