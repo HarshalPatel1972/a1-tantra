@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function BuildJourneyCTA() {
   return (
-    <section className="py-12 md:py-16 bg-accent-red text-cream relative overflow-hidden">
+    <section className="py-8 md:py-12 bg-accent-red text-cream relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-1/2 right-0 w-96 h-96 bg-cream rounded-full blur-3xl"></div>

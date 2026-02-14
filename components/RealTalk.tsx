@@ -23,7 +23,7 @@ export default function RealTalk() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-cream">
+    <section className="py-8 md:py-12 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <h2 className="font-title text-4xl md:text-5xl font-bold text-deep-brown text-center mb-4 max-w-3xl mx-auto leading-tight">

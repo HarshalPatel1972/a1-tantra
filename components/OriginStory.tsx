@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function OriginStory() {
   return (
-    <section className="py-12 md:py-16 bg-transparent">
+    <section className="py-8 md:py-12 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Story */}
