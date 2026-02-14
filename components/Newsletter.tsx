@@ -26,14 +26,14 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-2 md:py-3 bg-deep-brown text-cream">
+    <section className="py-2 md:py-3 bg-cream text-deep-brown">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="serif-heading text-4xl md:text-5xl font-bold mb-6">
             Feeling overwhelmed about Tantra?
           </h2>
-          <p className="text-lg text-cream/80 leading-relaxed">
+          <p className="text-lg text-deep-brown/80 leading-relaxed">
             We can help. Subscribe to our newsletter for weekly insights,
             guidance, and sacred practices.
           </p>
@@ -48,7 +48,7 @@ export default function Newsletter() {
         {/* Newsletter Form - Styled Box */}
         <form
           onSubmit={handleSubmit}
-          className="bg-cream/10 border-2 border-cream/30 rounded-lg p-6 md:p-8 backdrop-blur-sm"
+          className="bg-deep-brown/5 border-2 border-deep-brown/20 rounded-lg p-6 md:p-8 backdrop-blur-sm"
         >
           <div className="flex flex-col sm:flex-row gap-3">
             <div className="flex-1 relative">
@@ -57,7 +57,7 @@ export default function Newsletter() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-5 py-4 rounded-lg bg-cream text-deep-brown placeholder-deep-brown/50 focus:outline-none focus:ring-2 focus:ring-accent-red focus:ring-offset-2 focus:ring-offset-deep-brown transition font-medium"
+                className="w-full px-5 py-4 rounded-lg bg-white text-deep-brown placeholder-deep-brown/50 focus:outline-none focus:ring-2 focus:ring-accent-red transition font-medium border border-deep-brown/10"
                 required
                 disabled={loading}
               />
@@ -65,14 +65,14 @@ export default function Newsletter() {
             <button
               type="submit"
               disabled={loading}
-              className="px-8 py-4 bg-deep-brown text-cream font-bold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap relative overflow-hidden group border border-cream/20"
+              className="px-8 py-4 bg-transparent text-deep-brown font-bold rounded-xl border-2 border-deep-brown disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap relative overflow-hidden group"
             >
-              <span className="absolute inset-0 bg-white/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="absolute inset-0 bg-accent-red -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
+              <span className="relative z-10 flex items-center gap-3">
                 {loading ? "Subscribing..." : "SUBSCRIBE"}
                 {!loading && (
                   <svg
-                    className="w-5 h-5"
+                    className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -90,7 +90,7 @@ export default function Newsletter() {
           </div>
         </form>
 
-        <p className="text-xs text-cream/60 mt-6 text-center">
+        <p className="text-xs text-deep-brown/60 mt-6 text-center">
           We respect your privacy. Unsubscribe at any time.
         </p>
       </div>
