@@ -26,7 +26,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-8 md:py-12 bg-deep-brown text-cream">
+    <section className="py-3 md:py-6 bg-deep-brown text-cream">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
