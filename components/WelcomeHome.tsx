@@ -25,7 +25,7 @@ export default function WelcomeHome() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-cream">
+    <section className="py-12 md:py-16 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}

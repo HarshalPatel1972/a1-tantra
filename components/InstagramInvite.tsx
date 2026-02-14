@@ -2,7 +2,7 @@
 
 export default function InstagramInvite() {
   return (
-    <section className="py-16 md:py-20 bg-cream">
+    <section className="py-12 md:py-16 bg-cream">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Gentle Invite */}
         <div className="space-y-6">
