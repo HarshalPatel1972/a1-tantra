@@ -44,9 +44,10 @@ export default function Hero() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/start-journey"
-                  className="px-8 py-4 bg-accent-red text-white font-nav font-semibold uppercase tracking-wide rounded-lg hover:bg-red-600 transition shadow-lg hover:shadow-xl text-center font-bold"
+                  className="px-8 py-4 bg-accent-red text-white font-nav font-semibold uppercase tracking-wide rounded-lg relative overflow-hidden group shadow-lg hover:shadow-xl text-center font-bold"
                 >
-                  START YOUR JOURNEY
+                  <span className="absolute inset-0 bg-deep-brown -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
+                  <span className="relative z-10">START YOUR JOURNEY</span>
                 </Link>
 
                 <Link
@@ -57,12 +58,15 @@ export default function Hero() {
     text-white 
     font-nav font-semibold uppercase tracking-wide 
     rounded-lg 
-    hover:bg-[#FDACB4] hover:border-[#FDACB4] hover:text-deep-brown 
+    relative overflow-hidden group
     transition shadow-lg hover:shadow-xl 
     text-center font-bold
   "
                 >
-                  LEARN A TANTRA PATH
+                  <span className="absolute inset-0 bg-white -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
+                  <span className="relative z-10 group-hover:text-deep-brown transition-colors duration-500">
+                    LEARN A TANTRA PATH
+                  </span>
                 </Link>
               </div>
             </div>
