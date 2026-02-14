@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import whatsappLogo from "../public/images/whatsapp.png";
 
 export default function CallMeButton() {
   const phoneNumber = "919217821866";
@@ -19,12 +18,15 @@ export default function CallMeButton() {
           title="Message us on WhatsApp"
           aria-label="Open WhatsApp chat"
         >
-          {/* Static import ensures the image is correctly processed by the bundler */}
+          {/* Using Next.js Image with the string path now that the file is tracked */}
           <Image
-            src={whatsappLogo}
+            src="/images/whatsapp.png"
             alt="WhatsApp"
+            width={80}
+            height={80}
             className="w-16 h-16 md:w-20 md:h-20 object-contain"
             priority
+            unoptimized
           />
         </a>
       </div>
