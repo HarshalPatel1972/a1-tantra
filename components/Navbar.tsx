@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import SearchModal from "./SearchModal";
 
 // SVG Icon Components
 const SearchIcon = ({ className = "w-5 h-5" }) => (
@@ -41,6 +42,7 @@ const HamburgerIcon = ({ className = "w-6 h-6" }) => (
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
 
   useEffect(() => {
@@ -144,6 +146,7 @@ export default function Navbar() {
             </Link>
           ))}
           <button
+            onClick={() => setIsSearchOpen(true)}
             className="text-deep-brown hover:text-accent-red transition-colors duration-200"
             aria-label="Search"
           >
@@ -214,6 +217,7 @@ export default function Navbar() {
         {/* MOBILE RIGHT ICONS */}
         <div className="flex gap-4 items-center">
           <button
+            onClick={() => setIsSearchOpen(true)}
             className="text-deep-brown hover:text-accent-red transition-colors"
             aria-label="Search"
           >
@@ -300,6 +304,11 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      <SearchModal 
+        isOpen={isSearchOpen} 
+        onClose={() => setIsSearchOpen(false)} 
+      />
     </nav>
   );
 }
