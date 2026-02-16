@@ -102,7 +102,7 @@ export default function Navbar() {
         <Link
           href="/"
           className={`
-            font-bold tracking-tight text-[#E43A1D] select-none flex-shrink-0 flex items-center gap-[8px] md:gap-[10px] lg:gap-[12px] xl:gap-[14px] 2xl:gap-[16px]
+            font-bold tracking-tight text-[#1D4ED8] select-none flex-shrink-0 flex items-center gap-[8px] md:gap-[10px] lg:gap-[12px] xl:gap-[14px] 2xl:gap-[16px]
             transition-all duration-700 ease-out leading-none
             ${
               scrolled
@@ -197,7 +197,7 @@ export default function Navbar() {
         {/* MOBILE LOGO */}
         <Link
           href="/"
-          className="font-bold text-4xl sm:text-5xl text-[#E43A1D] flex items-center gap-4 leading-none px-2"
+          className="font-bold text-4xl sm:text-5xl text-[#1D4ED8] flex items-center gap-4 leading-none px-2"
           style={{ fontFamily: '"Vegawanty", sans-serif' }}
         >
           <img
