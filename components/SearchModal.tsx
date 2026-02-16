@@ -45,17 +45,17 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
     <div className="fixed inset-0 z-[100] flex items-start justify-center pt-20 px-4 sm:pt-32">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-deep-brown/80 backdrop-blur-md transition-opacity"
+        className="absolute inset-0 bg-deep-brown transition-opacity"
         onClick={onClose}
       ></div>
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-2xl bg-cream border-2 border-deep-brown/20 rounded-2xl shadow-2xl overflow-hidden transform transition-all animate-in fade-in zoom-in duration-300">
+      <div className="relative w-full max-w-2xl bg-cream border-2 border-deep-brown rounded-2xl shadow-2xl overflow-hidden transform transition-all animate-in fade-in zoom-in duration-300">
         {/* Search Input Area */}
-        <div className="p-6 border-b border-deep-brown/10 bg-white">
+        <div className="p-6 border-b border-stone-200 bg-white">
           <div className="relative flex items-center">
             <svg
-              className="absolute left-4 w-6 h-6 text-deep-brown/60"
+              className="absolute left-4 w-6 h-6 text-deep-brown"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -71,7 +71,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
               ref={inputRef}
               type="text"
               placeholder="Search for paths, sessions, wisdom..."
-              className="w-full pl-14 pr-12 py-4 bg-stone-100 border-2 border-transparent focus:border-accent-red/20 focus:ring-4 focus:ring-accent-red/10 rounded-xl text-lg font-body text-deep-brown placeholder:text-deep-brown/40 outline-none transition-all"
+              className="w-full pl-14 pr-12 py-4 bg-stone-100 border-2 border-stone-200 focus:border-accent-red focus:ring-0 rounded-xl text-lg font-body text-deep-brown placeholder:text-stone-400 outline-none transition-all"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
@@ -80,7 +80,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
               className="absolute right-4 p-1 hover:bg-stone-200 rounded-lg transition-colors"
             >
               <svg
-                className="w-5 h-5 text-deep-brown/50"
+                className="w-5 h-5 text-stone-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -99,7 +99,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         {/* Results Area */}
         <div className="max-h-[60vh] overflow-y-auto p-4 custom-scrollbar">
           {query.trim().length === 0 ? (
-            <div className="py-12 text-center text-deep-brown/40">
+            <div className="py-12 text-center text-stone-500">
               <p className="font-nav text-sm uppercase tracking-widest mb-2 font-bold">
                 Suggested searches
               </p>
@@ -108,7 +108,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                   <button
                     key={tag}
                     onClick={() => setQuery(tag)}
-                    className="px-4 py-2 bg-stone-100 hover:bg-accent-red hover:text-cream rounded-full text-sm font-semibold transition-all border border-deep-brown/5"
+                    className="px-4 py-2 bg-stone-100 hover:bg-accent-red hover:text-cream rounded-full text-sm font-semibold transition-all border border-stone-200"
                   >
                     {tag}
                   </button>
@@ -122,7 +122,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                   key={idx}
                   href={result.url}
                   onClick={onClose}
-                  className="group flex flex-col p-4 hover:bg-white rounded-xl transition-all border border-transparent hover:border-deep-brown/10 hover:shadow-md"
+                  className="group flex flex-col p-4 hover:bg-white rounded-xl transition-all border-2 border-transparent hover:border-stone-100 hover:shadow-md"
                 >
                   <div className="flex items-center justify-between mb-1">
                     <h4 className="font-title text-xl font-bold text-deep-brown group-hover:text-accent-red transition">
@@ -132,7 +132,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       {result.category}
                     </span>
                   </div>
-                  <p className="text-sm text-deep-brown/90 font-body line-clamp-1">
+                  <p className="text-sm text-stone-600 font-body line-clamp-1">
                     {result.description}
                   </p>
                 </Link>
@@ -145,7 +145,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 We couldn't find anything matching "
                 <span className="font-bold text-deep-brown">{query}</span>"
               </p>
-              <p className="text-sm text-deep-brown/60 mt-2">
+              <p className="text-sm text-stone-400 mt-2">
                 Try searching for broader terms like "Tantra" or "Healing"
               </p>
             </div>
@@ -153,7 +153,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-stone-100 border-t border-deep-brown/10 flex justify-between items-center text-[10px] text-deep-brown/60 font-nav font-bold uppercase tracking-widest">
+        <div className="p-4 bg-stone-100 border-t border-stone-200 flex justify-between items-center text-[10px] text-stone-500 font-nav font-bold uppercase tracking-widest">
           <span>Search A1 Tantra Wisdom</span>
           <span>ESC to close</span>
         </div>

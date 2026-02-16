@@ -53,7 +53,7 @@ export default function Navbar() {
 
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     if (href.startsWith("#")) {
       e.preventDefault();
@@ -79,8 +79,8 @@ export default function Navbar() {
         fixed top-0 w-full z-50 transition-all duration-500 ease-out
         ${
           scrolled
-            ? "bg-stone-100/80 backdrop-blur-lg border-b border-deep-brown/20 shadow-lg"
-            : "bg-transparent border-transparent"
+            ? "bg-stone-100 border-b border-deep-brown shadow-lg"
+            : "bg-white border-transparent"
         }
       `}
     >
@@ -225,7 +225,7 @@ export default function Navbar() {
           </button>
           {isAuthenticated && (
             <div className="text-xs text-deep-brown font-semibold">
-              {user?.name?.split(' ')[0]}
+              {user?.name?.split(" ")[0]}
             </div>
           )}
         </div>
@@ -233,7 +233,7 @@ export default function Navbar() {
 
       {/* MOBILE DROPDOWN MENU */}
       {isOpen && (
-        <div className="md:hidden bg-stone-100/80 backdrop-blur-lg border-t border-deep-brown/20 pb-4 px-6 space-y-3">
+        <div className="md:hidden bg-stone-100 border-t border-deep-brown pb-4 px-6 space-y-3">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -266,7 +266,7 @@ export default function Navbar() {
           </Link>
 
           {/* Mobile Auth Section */}
-          <div className="border-t border-deep-brown/20 pt-3 mt-3 space-y-2">
+          <div className="border-t border-deep-brown pt-3 mt-3 space-y-2">
             {isAuthenticated ? (
               <>
                 <div className="text-sm text-deep-brown font-semibold py-2">
@@ -305,9 +305,9 @@ export default function Navbar() {
         </div>
       )}
 
-      <SearchModal 
-        isOpen={isSearchOpen} 
-        onClose={() => setIsSearchOpen(false)} 
+      <SearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
       />
     </nav>
   );
