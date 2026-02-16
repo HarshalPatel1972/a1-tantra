@@ -9,15 +9,36 @@ export default function CallMeButton() {
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
-    // Show the reminder after 3 seconds of page load
-    const timer = setTimeout(() => {
+    // 1. Initial trigger after 3 seconds of page load
+    const initialTimer = setTimeout(() => {
       setShowTooltip(true);
-      // Hide it automatically after 8 seconds
-      const hideTimer = setTimeout(() => setShowTooltip(false), 8000);
-      return () => clearTimeout(hideTimer);
+      setTimeout(() => setShowTooltip(false), 8000);
     }, 3000);
 
-    return () => clearTimeout(timer);
+    // 2. "Stuck" trigger (no scrolling for 30 seconds)
+    let inactivityTimer: NodeJS.Timeout;
+
+    const resetInactivityTimer = () => {
+      clearTimeout(inactivityTimer);
+      // Only set a new timer if tooltip isn't already showing 
+      // to avoid weird overlapping show/hide cycles
+      inactivityTimer = setTimeout(() => {
+        setShowTooltip(true);
+        setTimeout(() => setShowTooltip(false), 8000);
+      }, 30000); // 30 seconds
+    };
+
+    // Initialize the inactivity timer
+    resetInactivityTimer();
+
+    // Reset timer on scroll
+    window.addEventListener("scroll", resetInactivityTimer, { passive: true });
+
+    return () => {
+      clearTimeout(initialTimer);
+      clearTimeout(inactivityTimer);
+      window.removeEventListener("scroll", resetInactivityTimer);
+    };
   }, []);
 
   return (
