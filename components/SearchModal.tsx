@@ -31,7 +31,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         (item) =>
           item.title.toLowerCase().includes(query.toLowerCase()) ||
           item.description.toLowerCase().includes(query.toLowerCase()) ||
-          item.category.toLowerCase().includes(query.toLowerCase())
+          item.category.toLowerCase().includes(query.toLowerCase()),
       );
       setResults(filtered);
     } else {
@@ -44,18 +44,18 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   return (
     <div className="fixed inset-0 z-[100] flex items-start justify-center pt-20 px-4 sm:pt-32">
       {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-deep-brown/40 backdrop-blur-sm transition-opacity"
+      <div
+        className="absolute inset-0 bg-deep-brown/80 backdrop-blur-md transition-opacity"
         onClick={onClose}
       ></div>
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-2xl bg-cream border-2 border-deep-brown/10 rounded-2xl shadow-2xl overflow-hidden transform transition-all animate-in fade-in zoom-in duration-300">
+      <div className="relative w-full max-w-2xl bg-cream border-2 border-deep-brown/20 rounded-2xl shadow-2xl overflow-hidden transform transition-all animate-in fade-in zoom-in duration-300">
         {/* Search Input Area */}
-        <div className="p-6 border-b border-deep-brown/10">
+        <div className="p-6 border-b border-deep-brown/10 bg-white">
           <div className="relative flex items-center">
             <svg
-              className="absolute left-4 w-6 h-6 text-deep-brown/40"
+              className="absolute left-4 w-6 h-6 text-deep-brown/60"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -71,16 +71,26 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
               ref={inputRef}
               type="text"
               placeholder="Search for paths, sessions, wisdom..."
-              className="w-full pl-14 pr-12 py-4 bg-stone-100/50 border-none focus:ring-2 focus:ring-accent-red/20 rounded-xl text-lg font-body text-deep-brown placeholder:text-deep-brown/30 outline-none transition-all"
+              className="w-full pl-14 pr-12 py-4 bg-stone-100 border-2 border-transparent focus:border-accent-red/20 focus:ring-4 focus:ring-accent-red/10 rounded-xl text-lg font-body text-deep-brown placeholder:text-deep-brown/40 outline-none transition-all"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
-            <button 
+            <button
               onClick={onClose}
               className="absolute right-4 p-1 hover:bg-stone-200 rounded-lg transition-colors"
             >
-              <svg className="w-5 h-5 text-deep-brown/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-5 h-5 text-deep-brown/50"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
@@ -90,7 +100,9 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         <div className="max-h-[60vh] overflow-y-auto p-4 custom-scrollbar">
           {query.trim().length === 0 ? (
             <div className="py-12 text-center text-deep-brown/40">
-              <p className="font-nav text-sm uppercase tracking-widest mb-2 font-bold">Suggested searches</p>
+              <p className="font-nav text-sm uppercase tracking-widest mb-2 font-bold">
+                Suggested searches
+              </p>
               <div className="flex flex-wrap justify-center gap-2 mt-4">
                 {["Kundalini", "Healing", "Kriya", "Sessions"].map((tag) => (
                   <button
@@ -116,11 +128,11 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     <h4 className="font-title text-xl font-bold text-deep-brown group-hover:text-accent-red transition">
                       {result.title}
                     </h4>
-                    <span className="text-[10px] uppercase tracking-widest px-2 py-1 bg-stone-100 text-deep-brown/60 rounded font-bold">
+                    <span className="text-[10px] uppercase tracking-widest px-2 py-1 bg-stone-200 text-deep-brown font-bold rounded">
                       {result.category}
                     </span>
                   </div>
-                  <p className="text-sm text-deep-brown/70 font-body line-clamp-1">
+                  <p className="text-sm text-deep-brown/90 font-body line-clamp-1">
                     {result.description}
                   </p>
                 </Link>
@@ -129,16 +141,19 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
           ) : (
             <div className="py-20 text-center">
               <div className="text-4xl mb-4">🕯️</div>
-              <p className="text-deep-brown/60 font-body">
-                We couldn't find anything matching "<span className="font-bold text-deep-brown">{query}</span>"
+              <p className="text-deep-brown font-body">
+                We couldn't find anything matching "
+                <span className="font-bold text-deep-brown">{query}</span>"
               </p>
-              <p className="text-xs text-deep-brown/40 mt-2">Try searching for broader terms like "Tantra" or "Healing"</p>
+              <p className="text-sm text-deep-brown/60 mt-2">
+                Try searching for broader terms like "Tantra" or "Healing"
+              </p>
             </div>
           )}
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-stone-100/50 border-t border-deep-brown/10 flex justify-between items-center text-[10px] text-deep-brown/40 font-nav font-bold uppercase tracking-widest">
+        <div className="p-4 bg-stone-100 border-t border-deep-brown/10 flex justify-between items-center text-[10px] text-deep-brown/60 font-nav font-bold uppercase tracking-widest">
           <span>Search A1 Tantra Wisdom</span>
           <span>ESC to close</span>
         </div>
