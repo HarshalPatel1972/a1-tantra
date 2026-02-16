@@ -198,7 +198,10 @@ export default function Navbar() {
         <Link
           href="/"
           className="font-bold text-4xl sm:text-5xl text-[#1D4ED8] flex items-center gap-4 leading-none px-2"
-          style={{ fontFamily: '"Vegawanty", sans-serif' }}
+          style={{
+            fontFamily: '"Vegawanty", sans-serif',
+            fontWeight: "700",
+          }}
         >
           <img
             src="/images/logo-main.png"
