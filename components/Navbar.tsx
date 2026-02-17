@@ -39,6 +39,22 @@ const HamburgerIcon = ({ className = "w-6 h-6" }) => (
   </svg>
 );
 
+const ChevronDownIcon = ({ className = "w-4 h-4" }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M19 9l-7 7-7-7"
+    />
+  </svg>
+);
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -136,16 +152,21 @@ export default function Navbar() {
             onMouseEnter={() => setIsMoreOpen(true)}
             onMouseLeave={() => setIsMoreOpen(false)}
           >
-            <button className="flex items-center gap-1 font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest text-deep-brown group-hover:text-accent-red transition-colors duration-200 whitespace-nowrap">
-              MORE <i className={`ri-arrow-down-s-line transition-transform duration-300 ${isMoreOpen ? "rotate-180" : ""}`}></i>
+            <button className="flex items-center gap-1 font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-widest text-deep-brown group-hover:text-accent-red transition-colors duration-200 whitespace-nowrap">
+              MORE{" "}
+              <ChevronDownIcon
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  isMoreOpen ? "rotate-180" : ""
+                }`}
+              />
             </button>
 
             {/* Dropdown Menu */}
             <div
-              className={`absolute top-full right-0 w-56 bg-white border border-deep-brown/5 shadow-2xl rounded-xl overflow-hidden transition-all duration-300 transform origin-top ${
+              className={`absolute top-full left-1/2 -translate-x-1/2 w-56 bg-white border border-deep-brown/10 shadow-2xl rounded-xl overflow-hidden transition-all duration-300 transform origin-top ${
                 isMoreOpen
-                  ? "opacity-100 scale-100 translate-y-0"
-                  : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                  ? "opacity-100 scale-100 translate-y-2"
+                  : "opacity-0 scale-95 translate-y-0 pointer-events-none"
               }`}
             >
               <div className="flex flex-col py-2">
@@ -197,10 +218,10 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/book-session"
-                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest px-5 py-2.5 bg-accent-red text-cream rounded-[4px] relative overflow-hidden group whitespace-nowrap shadow-sm hover:shadow-md transition-all"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.15em] px-7 py-3 bg-[#E11D48] text-white rounded-full relative overflow-hidden group whitespace-nowrap shadow-[0_4px_14px_0_rgba(225,29,72,0.39)] hover:shadow-[0_6px_20px_rgba(225,29,72,0.23)] hover:scale-105 transition-all duration-300 active:scale-95"
               >
-                <span className="absolute inset-0 bg-red-600 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
                 <span className="relative z-10">BOOK A SESSION</span>
+                <span className="absolute inset-0 bg-white/10 group-hover:translate-x-full transition-transform duration-500 ease-out"></span>
               </Link>
             </div>
           )}
