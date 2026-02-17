@@ -15,49 +15,57 @@ export const searchIndex: SearchResult[] = [
   },
   {
     title: "About Us",
-    description: "Learn about the mission, vision, and the team behind A1 Tantra.",
+    description:
+      "Learn about the mission, vision, and the team behind A1 Tantra.",
     url: "/about",
     category: "Page",
   },
   {
     title: "Tantra Paths",
-    description: "Explore authentic tantric traditions: Kriya, Carya, Yoga, and Anuttarayoga.",
+    description:
+      "Explore authentic tantric traditions: Kriya, Carya, Yoga, and Anuttarayoga.",
     url: "/#tantra-paths",
     category: "Page",
   },
   {
     title: "All Sessions",
-    description: "View all our tantric sessions including meditation, breathwork, and chakra balancing.",
+    description:
+      "View all our tantric sessions including meditation, breathwork, and chakra balancing.",
     url: "/sessions",
     category: "Page",
   },
   {
     title: "Therapies",
-    description: "Online spiritual healing and tantra therapy sessions for holistic growth.",
+    description:
+      "Online spiritual healing and tantra therapy sessions for holistic growth.",
     url: "/therapies",
     category: "Page",
   },
   {
     title: "Contact",
-    description: "Get in touch with us for guidance, collaborations, or inquiries.",
+    description:
+      "Get in touch with us for guidance, collaborations, or inquiries.",
     url: "/contact",
     category: "Page",
   },
   {
     title: "Resources",
-    description: "Articles, guides, and educational materials on tantric practices.",
+    description:
+      "Articles, guides, and educational materials on tantric practices.",
     url: "/resources",
     category: "Page",
   },
   {
     title: "Start Journey",
-    description: "Begin your personalized tantric journey with our guided paths.",
+    description:
+      "Begin your personalized tantric journey with our guided paths.",
     url: "/start-journey",
     category: "Page",
   },
   {
     title: "Book a Session",
-    description: "Ready to transform? Book your personalized tantra session today.",
+    description:
+      "Ready to transform? Book your personalized tantra session today.",
     url: "/book-session",
     category: "Page",
   },
@@ -65,7 +73,8 @@ export const searchIndex: SearchResult[] = [
   // Services
   {
     title: "Tantra Sessions in India",
-    description: "Comprehensive online tantra sessions: meditation, breathwork, chakra balancing.",
+    description:
+      "Comprehensive online tantra sessions: meditation, breathwork, chakra balancing.",
     url: "/sessions",
     category: "Service",
   },
@@ -77,7 +86,8 @@ export const searchIndex: SearchResult[] = [
   },
   {
     title: "Relationship Tantra Consultation",
-    description: "Expert guidance for couples to deepen intimacy and sacred partnership.",
+    description:
+      "Expert guidance for couples to deepen intimacy and sacred partnership.",
     url: "/advisory",
     category: "Service",
   },
@@ -85,25 +95,29 @@ export const searchIndex: SearchResult[] = [
   // Tantra Paths (from TantraTypesSection)
   {
     title: "Kriya Tantra (Action Tantra)",
-    description: "Foundational path emphasizing ritual action, physical purity, and structured ceremonial conduct.",
+    description:
+      "Foundational path emphasizing ritual action, physical purity, and structured ceremonial conduct.",
     url: "/#tantra-paths",
     category: "Tantra Path",
   },
   {
     title: "Carya Tantra (Method Tantra)",
-    description: "Balances outer ritual with inner meditative stability and devotional visualization.",
+    description:
+      "Balances outer ritual with inner meditative stability and devotional visualization.",
     url: "/#tantra-paths",
     category: "Tantra Path",
   },
   {
     title: "Yoga Tantra (Union Tantra)",
-    description: "Centers on internal practice, visualization of deities, and subtle-energy awareness.",
+    description:
+      "Centers on internal practice, visualization of deities, and subtle-energy awareness.",
     url: "/#tantra-paths",
     category: "Tantra Path",
   },
   {
     title: "Anuttarayoga Tantra (Highest Union)",
-    description: "The peak of tantric practice, integrating non-dual awareness and the most profound transformations.",
+    description:
+      "The peak of tantric practice, integrating non-dual awareness and the most profound transformations.",
     url: "/#tantra-paths",
     category: "Tantra Path",
   },
@@ -111,13 +125,15 @@ export const searchIndex: SearchResult[] = [
   // Detailed Paths (from TantraPathsGuides)
   {
     title: "Shakta Tantra",
-    description: "The path of the Divine Feminine, honoring Shakti as the cosmic creative energy.",
+    description:
+      "The path of the Divine Feminine, honoring Shakti as the cosmic creative energy.",
     url: "/#shakta",
     category: "Tantra Path",
   },
   {
     title: "Kundalini Tantra",
-    description: "Awakening the serpent energy coiled at the base of the spine through initiation and practice.",
+    description:
+      "Awakening the serpent energy coiled at the base of the spine through initiation and practice.",
     url: "/#kundalini",
     category: "Tantra Path",
   },

@@ -52,7 +52,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       {/* Modal Container */}
       <div className="relative w-full max-w-2xl bg-cream border-2 border-deep-brown rounded-2xl shadow-2xl overflow-hidden transform transition-all animate-in fade-in zoom-in duration-300">
         {/* Search Input Area */}
-        <div className="p-6 border-b border-stone-200 bg-white">
+        <div className="p-6 border-b border-stone-200 bg-cream">
           <div className="relative flex items-center">
             <svg
               className="absolute left-4 w-6 h-6 text-deep-brown"
@@ -71,7 +71,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
               ref={inputRef}
               type="text"
               placeholder="Search for paths, sessions, wisdom..."
-              className="w-full pl-14 pr-12 py-4 bg-stone-100 border-2 border-stone-200 focus:border-accent-red focus:ring-0 rounded-xl text-lg font-body text-deep-brown placeholder:text-stone-400 outline-none transition-all"
+              className="w-full pl-14 pr-12 py-4 bg-stone-100/50 border-2 border-stone-200 focus:border-accent-red focus:ring-0 rounded-xl text-lg font-body text-deep-brown placeholder:text-stone-400 outline-none transition-all"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
@@ -153,7 +153,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-stone-100 border-t border-stone-200 flex justify-between items-center text-[10px] text-stone-500 font-nav font-bold uppercase tracking-widest">
+        <div className="p-4 bg-cream border-t border-stone-200 flex justify-between items-center text-[10px] text-stone-500 font-nav font-bold uppercase tracking-widest">
           <span>Search A1 Tantra Wisdom</span>
           <span>ESC to close</span>
         </div>
