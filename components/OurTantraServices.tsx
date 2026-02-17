@@ -7,95 +7,71 @@ export default function OurTantraServices() {
   const services = [
     {
       title: "Tantra Sessions",
-      location: "India & Online",
       description:
-        "Comprehensive sessions including meditation, breathwork, and chakra balancing designed to awaken your inner potential.",
+        "Explore comprehensive online tantra sessions including meditation, breathwork, and chakra balancing designed to awaken your inner potential.",
       link: "/sessions",
       image: "/images/Tantra-Meditation-Session.jpg",
-      tag: "CORE PRACTICE",
+      icon: "🧘",
     },
     {
       title: "Spiritual Healing",
-      location: "Transformative Therapy",
       description:
-        "Restore energetic vitality and emotional balance through sacred practices and expert energy work.",
+        "Experience transformative spiritual healing through energy work and sacred practices to restore your energetic vitality.",
       link: "/therapies",
       image: "/images/Chakra-Balancing-Session.jpg",
-      tag: "THERAPEUTIC",
+      icon: "✨",
     },
     {
-      title: "Relationship Tantra",
-      location: "Sacred Partnership",
+      title: "Tantra Advisory",
       description:
-        "Deepen intimacy and resolve conflicts through expert guidance for couples to restore harmony.",
+        "Expert guidance for couples to deepen intimacy, resolve conflicts, and restore harmony in their sacred partnership.",
       link: "/advisory",
       image: "/images/two-people-meditate.jpg",
-      tag: "CONNECTION",
+      icon: "💕",
     },
   ];
 
   return (
-    <section className="py-24 bg-cream">
+    <section className="py-20 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-2xl">
-            <h2 className="font-title text-5xl md:text-7xl font-bold text-deep-brown mb-6">
-              Our Tantra <span className="text-accent-red italic">Services</span>
-            </h2>
-            <p className="text-xl text-deep-brown/80 font-body leading-relaxed">
-              Authentic paths designed for modern seekers, merging ancient wisdom with 
-              contemporary understanding for profound transformation.
-            </p>
-          </div>
-          <Link 
-            href="/start-journey" 
-            className="inline-flex items-center gap-2 font-nav font-bold uppercase tracking-widest text-accent-red hover:text-deep-brown transition-colors mb-2"
-          >
-            All Offerings <span className="text-2xl">→</span>
-          </Link>
+        <div className="text-center mb-16">
+          <h2 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-4 tracking-tight">
+            How we can help you
+          </h2>
+          <div className="w-20 h-1 bg-accent-red mx-auto rounded-full"></div>
         </div>
 
-        {/* Services Grid - New Look */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, idx) => (
-            <Link key={idx} href={service.link} className="group relative block h-[600px] overflow-hidden rounded-[2.5rem] shadow-2xl">
-              {/* Background Image */}
-              <div className="absolute inset-0 z-0">
+            <Link 
+              key={idx} 
+              href={service.link} 
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-deep-brown/5"
+            >
+              {/* Image Header */}
+              <div className="relative h-56 overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-linear-to-b from-black/20 via-black/40 to-black/90 group-hover:from-black/40 transition-colors duration-500"></div>
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-lg text-2xl shadow-sm">
+                  {service.icon}
+                </div>
               </div>
 
-              {/* Content Overlay */}
-              <div className="relative z-10 h-full flex flex-col justify-end p-10">
-                <div className="mb-6 transform group-hover:-translate-y-4 transition-transform duration-500">
-                  <span className="inline-block px-3 py-1 bg-accent-red text-cream text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-4">
-                    {service.tag}
-                  </span>
-                  <h3 className="font-title text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
-                    {service.title}
-                  </h3>
-                  <p className="text-white/60 font-nav text-xs uppercase tracking-widest mb-6">
-                    {service.location}
-                  </p>
-                  <p className="text-white/80 font-body text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
-                    {service.description}
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-between pt-6 border-t border-white/10">
-                  <span className="text-white font-nav font-bold text-sm tracking-widest uppercase">Begin Path</span>
-                  <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-white group-hover:text-deep-brown transition-all duration-300">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </div>
+              {/* Text Content */}
+              <div className="p-8">
+                <h3 className="font-title text-2xl font-bold text-deep-brown mb-3 group-hover:text-accent-red transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-deep-brown/70 leading-relaxed font-body text-base mb-6">
+                  {service.description}
+                </p>
+                <div className="flex items-center text-accent-red font-bold text-sm uppercase tracking-widest gap-2">
+                  <span>Explore Service</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </div>
             </Link>

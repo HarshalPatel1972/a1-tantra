@@ -3,79 +3,65 @@
 export default function RealTalk() {
   const insights = [
     {
-      number: "01",
-      category: "CLARITY",
-      title: "Ancient Wisdom, Modern Life.",
+      category: "Authenticity",
+      title: "What is Tantra really about?",
       content:
-        "Tantra is not what pop culture suggests. It's an ancient spiritual science focused on transforming energy, consciousness, and everyday experience. Rooted in reverence for the sacred within all things, Tantra teaches integration—uniting mind, body, and spirit.",
+        "It's not what pop culture suggests. Tantra is an ancient spiritual science focused on transforming energy, consciousness, and everyday experience. Rooted in reverence for the sacred, it teaches the integration of mind, body, and spirit.",
+      highlight: "Sacred Integration"
     },
     {
-      number: "02",
-      category: "HEALING",
-      title: "Emotional alchemy.",
+      category: "Healing",
+      title: "Can it help with emotional pain?",
       content:
-        "Yes. Tantra creates a framework for processing emotions by teaching you to witness feelings without judgment and move stagnant energy. Through breathwork, meditation, and ritualistic practice, you learn to transform pain into wisdom.",
+        "Tantra creates a framework for processing emotions by teaching you to witness feelings without judgment. Through breathwork and ritual, you learn to transform internal friction into wisdom and growth.",
+      highlight: "Energy Transformation"
     },
     {
-      number: "03",
-      category: "EXPERIENCE",
-      title: "Enter the flow.",
+      category: "Journey",
+      title: "What is the first step like?",
       content:
-        "Expect to be guided into a state of deep relaxation and heightened awareness. You'll learn foundational breathwork, visualization techniques, and how to work with subtle energy centers. There's no performance required.",
+        "Expect a state of deep relaxation and heightened awareness. Guided by clarity and compassion, you'll explore foundational breathwork and visualization. No performance is required—only openness.",
+      highlight: "Safe Exploration"
     },
   ];
 
   return (
-    <section className="py-32 bg-deep-brown text-cream overflow-hidden">
+    <section className="py-24 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          {/* Header Section */}
-          <div className="lg:col-span-5 sticky top-32">
-            <p className="font-nav text-xs font-bold uppercase tracking-[0.4em] text-accent-red mb-8">
-              HONEST INSIGHTS
-            </p>
-            <h2 className="font-title text-6xl md:text-8xl font-bold mb-10 leading-[0.9] tracking-tighter">
-              A1 <span className="italic">Perspective</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-cream/60 font-body leading-relaxed max-w-md mb-12">
-              We deconstruct the complex to help you find clarity on your spiritual path.
-            </p>
-            <div className="w-24 h-px bg-cream/20"></div>
-          </div>
-
-          {/* Insights List */}
-          <div className="lg:col-span-7 space-y-32">
-            {insights.map((insight, idx) => (
-              <div key={idx} className="group relative">
-                <span className="absolute -left-12 top-0 font-title text-8xl text-cream/5 font-black leading-none group-hover:text-accent-red/10 transition-colors duration-500">
-                  {insight.number}
-                </span>
-                
-                <div className="relative z-10 pl-0 md:pl-8">
-                  <p className="text-accent-red text-[10px] font-bold uppercase tracking-[0.3em] mb-4">
-                    {insight.category}
-                  </p>
-                  <h3 className="font-title text-3xl md:text-5xl font-bold mb-8 leading-tight group-hover:translate-x-4 transition-transform duration-500">
-                    {insight.title}
-                  </h3>
-                  <p className="text-lg md:text-xl text-cream/80 font-body leading-relaxed max-w-2xl border-l-2 border-cream/10 pl-8 group-hover:border-accent-red transition-colors duration-500">
-                    {insight.content}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Simple, Clear Header */}
+        <div className="max-w-3xl mb-16">
+          <p className="text-accent-red font-nav font-bold uppercase tracking-[0.2em] mb-4">Honest Insights</p>
+          <h2 className="font-title text-4xl md:text-6xl font-bold text-deep-brown leading-tight">
+            Common questions on the <span className="text-accent-red italic underline decoration-1 underline-offset-8">Tantric path</span>.
+          </h2>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-32 pt-16 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="font-nav text-[10px] font-bold uppercase tracking-[0.3em] text-cream/40">
-            Expanding Consciousness Since 2024
-          </p>
-          <button className="group flex items-center gap-4 text-sm font-nav font-bold uppercase tracking-widest hover:text-accent-red transition-colors">
-            <span>Explore All Insights</span>
-            <div className="w-12 h-px bg-accent-red group-hover:w-20 transition-all duration-500"></div>
-          </button>
+        {/* User-Friendly Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {insights.map((insight, idx) => (
+            <div key={idx} className="flex flex-col">
+              <div className="mb-6 flex items-center gap-4">
+                <span className="w-8 h-px bg-accent-red"></span>
+                <span className="font-nav font-bold text-xs uppercase tracking-widest text-deep-brown/40">
+                  {insight.category}
+                </span>
+              </div>
+              
+              <h3 className="font-title text-2xl font-bold text-deep-brown mb-6">
+                {insight.title}
+              </h3>
+              
+              <p className="font-body text-lg text-deep-brown/75 leading-relaxed mb-8 flex-grow">
+                {insight.content}
+              </p>
+
+              <div className="pt-6 border-t border-deep-brown/5">
+                <p className="font-nav font-bold text-[10px] uppercase tracking-widest text-accent-red">
+                  Key Focus: {insight.highlight}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
