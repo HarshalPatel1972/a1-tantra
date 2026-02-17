@@ -38,7 +38,7 @@
 
 /* Root theme */
 :root {
-  --background: #f9f2e8;
+  --background: #fff0df;
   --foreground: #3f2f27;
   --accent: #e44426;
   --soft-gold: #d4af37;
@@ -70,7 +70,7 @@ button {
 
 i[class^="ri-"],
 i[class*=" ri-"] {
-  color: #f9f2e8 !important; /* cream default icon color */
+  color: #fff0df !important; /* cream default icon color */
   opacity: 1 !important;
   visibility: visible !important;
   line-height: 1 !important;
