@@ -178,7 +178,7 @@ export default function Navbar() {
                       handleSmoothScroll(e, link.href);
                       setIsExploreOpen(false);
                     }}
-                    className="px-6 py-3 font-nav text-[13px] font-semibold uppercase tracking-widest text-deep-brown hover:bg-cream hover:text-accent-red transition-all duration-200"
+                    className="px-6 py-3 font-nav text-[13px] font-semibold uppercase tracking-widest text-deep-brown hover:bg-stone-50 hover:text-accent-red hover:pl-8 transition-all duration-300"
                   >
                     {link.label}
                   </Link>
@@ -218,10 +218,10 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/book-session"
-                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.15em] px-7 py-3 bg-[#E11D48] text-white rounded-full relative overflow-hidden group whitespace-nowrap shadow-[0_4px_14px_0_rgba(225,29,72,0.39)] hover:shadow-[0_6px_20px_rgba(225,29,72,0.23)] hover:scale-105 transition-all duration-300 active:scale-95"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.15em] px-8 py-3.5 bg-[#E11D48] text-white rounded-full relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95"
               >
                 <span className="relative z-10">BOOK A SESSION</span>
-                <span className="absolute inset-0 bg-white/10 group-hover:translate-x-full transition-transform duration-500 ease-out"></span>
+                <span className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-colors duration-300"></span>
               </Link>
             </div>
           )}
@@ -336,7 +336,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/book-session"
-                  className="block w-full text-center py-4 bg-accent-red text-cream font-bold uppercase tracking-widest rounded-lg shadow-lg active:scale-[0.98] transition-all"
+                  className="block w-full text-center py-4 bg-accent-red text-cream font-bold uppercase tracking-widest rounded-lg active:scale-[0.98] transition-all"
                   onClick={() => setIsOpen(false)}
                 >
                   BOOK A SESSION
