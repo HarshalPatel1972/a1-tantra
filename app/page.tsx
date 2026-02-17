@@ -21,7 +21,7 @@ export default function Home() {
       <WelcomeHome />
       <RealTalk />
       <TantraTypesSection />
-      <SessionsGrid />
+      {/* <SessionsGrid /> */}
       <OurTantraServices />
       <UserReviews />
       <BuildJourneyCTA />
