@@ -59,7 +59,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const [isExploreOpen, setIsExploreOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
 
   useEffect(() => {
@@ -146,17 +146,17 @@ export default function Navbar() {
             ABOUT
           </Link>
 
-          {/* MORE DROPDOWN */}
+          {/* EXPLORE DROPDOWN */}
           <div
             className="relative group py-4"
-            onMouseEnter={() => setIsMoreOpen(true)}
-            onMouseLeave={() => setIsMoreOpen(false)}
+            onMouseEnter={() => setIsExploreOpen(true)}
+            onMouseLeave={() => setIsExploreOpen(false)}
           >
             <button className="flex items-center gap-1 font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-widest text-deep-brown group-hover:text-accent-red transition-colors duration-200 whitespace-nowrap">
-              MORE{" "}
+              EXPLORE{" "}
               <ChevronDownIcon
                 className={`w-4 h-4 transition-transform duration-300 ${
-                  isMoreOpen ? "rotate-180" : ""
+                  isExploreOpen ? "rotate-180" : ""
                 }`}
               />
             </button>
@@ -164,7 +164,7 @@ export default function Navbar() {
             {/* Dropdown Menu */}
             <div
               className={`absolute top-full left-1/2 -translate-x-1/2 w-56 bg-white border border-deep-brown/10 shadow-2xl rounded-xl overflow-hidden transition-all duration-300 transform origin-top ${
-                isMoreOpen
+                isExploreOpen
                   ? "opacity-100 scale-100 translate-y-2"
                   : "opacity-0 scale-95 translate-y-0 pointer-events-none"
               }`}
@@ -176,7 +176,7 @@ export default function Navbar() {
                     href={link.href}
                     onClick={(e) => {
                       handleSmoothScroll(e, link.href);
-                      setIsMoreOpen(false);
+                      setIsExploreOpen(false);
                     }}
                     className="px-6 py-3 font-nav text-[13px] font-semibold uppercase tracking-widest text-deep-brown hover:bg-cream hover:text-accent-red transition-all duration-200"
                   >
