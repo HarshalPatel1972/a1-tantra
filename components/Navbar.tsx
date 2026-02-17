@@ -39,6 +39,22 @@ const HamburgerIcon = ({ className = "w-6 h-6" }) => (
   </svg>
 );
 
+const CloseIcon = ({ className = "w-6 h-6" }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M6 18L18 6M6 6l12 12"
+    />
+  </svg>
+);
+
 const ChevronDownIcon = ({ className = "w-4 h-4" }) => (
   <svg
     className={className}
@@ -338,7 +354,7 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <i className="ri-close-line text-2xl"></i>
+              <CloseIcon className="w-6 h-6" />
             ) : (
               <HamburgerIcon className="w-6 h-6" />
             )}
