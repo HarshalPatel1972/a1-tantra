@@ -79,7 +79,7 @@ export default function Navbar() {
         fixed top-0 w-full z-50 transition-all duration-500 ease-out
         ${
           scrolled
-            ? "bg-stone-100 border-b border-deep-brown shadow-lg"
+            ? "bg-stone-100/80 backdrop-blur-md border-b border-deep-brown shadow-lg"
             : "bg-cream border-transparent"
         }
       `}
