@@ -126,9 +126,9 @@ export default function Navbar() {
       className={`
         fixed top-0 w-full z-50 transition-all duration-500 ease-out
         ${
-          scrolled
-            ? "bg-stone-100/80 backdrop-blur-md border-b border-deep-brown shadow-lg"
-            : "bg-cream border-transparent"
+          scrolled || isOpen
+            ? "bg-stone-100/80 backdrop-blur-md border-b border-deep-brown/10 shadow-lg"
+            : "bg-cream/80 backdrop-blur-md border-transparent"
         }
       `}
     >
@@ -410,7 +410,7 @@ export default function Navbar() {
 
       {/* MOBILE DROPDOWN MENU */}
       <div
-        className={`md:hidden bg-cream border-t border-deep-brown/10 overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`md:hidden bg-cream/95 backdrop-blur-lg border-t border-deep-brown/10 overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
