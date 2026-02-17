@@ -70,12 +70,22 @@ const config: Config = {
           "33%": { transform: "translate(50px, 20px) scale(0.9)" },
           "66%": { transform: "translate(-30px, -40px) scale(1.05)" },
         },
+        "slide-in-right": {
+          "0%": { opacity: "0", transform: "translateX(40px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        "slide-in-left": {
+          "0%": { opacity: "0", transform: "translateX(-40px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
       },
       animation: {
         "gradient-shift": "gradient-shift 15s ease infinite",
         blob: "blob 7s infinite",
         "blob-slow": "blob-slow 9s infinite",
         "blob-reverse": "blob-reverse 11s infinite",
+        "slide-in-right": "slide-in-right 0.5s ease-out forwards",
+        "slide-in-left": "slide-in-left 0.5s ease-out forwards",
       },
     },
   },

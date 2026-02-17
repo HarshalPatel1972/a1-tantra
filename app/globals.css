@@ -60,6 +60,11 @@ button {
   transition: all 0.3s ease;
 }
 
+/* Carousel transition duration utility */
+.duration-600 {
+  transition-duration: 600ms;
+}
+
 .serif-heading {
   font-family: var(--font-playfair), serif;
 }

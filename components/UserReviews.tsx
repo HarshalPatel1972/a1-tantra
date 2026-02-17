@@ -1,148 +1,262 @@
 "use client";
 
-const StarRating = ({ rating }: { rating: number }) => {
-  return (
-    <div className="flex gap-0.5 mb-2">
-      {[1, 2, 3, 4, 5].map((star) => (
-        <svg
-          key={star}
-          className={`w-4 h-4 ${
-            star <= Math.floor(rating)
-              ? "text-soft-gold fill-soft-gold"
-              : star - 0.5 === rating
-              ? "text-soft-gold"
-              : "text-stone-300 fill-stone-300"
-          }`}
-          viewBox="0 0 20 20"
-        >
-          {star - 0.5 === rating ? (
-            <defs>
-              <linearGradient id="half">
-                <stop offset="50%" stopColor="#D4AF37" />
-                <stop offset="50%" stopColor="#D6D3D1" />
-              </linearGradient>
-            </defs>
-          ) : null}
-          <path
-            fill={star - 0.5 === rating ? "url(#half)" : "currentColor"}
-            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-          />
-        </svg>
-      ))}
-    </div>
-  );
-};
+import { useState, useEffect, useCallback } from "react";
+
+const reviews = [
+  {
+    name: "Priya Sharma",
+    location: "Mumbai, Maharashtra",
+    comment:
+      "The breathwork sessions completely changed my perspective on energy. The guidance is authentic and deeply rooted in tradition. Highly recommended!",
+    rating: 5,
+    date: "Oct 2025",
+  },
+  {
+    name: "Amit Patel",
+    location: "Ahmedabad, Gujarat",
+    comment:
+      "The most profound experience I've had in 10 years of meditation practice. A1 Tantra provides a safe and expert container for real transformation.",
+    rating: 5,
+    date: "Jan 2026",
+  },
+  {
+    name: "Rohan Mehra",
+    location: "New Delhi, Delhi",
+    comment:
+      "Authentic and deep. I was looking for something beyond the superficial, and I found it here. The chakra balancing session was a revelation.",
+    rating: 5,
+    date: "Dec 2025",
+  },
+  {
+    name: "Sanjana Iyer",
+    location: "Chennai, Tamil Nadu",
+    comment:
+      "I was skeptical at first, but the results speak for themselves. I feel more centered and peaceful than I have in years. Truly life-changing work.",
+    rating: 4.5,
+    date: "Feb 2026",
+  },
+  {
+    name: "Ananya Rao",
+    location: "Bangalore, Karnataka",
+    comment:
+      "The guidance is clear, compassionate, and truly expert. They treat Tantra with the respect and depth it deserves. A beautiful journey so far.",
+    rating: 5,
+    date: "Nov 2025",
+  },
+  {
+    name: "Vikram Singh",
+    location: "Jaipur, Rajasthan",
+    comment:
+      "Finally a place that simplifies complex tantric wisdom without losing its essence. The sessions are practical yet spiritually significant.",
+    rating: 5,
+    date: "Dec 2025",
+  },
+];
+
+const StarRating = ({ rating }: { rating: number }) => (
+  <div className="flex gap-1">
+    {[1, 2, 3, 4, 5].map((star) => (
+      <svg
+        key={star}
+        className={`w-5 h-5 ${
+          star <= Math.floor(rating)
+            ? "text-soft-gold"
+            : star - 0.5 <= rating
+            ? "text-soft-gold"
+            : "text-white/20"
+        }`}
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+      </svg>
+    ))}
+  </div>
+);
 
 export default function UserReviews() {
-  const reviews = [
-    {
-      name: "Priya Sharma",
-      location: "Mumbai, Maharashtra",
-      comment: "The breathwork sessions completely changed my perspective on energy. The guidance is authentic and deeply rooted in tradition. Highly recommended!",
-      rating: 5,
-      date: "Oct 2025",
+  const [current, setCurrent] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [direction, setDirection] = useState<"left" | "right">("right");
+  const [isPaused, setIsPaused] = useState(false);
+
+  const goTo = useCallback(
+    (index: number, dir: "left" | "right") => {
+      if (isAnimating) return;
+      setIsAnimating(true);
+      setDirection(dir);
+      setCurrent(index);
+      setTimeout(() => setIsAnimating(false), 600);
     },
-    {
-      name: "Amit Patel",
-      location: "Ahmedabad, Gujarat",
-      comment: "The most profound experience I've had in 10 years of meditation practice. A1 Tantra provides a safe and expert container for real transformation.",
-      rating: 5,
-      date: "Jan 2026",
-    },
-    {
-      name: "Rohan Mehra",
-      location: "New Delhi, Delhi",
-      comment: "Authentic and deep. I was looking for something beyond the superficial, and I found it here. The chakra balancing session was a revelation.",
-      rating: 5,
-      date: "Dec 2025",
-    },
-    {
-      name: "Sanjana Iyer",
-      location: "Chennai, Tamil Nadu",
-      comment: "I was skeptical at first, but the results speak for themselves. I feel more centered and peaceful than I have in years. Truly life-changing work.",
-      rating: 4.5,
-      date: "Feb 2026",
-    },
-    {
-      name: "Ananya Rao",
-      location: "Bangalore, Karnataka",
-      comment: "The guidance is clear, compassionate, and truly expert. They treat Tantra with the respect and depth it deserves. A beautiful journey so far.",
-      rating: 5,
-      date: "Nov 2025",
-    },
-    {
-      name: "Vikram Singh",
-      location: "Jaipur, Rajasthan",
-      comment: "Finally a place that simplifies complex tantric wisdom without losing its essence. The sessions are practical yet spiritually significant.",
-      rating: 5,
-      date: "Dec 2025",
-    },
-  ];
+    [isAnimating]
+  );
+
+  const next = useCallback(() => {
+    goTo((current + 1) % reviews.length, "right");
+  }, [current, goTo]);
+
+  const prev = useCallback(() => {
+    goTo((current - 1 + reviews.length) % reviews.length, "left");
+  }, [current, goTo]);
+
+  // Auto-play
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(next, 5500);
+    return () => clearInterval(timer);
+  }, [next, isPaused]);
+
+  const review = reviews[current];
 
   return (
-    <section className="py-20 bg-cream overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-4">
+    <section className="relative py-28 md:py-36 bg-deep-brown overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute inset-0 pointer-events-none select-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-soft-gold/[0.02] blur-3xl" />
+        <div className="absolute top-12 left-12 md:top-20 md:left-20 font-title text-[12rem] md:text-[18rem] leading-none text-white/[0.02] select-none">
+          &ldquo;
+        </div>
+      </div>
+
+      <div
+        className="relative max-w-5xl mx-auto px-6 sm:px-10 lg:px-16"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Header */}
+        <div className="text-center mb-16 md:mb-20">
+          <p className="text-[11px] font-nav font-bold text-soft-gold/60 uppercase tracking-[0.4em] mb-4">
+            Testimonials
+          </p>
+          <h2 className="font-title text-4xl md:text-6xl font-bold text-cream leading-tight">
             Voice of the Seekers
           </h2>
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-8 h-8 rounded-full bg-stone-200 border-2 border-cream flex items-center justify-center text-[10px] font-bold text-deep-brown">
-                  {String.fromCharCode(64 + i)}
-                </div>
-              ))}
+        </div>
+
+        {/* Slide Area */}
+        <div className="relative min-h-[340px] md:min-h-[300px]">
+          {/* Navigation Arrows — Desktop flanking */}
+          <button
+            onClick={prev}
+            aria-label="Previous review"
+            className="hidden md:flex absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full border border-cream/10 items-center justify-center text-cream/40 hover:text-soft-gold hover:border-soft-gold/40 transition-all duration-300 backdrop-blur-sm"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={next}
+            aria-label="Next review"
+            className="hidden md:flex absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full border border-cream/10 items-center justify-center text-cream/40 hover:text-soft-gold hover:border-soft-gold/40 transition-all duration-300 backdrop-blur-sm"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Review Content */}
+          <div
+            key={current}
+            className={`flex flex-col items-center text-center transition-all duration-600 ease-out ${
+              isAnimating
+                ? direction === "right"
+                  ? "animate-slide-in-right"
+                  : "animate-slide-in-left"
+                : ""
+            }`}
+          >
+            {/* Stars */}
+            <div className="mb-8">
+              <StarRating rating={review.rating} />
             </div>
-            <p className="text-sm font-nav font-bold text-deep-brown/60 uppercase tracking-widest pl-2">
-              Joined by 500+ Seekers
-            </p>
+
+            {/* Quote */}
+            <blockquote className="max-w-3xl mb-12">
+              <p className="font-body text-xl sm:text-2xl md:text-3xl text-cream/90 leading-relaxed md:leading-relaxed italic font-light">
+                &ldquo;{review.comment}&rdquo;
+              </p>
+            </blockquote>
+
+            {/* Divider */}
+            <div className="w-12 h-[1px] bg-soft-gold/30 mb-8" />
+
+            {/* Author */}
+            <div className="flex flex-col items-center gap-3">
+              <div className="w-14 h-14 rounded-full bg-soft-gold/10 border border-soft-gold/20 flex items-center justify-center">
+                <span className="font-title text-xl font-bold text-soft-gold">
+                  {review.name.charAt(0)}
+                </span>
+              </div>
+              <div>
+                <h4 className="font-nav font-bold text-sm text-cream uppercase tracking-[0.2em]">
+                  {review.name}
+                </h4>
+                <p className="text-[11px] text-cream/30 font-nav uppercase tracking-[0.25em] mt-1">
+                  {review.location}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review, idx) => (
-            <div
-              key={idx}
-              className="bg-deep-brown p-8 rounded-3xl border border-white/5 shadow-lg hover:shadow-2xl transition-all duration-300 relative group overflow-hidden"
-            >
-              <div className="absolute top-8 right-8 text-white/5 group-hover:text-soft-gold/10 transition-colors">
-                <svg className="w-16 h-16 fill-current" viewBox="0 0 24 24">
-                  <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 7.55228 14.017 7V5C14.017 4.44772 14.4647 4 15.017 4H20.017C21.1216 4 22.017 4.89543 22.017 6V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM2.01697 21L2.01697 18C2.01697 16.8954 2.9124 16 4.01697 16H7.01697C7.56925 16 8.01697 15.5523 8.01697 15V9C8.01697 8.44772 7.56925 8 7.01697 8H3.01697C2.46468 8 2.01697 7.55228 2.01697 7V5C2.01697 4.44772 2.46468 4 3.01697 4H8.01697C9.12154 4 10.017 4.89543 10.017 6V15C10.017 18.3137 7.33067 21 4.01697 21H2.01697Z" />
-                </svg>
-              </div>
-              
-              <StarRating rating={review.rating} />
-              
-              <p className="font-body text-cream/80 leading-relaxed mb-8 relative z-10 italic">
-                "{review.comment}"
-              </p>
+        {/* Mobile Arrows + Dots */}
+        <div className="flex items-center justify-center gap-6 mt-14">
+          <button
+            onClick={prev}
+            aria-label="Previous review"
+            className="md:hidden w-12 h-12 rounded-full border border-cream/10 flex items-center justify-center text-cream/40 hover:text-soft-gold hover:border-soft-gold/40 transition-all duration-300"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
 
-              <div className="flex items-center gap-4 border-t border-white/10 pt-6">
-                <div className="w-10 h-10 rounded-full bg-soft-gold/10 flex items-center justify-center font-title font-bold text-soft-gold">
-                  {review.name.charAt(0)}
-                </div>
-                <div>
-                  <h4 className="font-nav font-bold text-sm text-cream uppercase tracking-wider group-hover:text-soft-gold transition-colors">
-                    {review.name}
-                  </h4>
-                  <p className="text-[11px] text-cream/40 font-nav uppercase tracking-widest mt-0.5">
-                    {review.location} • {review.date}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
+          {/* Dots */}
+          <div className="flex items-center gap-2">
+            {reviews.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() =>
+                  goTo(idx, idx > current ? "right" : "left")
+                }
+                aria-label={`Go to review ${idx + 1}`}
+                className={`rounded-full transition-all duration-500 ${
+                  idx === current
+                    ? "w-8 h-2 bg-soft-gold"
+                    : "w-2 h-2 bg-cream/20 hover:bg-cream/40"
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={next}
+            aria-label="Next review"
+            className="md:hidden w-12 h-12 rounded-full border border-cream/10 flex items-center justify-center text-cream/40 hover:text-soft-gold hover:border-soft-gold/40 transition-all duration-300"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-white border border-deep-brown/10 rounded-full shadow-sm">
-            <div className="flex items-center gap-1.5">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-              <span className="text-[10px] font-nav font-bold text-deep-brown/60 uppercase tracking-widest">Live Updates</span>
+        {/* Trust Badge */}
+        <div className="mt-16 flex justify-center">
+          <div className="inline-flex items-center gap-3 px-6 py-3 border border-cream/5 rounded-full">
+            <div className="flex -space-x-2">
+              {reviews.slice(0, 4).map((r, i) => (
+                <div
+                  key={i}
+                  className="w-7 h-7 rounded-full bg-soft-gold/10 border-2 border-deep-brown flex items-center justify-center text-[9px] font-bold text-soft-gold"
+                >
+                  {r.name.charAt(0)}
+                </div>
+              ))}
             </div>
-            <p className="text-sm font-body text-deep-brown/80">
-              Average 4.9/5 based on 320+ verified reviews
+            <div className="h-4 w-[1px] bg-cream/10" />
+            <p className="text-[11px] font-nav font-bold text-cream/30 uppercase tracking-[0.2em]">
+              4.9/5 from 500+ seekers
             </p>
           </div>
         </div>
