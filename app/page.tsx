@@ -9,6 +9,7 @@ import SessionsGrid from "@/components/SessionsGrid";
 import BuildJourneyCTA from "@/components/BuildJourneyCTA";
 import OriginStory from "@/components/OriginStory";
 import OurTantraServices from "@/components/OurTantraServices";
+import UserReviews from "@/components/UserReviews";
 import InstagramInvite from "@/components/InstagramInvite";
 import Newsletter from "@/components/Newsletter";
 import InstagramGrid from "@/components/InstagramGrid";
@@ -22,6 +23,7 @@ export default function Home() {
       <TantraTypesSection />
       <SessionsGrid />
       <OurTantraServices />
+      <UserReviews />
       <BuildJourneyCTA />
       <OriginStory />
       <InstagramInvite />
