@@ -25,7 +25,7 @@ export default function Home() {
       <OurTantraServices />
       <UserReviews />
       <BuildJourneyCTA />
-      <OriginStory />
+      {/* <OriginStory /> */}
       <InstagramInvite />
       <Newsletter />
       <InstagramGrid />
