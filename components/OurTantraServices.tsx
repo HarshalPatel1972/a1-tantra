@@ -41,42 +41,59 @@ export default function OurTantraServices() {
           <div className="w-20 h-1 bg-accent-red mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="space-y-40">
           {services.map((service, idx) => (
-            <Link 
+            <div 
               key={idx} 
-              href={service.link} 
-              className="group bg-deep-brown rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/5"
+              className={`flex flex-col ${idx % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16 lg:gap-24`}
             >
-              {/* Image Header */}
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute top-4 left-4 bg-deep-brown/80 backdrop-blur-sm p-3 rounded-2xl text-2xl shadow-sm border border-white/10">
+              {/* Image Segment with Overlapping Frame */}
+              <div className="w-full lg:w-1/2 relative group px-6 lg:px-0">
+                <div className="absolute -inset-4 border border-accent-red/20 rounded-[3rem] -z-10 group-hover:inset-1 transition-all duration-700" />
+                <div className="relative aspect-[4/5] md:aspect-[16/9] lg:aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-deep-brown/40 to-transparent" />
+                </div>
+                {/* Floating Icon Badge */}
+                <div className="absolute -bottom-6 -right-0 md:right-12 w-20 h-20 bg-white shadow-xl rounded-2xl flex items-center justify-center text-4xl transform group-hover:-translate-y-2 transition-transform duration-500">
                   {service.icon}
                 </div>
-                {/* Overlay for better text transition */}
-                <div className="absolute inset-0 bg-linear-to-t from-deep-brown via-transparent to-transparent opacity-60"></div>
               </div>
 
-              {/* Text Content */}
-              <div className="p-8">
-                <h3 className="font-title text-2xl font-bold text-cream mb-4 group-hover:text-soft-gold transition-colors">
+              {/* Text Segment - Content Flow */}
+              <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left px-4">
+                <div className="mb-6 flex items-center gap-3">
+                  <div className="w-8 h-[1px] bg-accent-red" />
+                  <span className="text-[10px] font-bold text-accent-red uppercase tracking-[0.4em]">
+                    Exclusive Practice
+                  </span>
+                </div>
+
+                <h3 className="font-title text-4xl md:text-6xl font-bold text-deep-brown mb-8 leading-tight">
                   {service.title}
                 </h3>
-                <p className="text-cream/70 leading-relaxed font-body text-base mb-8">
+                
+                <p className="text-xl text-deep-brown/60 leading-relaxed font-body mb-10 max-w-xl">
                   {service.description}
                 </p>
-                <div className="flex items-center text-soft-gold font-bold text-sm uppercase tracking-widest gap-2">
-                  <span>Explore Service</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </div>
+
+                <Link 
+                  href={service.link}
+                  className="px-10 py-5 bg-deep-brown text-cream font-bold rounded-full relative overflow-hidden group shadow-xl hover:shadow-2xl transition-all"
+                >
+                  <span className="relative z-10 flex items-center gap-3">
+                    EXPLORE SERVICE 
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </span>
+                  <div className="absolute inset-0 bg-accent-red translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                </Link>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

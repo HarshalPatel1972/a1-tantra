@@ -58,29 +58,47 @@ export default function WelcomeHome() {
           </div>
         </div>
 
-        {/* Features Grid - Now in 3 columns for better spacing */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        {/* Features - Path of Discovery (No Cards) */}
+        <div className="space-y-32">
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="group flex flex-col p-8 bg-deep-brown hover:bg-deep-brown/95 rounded-3xl transition-all duration-500 border border-white/5 hover:shadow-2xl hover:-translate-y-2"
+              className={`flex flex-col ${
+                idx % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
+              } items-center gap-12 lg:gap-24 group`}
             >
-              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-300">
-                {feature.icon}
+              {/* Feature Icon/Visual */}
+              <div className="w-full md:w-1/2 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-soft-gold/20 rounded-full blur-[60px] scale-0 group-hover:scale-150 transition-transform duration-1000" />
+                  <div className="relative z-10 w-24 h-24 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center text-5xl md:text-6xl shadow-xl border border-deep-brown/5 transform group-hover:-rotate-12 transition-all duration-500">
+                    {feature.icon}
+                  </div>
+                </div>
               </div>
-              
-              <h3 className="font-title text-2xl font-bold text-cream mb-4 group-hover:text-soft-gold transition-colors">
-                {feature.title}
-              </h3>
-              
-              <p className="text-cream/70 leading-relaxed font-body text-lg mb-8 flex-grow">
-                {feature.description}
-              </p>
-              
-              <button className="flex items-center gap-2 text-soft-gold font-bold text-sm uppercase tracking-widest group/btn">
-                <span>Learn more</span>
-                <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
-              </button>
+
+              {/* Feature Content */}
+              <div className="w-full md:w-1/2 text-center md:text-left">
+                <div className="flex items-center gap-4 mb-6 justify-center md:justify-start">
+                  <div className="w-12 h-[1px] bg-accent-red" />
+                  <span className="text-xs font-bold text-accent-red uppercase tracking-[0.3em]">
+                    Step {idx + 1}
+                  </span>
+                </div>
+                
+                <h3 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-6 leading-tight">
+                  {feature.title}
+                </h3>
+                
+                <p className="text-xl text-deep-brown/60 leading-relaxed font-body max-w-lg mb-8 mx-auto md:mx-0">
+                  {feature.description}
+                </p>
+                
+                <button className="group/btn relative inline-flex items-center gap-3 text-deep-brown font-bold text-sm uppercase tracking-widest overflow-hidden">
+                  <span className="relative z-10">Learn the path</span>
+                  <div className="w-8 h-[2px] bg-accent-red group-hover/btn:w-16 transition-all duration-500" />
+                </button>
+              </div>
             </div>
           ))}
         </div>
