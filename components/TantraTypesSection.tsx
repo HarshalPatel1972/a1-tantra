@@ -160,84 +160,56 @@ export default function TantraTypesSection() {
               <button
                 key={idx}
                 onClick={() => setSelectedTantra(idx)}
-                className="group relative h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-deep-brown/5 text-left"
               >
-                {/* Background Image */}
-                <Image
-                  src={tantra.image}
-                  alt={tantra.name}
-                  fill
-                  className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
-                  quality={90}
-                />
-
-                {/* Dark Overlay - Enhanced for Text Readability */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/70 to-black/30"></div>
-
-                {/* Additional Overlay for Better Text Contrast */}
-                <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/40"></div>
+                {/* Image Container */}
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src={tantra.image}
+                    alt={tantra.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    quality={90}
+                  />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-deep-brown">
+                    {tantra.subtitle}
+                  </div>
+                </div>
 
                 {/* Content Container */}
-                <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8 z-10">
-                  {/* Top Section */}
-                  <div>
-                    {/* Title - With enhanced visibility */}
-                    <h3
-                      style={{ mixBlendMode: "lighten" }}
-                      className="font-title text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg"
-                    >
-                      {tantra.name}
-                    </h3>
+                <div className="p-8 flex flex-col flex-grow w-full">
+                  <h3 className="font-title text-3xl font-bold text-deep-brown mb-4 group-hover:text-accent-red transition-colors">
+                    {tantra.name}
+                  </h3>
 
-                    {/* Subtitle - Dynamic bright color for maximum contrast */}
-                    <p
-                      style={{ mixBlendMode: "lighten" }}
-                      className="font-nav text-xs font-bold uppercase tracking-widest text-yellow-100 drop-shadow-lg"
-                    >
-                      {tantra.subtitle}
-                    </p>
-                  </div>
+                  <p className="font-body text-deep-brown/70 text-sm md:text-base leading-relaxed mb-8 flex-grow line-clamp-3">
+                    {tantra.description}
+                  </p>
 
-                  {/* Bottom Section */}
-                  <div className="space-y-4">
-                    {/* Description */}
-                    <p
-                      style={{ mixBlendMode: "lighten" }}
-                      className="font-body text-sm md:text-base text-yellow-200 leading-relaxed line-clamp-3 drop-shadow-md"
-                    >
-                      {tantra.description}
-                    </p>
-
-                    {/* Duration & Price Row */}
-                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/30">
-                      <div className="flex flex-col gap-1">
-                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
-                          Duration
-                        </span>
-                        <span className="font-nav text-base font-bold text-white drop-shadow-lg">
-                          {tantra.duration}
-                        </span>
-                      </div>
-
-                      <div className="flex flex-col gap-1 items-end">
-                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
-                          From
-                        </span>
-                        <span
-                          style={{ mixBlendMode: "screen" }}
-                          className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg"
-                        >
-                          {tantra.price}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Click to Learn More */}
-                    <div className="pt-2">
-                      <span className="text-xs text-white/70 italic">
-                        Click to learn more →
+                  {/* Duration & Price Row */}
+                  <div className="flex items-center justify-between gap-4 pt-6 border-t border-deep-brown/10">
+                    <div className="flex flex-col">
+                      <span className="text-[10px] uppercase tracking-widest text-deep-brown/40 font-bold mb-1">
+                        Duration
+                      </span>
+                      <span className="font-nav text-sm font-bold text-deep-brown">
+                        {tantra.duration}
                       </span>
                     </div>
+
+                    <div className="flex flex-col items-end">
+                      <span className="text-[10px] uppercase tracking-widest text-deep-brown/40 font-bold mb-1">
+                        Investment
+                      </span>
+                      <span className="font-title text-2xl font-bold text-deep-brown">
+                        {tantra.price}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 flex items-center justify-between text-accent-red font-bold text-xs uppercase tracking-widest">
+                    <span>Explore Path</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </div>
                 </div>
               </button>

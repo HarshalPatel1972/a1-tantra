@@ -63,7 +63,7 @@ export default function WelcomeHome() {
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="group flex flex-col p-8 bg-white/50 hover:bg-white rounded-3xl transition-all duration-500 border border-deep-brown/5 hover:shadow-xl hover:-translate-y-2"
+              className="group flex flex-col p-8 bg-white rounded-3xl transition-all duration-500 border border-deep-brown/5 shadow-sm hover:shadow-xl hover:-translate-y-2"
             >
               <div className="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}

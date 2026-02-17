@@ -46,10 +46,10 @@ export default function OurTantraServices() {
             <Link 
               key={idx} 
               href={service.link} 
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-deep-brown/5"
+              className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-deep-brown/5"
             >
               {/* Image Header */}
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -63,13 +63,13 @@ export default function OurTantraServices() {
 
               {/* Text Content */}
               <div className="p-8">
-                <h3 className="font-title text-2xl font-bold text-deep-brown mb-3 group-hover:text-accent-red transition-colors">
+                <h3 className="font-title text-2xl md:text-3xl font-bold text-deep-brown mb-3 group-hover:text-accent-red transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-deep-brown/70 leading-relaxed font-body text-base mb-6">
+                <p className="text-deep-brown/70 leading-relaxed font-body text-base mb-8">
                   {service.description}
                 </p>
-                <div className="flex items-center text-accent-red font-bold text-sm uppercase tracking-widest gap-2">
+                <div className="flex items-center text-accent-red font-bold text-xs uppercase tracking-widest gap-2">
                   <span>Explore Service</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </div>

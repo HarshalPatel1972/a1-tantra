@@ -104,9 +104,9 @@ export default function UserReviews() {
           {reviews.map((review, idx) => (
             <div
               key={idx}
-              className="bg-white p-8 rounded-2xl border border-deep-brown/5 shadow-sm hover:shadow-md transition-shadow relative group"
+              className="bg-white p-10 rounded-3xl border border-deep-brown/5 shadow-sm hover:shadow-xl transition-all duration-300 relative group"
             >
-              <div className="absolute top-8 right-8 text-stone-100 group-hover:text-accent-red/5 transition-colors">
+              <div className="absolute top-10 right-10 text-stone-100 group-hover:text-accent-red/10 transition-colors">
                 <svg className="w-12 h-12 fill-current" viewBox="0 0 24 24">
                   <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 7.55228 14.017 7V5C14.017 4.44772 14.4647 4 15.017 4H20.017C21.1216 4 22.017 4.89543 22.017 6V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM2.01697 21L2.01697 18C2.01697 16.8954 2.9124 16 4.01697 16H7.01697C7.56925 16 8.01697 15.5523 8.01697 15V9C8.01697 8.44772 7.56925 8 7.01697 8H3.01697C2.46468 8 2.01697 7.55228 2.01697 7V5C2.01697 4.44772 2.46468 4 3.01697 4H8.01697C9.12154 4 10.017 4.89543 10.017 6V15C10.017 18.3137 7.33067 21 4.01697 21H2.01697Z" />
                 </svg>
