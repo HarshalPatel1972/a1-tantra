@@ -55,11 +55,7 @@ export default function RealTalk() {
                 {insight.content}
               </p>
 
-              <div className="pt-6 border-t border-deep-brown/5">
-                <p className="font-nav font-bold text-[10px] uppercase tracking-widest text-accent-red">
-                  Key Focus: {insight.highlight}
-                </p>
-              </div>
+
             </div>
           ))}
         </div>
