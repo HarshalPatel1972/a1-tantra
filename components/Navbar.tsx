@@ -163,13 +163,13 @@ export default function Navbar() {
 
             {/* Dropdown Menu */}
             <div
-              className={`absolute top-full left-1/2 -translate-x-1/2 w-56 bg-white border border-deep-brown/10 shadow-2xl rounded-xl overflow-hidden transition-all duration-300 transform origin-top ${
+              className={`absolute top-[85%] left-1/2 -translate-x-1/2 w-56 bg-white border border-deep-brown/10 shadow-xl rounded-md overflow-hidden transition-all duration-300 transform origin-top ${
                 isExploreOpen
-                  ? "opacity-100 scale-100 translate-y-2"
-                  : "opacity-0 scale-95 translate-y-0 pointer-events-none"
+                  ? "opacity-100 scale-100 translate-y-0"
+                  : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
               }`}
             >
-              <div className="flex flex-col py-2">
+              <div className="flex flex-col py-1">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -178,7 +178,7 @@ export default function Navbar() {
                       handleSmoothScroll(e, link.href);
                       setIsExploreOpen(false);
                     }}
-                    className="px-6 py-3 font-nav text-[13px] font-semibold uppercase tracking-widest text-deep-brown hover:bg-stone-50 hover:text-accent-red hover:pl-8 transition-all duration-300"
+                    className="px-6 py-3 font-nav text-[12px] font-semibold uppercase tracking-widest text-deep-brown hover:bg-stone-100 transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -218,7 +218,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/book-session"
-                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.15em] px-8 py-3.5 bg-[#E11D48] text-white rounded-full relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.15em] px-8 py-3.5 bg-[#E11D48] text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95"
               >
                 <span className="relative z-10">BOOK A SESSION</span>
                 <span className="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-colors duration-300"></span>
