@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
-import SearchModal from "./SearchModal";
+import { searchIndex, SearchResult } from "@/data/search-index";
 
 // SVG Icon Components
 const SearchIcon = ({ className = "w-5 h-5" }) => (
@@ -58,9 +58,26 @@ const ChevronDownIcon = ({ className = "w-4 h-4" }) => (
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isSearchHovered, setIsSearchHovered] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [isExploreOpen, setIsExploreOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
+
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+
+  useEffect(() => {
+    if (searchQuery.trim().length > 1) {
+      const filtered = searchIndex.filter(
+        (item) =>
+          item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.description.toLowerCase().includes(searchQuery.toLowerCase()),
+      );
+      setSearchResults(filtered.slice(0, 5));
+    } else {
+      setSearchResults([]);
+    }
+  }, [searchQuery]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -88,8 +105,6 @@ export default function Navbar() {
     { label: "SESSIONS", href: "/sessions" },
   ];
 
-  const rightLinks = [{ label: "ABOUT", href: "/about" }];
-
   return (
     <nav
       className={`
@@ -107,7 +122,7 @@ export default function Navbar() {
         <Link
           href="/"
           className={`
-            font-bold tracking-tight text-[#1D4ED8] select-none flex-shrink-0 flex items-center pt-2 gap-[8px] md:gap-[10px] lg:gap-[12px] xl:gap-[14px]
+            font-bold tracking-tight text-[#1D4ED8] select-none shrink-0 flex items-center pt-2 gap-2 md:gap-2.5 lg:gap-3 xl:gap-3.5
             transition-all duration-700 ease-out leading-none
             ${
               scrolled
@@ -128,10 +143,10 @@ export default function Navbar() {
             height={80}
             priority
             unoptimized
-            className={`flex-shrink-0 transition-all duration-700 ease-out object-contain relative -top-[0.05em] ${
+            className={`shrink-0 transition-all duration-700 ease-out object-contain relative -top-[0.05em] ${
               scrolled
-                ? "w-[24px] md:w-[32px] lg:w-[40px] xl:w-[48px] h-[24px] md:h-[32px] lg:h-[40px] xl:h-[48px]"
-                : "w-[40px] md:w-[54px] lg:w-[68px] xl:w-[80px] h-[40px] md:h-[54px] lg:h-[68px] xl:h-[80px]"
+                ? "w-6 md:w-8 lg:w-10 xl:w-12 h-6 md:h-8 lg:h-10 xl:h-12"
+                : "w-10 md:w-[54px] lg:w-[68px] xl:w-20 h-10 md:h-[54px] lg:h-[68px] xl:h-20"
             }`}
           />
           <span>A1 TANTRA</span>
@@ -187,13 +202,69 @@ export default function Navbar() {
             </div>
           </div>
 
-          <button
-            onClick={() => setIsSearchOpen(true)}
-            className="text-deep-brown hover:text-accent-red transition-colors duration-200"
-            aria-label="Search"
+          {/* EXPANDING SEARCH BAR */}
+          <div
+            className={`relative flex items-center h-10 transition-all duration-500 ease-in-out px-3 rounded-md overflow-hidden ${
+              isSearchHovered || isSearchFocused || searchQuery
+                ? "w-48 lg:w-64 bg-stone-200"
+                : "w-10 bg-transparent"
+            }`}
+            onMouseEnter={() => setIsSearchHovered(true)}
+            onMouseLeave={() => setIsSearchHovered(false)}
           >
-            <SearchIcon className="w-[18px] lg:w-[22px] h-[18px] lg:h-[22px]" />
-          </button>
+            <SearchIcon
+              className={`shrink-0 w-[18px] lg:w-[22px] h-[18px] lg:h-[22px] transition-colors duration-300 ${
+                isSearchHovered || isSearchFocused || searchQuery
+                  ? "text-deep-brown"
+                  : "text-deep-brown hover:text-accent-red cursor-pointer"
+              }`}
+            />
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onFocus={() => setIsSearchFocused(true)}
+              onBlur={() => setTimeout(() => setIsSearchFocused(false), 200)}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={`ml-2 bg-transparent border-none outline-none text-sm font-nav font-medium text-deep-brown placeholder-deep-brown/50 w-full transition-opacity duration-300 ${
+                isSearchHovered || isSearchFocused || searchQuery
+                  ? "opacity-100"
+                  : "opacity-0"
+              }`}
+            />
+          </div>
+
+          {/* SEARCH RESULTS DROPDOWN */}
+          {(isSearchHovered || isSearchFocused || searchQuery) &&
+            searchResults.length > 0 && (
+              <div className="absolute top-[85%] right-64 w-80 bg-white border border-deep-brown/10 shadow-2xl rounded-md overflow-hidden z-50">
+              <div className="flex flex-col max-h-96 overflow-y-auto">
+                {searchResults.map((result, idx) => (
+                  <Link
+                    key={idx}
+                    href={result.url}
+                    onClick={() => {
+                      setSearchQuery("");
+                      setIsSearchHovered(false);
+                    }}
+                    className="p-4 hover:bg-stone-100 transition-colors border-b border-stone-100 last:border-none group"
+                  >
+                    <div className="flex justify-between items-start mb-1">
+                      <h4 className="font-nav font-bold text-sm text-deep-brown group-hover:text-accent-red">
+                        {result.title}
+                      </h4>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#1D4ED8] bg-blue-50 px-2 py-0.5 rounded">
+                        {result.category}
+                      </span>
+                    </div>
+                    <p className="text-xs text-deep-brown/60 line-clamp-2">
+                      {result.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Auth Section */}
           {isAuthenticated ? (
@@ -246,7 +317,7 @@ export default function Navbar() {
             height={40}
             priority
             unoptimized
-            className="flex-shrink-0 object-contain"
+            className="shrink-0 object-contain"
           />
           <span className="tracking-tighter">A1 TANTRA</span>
         </Link>
@@ -254,7 +325,7 @@ export default function Navbar() {
         {/* MOBILE RIGHT ICONS */}
         <div className="flex gap-4 items-center">
           <button
-            onClick={() => setIsSearchOpen(true)}
+            onClick={() => setIsSearchHovered(!isSearchHovered)}
             className="text-deep-brown hover:text-accent-red transition-colors"
             aria-label="Search"
           >
@@ -274,6 +345,52 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* MOBILE SEARCH BAR - TOGGLE */}
+      {isSearchHovered && (
+        <div className="md:hidden px-5 pb-3">
+          <div className="relative flex items-center bg-stone-200 rounded-md px-3 h-10 w-full">
+            <SearchIcon className="w-4 h-4 text-deep-brown" />
+            <input
+              type="text"
+              autoFocus
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="ml-2 bg-transparent border-none outline-none text-sm font-nav font-medium text-deep-brown placeholder-deep-brown/50 w-full"
+            />
+          </div>
+          
+          {/* MOBILE SEARCH RESULTS */}
+          {searchResults.length > 0 && (
+            <div className="mt-2 bg-stone-100 rounded-md overflow-hidden border border-deep-brown/5 shadow-lg">
+              {searchResults.map((result, idx) => (
+                <Link
+                  key={idx}
+                  href={result.url}
+                  onClick={() => {
+                    setSearchQuery("");
+                    setIsSearchHovered(false);
+                  }}
+                  className="block p-4 border-b border-deep-brown/5 last:border-none"
+                >
+                  <div className="flex justify-between items-center mb-1">
+                    <h4 className="font-nav font-bold text-sm text-deep-brown">
+                      {result.title}
+                    </h4>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#1D4ED8]">
+                      {result.category}
+                    </span>
+                  </div>
+                  <p className="text-xs text-deep-brown/60 line-clamp-1">
+                    {result.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* MOBILE DROPDOWN MENU */}
       <div
@@ -347,11 +464,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-
-      <SearchModal
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-      />
     </nav>
   );
 }
