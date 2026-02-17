@@ -79,7 +79,7 @@ export default function Navbar() {
         fixed top-0 w-full z-50 transition-all duration-500 ease-out
         ${
           scrolled
-            ? "bg-cream border-b border-deep-brown shadow-lg"
+            ? "bg-stone-100 border-b border-deep-brown shadow-lg"
             : "bg-cream border-transparent"
         }
       `}
@@ -233,7 +233,7 @@ export default function Navbar() {
 
       {/* MOBILE DROPDOWN MENU */}
       {isOpen && (
-        <div className="md:hidden bg-cream border-t border-deep-brown pb-4 px-6 space-y-3">
+        <div className="md:hidden bg-stone-100 border-t border-deep-brown pb-4 px-6 space-y-3">
           {navLinks.map((link) => (
             <Link
               key={link.href}
