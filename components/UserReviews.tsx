@@ -1,69 +1,81 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 
 const reviews = [
   {
     name: "Priya Sharma",
-    location: "Mumbai, Maharashtra",
+    location: "Mumbai",
     comment:
-      "The breathwork sessions completely changed my perspective on energy. The guidance is authentic and deeply rooted in tradition. Highly recommended!",
+      "I came in stressed and skeptical. After three breathwork sessions, something shifted — I sleep better, think clearer, and my anxiety has genuinely reduced. Not magic, just really good guidance.",
     rating: 5,
     date: "Oct 2025",
   },
   {
     name: "Amit Patel",
-    location: "Ahmedabad, Gujarat",
+    location: "Ahmedabad",
     comment:
-      "The most profound experience I've had in 10 years of meditation practice. A1 Tantra provides a safe and expert container for real transformation.",
+      "Ten years of meditation and I thought I'd seen it all. The energy work here was on another level. Practical, grounded, no fluff. Would recommend to anyone serious about inner work.",
     rating: 5,
     date: "Jan 2026",
   },
   {
     name: "Rohan Mehra",
-    location: "New Delhi, Delhi",
+    location: "New Delhi",
     comment:
-      "Authentic and deep. I was looking for something beyond the superficial, and I found it here. The chakra balancing session was a revelation.",
-    rating: 5,
+      "Was looking for something deeper than YouTube tutorials. The chakra balancing session was intense — I actually felt things move. Still processing it weeks later.",
+    rating: 4,
     date: "Dec 2025",
   },
   {
     name: "Sanjana Iyer",
-    location: "Chennai, Tamil Nadu",
+    location: "Chennai",
     comment:
-      "I was skeptical at first, but the results speak for themselves. I feel more centered and peaceful than I have in years. Truly life-changing work.",
-    rating: 4.5,
+      "Honestly, I didn't expect much. But after the first session I felt a calm I hadn't experienced in years. My husband noticed the difference before I did. Booking again next month.",
+    rating: 5,
     date: "Feb 2026",
   },
   {
     name: "Ananya Rao",
-    location: "Bangalore, Karnataka",
+    location: "Bangalore",
     comment:
-      "The guidance is clear, compassionate, and truly expert. They treat Tantra with the respect and depth it deserves. A beautiful journey so far.",
+      "The approach is respectful and knowledgeable — they treat Tantra with the depth it deserves. I finally found a space that doesn't water it down into trends.",
     rating: 5,
     date: "Nov 2025",
   },
   {
     name: "Vikram Singh",
-    location: "Jaipur, Rajasthan",
+    location: "Jaipur",
     comment:
-      "Finally a place that simplifies complex tantric wisdom without losing its essence. The sessions are practical yet spiritually significant.",
-    rating: 5,
+      "Complex concepts explained simply without losing the essence. The session was practical and I could immediately use what I learned. Great for beginners.",
+    rating: 4,
     date: "Dec 2025",
+  },
+  {
+    name: "Meera Nair",
+    location: "Kochi",
+    comment:
+      "My friend dragged me here and I'm so glad she did. The guided meditation was the most present I've felt in months. Already signed up for the full journey.",
+    rating: 5,
+    date: "Jan 2026",
+  },
+  {
+    name: "Karan Deshmukh",
+    location: "Pune",
+    comment:
+      "As someone in tech, I needed something to balance the constant screen time. The sessions gave me tools I actually use daily now. Wish I'd found this sooner.",
+    rating: 4,
+    date: "Nov 2025",
   },
 ];
 
 const StarRating = ({ rating }: { rating: number }) => (
-  <div className="flex gap-1">
+  <div className="flex gap-0.5">
     {[1, 2, 3, 4, 5].map((star) => (
       <svg
         key={star}
-        className={`w-5 h-5 ${
-          star <= Math.floor(rating)
-            ? "text-soft-gold"
-            : star - 0.5 <= rating
-            ? "text-soft-gold"
-            : "text-white/20"
+        className={`w-4 h-4 ${
+          star <= rating ? "text-soft-gold" : "text-white/10"
         }`}
         fill="currentColor"
         viewBox="0 0 20 20"
@@ -75,189 +87,180 @@ const StarRating = ({ rating }: { rating: number }) => (
 );
 
 export default function UserReviews() {
-  const [current, setCurrent] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [direction, setDirection] = useState<"left" | "right">("right");
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
 
-  const goTo = useCallback(
-    (index: number, dir: "left" | "right") => {
-      if (isAnimating) return;
-      setIsAnimating(true);
-      setDirection(dir);
-      setCurrent(index);
-      setTimeout(() => setIsAnimating(false), 600);
-    },
-    [isAnimating]
-  );
+  const checkScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 10);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 10);
+  }, []);
 
-  const next = useCallback(() => {
-    goTo((current + 1) % reviews.length, "right");
-  }, [current, goTo]);
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", checkScroll, { passive: true });
+    checkScroll();
+    return () => el.removeEventListener("scroll", checkScroll);
+  }, [checkScroll]);
 
-  const prev = useCallback(() => {
-    goTo((current - 1 + reviews.length) % reviews.length, "left");
-  }, [current, goTo]);
+  const scroll = useCallback((dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.querySelector<HTMLElement>(":scope > div")?.offsetWidth ?? 400;
+    const distance = cardWidth + 24; // card + gap
+    if (dir === "right") {
+      // Loop to start if at end
+      if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) {
+        el.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        el.scrollBy({ left: distance, behavior: "smooth" });
+      }
+    } else {
+      // Loop to end if at start
+      if (el.scrollLeft <= 10) {
+        el.scrollTo({ left: el.scrollWidth, behavior: "smooth" });
+      } else {
+        el.scrollBy({ left: -distance, behavior: "smooth" });
+      }
+    }
+  }, []);
 
-  // Auto-play
+  // Auto-scroll
   useEffect(() => {
     if (isPaused) return;
-    const timer = setInterval(next, 5500);
+    const timer = setInterval(() => scroll("right"), 4000);
     return () => clearInterval(timer);
-  }, [next, isPaused]);
-
-  const review = reviews[current];
+  }, [scroll, isPaused]);
 
   return (
-    <section className="relative py-28 md:py-36 bg-deep-brown overflow-hidden">
-      {/* Background Decoration */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-soft-gold/[0.02] blur-3xl" />
-        <div className="absolute top-12 left-12 md:top-20 md:left-20 font-title text-[12rem] md:text-[18rem] leading-none text-white/[0.02] select-none">
-          &ldquo;
-        </div>
+    <section className="relative py-24 md:py-32 bg-deep-brown overflow-hidden">
+      {/* Ambient glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-soft-gold/[0.015] blur-3xl" />
       </div>
 
-      <div
-        className="relative max-w-5xl mx-auto px-6 sm:px-10 lg:px-16"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        {/* Header */}
-        <div className="text-center mb-16 md:mb-20">
-          <p className="text-[11px] font-nav font-bold text-soft-gold/60 uppercase tracking-[0.4em] mb-4">
-            Testimonials
-          </p>
-          <h2 className="font-title text-4xl md:text-6xl font-bold text-cream leading-tight">
-            Voice of the Seekers
-          </h2>
-        </div>
-
-        {/* Slide Area */}
-        <div className="relative min-h-[340px] md:min-h-[300px]">
-          {/* Navigation Arrows — Desktop flanking */}
-          <button
-            onClick={prev}
-            aria-label="Previous review"
-            className="hidden md:flex absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full border border-cream/10 items-center justify-center text-cream/40 hover:text-soft-gold hover:border-soft-gold/40 transition-all duration-300 backdrop-blur-sm"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={next}
-            aria-label="Next review"
-            className="hidden md:flex absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full border border-cream/10 items-center justify-center text-cream/40 hover:text-soft-gold hover:border-soft-gold/40 transition-all duration-300 backdrop-blur-sm"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-
-          {/* Review Content */}
-          <div
-            key={current}
-            className={`flex flex-col items-center text-center transition-all duration-600 ease-out ${
-              isAnimating
-                ? direction === "right"
-                  ? "animate-slide-in-right"
-                  : "animate-slide-in-left"
-                : ""
-            }`}
-          >
-            {/* Stars */}
-            <div className="mb-8">
-              <StarRating rating={review.rating} />
-            </div>
-
-            {/* Quote */}
-            <blockquote className="max-w-3xl mb-12">
-              <p className="font-body text-xl sm:text-2xl md:text-3xl text-cream/90 leading-relaxed md:leading-relaxed italic font-light">
-                &ldquo;{review.comment}&rdquo;
-              </p>
-            </blockquote>
-
-            {/* Divider */}
-            <div className="w-12 h-[1px] bg-soft-gold/30 mb-8" />
-
-            {/* Author */}
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-14 h-14 rounded-full bg-soft-gold/10 border border-soft-gold/20 flex items-center justify-center">
-                <span className="font-title text-xl font-bold text-soft-gold">
-                  {review.name.charAt(0)}
-                </span>
-              </div>
-              <div>
-                <h4 className="font-nav font-bold text-sm text-cream uppercase tracking-[0.2em]">
-                  {review.name}
-                </h4>
-                <p className="text-[11px] text-cream/30 font-nav uppercase tracking-[0.25em] mt-1">
-                  {review.location}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Arrows + Dots */}
-        <div className="flex items-center justify-center gap-6 mt-14">
-          <button
-            onClick={prev}
-            aria-label="Previous review"
-            className="md:hidden w-12 h-12 rounded-full border border-cream/10 flex items-center justify-center text-cream/40 hover:text-soft-gold hover:border-soft-gold/40 transition-all duration-300"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          {/* Dots */}
-          <div className="flex items-center gap-2">
-            {reviews.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() =>
-                  goTo(idx, idx > current ? "right" : "left")
-                }
-                aria-label={`Go to review ${idx + 1}`}
-                className={`rounded-full transition-all duration-500 ${
-                  idx === current
-                    ? "w-8 h-2 bg-soft-gold"
-                    : "w-2 h-2 bg-cream/20 hover:bg-cream/40"
-                }`}
-              />
-            ))}
-          </div>
-
-          <button
-            onClick={next}
-            aria-label="Next review"
-            className="md:hidden w-12 h-12 rounded-full border border-cream/10 flex items-center justify-center text-cream/40 hover:text-soft-gold hover:border-soft-gold/40 transition-all duration-300"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Trust Badge */}
-        <div className="mt-16 flex justify-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 border border-cream/5 rounded-full">
-            <div className="flex -space-x-2">
-              {reviews.slice(0, 4).map((r, i) => (
-                <div
-                  key={i}
-                  className="w-7 h-7 rounded-full bg-soft-gold/10 border-2 border-deep-brown flex items-center justify-center text-[9px] font-bold text-soft-gold"
-                >
-                  {r.name.charAt(0)}
-                </div>
-              ))}
-            </div>
-            <div className="h-4 w-[1px] bg-cream/10" />
-            <p className="text-[11px] font-nav font-bold text-cream/30 uppercase tracking-[0.2em]">
-              4.9/5 from 500+ seekers
+      <div className="relative max-w-[90rem] mx-auto">
+        {/* Header row */}
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14">
+          <div>
+            <p className="text-[11px] font-nav font-bold text-soft-gold/50 uppercase tracking-[0.4em] mb-4">
+              Testimonials
             </p>
+            <h2 className="font-title text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight">
+              What Seekers Say
+            </h2>
+          </div>
+
+          {/* Navigation */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => scroll("left")}
+              aria-label="Scroll left"
+              className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                canScrollLeft
+                  ? "border-cream/20 text-cream/60 hover:text-soft-gold hover:border-soft-gold/40"
+                  : "border-cream/5 text-cream/15 cursor-default"
+              }`}
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              aria-label="Scroll right"
+              className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                canScrollRight
+                  ? "border-cream/20 text-cream/60 hover:text-soft-gold hover:border-soft-gold/40"
+                  : "border-cream/5 text-cream/15 cursor-default"
+              }`}
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Cards Track */}
+        <div
+          ref={scrollRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          className="flex gap-6 overflow-x-auto pl-6 sm:pl-10 lg:pl-16 pr-6 sm:pr-10 lg:pr-16 pb-4 snap-x snap-mandatory scroll-smooth"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {reviews.map((review, idx) => (
+            <div
+              key={idx}
+              className="group flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[420px] snap-start"
+            >
+              <div className="h-full bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-8 md:p-9 flex flex-col justify-between hover:bg-white/[0.07] hover:border-white/[0.1] transition-all duration-500">
+                {/* Top: Stars + Quote icon */}
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <StarRating rating={review.rating} />
+                    <svg className="w-8 h-8 text-white/[0.04] group-hover:text-soft-gold/10 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1h-4a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6h-2zm-12 0v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1H3a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6H2z" />
+                    </svg>
+                  </div>
+
+                  <p className="font-body text-[15px] md:text-base text-cream/70 leading-relaxed mb-8 group-hover:text-cream/85 transition-colors duration-500">
+                    {review.comment}
+                  </p>
+                </div>
+
+                {/* Bottom: Author */}
+                <div className="flex items-center gap-4 pt-6 border-t border-white/[0.06]">
+                  <div className="w-10 h-10 rounded-full bg-soft-gold/10 flex items-center justify-center flex-shrink-0">
+                    <span className="font-title text-sm font-bold text-soft-gold">
+                      {review.name.charAt(0)}
+                    </span>
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="font-nav font-bold text-xs text-cream/80 uppercase tracking-[0.15em] truncate group-hover:text-soft-gold transition-colors duration-300">
+                      {review.name}
+                    </h4>
+                    <p className="text-[10px] text-cream/25 font-nav uppercase tracking-[0.2em] mt-0.5">
+                      {review.location} &middot; {review.date}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom trust line */}
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 mt-14">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-cream/25">
+            <div className="flex items-center gap-2">
+              <div className="flex -space-x-1.5">
+                {reviews.slice(0, 5).map((r, i) => (
+                  <div
+                    key={i}
+                    className="w-6 h-6 rounded-full bg-soft-gold/10 border border-deep-brown flex items-center justify-center text-[8px] font-bold text-soft-gold/60"
+                  >
+                    {r.name.charAt(0)}
+                  </div>
+                ))}
+              </div>
+              <span className="text-[10px] font-nav font-bold uppercase tracking-[0.2em] ml-1">
+                500+ seekers
+              </span>
+            </div>
+            <div className="hidden md:block w-[1px] h-3 bg-cream/10" />
+            <span className="text-[10px] font-nav font-bold uppercase tracking-[0.2em]">
+              4.9 avg rating
+            </span>
+            <div className="hidden md:block w-[1px] h-3 bg-cream/10" />
+            <span className="text-[10px] font-nav font-bold uppercase tracking-[0.2em]">
+              Verified experiences
+            </span>
           </div>
         </div>
       </div>
