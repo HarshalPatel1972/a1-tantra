@@ -25,57 +25,64 @@ export default function WelcomeHome() {
   ];
 
   return (
-    <section className="py-4 md:py-8 bg-cream">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div>
-            {/* Header */}
-            <div className="mb-12">
-              <h2 className="font-title text-5xl md:text-6xl font-bold text-deep-brown mb-6">
-                Welcome home.
-              </h2>
-              <p className="text-lg md:text-xl text-deep-brown/80 leading-relaxed font-body">
-                We're glad you found us. Whether you're new to Tantra or deep in
-                your spiritual journey, A1 Tantra guides you gently, safely, and
-                respectfully toward inner awakening.
-              </p>
-            </div>
+    <section className="py-24 bg-cream relative overflow-hidden">
+      {/* Decorative Accents */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent-red/5 rounded-full blur-[100px] -mr-48 -mt-48" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-soft-gold/10 rounded-full blur-[100px] -ml-48 -mb-48" />
 
-            {/* Features Grid */}
-            <div className="space-y-8">
-              {features.map((feature, idx) => (
-                <div
-                  key={idx}
-                  className="group p-6 bg-white border-l-4 border-accent-red rounded-lg shadow-md hover:shadow-lg transition-all"
-                >
-                  <div className="text-3xl mb-3">{feature.icon}</div>
-                  <h3 className="font-title text-xl md:text-2xl font-bold text-deep-brown mb-3 group-hover:text-accent-red transition">
-                    {feature.title}
-                  </h3>
-                  <p className="text-deep-brown/75 leading-relaxed font-body text-lg mb-4">
-                    {feature.description}
-                  </p>
-                  <button className="text-accent-red font-semibold hover:text-deep-brown transition inline-flex items-center gap-2 text-base">
-                    Learn more →
-                  </button>
-                </div>
-              ))}
-            </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24">
+          {/* Left Content */}
+          <div className="order-last lg:order-first">
+            <h2 className="font-title text-5xl md:text-7xl font-bold text-deep-brown mb-8 leading-tight">
+              Welcome home.
+            </h2>
+            <p className="text-xl md:text-2xl text-deep-brown/80 leading-relaxed font-body italic mb-0">
+              "We're glad you found us. Whether you're new to Tantra or deep in
+              your spiritual journey, A1 Tantra guides you gently, safely, and
+              respectfully toward inner awakening."
+            </p>
           </div>
 
-          {/* Right Image - Visible on All Devices */}
-          <div className="flex justify-center items-center order-first md:order-0">
-            <div className="relative w-full max-w-xs h-80 sm:h-96 md:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-deep-brown/20 hover:border-accent-red transition-all">
+          {/* Right Image */}
+          <div className="flex justify-center items-center">
+            <div className="relative w-full max-w-sm aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border-2 border-deep-brown/10 ring-8 ring-white/50 group">
               <Image
                 src="/images/candle.png"
-                alt="Meditation candle - spiritual practice"
+                alt="Sacred meditation candle"
                 fill
-                className="object-cover object-center"
-                quality={90}
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                priority
               />
             </div>
           </div>
+        </div>
+
+        {/* Features Grid - Now in 3 columns for better spacing */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {features.map((feature, idx) => (
+            <div
+              key={idx}
+              className="group flex flex-col p-8 bg-white/50 hover:bg-white rounded-3xl transition-all duration-500 border border-deep-brown/5 hover:shadow-xl hover:-translate-y-2"
+            >
+              <div className="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
+              </div>
+              
+              <h3 className="font-title text-2xl font-bold text-deep-brown mb-4 group-hover:text-accent-red transition-colors">
+                {feature.title}
+              </h3>
+              
+              <p className="text-deep-brown/70 leading-relaxed font-body text-lg mb-8 flex-grow">
+                {feature.description}
+              </p>
+              
+              <button className="flex items-center gap-2 text-accent-red font-bold text-sm uppercase tracking-widest group/btn">
+                <span>Learn more</span>
+                <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </section>
