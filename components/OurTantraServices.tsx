@@ -46,7 +46,7 @@ export default function OurTantraServices() {
             <Link 
               key={idx} 
               href={service.link} 
-              className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-deep-brown/5"
+              className="group bg-deep-brown rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/5"
             >
               {/* Image Header */}
               <div className="relative h-64 overflow-hidden">
@@ -54,22 +54,24 @@ export default function OurTantraServices() {
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-lg text-2xl shadow-sm">
+                <div className="absolute top-4 left-4 bg-deep-brown/80 backdrop-blur-sm p-3 rounded-2xl text-2xl shadow-sm border border-white/10">
                   {service.icon}
                 </div>
+                {/* Overlay for better text transition */}
+                <div className="absolute inset-0 bg-linear-to-t from-deep-brown via-transparent to-transparent opacity-60"></div>
               </div>
 
               {/* Text Content */}
               <div className="p-8">
-                <h3 className="font-title text-2xl md:text-3xl font-bold text-deep-brown mb-3 group-hover:text-accent-red transition-colors">
+                <h3 className="font-title text-2xl font-bold text-cream mb-4 group-hover:text-soft-gold transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-deep-brown/70 leading-relaxed font-body text-base mb-8">
+                <p className="text-cream/70 leading-relaxed font-body text-base mb-8">
                   {service.description}
                 </p>
-                <div className="flex items-center text-accent-red font-bold text-xs uppercase tracking-widest gap-2">
+                <div className="flex items-center text-soft-gold font-bold text-sm uppercase tracking-widest gap-2">
                   <span>Explore Service</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </div>

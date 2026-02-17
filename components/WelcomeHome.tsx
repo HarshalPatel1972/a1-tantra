@@ -63,21 +63,21 @@ export default function WelcomeHome() {
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="group flex flex-col p-8 bg-white rounded-3xl transition-all duration-500 border border-deep-brown/5 shadow-sm hover:shadow-xl hover:-translate-y-2"
+              className="group flex flex-col p-8 bg-deep-brown hover:bg-deep-brown/95 rounded-3xl transition-all duration-500 border border-white/5 hover:shadow-2xl hover:-translate-y-2"
             >
-              <div className="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
               
-              <h3 className="font-title text-2xl font-bold text-deep-brown mb-4 group-hover:text-accent-red transition-colors">
+              <h3 className="font-title text-2xl font-bold text-cream mb-4 group-hover:text-soft-gold transition-colors">
                 {feature.title}
               </h3>
               
-              <p className="text-deep-brown/70 leading-relaxed font-body text-lg mb-8 flex-grow">
+              <p className="text-cream/70 leading-relaxed font-body text-lg mb-8 flex-grow">
                 {feature.description}
               </p>
               
-              <button className="flex items-center gap-2 text-accent-red font-bold text-sm uppercase tracking-widest group/btn">
+              <button className="flex items-center gap-2 text-soft-gold font-bold text-sm uppercase tracking-widest group/btn">
                 <span>Learn more</span>
                 <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
               </button>

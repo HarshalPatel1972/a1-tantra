@@ -160,56 +160,84 @@ export default function TantraTypesSection() {
               <button
                 key={idx}
                 onClick={() => setSelectedTantra(idx)}
-                className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-deep-brown/5 text-left"
+                className="group relative h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
               >
-                {/* Image Container */}
-                <div className="relative h-64 w-full overflow-hidden">
-                  <Image
-                    src={tantra.image}
-                    alt={tantra.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    quality={90}
-                  />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-deep-brown">
-                    {tantra.subtitle}
-                  </div>
-                </div>
+                {/* Background Image */}
+                <Image
+                  src={tantra.image}
+                  alt={tantra.name}
+                  fill
+                  className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                  quality={90}
+                />
+
+                {/* Dark Overlay - Enhanced for Text Readability */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/70 to-black/30"></div>
+
+                {/* Additional Overlay for Better Text Contrast */}
+                <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/40"></div>
 
                 {/* Content Container */}
-                <div className="p-8 flex flex-col flex-grow w-full">
-                  <h3 className="font-title text-3xl font-bold text-deep-brown mb-4 group-hover:text-accent-red transition-colors">
-                    {tantra.name}
-                  </h3>
+                <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8 z-10">
+                  {/* Top Section */}
+                  <div>
+                    {/* Title - With enhanced visibility */}
+                    <h3
+                      style={{ mixBlendMode: "lighten" }}
+                      className="font-title text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg"
+                    >
+                      {tantra.name}
+                    </h3>
 
-                  <p className="font-body text-deep-brown/70 text-sm md:text-base leading-relaxed mb-8 flex-grow line-clamp-3">
-                    {tantra.description}
-                  </p>
-
-                  {/* Duration & Price Row */}
-                  <div className="flex items-center justify-between gap-4 pt-6 border-t border-deep-brown/10">
-                    <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-widest text-deep-brown/40 font-bold mb-1">
-                        Duration
-                      </span>
-                      <span className="font-nav text-sm font-bold text-deep-brown">
-                        {tantra.duration}
-                      </span>
-                    </div>
-
-                    <div className="flex flex-col items-end">
-                      <span className="text-[10px] uppercase tracking-widest text-deep-brown/40 font-bold mb-1">
-                        Investment
-                      </span>
-                      <span className="font-title text-2xl font-bold text-deep-brown">
-                        {tantra.price}
-                      </span>
-                    </div>
+                    {/* Subtitle - Dynamic bright color for maximum contrast */}
+                    <p
+                      style={{ mixBlendMode: "lighten" }}
+                      className="font-nav text-xs font-bold uppercase tracking-widest text-yellow-100 drop-shadow-lg"
+                    >
+                      {tantra.subtitle}
+                    </p>
                   </div>
 
-                  <div className="mt-8 flex items-center justify-between text-accent-red font-bold text-xs uppercase tracking-widest">
-                    <span>Explore Path</span>
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  {/* Bottom Section */}
+                  <div className="space-y-4">
+                    {/* Description */}
+                    <p
+                      style={{ mixBlendMode: "lighten" }}
+                      className="font-body text-sm md:text-base text-yellow-200 leading-relaxed line-clamp-3 drop-shadow-md"
+                    >
+                      {tantra.description}
+                    </p>
+
+                    {/* Duration & Price Row */}
+                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/30">
+                      <div className="flex flex-col gap-1">
+                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
+                          Duration
+                        </span>
+                        <span className="font-nav text-base font-bold text-white drop-shadow-lg">
+                          {tantra.duration}
+                        </span>
+                      </div>
+
+                      <div className="flex flex-col gap-1 items-end">
+                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
+                          From
+                        </span>
+                        <span
+                          style={{ mixBlendMode: "screen" }}
+                          className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg"
+                        >
+                          {tantra.price}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Click to Learn More */}
+                    <div className="pt-2">
+                      <span className="text-xs text-white/70 italic">
+                        Click to learn more →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </button>
@@ -225,7 +253,7 @@ export default function TantraTypesSection() {
           onClick={() => setSelectedTantra(null)}
         >
           <div
-            className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-4xl overflow-y-auto relative"
+            className="bg-deep-brown rounded-3xl shadow-2xl w-full max-w-4xl overflow-y-auto relative border border-white/10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button - On the image */}
@@ -275,17 +303,17 @@ export default function TantraTypesSection() {
             <div className="p-4 sm:p-6 md:p-12 space-y-6 sm:space-y-8">
               {/* Overview */}
               <div>
-                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-deep-brown mb-3 sm:mb-4">
+                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-soft-gold mb-3 sm:mb-4">
                   Overview
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg text-deep-brown/80 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-cream/90 leading-relaxed">
                   {tantraTypes[selectedTantra].fullDetails.overview}
                 </p>
               </div>
 
               {/* Key Focus */}
               <div>
-                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-deep-brown mb-3 sm:mb-4">
+                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-cream mb-3 sm:mb-4">
                   Key Focus Areas
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
@@ -293,7 +321,7 @@ export default function TantraTypesSection() {
                     (focus, i) => (
                       <div
                         key={i}
-                        className="flex gap-2 sm:gap-3 items-start p-3 sm:p-4 bg-cream rounded-lg border-l-4 border-accent-red"
+                        className="flex gap-2 sm:gap-3 items-start p-3 sm:p-4 bg-white/5 rounded-2xl border-l-4 border-accent-red"
                       >
                         <svg
                           className="w-4 h-4 sm:w-5 sm:h-5 text-accent-red shrink-0 mt-0.5"
@@ -306,7 +334,7 @@ export default function TantraTypesSection() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <p className="text-xs sm:text-sm md:text-base text-deep-brown font-body">
+                        <p className="text-xs sm:text-sm md:text-base text-cream/80 font-body">
                           {focus}
                         </p>
                       </div>
@@ -317,7 +345,7 @@ export default function TantraTypesSection() {
 
               {/* Benefits */}
               <div>
-                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-deep-brown mb-3 sm:mb-4">
+                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-cream mb-3 sm:mb-4">
                   Key Benefits
                 </h2>
                 <div className="space-y-2 sm:space-y-3">
@@ -331,7 +359,7 @@ export default function TantraTypesSection() {
                         >
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
-                        <p className="text-xs sm:text-sm md:text-base text-deep-brown/80 font-body">
+                        <p className="text-xs sm:text-sm md:text-base text-cream/80 font-body">
                           {benefit}
                         </p>
                       </div>

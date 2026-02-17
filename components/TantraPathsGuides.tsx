@@ -46,51 +46,73 @@ export default function TantraPathsGuides() {
           {tantraPathsWithImages.map((path, idx) => (
             <div
               key={idx}
-              className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-deep-brown/5"
+              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 h-96"
             >
-              {/* Image Container */}
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src={path.image}
-                  alt={path.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  quality={90}
-                />
-              </div>
+              {/* Background Image */}
+              <Image
+                src={path.image}
+                alt={path.name}
+                fill
+                className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                quality={90}
+              />
+
+              {/* Gradient Overlay - Enhanced for Text Readability */}
+              <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/70 to-black/30"></div>
+
+              {/* Additional Overlay for Better Text Contrast */}
+              <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/40"></div>
 
               {/* Content Container */}
-              <div className="p-8 flex flex-col flex-grow">
-                <h3 className="font-title text-3xl font-bold text-deep-brown mb-4 group-hover:text-accent-red transition-colors">
-                  {path.name}
-                </h3>
-
-                <p className="font-body text-deep-brown/70 leading-relaxed mb-8 flex-grow">
-                  {path.description}
-                </p>
-
-                {/* Pricing Tiers */}
-                <div className="space-y-3 pt-6 border-t border-deep-brown/10">
-                  {path.pricing.map((tier, tierIdx) => (
-                    <div
-                      key={tierIdx}
-                      className="flex justify-between items-center"
-                    >
-                      <span className="text-xs uppercase tracking-widest text-deep-brown/60 font-bold">
-                        {tier.duration}
-                      </span>
-                      <span className="font-title font-bold text-deep-brown text-xl">
-                        {tier.price}
-                      </span>
-                    </div>
-                  ))}
+              <div className="absolute inset-0 flex flex-col justify-between p-6 z-10">
+                {/* Top: Title */}
+                <div>
+                  <h3
+                    style={{ mixBlendMode: "lighten" }}
+                    className="font-title text-3xl font-bold text-white drop-shadow-lg"
+                  >
+                    {path.name}
+                  </h3>
                 </div>
 
-                <div className="mt-8">
-                  <button className="w-full py-4 bg-accent-red text-white font-nav font-bold uppercase tracking-widest rounded-xl transition-all duration-300 hover:bg-black shadow-lg">
-                    Start Your Path
-                  </button>
+                {/* Bottom: Description and Pricing */}
+                <div className="space-y-4">
+                  {/* Description */}
+                  <p
+                    style={{ mixBlendMode: "lighten" }}
+                    className="font-body text-sm text-white leading-relaxed line-clamp-2 drop-shadow-md"
+                  >
+                    {path.description}
+                  </p>
+
+                  {/* Pricing Tiers */}
+                  <div className="space-y-2 pt-3 border-t border-white/30">
+                    {path.pricing.map((tier, tierIdx) => (
+                      <div
+                        key={tierIdx}
+                        className="flex justify-between items-center"
+                      >
+                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
+                          {tier.duration}
+                        </span>
+                        <span
+                          style={{ mixBlendMode: "screen" }}
+                          className="font-title font-bold text-yellow-100 text-lg drop-shadow-lg"
+                        >
+                          {tier.price}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              </div>
+
+              {/* Hover CTA */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
+                <button className="bg-accent-red text-white font-bold py-3 px-8 rounded-full relative overflow-hidden group/btn transition-all transform scale-75 group-hover:scale-100">
+                  <span className="absolute inset-0 bg-red-600 translate-x-[-101%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
+                  <span className="relative z-10">Learn More</span>
+                </button>
               </div>
             </div>
           ))}

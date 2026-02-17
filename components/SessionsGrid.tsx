@@ -45,29 +45,26 @@ export default function SessionsGrid() {
             <Link
               key={session.id}
               href={`/sessions/${session.id}`}
-              className="group flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-deep-brown/5"
+              className="group block"
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-80 rounded-lg overflow-hidden mb-4 shadow-lg hover:shadow-xl transition-all duration-300">
                 <Image
                   src={session.image}
                   alt={session.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                   quality={90}
                 />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
               </div>
-              
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="font-title text-xl font-bold text-deep-brown mb-2 group-hover:text-accent-red transition-colors">
-                  {session.title}
-                </h3>
-                <p className="text-sm text-deep-brown/70 mb-6 flex-grow leading-relaxed">
-                  {session.description}
-                </p>
-                <div className="flex items-center text-accent-red text-[10px] font-bold uppercase tracking-widest gap-2">
-                  <span>View Details</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </div>
+              <h3 className="font-title text-xl font-bold text-deep-brown mb-2 group-hover:text-accent-red transition">
+                {session.title}
+              </h3>
+              <p className="text-sm text-deep-brown/70 mb-3">
+                {session.description}
+              </p>
+              <div className="flex items-center text-accent-red font-semibold group-hover:gap-2 transition">
+                Learn more →
               </div>
             </Link>
           ))}
