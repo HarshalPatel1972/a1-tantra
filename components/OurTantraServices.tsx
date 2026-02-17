@@ -1,75 +1,101 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function OurTantraServices() {
   const services = [
     {
-      title: "Tantra Services in India",
+      title: "Tantra Sessions",
+      location: "India & Online",
       description:
-        "Explore our comprehensive online tantra sessions including meditation, breathwork, chakra balancing, and sound healing. Each session is designed to awaken your inner potential and guide you toward spiritual transformation.",
+        "Comprehensive sessions including meditation, breathwork, and chakra balancing designed to awaken your inner potential.",
       link: "/sessions",
-      icon: "🧘",
+      image: "/images/Tantra-Meditation-Session.jpg",
+      tag: "CORE PRACTICE",
     },
     {
-      title: "Online Spiritual Healing",
+      title: "Spiritual Healing",
+      location: "Transformative Therapy",
       description:
-        "Experience transformative spiritual healing through tantra therapy, energy work, and sacred practices. Our healing sessions address emotional imbalances, restore energetic vitality, and support your path to wholeness.",
+        "Restore energetic vitality and emotional balance through sacred practices and expert energy work.",
       link: "/therapies",
-      icon: "✨",
+      image: "/images/Chakra-Balancing-Session.jpg",
+      tag: "THERAPEUTIC",
     },
     {
-      title: "Relationship Tantra Consultation",
+      title: "Relationship Tantra",
+      location: "Sacred Partnership",
       description:
-        "Deepen intimacy, resolve conflicts, and restore harmony in your relationships through expert tantra consultation. Our experienced advisors guide couples toward greater connection, understanding, and sacred partnership.",
+        "Deepen intimacy and resolve conflicts through expert guidance for couples to restore harmony.",
       link: "/advisory",
-      icon: "💕",
+      image: "/images/two-people-meditate.jpg",
+      tag: "CONNECTION",
     },
   ];
 
   return (
-    <section className="py-4 md:py-6 bg-cream">
+    <section className="py-24 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-4">
-            Our Tantra Services
-          </h2>
-          <p className="text-lg text-deep-brown/80 max-w-3xl mx-auto">
-            Discover our range of authentic tantric services designed to guide
-            you toward healing, growth, and spiritual awakening.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="max-w-2xl">
+            <h2 className="font-title text-5xl md:text-7xl font-bold text-deep-brown mb-6">
+              Our Tantra <span className="text-accent-red italic">Services</span>
+            </h2>
+            <p className="text-xl text-deep-brown/80 font-body leading-relaxed">
+              Authentic paths designed for modern seekers, merging ancient wisdom with 
+              contemporary understanding for profound transformation.
+            </p>
+          </div>
+          <Link 
+            href="/start-journey" 
+            className="inline-flex items-center gap-2 font-nav font-bold uppercase tracking-widest text-accent-red hover:text-deep-brown transition-colors mb-2"
+          >
+            All Offerings <span className="text-2xl">→</span>
+          </Link>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Services Grid - New Look */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {services.map((service, idx) => (
-            <Link key={idx} href={service.link} className="group">
-              <div className="relative h-full p-10 bg-white border border-deep-brown/5 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                {/* Accent Background Pattern */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-stone-50 rounded-bl-full -mr-16 -mt-16 group-hover:bg-accent-red/5 transition-colors duration-500"></div>
-                
-                {/* Icon Container */}
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-cream rounded-2xl text-3xl mb-8 group-hover:scale-110 group-hover:bg-accent-red/10 transition-all duration-500">
-                  {service.icon}
+            <Link key={idx} href={service.link} className="group relative block h-[600px] overflow-hidden rounded-[2.5rem] shadow-2xl">
+              {/* Background Image */}
+              <div className="absolute inset-0 z-0">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
+                />
+                {/* Gradient Overlays */}
+                <div className="absolute inset-0 bg-linear-to-b from-black/20 via-black/40 to-black/90 group-hover:from-black/40 transition-colors duration-500"></div>
+              </div>
+
+              {/* Content Overlay */}
+              <div className="relative z-10 h-full flex flex-col justify-end p-10">
+                <div className="mb-6 transform group-hover:-translate-y-4 transition-transform duration-500">
+                  <span className="inline-block px-3 py-1 bg-accent-red text-cream text-[10px] font-bold uppercase tracking-[0.2em] rounded-full mb-4">
+                    {service.tag}
+                  </span>
+                  <h3 className="font-title text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
+                    {service.title}
+                  </h3>
+                  <p className="text-white/60 font-nav text-xs uppercase tracking-widest mb-6">
+                    {service.location}
+                  </p>
+                  <p className="text-white/80 font-body text-base leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-3">
+                    {service.description}
+                  </p>
                 </div>
 
-                {/* Title */}
-                <h3 className="font-title text-2xl font-bold text-deep-brown mb-5 group-hover:text-accent-red transition-colors duration-300">
-                  {service.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-deep-brown/70 leading-relaxed text-base mb-8 font-body">
-                  {service.description}
-                </p>
-
-                {/* Learn More Link */}
-                <div className="flex items-center text-accent-red font-bold text-sm tracking-widest uppercase gap-2 transition-all">
-                  <span>Explore Now</span>
-                  <svg className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                <div className="flex items-center justify-between pt-6 border-t border-white/10">
+                  <span className="text-white font-nav font-bold text-sm tracking-widest uppercase">Begin Path</span>
+                  <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-white group-hover:text-deep-brown transition-all duration-300">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </Link>
