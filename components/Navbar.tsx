@@ -43,6 +43,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
 
   useEffect(() => {
@@ -85,31 +86,17 @@ export default function Navbar() {
       `}
     >
       {/* DESKTOP NAVBAR */}
-      <div className="hidden md:flex relative w-full h-[80px] md:h-[96px] lg:h-[104px] xl:h-[112px] 2xl:h-[120px] items-center px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 gap-3 md:gap-4 lg:gap-5 xl:gap-6 2xl:gap-7">
-        {/* LEFT LINKS - FLEX LEFT SIDE */}
-        <div className="flex gap-[10px] md:gap-[12px] lg:gap-[14px] xl:gap-[16px] 2xl:gap-[20px] items-center flex-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleSmoothScroll(e, link.href)}
-              className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-
-        {/* CENTER LOGO - FLEX CENTER */}
+      <div className="hidden md:flex relative w-full h-[90px] xl:h-[100px] items-center px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
+        {/* LEFT SIDE - LOGO & TITLE */}
         <Link
           href="/"
           className={`
-            font-bold tracking-tight text-[#1D4ED8] select-none flex-shrink-0 flex items-center gap-[8px] md:gap-[10px] lg:gap-[12px] xl:gap-[14px] 2xl:gap-[16px]
+            font-bold tracking-tight text-[#1D4ED8] select-none flex-shrink-0 flex items-center gap-[8px] md:gap-[10px] lg:gap-[12px] xl:gap-[14px]
             transition-all duration-700 ease-out leading-none
             ${
               scrolled
-                ? "text-[24px] md:text-[28px] lg:text-[32px] xl:text-[40px] 2xl:text-[48px]"
-                : "text-[40px] md:text-[54px] lg:text-[62px] xl:text-[70px] 2xl:text-[84px]"
+                ? "text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px]"
+                : "text-[32px] md:text-[40px] lg:text-[48px] xl:text-[54px]"
             }
           `}
           style={{
@@ -121,62 +108,96 @@ export default function Navbar() {
           <Image
             src="/images/logo-main.png"
             alt="A1 Tantra Logo"
-            width={110}
-            height={110}
+            width={80}
+            height={80}
             priority
             unoptimized
             className={`flex-shrink-0 transition-all duration-700 ease-out object-contain relative -top-[0.05em] ${
               scrolled
-                ? "w-[24px] md:w-[28px] lg:w-[32px] xl:w-[40px] 2xl:w-[48px] h-[24px] md:h-[28px] lg:h-[32px] xl:h-[40px] 2xl:h-[48px]"
-                : "w-[40px] md:w-[54px] lg:w-[62px] xl:w-[70px] 2xl:w-[84px] h-[40px] md:h-[54px] lg:h-[62px] xl:h-[70px] 2xl:h-[84px]"
+                ? "w-[24px] md:w-[32px] lg:w-[40px] xl:w-[48px] h-[24px] md:h-[32px] lg:h-[40px] xl:h-[48px]"
+                : "w-[40px] md:w-[54px] lg:w-[68px] xl:w-[80px] h-[40px] md:h-[54px] lg:h-[68px] xl:h-[80px]"
             }`}
           />
           <span>A1 TANTRA</span>
         </Link>
 
-        {/* RIGHT LINKS - FLEX RIGHT SIDE */}
-        <div className="flex gap-[10px] md:gap-[12px] lg:gap-[14px] xl:gap-[16px] 2xl:gap-[20px] items-center justify-end flex-1">
-          {rightLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+        {/* RIGHT SIDE - NAVIGATION */}
+        <div className="flex gap-[15px] lg:gap-[25px] xl:gap-[35px] items-center justify-end flex-1">
+          <Link
+            href="/about"
+            className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+          >
+            ABOUT
+          </Link>
+
+          {/* MORE DROPDOWN */}
+          <div
+            className="relative group py-4"
+            onMouseEnter={() => setIsMoreOpen(true)}
+            onMouseLeave={() => setIsMoreOpen(false)}
+          >
+            <button className="flex items-center gap-1 font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest text-deep-brown group-hover:text-accent-red transition-colors duration-200 whitespace-nowrap">
+              MORE <i className={`ri-arrow-down-s-line transition-transform duration-300 ${isMoreOpen ? "rotate-180" : ""}`}></i>
+            </button>
+
+            {/* Dropdown Menu */}
+            <div
+              className={`absolute top-full right-0 w-56 bg-white border border-deep-brown/5 shadow-2xl rounded-xl overflow-hidden transition-all duration-300 transform origin-top ${
+                isMoreOpen
+                  ? "opacity-100 scale-100 translate-y-0"
+                  : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+              }`}
             >
-              {link.label}
-            </Link>
-          ))}
+              <div className="flex flex-col py-2">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => {
+                      handleSmoothScroll(e, link.href);
+                      setIsMoreOpen(false);
+                    }}
+                    className="px-6 py-3 font-nav text-[13px] font-semibold uppercase tracking-widest text-deep-brown hover:bg-cream hover:text-accent-red transition-all duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <button
             onClick={() => setIsSearchOpen(true)}
             className="text-deep-brown hover:text-accent-red transition-colors duration-200"
             aria-label="Search"
           >
-            <SearchIcon className="w-[18px] md:w-[20px] lg:w-[22px] xl:w-[24px] 2xl:w-[28px] h-[18px] md:h-[20px] lg:h-[22px] xl:h-[24px] 2xl:h-[28px]" />
+            <SearchIcon className="w-[18px] lg:w-[22px] h-[18px] lg:h-[22px]" />
           </button>
 
-          {/* Auth Buttons */}
+          {/* Auth Section */}
           {isAuthenticated ? (
-            <div className="flex gap-[10px] md:gap-[12px] lg:gap-[14px] items-center">
-              <div className="text-[11px] md:text-[13px] lg:text-[14px] text-deep-brown font-semibold">
-                {user?.name}
+            <div className="flex gap-4 items-center">
+              <div className="text-[12px] lg:text-[14px] text-deep-brown font-semibold">
+                {user?.name?.split(" ")[0]}
               </div>
               <button
                 onClick={logout}
-                className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+                className="font-nav text-[12px] lg:text-[14px] font-semibold uppercase tracking-widest text-deep-brown hover:text-accent-red transition-colors duration-200"
               >
                 Logout
               </button>
             </div>
           ) : (
-            <div className="flex gap-[10px] md:gap-[12px] lg:gap-[14px] items-center">
+            <div className="flex items-center gap-4 lg:gap-6">
               <Link
                 href="/auth/login"
-                className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
               >
                 Login
               </Link>
               <Link
                 href="/book-session"
-                className="font-nav text-[11px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-base font-semibold uppercase tracking-wide px-3 py-1 md:px-4 md:py-2 bg-accent-red text-cream rounded-sm relative overflow-hidden group whitespace-nowrap"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest px-5 py-2.5 bg-accent-red text-cream rounded-[4px] relative overflow-hidden group whitespace-nowrap shadow-sm hover:shadow-md transition-all"
               >
                 <span className="absolute inset-0 bg-red-600 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
                 <span className="relative z-10">BOOK A SESSION</span>
@@ -187,31 +208,26 @@ export default function Navbar() {
       </div>
 
       {/* MOBILE NAVBAR */}
-      <div className="md:hidden flex relative max-w-7xl mx-auto px-6 pt-4 pb-3 items-center justify-between">
-        {/* HAMBURGER MENU */}
-        <button
-          className="text-deep-brown hover:text-accent-red transition-colors"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          <HamburgerIcon className="w-6 h-6" />
-        </button>
-
-        {/* MOBILE LOGO */}
+      <div className="md:hidden flex relative w-full px-5 py-3 items-center justify-between">
+        {/* MOBILE LOGO - LEFT */}
         <Link
           href="/"
-          className="font-bold text-4xl sm:text-5xl text-[#1D4ED8] flex items-center gap-4 leading-none px-2"
+          className="font-bold text-2xl sm:text-3xl text-[#1D4ED8] flex items-center gap-2 leading-none"
           style={{
             fontFamily: '"Vegawanty", sans-serif',
             fontWeight: "700",
           }}
         >
-          <img
+          <Image
             src="/images/logo-main.png"
             alt="A1 Tantra Logo"
-            className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 object-contain relative -top-[3px]"
+            width={40}
+            height={40}
+            priority
+            unoptimized
+            className="flex-shrink-0 object-contain"
           />
-          <span>A1 TANTRA</span>
+          <span className="tracking-tighter">A1 TANTRA</span>
         </Link>
 
         {/* MOBILE RIGHT ICONS */}
@@ -223,17 +239,37 @@ export default function Navbar() {
           >
             <SearchIcon className="w-5 h-5" />
           </button>
-          {isAuthenticated && (
-            <div className="text-xs text-deep-brown font-semibold">
-              {user?.name?.split(" ")[0]}
-            </div>
-          )}
+          
+          <button
+            className="text-deep-brown hover:text-accent-red transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? (
+              <i className="ri-close-line text-2xl"></i>
+            ) : (
+              <HamburgerIcon className="w-6 h-6" />
+            )}
+          </button>
         </div>
       </div>
 
       {/* MOBILE DROPDOWN MENU */}
-      {isOpen && (
-        <div className="md:hidden bg-stone-100 border-t border-deep-brown pb-4 px-6 space-y-3">
+      <div
+        className={`md:hidden bg-cream border-t border-deep-brown/10 overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-6 py-6 space-y-1">
+          {/* Main Links */}
+          <Link
+            href="/about"
+            className="block font-nav text-lg font-semibold uppercase tracking-[0.2em] text-deep-brown hover:text-accent-red py-3 transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            ABOUT
+          </Link>
+
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -242,42 +278,28 @@ export default function Navbar() {
                 handleSmoothScroll(e, link.href);
                 setIsOpen(false);
               }}
-              className="block font-nav text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors py-2"
+              className="block font-nav text-lg font-semibold uppercase tracking-[0.2em] text-deep-brown hover:text-accent-red py-3 transition-colors"
             >
               {link.label}
             </Link>
           ))}
-          {rightLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="block font-nav text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="/contact"
-            className="block font-nav text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors py-2"
-            onClick={() => setIsOpen(false)}
-          >
-            CONTACT
-          </Link>
 
-          {/* Mobile Auth Section */}
-          <div className="border-t border-deep-brown pt-3 mt-3 space-y-2">
+          {/* Auth/Action Section */}
+          <div className="pt-6 mt-6 border-t border-deep-brown/10 space-y-4">
             {isAuthenticated ? (
               <>
-                <div className="text-sm text-deep-brown font-semibold py-2">
-                  Welcome, {user?.name}!
+                <div className="text-sm font-semibold text-deep-brown/60 uppercase tracking-widest">
+                  Account
+                </div>
+                <div className="font-nav text-lg text-deep-brown font-bold uppercase transition-colors">
+                  {user?.name}
                 </div>
                 <button
                   onClick={() => {
                     logout();
                     setIsOpen(false);
                   }}
-                  className="block w-full text-left font-nav text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors py-2"
+                  className="block w-full text-left font-nav text-lg font-semibold uppercase tracking-[0.2em] text-accent-red py-2"
                 >
                   Logout
                 </button>
@@ -286,24 +308,23 @@ export default function Navbar() {
               <>
                 <Link
                   href="/auth/login"
-                  className="block font-nav text-base font-semibold uppercase tracking-wide text-deep-brown hover:text-accent-red transition-colors py-2"
+                  className="block font-nav text-lg font-semibold uppercase tracking-[0.2em] text-deep-brown hover:text-accent-red py-2 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Login
                 </Link>
                 <Link
                   href="/book-session"
-                  className="block w-full text-center py-2 bg-accent-red text-cream font-semibold uppercase rounded-sm relative overflow-hidden group"
+                  className="block w-full text-center py-4 bg-accent-red text-cream font-bold uppercase tracking-widest rounded-lg shadow-lg active:scale-[0.98] transition-all"
                   onClick={() => setIsOpen(false)}
                 >
-                  <span className="absolute inset-0 bg-red-600 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
-                  <span className="relative z-10">BOOK A SESSION</span>
+                  BOOK A SESSION
                 </Link>
               </>
             )}
           </div>
         </div>
-      )}
+      </div>
 
       <SearchModal
         isOpen={isSearchOpen}
