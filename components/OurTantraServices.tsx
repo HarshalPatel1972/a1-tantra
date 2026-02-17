@@ -93,7 +93,13 @@ export default function OurTantraServices() {
                   <svg className="relative z-10 w-4 h-4 transition-transform duration-500 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <div className="absolute inset-0 origin-left scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 ease-out" style={{ backgroundColor: '#3F2F27' }} />
+                  <div className="absolute inset-0 origin-left scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-500 ease-out" style={{ backgroundColor: '#FFF0DF' }} />
+                  <span className="absolute inset-0 z-20 flex items-center justify-center gap-3 font-nav font-bold text-xs uppercase tracking-[0.2em] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" style={{ color: '#E44426' }}>
+                    Explore Service
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </span>
                 </Link>
               </div>
             </div>
