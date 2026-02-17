@@ -320,10 +320,10 @@ export default function Navbar() {
         {/* MOBILE LOGO - LEFT */}
         <Link
           href="/"
-          className="font-bold text-2xl sm:text-3xl text-[#1D4ED8] flex items-center pt-2 gap-2 leading-none"
+          className="font-black text-2xl sm:text-3xl text-[#1D4ED8] flex items-center pt-2 gap-2 leading-none"
           style={{
             fontFamily: '"Vegawanty", sans-serif',
-            fontWeight: "700",
+            fontWeight: "900",
           }}
         >
           <Image
@@ -335,7 +335,7 @@ export default function Navbar() {
             unoptimized
             className="shrink-0 object-contain"
           />
-          <span className="tracking-tighter">A1 TANTRA</span>
+          <span className="tracking-tighter uppercase">A1 TANTRA</span>
         </Link>
 
         {/* MOBILE RIGHT ICONS */}
