@@ -45,26 +45,31 @@ export default function OurTantraServices() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, idx) => (
             <Link key={idx} href={service.link} className="group">
-              <div className="h-full p-8 bg-white border-2 border-deep-brown/10 hover:border-accent-red rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer">
-                {/* Icon */}
-                <div className="text-4xl mb-4">{service.icon}</div>
+              <div className="relative h-full p-10 bg-white border border-deep-brown/5 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                {/* Accent Background Pattern */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-stone-50 rounded-bl-full -mr-16 -mt-16 group-hover:bg-accent-red/5 transition-colors duration-500"></div>
+                
+                {/* Icon Container */}
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-cream rounded-2xl text-3xl mb-8 group-hover:scale-110 group-hover:bg-accent-red/10 transition-all duration-500">
+                  {service.icon}
+                </div>
 
                 {/* Title */}
-                <h3 className="font-title text-2xl font-bold text-deep-brown mb-4 group-hover:text-accent-red transition">
+                <h3 className="font-title text-2xl font-bold text-deep-brown mb-5 group-hover:text-accent-red transition-colors duration-300">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-deep-brown/80 leading-relaxed text-lg mb-6">
+                <p className="text-deep-brown/70 leading-relaxed text-base mb-8 font-body">
                   {service.description}
                 </p>
 
                 {/* Learn More Link */}
-                <div className="flex items-center text-accent-red font-semibold group-hover:gap-2 gap-0 transition-all">
-                  <span>Learn More</span>
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
+                <div className="flex items-center text-accent-red font-bold text-sm tracking-widest uppercase gap-2 transition-all">
+                  <span>Explore Now</span>
+                  <svg className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </div>
               </div>
             </Link>

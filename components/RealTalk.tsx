@@ -38,17 +38,23 @@ export default function RealTalk() {
           {cards.map((card, idx) => (
             <div
               key={idx}
-              className="group bg-white border-2 border-deep-brown/10 hover:border-accent-red p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+              className="group relative bg-white border border-deep-brown/5 p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden"
             >
-              <p className="text-accent-red text-xs font-bold uppercase tracking-widest mb-3">
-                {card.category}
-              </p>
-              <h3 className="font-title text-2xl font-bold text-deep-brown mb-4 group-hover:text-accent-red transition">
-                {card.title}
-              </h3>
-              <p className="text-deep-brown/80 leading-relaxed font-body text-lg">
-                {card.excerpt}
-              </p>
+              <div className="absolute top-0 left-0 w-1 h-0 bg-accent-red group-hover:h-full transition-all duration-500"></div>
+              <div className="absolute -right-4 -top-4 w-24 h-24 bg-cream rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700"></div>
+              
+              <div className="relative z-10">
+                <p className="text-accent-red text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
+                  {card.category}
+                </p>
+                <h3 className="font-title text-2xl font-bold text-deep-brown mb-5 group-hover:text-accent-red transition-colors duration-300 leading-snug">
+                  {card.title}
+                </h3>
+                <div className="w-12 h-0.5 bg-stone-100 mb-6 group-hover:w-20 group-hover:bg-accent-red/30 transition-all duration-500"></div>
+                <p className="text-deep-brown/70 leading-relaxed font-body text-base">
+                  {card.excerpt}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -137,7 +137,7 @@ export default function UserReviews() {
 
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-white border border-deep-brown/10 rounded-full shadow-sm">
-            <div className="flex gap-1">
+            <div className="flex items-center gap-1.5">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
               <span className="text-[10px] font-nav font-bold text-deep-brown/60 uppercase tracking-widest">Live Updates</span>
             </div>
