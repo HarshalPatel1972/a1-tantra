@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { searchIndex, SearchResult } from "@/data/search-index";
 
@@ -80,19 +80,15 @@ export default function Navbar() {
   const [isExploreOpen, setIsExploreOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
 
-  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
-
-  useEffect(() => {
+  const searchResults = useMemo(() => {
     if (searchQuery.trim().length > 1) {
-      const filtered = searchIndex.filter(
+      return searchIndex.filter(
         (item) =>
           item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
           item.description.toLowerCase().includes(searchQuery.toLowerCase()),
-      );
-      setSearchResults(filtered.slice(0, 5));
-    } else {
-      setSearchResults([]);
+      ).slice(0, 5);
     }
+    return [];
   }, [searchQuery]);
 
   useEffect(() => {

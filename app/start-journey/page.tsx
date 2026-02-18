@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Link from "next/link";
 import { sendEmail } from "@/utils/emailjs";
 
 export default function StartJourneyPage() {
@@ -115,7 +114,7 @@ Please send me personalized guidance to begin my Tantra journey.
 
           {submitted && (
             <div className="mb-8 p-4 bg-soft-gold/20 border border-soft-gold text-deep-brown rounded-lg text-center">
-              Thank you! We'll send you personalized guidance to your email
+              Thank you! We&apos;ll send you personalized guidance to your email
               shortly.
             </div>
           )}
@@ -125,7 +124,7 @@ Please send me personalized guidance to begin my Tantra journey.
             {step === 1 && (
               <div className="space-y-6">
                 <h2 className="serif-heading text-3xl font-bold text-deep-brown">
-                  Let's begin your journey.
+                  Let&apos;s begin your journey.
                 </h2>
                 <div>
                   <label className="block text-sm font-semibold text-deep-brown mb-2">

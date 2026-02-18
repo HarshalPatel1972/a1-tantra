@@ -120,7 +120,7 @@ export default function AboutPage() {
                 Contact Us
               </h2>
               <p>
-                Have questions or want to collaborate? We'd love to hear from
+                Have questions or want to collaborate? We&apos;d love to hear from
                 you.
               </p>
               <Link

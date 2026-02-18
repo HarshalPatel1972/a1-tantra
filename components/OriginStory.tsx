@@ -36,11 +36,11 @@ export default function OriginStory() {
           {/* Right: Key Message Box */}
           <div className="bg-deep-brown text-cream p-12 rounded-lg">
             <h3 className="serif-heading text-3xl font-bold mb-6">
-              There's a lot of confusion about Tantra.
+              There&apos;s a lot of confusion about Tantra.
             </h3>
             <p className="text-lg text-cream/90 leading-relaxed mb-8">
               We ensure every teaching is reviewed by practitioners and
-              scholars. Tantra is not what pop culture makes it out to be—it's a
+              scholars. Tantra is not what pop culture makes it out to be—it&apos;s a
               profound spiritual science with depth, rigor, and real
               transformative potential.
             </p>

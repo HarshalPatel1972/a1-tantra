@@ -37,7 +37,7 @@ export default function AdvisoryPage() {
               </h3>
               <p className="text-deep-brown/70">
                 Detailed profiles of our advisory panel members are being
-                prepared. We'll share their backgrounds, expertise, and lineage
+                prepared. We&apos;ll share their backgrounds, expertise, and lineage
                 connections soon.
               </p>
             </div>

@@ -38,9 +38,9 @@ export default function WelcomeHome() {
               Welcome home.
             </h2>
             <p className="text-xl md:text-2xl text-deep-brown/80 leading-relaxed font-body italic mb-0">
-              "We're glad you found us. Whether you're new to Tantra or deep in
+              &quot;We&apos;re glad you found us. Whether you&apos;re new to Tantra or deep in
               your spiritual journey, A1 Tantra guides you gently, safely, and
-              respectfully toward inner awakening."
+              respectfully toward inner awakening.&quot;
             </p>
           </div>
 

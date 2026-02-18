@@ -15,8 +15,8 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-lg text-deep-brown/70 max-w-2xl mx-auto">
-              Have questions about A1 Tantra? We'd love to hear from you. Send
-              us a message and we'll respond within 24 hours.
+              Have questions about A1 Tantra? We&apos;d love to hear from you. Send
+              us a message and we&apos;ll respond within 24 hours.
             </p>
           </div>
 

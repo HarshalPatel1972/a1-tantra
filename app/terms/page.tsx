@@ -30,7 +30,7 @@ export default function TermsPage() {
               </h2>
               <p>
                 Permission is granted to temporarily download one copy of the
-                materials (information or software) on A1 Tantra's website for
+                materials (information or software) on A1 Tantra&apos;s website for
                 personal, non-commercial transitory viewing only. This is the
                 grant of a license, not a transfer of title, and under this
                 license you may not:
@@ -50,7 +50,7 @@ export default function TermsPage() {
                   materials
                 </li>
                 <li>
-                  Transfer the materials to another person or "mirror" the
+                  Transfer the materials to another person or &quot;mirror&quot; the
                   materials on any other server
                 </li>
               </ul>
@@ -61,7 +61,7 @@ export default function TermsPage() {
                 3. Disclaimer
               </h2>
               <p>
-                The materials on A1 Tantra's website are provided on an 'as is'
+                The materials on A1 Tantra&apos;s website are provided on an &apos;as is&apos;
                 basis. A1 Tantra makes no warranties, expressed or implied, and
                 hereby disclaims and negates all other warranties including,
                 without limitation, implied warranties or conditions of
@@ -79,7 +79,7 @@ export default function TermsPage() {
                 In no event shall A1 Tantra or its suppliers be liable for any
                 damages (including, without limitation, damages for loss of data
                 or profit, or due to business interruption) arising out of the
-                use or inability to use the materials on A1 Tantra's website.
+                use or inability to use the materials on A1 Tantra&apos;s website.
               </p>
             </section>
 
@@ -88,7 +88,7 @@ export default function TermsPage() {
                 5. Accuracy of Materials
               </h2>
               <p>
-                The materials appearing on A1 Tantra's website could include
+                The materials appearing on A1 Tantra&apos;s website could include
                 technical, typographical, or photographic errors. A1 Tantra does
                 not warrant that any of the materials on its website are
                 accurate, complete, or current.
@@ -104,7 +104,7 @@ export default function TermsPage() {
                 website and is not responsible for the contents of any such
                 linked site. The inclusion of any link does not imply
                 endorsement by A1 Tantra of the site. Use of any such linked
-                website is at the user's own risk.
+                website is at the user&apos;s own risk.
               </p>
             </section>
 
