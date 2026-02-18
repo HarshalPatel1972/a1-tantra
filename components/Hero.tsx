@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen pb-8 pt-4 overflow-hidden bg-transparent">
       {/* Content Wrapper */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <div className="relative max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 z-10">
         {/* Hero Image Container with Rounded Edges and Border */}
         <div className="relative mb-8 rounded-3xl overflow-hidden border-2 border-deep-brown shadow-2xl">
           {/* Background Image with Overlay */}
