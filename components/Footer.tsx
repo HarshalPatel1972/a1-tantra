@@ -53,42 +53,34 @@ export default function Footer() {
             <ul className="space-y-2 text-sm font-body">
               <li>
                 <Link
-                  href="/paths/kundalini"
+                  href="/paths/kriya"
                   className="hover:text-soft-gold transition"
                 >
-                  Kundalini
+                  Kriya Tantra
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/paths/shakta"
+                  href="/paths/carya"
                   className="hover:text-soft-gold transition"
                 >
-                  Shakta
+                  Carya Tantra
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/paths/kaula"
+                  href="/paths/yoga"
                   className="hover:text-soft-gold transition"
                 >
-                  Kaula
+                  Yoga Tantra
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/paths/tibetan"
+                  href="/paths/anuttarayoga"
                   className="hover:text-soft-gold transition"
                 >
-                  Tibetan
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/paths/left-hand"
-                  className="hover:text-soft-gold transition"
-                >
-                  Left-Hand / Right-Hand
+                  Anuttarayoga Tantra
                 </Link>
               </li>
             </ul>
@@ -98,6 +90,15 @@ export default function Footer() {
           <div>
             <h4 className="font-title text-lg font-bold mb-4">Resources</h4>
             <ul className="space-y-2 text-sm font-body">
+              <li>
+                <Link
+                  href="/resources"
+                  className="hover:text-soft-gold transition"
+                >
+                  All Resources
+                </Link>
+              </li>
+              {/* Temp removed until pages are ready 
               <li>
                 <Link
                   href="/resources/beginner"
@@ -138,6 +139,7 @@ export default function Footer() {
                   Myth-Busting
                 </Link>
               </li>
+              */}
             </ul>
           </div>
 

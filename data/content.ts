@@ -1,45 +1,31 @@
 export const tantraPaths = [
   {
-    id: "shakta",
-    name: "Shakta Tantra",
+    id: "kriya",
+    name: "Kriya Tantra",
     description:
-      "The path of the Divine Feminine. Shakta Tantra honors Shakti as the cosmic energy and primary force.",
-    icon: "🌸",
-  },
-  {
-    id: "kundalini",
-    name: "Kundalini Tantra",
-    description:
-      "Awakening the serpent energy. Work with kundalini through pranayama, mantras, and mudras.",
-    icon: "🐍",
-  },
-  {
-    id: "kaula",
-    name: "Kaula Tantra",
-    description:
-      "The family path. Kaula integrates daily life, relationships, and sacred sexuality into spiritual practice.",
-    icon: "💑",
-  },
-  {
-    id: "tibetan",
-    name: "Tibetan Tantra",
-    description:
-      "Buddhist Tantra from Tibet. Combines deity yoga, visualization, and transformation practices.",
+      "Action Tantra. Emphasizes external practices and ritual action: physical purity, ritual bathing, mantra recitation, and ceremonial conduct.",
     icon: "🕉️",
   },
   {
-    id: "right-hand",
-    name: "Right-Hand Tantra",
+    id: "carya",
+    name: "Carya Tantra",
     description:
-      "Daksha Marga. Traditional, ritualistic, and aligned with brahminical practices.",
-    icon: "☀️",
+      "Method Tantra. Balances outer ritual with inner meditative stability, focusing on devotion and visualization.",
+    icon: "🕯️",
   },
   {
-    id: "left-hand",
-    name: "Left-Hand Tantra",
+    id: "yoga",
+    name: "Yoga Tantra",
     description:
-      "Vama Marga. Transgressive, boundary-dissolving practices for rapid transformation.",
-    icon: "🌙",
+      "Union Tantra. Focuses primarily on internal meditative transformation and precise visualization of energy systems.",
+    icon: "✨",
+  },
+  {
+    id: "anuttarayoga",
+    name: "Anuttarayoga Tantra",
+    description:
+      "Highest Union Tantra. Focuses on the non-dual union of wisdom and compassion for rapid enlightenment.",
+    icon: "💠",
   },
 ];
 

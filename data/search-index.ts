@@ -121,20 +121,4 @@ export const searchIndex: SearchResult[] = [
     url: "/#tantra-paths",
     category: "Tantra Path",
   },
-
-  // Detailed Paths (from TantraPathsGuides)
-  {
-    title: "Shakta Tantra",
-    description:
-      "The path of the Divine Feminine, honoring Shakti as the cosmic creative energy.",
-    url: "/#shakta",
-    category: "Tantra Path",
-  },
-  {
-    title: "Kundalini Tantra",
-    description:
-      "Awakening the serpent energy coiled at the base of the spine through initiation and practice.",
-    url: "/#kundalini",
-    category: "Tantra Path",
-  },
 ];

@@ -113,8 +113,6 @@ export default function Navbar() {
   const navLinks = [
     { label: "RESOURCES", href: "/resources" },
     { label: "TANTRA PATHS", href: "#tantra-paths" },
-    { label: "THERAPIES", href: "/therapies" },
-    { label: "SESSIONS", href: "/sessions" },
   ];
 
   return (
