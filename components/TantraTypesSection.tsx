@@ -250,11 +250,11 @@ export default function TantraTypesSection() {
       {/* DETAILED MODAL */}
       {selectedTantra !== null && (
         <div
-          className="fixed inset-0 bg-black/90 backdrop-blur-xl z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8"
+          className="fixed top-[64px] md:top-[90px] xl:top-[100px] left-0 right-0 bottom-0 bg-black/90 backdrop-blur-xl z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8"
           onClick={() => setSelectedTantra(null)}
         >
           <div
-            className="bg-[#FFF0DF] rounded-3xl shadow-[0_30px_100px_rgba(0,0,0,0.8)] w-full max-w-4xl max-h-[85vh] overflow-y-auto relative border border-[#3F2F27]/10"
+            className="bg-[#FFF0DF] rounded-3xl shadow-[0_30px_100px_rgba(0,0,0,0.8)] w-full max-w-4xl max-h-[90%] overflow-y-auto relative border border-[#3F2F27]/10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button - Clean & Persistent */}

@@ -72,7 +72,7 @@ export default function RootLayout({
         <AuthProvider>
           {/* <AnimatedGradientBg /> */}
           <Navbar />
-          <main className="pt-24 md:pt-32 relative z-0">{children}</main>
+          <main className="pt-24 md:pt-32 relative">{children}</main>
           <CallMeButton />
         </AuthProvider>
       </body>
