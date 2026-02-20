@@ -63,11 +63,11 @@ export const searchIndex: SearchResult[] = [
     category: "Page",
   },
   {
-    title: "Book a Session",
+    title: "Book a Demo",
     description:
-      "Ready to transform? Book your personalized tantra session today.",
-    url: "/book-session",
-    category: "Page",
+      "Ready to transform? Explore our tantra paths and start your journey.",
+    url: "/#tantra-paths",
+    category: "Action",
   },
 
   // Services

@@ -17,10 +17,9 @@ export default function Home() {
     <div>
       <Hero />
       <WelcomeHome />
+      <OurTantraServices />
       <RealTalk />
       <TantraTypesSection />
-      {/* <SessionsGrid /> */}
-      <OurTantraServices />
       <UserReviews />
       <BuildJourneyCTA />
       {/* <OriginStory /> */}
