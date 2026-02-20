@@ -67,7 +67,7 @@ export const searchIndex: SearchResult[] = [
     description:
       "Ready to transform? Explore our tantra paths and start your journey.",
     url: "/#tantra-paths",
-    category: "Action",
+    category: "Page",
   },
 
   // Services
