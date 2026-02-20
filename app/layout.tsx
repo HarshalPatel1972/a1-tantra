@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import CallMeButton from "@/components/CallMeButton";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 // import AnimatedGradientBg from "@/components/AnimatedGradientBg";
 
 const playfair = Playfair_Display({
@@ -58,23 +59,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Remix Icon CDN - Lightweight & Reliable Icon Set */}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
         />
+        {/* Prevent flash of wrong theme on load */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('a1tantra-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`
+          }}
+        />
       </head>
       <body
         className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased font-sans bg-cream text-deep-brown`}
       >
-        <AuthProvider>
-          {/* <AnimatedGradientBg /> */}
-          <Navbar />
-          <main className="pt-24 md:pt-32 relative">{children}</main>
-          <CallMeButton />
-        </AuthProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            {/* <AnimatedGradientBg /> */}
+            <Navbar />
+            <main className="pt-24 md:pt-32 relative">{children}</main>
+            <CallMeButton />
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

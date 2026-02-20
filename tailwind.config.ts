@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 import typography from "@tailwindcss/typography";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,12 +10,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#FFF0DF",
-        "deep-brown": "#3F2F27",
-        "accent-red": "#E44426",
-        "soft-gold": "#D4AF37",
-        "brand-blue": "#1D4ED8",
-        "azure-pulse": "#3B82F6",
+        cream: "var(--color-cream)",
+        "deep-brown": "var(--color-deep-brown)",
+        "accent-red": "var(--color-accent-red)",
+        "soft-gold": "var(--color-soft-gold)",
+        "brand-blue": "var(--color-brand-blue)",
+        "azure-pulse": "var(--color-azure-pulse)",
+        "surface-card": "var(--color-surface-card)",
+        "surface-input": "var(--color-surface-input)",
+        "surface-nav": "var(--color-surface-nav)",
+        "surface-hover": "var(--color-surface-hover)",
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "Georgia", "serif"],

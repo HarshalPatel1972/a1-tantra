@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState, useMemo } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import { useTheme } from "@/contexts/ThemeContext";
 import { searchIndex } from "@/data/search-index";
 
 // SVG Icon Components
@@ -97,6 +98,20 @@ const Sparkles = ({
   </svg>
 );
 
+// Eye Comfort Mode Icons
+const SunIcon = ({ className = "w-5 h-5" }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+    <circle cx="12" cy="12" r="5" />
+    <path strokeLinecap="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+  </svg>
+);
+
+const MoonIcon = ({ className = "w-5 h-5" }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+  </svg>
+);
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -105,6 +120,7 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isExploreOpen, setIsExploreOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
+  const { isDark, toggleTheme } = useTheme();
 
   const searchResults = useMemo(() => {
     if (searchQuery.trim().length > 1) {
@@ -160,7 +176,7 @@ export default function Navbar() {
         <Link
           href="/"
           className={`
-            font-bold tracking-tight text-[#1D4ED8] select-none shrink-0 flex items-center pt-1 gap-2 md:gap-2.5 lg:gap-3 xl:gap-3.5
+            font-bold tracking-tight text-brand-blue select-none shrink-0 flex items-center pt-1 gap-2 md:gap-2.5 lg:gap-3 xl:gap-3.5
             transition-all duration-700 ease-out leading-none
             ${
               scrolled
@@ -291,7 +307,7 @@ export default function Navbar() {
                         <h4 className="font-nav font-bold text-sm text-deep-brown group-hover:text-accent-red">
                           {result.title}
                         </h4>
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#1D4ED8] bg-blue-50 px-2 py-0.5 rounded">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-brand-blue bg-blue-50 px-2 py-0.5 rounded">
                           {result.category}
                         </span>
                       </div>
@@ -307,6 +323,20 @@ export default function Navbar() {
           {/* Auth Section */}
           {isAuthenticated ? (
             <div className="flex gap-4 items-center">
+              {/* Eye Comfort Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="relative w-10 h-10 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 hover:bg-deep-brown/5"
+                aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
+                title={isDark ? "Light Mode" : "Eye Comfort Mode"}
+              >
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
+                  <MoonIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
+                </span>
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`}>
+                  <SunIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
+                </span>
+              </button>
               <div className="text-[12px] lg:text-[14px] text-deep-brown font-semibold">
                 {user?.name?.split(" ")[0]}
               </div>
@@ -319,6 +349,20 @@ export default function Navbar() {
             </div>
           ) : (
             <div className="flex items-center gap-4 lg:gap-6">
+              {/* Eye Comfort Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="relative w-10 h-10 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 hover:bg-deep-brown/5"
+                aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
+                title={isDark ? "Light Mode" : "Eye Comfort Mode"}
+              >
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
+                  <MoonIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
+                </span>
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`}>
+                  <SunIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
+                </span>
+              </button>
               <Link
                 href="/auth/login"
                 className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
@@ -327,7 +371,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/book-session"
-                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.15em] px-8 py-3.5 bg-[#1D4ED8] text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95 shadow-lg"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.15em] px-8 py-3.5 bg-brand-blue text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95 shadow-lg"
               >
                 <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
                 <span className="relative z-10">BOOK A SESSION</span>
@@ -342,7 +386,7 @@ export default function Navbar() {
         {/* MOBILE LOGO - LEFT */}
         <Link
           href="/"
-          className="font-black text-2xl sm:text-3xl text-[#1D4ED8] flex items-center pt-1 gap-2 leading-none"
+          className="font-black text-2xl sm:text-3xl text-brand-blue flex items-center pt-1 gap-2 leading-none"
           style={{
             fontFamily: '"Vegawanty", sans-serif',
             fontWeight: "900",
@@ -361,7 +405,21 @@ export default function Navbar() {
         </Link>
 
         {/* MOBILE RIGHT ICONS */}
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-3 items-center">
+          {/* Eye Comfort Toggle (Mobile) */}
+          <button
+            onClick={toggleTheme}
+            className="relative w-8 h-8 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300"
+            aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
+          >
+            <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
+              <MoonIcon className="w-[18px] h-[18px]" />
+            </span>
+            <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`}>
+              <SunIcon className="w-[18px] h-[18px]" />
+            </span>
+          </button>
+
           <button
             onClick={() => setIsSearchHovered(!isSearchHovered)}
             className="text-deep-brown hover:text-accent-red transition-colors"
@@ -416,7 +474,7 @@ export default function Navbar() {
                     <h4 className="font-nav font-bold text-sm text-deep-brown">
                       {result.title}
                     </h4>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#1D4ED8]">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-brand-blue">
                       {result.category}
                     </span>
                   </div>
@@ -491,7 +549,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/book-session"
-                  className="block w-full text-center py-4 bg-[#1D4ED8] text-white font-bold uppercase tracking-[0.15em] rounded-md relative overflow-hidden group active:scale-[0.98] transition-all"
+                  className="block w-full text-center py-4 bg-brand-blue text-white font-bold uppercase tracking-[0.15em] rounded-md relative overflow-hidden group active:scale-[0.98] transition-all"
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>

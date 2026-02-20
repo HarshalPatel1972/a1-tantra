@@ -254,13 +254,13 @@ export default function TantraTypesSection() {
           onClick={() => setSelectedTantra(null)}
         >
           <div
-            className="bg-[#FFF0DF] rounded-3xl shadow-[0_30px_100px_rgba(0,0,0,0.8)] w-full max-w-4xl max-h-[90%] overflow-y-auto relative border border-[#3F2F27]/10"
+            className="bg-cream rounded-3xl shadow-[0_30px_100px_rgba(0,0,0,0.8)] w-full max-w-4xl max-h-[90%] overflow-y-auto relative border border-deep-brown/10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button - Clean & Persistent */}
             <button
               onClick={() => setSelectedTantra(null)}
-              className="absolute top-4 right-4 sm:top-5 sm:right-5 z-[110] p-3 bg-black/50 hover:bg-[#E44426] backdrop-blur-md rounded-full text-white transition-all hover:rotate-90 group shadow-xl"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 z-[110] p-3 bg-black/50 hover:bg-accent-red backdrop-blur-md rounded-full text-white transition-all hover:rotate-90 group shadow-xl"
               aria-label="Close modal"
             >
               <svg
@@ -288,28 +288,28 @@ export default function TantraTypesSection() {
                 quality={100}
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FFF0DF] via-[#FFF0DF]/20 to-black/30"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/20 to-black/30"></div>
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent"></div>
 
               {/* Title Section */}
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 md:p-10">
-                <p className="font-nav text-xs sm:text-sm md:text-base uppercase tracking-[0.4em] text-[#E44426] font-black mb-1 filter drop-shadow-sm">
+                <p className="font-nav text-xs sm:text-sm md:text-base uppercase tracking-[0.4em] text-accent-red font-black mb-1 filter drop-shadow-sm">
                   {tantraTypes[selectedTantra].subtitle}
                 </p>
-                <h1 className="font-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#3F2F27]">
+                <h1 className="font-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-deep-brown">
                   {tantraTypes[selectedTantra].name}
                 </h1>
               </div>
             </div>
 
             {/* Content Area - Optimized for Readability & Scrolling */}
-            <div className="bg-[#FFF0DF] p-6 sm:p-8 md:p-10 pt-4 space-y-10 sm:space-y-12">
+            <div className="bg-cream p-6 sm:p-8 md:p-10 pt-4 space-y-10 sm:space-y-12">
               {/* Overview Section */}
               <div className="max-w-3xl">
-                <h2 className="font-title text-2xl sm:text-3xl font-bold text-[#D4AF37] mb-4">
+                <h2 className="font-title text-2xl sm:text-3xl font-bold text-soft-gold mb-4">
                   Overview
                 </h2>
-                <p className="text-lg sm:text-xl text-[#3F2F27] leading-relaxed font-body font-medium italic border-l-4 sm:border-l-8 border-[#E44426] pl-6 sm:pl-8">
+                <p className="text-lg sm:text-xl text-deep-brown leading-relaxed font-body font-medium italic border-l-4 sm:border-l-8 border-accent-red pl-6 sm:pl-8">
                   &quot;{tantraTypes[selectedTantra].fullDetails.overview}&quot;
                 </p>
               </div>
@@ -318,8 +318,8 @@ export default function TantraTypesSection() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
                 {/* Key Focus Area */}
                 <div className="space-y-5">
-                  <h2 className="font-title text-xl sm:text-2xl font-bold text-[#3F2F27] flex items-center gap-3">
-                    <span className="w-8 h-8 bg-[#3F2F27] text-[#FFF0DF] rounded-full flex items-center justify-center text-sm font-black">
+                  <h2 className="font-title text-xl sm:text-2xl font-bold text-deep-brown flex items-center gap-3">
+                    <span className="w-8 h-8 bg-deep-brown text-cream rounded-full flex items-center justify-center text-sm font-black">
                       01
                     </span>
                     Core Focus
@@ -329,10 +329,10 @@ export default function TantraTypesSection() {
                       (focus, i) => (
                         <div
                           key={i}
-                          className="flex gap-3 items-center p-3 bg-white rounded-xl shadow-sm border border-[#3F2F27]/5"
+                          className="flex gap-3 items-center p-3 bg-white rounded-xl shadow-sm border border-deep-brown/5"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#E44426] shrink-0" />
-                          <p className="text-sm sm:text-base text-[#3F2F27] font-body font-bold">
+                          <div className="w-1.5 h-1.5 rounded-full bg-accent-red shrink-0" />
+                          <p className="text-sm sm:text-base text-deep-brown font-body font-bold">
                             {focus}
                           </p>
                         </div>
@@ -343,8 +343,8 @@ export default function TantraTypesSection() {
 
                 {/* Benefits Area */}
                 <div className="space-y-5">
-                  <h2 className="font-title text-xl sm:text-2xl font-bold text-[#3F2F27] flex items-center gap-3">
-                    <span className="w-8 h-8 bg-[#E44426] text-white rounded-full flex items-center justify-center text-sm font-black">
+                  <h2 className="font-title text-xl sm:text-2xl font-bold text-deep-brown flex items-center gap-3">
+                    <span className="w-8 h-8 bg-accent-red text-white rounded-full flex items-center justify-center text-sm font-black">
                       02
                     </span>
                     The Outcome
@@ -354,10 +354,10 @@ export default function TantraTypesSection() {
                       (benefit, i) => (
                         <div
                           key={i}
-                          className="flex gap-3 items-center p-3 bg-[#D4AF37]/10 rounded-xl"
+                          className="flex gap-3 items-center p-3 bg-soft-gold/10 rounded-xl"
                         >
                           <span className="text-xl shrink-0">✨</span>
-                          <p className="text-sm sm:text-base text-[#3F2F27] font-body font-bold">
+                          <p className="text-sm sm:text-base text-deep-brown font-body font-bold">
                             {benefit}
                           </p>
                         </div>
@@ -369,57 +369,57 @@ export default function TantraTypesSection() {
 
               {/* Practical Details */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 bg-white border border-[#3F2F27]/10 rounded-2xl">
-                  <h3 className="font-title text-xl font-bold text-[#3F2F27] mb-3 text-center">
+                <div className="p-6 bg-white border border-deep-brown/10 rounded-2xl">
+                  <h3 className="font-title text-xl font-bold text-deep-brown mb-3 text-center">
                     Eligibility
                   </h3>
-                  <p className="text-center text-[#3F2F27]/70 font-body text-base font-bold">
+                  <p className="text-center text-deep-brown/70 font-body text-base font-bold">
                     {tantraTypes[selectedTantra].fullDetails.whotakes}
                   </p>
                 </div>
-                <div className="p-6 bg-white border border-[#3F2F27]/10 rounded-2xl">
-                  <h3 className="font-title text-xl font-bold text-[#3F2F27] mb-3 text-center">
+                <div className="p-6 bg-white border border-deep-brown/10 rounded-2xl">
+                  <h3 className="font-title text-xl font-bold text-deep-brown mb-3 text-center">
                     Prerequisites
                   </h3>
-                  <p className="text-center text-[#3F2F27]/70 font-body text-base font-bold">
+                  <p className="text-center text-deep-brown/70 font-body text-base font-bold">
                     {tantraTypes[selectedTantra].fullDetails.prerequisites}
                   </p>
                 </div>
               </div>
 
               {/* Call to Action Bar - Compact version */}
-              <div className="mt-8 bg-[#3F2F27] rounded-3xl p-6 sm:p-10 text-center shadow-xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-48 h-48 bg-[#E44426]/10 rounded-full blur-3xl -mr-24 -mt-24" />
+              <div className="mt-8 bg-deep-brown rounded-3xl p-6 sm:p-10 text-center shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-accent-red/10 rounded-full blur-3xl -mr-24 -mt-24" />
                 <div className="relative z-10">
-                  <h3 className="font-title text-2xl sm:text-3xl text-[#FFF0DF] font-bold mb-3">
+                  <h3 className="font-title text-2xl sm:text-3xl text-cream font-bold mb-3">
                     Begin your {tantraTypes[selectedTantra].name}
                   </h3>
-                  <p className="text-[#FFF0DF]/70 text-base mb-8 max-w-xl mx-auto">
+                  <p className="text-cream/70 text-base mb-8 max-w-xl mx-auto">
                     {tantraTypes[selectedTantra].fullDetails.practiceSchedule}
                   </p>
 
                   <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
                     <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] font-black mb-1">
+                      <span className="text-[10px] uppercase tracking-[0.3em] text-soft-gold font-black mb-1">
                         Duration
                       </span>
-                      <span className="text-2xl font-black text-[#FFF0DF]">
+                      <span className="text-2xl font-black text-cream">
                         {tantraTypes[selectedTantra].duration}
                       </span>
                     </div>
-                    <div className="h-10 w-[1px] bg-[#FFF0DF]/20 hidden sm:block" />
+                    <div className="h-10 w-[1px] bg-cream/20 hidden sm:block" />
                     <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] font-black mb-1">
+                      <span className="text-[10px] uppercase tracking-[0.3em] text-soft-gold font-black mb-1">
                         Price
                       </span>
-                      <span className="text-3xl font-black text-[#E44426]">
+                      <span className="text-3xl font-black text-accent-red">
                         {tantraTypes[selectedTantra].price}
                       </span>
                     </div>
                     <Link
                       href="#tantra-paths"
                       onClick={() => setSelectedTantra(null)}
-                      className="mt-4 sm:mt-0 px-8 py-4 bg-[#E44426] text-white font-black rounded-xl hover:bg-[#E44426]/90 transition-all hover:scale-105 shadow-lg uppercase tracking-widest text-sm"
+                      className="mt-4 sm:mt-0 px-8 py-4 bg-accent-red text-white font-black rounded-xl hover:bg-accent-red/90 transition-all hover:scale-105 shadow-lg uppercase tracking-widest text-sm"
                     >
                       Book Session
                     </Link>

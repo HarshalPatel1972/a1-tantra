@@ -38,7 +38,7 @@
   font-display: swap;
 }
 
-/* Root theme */
+/* Root theme — Light (default) */
 :root {
   --background: #fff0df;
   --foreground: #3f2f27;
@@ -46,6 +46,40 @@
   --soft-gold: #d4af37;
   --font-bigilla: "Bigilla Display", Georgia, serif;
   --font-vegawanty: "Vegawanty", system-ui, sans-serif;
+
+  /* Theme-aware color tokens */
+  --color-cream: #FFF0DF;
+  --color-deep-brown: #3F2F27;
+  --color-accent-red: #E44426;
+  --color-soft-gold: #D4AF37;
+  --color-brand-blue: #1D4ED8;
+  --color-azure-pulse: #3B82F6;
+
+  /* Surface colors (cards, inputs, nav) */
+  --color-surface-card: #FFFFFF;
+  --color-surface-input: #FFFFFF;
+  --color-surface-nav: rgba(245, 245, 244, 0.8);
+  --color-surface-hover: rgba(231, 229, 228, 1);
+}
+
+/* Eye Comfort Mode — warm, low-blue-light dark theme */
+.dark {
+  --background: #1C1614;
+  --foreground: #E8DDD4;
+  --accent: #F07460;
+  --soft-gold: #E8C85A;
+
+  --color-cream: #1C1614;
+  --color-deep-brown: #E8DDD4;
+  --color-accent-red: #F07460;
+  --color-soft-gold: #E8C85A;
+  --color-brand-blue: #7B9CF5;
+  --color-azure-pulse: #93B4F8;
+
+  --color-surface-card: #2A221E;
+  --color-surface-input: #2A221E;
+  --color-surface-nav: rgba(28, 22, 20, 0.9);
+  --color-surface-hover: rgba(55, 45, 38, 1);
 }
 
 html {
@@ -77,10 +111,53 @@ button {
 
 i[class^="ri-"],
 i[class*=" ri-"] {
-  color: #fff0df !important; /* cream default icon color */
+  color: var(--color-cream) !important;
   opacity: 1 !important;
   visibility: visible !important;
   line-height: 1 !important;
+}
+
+/* ------------------------------------------------ */
+/* Eye Comfort Mode overrides for standard colors   */
+/* ------------------------------------------------ */
+
+/* Override bg-white in dark mode */
+.dark .bg-white {
+  background-color: var(--color-surface-card) !important;
+}
+
+/* Override bg-stone variants in dark mode */
+.dark .bg-stone-100\/80,
+.dark .bg-stone-100 {
+  background-color: var(--color-surface-nav) !important;
+}
+
+.dark .bg-stone-200 {
+  background-color: var(--color-surface-hover) !important;
+}
+
+/* Override bg-blue-50 badge in dark mode */
+.dark .bg-blue-50 {
+  background-color: rgba(123, 156, 245, 0.15) !important;
+}
+
+/* Override hover:bg-stone-200 in dark mode */
+.dark .hover\:bg-stone-200:hover {
+  background-color: var(--color-surface-hover) !important;
+}
+
+/* Override hover:bg-stone-100 in dark mode */
+.dark .hover\:bg-stone-100:hover {
+  background-color: var(--color-surface-hover) !important;
+}
+
+/* Smooth theme transition */
+html {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body, .bg-cream, .bg-white, nav {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.3s ease;
 }
 
 /* ------------------------------------------------ */
