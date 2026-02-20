@@ -125,12 +125,17 @@ export default function PathDetailPage(props: {
             <p className="text-lg mb-8">
               Book a personalized session with one of our experienced guides.
             </p>
-            <Link
-              href="/book-session"
-              className="inline-block px-8 py-3 bg-cream text-accent-red font-semibold rounded-sm hover:bg-deep-brown hover:text-cream transition"
-            >
-              BOOK A SESSION
-            </Link>
+            <div className="relative inline-block group/aura">
+              {/* CHAKRA AURA EFFECT */}
+              <div className="absolute inset-0 bg-white/20 opacity-0 group-hover/aura:opacity-100 rounded-lg animate-chakra-pulse pointer-events-none blur-xl transition-opacity duration-500"></div>
+              
+              <Link
+                href="/book-session"
+                className="relative z-10 inline-block px-10 py-4 bg-cream text-accent-red font-bold uppercase tracking-widest rounded-sm hover:bg-deep-brown hover:text-cream transition-all duration-500 shadow-xl"
+              >
+                BOOK A SESSION
+              </Link>
+            </div>
           </div>
         </div>
       </div>

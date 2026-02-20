@@ -290,7 +290,10 @@ export default function Navbar() {
               </button>
             </div>
           ) : (
-            <div className="flex items-center gap-4 lg:gap-6">
+            <div className="flex items-center gap-4 lg:gap-8 relative group/aura">
+              {/* CHAKRA AURA EFFECT */}
+              <div className="absolute inset-0 bg-accent-red/20 opacity-0 group-hover/aura:opacity-100 rounded-lg animate-chakra-pulse pointer-events-none -z-10 blur-xl transition-opacity duration-500"></div>
+
               <Link
                 href="/auth/login"
                 className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
@@ -298,12 +301,14 @@ export default function Navbar() {
                 Login
               </Link>
               <Link
-                href="#tantra-paths"
-                onClick={(e) => handleSmoothScroll(e, "#tantra-paths")}
-                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.15em] px-8 py-3.5 bg-[#1D4ED8] text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95"
+                href="/book-session"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.18em] px-8 py-4 bg-accent-red text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(154,49,37,0.4)] hover:shadow-[0_0_30px_rgba(154,49,37,0.6)] border border-white/10"
               >
-                <span className="absolute inset-0 bg-[#1e40af] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
-                <span className="relative z-10">BOOK A DEMO</span>
+                <span className="absolute inset-0 bg-deep-brown translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
+                <span className="relative z-10 flex items-center gap-2">
+                  BOOK A SESSION
+                  <Sparkles size={14} className="text-cream animate-pulse" />
+                </span>
               </Link>
             </div>
           )}
@@ -463,15 +468,17 @@ export default function Navbar() {
                   Login
                 </Link>
                 <Link
-                  href="#tantra-paths"
-                  className="block w-full text-center py-4 bg-[#1D4ED8] text-white font-bold uppercase tracking-widest rounded-md relative overflow-hidden group active:scale-[0.98] transition-all"
-                  onClick={(e) => {
-                    handleSmoothScroll(e, "#tantra-paths");
-                    setIsOpen(false);
-                  }}
+                  href="/book-session"
+                  className="block w-full text-center py-4 bg-accent-red text-white font-bold uppercase tracking-[0.15em] rounded-md relative overflow-hidden group active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(154,49,37,0.3)]"
+                  onClick={() => setIsOpen(false)}
                 >
-                  <span className="absolute inset-0 bg-[#1e40af] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
-                  <span className="relative z-10">BOOK A DEMO</span>
+                  {/* MOBILE CHAKRA AURA */}
+                  <div className="absolute inset-0 bg-white/10 opacity-50 animate-chakra-pulse pointer-events-none blur-md"></div>
+                  <span className="absolute inset-0 bg-deep-brown translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    BOOK A SESSION
+                    <Sparkles size={16} className="animate-pulse" />
+                  </span>
                 </Link>
               </>
             )}

@@ -10,11 +10,14 @@ export default function BookingPage() {
       <Navbar />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="serif-heading text-5xl font-bold text-deep-brown mb-4">
-              Book a Session
+          <div className="text-center mb-16 relative">
+            {/* CHAKRA AURA HEADING EFFECT */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-red/10 rounded-full animate-chakra-pulse blur-3xl -z-10"></div>
+            
+            <h1 className="serif-heading text-5xl md:text-7xl font-bold text-deep-brown mb-4 relative drop-shadow-sm">
+              Book a <span className="text-accent-red animate-pulse">Session</span>
             </h1>
-            <p className="text-lg text-deep-brown/70 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-deep-brown/70 max-w-2xl mx-auto font-body">
               Choose a session type that resonates with your journey and submit
               your booking request.
             </p>

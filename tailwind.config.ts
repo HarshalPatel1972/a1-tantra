@@ -83,6 +83,18 @@ const config: Config = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "chakra-pulse": {
+          "0%, 100%": {
+            opacity: "0.4",
+            transform: "scale(1.2) rotate(0deg)",
+            filter: "blur(20px)",
+          },
+          "50%": {
+            opacity: "0.7",
+            transform: "scale(1.5) rotate(180deg)",
+            filter: "blur(40px)",
+          },
+        },
       },
       animation: {
         "gradient-shift": "gradient-shift 15s ease infinite",
@@ -92,6 +104,7 @@ const config: Config = {
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
         "slide-in-left": "slide-in-left 0.5s ease-out forwards",
         marquee: "marquee 40s linear infinite",
+        "chakra-pulse": "chakra-pulse 8s ease-in-out infinite",
       },
     },
   },
