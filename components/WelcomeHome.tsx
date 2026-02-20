@@ -20,7 +20,7 @@ export default function WelcomeHome() {
       icon: "✨",
       title: "Find Your Tantra Path",
       description:
-        "Build a personalized path based on Shakta, Kundalini, Kaula, Tibetan Tantra & more.",
+        "Build a personalized path based on Kriya, Carya, Yoga, and Anuttarayoga Tantra.",
     },
   ];
 
@@ -59,13 +59,13 @@ export default function WelcomeHome() {
         </div>
 
         {/* Features - Path of Discovery (No Cards) */}
-        <div className="space-y-32">
+        <div className="space-y-12 md:space-y-32">
           {features.map((feature, idx) => (
             <div
               key={idx}
               className={`flex flex-col ${
                 idx % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
-              } items-center gap-12 lg:gap-24 group`}
+              } items-center gap-6 md:gap-24 group`}
             >
               {/* Feature Icon/Visual */}
               <div className="hidden md:flex w-full md:w-1/2 justify-center">
@@ -86,12 +86,12 @@ export default function WelcomeHome() {
                   </span>
                 </div>
                 
-                <h3 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-6 leading-tight flex items-center justify-center md:justify-start gap-3 whitespace-nowrap md:whitespace-normal">
-                  <span className="md:hidden text-4xl">{feature.icon}</span>
+                <h3 className="font-title text-3xl sm:text-4xl md:text-5xl font-bold text-deep-brown mb-3 md:mb-6 leading-tight flex items-center justify-center md:justify-start gap-3 whitespace-nowrap md:whitespace-normal">
+                  <span className="md:hidden text-3xl sm:text-4xl">{feature.icon}</span>
                   <span>{feature.title}</span>
                 </h3>
                 
-                <p className="text-xl text-deep-brown/60 leading-relaxed font-body max-w-lg mb-8 mx-auto md:mx-0">
+                <p className="text-lg md:text-xl text-deep-brown/60 leading-relaxed font-body max-w-lg mb-0 md:mb-8 mx-auto md:mx-0">
                   {feature.description}
                 </p>
                 
