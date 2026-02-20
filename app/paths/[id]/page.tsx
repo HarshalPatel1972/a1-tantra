@@ -126,16 +126,19 @@ export default function PathDetailPage(props: {
               Book a personalized session with one of our experienced guides.
             </p>
             <div className="relative inline-block group/aura">
-              {/* SACRED AURA EFFECT */}
-              <div className="absolute -inset-6 bg-gradient-to-r from-cream/20 via-white/10 to-cream/20 opacity-0 group-hover/aura:opacity-100 rounded-full animate-aura-breathe pointer-events-none -z-10 transition-opacity duration-700 blur-2xl"></div>
-              <div className="absolute -inset-2 border border-cream/30 opacity-0 group-hover/aura:opacity-100 rounded-sm animate-aura-spin pointer-events-none -z-10 transition-opacity duration-500"></div>
+              {/* MASTER SPIRIT SYSTEM */}
+              <div className="absolute -inset-10 bg-white/5 rounded-full blur-[40px] opacity-0 group-hover/aura:opacity-100 animate-aura-breathe transition-opacity duration-700 -z-10"></div>
+              <div className="absolute inset-x-0 -top-full h-full">
+                <div className="absolute left-1/4 bottom-0 w-1 h-1 bg-white rounded-full opacity-0 group-hover/aura:animate-float-particle"></div>
+                <div className="absolute right-1/4 bottom-0 w-1 h-1 bg-soft-gold rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:0.7s]"></div>
+              </div>
 
               <Link
                 href="/book-session"
-                className="relative z-10 inline-block px-10 py-4 bg-cream text-accent-red font-bold uppercase tracking-widest rounded-sm hover:bg-deep-brown hover:text-cream transition-all duration-500 shadow-xl overflow-hidden group"
+                className="relative z-10 inline-block px-12 py-5 bg-cream text-accent-red font-bold uppercase tracking-[0.25em] rounded-sm hover:bg-deep-brown hover:text-white transition-all duration-700 shadow-[0_15px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden group"
               >
-                {/* INNER SHIMMER */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[200%] group-hover:animate-shimmer-sweep pointer-events-none"></span>
+                {/* HI-RES SHIMMER */}
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-[200%] group-hover:animate-shimmer-sweep"></span>
                 BOOK A SESSION
               </Link>
             </div>

@@ -317,9 +317,20 @@ export default function Navbar() {
             </div>
           ) : (
             <div className="flex items-center gap-4 lg:gap-8 relative group/aura">
-              {/* SACRED AURA - MULTI-LAYERED */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-accent-red/20 via-cream/10 to-accent-red/20 opacity-0 group-hover/aura:opacity-100 rounded-full animate-aura-breathe pointer-events-none -z-10 transition-opacity duration-700"></div>
-              <div className="absolute -inset-1 bg-gradient-to-tr from-accent-red via-soft-gold to-accent-red opacity-0 group-hover/aura:opacity-30 rounded-lg animate-aura-spin pointer-events-none -z-10 blur-sm transition-opacity duration-500"></div>
+              {/* ELITE SACRED AURA SYSTEM */}
+              {/* 1. Underlying Deep Resonance Glow */}
+              <div className="absolute -inset-8 bg-accent-red/10 rounded-full blur-[60px] opacity-0 group-hover/aura:opacity-100 transition-opacity duration-1000 animate-aura-breathe"></div>
+              
+              {/* 2. Concentric Spirit Rings */}
+              <div className="absolute inset-0 border border-soft-gold/30 rounded-lg opacity-0 group-hover/aura:animate-spirit-ring pointer-events-none"></div>
+              <div className="absolute inset-0 border border-accent-red/20 rounded-lg opacity-0 group-hover/aura:animate-spirit-ring [animation-delay:0.5s] pointer-events-none"></div>
+
+              {/* 3. Floating Essence Particles (Top Layer) */}
+              <div className="absolute inset-x-0 -top-full h-full pointer-events-none overflow-visible">
+                <div className="absolute left-1/4 bottom-0 w-1 h-1 bg-soft-gold rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:0.2s]"></div>
+                <div className="absolute left-1/2 bottom-0 w-1.5 h-1.5 bg-accent-red rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:1s]"></div>
+                <div className="absolute left-3/4 bottom-0 w-1 h-1 bg-white rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:0.5s]"></div>
+              </div>
 
               <Link
                 href="/auth/login"
@@ -329,15 +340,17 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/book-session"
-                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.18em] px-8 py-4 bg-accent-red text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(154,49,37,0.4)] hover:shadow-[0_0_30px_rgba(228,68,38,0.5)] border border-white/20"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.2em] px-10 py-5 bg-accent-red text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-500 active:scale-95 shadow-[0_10px_40px_-10px_rgba(228,68,38,0.5)] border border-white/20"
               >
-                {/* SHIMMER EFFECT */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[200%] group-hover:animate-shimmer-sweep pointer-events-none"></span>
-
-                <span className="absolute inset-0 bg-deep-brown translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
-                <span className="relative z-10 flex items-center gap-2">
+                {/* HIGH-FIDELITY SHIMMER BEAM */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[200%] group-hover:animate-shimmer-sweep"></div>
+                
+                {/* COLOR OVERLAY TRANSITION */}
+                <span className="absolute inset-0 bg-deep-brown translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
+                
+                <span className="relative z-10 flex items-center gap-3">
                   BOOK A SESSION
-                  <Sparkles size={14} className="text-cream animate-pulse" />
+                  <Sparkles size={18} className="text-soft-gold group-hover:text-cream animate-pulse transition-colors" />
                 </span>
               </Link>
             </div>
@@ -499,17 +512,16 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/book-session"
-                  className="block w-full text-center py-4 bg-accent-red text-white font-bold uppercase tracking-[0.15em] rounded-md relative overflow-hidden group active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(154,49,37,0.3)]"
+                  className="block w-full text-center py-5 bg-accent-red text-white font-bold uppercase tracking-[0.2em] rounded-md relative overflow-hidden group active:scale-[0.98] transition-all shadow-[0_10px_30px_rgba(228,68,38,0.4)] border border-white/10"
                   onClick={() => setIsOpen(false)}
                 >
-                  {/* MOBILE CHAKRA AURA */}
-                  <div className="absolute -inset-2 bg-gradient-to-r from-white/10 via-transparent to-white/10 animate-aura-spin pointer-events-none blur-md opacity-40"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full animate-shimmer-sweep pointer-events-none"></div>
+                  {/* MOBILE SPIRIT CORE */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent-red via-deep-brown to-accent-red opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer-sweep pointer-events-none"></div>
 
-                  <span className="absolute inset-0 bg-deep-brown translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
-                  <span className="relative z-10 flex items-center justify-center gap-2">
+                  <span className="relative z-10 flex items-center justify-center gap-3">
                     BOOK A SESSION
-                    <Sparkles size={16} className="animate-pulse" />
+                    <Sparkles size={18} className="text-soft-gold animate-pulse" />
                   </span>
                 </Link>
               </>

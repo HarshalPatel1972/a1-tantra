@@ -107,6 +107,15 @@ const config: Config = {
           "0%": { transform: "translateX(-150%) skewX(-20deg)" },
           "100%": { transform: "translateX(150%) skewX(-20deg)" },
         },
+        "float-particle": {
+          "0%": { transform: "translateY(0) scale(1)", opacity: "0" },
+          "50%": { opacity: "0.8" },
+          "100%": { transform: "translateY(-40px) scale(0)", opacity: "0" },
+        },
+        "spirit-ring": {
+          "0%": { transform: "scale(0.8)", opacity: "1", borderWeight: "2px" },
+          "100%": { transform: "scale(1.5)", opacity: "0", borderWeight: "0px" },
+        },
       },
       animation: {
         "gradient-shift": "gradient-shift 15s ease infinite",
@@ -119,7 +128,9 @@ const config: Config = {
         "chakra-pulse": "chakra-pulse 10s ease-in-out infinite",
         "aura-spin": "aura-spin 12s linear infinite",
         "aura-breathe": "aura-breathe 4s ease-in-out infinite",
-        "shimmer-sweep": "shimmer-sweep 3s ease-in-out infinite",
+        "shimmer-sweep": "shimmer-sweep 2.5s ease-in-out infinite",
+        "float-particle": "float-particle 2s ease-out infinite",
+        "spirit-ring": "spirit-ring 2s cubic-bezier(0.19, 1, 0.22, 1) infinite",
       },
     },
   },
