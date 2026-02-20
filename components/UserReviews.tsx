@@ -75,8 +75,8 @@ const StarRating = ({ rating }: { rating: number }) => (
       <svg
         key={star}
         className={`w-4 h-4 ${
-          star <= rating ? "text-soft-gold" : "text-white/10"
-        }`}
+          star <= rating ? "text-[#FFD700]" : "text-white/10"
+        } drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]`}
         fill="currentColor"
         viewBox="0 0 20 20"
       >
