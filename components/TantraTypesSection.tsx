@@ -249,11 +249,11 @@ export default function TantraTypesSection() {
       {/* DETAILED MODAL */}
       {selectedTantra !== null && (
         <div
-          className="fixed top-0 left-0 right-0 bottom-0 bg-black/60 backdrop-blur-sm z-40 pt-32 sm:pt-40 flex items-start justify-center overflow-y-auto p-3 sm:p-4"
+          className="fixed top-0 left-0 right-0 bottom-0 bg-black/80 backdrop-blur-md z-40 pt-32 sm:pt-40 flex items-start justify-center overflow-y-auto p-3 sm:p-4"
           onClick={() => setSelectedTantra(null)}
         >
           <div
-            className="bg-deep-brown rounded-3xl shadow-2xl w-full max-w-4xl overflow-y-auto relative border border-white/10"
+            className="bg-cream rounded-3xl shadow-2xl w-full max-w-4xl overflow-y-auto relative border border-deep-brown/10 mb-8"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button - On the image */}
@@ -290,7 +290,7 @@ export default function TantraTypesSection() {
 
               {/* Title Over Image - Responsive text */}
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
-                <h1 className="font-title text-2xl sm:text-3xl md:text-5xl font-bold mb-1 sm:mb-2">
+                <h1 className="font-title text-2xl sm:text-3xl md:text-5xl font-bold mb-1 sm:mb-2 text-white">
                   {tantraTypes[selectedTantra].name}
                 </h1>
                 <p className="font-nav text-xs sm:text-sm md:text-lg uppercase tracking-widest text-soft-gold">
@@ -306,14 +306,14 @@ export default function TantraTypesSection() {
                 <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-soft-gold mb-3 sm:mb-4">
                   Overview
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg text-cream/90 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-deep-brown/90 leading-relaxed font-body">
                   {tantraTypes[selectedTantra].fullDetails.overview}
                 </p>
               </div>
 
               {/* Key Focus */}
               <div>
-                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-cream mb-3 sm:mb-4">
+                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-deep-brown mb-3 sm:mb-4">
                   Key Focus Areas
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
@@ -321,7 +321,7 @@ export default function TantraTypesSection() {
                     (focus, i) => (
                       <div
                         key={i}
-                        className="flex gap-2 sm:gap-3 items-start p-3 sm:p-4 bg-white/5 rounded-2xl border-l-4 border-accent-red"
+                        className="flex gap-2 sm:gap-3 items-start p-3 sm:p-4 bg-white/50 rounded-2xl border-l-4 border-accent-red shadow-sm"
                       >
                         <svg
                           className="w-4 h-4 sm:w-5 sm:h-5 text-accent-red shrink-0 mt-0.5"
@@ -334,7 +334,7 @@ export default function TantraTypesSection() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <p className="text-xs sm:text-sm md:text-base text-cream/80 font-body">
+                        <p className="text-xs sm:text-sm md:text-base text-deep-brown/80 font-body">
                           {focus}
                         </p>
                       </div>
@@ -345,7 +345,7 @@ export default function TantraTypesSection() {
 
               {/* Benefits */}
               <div>
-                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-cream mb-3 sm:mb-4">
+                <h2 className="font-title text-xl sm:text-2xl md:text-3xl font-bold text-deep-brown mb-3 sm:mb-4">
                   Key Benefits
                 </h2>
                 <div className="space-y-2 sm:space-y-3">
@@ -359,7 +359,7 @@ export default function TantraTypesSection() {
                         >
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.381-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
-                        <p className="text-xs sm:text-sm md:text-base text-cream/80 font-body">
+                        <p className="text-xs sm:text-sm md:text-base text-deep-brown/80 font-body">
                           {benefit}
                         </p>
                       </div>
@@ -369,7 +369,7 @@ export default function TantraTypesSection() {
               </div>
 
               {/* Who Should Take This */}
-              <div className="bg-soft-gold/10 border-l-4 border-soft-gold p-4 sm:p-6 rounded-lg">
+              <div className="bg-soft-gold/20 border-l-4 border-soft-gold p-4 sm:p-6 rounded-2xl shadow-sm">
                 <h2 className="font-title text-lg sm:text-xl font-bold text-deep-brown mb-2 sm:mb-3">
                   Who Should Take This Path
                 </h2>
@@ -379,7 +379,7 @@ export default function TantraTypesSection() {
               </div>
 
               {/* Prerequisites */}
-              <div className="bg-accent-red/10 border-l-4 border-accent-red p-4 sm:p-6 rounded-lg">
+              <div className="bg-accent-red/10 border-l-4 border-accent-red p-4 sm:p-6 rounded-2xl shadow-sm">
                 <h2 className="font-title text-lg sm:text-xl font-bold text-deep-brown mb-2 sm:mb-3">
                   Prerequisites
                 </h2>
@@ -399,7 +399,7 @@ export default function TantraTypesSection() {
 
                 {/* Duration & Price Display - Responsive grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
-                  <div className="bg-cream p-3 sm:p-6 rounded-lg text-center border-2 border-deep-brown/20">
+                  <div className="bg-white p-3 sm:p-6 rounded-xl text-center border border-deep-brown/10 shadow-sm">
                     <span className="text-xs uppercase text-deep-brown/60 font-semibold block">
                       Duration
                     </span>
@@ -407,7 +407,7 @@ export default function TantraTypesSection() {
                       {tantraTypes[selectedTantra].duration}
                     </p>
                   </div>
-                  <div className="bg-cream p-3 sm:p-6 rounded-lg text-center border-2 border-deep-brown/20">
+                  <div className="bg-white p-3 sm:p-6 rounded-xl text-center border border-deep-brown/10 shadow-sm">
                     <span className="text-xs uppercase text-deep-brown/60 font-semibold block">
                       From
                     </span>
@@ -415,7 +415,7 @@ export default function TantraTypesSection() {
                       {tantraTypes[selectedTantra].price}
                     </p>
                   </div>
-                  <div className="bg-deep-brown p-3 sm:p-6 rounded-lg text-center col-span-2 sm:col-span-1">
+                  <div className="bg-deep-brown p-3 sm:p-6 rounded-xl text-center col-span-2 sm:col-span-1 flex items-center justify-center">
                     <a
                       href="/book-session"
                       className="inline-block w-full text-center px-4 sm:px-6 py-2 sm:py-3 bg-accent-red text-white text-xs sm:text-sm font-semibold rounded-lg hover:bg-accent-red/90 transition-all duration-300"
