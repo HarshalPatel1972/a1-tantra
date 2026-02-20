@@ -11,9 +11,10 @@ export default function BookingPage() {
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 relative">
-            {/* CHAKRA AURA HEADING EFFECT */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-red/10 rounded-full animate-chakra-pulse blur-3xl -z-10"></div>
-            
+            {/* SACRED AURA HEADING EFFECT */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-accent-red/10 via-soft-gold/5 to-accent-red/10 rounded-full animate-aura-breathe blur-[80px] -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-accent-red/5 rounded-full animate-aura-spin pointer-events-none -z-10"></div>
+
             <h1 className="serif-heading text-5xl md:text-7xl font-bold text-deep-brown mb-4 relative drop-shadow-sm">
               Book a <span className="text-accent-red animate-pulse">Session</span>
             </h1>

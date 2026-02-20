@@ -126,13 +126,16 @@ export default function PathDetailPage(props: {
               Book a personalized session with one of our experienced guides.
             </p>
             <div className="relative inline-block group/aura">
-              {/* CHAKRA AURA EFFECT */}
-              <div className="absolute inset-0 bg-white/20 opacity-0 group-hover/aura:opacity-100 rounded-lg animate-chakra-pulse pointer-events-none blur-xl transition-opacity duration-500"></div>
-              
+              {/* SACRED AURA EFFECT */}
+              <div className="absolute -inset-6 bg-gradient-to-r from-cream/20 via-white/10 to-cream/20 opacity-0 group-hover/aura:opacity-100 rounded-full animate-aura-breathe pointer-events-none -z-10 transition-opacity duration-700 blur-2xl"></div>
+              <div className="absolute -inset-2 border border-cream/30 opacity-0 group-hover/aura:opacity-100 rounded-sm animate-aura-spin pointer-events-none -z-10 transition-opacity duration-500"></div>
+
               <Link
                 href="/book-session"
-                className="relative z-10 inline-block px-10 py-4 bg-cream text-accent-red font-bold uppercase tracking-widest rounded-sm hover:bg-deep-brown hover:text-cream transition-all duration-500 shadow-xl"
+                className="relative z-10 inline-block px-10 py-4 bg-cream text-accent-red font-bold uppercase tracking-widest rounded-sm hover:bg-deep-brown hover:text-cream transition-all duration-500 shadow-xl overflow-hidden group"
               >
+                {/* INNER SHIMMER */}
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[200%] group-hover:animate-shimmer-sweep pointer-events-none"></span>
                 BOOK A SESSION
               </Link>
             </div>

@@ -85,15 +85,27 @@ const config: Config = {
         },
         "chakra-pulse": {
           "0%, 100%": {
-            opacity: "0.4",
-            transform: "scale(1.2) rotate(0deg)",
-            filter: "blur(20px)",
+            opacity: "0.3",
+            transform: "scale(1.1) rotate(0deg)",
+            filter: "blur(15px)",
           },
           "50%": {
-            opacity: "0.7",
-            transform: "scale(1.5) rotate(180deg)",
-            filter: "blur(40px)",
+            opacity: "0.5",
+            transform: "scale(1.2) rotate(10deg)",
+            filter: "blur(30px)",
           },
+        },
+        "aura-spin": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "aura-breathe": {
+          "0%, 100%": { opacity: "0.4", transform: "scale(1) blur(10px)" },
+          "50%": { opacity: "0.7", transform: "scale(1.05) blur(20px)" },
+        },
+        "shimmer-sweep": {
+          "0%": { transform: "translateX(-150%) skewX(-20deg)" },
+          "100%": { transform: "translateX(150%) skewX(-20deg)" },
         },
       },
       animation: {
@@ -104,7 +116,10 @@ const config: Config = {
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
         "slide-in-left": "slide-in-left 0.5s ease-out forwards",
         marquee: "marquee 40s linear infinite",
-        "chakra-pulse": "chakra-pulse 8s ease-in-out infinite",
+        "chakra-pulse": "chakra-pulse 10s ease-in-out infinite",
+        "aura-spin": "aura-spin 12s linear infinite",
+        "aura-breathe": "aura-breathe 4s ease-in-out infinite",
+        "shimmer-sweep": "shimmer-sweep 3s ease-in-out infinite",
       },
     },
   },

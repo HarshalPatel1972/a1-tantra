@@ -317,8 +317,9 @@ export default function Navbar() {
             </div>
           ) : (
             <div className="flex items-center gap-4 lg:gap-8 relative group/aura">
-              {/* CHAKRA AURA EFFECT */}
-              <div className="absolute inset-0 bg-accent-red/20 opacity-0 group-hover/aura:opacity-100 rounded-lg animate-chakra-pulse pointer-events-none -z-10 blur-xl transition-opacity duration-500"></div>
+              {/* SACRED AURA - MULTI-LAYERED */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-accent-red/20 via-cream/10 to-accent-red/20 opacity-0 group-hover/aura:opacity-100 rounded-full animate-aura-breathe pointer-events-none -z-10 transition-opacity duration-700"></div>
+              <div className="absolute -inset-1 bg-gradient-to-tr from-accent-red via-soft-gold to-accent-red opacity-0 group-hover/aura:opacity-30 rounded-lg animate-aura-spin pointer-events-none -z-10 blur-sm transition-opacity duration-500"></div>
 
               <Link
                 href="/auth/login"
@@ -328,8 +329,11 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/book-session"
-                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.18em] px-8 py-4 bg-accent-red text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(154,49,37,0.4)] hover:shadow-[0_0_30px_rgba(154,49,37,0.6)] border border-white/10"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.18em] px-8 py-4 bg-accent-red text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95 shadow-[0_0_15px_rgba(154,49,37,0.4)] hover:shadow-[0_0_30px_rgba(228,68,38,0.5)] border border-white/20"
               >
+                {/* SHIMMER EFFECT */}
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[200%] group-hover:animate-shimmer-sweep pointer-events-none"></span>
+
                 <span className="absolute inset-0 bg-deep-brown translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
                 <span className="relative z-10 flex items-center gap-2">
                   BOOK A SESSION
@@ -499,7 +503,9 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                 >
                   {/* MOBILE CHAKRA AURA */}
-                  <div className="absolute inset-0 bg-white/10 opacity-50 animate-chakra-pulse pointer-events-none blur-md"></div>
+                  <div className="absolute -inset-2 bg-gradient-to-r from-white/10 via-transparent to-white/10 animate-aura-spin pointer-events-none blur-md opacity-40"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full animate-shimmer-sweep pointer-events-none"></div>
+
                   <span className="absolute inset-0 bg-deep-brown translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     BOOK A SESSION
