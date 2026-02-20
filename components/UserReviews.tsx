@@ -116,24 +116,24 @@ export default function UserReviews() {
                 key={idx}
                 className="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[420px]"
               >
-                <div className="h-full bg-cream/5 backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 md:p-9 flex flex-col justify-between shadow-2xl shadow-black/20 hover:bg-cream/[0.08] hover:border-soft-gold/30 hover:-translate-y-1 transition-all duration-500">
+                <div className="h-full bg-white/[0.07] backdrop-blur-xl border border-soft-gold/15 rounded-2xl p-8 md:p-9 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:bg-white/[0.1] hover:border-soft-gold/40 hover:-translate-y-2 transition-all duration-500">
                   {/* Top: Stars + Quote icon */}
                   <div>
                     <div className="flex items-center justify-between mb-6">
                       <StarRating rating={review.rating} />
-                      <svg className="w-8 h-8 text-soft-gold/20 group-hover:text-soft-gold/40 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-10 h-10 text-soft-gold/20 group-hover:text-soft-gold/40 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M14.017 21v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1h-4a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6h-2zm-12 0v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1H3a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6H2z" />
                       </svg>
                     </div>
 
-                    <p className="font-body text-[15px] md:text-base text-cream/80 leading-relaxed mb-8 group-hover:text-cream transition-colors duration-500 italic">
+                    <p className="font-body text-[15px] md:text-base text-cream leading-relaxed mb-8 group-hover:text-white transition-colors duration-500 italic font-medium">
                       "{review.comment}"
                     </p>
                   </div>
 
                   {/* Bottom: Author */}
-                  <div className="flex items-center gap-4 pt-6 border-t border-white/10">
-                    <div className="w-12 h-12 rounded-full bg-linear-to-br from-soft-gold/20 to-soft-gold/5 border border-soft-gold/20 flex items-center justify-center flex-shrink-0 shadow-inner">
+                  <div className="flex items-center gap-4 pt-6 border-t border-soft-gold/10">
+                    <div className="w-12 h-12 rounded-full bg-linear-to-br from-soft-gold/30 to-soft-gold/10 border border-soft-gold/30 flex items-center justify-center flex-shrink-0 shadow-lg">
                       <span className="font-title text-base font-bold text-soft-gold">
                         {review.name.charAt(0)}
                       </span>
@@ -142,7 +142,7 @@ export default function UserReviews() {
                       <h4 className="font-nav font-bold text-sm text-cream tracking-[0.1em] truncate group-hover:text-soft-gold transition-colors duration-300">
                         {review.name}
                       </h4>
-                      <p className="text-[10px] text-cream/40 font-nav uppercase tracking-[0.2em] mt-0.5">
+                      <p className="text-[10px] text-cream/50 font-nav uppercase tracking-[0.2em] mt-0.5">
                         {review.location} &middot; {review.date}
                       </p>
                     </div>
