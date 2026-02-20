@@ -86,47 +86,55 @@ const StarRating = ({ rating }: { rating: number }) => (
   </div>
 );
 
+// Triple the reviews for seamless looping
+const loopReviews = [...reviews, ...reviews, ...reviews];
+
 export default function UserReviews() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
 
-  const checkScroll = useCallback(() => {
+  // Initialize scroll to the middle set
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (el) {
+      const singleSetWidth = el.scrollWidth / 3;
+      el.scrollLeft = singleSetWidth;
+    }
+  }, []);
+
+  const handleScroll = useCallback(() => {
     const el = scrollRef.current;
     if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 10);
-    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 10);
+
+    const singleSetWidth = el.scrollWidth / 3;
+    
+    // If we scroll too far left (into the first set), jump to the middle set
+    if (el.scrollLeft < singleSetWidth * 0.5) {
+      el.scrollLeft += singleSetWidth;
+    }
+    // If we scroll too far right (into the third set), jump to the middle set
+    else if (el.scrollLeft > singleSetWidth * 1.5) {
+      el.scrollLeft -= singleSetWidth;
+    }
   }, []);
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    el.addEventListener("scroll", checkScroll, { passive: true });
-    checkScroll();
-    return () => el.removeEventListener("scroll", checkScroll);
-  }, [checkScroll]);
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
   const scroll = useCallback((dir: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
     const cardWidth = el.querySelector<HTMLElement>(":scope > div")?.offsetWidth ?? 400;
     const distance = cardWidth + 24; // card + gap
-    if (dir === "right") {
-      // Loop to start if at end
-      if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 10) {
-        el.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        el.scrollBy({ left: distance, behavior: "smooth" });
-      }
-    } else {
-      // Loop to end if at start
-      if (el.scrollLeft <= 10) {
-        el.scrollTo({ left: el.scrollWidth, behavior: "smooth" });
-      } else {
-        el.scrollBy({ left: -distance, behavior: "smooth" });
-      }
-    }
+    
+    el.scrollBy({ 
+      left: dir === "right" ? distance : -distance, 
+      behavior: "smooth" 
+    });
   }, []);
 
   // Auto-scroll
@@ -160,11 +168,7 @@ export default function UserReviews() {
             <button
               onClick={() => scroll("left")}
               aria-label="Scroll left"
-              className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${
-                canScrollLeft
-                  ? "border-cream/20 text-cream/60 hover:text-soft-gold hover:border-soft-gold/40"
-                  : "border-cream/5 text-cream/15 cursor-default"
-              }`}
+              className="w-12 h-12 rounded-full border border-cream/20 text-cream/60 items-center justify-center transition-all duration-300 flex hover:text-soft-gold hover:border-soft-gold/40"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -173,11 +177,7 @@ export default function UserReviews() {
             <button
               onClick={() => scroll("right")}
               aria-label="Scroll right"
-              className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${
-                canScrollRight
-                  ? "border-cream/20 text-cream/60 hover:text-soft-gold hover:border-soft-gold/40"
-                  : "border-cream/5 text-cream/15 cursor-default"
-              }`}
+              className="w-12 h-12 rounded-full border border-cream/20 text-cream/60 flex items-center justify-center transition-all duration-300 hover:text-soft-gold hover:border-soft-gold/40"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -191,10 +191,9 @@ export default function UserReviews() {
           ref={scrollRef}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="flex gap-6 overflow-x-auto pl-6 sm:pl-10 lg:pl-16 pr-6 sm:pr-10 lg:pr-16 pb-4 snap-x snap-mandatory scroll-smooth"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex gap-6 overflow-x-auto pl-6 sm:pl-10 lg:pl-16 pr-6 sm:pr-10 lg:pr-16 pb-4 snap-x snap-mandatory scroll-smooth no-scrollbar"
         >
-          {reviews.map((review, idx) => (
+          {loopReviews.map((review, idx) => (
             <div
               key={idx}
               className="group flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[420px] snap-start"
