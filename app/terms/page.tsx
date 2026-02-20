@@ -1,12 +1,10 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function TermsPage() {
   return (
     <div>
-      <Navbar />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="serif-heading text-4xl font-bold text-deep-brown mb-8">

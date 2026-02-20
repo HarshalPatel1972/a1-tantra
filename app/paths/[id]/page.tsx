@@ -1,7 +1,6 @@
 "use client";
 
 import { use } from "react";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { tantraPaths } from "@/data/content";
@@ -15,7 +14,6 @@ export default function PathDetailPage(props: {
   if (!path) {
     return (
       <div>
-        <Navbar />
         <div className="pt-32 pb-24 bg-cream min-h-screen flex items-center justify-center">
           <div className="text-center">
             <h1 className="serif-heading text-3xl font-bold text-deep-brown mb-4">
@@ -33,7 +31,6 @@ export default function PathDetailPage(props: {
 
   return (
     <div>
-      <Navbar />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -125,20 +122,11 @@ export default function PathDetailPage(props: {
             <p className="text-lg mb-8">
               Book a personalized session with one of our experienced guides.
             </p>
-            <div className="relative inline-block group/aura">
-              {/* MASTER SPIRIT SYSTEM (BLUE) */}
-              <div className="absolute -inset-10 bg-azure-pulse/20 rounded-full blur-[40px] opacity-0 group-hover/aura:opacity-100 animate-aura-breathe transition-opacity duration-700 -z-10"></div>
-              <div className="absolute inset-x-0 -top-full h-full">
-                <div className="absolute left-1/4 bottom-0 w-1 h-1 bg-white rounded-full opacity-0 group-hover/aura:animate-float-particle"></div>
-                <div className="absolute right-1/4 bottom-0 w-1 h-1 bg-azure-pulse rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:0.7s]"></div>
-              </div>
-
+            <div className="relative inline-block">
               <Link
                 href="/book-session"
                 className="relative z-10 inline-block px-12 py-5 bg-cream text-brand-blue font-bold uppercase tracking-[0.25em] rounded-sm hover:bg-deep-brown hover:text-white transition-all duration-700 shadow-[0_15px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden group"
               >
-                {/* HI-RES SHIMMER */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-[200%] group-hover:animate-shimmer-sweep"></span>
                 BOOK A SESSION
               </Link>
             </div>

@@ -1,26 +1,17 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/BookingForm";
 
 export default function BookingPage() {
   return (
     <div>
-      <Navbar />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 relative py-8">
-            {/* ELITE SPIRIT HEADING SYSTEM (BLUE) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none -z-10 flex items-center justify-center">
-              <div className="absolute w-[400px] h-[400px] bg-brand-blue/5 rounded-full blur-[100px] animate-aura-breathe"></div>
-              <div className="absolute w-64 h-64 border border-azure-pulse/20 rounded-full animate-spirit-ring"></div>
-              <div className="absolute w-80 h-80 border border-brand-blue/10 rounded-full animate-aura-spin"></div>
-            </div>
-
             <h1 className="serif-heading text-5xl md:text-8xl font-bold text-deep-brown mb-4 relative">
               Book a{" "}
-              <span className="text-brand-blue animate-pulse drop-shadow-[0_0_15px_rgba(29,78,216,0.3)]">
+              <span className="text-brand-blue drop-shadow-[0_0_15px_rgba(29,78,216,0.3)]">
                 Session
               </span>
             </h1>

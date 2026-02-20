@@ -85,43 +85,6 @@ const config: Config = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
-        "chakra-pulse": {
-          "0%, 100%": {
-            opacity: "0.3",
-            transform: "scale(1.1) rotate(0deg)",
-            filter: "blur(15px)",
-          },
-          "50%": {
-            opacity: "0.5",
-            transform: "scale(1.2) rotate(10deg)",
-            filter: "blur(30px)",
-          },
-        },
-        "aura-spin": {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" },
-        },
-        "aura-breathe": {
-          "0%, 100%": { opacity: "0.4", transform: "scale(1) blur(10px)" },
-          "50%": { opacity: "0.7", transform: "scale(1.05) blur(20px)" },
-        },
-        "shimmer-sweep": {
-          "0%": { transform: "translateX(-150%) skewX(-20deg)" },
-          "100%": { transform: "translateX(150%) skewX(-20deg)" },
-        },
-        "float-particle": {
-          "0%": { transform: "translateY(0) scale(1)", opacity: "0" },
-          "50%": { opacity: "0.8" },
-          "100%": { transform: "translateY(-40px) scale(0)", opacity: "0" },
-        },
-        "spirit-ring": {
-          "0%": { transform: "scale(0.8)", opacity: "1", borderWeight: "2px" },
-          "100%": {
-            transform: "scale(1.5)",
-            opacity: "0",
-            borderWeight: "0px",
-          },
-        },
       },
       animation: {
         "gradient-shift": "gradient-shift 15s ease infinite",
@@ -131,12 +94,6 @@ const config: Config = {
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
         "slide-in-left": "slide-in-left 0.5s ease-out forwards",
         marquee: "marquee 40s linear infinite",
-        "chakra-pulse": "chakra-pulse 10s ease-in-out infinite",
-        "aura-spin": "aura-spin 12s linear infinite",
-        "aura-breathe": "aura-breathe 4s ease-in-out infinite",
-        "shimmer-sweep": "shimmer-sweep 2.5s ease-in-out infinite",
-        "float-particle": "float-particle 2s ease-out infinite",
-        "spirit-ring": "spirit-ring 2s cubic-bezier(0.19, 1, 0.22, 1) infinite",
       },
     },
   },
