@@ -250,21 +250,21 @@ export default function TantraTypesSection() {
       {/* DETAILED MODAL */}
       {selectedTantra !== null && (
         <div
-          className="fixed inset-0 bg-black/95 backdrop-blur-3xl z-[100] flex items-center justify-center p-2 sm:p-4 md:p-6"
+          className="fixed inset-0 bg-black/90 backdrop-blur-xl z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8"
           onClick={() => setSelectedTantra(null)}
         >
           <div
-            className="bg-[#FFF0DF] rounded-[2rem] shadow-[0_25px_80px_rgba(0,0,0,0.7)] w-full max-w-5xl max-h-[95vh] overflow-y-auto relative border-2 border-[#3F2F27]/20"
+            className="bg-[#FFF0DF] rounded-3xl shadow-[0_30px_100px_rgba(0,0,0,0.8)] w-full max-w-4xl max-h-[85vh] overflow-y-auto relative border border-[#3F2F27]/10"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button - Premium Floating Style */}
+            {/* Close Button - Clean & Persistent */}
             <button
               onClick={() => setSelectedTantra(null)}
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white bg-[#E44426] hover:bg-[#E44426]/90 rounded-full p-2 sm:p-4 transition-all duration-300 z-[110] shadow-2xl hover:scale-110 active:scale-95 border-2 border-white/20"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 z-[110] p-3 bg-black/50 hover:bg-[#E44426] backdrop-blur-md rounded-full text-white transition-all hover:rotate-90 group shadow-xl"
               aria-label="Close modal"
             >
               <svg
-                className="w-6 h-6 sm:w-8 sm:h-8"
+                className="w-5 h-5 sm:w-6 sm:h-6"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={3}
@@ -278,8 +278,8 @@ export default function TantraTypesSection() {
               </svg>
             </button>
 
-            {/* Header with Hero Image */}
-            <div className="relative h-64 sm:h-80 md:h-[500px] w-full">
+            {/* Header - Reduced Height Hero */}
+            <div className="relative h-48 sm:h-64 md:h-[320px] w-full">
               <Image
                 src={tantraTypes[selectedTantra].image}
                 alt={tantraTypes[selectedTantra].name}
@@ -288,48 +288,48 @@ export default function TantraTypesSection() {
                 quality={100}
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FFF0DF] via-[#FFF0DF]/40 to-black/30"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FFF0DF] via-[#FFF0DF]/20 to-black/30"></div>
               <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent"></div>
 
-              {/* Title Over Image - Adjusted for new gradient */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-10 md:p-14">
-                <p className="font-nav text-sm sm:text-base md:text-xl uppercase tracking-[0.4em] text-[#E44426] font-black mb-2 filter drop-shadow-sm">
+              {/* Title Section */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 md:p-10">
+                <p className="font-nav text-xs sm:text-sm md:text-base uppercase tracking-[0.4em] text-[#E44426] font-black mb-1 filter drop-shadow-sm">
                   {tantraTypes[selectedTantra].subtitle}
                 </p>
-                <h1 className="font-title text-4xl sm:text-5xl md:text-7xl font-bold text-[#3F2F27]">
+                <h1 className="font-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#3F2F27]">
                   {tantraTypes[selectedTantra].name}
                 </h1>
               </div>
             </div>
 
-            {/* Content Area - Guaranteed High Contrast */}
-            <div className="bg-[#FFF0DF] p-8 sm:p-10 md:p-14 pt-4 space-y-12 sm:space-y-16">
+            {/* Content Area - Optimized for Readability & Scrolling */}
+            <div className="bg-[#FFF0DF] p-6 sm:p-8 md:p-10 pt-4 space-y-10 sm:space-y-12">
               {/* Overview Section */}
-              <div className="max-w-4xl">
-                <h2 className="font-title text-3xl sm:text-4xl font-bold text-[#D4AF37] mb-6">
+              <div className="max-w-3xl">
+                <h2 className="font-title text-2xl sm:text-3xl font-bold text-[#D4AF37] mb-4">
                   Overview
                 </h2>
-                <p className="text-xl sm:text-2xl text-[#3F2F27] leading-relaxed font-body font-medium italic border-l-8 border-[#E44426] pl-8">
+                <p className="text-lg sm:text-xl text-[#3F2F27] leading-relaxed font-body font-medium italic border-l-4 sm:border-l-8 border-[#E44426] pl-6 sm:pl-8">
                   &quot;{tantraTypes[selectedTantra].fullDetails.overview}&quot;
                 </p>
               </div>
 
               {/* Functional Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
                 {/* Key Focus Area */}
-                <div className="space-y-6">
-                  <h2 className="font-title text-2xl sm:text-3xl font-bold text-[#3F2F27] flex items-center gap-4">
-                    <span className="w-10 h-10 bg-[#3F2F27] text-[#FFF0DF] rounded-full flex items-center justify-center text-lg">01</span>
+                <div className="space-y-5">
+                  <h2 className="font-title text-xl sm:text-2xl font-bold text-[#3F2F27] flex items-center gap-3">
+                    <span className="w-8 h-8 bg-[#3F2F27] text-[#FFF0DF] rounded-full flex items-center justify-center text-sm font-black">01</span>
                     Core Focus
                   </h2>
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {tantraTypes[selectedTantra].fullDetails.keyFocus.map((focus, i) => (
                       <div
                         key={i}
-                        className="flex gap-4 items-center p-4 bg-white rounded-xl shadow-sm border border-[#3F2F27]/5"
+                        className="flex gap-3 items-center p-3 bg-white rounded-xl shadow-sm border border-[#3F2F27]/5"
                       >
-                        <div className="w-2 h-2 rounded-full bg-[#E44426]" />
-                        <p className="text-base sm:text-lg text-[#3F2F27] font-body font-bold">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#E44426] shrink-0" />
+                        <p className="text-sm sm:text-base text-[#3F2F27] font-body font-bold">
                           {focus}
                         </p>
                       </div>
@@ -338,19 +338,19 @@ export default function TantraTypesSection() {
                 </div>
 
                 {/* Benefits Area */}
-                <div className="space-y-6">
-                  <h2 className="font-title text-2xl sm:text-3xl font-bold text-[#3F2F27] flex items-center gap-4">
-                    <span className="w-10 h-10 bg-[#E44426] text-white rounded-full flex items-center justify-center text-lg">02</span>
+                <div className="space-y-5">
+                  <h2 className="font-title text-xl sm:text-2xl font-bold text-[#3F2F27] flex items-center gap-3">
+                    <span className="w-8 h-8 bg-[#E44426] text-white rounded-full flex items-center justify-center text-sm font-black">02</span>
                     The Outcome
                   </h2>
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {tantraTypes[selectedTantra].fullDetails.benefits.map((benefit, i) => (
                       <div
                         key={i}
-                        className="flex gap-4 items-center p-4 bg-[#D4AF37]/10 rounded-xl"
+                        className="flex gap-3 items-center p-3 bg-[#D4AF37]/10 rounded-xl"
                       >
-                        <span className="text-2xl">✨</span>
-                        <p className="text-base sm:text-lg text-[#3F2F27] font-body font-bold">
+                        <span className="text-xl shrink-0">✨</span>
+                        <p className="text-sm sm:text-base text-[#3F2F27] font-body font-bold">
                           {benefit}
                         </p>
                       </div>
@@ -360,48 +360,48 @@ export default function TantraTypesSection() {
               </div>
 
               {/* Practical Details */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="p-8 bg-white border-2 border-[#3F2F27]/10 rounded-3xl">
-                  <h3 className="font-title text-2xl font-bold text-[#3F2F27] mb-4 text-center">Eligibility</h3>
-                  <p className="text-center text-[#3F2F27]/70 font-body text-lg font-bold">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="p-6 bg-white border border-[#3F2F27]/10 rounded-2xl">
+                  <h3 className="font-title text-xl font-bold text-[#3F2F27] mb-3 text-center">Eligibility</h3>
+                  <p className="text-center text-[#3F2F27]/70 font-body text-base font-bold">
                     {tantraTypes[selectedTantra].fullDetails.whotakes}
                   </p>
                 </div>
-                <div className="p-8 bg-white border-2 border-[#3F2F27]/10 rounded-3xl">
-                  <h3 className="font-title text-2xl font-bold text-[#3F2F27] mb-4 text-center">Prerequisites</h3>
-                  <p className="text-center text-[#3F2F27]/70 font-body text-lg font-bold">
+                <div className="p-6 bg-white border border-[#3F2F27]/10 rounded-2xl">
+                  <h3 className="font-title text-xl font-bold text-[#3F2F27] mb-3 text-center">Prerequisites</h3>
+                  <p className="text-center text-[#3F2F27]/70 font-body text-base font-bold">
                     {tantraTypes[selectedTantra].fullDetails.prerequisites}
                   </p>
                 </div>
               </div>
 
-              {/* Call to Action Bar */}
-              <div className="mt-16 bg-[#3F2F27] rounded-[2rem] p-8 md:p-12 text-center shadow-2xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#E44426]/10 rounded-full blur-3xl -mr-32 -mt-32" />
+              {/* Call to Action Bar - Compact version */}
+              <div className="mt-8 bg-[#3F2F27] rounded-3xl p-6 sm:p-10 text-center shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-[#E44426]/10 rounded-full blur-3xl -mr-24 -mt-24" />
                 <div className="relative z-10">
-                  <h3 className="font-title text-3xl sm:text-4xl text-[#FFF0DF] font-bold mb-4">
-                    Begin your {tantraTypes[selectedTantra].name} Journey
+                  <h3 className="font-title text-2xl sm:text-3xl text-[#FFF0DF] font-bold mb-3">
+                    Begin your {tantraTypes[selectedTantra].name}
                   </h3>
-                  <p className="text-[#FFF0DF]/70 text-lg mb-12 max-w-2xl mx-auto">
+                  <p className="text-[#FFF0DF]/70 text-base mb-8 max-w-xl mx-auto">
                     {tantraTypes[selectedTantra].fullDetails.practiceSchedule}
                   </p>
                   
-                  <div className="flex flex-col sm:flex-row gap-8 items-center justify-center">
+                  <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
                     <div className="flex flex-col">
-                      <span className="text-xs uppercase tracking-[0.3em] text-[#D4AF37] font-black mb-1">Duration</span>
-                      <span className="text-3xl font-black text-[#FFF0DF]">{tantraTypes[selectedTantra].duration}</span>
+                      <span className="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] font-black mb-1">Duration</span>
+                      <span className="text-2xl font-black text-[#FFF0DF]">{tantraTypes[selectedTantra].duration}</span>
                     </div>
-                    <div className="h-12 w-[1px] bg-[#FFF0DF]/20 hidden sm:block" />
+                    <div className="h-10 w-[1px] bg-[#FFF0DF]/20 hidden sm:block" />
                     <div className="flex flex-col">
-                      <span className="text-xs uppercase tracking-[0.3em] text-[#D4AF37] font-black mb-1">Session Price</span>
-                      <span className="text-4xl font-black text-[#E44426]">{tantraTypes[selectedTantra].price}</span>
+                      <span className="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] font-black mb-1">Price</span>
+                      <span className="text-3xl font-black text-[#E44426]">{tantraTypes[selectedTantra].price}</span>
                     </div>
                     <Link
                       href="#tantra-paths"
                       onClick={() => setSelectedTantra(null)}
-                      className="mt-6 sm:mt-0 px-12 py-5 bg-[#E44426] text-white font-black rounded-2xl hover:bg-[#E44426]/90 transition-all hover:scale-105 shadow-xl uppercase tracking-widest text-lg"
+                      className="mt-4 sm:mt-0 px-8 py-4 bg-[#E44426] text-white font-black rounded-xl hover:bg-[#E44426]/90 transition-all hover:scale-105 shadow-lg uppercase tracking-widest text-sm"
                     >
-                      Book Session Now
+                      Book Session
                     </Link>
                   </div>
                 </div>
