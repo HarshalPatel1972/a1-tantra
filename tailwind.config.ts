@@ -78,6 +78,10 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateX(-40px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "gradient-shift": "gradient-shift 15s ease infinite",
@@ -86,6 +90,7 @@ const config: Config = {
         "blob-reverse": "blob-reverse 11s infinite",
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
         "slide-in-left": "slide-in-left 0.5s ease-out forwards",
+        marquee: "marquee 40s linear infinite",
       },
     },
   },

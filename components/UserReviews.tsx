@@ -86,64 +86,10 @@ const StarRating = ({ rating }: { rating: number }) => (
   </div>
 );
 
-// Triple the reviews for seamless looping
-const loopReviews = [...reviews, ...reviews, ...reviews];
+// Double the reviews for seamless marquee looping
+const marqueeReviews = [...reviews, ...reviews];
 
 export default function UserReviews() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
-
-  // Initialize scroll to the middle set
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (el) {
-      const singleSetWidth = el.scrollWidth / 3;
-      el.scrollLeft = singleSetWidth;
-    }
-  }, []);
-
-  const handleScroll = useCallback(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const singleSetWidth = el.scrollWidth / 3;
-    
-    // If we scroll too far left (into the first set), jump to the middle set
-    if (el.scrollLeft < singleSetWidth * 0.5) {
-      el.scrollLeft += singleSetWidth;
-    }
-    // If we scroll too far right (into the third set), jump to the middle set
-    else if (el.scrollLeft > singleSetWidth * 1.5) {
-      el.scrollLeft -= singleSetWidth;
-    }
-  }, []);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", handleScroll, { passive: true });
-    return () => el.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
-
-  const scroll = useCallback((dir: "left" | "right") => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const cardWidth = el.querySelector<HTMLElement>(":scope > div")?.offsetWidth ?? 400;
-    const distance = cardWidth + 24; // card + gap
-    
-    el.scrollBy({ 
-      left: dir === "right" ? distance : -distance, 
-      behavior: "smooth" 
-    });
-  }, []);
-
-  // Auto-scroll
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(() => scroll("right"), 4000);
-    return () => clearInterval(timer);
-  }, [scroll, isPaused]);
-
   return (
     <section className="relative py-24 md:py-32 bg-deep-brown overflow-hidden">
       {/* Ambient glow */}
@@ -151,87 +97,60 @@ export default function UserReviews() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-soft-gold/[0.015] blur-3xl" />
       </div>
 
-      <div className="relative max-w-[90rem] mx-auto">
+      <div className="relative">
         {/* Header row */}
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14">
-          <div>
-            <p className="text-[11px] font-nav font-bold text-soft-gold/50 uppercase tracking-[0.4em] mb-4">
-              Testimonials
-            </p>
-            <h2 className="font-title text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight">
-              What Seekers Say
-            </h2>
-          </div>
-
-          {/* Navigation */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => scroll("left")}
-              aria-label="Scroll left"
-              className="w-12 h-12 rounded-full border border-cream/20 text-cream/60 items-center justify-center transition-all duration-300 flex hover:text-soft-gold hover:border-soft-gold/40"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              aria-label="Scroll right"
-              className="w-12 h-12 rounded-full border border-cream/20 text-cream/60 flex items-center justify-center transition-all duration-300 hover:text-soft-gold hover:border-soft-gold/40"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 mb-16">
+          <p className="text-[11px] font-nav font-bold text-soft-gold/50 uppercase tracking-[0.4em] mb-4">
+            Testimonials
+          </p>
+          <h2 className="font-title text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight max-w-2xl">
+            What Seekers Say
+          </h2>
         </div>
 
-        {/* Cards Track */}
-        <div
-          ref={scrollRef}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          className="flex gap-6 overflow-x-auto pl-6 sm:pl-10 lg:pl-16 pr-6 sm:pr-10 lg:pr-16 pb-4 snap-x snap-mandatory scroll-smooth no-scrollbar"
-        >
-          {loopReviews.map((review, idx) => (
-            <div
-              key={idx}
-              className="group flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[420px] snap-start"
-            >
-              <div className="h-full bg-cream/5 backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 md:p-9 flex flex-col justify-between shadow-2xl shadow-black/20 hover:bg-cream/[0.08] hover:border-soft-gold/30 hover:-translate-y-1 transition-all duration-500">
-                {/* Top: Stars + Quote icon */}
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <StarRating rating={review.rating} />
-                    <svg className="w-8 h-8 text-soft-gold/20 group-hover:text-soft-gold/40 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M14.017 21v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1h-4a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6h-2zm-12 0v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1H3a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6H2z" />
-                    </svg>
-                  </div>
+        {/* Marquee Track */}
+        <div className="flex overflow-hidden group">
+          <div className="flex gap-6 animate-marquee group-hover:[animation-play-state:paused] py-4">
+            {marqueeReviews.map((review, idx) => (
+              <div
+                key={idx}
+                className="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[420px]"
+              >
+                <div className="h-full bg-cream/5 backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 md:p-9 flex flex-col justify-between shadow-2xl shadow-black/20 hover:bg-cream/[0.08] hover:border-soft-gold/30 hover:-translate-y-1 transition-all duration-500">
+                  {/* Top: Stars + Quote icon */}
+                  <div>
+                    <div className="flex items-center justify-between mb-6">
+                      <StarRating rating={review.rating} />
+                      <svg className="w-8 h-8 text-soft-gold/20 group-hover:text-soft-gold/40 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14.017 21v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1h-4a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6h-2zm-12 0v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1H3a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6H2z" />
+                      </svg>
+                    </div>
 
-                  <p className="font-body text-[15px] md:text-base text-cream/80 leading-relaxed mb-8 group-hover:text-cream transition-colors duration-500 italic">
-                    "{review.comment}"
-                  </p>
-                </div>
-
-                {/* Bottom: Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-white/10">
-                  <div className="w-12 h-12 rounded-full bg-linear-to-br from-soft-gold/20 to-soft-gold/5 border border-soft-gold/20 flex items-center justify-center flex-shrink-0 shadow-inner">
-                    <span className="font-title text-base font-bold text-soft-gold">
-                      {review.name.charAt(0)}
-                    </span>
-                  </div>
-                  <div className="min-w-0">
-                    <h4 className="font-nav font-bold text-sm text-cream tracking-[0.1em] truncate group-hover:text-soft-gold transition-colors duration-300">
-                      {review.name}
-                    </h4>
-                    <p className="text-[10px] text-cream/40 font-nav uppercase tracking-[0.2em] mt-0.5">
-                      {review.location} &middot; {review.date}
+                    <p className="font-body text-[15px] md:text-base text-cream/80 leading-relaxed mb-8 group-hover:text-cream transition-colors duration-500 italic">
+                      "{review.comment}"
                     </p>
+                  </div>
+
+                  {/* Bottom: Author */}
+                  <div className="flex items-center gap-4 pt-6 border-t border-white/10">
+                    <div className="w-12 h-12 rounded-full bg-linear-to-br from-soft-gold/20 to-soft-gold/5 border border-soft-gold/20 flex items-center justify-center flex-shrink-0 shadow-inner">
+                      <span className="font-title text-base font-bold text-soft-gold">
+                        {review.name.charAt(0)}
+                      </span>
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="font-nav font-bold text-sm text-cream tracking-[0.1em] truncate group-hover:text-soft-gold transition-colors duration-300">
+                        {review.name}
+                      </h4>
+                      <p className="text-[10px] text-cream/40 font-nav uppercase tracking-[0.2em] mt-0.5">
+                        {review.location} &middot; {review.date}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Bottom trust line */}
