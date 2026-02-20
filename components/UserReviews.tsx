@@ -116,7 +116,7 @@ export default function UserReviews() {
                 key={idx}
                 className="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[420px]"
               >
-                <div className="h-full bg-white/[0.07] backdrop-blur-xl border border-soft-gold/15 rounded-2xl p-8 md:p-9 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:bg-white/[0.1] hover:border-soft-gold/40 hover:-translate-y-2 transition-all duration-500">
+                <div className="h-full bg-white/[0.07] backdrop-blur-xl border border-soft-gold/15 rounded-2xl p-8 md:p-9 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:bg-white/[0.1] hover:border-soft-gold/40 transition-all duration-500">
                   {/* Top: Stars + Quote icon */}
                   <div>
                     <div className="flex items-center justify-between mb-6">
@@ -126,7 +126,7 @@ export default function UserReviews() {
                       </svg>
                     </div>
 
-                    <p className="font-body text-[15px] md:text-base text-cream leading-relaxed mb-8 group-hover:text-white transition-colors duration-500 italic font-medium">
+                    <p className="font-body text-[15px] md:text-base text-cream leading-relaxed mb-8 transition-colors duration-500 italic font-medium">
                       "{review.comment}"
                     </p>
                   </div>
