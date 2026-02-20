@@ -319,42 +319,50 @@ export default function TantraTypesSection() {
                 {/* Key Focus Area */}
                 <div className="space-y-5">
                   <h2 className="font-title text-xl sm:text-2xl font-bold text-[#3F2F27] flex items-center gap-3">
-                    <span className="w-8 h-8 bg-[#3F2F27] text-[#FFF0DF] rounded-full flex items-center justify-center text-sm font-black">01</span>
+                    <span className="w-8 h-8 bg-[#3F2F27] text-[#FFF0DF] rounded-full flex items-center justify-center text-sm font-black">
+                      01
+                    </span>
                     Core Focus
                   </h2>
                   <div className="space-y-3">
-                    {tantraTypes[selectedTantra].fullDetails.keyFocus.map((focus, i) => (
-                      <div
-                        key={i}
-                        className="flex gap-3 items-center p-3 bg-white rounded-xl shadow-sm border border-[#3F2F27]/5"
-                      >
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#E44426] shrink-0" />
-                        <p className="text-sm sm:text-base text-[#3F2F27] font-body font-bold">
-                          {focus}
-                        </p>
-                      </div>
-                    ))}
+                    {tantraTypes[selectedTantra].fullDetails.keyFocus.map(
+                      (focus, i) => (
+                        <div
+                          key={i}
+                          className="flex gap-3 items-center p-3 bg-white rounded-xl shadow-sm border border-[#3F2F27]/5"
+                        >
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#E44426] shrink-0" />
+                          <p className="text-sm sm:text-base text-[#3F2F27] font-body font-bold">
+                            {focus}
+                          </p>
+                        </div>
+                      ),
+                    )}
                   </div>
                 </div>
 
                 {/* Benefits Area */}
                 <div className="space-y-5">
                   <h2 className="font-title text-xl sm:text-2xl font-bold text-[#3F2F27] flex items-center gap-3">
-                    <span className="w-8 h-8 bg-[#E44426] text-white rounded-full flex items-center justify-center text-sm font-black">02</span>
+                    <span className="w-8 h-8 bg-[#E44426] text-white rounded-full flex items-center justify-center text-sm font-black">
+                      02
+                    </span>
                     The Outcome
                   </h2>
                   <div className="space-y-3">
-                    {tantraTypes[selectedTantra].fullDetails.benefits.map((benefit, i) => (
-                      <div
-                        key={i}
-                        className="flex gap-3 items-center p-3 bg-[#D4AF37]/10 rounded-xl"
-                      >
-                        <span className="text-xl shrink-0">✨</span>
-                        <p className="text-sm sm:text-base text-[#3F2F27] font-body font-bold">
-                          {benefit}
-                        </p>
-                      </div>
-                    ))}
+                    {tantraTypes[selectedTantra].fullDetails.benefits.map(
+                      (benefit, i) => (
+                        <div
+                          key={i}
+                          className="flex gap-3 items-center p-3 bg-[#D4AF37]/10 rounded-xl"
+                        >
+                          <span className="text-xl shrink-0">✨</span>
+                          <p className="text-sm sm:text-base text-[#3F2F27] font-body font-bold">
+                            {benefit}
+                          </p>
+                        </div>
+                      ),
+                    )}
                   </div>
                 </div>
               </div>
@@ -362,13 +370,17 @@ export default function TantraTypesSection() {
               {/* Practical Details */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="p-6 bg-white border border-[#3F2F27]/10 rounded-2xl">
-                  <h3 className="font-title text-xl font-bold text-[#3F2F27] mb-3 text-center">Eligibility</h3>
+                  <h3 className="font-title text-xl font-bold text-[#3F2F27] mb-3 text-center">
+                    Eligibility
+                  </h3>
                   <p className="text-center text-[#3F2F27]/70 font-body text-base font-bold">
                     {tantraTypes[selectedTantra].fullDetails.whotakes}
                   </p>
                 </div>
                 <div className="p-6 bg-white border border-[#3F2F27]/10 rounded-2xl">
-                  <h3 className="font-title text-xl font-bold text-[#3F2F27] mb-3 text-center">Prerequisites</h3>
+                  <h3 className="font-title text-xl font-bold text-[#3F2F27] mb-3 text-center">
+                    Prerequisites
+                  </h3>
                   <p className="text-center text-[#3F2F27]/70 font-body text-base font-bold">
                     {tantraTypes[selectedTantra].fullDetails.prerequisites}
                   </p>
@@ -385,16 +397,24 @@ export default function TantraTypesSection() {
                   <p className="text-[#FFF0DF]/70 text-base mb-8 max-w-xl mx-auto">
                     {tantraTypes[selectedTantra].fullDetails.practiceSchedule}
                   </p>
-                  
+
                   <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
                     <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] font-black mb-1">Duration</span>
-                      <span className="text-2xl font-black text-[#FFF0DF]">{tantraTypes[selectedTantra].duration}</span>
+                      <span className="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] font-black mb-1">
+                        Duration
+                      </span>
+                      <span className="text-2xl font-black text-[#FFF0DF]">
+                        {tantraTypes[selectedTantra].duration}
+                      </span>
                     </div>
                     <div className="h-10 w-[1px] bg-[#FFF0DF]/20 hidden sm:block" />
                     <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] font-black mb-1">Price</span>
-                      <span className="text-3xl font-black text-[#E44426]">{tantraTypes[selectedTantra].price}</span>
+                      <span className="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] font-black mb-1">
+                        Price
+                      </span>
+                      <span className="text-3xl font-black text-[#E44426]">
+                        {tantraTypes[selectedTantra].price}
+                      </span>
                     </div>
                     <Link
                       href="#tantra-paths"

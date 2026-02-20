@@ -245,7 +245,9 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="social-icon"
                 title={social.name}
-                style={{ "--social-color": social.color } as React.CSSProperties}
+                style={
+                  { "--social-color": social.color } as React.CSSProperties
+                }
               >
                 <i className={social.icon}></i>
               </a>

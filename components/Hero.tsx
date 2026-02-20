@@ -44,9 +44,9 @@ export default function Hero() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/start-journey"
-                  className="px-8 py-4 bg-accent-red text-white font-nav font-semibold uppercase tracking-wide rounded-lg relative overflow-hidden group shadow-lg hover:shadow-xl text-center font-bold font-nav"
+                  className="px-8 py-4 bg-brand-blue text-white font-nav font-semibold uppercase tracking-wide rounded-lg relative overflow-hidden group shadow-lg hover:shadow-xl text-center font-bold font-nav"
                 >
-                  <span className="absolute inset-0 bg-red-600 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
+                  <span className="absolute inset-0 bg-blue-700 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
                   <span className="relative z-10">START YOUR JOURNEY</span>
                 </Link>
 

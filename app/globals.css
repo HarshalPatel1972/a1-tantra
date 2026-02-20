@@ -3,7 +3,8 @@
 /* Bigilla Display - Custom serif typeface */
 @font-face {
   font-family: "Bigilla Display";
-  src: url("/fonts/BigillaDisplay-Regular.woff2") format("woff2"),
+  src:
+    url("/fonts/BigillaDisplay-Regular.woff2") format("woff2"),
     url("/fonts/BigillaDisplay-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -12,7 +13,8 @@
 
 @font-face {
   font-family: "Bigilla Display";
-  src: url("/fonts/BigillaDisplay-Bold.woff2") format("woff2"),
+  src:
+    url("/fonts/BigillaDisplay-Bold.woff2") format("woff2"),
     url("/fonts/BigillaDisplay-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -86,8 +88,12 @@ i[class*=" ri-"] {
 /* ------------------------------------------------ */
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {

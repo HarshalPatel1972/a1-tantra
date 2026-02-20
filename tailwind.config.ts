@@ -13,6 +13,8 @@ const config: Config = {
         "deep-brown": "#3F2F27",
         "accent-red": "#E44426",
         "soft-gold": "#D4AF37",
+        "brand-blue": "#1D4ED8",
+        "azure-pulse": "#3B82F6",
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "Georgia", "serif"],
@@ -114,7 +116,11 @@ const config: Config = {
         },
         "spirit-ring": {
           "0%": { transform: "scale(0.8)", opacity: "1", borderWeight: "2px" },
-          "100%": { transform: "scale(1.5)", opacity: "0", borderWeight: "0px" },
+          "100%": {
+            transform: "scale(1.5)",
+            opacity: "0",
+            borderWeight: "0px",
+          },
         },
       },
       animation: {

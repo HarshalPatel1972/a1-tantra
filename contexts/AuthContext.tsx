@@ -50,7 +50,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
       // Find user with matching email and password
       const foundUser = users.find(
-        (u: UserWithPassword) => u.email === email && u.password === password
+        (u: UserWithPassword) => u.email === email && u.password === password,
       );
 
       if (foundUser) {
@@ -74,7 +74,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const signup = async (
     name: string,
     email: string,
-    password: string
+    password: string,
   ): Promise<boolean> => {
     try {
       // Get existing users

@@ -119,7 +119,11 @@ export default function UserReviews() {
                   <div>
                     <div className="flex items-center justify-between mb-6">
                       <StarRating rating={review.rating} />
-                      <svg className="w-10 h-10 text-soft-gold/20 group-hover:text-soft-gold/40 transition-colors duration-500" fill="currentColor" viewBox="0 0 24 24">
+                      <svg
+                        className="w-10 h-10 text-soft-gold/20 group-hover:text-soft-gold/40 transition-colors duration-500"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path d="M14.017 21v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1h-4a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6h-2zm-12 0v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1H3a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6H2z" />
                       </svg>
                     </div>

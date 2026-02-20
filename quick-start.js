@@ -42,7 +42,7 @@ if (!fs.existsSync(envPath)) {
 
 console.log("📖 Available Commands:\n");
 console.log(
-  "  npm run dev       Start development server (http://localhost:3000)"
+  "  npm run dev       Start development server (http://localhost:3000)",
 );
 console.log("  npm run build     Build for production");
 console.log("  npm start         Start production server");

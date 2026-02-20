@@ -108,11 +108,13 @@ export default function Navbar() {
 
   const searchResults = useMemo(() => {
     if (searchQuery.trim().length > 1) {
-      return searchIndex.filter(
-        (item) =>
-          item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          item.description.toLowerCase().includes(searchQuery.toLowerCase()),
-      ).slice(0, 5);
+      return searchIndex
+        .filter(
+          (item) =>
+            item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.description.toLowerCase().includes(searchQuery.toLowerCase()),
+        )
+        .slice(0, 5);
     }
     return [];
   }, [searchQuery]);
@@ -274,33 +276,33 @@ export default function Navbar() {
           {(isSearchHovered || isSearchFocused || searchQuery) &&
             searchResults.length > 0 && (
               <div className="absolute top-[85%] right-64 w-80 bg-white border border-deep-brown/10 shadow-2xl rounded-md overflow-hidden z-50">
-              <div className="flex flex-col max-h-96 overflow-y-auto">
-                {searchResults.map((result, idx) => (
-                  <Link
-                    key={idx}
-                    href={result.url}
-                    onClick={() => {
-                      setSearchQuery("");
-                      setIsSearchHovered(false);
-                    }}
-                    className="p-4 hover:bg-stone-100 transition-colors border-b border-stone-100 last:border-none group"
-                  >
-                    <div className="flex justify-between items-start mb-1">
-                      <h4 className="font-nav font-bold text-sm text-deep-brown group-hover:text-accent-red">
-                        {result.title}
-                      </h4>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#1D4ED8] bg-blue-50 px-2 py-0.5 rounded">
-                        {result.category}
-                      </span>
-                    </div>
-                    <p className="text-xs text-deep-brown/60 line-clamp-2">
-                      {result.description}
-                    </p>
-                  </Link>
-                ))}
+                <div className="flex flex-col max-h-96 overflow-y-auto">
+                  {searchResults.map((result, idx) => (
+                    <Link
+                      key={idx}
+                      href={result.url}
+                      onClick={() => {
+                        setSearchQuery("");
+                        setIsSearchHovered(false);
+                      }}
+                      className="p-4 hover:bg-stone-100 transition-colors border-b border-stone-100 last:border-none group"
+                    >
+                      <div className="flex justify-between items-start mb-1">
+                        <h4 className="font-nav font-bold text-sm text-deep-brown group-hover:text-accent-red">
+                          {result.title}
+                        </h4>
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#1D4ED8] bg-blue-50 px-2 py-0.5 rounded">
+                          {result.category}
+                        </span>
+                      </div>
+                      <p className="text-xs text-deep-brown/60 line-clamp-2">
+                        {result.description}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
           {/* Auth Section */}
           {isAuthenticated ? (
@@ -310,47 +312,50 @@ export default function Navbar() {
               </div>
               <button
                 onClick={logout}
-                className="font-nav text-[12px] lg:text-[14px] font-semibold uppercase tracking-widest text-deep-brown hover:text-accent-red transition-colors duration-200"
+                className="font-nav text-[12px] lg:text-[14px] font-semibold uppercase tracking-widest text-deep-brown hover:text-brand-blue transition-colors duration-200"
               >
                 Logout
               </button>
             </div>
           ) : (
             <div className="flex items-center gap-4 lg:gap-8 relative group/aura">
-              {/* ELITE SACRED AURA SYSTEM */}
+              {/* ELITE BLUE SPIRIT AURA SYSTEM */}
               {/* 1. Underlying Deep Resonance Glow */}
-              <div className="absolute -inset-8 bg-accent-red/10 rounded-full blur-[60px] opacity-0 group-hover/aura:opacity-100 transition-opacity duration-1000 animate-aura-breathe"></div>
-              
+              <div className="absolute -inset-8 bg-brand-blue/15 rounded-full blur-[60px] opacity-0 group-hover/aura:opacity-100 transition-opacity duration-1000 animate-aura-breathe"></div>
+
               {/* 2. Concentric Spirit Rings */}
-              <div className="absolute inset-0 border border-soft-gold/30 rounded-lg opacity-0 group-hover/aura:animate-spirit-ring pointer-events-none"></div>
-              <div className="absolute inset-0 border border-accent-red/20 rounded-lg opacity-0 group-hover/aura:animate-spirit-ring [animation-delay:0.5s] pointer-events-none"></div>
+              <div className="absolute inset-0 border border-azure-pulse/30 rounded-lg opacity-0 group-hover/aura:animate-spirit-ring pointer-events-none"></div>
+              <div className="absolute inset-0 border border-brand-blue/20 rounded-lg opacity-0 group-hover/aura:animate-spirit-ring [animation-delay:0.5s] pointer-events-none"></div>
 
               {/* 3. Floating Essence Particles (Top Layer) */}
               <div className="absolute inset-x-0 -top-full h-full pointer-events-none overflow-visible">
-                <div className="absolute left-1/4 bottom-0 w-1 h-1 bg-soft-gold rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:0.2s]"></div>
-                <div className="absolute left-1/2 bottom-0 w-1.5 h-1.5 bg-accent-red rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:1s]"></div>
+                <div className="absolute left-1/4 bottom-0 w-1 h-1 bg-azure-pulse rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:0.2s]"></div>
+                <div className="absolute left-1/2 bottom-0 w-1.5 h-1.5 bg-brand-blue rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:1s]"></div>
                 <div className="absolute left-3/4 bottom-0 w-1 h-1 bg-white rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:0.5s]"></div>
               </div>
 
               <Link
                 href="/auth/login"
-                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest text-deep-brown hover:text-brand-blue transition-colors duration-200 whitespace-nowrap"
               >
                 Login
               </Link>
               <Link
                 href="/book-session"
-                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.2em] px-10 py-5 bg-accent-red text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-500 active:scale-95 shadow-[0_10px_40px_-10px_rgba(228,68,38,0.5)] border border-white/20"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.2em] px-10 py-5 bg-brand-blue text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-500 active:scale-95 shadow-[0_10px_40px_-10px_rgba(29,78,216,0.5)] border border-white/20"
               >
                 {/* HIGH-FIDELITY SHIMMER BEAM */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-[200%] group-hover:animate-shimmer-sweep"></div>
-                
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[200%] group-hover:animate-shimmer-sweep"></div>
+
                 {/* COLOR OVERLAY TRANSITION */}
                 <span className="absolute inset-0 bg-deep-brown translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
-                
+
                 <span className="relative z-10 flex items-center gap-3">
                   BOOK A SESSION
-                  <Sparkles size={18} className="text-soft-gold group-hover:text-cream animate-pulse transition-colors" />
+                  <Sparkles
+                    size={18}
+                    className="text-azure-pulse group-hover:text-cream animate-pulse transition-colors"
+                  />
                 </span>
               </Link>
             </div>
@@ -390,7 +395,7 @@ export default function Navbar() {
           >
             <SearchIcon className="w-5 h-5" />
           </button>
-          
+
           <button
             className="text-deep-brown hover:text-accent-red transition-colors"
             onClick={() => setIsOpen(!isOpen)}
@@ -419,7 +424,7 @@ export default function Navbar() {
               className="ml-2 bg-transparent border-none outline-none text-sm font-nav font-medium text-deep-brown placeholder-deep-brown/50 w-full"
             />
           </div>
-          
+
           {/* MOBILE SEARCH RESULTS */}
           {searchResults.length > 0 && (
             <div className="mt-2 bg-stone-100 rounded-md overflow-hidden border border-deep-brown/5 shadow-lg">
@@ -505,23 +510,26 @@ export default function Navbar() {
               <>
                 <Link
                   href="/auth/login"
-                  className="block font-nav text-lg font-semibold uppercase tracking-[0.2em] text-deep-brown hover:text-accent-red py-2 transition-colors"
+                  className="block font-nav text-lg font-semibold uppercase tracking-[0.2em] text-deep-brown hover:text-brand-blue py-2 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Login
                 </Link>
                 <Link
                   href="/book-session"
-                  className="block w-full text-center py-5 bg-accent-red text-white font-bold uppercase tracking-[0.2em] rounded-md relative overflow-hidden group active:scale-[0.98] transition-all shadow-[0_10px_30px_rgba(228,68,38,0.4)] border border-white/10"
+                  className="block w-full text-center py-5 bg-brand-blue text-white font-bold uppercase tracking-[0.2em] rounded-md relative overflow-hidden group active:scale-[0.98] transition-all shadow-[0_10px_30px_rgba(29,78,216,0.4)] border border-white/10"
                   onClick={() => setIsOpen(false)}
                 >
-                  {/* MOBILE SPIRIT CORE */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-accent-red via-deep-brown to-accent-red opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  {/* MOBILE SPIRIT CORE (BLUE) */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-brand-blue via-deep-brown to-brand-blue opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer-sweep pointer-events-none"></div>
 
                   <span className="relative z-10 flex items-center justify-center gap-3">
                     BOOK A SESSION
-                    <Sparkles size={18} className="text-soft-gold animate-pulse" />
+                    <Sparkles
+                      size={18}
+                      className="text-azure-pulse animate-pulse"
+                    />
                   </span>
                 </Link>
               </>
