@@ -68,7 +68,7 @@ export default function WelcomeHome() {
               } items-center gap-12 lg:gap-24 group`}
             >
               {/* Feature Icon/Visual */}
-              <div className="w-full md:w-1/2 flex justify-center">
+              <div className="hidden md:flex w-full md:w-1/2 justify-center">
                 <div className="relative">
                   <div className="absolute inset-0 bg-soft-gold/20 rounded-full blur-[60px] scale-0 group-hover:scale-150 transition-transform duration-1000" />
                   <div className="relative z-10 w-24 h-24 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center text-5xl md:text-6xl shadow-xl border border-deep-brown/5 transform group-hover:-rotate-12 transition-all duration-500">
@@ -86,8 +86,9 @@ export default function WelcomeHome() {
                   </span>
                 </div>
                 
-                <h3 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-6 leading-tight">
-                  {feature.title}
+                <h3 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-6 leading-tight flex items-center justify-center md:justify-start gap-3">
+                  <span className="md:hidden text-4xl">{feature.icon}</span>
+                  <span>{feature.title}</span>
                 </h3>
                 
                 <p className="text-xl text-deep-brown/60 leading-relaxed font-body max-w-lg mb-8 mx-auto md:mx-0">
