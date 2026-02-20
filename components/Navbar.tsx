@@ -318,47 +318,22 @@ export default function Navbar() {
               </button>
             </div>
           ) : (
-            <div className="flex items-center gap-4 lg:gap-8 relative group/aura">
-              {/* ELITE BLUE SPIRIT AURA SYSTEM */}
-              {/* 1. Underlying Deep Resonance Glow */}
-              <div className="absolute -inset-8 bg-brand-blue/15 rounded-full blur-[60px] opacity-0 group-hover/aura:opacity-100 transition-opacity duration-1000 animate-aura-breathe"></div>
-
-              {/* 2. Concentric Spirit Rings */}
-              <div className="absolute inset-0 border border-azure-pulse/30 rounded-lg opacity-0 group-hover/aura:animate-spirit-ring pointer-events-none"></div>
-              <div className="absolute inset-0 border border-brand-blue/20 rounded-lg opacity-0 group-hover/aura:animate-spirit-ring [animation-delay:0.5s] pointer-events-none"></div>
-
-              {/* 3. Floating Essence Particles (Top Layer) */}
-              <div className="absolute inset-x-0 -top-full h-full pointer-events-none overflow-visible">
-                <div className="absolute left-1/4 bottom-0 w-1 h-1 bg-azure-pulse rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:0.2s]"></div>
-                <div className="absolute left-1/2 bottom-0 w-1.5 h-1.5 bg-brand-blue rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:1s]"></div>
-                <div className="absolute left-3/4 bottom-0 w-1 h-1 bg-white rounded-full opacity-0 group-hover/aura:animate-float-particle [animation-delay:0.5s]"></div>
-              </div>
-
+            <div className="flex items-center gap-4 lg:gap-6">
               <Link
                 href="/auth/login"
-                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest text-deep-brown hover:text-brand-blue transition-colors duration-200 whitespace-nowrap"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-semibold uppercase tracking-widest text-deep-brown hover:text-accent-red transition-colors duration-200 whitespace-nowrap"
               >
                 Login
               </Link>
               <Link
                 href="/book-session"
-                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.2em] px-10 py-5 bg-brand-blue text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-500 active:scale-95 shadow-[0_10px_40px_-10px_rgba(29,78,216,0.5)] border border-white/20"
+                className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.15em] px-8 py-3.5 bg-[#1D4ED8] text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95 shadow-lg"
               >
-                {/* HIGH-FIDELITY SHIMMER BEAM */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-[200%] group-hover:animate-shimmer-sweep"></div>
-
-                {/* COLOR OVERLAY TRANSITION */}
-                <span className="absolute inset-0 bg-deep-brown translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
-
-                <span className="relative z-10 flex items-center gap-3">
-                  BOOK A SESSION
-                  <Sparkles
-                    size={18}
-                    className="text-azure-pulse group-hover:text-cream animate-pulse transition-colors"
-                  />
-                </span>
+                <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
+                <span className="relative z-10">BOOK A SESSION</span>
               </Link>
             </div>
+          )}
           )}
         </div>
       </div>
@@ -510,27 +485,18 @@ export default function Navbar() {
               <>
                 <Link
                   href="/auth/login"
-                  className="block font-nav text-lg font-semibold uppercase tracking-[0.2em] text-deep-brown hover:text-brand-blue py-2 transition-colors"
+                  className="block font-nav text-lg font-semibold uppercase tracking-[0.2em] text-deep-brown hover:text-accent-red py-2 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Login
                 </Link>
                 <Link
                   href="/book-session"
-                  className="block w-full text-center py-5 bg-brand-blue text-white font-bold uppercase tracking-[0.2em] rounded-md relative overflow-hidden group active:scale-[0.98] transition-all shadow-[0_10px_30px_rgba(29,78,216,0.4)] border border-white/10"
+                  className="block w-full text-center py-4 bg-[#1D4ED8] text-white font-bold uppercase tracking-[0.15em] rounded-md relative overflow-hidden group active:scale-[0.98] transition-all"
                   onClick={() => setIsOpen(false)}
                 >
-                  {/* MOBILE SPIRIT CORE (BLUE) */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-brand-blue via-deep-brown to-brand-blue opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-shimmer-sweep pointer-events-none"></div>
-
-                  <span className="relative z-10 flex items-center justify-center gap-3">
-                    BOOK A SESSION
-                    <Sparkles
-                      size={18}
-                      className="text-azure-pulse animate-pulse"
-                    />
-                  </span>
+                  <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
+                  <span className="relative z-10">BOOK A SESSION</span>
                 </Link>
               </>
             )}
