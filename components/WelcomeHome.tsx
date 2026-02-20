@@ -79,14 +79,14 @@ export default function WelcomeHome() {
 
               {/* Feature Content */}
               <div className="w-full md:w-1/2 text-center md:text-left">
-                <div className="flex items-center gap-4 mb-6 justify-center md:justify-start">
+                <div className="hidden md:flex items-center gap-4 mb-6 justify-center md:justify-start">
                   <div className="w-12 h-[1px] bg-accent-red" />
                   <span className="text-xs font-bold text-accent-red uppercase tracking-[0.3em]">
                     Step {idx + 1}
                   </span>
                 </div>
                 
-                <h3 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-6 leading-tight flex items-center justify-center md:justify-start gap-3">
+                <h3 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-6 leading-tight flex items-center justify-center md:justify-start gap-3 whitespace-nowrap md:whitespace-normal">
                   <span className="md:hidden text-4xl">{feature.icon}</span>
                   <span>{feature.title}</span>
                 </h3>
@@ -95,7 +95,7 @@ export default function WelcomeHome() {
                   {feature.description}
                 </p>
                 
-                <button className="group/btn relative inline-flex items-center gap-3 text-deep-brown font-bold text-sm uppercase tracking-widest overflow-hidden">
+                <button className="hidden md:group/btn relative md:inline-flex items-center gap-3 text-deep-brown font-bold text-sm uppercase tracking-widest overflow-hidden">
                   <span className="relative z-10">Learn the path</span>
                   <div className="w-8 h-[2px] bg-accent-red group-hover/btn:w-16 transition-all duration-500" />
                 </button>
