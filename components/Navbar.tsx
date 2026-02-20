@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
-import { searchIndex, SearchResult } from "@/data/search-index";
+import { searchIndex } from "@/data/search-index";
 
 // SVG Icon Components
 const SearchIcon = ({ className = "w-5 h-5" }) => (

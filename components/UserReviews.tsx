@@ -1,7 +1,5 @@
 "use client";
 
-import { useRef, useState, useEffect, useCallback } from "react";
-
 const reviews = [
   {
     name: "Priya Sharma",
@@ -127,7 +125,7 @@ export default function UserReviews() {
                     </div>
 
                     <p className="font-body text-[15px] md:text-base text-cream leading-relaxed mb-8 transition-colors duration-500 italic font-medium">
-                      "{review.comment}"
+                      &quot;{review.comment}&quot;
                     </p>
                   </div>
 
