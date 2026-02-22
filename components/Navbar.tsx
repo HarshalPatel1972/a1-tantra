@@ -372,6 +372,7 @@ export default function Navbar() {
               <Link
                 href="/book-session"
                 className="font-nav text-[12px] lg:text-[14px] xl:text-[15px] font-bold uppercase tracking-[0.15em] px-8 py-3.5 bg-brand-blue text-white rounded-md relative overflow-hidden group whitespace-nowrap transition-all duration-300 active:scale-95 shadow-lg"
+                style={{ backgroundColor: 'var(--color-brand-blue, #1D4ED8)' }}
               >
                 <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
                 <span className="relative z-10">BOOK A SESSION</span>
@@ -550,6 +551,7 @@ export default function Navbar() {
                 <Link
                   href="/book-session"
                   className="block w-full text-center py-4 bg-brand-blue text-white font-bold uppercase tracking-[0.15em] rounded-md relative overflow-hidden group active:scale-[0.98] transition-all"
+                  style={{ backgroundColor: 'var(--color-brand-blue, #1D4ED8)' }}
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>

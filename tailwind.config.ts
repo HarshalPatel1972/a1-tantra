@@ -47,11 +47,17 @@ const config: Config = {
       typography: {
         DEFAULT: {
           css: {
-            color: "#3F2F27",
+            color: "var(--color-deep-brown)",
+            "--tw-prose-body": "var(--color-deep-brown)",
+            "--tw-prose-headings": "var(--color-deep-brown)",
+            "--tw-prose-bold": "var(--color-deep-brown)",
+            "--tw-prose-links": "var(--color-accent-red)",
+            "--tw-prose-counters": "var(--color-deep-brown)",
+            "--tw-prose-bullets": "var(--color-deep-brown)",
             a: {
-              color: "#E44426",
+              color: "var(--color-accent-red)",
               "&:hover": {
-                color: "#C93218",
+                color: "var(--color-accent-red)",
               },
             },
           },
