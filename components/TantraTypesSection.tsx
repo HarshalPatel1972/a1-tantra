@@ -260,18 +260,18 @@ export default function TantraTypesSection() {
       {/* DETAILED MODAL */}
       {selectedTantra !== null && (
         <div
-          className="fixed top-[64px] md:top-[90px] xl:top-[100px] left-0 right-0 bottom-0 bg-black/90 backdrop-blur-xl z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8"
+          className={`fixed top-[64px] md:top-[90px] xl:top-[100px] left-0 right-0 bottom-0 ${isDark ? "bg-black/95" : "bg-deep-brown/60"} backdrop-blur-xl z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8`}
           onClick={() => setSelectedTantra(null)}
         >
           <div
-            className="bg-cream rounded-3xl shadow-[0_30px_100px_rgba(0,0,0,0.8)] w-full max-w-4xl max-h-[90%] overflow-y-auto relative border border-deep-brown/10"
+            className={`bg-cream rounded-3xl ${isDark ? "shadow-none border border-white/10" : "shadow-[0_30px_100px_rgba(0,0,0,0.2)] border border-deep-brown/10"} w-full max-w-4xl max-h-[90%] overflow-y-auto relative`}
             style={modalThemeStyle}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button - Clean & Persistent */}
             <button
               onClick={() => setSelectedTantra(null)}
-              className="absolute top-4 right-4 sm:top-5 sm:right-5 z-[110] p-3 bg-black/50 hover:bg-accent-red backdrop-blur-md rounded-full text-white transition-all hover:rotate-90 group shadow-xl"
+              className={`absolute top-4 right-4 sm:top-5 sm:right-5 z-[110] p-3 ${isDark ? "bg-white/10 hover:bg-white/20 text-white" : "bg-black/5 hover:bg-black/10 text-black"} backdrop-blur-md rounded-full transition-all hover:rotate-90 group shadow-xl`}
               aria-label="Close modal"
             >
               <svg
@@ -299,8 +299,8 @@ export default function TantraTypesSection() {
                 quality={100}
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/20 to-black/30"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent"></div>
+              <div className={`absolute inset-0 bg-gradient-to-t from-cream via-cream/40 ${isDark ? "to-black/40" : "to-transparent"}`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-b ${isDark ? "from-black/60" : "from-black/20"} via-transparent to-transparent`}></div>
 
               {/* Title Section */}
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 md:p-10">
