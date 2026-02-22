@@ -1,11 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function TantraTypesSection() {
   const [selectedTantra, setSelectedTantra] = useState<number | null>(null);
+  const { isDark } = useTheme();
+
+  const modalThemeStyle = {
+    "--color-cream": isDark ? "#1C1614" : "#FFF0DF",
+    "--color-deep-brown": isDark ? "#E8DDD4" : "#3F2F27",
+    "--color-accent-red": isDark ? "#F07460" : "#E44426",
+    "--color-soft-gold": isDark ? "#E8C85A" : "#D4AF37",
+    "--color-surface-card": isDark ? "#2A221E" : "#FFFFFF",
+  } as CSSProperties;
 
   const tantraTypes = [
     {
@@ -255,6 +265,7 @@ export default function TantraTypesSection() {
         >
           <div
             className="bg-cream rounded-3xl shadow-[0_30px_100px_rgba(0,0,0,0.8)] w-full max-w-4xl max-h-[90%] overflow-y-auto relative border border-deep-brown/10"
+            style={modalThemeStyle}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button - Clean & Persistent */}
@@ -329,7 +340,7 @@ export default function TantraTypesSection() {
                       (focus, i) => (
                         <div
                           key={i}
-                          className="flex gap-3 items-center p-3 bg-white rounded-xl shadow-sm border border-deep-brown/5"
+                          className="flex gap-3 items-center p-3 bg-surface-card rounded-xl shadow-sm border border-deep-brown/5"
                         >
                           <div className="w-1.5 h-1.5 rounded-full bg-accent-red shrink-0" />
                           <p className="text-sm sm:text-base text-deep-brown font-body font-bold">
@@ -369,7 +380,7 @@ export default function TantraTypesSection() {
 
               {/* Practical Details */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 bg-white border border-deep-brown/10 rounded-2xl">
+                <div className="p-6 bg-surface-card border border-deep-brown/10 rounded-2xl">
                   <h3 className="font-title text-xl font-bold text-deep-brown mb-3 text-center">
                     Eligibility
                   </h3>
@@ -377,7 +388,7 @@ export default function TantraTypesSection() {
                     {tantraTypes[selectedTantra].fullDetails.whotakes}
                   </p>
                 </div>
-                <div className="p-6 bg-white border border-deep-brown/10 rounded-2xl">
+                <div className="p-6 bg-surface-card border border-deep-brown/10 rounded-2xl">
                   <h3 className="font-title text-xl font-bold text-deep-brown mb-3 text-center">
                     Prerequisites
                   </h3>
