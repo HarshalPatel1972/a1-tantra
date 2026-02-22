@@ -260,12 +260,13 @@ export default function TantraTypesSection() {
       {/* DETAILED MODAL */}
       {selectedTantra !== null && (
         <div
-          className={`fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8 ${isDark ? "bg-black" : "bg-[#2A221E]"} !bg-opacity-100`}
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8"
+          style={{ backgroundColor: isDark ? "#000000" : "#2A221E" }}
           onClick={() => setSelectedTantra(null)}
         >
           <div
             className={`bg-cream rounded-3xl ${isDark ? "shadow-none border border-white/10" : "shadow-2xl border border-deep-brown/10"} w-full max-w-4xl max-h-[90%] overflow-y-auto relative`}
-            style={modalThemeStyle}
+            style={{ ...modalThemeStyle, backgroundColor: isDark ? "#1C1614" : "#FFF0DF" }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button - Clean & Persistent */}
