@@ -86,10 +86,34 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Offerings */}
           <div>
-            <h4 className="font-title text-lg font-bold mb-4">Resources</h4>
+            <h4 className="font-title text-lg font-bold mb-4">Our Offerings</h4>
             <ul className="space-y-2 text-sm font-body">
+              <li>
+                <Link
+                  href="/therapies"
+                  className="hover:text-soft-gold transition"
+                >
+                  Spiritual Healing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/sessions"
+                  className="hover:text-soft-gold transition"
+                >
+                  Tantra Sessions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/advisory"
+                  className="hover:text-soft-gold transition"
+                >
+                  Couples Advisory
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/resources"
@@ -98,48 +122,6 @@ export default function Footer() {
                   All Resources
                 </Link>
               </li>
-              {/* Temp removed until pages are ready 
-              <li>
-                <Link
-                  href="/resources/beginner"
-                  className="hover:text-soft-gold transition"
-                >
-                  Beginner Guides
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/resources/rituals"
-                  className="hover:text-soft-gold transition"
-                >
-                  Rituals & Practices
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/resources/breathwork"
-                  className="hover:text-soft-gold transition"
-                >
-                  Breathwork
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/resources/mantras"
-                  className="hover:text-soft-gold transition"
-                >
-                  Mantras
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/resources/myth-busting"
-                  className="hover:text-soft-gold transition"
-                >
-                  Myth-Busting
-                </Link>
-              </li>
-              */}
             </ul>
           </div>
 

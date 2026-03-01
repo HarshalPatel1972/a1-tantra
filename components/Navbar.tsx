@@ -155,8 +155,10 @@ export default function Navbar() {
   };
 
   const navLinks = [
+    { label: "THERAPIES", href: "/therapies" },
+    { label: "SESSIONS", href: "/sessions" },
     { label: "RESOURCES", href: "/resources" },
-    { label: "TANTRA PATHS", href: "#tantra-paths" },
+    { label: "TANTRA PATHS", href: "/paths" },
   ];
 
   return (
