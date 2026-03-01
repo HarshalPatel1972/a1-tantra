@@ -258,24 +258,34 @@ export default function TherapiesPage() {
             </div>
           </div>
 
-          {/* New Section: The Sacred Journey (Process) */}
-          <div className="mb-32 text-center">
-            <h2 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-16">
+          {/* New Section: The Sacred Journey (Vertical Timeline) */}
+          <div className="mb-32">
+            <h2 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-20 text-center">
               Your Sacred Journey
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="relative max-w-4xl mx-auto">
+              {/* Vertical Guide Line */}
+              <div className="absolute top-0 bottom-0 left-[28px] md:left-1/2 w-[2px] bg-accent-red/20 -translate-x-1/2" />
+              
               {[
                 { step: "01", title: "Consultation", desc: "A 20-minute call to align our energy and set your healing intention." },
                 { step: "02", title: "Preparation", desc: "Guided practices sent to you to prepare your body for the sacred flow." },
                 { step: "03", title: "The Session", desc: "A 90-minute immersive therapy session focused on your specific blockages." },
                 { step: "04", title: "Integration", desc: "Aftercare guidance to help you ground the transformation into daily life." }
               ].map((item, i) => (
-                <div key={i} className="relative p-8 rounded-3xl border border-deep-brown/20 hover:border-accent-red transition-all duration-300 text-center mt-4">
-                  <span className="absolute -top-[10px] left-1/2 -translate-x-1/2 bg-cream px-3 font-nav font-bold text-deep-brown text-sm">
+                <div key={i} className={`relative flex items-center justify-between md:justify-normal w-full mb-12 last:mb-0 ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                  {/* Connector Node */}
+                  <div className="absolute left-[28px] md:left-1/2 w-14 h-14 rounded-full bg-cream border-[4px] border-accent-red flex items-center justify-center text-accent-red font-black text-lg -translate-x-1/2 z-10 shadow-[0_0_20px_rgba(228,68,38,0.3)] shadow-accent-red/20 font-nav">
                     {item.step}
-                  </span>
-                  <h4 className="font-title text-xl font-bold text-deep-brown mb-3 mt-2">{item.title}</h4>
-                  <p className="text-sm text-deep-brown/70 leading-relaxed font-body">{item.desc}</p>
+                  </div>
+
+                  {/* Content Container */}
+                  <div className={`w-full ml-20 md:ml-0 md:w-[45%] ${i % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+                    <div className="p-8 bg-white border border-deep-brown/10 hover:border-accent-red rounded-[2rem] transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                      <h4 className="font-title text-2xl font-bold text-deep-brown mb-3">{item.title}</h4>
+                      <p className="text-base text-deep-brown/70 leading-relaxed font-body">{item.desc}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
