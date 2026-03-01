@@ -39,8 +39,10 @@ export default function Home() {
           "priceRange": "$$$",
           "address": {
             "@type": "PostalAddress",
+            "streetAddress": "Linking Road, Bandra West",
             "addressLocality": "Mumbai",
             "addressRegion": "MH",
+            "postalCode": "400050",
             "addressCountry": "IN"
           },
           "aggregateRating": {
