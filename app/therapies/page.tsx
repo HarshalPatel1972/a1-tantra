@@ -298,8 +298,8 @@ export default function TherapiesPage() {
               <div className="hidden lg:flex w-72 h-72 rounded-full border-[6px] border-cream shadow-2xl bg-accent-red items-center justify-center overflow-hidden relative z-20 hover:scale-105 transition-transform duration-500">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
-                  src="https://api.dicebear.com/7.x/micah/svg?seed=A1TantraHealing&backgroundColor=ac3b3b" 
-                  alt="Tantra Guide Avatar" 
+                  src="https://api.dicebear.com/7.x/lorelei/svg?seed=Aisha&backgroundColor=ac3b3b&happy=true" 
+                  alt="Happy Female Guide Character" 
                   className="w-full h-full object-cover" 
                 />
               </div>
