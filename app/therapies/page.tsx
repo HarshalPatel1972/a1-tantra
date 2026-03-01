@@ -282,8 +282,8 @@ export default function TherapiesPage() {
           </div>
 
           <div className="p-10 md:p-16 bg-deep-brown text-cream rounded-[3rem] relative overflow-hidden shadow-2xl">
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
-              <div className="max-w-xl text-center md:text-left">
+            <div className="relative z-10 flex flex-col lg:flex-row-reverse items-center justify-between gap-12">
+              <div className="max-w-xl text-center lg:text-left">
                 <h2 className="font-title text-3xl md:text-4xl font-bold mb-6">Need a custom approach to your healing journey?</h2>
                 <p className="text-cream/70 text-lg leading-relaxed mb-8">
                   Our practitioners can blend multiple modalities to meet your specific energetic needs. Contact us for a personalized consultation.
@@ -305,7 +305,7 @@ export default function TherapiesPage() {
               </div>
             </div>
             {/* Decorative background circle */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-accent-red/10 rounded-full blur-[100px] -mr-48 -mt-48" />
+            <div className="absolute top-0 left-0 w-96 h-96 bg-accent-red/10 rounded-full blur-[100px] -ml-48 -mt-48 pointer-events-none" />
           </div>
         </div>
       </div>
