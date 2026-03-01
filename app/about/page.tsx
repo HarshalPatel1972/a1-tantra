@@ -1,7 +1,11 @@
-"use client";
-
+import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About A1 Tantra | Our Mission & Lineage",
+  description: "Learn about the authentic roots, mission, and dedicated practitioners behind A1 Tantra. Discover our commitment to sacred wisdom.",
+};
 
 export default function AboutPage() {
   return (

@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 
+import JsonLd from "@/components/JsonLd";
+
 export default function SessionsPage() {
   const sessions = [
     {
@@ -42,6 +44,37 @@ export default function SessionsPage() {
 
   return (
     <div>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Tantra Meditation & Healing Sessions",
+          "serviceType": "Spiritual Healing",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "A1 Tantra",
+            "image": "https://a1-tantra.vercel.app/images/logo-main.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Mumbai",
+              "addressRegion": "MH",
+              "addressCountry": "IN"
+            }
+          },
+          "description": "Sacred tantric sessions including meditation, breathwork, and chakra balancing for modern seekers.",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "25000",
+            "highPrice": "55000",
+            "priceCurrency": "INR"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "520"
+          }
+        }}
+      />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="serif-heading text-5xl font-bold text-deep-brown mb-8 text-center">

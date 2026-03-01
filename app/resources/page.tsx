@@ -1,7 +1,11 @@
-"use client";
-
+import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Tantric Resources & Learning Guides | A1 Tantra",
+  description: "Explore our library of tantric resources, rituals, breathwork guides, and ancient wisdom for your spiritual journey.",
+};
 
 export default function ResourcesPage() {
   const resources = [

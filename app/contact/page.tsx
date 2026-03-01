@@ -1,7 +1,11 @@
-"use client";
-
+import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Contact A1 Tantra | Guidance & Inquiries",
+  description: "Get in touch for tantric guidance, session inquiries, or collaborations. We resonate with your journey and are here to help.",
+};
 
 export default function ContactPage() {
   return (

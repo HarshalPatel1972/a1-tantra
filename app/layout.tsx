@@ -32,18 +32,20 @@ const inter = Inter({
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://a1-tantra.vercel.app";
 
+import JsonLd from "@/components/JsonLd";
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "A1 Tantra - Sacred Tantric Wisdom & Healing Practices",
+  title: "A1 Tantra | Sacred Tantric Healing & Ancient Wisdom",
   description:
-    "Discover tantric wisdom, healing practices, and transformational paths guided with clarity, depth, and compassion.",
+    "Discover authentic Tantra paths (Kriya, Yoga, Anuttarayoga) for modern seekers. Book a sacred healing session in India today.",
   keywords:
-    "tantra, meditation, spiritual healing, kundalini, chakra, breathwork",
+    "tantra, meditation, spiritual healing, kundalini, chakra, breathwork, tantra sessions india, sacred tantra",
   authors: [{ name: "A1 Tantra" }],
   openGraph: {
-    title: "A1 Tantra - Explore Tantra Together",
+    title: "A1 Tantra | Sacred Tantric Healing & Ancient Wisdom",
     description:
-      "A place to explore Tantra, together. Discover sacred wisdom and transformational practices.",
+      "Discover authentic Tantra paths (Kriya, Yoga, Anuttarayoga) for modern seekers. Book a sacred healing session in India today.",
     url: siteUrl,
     siteName: "A1 Tantra",
     type: "website",
@@ -61,6 +63,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "A1 Tantra",
+            "url": siteUrl,
+            "logo": `${siteUrl}/images/logo-main.png`,
+            "sameAs": ["https://instagram.com/a1tantra"],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91 92178 21866",
+              "contactType": "customer service",
+            },
+          }}
+        />
         {/* Remix Icon CDN - Lightweight & Reliable Icon Set */}
         <link
           rel="stylesheet"

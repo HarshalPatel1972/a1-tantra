@@ -2,6 +2,8 @@
 
 import Footer from "@/components/Footer";
 
+import JsonLd from "@/components/JsonLd";
+
 export default function TherapiesPage() {
   const therapies = [
     {
@@ -20,6 +22,36 @@ export default function TherapiesPage() {
 
   return (
     <div>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Online Spiritual Healing & Tantra Therapy",
+          "serviceType": "Tantra Therapy",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "A1 Tantra",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Mumbai",
+              "addressRegion": "MH",
+              "addressCountry": "IN"
+            }
+          },
+          "description": "Transformative energy work, tantric massage therapy, and couples workshops for holistic growth.",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "25000",
+            "highPrice": "55000",
+            "priceCurrency": "INR"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "520"
+          }
+        }}
+      />
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="serif-heading text-5xl font-bold text-deep-brown mb-8">
