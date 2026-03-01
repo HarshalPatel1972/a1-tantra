@@ -7,25 +7,32 @@ import JsonLd from "@/components/JsonLd";
 export default function TherapiesPage() {
   const therapies = [
     {
-      title: "Tantric Massage Therapy",
-      description: "Experience the healing power of sacred touch. This session focuses on clearing physical blockages and awakening the body's natural energetic flow through deep, presence-based touch.",
-      icon: "✨",
+      title: "Kriya Tantra (Action)",
+      description: "Foundational ritual and action-based tantric practice. Purify your physical environment and early energetic layers.",
+      icon: "🕯️",
       price: "₹25,000",
-      slug: "tantric-massage"
+      slug: "kriya-tantra"
     },
     {
-      title: "Energy Healing Sessions",
-      description: "Work with your energetic body for holistic wellness. These sessions utilize sacred tantric techniques to balance your chakras and restore your vital life force.",
-      icon: "🧘",
+      title: "Carya Tantra (Method)",
+      description: "Integration of outer ritual and inner meditative stability. Begin the journey inward while maintaining pure external conduct.",
+      icon: "📿",
       price: "₹30,000",
-      slug: "energy-healing"
+      slug: "carya-tantra"
     },
     {
-      title: "Couples Tantra Workshops",
-      description: "Deepen intimacy and connection with your partner through shared sacred practice. Learn to coordinate breath, harmonize energy, and communicate from a space of soul-level presence.",
-      icon: "💕",
-      price: "₹45,000",
-      slug: "couples-tantra"
+      title: "Yoga Tantra (Union)",
+      description: "Advanced internal practice focusing on subtle energy, visualization, and harmonizing the internal wind (Prana) and central channel.",
+      icon: "🧘‍♀️",
+      price: "₹40,000",
+      slug: "yoga-tantra"
+    },
+    {
+      title: "Anuttarayoga (Highest)",
+      description: "The pinnacle of tantric practice for rapid transformation, focusing on the union of bliss and emptiness for profound soul evolution.",
+      icon: "👁️",
+      price: "₹55,000",
+      slug: "anuttarayoga-tantra"
     },
   ];
 
@@ -55,35 +62,15 @@ export default function TherapiesPage() {
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Healing & Therapy Services",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "price": "25000",
-                "priceCurrency": "INR",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Tantric Massage Therapy"
-                }
-              },
-              {
-                "@type": "Offer",
-                "price": "30000",
-                "priceCurrency": "INR",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Energy Healing Sessions"
-                }
-              },
-              {
-                "@type": "Offer",
-                "price": "45000",
-                "priceCurrency": "INR",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Couples Tantra Workshops"
-                }
+            "itemListElement": therapies.map((t) => ({
+              "@type": "Offer",
+              "price": t.price.replace(/[^0-9]/g, ''),
+              "priceCurrency": "INR",
+              "itemOffered": {
+                "@type": "Service",
+                "name": t.title
               }
-            ]
+            }))
           }
         }}
       />
@@ -133,7 +120,7 @@ export default function TherapiesPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
             {therapies.map((therapy, idx) => (
               <div
                 key={idx}
@@ -222,19 +209,21 @@ export default function TherapiesPage() {
             <h2 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-16">
               Your Sacred Journey
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 mt-16">
               {[
                 { step: "01", title: "Consultation", desc: "A 20-minute call to align our energy and set your healing intention." },
                 { step: "02", title: "Preparation", desc: "Guided practices sent to you to prepare your body for the sacred flow." },
                 { step: "03", title: "The Session", desc: "A 90-minute immersive therapy session focused on your specific blockages." },
                 { step: "04", title: "Integration", desc: "Aftercare guidance to help you ground the transformation into daily life." }
               ].map((item, i) => (
-                <div key={i} className="relative p-8 bg-white border border-deep-brown/5 rounded-3xl">
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-accent-red text-cream flex items-center justify-center rounded-full font-bold text-xs shadow-xl">
-                    {item.step}
-                  </span>
-                  <h4 className="font-title text-xl font-bold text-deep-brown mb-3 mt-4">{item.title}</h4>
-                  <p className="text-sm text-deep-brown/50 leading-relaxed">{item.desc}</p>
+                <div key={i} className="relative p-8 pt-16 bg-white border border-deep-brown/10 rounded-[2rem] shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
+                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full border-4 border-cream shadow-xl overflow-hidden bg-accent-red flex items-center justify-center">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`https://api.dicebear.com/7.x/micah/svg?seed=${item.title}&backgroundColor=ac3b3b`} alt={`Step ${item.step}`} className="w-full h-full object-cover" />
+                  </div>
+                  <span className="text-accent-red font-bold text-sm tracking-widest mb-2 block uppercase">{item.step}</span>
+                  <h4 className="font-title text-xl font-bold text-deep-brown mb-4">{item.title}</h4>
+                  <p className="text-sm text-deep-brown/70 leading-relaxed font-body">{item.desc}</p>
                 </div>
               ))}
             </div>
