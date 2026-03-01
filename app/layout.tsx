@@ -91,6 +91,23 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('a1tantra-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`
           }}
         />
+        {/* 
+          GOOGLE ADS TRACKING (PHASE 2)
+          To activate, replace 'AW-CONVERSION_ID' with your real Google Ads ID 
+        */}
+        {/*
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-CONVERSION_ID');
+            `
+          }}
+        />
+        */}
       </head>
       <body
         className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased font-sans bg-cream text-deep-brown`}

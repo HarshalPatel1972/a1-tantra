@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { sendEmail } from "@/utils/emailjs";
 
-export default function ContactForm() {
+function ContactFormContent() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,6 +14,16 @@ export default function ContactForm() {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const service = searchParams.get("service");
+    if (service) {
+      setFormData((prev) => ({ 
+        ...prev, 
+        subject: `Inquiry: ${service.charAt(0).toUpperCase() + service.slice(1).replace(/-/g, ' ')}`
+      }));
+    }
+  }, [searchParams]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -130,5 +142,13 @@ export default function ContactForm() {
         {loading ? "Sending..." : "SEND MESSAGE"}
       </button>
     </form>
+  );
+}
+
+export default function ContactForm() {
+  return (
+    <Suspense fallback={<div className="text-center py-10">Loading form...</div>}>
+      <ContactFormContent />
+    </Suspense>
   );
 }
