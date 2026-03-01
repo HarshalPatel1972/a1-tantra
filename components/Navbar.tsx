@@ -107,8 +107,8 @@ const SunIcon = ({ className = "w-5 h-5" }) => (
 );
 
 const MoonIcon = ({ className = "w-5 h-5" }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9" />
   </svg>
 );
 
@@ -332,7 +332,7 @@ export default function Navbar() {
                 aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
                 title={isDark ? "Light Mode" : "Eye Comfort Mode"}
               >
-                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100 group-hover:rotate-90'}`}>
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
                   <MoonIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
                 </span>
                 <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100 group-hover:rotate-90' : 'opacity-0 -rotate-90 scale-0'}`}>
@@ -358,7 +358,7 @@ export default function Navbar() {
                 aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
                 title={isDark ? "Light Mode" : "Eye Comfort Mode"}
               >
-                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100 group-hover:rotate-90'}`}>
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
                   <MoonIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
                 </span>
                 <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100 group-hover:rotate-90' : 'opacity-0 -rotate-90 scale-0'}`}>
@@ -415,7 +415,7 @@ export default function Navbar() {
             className="relative w-8 h-8 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 group"
             aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
           >
-            <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100 group-hover:rotate-90'}`}>
+            <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
               <MoonIcon className="w-[18px] h-[18px]" />
             </span>
             <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100 group-hover:rotate-90' : 'opacity-0 -rotate-90 scale-0'}`}>
