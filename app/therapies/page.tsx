@@ -94,10 +94,10 @@ export default function TherapiesPage() {
         </Link>
       </div>
 
-      <div className="pt-32 pb-24 min-h-screen">
+      <div className="pt-8 md:pt-12 pb-24 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Landing Page Header */}
-          <div className="mb-20">
+          <div className="mb-12">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-[1px] bg-accent-red" />
               <span className="text-[10px] font-bold text-accent-red uppercase tracking-[0.5em]">
@@ -270,12 +270,12 @@ export default function TherapiesPage() {
                 { step: "03", title: "The Session", desc: "A 90-minute immersive therapy session focused on your specific blockages." },
                 { step: "04", title: "Integration", desc: "Aftercare guidance to help you ground the transformation into daily life." }
               ].map((item, i) => (
-                <div key={i} className="relative p-8 bg-white border border-deep-brown/5 rounded-3xl">
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-accent-red text-cream flex items-center justify-center rounded-full font-bold text-xs shadow-xl">
+                <div key={i} className="relative p-8 rounded-3xl border border-deep-brown/20 hover:border-accent-red transition-all duration-300 text-center mt-4">
+                  <span className="absolute -top-[10px] left-1/2 -translate-x-1/2 bg-cream px-3 font-nav font-bold text-deep-brown text-sm">
                     {item.step}
                   </span>
-                  <h4 className="font-title text-xl font-bold text-deep-brown mb-3 mt-4">{item.title}</h4>
-                  <p className="text-sm text-deep-brown/50 leading-relaxed">{item.desc}</p>
+                  <h4 className="font-title text-xl font-bold text-deep-brown mb-3 mt-2">{item.title}</h4>
+                  <p className="text-sm text-deep-brown/70 leading-relaxed font-body">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -298,7 +298,7 @@ export default function TherapiesPage() {
               <div className="hidden lg:flex w-72 h-72 rounded-full border-[6px] border-cream shadow-2xl bg-accent-red items-center justify-center overflow-hidden relative z-20 hover:scale-105 transition-transform duration-500">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
-                  src="https://api.dicebear.com/7.x/lorelei/svg?seed=Aisha&backgroundColor=ac3b3b&happy=true" 
+                  src="https://api.dicebear.com/7.x/lorelei/svg?seed=Sophia&backgroundColor=ac3b3b&happy=true" 
                   alt="Happy Female Guide Character" 
                   className="w-full h-full object-cover" 
                 />
