@@ -328,14 +328,14 @@ export default function Navbar() {
               {/* Eye Comfort Toggle */}
               <button
                 onClick={toggleTheme}
-                className="relative w-10 h-10 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 hover:bg-deep-brown/5"
+                className="relative w-10 h-10 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 hover:bg-deep-brown/5 group"
                 aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
                 title={isDark ? "Light Mode" : "Eye Comfort Mode"}
               >
-                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100 group-hover:rotate-90'}`}>
                   <MoonIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
                 </span>
-                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`}>
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100 group-hover:rotate-90' : 'opacity-0 -rotate-90 scale-0'}`}>
                   <SunIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
                 </span>
               </button>
@@ -354,14 +354,14 @@ export default function Navbar() {
               {/* Eye Comfort Toggle */}
               <button
                 onClick={toggleTheme}
-                className="relative w-10 h-10 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 hover:bg-deep-brown/5"
+                className="relative w-10 h-10 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 hover:bg-deep-brown/5 group"
                 aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
                 title={isDark ? "Light Mode" : "Eye Comfort Mode"}
               >
-                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100 group-hover:rotate-90'}`}>
                   <MoonIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
                 </span>
-                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`}>
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100 group-hover:rotate-90' : 'opacity-0 -rotate-90 scale-0'}`}>
                   <SunIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
                 </span>
               </button>
@@ -412,13 +412,13 @@ export default function Navbar() {
           {/* Eye Comfort Toggle (Mobile) */}
           <button
             onClick={toggleTheme}
-            className="relative w-8 h-8 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300"
+            className="relative w-8 h-8 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 group"
             aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
           >
-            <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
+            <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100 group-hover:rotate-90'}`}>
               <MoonIcon className="w-[18px] h-[18px]" />
             </span>
-            <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`}>
+            <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100 group-hover:rotate-90' : 'opacity-0 -rotate-90 scale-0'}`}>
               <SunIcon className="w-[18px] h-[18px]" />
             </span>
           </button>
