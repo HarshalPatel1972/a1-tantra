@@ -65,6 +65,48 @@ export default function SessionsPage() {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
             "reviewCount": "520"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Tantra Session Types",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "price": "25000",
+                "priceCurrency": "INR",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Tantra Meditation Session"
+                }
+              },
+              {
+                "@type": "Offer",
+                "price": "30000",
+                "priceCurrency": "INR",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Tantric Breathwork Session"
+                }
+              },
+              {
+                "@type": "Offer",
+                "price": "40000",
+                "priceCurrency": "INR",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Chakra Balancing Session"
+                }
+              },
+              {
+                "@type": "Offer",
+                "price": "55000",
+                "priceCurrency": "INR",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Sound Healing + Tantra Flow"
+                }
+              }
+            ]
           }
         }}
       />

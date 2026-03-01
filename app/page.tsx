@@ -52,13 +52,46 @@ export default function Home() {
           },
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Tantra Sacred Healing Services",
+            "name": "Tantra Path Sessions",
             "itemListElement": [
               {
                 "@type": "Offer",
+                "price": "25000",
+                "priceCurrency": "INR",
                 "itemOffered": {
                   "@type": "Service",
-                  "name": "Tantra Meditation & Breathwork"
+                  "name": "Kriya Tantra (Action Tantra)",
+                  "description": "Foundational ritual and action-based tantric practice."
+                }
+              },
+              {
+                "@type": "Offer",
+                "price": "30000",
+                "priceCurrency": "INR",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Carya Tantra (Method Tantra)",
+                  "description": "Integration of outer ritual and inner meditative stability."
+                }
+              },
+              {
+                "@type": "Offer",
+                "price": "40000",
+                "priceCurrency": "INR",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Yoga Tantra (Union Tantra)",
+                  "description": "Advanced internal practice focusing on subtle energy and visualization."
+                }
+              },
+              {
+                "@type": "Offer",
+                "price": "55000",
+                "priceCurrency": "INR",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Anuttarayoga Tantra (Highest Union)",
+                  "description": "The pinnacle of tantric practice for rapid transformation."
                 }
               }
             ]

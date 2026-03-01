@@ -42,6 +42,39 @@ export default function TherapiesPage() {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
             "reviewCount": "520"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Healing & Therapy Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "price": "25000",
+                "priceCurrency": "INR",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Tantric Massage Therapy"
+                }
+              },
+              {
+                "@type": "Offer",
+                "price": "30000",
+                "priceCurrency": "INR",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Energy Healing Sessions"
+                }
+              },
+              {
+                "@type": "Offer",
+                "price": "45000",
+                "priceCurrency": "INR",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Couples Tantra Workshops"
+                }
+              }
+            ]
           }
         }}
       />
