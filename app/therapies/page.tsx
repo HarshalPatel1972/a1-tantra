@@ -1,38 +1,47 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 
 export default function TherapiesPage() {
   const therapies = [
     {
-      title: "Kriya Tantra (Action)",
+      title: "Kriya Tantra",
+      subtitle: "Action",
       description: "Foundational ritual and action-based tantric practice. Purify your physical environment and early energetic layers.",
-      icon: "🕯️",
+      image: "/images/Kriya-Tantra.jpg",
       price: "₹25,000",
-      slug: "kriya-tantra"
+      slug: "kriya-tantra",
+      duration: "90 min"
     },
     {
-      title: "Carya Tantra (Method)",
+      title: "Carya Tantra",
+      subtitle: "Method",
       description: "Integration of outer ritual and inner meditative stability. Begin the journey inward while maintaining pure external conduct.",
-      icon: "📿",
+      image: "/images/Carya-Tantra.jpg",
       price: "₹30,000",
-      slug: "carya-tantra"
+      slug: "carya-tantra",
+      duration: "120 min"
     },
     {
-      title: "Yoga Tantra (Union)",
+      title: "Yoga Tantra",
+      subtitle: "Union",
       description: "Advanced internal practice focusing on subtle energy, visualization, and harmonizing the internal wind (Prana) and central channel.",
-      icon: "🧘‍♀️",
+      image: "/images/Yoga-Tantra.jpg",
       price: "₹40,000",
-      slug: "yoga-tantra"
+      slug: "yoga-tantra",
+      duration: "150 min"
     },
     {
-      title: "Anuttarayoga (Highest)",
+      title: "Anuttarayoga",
+      subtitle: "Highest",
       description: "The pinnacle of tantric practice for rapid transformation, focusing on the union of bliss and emptiness for profound soul evolution.",
-      icon: "👁️",
+      image: "/images/Anuttarayoga-Tantra.jpg",
       price: "₹55,000",
-      slug: "anuttarayoga-tantra"
+      slug: "anuttarayoga-tantra",
+      duration: "180 min"
     },
   ];
 
@@ -124,30 +133,75 @@ export default function TherapiesPage() {
             {therapies.map((therapy, idx) => (
               <div
                 key={idx}
-                className="group p-8 bg-white border border-deep-brown/10 hover:border-accent-red rounded-3xl transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] flex flex-col justify-between"
+                className="group relative h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-end"
               >
-                <div>
-                  <div className="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center text-3xl mb-8 transition-transform duration-500 group-hover:scale-110">
-                    {therapy.icon}
+                {/* Background Image */}
+                <Image
+                  src={therapy.image}
+                  alt={therapy.title}
+                  fill
+                  className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                  quality={90}
+                />
+
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/70 to-black/30"></div>
+                <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/40"></div>
+
+                {/* Content */}
+                <div className="relative z-10 p-8 flex flex-col h-full justify-between">
+                  <div>
+                    <h3
+                      style={{ mixBlendMode: "lighten" }}
+                      className="font-title text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg"
+                    >
+                      {therapy.title}
+                    </h3>
+                    <p
+                      style={{ mixBlendMode: "lighten" }}
+                      className="font-nav text-xs font-bold uppercase tracking-widest text-yellow-100 drop-shadow-lg"
+                    >
+                      {therapy.subtitle}
+                    </p>
                   </div>
-                  <h3 className="font-title text-2xl font-bold text-deep-brown mb-4">
-                    {therapy.title}
-                  </h3>
-                  <p className="text-deep-brown/60 leading-relaxed mb-8 font-body">
-                    {therapy.description}
-                  </p>
-                </div>
-                <div>
-                  <div className="flex items-center justify-between py-4 border-t border-deep-brown/5 mb-6">
-                    <span className="text-xs font-nav font-bold uppercase tracking-widest text-deep-brown/40">From</span>
-                    <span className="text-2xl font-title font-bold text-accent-red">{therapy.price}</span>
+
+                  <div className="space-y-4">
+                    <p
+                      style={{ mixBlendMode: "lighten" }}
+                      className="font-body text-sm md:text-base text-yellow-200 leading-relaxed drop-shadow-md"
+                    >
+                      {therapy.description}
+                    </p>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-white/30">
+                      <div className="flex flex-col gap-1">
+                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
+                          Duration
+                        </span>
+                        <span className="font-nav text-base font-bold text-white drop-shadow-lg">
+                          {therapy.duration}
+                        </span>
+                      </div>
+                      <div className="flex flex-col gap-1 items-end">
+                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
+                          From
+                        </span>
+                        <span
+                          style={{ mixBlendMode: "screen" }}
+                          className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg"
+                        >
+                          {therapy.price}
+                        </span>
+                      </div>
+                    </div>
+
+                    <Link 
+                      href={`/book-session?service=${therapy.slug}`}
+                      className="block text-center mt-4 w-full py-4 bg-accent-red text-white font-nav font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-white hover:text-accent-red transition-all duration-300"
+                    >
+                      Select Session
+                    </Link>
                   </div>
-                  <Link 
-                    href={`/book-session?service=${therapy.slug}`}
-                    className="flex items-center justify-center w-full py-4 border-2 border-deep-brown text-deep-brown font-nav font-bold uppercase tracking-widest text-xs rounded-xl hover:bg-deep-brown hover:text-cream transition-all duration-300"
-                  >
-                    Select Therapy
-                  </Link>
                 </div>
               </div>
             ))}
@@ -209,21 +263,19 @@ export default function TherapiesPage() {
             <h2 className="font-title text-4xl md:text-5xl font-bold text-deep-brown mb-16">
               Your Sacred Journey
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 { step: "01", title: "Consultation", desc: "A 20-minute call to align our energy and set your healing intention." },
                 { step: "02", title: "Preparation", desc: "Guided practices sent to you to prepare your body for the sacred flow." },
                 { step: "03", title: "The Session", desc: "A 90-minute immersive therapy session focused on your specific blockages." },
                 { step: "04", title: "Integration", desc: "Aftercare guidance to help you ground the transformation into daily life." }
               ].map((item, i) => (
-                <div key={i} className="relative p-8 pt-16 bg-white border border-deep-brown/10 rounded-[2rem] shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full border-4 border-cream shadow-xl overflow-hidden bg-accent-red flex items-center justify-center">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={`https://api.dicebear.com/7.x/micah/svg?seed=${item.title}&backgroundColor=ac3b3b`} alt={`Step ${item.step}`} className="w-full h-full object-cover" />
-                  </div>
-                  <span className="text-accent-red font-bold text-sm tracking-widest mb-2 block uppercase">{item.step}</span>
-                  <h4 className="font-title text-xl font-bold text-deep-brown mb-4">{item.title}</h4>
-                  <p className="text-sm text-deep-brown/70 leading-relaxed font-body">{item.desc}</p>
+                <div key={i} className="relative p-8 bg-white border border-deep-brown/5 rounded-3xl">
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-accent-red text-cream flex items-center justify-center rounded-full font-bold text-xs shadow-xl">
+                    {item.step}
+                  </span>
+                  <h4 className="font-title text-xl font-bold text-deep-brown mb-3 mt-4">{item.title}</h4>
+                  <p className="text-sm text-deep-brown/50 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -243,7 +295,14 @@ export default function TherapiesPage() {
                   Request Consultation <i className="ri-arrow-right-line"></i>
                 </Link>
               </div>
-              <div className="hidden lg:block w-72 h-72 rounded-full border border-cream/10 animate-pulse" />
+              <div className="hidden lg:flex w-72 h-72 rounded-full border-[6px] border-cream shadow-2xl bg-accent-red items-center justify-center overflow-hidden relative z-20 hover:scale-105 transition-transform duration-500">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="https://api.dicebear.com/7.x/micah/svg?seed=A1TantraHealing&backgroundColor=ac3b3b" 
+                  alt="Tantra Guide Avatar" 
+                  className="w-full h-full object-cover" 
+                />
+              </div>
             </div>
             {/* Decorative background circle */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-accent-red/10 rounded-full blur-[100px] -mr-48 -mt-48" />
