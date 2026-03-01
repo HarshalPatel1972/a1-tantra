@@ -25,25 +25,16 @@ export default function TherapiesPage() {
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Online Spiritual Healing & Tantra Therapy",
-          "serviceType": "Tantra Therapy",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "A1 Tantra",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Mumbai",
-              "addressRegion": "MH",
-              "addressCountry": "IN"
-            }
-          },
+          "@type": "LocalBusiness",
+          "name": "A1 Tantra | Spiritual Healing",
           "description": "Transformative energy work, tantric massage therapy, and couples workshops for holistic growth.",
-          "offers": {
-            "@type": "AggregateOffer",
-            "lowPrice": "25000",
-            "highPrice": "55000",
-            "priceCurrency": "INR"
+          "telephone": "+91 92178 21866",
+          "priceRange": "$$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mumbai",
+            "addressRegion": "MH",
+            "addressCountry": "IN"
           },
           "aggregateRating": {
             "@type": "AggregateRating",

@@ -30,25 +30,36 @@ export default function Home() {
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "A1 Tantra Sacred Healing",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "A1 Tantra",
-            "image": "https://a1-tantra.vercel.app/images/logo-main.png",
-            "priceRange": "$$$"
-          },
+          "@type": "LocalBusiness",
+          "name": "A1 Tantra",
           "description": "Authentic tantric healing and meditation sessions including Kriya, Yoga, and Anuttarayoga paths.",
-          "offers": {
-            "@type": "AggregateOffer",
-            "lowPrice": "25000",
-            "highPrice": "55000",
-            "priceCurrency": "INR"
+          "image": "https://a1-tantra.vercel.app/images/logo-main.png",
+          "telephone": "+91 92178 21866",
+          "url": "https://a1-tantra.vercel.app",
+          "priceRange": "$$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mumbai",
+            "addressRegion": "MH",
+            "addressCountry": "IN"
           },
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
             "reviewCount": "520"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Tantra Sacred Healing Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Tantra Meditation & Breathwork"
+                }
+              }
+            ]
           }
         }}
       />

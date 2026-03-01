@@ -47,26 +47,17 @@ export default function SessionsPage() {
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Tantra Meditation & Healing Sessions",
-          "serviceType": "Spiritual Healing",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "A1 Tantra",
-            "image": "https://a1-tantra.vercel.app/images/logo-main.png",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Mumbai",
-              "addressRegion": "MH",
-              "addressCountry": "IN"
-            }
-          },
+          "@type": "LocalBusiness",
+          "name": "A1 Tantra | Meditation & Sessions",
           "description": "Sacred tantric sessions including meditation, breathwork, and chakra balancing for modern seekers.",
-          "offers": {
-            "@type": "AggregateOffer",
-            "lowPrice": "25000",
-            "highPrice": "55000",
-            "priceCurrency": "INR"
+          "image": "https://a1-tantra.vercel.app/images/logo-main.png",
+          "telephone": "+91 92178 21866",
+          "priceRange": "$$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mumbai",
+            "addressRegion": "MH",
+            "addressCountry": "IN"
           },
           "aggregateRating": {
             "@type": "AggregateRating",
