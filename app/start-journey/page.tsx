@@ -84,7 +84,7 @@ Please send me personalized guidance to begin my Tantra journey.
 
   return (
     <div>
-      <div className="pt-32 pb-24 bg-cream min-h-screen">
+      <div className="pt-4 pb-24 bg-cream min-h-screen">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Progress */}
           <div className="mb-12">

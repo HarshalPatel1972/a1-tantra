@@ -94,7 +94,7 @@ export default function TherapiesPage() {
         </Link>
       </div>
 
-      <div className="pt-8 md:pt-12 pb-24 min-h-screen">
+      <div className="pt-4 pb-24 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Landing Page Header */}
           <div className="mb-12">
