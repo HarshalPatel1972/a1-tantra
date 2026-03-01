@@ -68,9 +68,11 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "A1 Tantra",
+            "legalName": "A1 Tantra Sacred Healing",
             "url": siteUrl,
+            "description": "Authentic Tantra paths and spiritual healing services including Kriya, Yoga, and Anuttarayoga practices.",
             "logo": `${siteUrl}/images/logo-main.png`,
-            "sameAs": ["https://instagram.com/a1tantra"],
+            "sameAs": ["https://instagram.com/a1ta.ntra"],
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+91 92178 21866",
