@@ -19,10 +19,10 @@ export default function InstagramGrid() {
             rel="noopener noreferrer"
             className="inline-block group"
           >
-            <h2 className="serif-heading text-4xl font-bold text-deep-brown group-hover:text-accent-red transition-colors duration-300">
+            <h2 className="serif-heading text-4xl font-bold bg-gradient-to-tr from-[#f09433] via-[#e6683c] via-[#dc2743] via-[#cc2366] to-[#bc1888] bg-clip-text text-transparent transition-transform duration-300 group-hover:scale-105">
               @a1ta.ntra
             </h2>
-            <div className="h-0.5 w-0 group-hover:w-full bg-accent-red transition-all duration-300 mx-auto mt-1" />
+            <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-[#f09433] to-[#bc1888] transition-all duration-300 mx-auto mt-1" />
           </a>
           <p className="text-deep-brown/60 mt-4 font-body text-lg italic">
             Reflections and teachings on the sacred path
