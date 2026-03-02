@@ -26,17 +26,17 @@ const reviews = [
 ];
 
 const ReviewCard = ({ review }: { review: any }) => (
-  <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 mb-3 shadow-lg">
+  <div className="bg-surface-card/60 backdrop-blur-md border border-deep-brown/10 dark:border-white/10 rounded-xl p-4 mb-3 shadow-lg transition-colors duration-400">
     <div className="flex gap-1 mb-2">
       {[...Array(review.rating)].map((_, i) => (
         <i key={i} className="ri-star-fill text-soft-gold text-[10px]"></i>
       ))}
     </div>
-    <p className="text-white/70 text-[13px] font-body italic mb-3 leading-snug">&quot;{review.text}&quot;</p>
+    <p className="text-deep-brown/80 dark:text-white/70 text-[13px] font-body italic mb-3 leading-snug">&quot;{review.text}&quot;</p>
     <div className="flex items-center gap-3">
       <div className="w-6 h-6 rounded-full bg-soft-gold/20 flex items-center justify-center font-title text-[10px] text-soft-gold font-bold">{review.name.charAt(0)}</div>
       <div>
-        <h4 className="text-white text-[10px] font-bold uppercase tracking-widest leading-none">{review.name}</h4>
+        <h4 className="text-deep-brown dark:text-white text-[10px] font-bold uppercase tracking-widest leading-none">{review.name}</h4>
       </div>
     </div>
   </div>
@@ -67,60 +67,60 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="h-screen w-screen bg-[#070708] flex flex-col lg:flex-row overflow-hidden fixed inset-0">
-      {/* ── Left Side: Login Form (Fixed Height, Viewport Fitting) ── */}
-      <div className="w-full lg:w-[42%] xl:w-[38%] flex items-center justify-center p-6 md:p-10 relative z-10 bg-[#070708] border-r border-white/5 h-full overflow-hidden">
+    <div className="h-screen w-screen flex flex-col lg:flex-row overflow-hidden fixed inset-0 bg-cream transition-colors duration-400">
+      {/* ── Left Side: Login Form (45% Space) ── */}
+      <div className="w-full lg:w-[45%] flex items-center justify-center p-6 md:p-10 relative z-10 bg-cream border-r border-deep-brown/5 h-full overflow-hidden transition-colors duration-400">
         <div className="w-full max-w-[360px] flex flex-col justify-center h-full">
           <div className="mb-8">
-            <h1 className="serif-heading text-3xl font-bold text-white mb-2 leading-tight">Sign in</h1>
-            <p className="text-white/40 text-[13px] font-medium tracking-wide">Enter details to access your account.</p>
+            <h1 className="serif-heading text-3xl font-bold text-deep-brown mb-2 leading-tight">Sign in</h1>
+            <p className="text-deep-brown/40 text-[13px] font-medium tracking-wide">Enter details to access your account.</p>
           </div>
 
-          <button onClick={() => alert("Google login coming soon!")} className="w-full h-[50px] flex items-center justify-center gap-3 px-6 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 text-white font-semibold text-xs mb-6">
+          <button onClick={() => alert("Google login coming soon!")} className="w-full h-[50px] flex items-center justify-center gap-3 px-6 rounded-xl border border-deep-brown/10 bg-surface-card/50 hover:bg-surface-card transition-all duration-300 text-deep-brown font-semibold text-xs mb-6 shadow-sm">
             <GoogleIcon /> Continue with Google
           </button>
 
           <div className="relative mb-6 text-center">
-            <div className="absolute inset-x-0 top-1/2 h-px bg-white/10" />
-            <span className="relative px-3 bg-[#070708] text-[9px] uppercase font-black tracking-[0.3em] text-white/20 whitespace-nowrap">or sign in with email</span>
+            <div className="absolute inset-x-0 top-1/2 h-px bg-deep-brown/10" />
+            <span className="relative px-3 bg-cream text-[9px] uppercase font-black tracking-[0.3em] text-deep-brown/30 whitespace-nowrap transition-colors duration-400">or sign in with email</span>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-1.5">
-              <label className="block text-[9px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1">Email address</label>
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm" placeholder="you@email.com" />
+              <label className="block text-[9px] font-bold text-deep-brown/30 uppercase tracking-[0.2em] pl-1">Email address</label>
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full bg-surface-input/50 border border-deep-brown/10 rounded-xl px-4 py-3.5 text-deep-brown outline-none focus:border-soft-gold/30 focus:bg-surface-input transition-all text-sm shadow-inner" placeholder="you@email.com" />
             </div>
 
             <div className="space-y-1.5">
               <div className="flex items-center justify-between px-1">
-                 <label className="text-[9px] font-bold text-white/30 uppercase tracking-[0.2em]">Password</label>
-                 <button type="button" className="text-[9px] text-soft-gold hover:text-white font-bold uppercase tracking-widest transition-colors">Forgot?</button>
+                 <label className="text-[9px] font-bold text-deep-brown/30 uppercase tracking-[0.2em]">Password</label>
+                 <button type="button" className="text-[9px] text-soft-gold hover:text-accent-red font-bold uppercase tracking-widest transition-colors">Forgot?</button>
               </div>
               <div className="relative">
-                <input type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} required className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm" placeholder="••••••••" />
-                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/20 hover:text-white transition-colors p-2 flex items-center justify-center">
-                   <i className={showPassword ? "ri-eye-off-line text-base" : "ri-eye-line text-base"}></i>
+                <input type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} required className="w-full bg-surface-input/50 border border-deep-brown/10 rounded-xl px-4 py-3.5 text-deep-brown outline-none focus:border-soft-gold/30 focus:bg-surface-input transition-all text-sm shadow-inner" placeholder="••••••••" />
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-deep-brown/20 hover:text-deep-brown transition-colors p-2 flex items-center justify-center">
+                   <i className={showPassword ? "ri-eye-off-line text-base !text-deep-brown/40" : "ri-eye-line text-base !text-deep-brown/40"}></i>
                 </button>
               </div>
             </div>
 
-            {error && <div className="py-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-[11px] text-center font-bold tracking-wide">{error}</div>}
+            {error && <div className="py-3 bg-accent-red/10 border border-accent-red/20 rounded-xl text-accent-red text-[11px] text-center font-bold tracking-wide">{error}</div>}
 
-            <button type="submit" disabled={loading} className="w-full h-[54px] bg-white text-black font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-soft-gold transition-all duration-500 shadow-xl shadow-black/20 active:scale-[0.98] flex items-center justify-center text-[11px] mt-2">
-              {loading ? <i className="ri-loader-4-line animate-spin text-lg"></i> : "Sign in"}
+            <button type="submit" disabled={loading} className="w-full h-[54px] bg-deep-brown text-cream font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-accent-red transition-all duration-500 shadow-xl shadow-deep-brown/20 active:scale-[0.98] flex items-center justify-center text-[11px] mt-2">
+              {loading ? <i className="ri-loader-4-line animate-spin text-lg !text-cream"></i> : "Sign in"}
             </button>
           </form>
 
-          <p className="mt-8 text-center text-white/40 text-[11px] font-medium tracking-wide">
-            Don&apos;t have an account? <Link href="/auth/signup" className="text-white hover:text-soft-gold transition-colors font-bold underline underline-offset-4 decoration-white/20 ml-1 whitespace-nowrap">Create account</Link>
+          <p className="mt-8 text-center text-deep-brown/40 text-[11px] font-medium tracking-wide">
+            Don&apos;t have an account? <Link href="/auth/signup" className="text-deep-brown hover:text-accent-red transition-colors font-bold underline underline-offset-4 decoration-deep-brown/20 ml-1 whitespace-nowrap">Create account</Link>
           </p>
         </div>
       </div>
 
-      {/* ── Right Side: Vertical Review Carousel (Full Height) ── */}
-      <div className="hidden lg:flex flex-1 relative bg-deep-brown overflow-hidden h-full">
+      {/* ── Right Side: Vertical Review Carousel (55% Space) ── */}
+      <div className="hidden lg:flex flex-[55] relative bg-deep-brown overflow-hidden h-full transition-colors duration-400">
         <Image src="/images/login-bg.png" alt="" fill className="object-cover opacity-20" priority />
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-deep-brown/80 to-deep-brown" />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-deep-brown/80 to-deep-brown dark:via-[#1C1614]/80 dark:to-[#1C1614] transition-colors duration-400" />
 
         <div className="relative z-20 flex w-full h-full px-8 items-center justify-center overflow-hidden">
            <div className="w-full max-w-[340px] flex flex-col gap-4 animate-vertical-marquee py-8">
@@ -131,8 +131,8 @@ export default function LoginPage() {
         </div>
 
         {/* Ambient Overlays for Carousel Fade */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-deep-brown to-transparent z-30" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-deep-brown to-transparent z-30" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-deep-brown dark:from-[#1C1614] to-transparent z-30 transition-colors duration-400" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-deep-brown dark:from-[#1C1614] to-transparent z-30 transition-colors duration-400" />
       </div>
 
       <style jsx global>{`
