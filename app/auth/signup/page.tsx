@@ -8,7 +8,7 @@ import { useAuth } from "@/contexts/AuthContext";
 
 /* ── SVG Icon Components ── */
 const GoogleIcon = () => (
-  <svg className="w-5 h-5" viewBox="0 0 24 24">
+  <svg className="w-4 h-4" viewBox="0 0 24 24">
     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
     <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
     <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
@@ -17,46 +17,43 @@ const GoogleIcon = () => (
 );
 
 const UserIcon = () => (
-  <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+  <svg className="w-4 h-4 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
   </svg>
 );
 
 const MailIcon = () => (
-  <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+  <svg className="w-4 h-4 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
   </svg>
 );
 
 const LockIcon = () => (
-  <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+  <svg className="w-4 h-4 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
   </svg>
 );
 
 const reviews = [
-  { name: "Priya S.", location: "Mumbai", text: "After three sessions, something shifted — I sleep better, think clearer, and my anxiety reduced.", rating: 5 },
-  { name: "Amit P.", location: "Ahmedabad", text: "The energy work here was on another level. Practical, grounded, no fluff. Highly recommended.", rating: 5 },
-  { name: "Rohan M.", location: "Delhi", text: "The chakra balancing was intense — I actually felt things move. Still processing it weeks later.", rating: 4 },
-  { name: "Sanjana I.", location: "Chennai", text: "I felt a calm I hadn't experienced in years. My husband noticed the difference before I did.", rating: 5 },
-  { name: "Vikram S.", location: "Jaipur", text: "Complex concepts explained simply. Practical and immediate use for beginners.", rating: 4 },
-  { name: "Meera N.", location: "Kochi", text: "The guided meditation was the most present I've felt in months. Signed up for the full journey.", rating: 5 },
+  { name: "Priya S.", location: "Mumbai", text: "Something shifted — I sleep better, think clearer, and my anxiety reduced.", rating: 5 },
+  { name: "Amit P.", location: "Ahmedabad", text: "Energy work on another level. Practical, grounded, no fluff.", rating: 5 },
+  { name: "Rohan M.", location: "Delhi", text: "Chakra balancing was intense — I actually felt things move.", rating: 4 },
+  { name: "Sanjana I.", location: "Chennai", text: "I felt a calm I hadn't experienced in years. Deeply grateful.", rating: 5 },
+  { name: "Vikram S.", location: "Jaipur", text: "Complex concepts explained simply. Practical use for beginners.", rating: 4 },
+  { name: "Meera N.", location: "Kochi", text: "Guided meditation was the most present I've felt in months.", rating: 5 },
 ];
 
 const ReviewCard = ({ review }: { review: any }) => (
-  <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 mb-4 shadow-xl">
-    <div className="flex gap-1 mb-3">
+  <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 mb-3 shadow-lg">
+    <div className="flex gap-1 mb-2">
       {[...Array(review.rating)].map((_, i) => (
-        <i key={i} className="ri-star-fill text-soft-gold text-xs"></i>
+        <i key={i} className="ri-star-fill text-soft-gold text-[10px]"></i>
       ))}
     </div>
-    <p className="text-white/70 text-sm font-body italic mb-4 leading-relaxed">&quot;{review.text}&quot;</p>
+    <p className="text-white/70 text-[13px] font-body italic mb-3 leading-snug">&quot;{review.text}&quot;</p>
     <div className="flex items-center gap-3">
-      <div className="w-8 h-8 rounded-full bg-soft-gold/20 flex items-center justify-center font-title text-xs text-soft-gold font-bold">{review.name.charAt(0)}</div>
-      <div>
-        <h4 className="text-white text-xs font-bold uppercase tracking-widest">{review.name}</h4>
-        <p className="text-white/30 text-[9px] uppercase tracking-widest leading-none mt-1">{review.location}</p>
-      </div>
+      <div className="w-6 h-6 rounded-full bg-soft-gold/20 flex items-center justify-center font-title text-[10px] text-soft-gold font-bold">{review.name.charAt(0)}</div>
+      <h4 className="text-white text-[10px] font-bold uppercase tracking-widest">{review.name}</h4>
     </div>
   </div>
 );
@@ -92,82 +89,79 @@ export default function SignupPage() {
     }
   };
 
-  const handleSocialSignup = (provider: string) => {
-    alert(`${provider} sign-up coming soon!`);
-  };
-
   return (
-    <div className="min-h-screen bg-[#070708] flex flex-col lg:flex-row overflow-hidden">
-      {/* ── Left Side: Signup Form (Static & Performant) ── */}
-      <div className="w-full lg:w-[45%] xl:w-[40%] flex items-center justify-center p-8 md:p-12 relative z-10 bg-[#070708] border-r border-white/5">
-        <div className="w-full max-w-[420px]">
-          <div className="mb-10">
+    <div className="h-screen w-screen bg-[#070708] flex flex-col lg:flex-row overflow-hidden fixed inset-0">
+      {/* ── Left Side: Signup Form (Viewport Fitting) ── */}
+      <div className="w-full lg:w-[45%] xl:w-[40%] flex items-center justify-center p-6 md:p-10 relative z-10 bg-[#070708] border-r border-white/5 h-full overflow-hidden">
+        <div className="w-full max-w-[420px] flex flex-col justify-center h-full">
+          <div className="mb-8">
             <Link href="/" className="inline-block mb-6 group">
-              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-soft-gold/40 transition-colors duration-500">
-                <span className="text-white font-title text-xl font-bold">A1</span>
+              <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-soft-gold/40 transition-colors duration-500">
+                <span className="text-white font-title text-base font-bold">A1</span>
               </div>
             </Link>
-            <h1 className="serif-heading text-4xl font-bold text-white mb-2">Create account</h1>
-            <p className="text-white/40 text-sm font-medium tracking-wide">Begin your path to inner wisdom.</p>
+            <h1 className="serif-heading text-3xl font-bold text-white mb-2">Create account</h1>
+            <p className="text-white/40 text-[13px] font-medium tracking-wide">Begin your path to inner wisdom.</p>
           </div>
 
-          <button onClick={() => handleSocialSignup("Google")} className="w-full h-[54px] flex items-center justify-center gap-3 px-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 text-white font-semibold text-sm mb-8">
+          <button onClick={() => alert("Google login coming soon!")} className="w-full h-[50px] flex items-center justify-center gap-3 px-6 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 text-white font-semibold text-xs mb-6">
             <GoogleIcon /> Continue with Google
           </button>
 
-          <div className="relative mb-8 text-center">
+          <div className="relative mb-6 text-center">
             <div className="absolute inset-x-0 top-1/2 h-px bg-white/10" />
-            <span className="relative px-4 bg-[#070708] text-[10px] uppercase font-black tracking-[0.3em] text-white/20 whitespace-nowrap">or sign up with email</span>
+            <span className="relative px-3 bg-[#070708] text-[9px] uppercase font-black tracking-[0.3em] text-white/20 whitespace-nowrap">or sign up with email</span>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-1.5">
-                <label className="block text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1">Full Name</label>
+              <div className="space-y-1">
+                <label className="block text-[9px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1 font-body">Full Name</label>
                 <div className="relative group/field">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2"><UserIcon /></div>
-                  <input name="name" type="text" value={formData.name} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm shadow-inner" placeholder="Enter name" />
+                  <input name="name" type="text" value={formData.name} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-xs" placeholder="Full name" />
                 </div>
               </div>
-              <div className="space-y-1.5">
-                <label className="block text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1">Email address</label>
+              <div className="space-y-1">
+                <label className="block text-[9px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1 font-body">Email</label>
                 <div className="relative group/field">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2"><MailIcon /></div>
-                  <input name="email" type="email" value={formData.email} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm shadow-inner" placeholder="you@email.com" />
+                  <input name="email" type="email" value={formData.email} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-xs" placeholder="you@email.com" />
                 </div>
               </div>
             </div>
 
-            <div className="space-y-1.5">
-              <label className="block text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1">Password</label>
-              <div className="relative">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2"><LockIcon /></div>
-                <input name="password" type={showPassword ? "text" : "password"} value={formData.password} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-2xl pl-12 pr-12 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm shadow-inner" placeholder="Min. 6 characters" />
-                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 hover:text-white p-1">
-                  <i className={showPassword ? "ri-eye-off-line" : "ri-eye-line text-lg"}></i>
-                </button>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+               <div className="space-y-1">
+                <label className="block text-[9px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1 font-body">Password</label>
+                <div className="relative">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2"><LockIcon /></div>
+                  <input name="password" type={showPassword ? "text" : "password"} value={formData.password} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-xl pl-10 pr-10 py-3 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-xs" placeholder="••••••••" />
+                  <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/20 hover:text-white p-1">
+                    <i className={showPassword ? "ri-eye-off-line text-sm" : "ri-eye-line text-sm"}></i>
+                  </button>
+                </div>
               </div>
-            </div>
-
-            <div className="space-y-1.5">
-              <label className="block text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1">Confirm Password</label>
-              <div className="relative">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2"><LockIcon /></div>
-                <input name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm shadow-inner" placeholder="Re-enter password" />
+              <div className="space-y-1">
+                <label className="block text-[9px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1 font-body">Confirm</label>
+                <div className="relative">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2"><LockIcon /></div>
+                  <input name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-xs" placeholder="Re-enter" />
+                </div>
               </div>
             </div>
 
             <div className="flex items-start gap-3 py-2 cursor-pointer group/terms" onClick={() => setAgreeTerms(!agreeTerms)}>
-              <div className={`w-5 h-5 rounded border flex-shrink-0 flex items-center justify-center transition-all ${agreeTerms ? "bg-soft-gold border-soft-gold shadow-[0_0_15px_rgba(212,175,55,0.4)]" : "bg-white/5 border-white/10 group-hover/terms:border-white/30"}`}>
-                {agreeTerms && <i className="ri-check-line text-xs text-black font-bold"></i>}
+              <div className={`w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center transition-all ${agreeTerms ? "bg-soft-gold border-soft-gold shadow-[0_0_15px_rgba(212,175,55,0.4)]" : "bg-white/5 border-white/10 group-hover/terms:border-white/30"}`}>
+                {agreeTerms && <i className="ri-check-line text-[10px] text-black font-bold"></i>}
               </div>
-              <p className="text-[11px] text-white/40 leading-relaxed font-medium">I agree to the <Link href="/terms" className="text-white hover:text-soft-gold underline decoration-white/20">Terms</Link> and <Link href="/privacy" className="text-white hover:text-soft-gold underline decoration-white/20">Privacy</Link>.</p>
+              <p className="text-[10px] text-white/40 leading-relaxed font-medium">I agree to the <Link href="/terms" className="text-white hover:text-soft-gold underline decoration-white/20">Terms</Link> and <Link href="/privacy" className="text-white hover:text-soft-gold underline decoration-white/20">Privacy</Link>.</p>
             </div>
 
-            {error && <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-400 text-xs text-center font-bold tracking-wide">{error}</div>}
+            {error && <div className="py-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-[10px] text-center font-bold tracking-wide uppercase">{error}</div>}
 
-            <button type="submit" disabled={loading || !agreeTerms} className="w-full h-[60px] bg-white text-black font-bold uppercase tracking-[0.2em] rounded-2xl hover:bg-soft-gold transition-all duration-500 active:scale-[0.98] shadow-2xl flex items-center justify-center text-xs">
-              {loading ? <i className="ri-loader-4-line animate-spin text-xl"></i> : "Create account"}
+            <button type="submit" disabled={loading || !agreeTerms} className="w-full h-[54px] bg-white text-black font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-soft-gold transition-all duration-500 active:scale-[0.98] shadow-2xl flex items-center justify-center text-[11px] mt-2">
+              {loading ? <i className="ri-loader-4-line animate-spin text-lg"></i> : "Create account"}
             </button>
           </form>
 
@@ -181,9 +175,9 @@ export default function SignupPage() {
       <div className="hidden lg:flex flex-1 relative bg-deep-brown overflow-hidden">
         <Image src="/images/login-bg.png" alt="" fill className="object-cover opacity-20" priority />
         <div className="absolute inset-0 bg-gradient-to-l from-transparent via-deep-brown/80 to-deep-brown" />
-        <div className="relative z-20 flex w-full h-full p-12 items-center justify-center overflow-hidden">
-           <div className="w-full max-w-[440px] flex flex-col gap-6 animate-vertical-marquee py-12">
-              {[...reviews, ...reviews, ...reviews].map((review, i) => (
+        <div className="relative z-20 flex w-full h-full p-8 md:p-12 items-center justify-center overflow-hidden">
+           <div className="w-full max-w-[340px] flex flex-col gap-4 animate-vertical-marquee py-12">
+              {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
                 <ReviewCard key={i} review={review} />
               ))}
            </div>
@@ -193,6 +187,11 @@ export default function SignupPage() {
       </div>
 
       <style jsx global>{`
+        body { 
+          overflow: hidden; 
+          margin: 0;
+          height: 100vh;
+        }
         @keyframes vertical-marquee {
           from { transform: translateY(0); }
           to { transform: translateY(-50%); }
