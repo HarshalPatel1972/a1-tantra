@@ -124,11 +124,6 @@ export default function Navbar() {
   const { isDark, toggleTheme } = useTheme();
   const pathname = usePathname();
 
-  // Hide Navbar on authentication pages for a cleaner immersive experience
-  if (pathname?.startsWith("/auth/")) {
-    return null;
-  }
-
   const searchResults = useMemo(() => {
     if (searchQuery.trim().length > 1) {
       return searchIndex
@@ -167,6 +162,11 @@ export default function Navbar() {
     { label: "RESOURCES", href: "/resources" },
     { label: "TANTRA PATHS", href: "/paths" },
   ];
+
+  // Hide Navbar on authentication pages for a cleaner immersive experience
+  if (pathname?.startsWith("/auth/")) {
+    return null;
+  }
 
   return (
     <nav

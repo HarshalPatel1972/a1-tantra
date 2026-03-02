@@ -144,23 +144,6 @@ export default function LoginPage() {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-deep-brown dark:from-[#1C1614] to-transparent z-30 transition-colors duration-400" />
       </div>
 
-      <style jsx global>{`
-        body { 
-          overflow: hidden; 
-          margin: 0;
-          height: 100vh;
-        }
-        @keyframes vertical-marquee {
-          from { transform: translateY(0); }
-          to { transform: translateY(-50%); }
-        }
-        .animate-vertical-marquee {
-          animation: vertical-marquee 45s linear infinite;
-        }
-        .animate-vertical-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </div>
   );
 }

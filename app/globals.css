@@ -180,3 +180,17 @@ body, .bg-cream, .bg-white, nav {
 .pause-on-hover:hover .animate-marquee {
   animation-play-state: paused;
 }
+
+/* Auth Page Vertical Marquee */
+@keyframes vertical-marquee {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+.animate-vertical-marquee {
+  animation: vertical-marquee 45s linear infinite;
+}
+
+.animate-vertical-marquee:hover {
+  animation-play-state: paused;
+}
