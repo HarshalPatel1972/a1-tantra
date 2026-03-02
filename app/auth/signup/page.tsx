@@ -16,46 +16,16 @@ const GoogleIcon = () => (
   </svg>
 );
 
-const AppleIcon = () => (
-  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-  </svg>
-);
-
-const FacebookIcon = () => (
-  <svg className="w-5 h-5" fill="#1877F2" viewBox="0 0 24 24">
-    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-  </svg>
-);
-
 const EyeIcon = () => (
-  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
     <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
   </svg>
 );
 
 const EyeOffIcon = () => (
-  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
-  </svg>
-);
-
-const UserIcon = () => (
-  <svg className="w-5 h-5 text-deep-brown/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-  </svg>
-);
-
-const MailIcon = () => (
-  <svg className="w-5 h-5 text-deep-brown/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-  </svg>
-);
-
-const LockIcon = () => (
-  <svg className="w-5 h-5 text-deep-brown/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
   </svg>
 );
 
@@ -68,11 +38,11 @@ function getPasswordStrength(password: string): { score: number; label: string; 
   if (/[0-9]/.test(password)) score++;
   if (/[^A-Za-z0-9]/.test(password)) score++;
 
-  if (score <= 1) return { score: 1, label: "Weak", color: "bg-red-400" };
-  if (score <= 2) return { score: 2, label: "Fair", color: "bg-orange-400" };
-  if (score <= 3) return { score: 3, label: "Good", color: "bg-yellow-400" };
-  if (score <= 4) return { score: 4, label: "Strong", color: "bg-green-400" };
-  return { score: 5, label: "Excellent", color: "bg-emerald-500" };
+  if (score <= 1) return { score: 1, label: "Weak Qi", color: "bg-red-400" };
+  if (score <= 2) return { score: 2, label: "Awakening", color: "bg-orange-400" };
+  if (score <= 3) return { score: 3, label: "Aligned", color: "bg-yellow-400" };
+  if (score <= 4) return { score: 4, label: "Resonant", color: "bg-green-400" };
+  return { score: 5, label: "Fully Transcendent", color: "bg-emerald-500" };
 }
 
 export default function SignupPage() {
@@ -102,17 +72,17 @@ export default function SignupPage() {
     setError("");
 
     if (!agreeTerms) {
-      setError("Please agree to the Terms of Service and Privacy Policy.");
+      setError("Please accept the terms of our sacred community.");
       return;
     }
 
     if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match.");
+      setError("Key phrases do not resonate with each other.");
       return;
     }
 
     if (formData.password.length < 6) {
-      setError("Password must be at least 6 characters.");
+      setError("Your key phrase must be at least 6 tokens long.");
       return;
     }
 
@@ -123,339 +93,207 @@ export default function SignupPage() {
       if (success) {
         router.push("/");
       } else {
-        setError("An account with this email already exists.");
+        setError("This identity already exists in our lineage.");
       }
     } catch (err) {
-      setError("Something went wrong. Please try again later.");
+      setError("The connection to the sanctuary was interrupted.");
       console.error(err);
     } finally {
       setLoading(false);
     }
   };
 
-  const handleSocialSignup = (provider: string) => {
-    alert(`${provider} sign-up coming soon! For now, please use email & password.`);
-  };
-
   return (
-    <div className="min-h-[calc(100vh-6rem)] bg-cream flex">
-      {/* ── Left Panel: Branding (Desktop only) ── */}
-      <div className="hidden lg:flex lg:w-[45%] xl:w-[40%] relative overflow-hidden bg-deep-brown items-center justify-center">
-        {/* Background Image */}
+    <div className="relative min-h-screen w-full flex items-center justify-center p-6 overflow-hidden bg-[#0a0a0c]">
+      {/* ── Background: Atmospheric Experience ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
         <Image
-          src="/images/two-people-meditate.jpg"
+          src="/images/login-bg.png"
           alt=""
           fill
-          className="object-cover opacity-30"
+          className="object-cover opacity-60 scale-110" // Slightly different scale for signup
           priority
         />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-deep-brown/90 via-deep-brown/70 to-soft-gold/20" />
-
-        {/* Content */}
-        <div className="relative z-10 px-12 xl:px-16 max-w-lg">
-          <div className="mb-10">
-            <div className="w-14 h-14 rounded-full bg-cream/10 backdrop-blur-sm border border-cream/20 flex items-center justify-center mb-6">
-              <span className="text-cream font-title text-xl font-bold">A1</span>
-            </div>
-            <h1 className="font-title text-4xl xl:text-5xl font-bold text-cream leading-tight mb-4">
-              Begin your path to inner wisdom.
-            </h1>
-            <p className="text-cream/60 text-lg font-body leading-relaxed">
-              Join thousands who have discovered authentic tantric practices for healing, growth, and transformation.
-            </p>
-          </div>
-
-          {/* Benefits list */}
-          <div className="mt-12 space-y-4">
-            {[
-              { icon: "ri-shield-check-line", text: "Private & secure sessions" },
-              { icon: "ri-group-line", text: "Expert-guided spiritual practices" },
-              { icon: "ri-heart-pulse-line", text: "Personalized healing journeys" },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-cream/10 backdrop-blur-sm flex items-center justify-center">
-                  <i className={`${item.icon} text-soft-gold text-lg`}></i>
-                </div>
-                <p className="text-cream/70 font-body text-sm">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
+        <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/40 to-black/80" />
       </div>
 
-      {/* ── Right Panel: Signup Form ── */}
-      <div className="flex-1 flex items-center justify-center px-6 sm:px-8 py-8 lg:py-0">
-        <div className="w-full max-w-[420px]">
+      {/* ── Initiation Container ── */}
+      <div className="relative z-10 w-full max-w-[500px]">
+        {/* Branding Sphere */}
+        <div className="mx-auto w-16 h-16 mb-8 relative animate-bounce-slow">
+          <div className="absolute inset-0 bg-soft-gold/30 rounded-full blur-2xl animate-pulse" />
+          <Link href="/" className="relative flex items-center justify-center w-full h-full bg-white/5 backdrop-blur-md rounded-full border border-white/20 hover:border-white/40 transition-all duration-500 shadow-2xl group overflow-hidden">
+            <span className="text-cream font-title text-xl font-bold tracking-tighter group-hover:scale-110 transition-transform duration-500">A1</span>
+          </Link>
+        </div>
 
-          {/* Mobile header */}
-          <div className="lg:hidden text-center mb-6">
-            <div className="w-12 h-12 rounded-full bg-deep-brown/10 flex items-center justify-center mx-auto mb-4">
-              <span className="text-deep-brown font-title text-lg font-bold">A1</span>
-            </div>
-          </div>
-
+        {/* The Initiation Glass Card */}
+        <div className="relative bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[40px] p-8 md:p-10 shadow-[0_35px_100px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
           {/* Header */}
-          <div className="mb-6">
-            <h2 className="font-title text-3xl font-bold text-deep-brown mb-2">
-              Create account
-            </h2>
-            <p className="text-deep-brown/60 font-body">
-              Already have an account?{" "}
-              <Link href="/auth/login" className="text-accent-red hover:text-accent-red/80 font-semibold transition-colors">
-                Sign in
-              </Link>
+          <div className="text-center mb-10">
+            <h1 className="serif-heading text-4xl font-bold text-cream mb-2 tracking-tight">
+              Initiation
+            </h1>
+            <p className="text-cream/50 font-nav text-[10px] uppercase tracking-[0.4em] font-semibold">
+              Begin your sacred transit
             </p>
           </div>
 
-          {/* Social Signup Buttons */}
-          <div className="space-y-3 mb-5">
-            <button
-              onClick={() => handleSocialSignup("Google")}
-              className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-deep-brown/15 bg-white hover:bg-deep-brown/5 transition-all duration-200 text-deep-brown font-medium text-sm"
-            >
-              <GoogleIcon />
-              <span>Continue with Google</span>
-            </button>
-
-            <div className="grid grid-cols-2 gap-3">
-              <button
-                onClick={() => handleSocialSignup("Apple")}
-                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-deep-brown/15 bg-white hover:bg-deep-brown/5 transition-all duration-200 text-deep-brown font-medium text-sm"
-              >
-                <AppleIcon />
-                <span>Apple</span>
-              </button>
-              <button
-                onClick={() => handleSocialSignup("Facebook")}
-                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-deep-brown/15 bg-white hover:bg-deep-brown/5 transition-all duration-200 text-deep-brown font-medium text-sm"
-              >
-                <FacebookIcon />
-                <span>Facebook</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="relative my-5">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-deep-brown/10"></div>
-            </div>
-            <div className="relative flex justify-center">
-              <span className="px-4 bg-cream text-deep-brown/40 text-xs uppercase tracking-widest font-semibold">
-                or sign up with email
-              </span>
-            </div>
-          </div>
-
-          {/* Error Message */}
-          {error && (
-            <div className="mb-4 flex items-center gap-3 p-4 bg-accent-red/10 border border-accent-red/20 rounded-xl text-accent-red text-sm">
-              <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-              </svg>
-              <span>{error}</span>
-            </div>
-          )}
-
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-3.5">
-            {/* Full Name */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-deep-brown mb-1.5">
-                Full name
-              </label>
-              <div className="relative">
-                <div className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <UserIcon />
-                </div>
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-1">
+                <label className="block text-[10px] font-bold text-cream/40 uppercase tracking-widest pl-1">Name</label>
                 <input
-                  id="name"
                   name="name"
                   type="text"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  autoComplete="name"
-                  className="w-full pl-11 pr-4 py-3 rounded-xl border border-deep-brown/15 bg-white focus:outline-none focus:ring-2 focus:ring-accent-red/30 focus:border-accent-red/50 text-deep-brown placeholder:text-deep-brown/30 transition-all duration-200"
-                  placeholder="Your full name"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-cream placeholder:text-white/10 outline-none focus:bg-white/10 focus:border-soft-gold/30 transition-all text-sm"
+                  placeholder="Full Name"
                 />
               </div>
-            </div>
-
-            {/* Email */}
-            <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-deep-brown mb-1.5">
-                Email
-              </label>
-              <div className="relative">
-                <div className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <MailIcon />
-                </div>
+              <div className="space-y-1">
+                <label className="block text-[10px] font-bold text-cream/40 uppercase tracking-widest pl-1">Email</label>
                 <input
-                  id="email"
                   name="email"
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  autoComplete="email"
-                  className="w-full pl-11 pr-4 py-3 rounded-xl border border-deep-brown/15 bg-white focus:outline-none focus:ring-2 focus:ring-accent-red/30 focus:border-accent-red/50 text-deep-brown placeholder:text-deep-brown/30 transition-all duration-200"
-                  placeholder="you@example.com"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-cream placeholder:text-white/10 outline-none focus:bg-white/10 focus:border-soft-gold/30 transition-all text-sm"
+                  placeholder="you@sanctuary.com"
                 />
               </div>
             </div>
 
-            {/* Password */}
-            <div>
-              <label htmlFor="password" className="block text-sm font-semibold text-deep-brown mb-1.5">
-                Password
-              </label>
+            <div className="space-y-1">
+              <label className="block text-[10px] font-bold text-cream/40 uppercase tracking-widest pl-1">Primary Key Phrase</label>
               <div className="relative">
-                <div className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <LockIcon />
-                </div>
                 <input
-                  id="password"
                   name="password"
                   type={showPassword ? "text" : "password"}
                   value={formData.password}
                   onChange={handleChange}
                   required
-                  autoComplete="new-password"
-                  className="w-full pl-11 pr-12 py-3 rounded-xl border border-deep-brown/15 bg-white focus:outline-none focus:ring-2 focus:ring-accent-red/30 focus:border-accent-red/50 text-deep-brown placeholder:text-deep-brown/30 transition-all duration-200"
-                  placeholder="Min. 6 characters"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-cream placeholder:text-white/10 outline-none focus:bg-white/10 focus:border-soft-gold/30 transition-all text-sm"
+                  placeholder="Create your key phrase"
                 />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-deep-brown/40 hover:text-deep-brown/70 transition-colors"
-                  tabIndex={-1}
-                >
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/20 hover:text-white">
                   {showPassword ? <EyeOffIcon /> : <EyeIcon />}
                 </button>
               </div>
-              {/* Password strength meter */}
               {passwordStrength && (
-                <div className="mt-2">
-                  <div className="flex gap-1">
-                    {[1, 2, 3, 4, 5].map((level) => (
-                      <div
-                        key={level}
-                        className={`h-1 flex-1 rounded-full transition-all duration-300 ${
-                          level <= passwordStrength.score ? passwordStrength.color : "bg-deep-brown/10"
-                        }`}
-                      />
+                <div className="px-1 pt-2">
+                  <div className="flex gap-1 mb-1">
+                    {[1, 2, 3, 4, 5].map((lvl) => (
+                      <div key={lvl} className={`h-0.5 flex-1 rounded-full ${lvl <= passwordStrength.score ? passwordStrength.color : "bg-white/5"}`} />
                     ))}
                   </div>
-                  <p className="text-xs text-deep-brown/50 mt-1">{passwordStrength.label}</p>
+                  <p className="text-[10px] text-cream/30 font-bold uppercase tracking-tighter italic">{passwordStrength.label}</p>
                 </div>
               )}
             </div>
 
-            {/* Confirm Password */}
-            <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-semibold text-deep-brown mb-1.5">
-                Confirm password
-              </label>
+            <div className="space-y-1">
+              <label className="block text-[10px] font-bold text-cream/40 uppercase tracking-widest pl-1">Confirm Key Phrase</label>
               <div className="relative">
-                <div className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none">
-                  <LockIcon />
-                </div>
                 <input
-                  id="confirmPassword"
                   name="confirmPassword"
                   type={showConfirm ? "text" : "password"}
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   required
-                  autoComplete="new-password"
-                  className={`w-full pl-11 pr-12 py-3 rounded-xl border bg-white focus:outline-none focus:ring-2 focus:ring-accent-red/30 focus:border-accent-red/50 text-deep-brown placeholder:text-deep-brown/30 transition-all duration-200 ${
-                    formData.confirmPassword && formData.password !== formData.confirmPassword
-                      ? "border-red-400"
-                      : formData.confirmPassword && formData.password === formData.confirmPassword
-                      ? "border-green-400"
-                      : "border-deep-brown/15"
-                  }`}
-                  placeholder="Re-enter your password"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-cream placeholder:text-white/10 outline-none focus:bg-white/10 focus:border-soft-gold/30 transition-all text-sm"
+                  placeholder="Repeat your inner key"
                 />
-                <button
-                  type="button"
-                  onClick={() => setShowConfirm(!showConfirm)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-deep-brown/40 hover:text-deep-brown/70 transition-colors"
-                  tabIndex={-1}
-                >
+                <button type="button" onClick={() => setShowConfirm(!showConfirm)} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 hover:text-white">
                   {showConfirm ? <EyeOffIcon /> : <EyeIcon />}
                 </button>
               </div>
-              {formData.confirmPassword && formData.password !== formData.confirmPassword && (
-                <p className="text-xs text-red-500 mt-1">Passwords don&apos;t match</p>
-              )}
             </div>
 
-            {/* Terms Checkbox */}
-            <div className="flex items-start gap-2.5 pt-1">
-              <button
-                type="button"
-                role="checkbox"
-                aria-checked={agreeTerms}
-                onClick={() => setAgreeTerms(!agreeTerms)}
-                className={`w-[18px] h-[18px] min-w-[18px] min-h-[18px] mt-0.5 rounded border-2 flex items-center justify-center transition-all duration-200 ${
-                  agreeTerms
-                    ? "bg-accent-red border-accent-red"
-                    : "border-deep-brown/25 hover:border-deep-brown/40"
-                }`}
-              >
-                {agreeTerms && (
-                  <svg className="w-3 h-3 text-cream" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                )}
-              </button>
-              <span className="text-sm text-deep-brown/60 leading-snug select-none cursor-pointer" onClick={() => setAgreeTerms(!agreeTerms)}>
-                I agree to the{" "}
-                <Link href="/terms" className="text-accent-red hover:text-accent-red/80 font-medium">
-                  Terms of Service
-                </Link>
-                {" "}and{" "}
-                <Link href="/privacy" className="text-accent-red hover:text-accent-red/80 font-medium">
-                  Privacy Policy
-                </Link>
-              </span>
+            <div className="flex items-start gap-3 py-2 cursor-pointer group/terms" onClick={() => setAgreeTerms(!agreeTerms)}>
+              <div className={`w-5 h-5 rounded-lg border flex-shrink-0 flex items-center justify-center transition-all ${agreeTerms ? "bg-accent-red border-accent-red" : "bg-white/5 border-white/10 group-hover/terms:border-white/30"}`}>
+                {agreeTerms && <i className="ri-check-line text-xs text-cream font-bold"></i>}
+              </div>
+              <p className="text-[10px] text-cream/40 leading-relaxed font-bold uppercase tracking-wider">
+                I accept the <Link href="/terms" className="text-soft-gold underline decoration-soft-gold/30">sacred codes</Link> and <Link href="/privacy" className="text-soft-gold underline decoration-soft-gold/30">whispered privacy</Link> policies of this sanctuary.
+              </p>
             </div>
 
-            {/* Submit Button */}
+            {error && (
+              <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-300 text-[10px] text-center uppercase font-bold tracking-widest animate-shake">
+                {error}
+              </div>
+            )}
+
             <button
               type="submit"
               disabled={loading || !agreeTerms}
-              className="w-full py-3.5 bg-accent-red text-cream font-semibold rounded-xl relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-lg hover:shadow-accent-red/20 active:scale-[0.98] mt-1"
+              className="w-full py-4 bg-cream text-deep-brown font-nav font-bold uppercase tracking-[0.2em] rounded-2xl relative overflow-hidden group disabled:opacity-30 transition-all active:scale-[0.98] shadow-2xl"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-accent-red to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              <span className="relative z-10 flex items-center justify-center gap-2">
-                {loading ? (
-                  <>
-                    <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                    </svg>
-                    Creating account...
-                  </>
-                ) : (
-                  "Create account"
-                )}
+              <span className="absolute inset-0 bg-soft-gold translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]" />
+              <span className="relative z-10 text-xs">
+                {loading ? "Igniting Spirit..." : "Begin Initiation"}
               </span>
             </button>
           </form>
 
-          {/* Footer */}
-          <p className="mt-6 text-center text-xs text-deep-brown/40 leading-relaxed">
-            We&apos;ll never share your data. Read our{" "}
-            <Link href="/privacy" className="text-deep-brown/60 hover:text-accent-red underline decoration-deep-brown/20 hover:decoration-accent-red transition-colors">
-              Privacy Policy
+          {/* Social paths */}
+          <div className="mt-8">
+            <div className="relative mb-6 text-center">
+              <div className="absolute inset-x-0 top-1/2 h-px bg-white/5" />
+              <span className="relative px-4 bg-[#0a0a0c]/40 backdrop-blur-xl text-[9px] uppercase font-bold tracking-[0.4em] text-cream/20">Fast Transit</span>
+            </div>
+            <button
+              onClick={() => handleSocialSignup("Google")}
+              className="w-full flex items-center justify-center gap-3 px-4 py-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-cream font-bold text-[10px] uppercase tracking-widest"
+            >
+              <GoogleIcon /> Continue with Google
+            </button>
+          </div>
+        </div>
+
+        {/* Outer Links */}
+        <div className="mt-8 text-center animate-fade-in-up">
+          <p className="text-cream/30 font-nav text-[10px] uppercase font-bold tracking-[0.2em]">
+            Already part of the lineage?{" "}
+            <Link href="/auth/login" className="text-soft-gold hover:text-cream transition-colors duration-300 underline underline-offset-4 decoration-soft-gold/30">
+              Return to Entrance
             </Link>
           </p>
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes bounce-slow {
+          0%, 100% { transform: translateY(-10px); }
+          50% { transform: translateY(0); }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 4s ease-in-out infinite;
+        }
+        @keyframes shake {
+          0%, 100% { transform: translateX(0); }
+          25% { transform: translateX(-5px); }
+          75% { transform: translateX(5px); }
+        }
+        .animate-shake {
+          animation: shake 0.4s ease-in-out;
+        }
+        @keyframes fade-in-up {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+          animation: fade-in-up 1s ease-out forwards;
+        }
+        .bg-radial-gradient {
+          background-image: radial-gradient(circle at center, var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to));
+        }
+      `}</style>
     </div>
   );
 }
