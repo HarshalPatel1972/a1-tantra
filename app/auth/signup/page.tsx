@@ -172,7 +172,7 @@ export default function SignupPage() {
         <div className="absolute inset-0 bg-gradient-to-l from-transparent via-deep-brown/80 to-deep-brown" />
         <div className="relative z-20 flex w-full h-full p-8 md:p-12 items-center justify-center overflow-hidden">
            <div className="w-full max-w-[340px] flex flex-col gap-4 animate-vertical-marquee py-12">
-              {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
+              {[...reviews, ...reviews].map((review, i) => (
                 <ReviewCard key={i} review={review} />
               ))}
            </div>
@@ -192,7 +192,7 @@ export default function SignupPage() {
           to { transform: translateY(-50%); }
         }
         .animate-vertical-marquee {
-          animation: vertical-marquee 40s linear infinite;
+          animation: vertical-marquee 45s linear infinite;
         }
         .animate-vertical-marquee:hover {
           animation-play-state: paused;

@@ -124,7 +124,7 @@ export default function LoginPage() {
 
         <div className="relative z-20 flex w-full h-full px-8 items-center justify-center overflow-hidden">
            <div className="w-full max-w-[340px] flex flex-col gap-4 animate-vertical-marquee py-8">
-              {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
+              {[...reviews, ...reviews].map((review, i) => (
                 <ReviewCard key={i} review={review} />
               ))}
            </div>
@@ -146,7 +146,7 @@ export default function LoginPage() {
           to { transform: translateY(-50%); }
         }
         .animate-vertical-marquee {
-          animation: vertical-marquee 30s linear infinite;
+          animation: vertical-marquee 45s linear infinite;
         }
         .animate-vertical-marquee:hover {
           animation-play-state: paused;
