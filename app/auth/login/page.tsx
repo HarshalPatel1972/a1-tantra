@@ -68,8 +68,8 @@ export default function LoginPage() {
 
   return (
     <div className="h-screen w-screen flex flex-col lg:flex-row overflow-hidden fixed inset-0 bg-cream transition-colors duration-400">
-      {/* ── Left Side: Vertical Review Carousel (55% Space) ── */}
-      <div className="hidden lg:flex flex-[55] relative bg-deep-brown overflow-hidden h-full transition-colors duration-400">
+      {/* ── Left Side: Vertical Review Carousel (45% Space) ── */}
+      <div className="hidden lg:flex lg:w-[45%] relative bg-deep-brown overflow-hidden h-full transition-colors duration-400">
         <Image src="/images/login-bg.png" alt="" fill className="object-cover opacity-20" priority />
         <div className="absolute inset-0 bg-gradient-to-r from-deep-brown dark:from-[#1C1614] via-deep-brown/80 dark:via-[#1C1614]/80 to-transparent transition-colors duration-400" />
 
@@ -86,8 +86,8 @@ export default function LoginPage() {
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-deep-brown dark:from-[#1C1614] to-transparent z-30 transition-colors duration-400" />
       </div>
 
-      {/* ── Right Side: Login Form (45% Space) ── */}
-      <div className="w-full lg:w-[45%] flex items-center justify-center p-6 md:p-10 relative z-10 bg-cream border-l border-deep-brown/5 h-full overflow-hidden transition-colors duration-400">
+      {/* ── Right Side: Login Form (55% Space) ── */}
+      <div className="w-full lg:w-[55%] flex items-center justify-center p-6 md:p-10 relative z-10 bg-cream border-l border-deep-brown/5 h-full overflow-hidden transition-colors duration-400">
         
         {/* Official Brand Logo Link */}
         <Link href="/" className="absolute top-8 left-8 flex items-center gap-3 group transition-transform duration-500 hover:scale-105 active:scale-95">
