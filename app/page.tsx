@@ -7,7 +7,6 @@ import TantraTypesSection from "@/components/TantraTypesSection";
 import BuildJourneyCTA from "@/components/BuildJourneyCTA";
 import OurTantraServices from "@/components/OurTantraServices";
 import UserReviews from "@/components/UserReviews";
-import InstagramInvite from "@/components/InstagramInvite";
 import Newsletter from "@/components/Newsletter";
 import InstagramGrid from "@/components/InstagramGrid";
 import OriginStory from "@/components/OriginStory";
@@ -107,7 +106,6 @@ export default function Home() {
       <UserReviews />
       <BuildJourneyCTA />
       <OriginStory />
-      <InstagramInvite />
       <Newsletter />
       <InstagramGrid />
       <Footer />
