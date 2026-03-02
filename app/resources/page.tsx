@@ -32,7 +32,7 @@ export default function ResourcesPage() {
             {resources.map((resource, idx) => (
               <Link
                 key={idx}
-                href="#"
+                href="/contact?service=resources"
                 className="p-8 border-2 border-deep-brown/20 hover:border-accent-red bg-white rounded-lg transition group"
               >
                 <div className="text-4xl mb-4">{resource.icon}</div>

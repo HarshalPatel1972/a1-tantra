@@ -10,6 +10,7 @@ import UserReviews from "@/components/UserReviews";
 import InstagramInvite from "@/components/InstagramInvite";
 import Newsletter from "@/components/Newsletter";
 import InstagramGrid from "@/components/InstagramGrid";
+import OriginStory from "@/components/OriginStory";
 
 export const metadata: Metadata = {
   title: "A1 Tantra | Sacred Tantric Healing & Ancient Wisdom",
@@ -105,7 +106,7 @@ export default function Home() {
       <OurTantraServices />
       <UserReviews />
       <BuildJourneyCTA />
-      {/* <OriginStory /> */}
+      <OriginStory />
       <InstagramInvite />
       <Newsletter />
       <InstagramGrid />
