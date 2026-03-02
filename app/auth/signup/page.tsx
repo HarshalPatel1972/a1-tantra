@@ -103,6 +103,10 @@ export default function SignupPage() {
     }
   };
 
+  const handleSocialSignup = (provider: string) => {
+    alert(`${provider} sign-up coming soon! For now, please use email & password.`);
+  };
+
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center p-6 overflow-hidden bg-[#0a0a0c]">
       {/* ── Background: Atmospheric Experience ── */}
