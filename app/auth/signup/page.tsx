@@ -94,12 +94,21 @@ export default function SignupPage() {
       {/* ── Left Side: Signup Form (45% Space) ── */}
       <div className="w-full lg:w-[45%] flex items-center justify-center p-6 md:p-10 relative z-10 bg-cream border-r border-deep-brown/5 h-full overflow-hidden transition-colors duration-400">
         
-        {/* Minimalist Home Link */}
-        <Link href="/" className="absolute top-8 left-8 flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-full border border-deep-brown/10 flex items-center justify-center group-hover:border-soft-gold/40 transition-colors duration-500">
-            <span className="text-deep-brown font-title text-xs font-bold transition-colors duration-500">A1</span>
-          </div>
-          <span className="text-[10px] uppercase font-bold tracking-widest text-deep-brown/40 group-hover:text-deep-brown transition-colors">Home</span>
+        {/* Official Brand Logo Link */}
+        <Link href="/" className="absolute top-8 left-8 flex items-center gap-3 group transition-transform duration-500 hover:scale-105 active:scale-95">
+          <Image 
+            src="/images/logo-main.png" 
+            alt="A1 Tantra Logo" 
+            width={40} 
+            height={40} 
+            className="w-8 h-8 md:w-10 md:h-10 object-contain transition-all duration-500 group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.3)]"
+          />
+          <span 
+            className="text-brand-blue text-xl md:text-2xl font-bold tracking-tight select-none"
+            style={{ fontFamily: '"Vegawanty", sans-serif', letterSpacing: "0.02em" }}
+          >
+            A1 TANTRA
+          </span>
         </Link>
 
         <div className="w-full max-w-[420px] flex flex-col justify-center h-full">
