@@ -16,16 +16,31 @@ const GoogleIcon = () => (
   </svg>
 );
 
-const MailIcon = () => (
-  <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-  </svg>
-);
+const reviews = [
+  { name: "Priya S.", location: "Mumbai", text: "After three sessions, something shifted — I sleep better, think clearer, and my anxiety reduced.", rating: 5 },
+  { name: "Amit P.", location: "Ahmedabad", text: "The energy work here was on another level. Practical, grounded, no fluff. Highly recommended.", rating: 5 },
+  { name: "Rohan M.", location: "Delhi", text: "The chakra balancing was intense — I actually felt things move. Still processing it weeks later.", rating: 4 },
+  { name: "Sanjana I.", location: "Chennai", text: "I felt a calm I hadn't experienced in years. My husband noticed the difference before I did.", rating: 5 },
+  { name: "Vikram S.", location: "Jaipur", text: "Complex concepts explained simply. Practical and immediate use for beginners.", rating: 4 },
+  { name: "Meera N.", location: "Kochi", text: "The guided meditation was the most present I've felt in months. Signed up for the full journey.", rating: 5 },
+];
 
-const LockIcon = () => (
-  <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-  </svg>
+const ReviewCard = ({ review }: { review: any }) => (
+  <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 mb-4 shadow-xl">
+    <div className="flex gap-1 mb-3">
+      {[...Array(review.rating)].map((_, i) => (
+        <i key={i} className="ri-star-fill text-soft-gold text-xs"></i>
+      ))}
+    </div>
+    <p className="text-white/70 text-sm font-body italic mb-4 leading-relaxed">&quot;{review.text}&quot;</p>
+    <div className="flex items-center gap-3">
+      <div className="w-8 h-8 rounded-full bg-soft-gold/20 flex items-center justify-center font-title text-xs text-soft-gold font-bold">{review.name.charAt(0)}</div>
+      <div>
+        <h4 className="text-white text-xs font-bold uppercase tracking-widest">{review.name}</h4>
+        <p className="text-white/30 text-[9px] uppercase tracking-widest leading-none mt-1">{review.location}</p>
+      </div>
+    </div>
+  </div>
 );
 
 export default function LoginPage() {
@@ -34,7 +49,6 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
   const router = useRouter();
   const { login } = useAuth();
 
@@ -42,170 +56,102 @@ export default function LoginPage() {
     e.preventDefault();
     setError("");
     setLoading(true);
-
     try {
       const success = await login(email, password);
-      if (success) {
-        router.push("/");
-      } else {
-        setError("Invalid email or password. Please try again.");
-      }
+      if (success) router.push("/");
+      else setError("Invalid email or password.");
     } catch (err) {
-      setError("Something went wrong. Please try again later.");
-      console.error(err);
+      setError("Something went wrong.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center p-4 md:p-8 bg-[#0a0a0c] selection:bg-soft-gold/30">
-      {/* ── High-End Background ── */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <Image
-          src="/images/login-bg.png"
-          alt=""
-          fill
-          className="object-cover opacity-60 transition-transform duration-[10s] animate-subtle-zoom"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/40 to-black/80" />
-      </div>
-
-      {/* ── Login Container ── */}
-      <div className="relative z-10 w-full max-w-[480px] perspective-1000">
-        <div className="bg-white/5 backdrop-blur-[40px] border border-white/10 rounded-[32px] p-8 md:p-12 shadow-[0_40px_100px_rgba(0,0,0,0.6)] relative overflow-hidden group">
-          
-          {/* Subtle Ambient Light Edge */}
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-          
-          {/* Header */}
-          <div className="text-center mb-10">
-            <Link href="/" className="inline-block mb-8">
-              <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shadow-2xl hover:border-soft-gold/30 transition-all duration-500 group/logo">
-                <span className="text-white font-title text-2xl font-bold tracking-tight">A1</span>
+    <div className="min-h-screen bg-[#070708] flex flex-col lg:flex-row overflow-hidden">
+      {/* ── Left Side: Login Form (Static & Performant) ── */}
+      <div className="w-full lg:w-[45%] xl:w-[40%] flex items-center justify-center p-8 md:p-12 relative z-10 bg-[#070708] border-r border-white/5">
+        <div className="w-full max-w-[400px]">
+          <div className="mb-12">
+            <Link href="/" className="inline-block mb-8 group">
+              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-soft-gold/40 transition-colors duration-500">
+                <span className="text-white font-title text-xl font-bold">A1</span>
               </div>
             </Link>
             <h1 className="serif-heading text-4xl font-bold text-white mb-3">Sign in</h1>
-            <p className="text-white/40 text-sm font-medium tracking-wide">
-              Welcome back to your sacred space.
-            </p>
+            <p className="text-white/40 text-sm font-medium tracking-wide">Enter your details to access your account.</p>
           </div>
 
-          {/* Social Sign In */}
-          <button
-            onClick={() => alert("Google login coming soon!")}
-            className="w-full h-[56px] flex items-center justify-center gap-3 px-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-white font-semibold text-sm mb-8"
-          >
-            <GoogleIcon />
-            Continue with Google
+          <button onClick={() => alert("Google login coming soon!")} className="w-full h-[56px] flex items-center justify-center gap-3 px-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 text-white font-semibold text-sm mb-8">
+            <GoogleIcon /> Continue with Google
           </button>
 
           <div className="relative mb-8 text-center">
-            <div className="absolute inset-x-0 top-1/2 h-px bg-white/5" />
-            <span className="relative px-4 bg-transparent text-[10px] uppercase font-black tracking-[0.3em] text-white/20">or sign in with email</span>
+            <div className="absolute inset-x-0 top-1/2 h-px bg-white/10" />
+            <span className="relative px-4 bg-[#070708] text-[10px] uppercase font-black tracking-[0.3em] text-white/20 whitespace-nowrap">or sign in with email</span>
           </div>
 
-          {/* Error Message */}
-          {error && (
-            <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-300 text-xs text-center">
-              {error}
-            </div>
-          )}
-
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-1.5">
-              <label htmlFor="email" className="block text-xs font-bold text-white/30 uppercase tracking-widest pl-1">Email address</label>
-              <div className="relative group/field">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2">
-                   <MailIcon />
-                </div>
-                <input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-4 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm"
-                  placeholder="Enter your email"
-                />
-              </div>
+            <div className="space-y-2">
+              <label className="block text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1">Email address</label>
+              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm" placeholder="you@email.com" />
             </div>
 
-            <div className="space-y-1.5">
+            <div className="space-y-2">
               <div className="flex items-center justify-between px-1">
-                <label htmlFor="password" className="text-xs font-bold text-white/30 uppercase tracking-widest">Password</label>
-                <button type="button" className="text-[10px] text-soft-gold hover:text-white font-bold uppercase tracking-wider transition-colors">Forgot?</button>
+                 <label className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em]">Password</label>
+                 <button type="button" className="text-[10px] text-soft-gold hover:text-white font-bold uppercase tracking-widest transition-colors">Forgot?</button>
               </div>
               <div className="relative">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2">
-                   <LockIcon />
-                </div>
-                <input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-12 py-4 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm"
-                  placeholder="••••••••"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 hover:text-white transition-colors p-1"
-                >
-                  <i className={showPassword ? "ri-eye-off-line" : "ri-eye-line text-lg"}></i>
+                <input type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} required className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm" placeholder="••••••••" />
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 hover:text-white transition-colors p-2">
+                   <i className={showPassword ? "ri-eye-off-line" : "ri-eye-line text-lg"}></i>
                 </button>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 pt-1">
-               <button
-                type="button"
-                onClick={() => setRememberMe(!rememberMe)}
-                className={`w-5 h-5 rounded border flex items-center justify-center transition-all duration-300 ${rememberMe ? "bg-soft-gold border-soft-gold shadow-[0_0_10px_rgba(212,175,55,0.4)]" : "bg-white/5 border-white/10"}`}
-              >
-                {rememberMe && <i className="ri-check-line text-xs text-black font-bold"></i>}
-              </button>
-              <span className="text-xs text-white/40 font-medium select-none cursor-pointer" onClick={() => setRememberMe(!rememberMe)}>Remember me</span>
-            </div>
+            {error && <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-400 text-xs text-center font-bold tracking-wide">{error}</div>}
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full h-[60px] bg-white text-black font-bold uppercase tracking-[0.2em] rounded-2xl hover:bg-soft-gold transition-all duration-500 shadow-xl shadow-black/20 active:scale-[0.98] focus:ring-2 focus:ring-soft-gold/50 flex items-center justify-center"
-            >
+            <button type="submit" disabled={loading} className="w-full h-[60px] bg-white text-black font-bold uppercase tracking-[0.2em] rounded-2xl hover:bg-soft-gold transition-all duration-500 shadow-xl shadow-black/20 active:scale-[0.98] flex items-center justify-center text-xs">
               {loading ? <i className="ri-loader-4-line animate-spin text-xl"></i> : "Sign in"}
             </button>
           </form>
 
-          {/* Signup Link */}
-          <div className="mt-10 text-center">
-            <p className="text-white/40 text-xs font-medium tracking-wide">
-              Don&apos;t have an account?{" "}
-              <Link href="/auth/signup" className="text-white hover:text-soft-gold transition-colors font-bold underline underline-offset-4 decoration-white/20">
-                Create one free
-              </Link>
-            </p>
-          </div>
-        </div>
-        
-        {/* Secondary Links */}
-        <div className="mt-8 flex justify-center gap-8 px-4 opacity-40 hover:opacity-100 transition-opacity">
-          <Link href="/privacy" className="text-[10px] font-bold text-white uppercase tracking-[0.2em]">Privacy</Link>
-          <Link href="/terms" className="text-[10px] font-bold text-white uppercase tracking-[0.2em]">Terms</Link>
+          <p className="mt-10 text-center text-white/40 text-[11px] font-medium tracking-wide">
+            Don&apos;t have an account? <Link href="/auth/signup" className="text-white hover:text-soft-gold transition-colors font-bold underline underline-offset-4 decoration-white/20 ml-1">Create free account</Link>
+          </p>
         </div>
       </div>
 
+      {/* ── Right Side: Vertical Review Carousel (Dynamic) ── */}
+      <div className="hidden lg:flex flex-1 relative bg-deep-brown overflow-hidden">
+        {/* Background Image Overlay */}
+        <Image src="/images/login-bg.png" alt="" fill className="object-cover opacity-20" priority />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-deep-brown/80 to-deep-brown" />
+
+        <div className="relative z-20 flex w-full h-full p-12 items-center justify-center overflow-hidden">
+           <div className="w-full max-w-[440px] flex flex-col gap-6 animate-vertical-marquee py-12">
+              {[...reviews, ...reviews, ...reviews].map((review, i) => (
+                <ReviewCard key={i} review={review} />
+              ))}
+           </div>
+        </div>
+
+        {/* Ambient Overlays for Carousel Fade */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-deep-brown to-transparent z-30" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-deep-brown to-transparent z-30" />
+      </div>
+
       <style jsx global>{`
-        @keyframes subtle-zoom {
-          from { transform: scale(1); }
-          to { transform: scale(1.1); }
+        @keyframes vertical-marquee {
+          from { transform: translateY(0); }
+          to { transform: translateY(-50%); }
         }
-        .animate-subtle-zoom {
-          animation: subtle-zoom 20s ease-out infinite alternate;
+        .animate-vertical-marquee {
+          animation: vertical-marquee 40s linear infinite;
+        }
+        .animate-vertical-marquee:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </div>

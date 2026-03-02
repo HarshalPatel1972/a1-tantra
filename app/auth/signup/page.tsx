@@ -34,31 +34,36 @@ const LockIcon = () => (
   </svg>
 );
 
-/* ── Password Strength Indicator ── */
-function getPasswordStrength(password: string): { score: number; label: string; color: string } {
-  let score = 0;
-  if (password.length >= 6) score++;
-  if (password.length >= 10) score++;
-  if (/[A-Z]/.test(password)) score++;
-  if (/[0-9]/.test(password)) score++;
-  if (/[^A-Za-z0-9]/.test(password)) score++;
+const reviews = [
+  { name: "Priya S.", location: "Mumbai", text: "After three sessions, something shifted — I sleep better, think clearer, and my anxiety reduced.", rating: 5 },
+  { name: "Amit P.", location: "Ahmedabad", text: "The energy work here was on another level. Practical, grounded, no fluff. Highly recommended.", rating: 5 },
+  { name: "Rohan M.", location: "Delhi", text: "The chakra balancing was intense — I actually felt things move. Still processing it weeks later.", rating: 4 },
+  { name: "Sanjana I.", location: "Chennai", text: "I felt a calm I hadn't experienced in years. My husband noticed the difference before I did.", rating: 5 },
+  { name: "Vikram S.", location: "Jaipur", text: "Complex concepts explained simply. Practical and immediate use for beginners.", rating: 4 },
+  { name: "Meera N.", location: "Kochi", text: "The guided meditation was the most present I've felt in months. Signed up for the full journey.", rating: 5 },
+];
 
-  if (score <= 1) return { score: 1, label: "Weak", color: "bg-red-400" };
-  if (score <= 2) return { score: 2, label: "Fair", color: "bg-orange-400" };
-  if (score <= 3) return { score: 3, label: "Good", color: "bg-yellow-400" };
-  if (score <= 4) return { score: 4, label: "Strong", color: "bg-green-400" };
-  return { score: 5, label: "Excellent", color: "bg-emerald-500" };
-}
+const ReviewCard = ({ review }: { review: any }) => (
+  <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 mb-4 shadow-xl">
+    <div className="flex gap-1 mb-3">
+      {[...Array(review.rating)].map((_, i) => (
+        <i key={i} className="ri-star-fill text-soft-gold text-xs"></i>
+      ))}
+    </div>
+    <p className="text-white/70 text-sm font-body italic mb-4 leading-relaxed">&quot;{review.text}&quot;</p>
+    <div className="flex items-center gap-3">
+      <div className="w-8 h-8 rounded-full bg-soft-gold/20 flex items-center justify-center font-title text-xs text-soft-gold font-bold">{review.name.charAt(0)}</div>
+      <div>
+        <h4 className="text-white text-xs font-bold uppercase tracking-widest">{review.name}</h4>
+        <p className="text-white/30 text-[9px] uppercase tracking-widest leading-none mt-1">{review.location}</p>
+      </div>
+    </div>
+  </div>
+);
 
 export default function SignupPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", password: "", confirmPassword: "" });
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -70,218 +75,133 @@ export default function SignupPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const passwordStrength = formData.password ? getPasswordStrength(formData.password) : null;
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-
-    if (!agreeTerms) {
-      setError("Please agree to the Terms of Service and Privacy Policy.");
-      return;
-    }
-
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match.");
-      return;
-    }
-
-    if (formData.password.length < 6) {
-      setError("Password must be at least 6 characters.");
-      return;
-    }
-
+    if (!agreeTerms) return setError("Please agree to terms.");
+    if (formData.password !== formData.confirmPassword) return setError("Passwords do not match.");
     setLoading(true);
-
     try {
       const success = await signup(formData.name, formData.email, formData.password);
-      if (success) {
-        router.push("/");
-      } else {
-        setError("An account with this email already exists.");
-      }
+      if (success) router.push("/");
+      else setError("Account already exists.");
     } catch (err) {
-      setError("Something went wrong. Please try again later.");
-      console.error(err);
+      setError("Something went wrong.");
     } finally {
       setLoading(false);
     }
   };
 
   const handleSocialSignup = (provider: string) => {
-    alert(`${provider} sign-up coming soon! For now, please use email & password.`);
+    alert(`${provider} sign-up coming soon!`);
   };
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center p-4 md:p-8 bg-[#0a0a0c] selection:bg-soft-gold/30">
-      {/* ── Background ── */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <Image
-          src="/images/login-bg.png"
-          alt=""
-          fill
-          className="object-cover opacity-60 transition-transform duration-[10s] animate-subtle-zoom"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/40 to-black/80" />
-      </div>
-
-      {/* ── Signup Container ── */}
-      <div className="relative z-10 w-full max-w-[540px]">
-        <div className="bg-white/5 backdrop-blur-[40px] border border-white/10 rounded-[32px] p-8 md:p-12 shadow-[0_40px_100px_rgba(0,0,0,0.6)] relative overflow-hidden group">
-          
-          {/* Header */}
-          <div className="text-center mb-8">
-            <Link href="/" className="inline-block mb-6">
-              <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shadow-2xl hover:border-soft-gold/30 transition-all duration-500">
-                <span className="text-white font-title text-xl font-bold tracking-tight">A1</span>
+    <div className="min-h-screen bg-[#070708] flex flex-col lg:flex-row overflow-hidden">
+      {/* ── Left Side: Signup Form (Static & Performant) ── */}
+      <div className="w-full lg:w-[45%] xl:w-[40%] flex items-center justify-center p-8 md:p-12 relative z-10 bg-[#070708] border-r border-white/5">
+        <div className="w-full max-w-[420px]">
+          <div className="mb-10">
+            <Link href="/" className="inline-block mb-6 group">
+              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-soft-gold/40 transition-colors duration-500">
+                <span className="text-white font-title text-xl font-bold">A1</span>
               </div>
             </Link>
-            <h1 className="serif-heading text-4xl font-bold text-white mb-2 tracking-tight">Create account</h1>
-            <p className="text-white/40 text-sm font-medium tracking-wide">
-              Begin your path to inner wisdom.
-            </p>
+            <h1 className="serif-heading text-4xl font-bold text-white mb-2">Create account</h1>
+            <p className="text-white/40 text-sm font-medium tracking-wide">Begin your path to inner wisdom.</p>
           </div>
 
-          {/* Social paths */}
-          <button
-            onClick={() => handleSocialSignup("Google")}
-            className="w-full h-[54px] flex items-center justify-center gap-3 px-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-white font-semibold text-sm mb-8"
-          >
-            <GoogleIcon />
-            Continue with Google
+          <button onClick={() => handleSocialSignup("Google")} className="w-full h-[54px] flex items-center justify-center gap-3 px-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 text-white font-semibold text-sm mb-8">
+            <GoogleIcon /> Continue with Google
           </button>
 
           <div className="relative mb-8 text-center">
-            <div className="absolute inset-x-0 top-1/2 h-px bg-white/5" />
-            <span className="relative px-4 bg-transparent text-[10px] uppercase font-black tracking-[0.3em] text-white/20">or sign up with email</span>
+            <div className="absolute inset-x-0 top-1/2 h-px bg-white/10" />
+            <span className="relative px-4 bg-[#070708] text-[10px] uppercase font-black tracking-[0.3em] text-white/20 whitespace-nowrap">or sign up with email</span>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-white/30 uppercase tracking-widest pl-1">Full Name</label>
+                <label className="block text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1">Full Name</label>
                 <div className="relative group/field">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2"><UserIcon /></div>
-                  <input
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm shadow-inner"
-                    placeholder="Enter name"
-                  />
+                  <input name="name" type="text" value={formData.name} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm shadow-inner" placeholder="Enter name" />
                 </div>
               </div>
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-white/30 uppercase tracking-widest pl-1">Email address</label>
+                <label className="block text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1">Email address</label>
                 <div className="relative group/field">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2"><MailIcon /></div>
-                  <input
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm shadow-inner"
-                    placeholder="you@email.com"
-                  />
+                  <input name="email" type="email" value={formData.email} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm shadow-inner" placeholder="you@email.com" />
                 </div>
               </div>
             </div>
 
             <div className="space-y-1.5">
-              <label className="block text-xs font-bold text-white/30 uppercase tracking-widest pl-1">Password</label>
+              <label className="block text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1">Password</label>
               <div className="relative">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2"><LockIcon /></div>
-                <input
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-12 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm shadow-inner"
-                  placeholder="Min. 6 characters"
-                />
+                <input name="password" type={showPassword ? "text" : "password"} value={formData.password} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-2xl pl-12 pr-12 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm shadow-inner" placeholder="Min. 6 characters" />
                 <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 hover:text-white p-1">
                   <i className={showPassword ? "ri-eye-off-line" : "ri-eye-line text-lg"}></i>
                 </button>
               </div>
-              {passwordStrength && (
-                <div className="px-1 pt-2">
-                  <div className="flex gap-1 mb-1">
-                    {[1, 2, 3, 4, 5].map((lvl) => (
-                      <div key={lvl} className={`h-1 flex-1 rounded-full ${lvl <= passwordStrength.score ? passwordStrength.color : "bg-white/5"}`} />
-                    ))}
-                  </div>
-                  <p className="text-[10px] text-white/20 font-bold uppercase tracking-widest leading-none">{passwordStrength.label} Strength</p>
-                </div>
-              )}
             </div>
 
             <div className="space-y-1.5">
-              <label className="block text-xs font-bold text-white/30 uppercase tracking-widest pl-1">Confirm Password</label>
+              <label className="block text-[10px] font-bold text-white/30 uppercase tracking-[0.2em] pl-1">Confirm Password</label>
               <div className="relative">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2"><LockIcon /></div>
-                <input
-                  name="confirmPassword"
-                  type={showConfirm ? "text" : "password"}
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-12 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm shadow-inner"
-                  placeholder="Re-enter password"
-                />
-                <button type="button" onClick={() => setShowConfirm(!showConfirm)} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 hover:text-white p-1">
-                   <i className={showConfirm ? "ri-eye-off-line" : "ri-eye-line text-lg"}></i>
-                </button>
+                <input name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleChange} required className="w-full bg-white/[0.03] border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/5 transition-all text-sm shadow-inner" placeholder="Re-enter password" />
               </div>
             </div>
 
-            <div className="flex items-start gap-4 py-2 cursor-pointer group/terms" onClick={() => setAgreeTerms(!agreeTerms)}>
+            <div className="flex items-start gap-3 py-2 cursor-pointer group/terms" onClick={() => setAgreeTerms(!agreeTerms)}>
               <div className={`w-5 h-5 rounded border flex-shrink-0 flex items-center justify-center transition-all ${agreeTerms ? "bg-soft-gold border-soft-gold shadow-[0_0_15px_rgba(212,175,55,0.4)]" : "bg-white/5 border-white/10 group-hover/terms:border-white/30"}`}>
                 {agreeTerms && <i className="ri-check-line text-xs text-black font-bold"></i>}
               </div>
-              <p className="text-xs text-white/40 leading-relaxed font-medium">
-                I agree to the <Link href="/terms" className="text-white hover:text-soft-gold underline decoration-white/20">Terms of Service</Link> and <Link href="/privacy" className="text-white hover:text-soft-gold underline decoration-white/20">Privacy Policy</Link>.
-              </p>
+              <p className="text-[11px] text-white/40 leading-relaxed font-medium">I agree to the <Link href="/terms" className="text-white hover:text-soft-gold underline decoration-white/20">Terms</Link> and <Link href="/privacy" className="text-white hover:text-soft-gold underline decoration-white/20">Privacy</Link>.</p>
             </div>
 
-            {error && (
-              <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-300 text-xs text-center font-bold tracking-wide">
-                {error}
-              </div>
-            )}
+            {error && <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-400 text-xs text-center font-bold tracking-wide">{error}</div>}
 
-            <button
-              type="submit"
-              disabled={loading || !agreeTerms}
-              className="w-full h-[60px] bg-white text-black font-bold uppercase tracking-[0.2em] rounded-2xl hover:bg-soft-gold transition-all duration-500 active:scale-[0.98] shadow-2xl flex items-center justify-center"
-            >
+            <button type="submit" disabled={loading || !agreeTerms} className="w-full h-[60px] bg-white text-black font-bold uppercase tracking-[0.2em] rounded-2xl hover:bg-soft-gold transition-all duration-500 active:scale-[0.98] shadow-2xl flex items-center justify-center text-xs">
               {loading ? <i className="ri-loader-4-line animate-spin text-xl"></i> : "Create account"}
             </button>
           </form>
 
-          {/* Login Link */}
-          <div className="mt-8 text-center">
-            <p className="text-white/40 text-xs font-medium tracking-wide">
-              Already part of the lineage?{" "}
-              <Link href="/auth/login" className="text-white hover:text-soft-gold transition-colors font-bold underline underline-offset-4 decoration-white/20">
-                Sign in
-              </Link>
-            </p>
-          </div>
+          <p className="mt-8 text-center text-white/40 text-[11px] font-medium tracking-wide">
+            Already have an account? <Link href="/auth/login" className="text-white hover:text-soft-gold transition-colors font-bold underline underline-offset-4 decoration-white/20 ml-1">Sign in</Link>
+          </p>
         </div>
       </div>
 
+      {/* ── Right Side: Vertical Review Carousel (Dynamic) ── */}
+      <div className="hidden lg:flex flex-1 relative bg-deep-brown overflow-hidden">
+        <Image src="/images/login-bg.png" alt="" fill className="object-cover opacity-20" priority />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-deep-brown/80 to-deep-brown" />
+        <div className="relative z-20 flex w-full h-full p-12 items-center justify-center overflow-hidden">
+           <div className="w-full max-w-[440px] flex flex-col gap-6 animate-vertical-marquee py-12">
+              {[...reviews, ...reviews, ...reviews].map((review, i) => (
+                <ReviewCard key={i} review={review} />
+              ))}
+           </div>
+        </div>
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-deep-brown to-transparent z-30" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-deep-brown to-transparent z-30" />
+      </div>
+
       <style jsx global>{`
-        @keyframes subtle-zoom {
-          from { transform: scale(1); }
-          to { transform: scale(1.1); }
+        @keyframes vertical-marquee {
+          from { transform: translateY(0); }
+          to { transform: translateY(-50%); }
         }
-        .animate-subtle-zoom {
-          animation: subtle-zoom 20s ease-out infinite alternate;
+        .animate-vertical-marquee {
+          animation: vertical-marquee 40s linear infinite;
+        }
+        .animate-vertical-marquee:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </div>
