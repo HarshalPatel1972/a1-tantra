@@ -82,9 +82,9 @@ export default function Hero() {
                   The Best Tantra Practices for Beginners
                 </p>
 
-                <button className="flex items-center font-body text-white font-semibold hover:text-cream transition drop-shadow-md">
+                <Link href="/about" className="flex items-center font-body text-white font-semibold hover:text-cream transition drop-shadow-md">
                   Explore →
-                </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -428,13 +428,16 @@ export default function TantraTypesSection() {
                         {tantraTypes[selectedTantra].price}
                       </span>
                     </div>
-                    <Link
-                      href="#tantra-paths"
-                      onClick={() => setSelectedTantra(null)}
+                    <button
+                      onClick={() => {
+                        setSelectedTantra(null);
+                        const element = document.getElementById("tantra-paths");
+                        if (element) element.scrollIntoView({ behavior: "smooth" });
+                      }}
                       className="mt-4 sm:mt-0 px-8 py-4 bg-accent-red text-white font-black rounded-xl hover:bg-accent-red/90 transition-all hover:scale-105 shadow-lg uppercase tracking-widest text-sm"
                     >
                       Book Session
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>

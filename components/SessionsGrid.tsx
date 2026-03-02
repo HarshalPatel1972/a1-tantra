@@ -44,7 +44,7 @@ export default function SessionsGrid() {
           {sessions.map((session) => (
             <Link
               key={session.id}
-              href={`/sessions/${session.id}`}
+              href="/sessions"
               className="group block"
             >
               <div className="relative h-80 rounded-lg overflow-hidden mb-4 shadow-lg hover:shadow-xl transition-all duration-300">
