@@ -44,7 +44,7 @@ const reviews = [
 ];
 
 const ReviewCard = ({ review }: { review: any }) => (
-  <div className="bg-surface-card/60 backdrop-blur-md border border-deep-brown/10 dark:border-white/10 rounded-xl p-4 mb-3 shadow-lg transition-colors duration-400">
+  <div className="bg-surface-card/60 backdrop-blur-md border border-deep-brown/10 dark:border-white/10 rounded-xl p-4 shadow-lg transition-colors duration-400">
     <div className="flex gap-1 mb-2">
       {[...Array(review.rating)].map((_, i) => (
         <i key={i} className="ri-star-fill text-soft-gold text-[10px]"></i>
@@ -91,8 +91,23 @@ export default function SignupPage() {
 
   return (
     <div className="h-screen w-screen flex flex-col lg:flex-row overflow-hidden fixed inset-0 bg-cream transition-colors duration-400">
-      {/* ── Left Side: Signup Form (45% Space) ── */}
-      <div className="w-full lg:w-[45%] flex items-center justify-center p-6 md:p-10 relative z-10 bg-cream border-r border-deep-brown/5 h-full overflow-hidden transition-colors duration-400">
+      {/* ── Left Side: Vertical Review Carousel (55% Space) ── */}
+      <div className="hidden lg:flex flex-[55] relative bg-deep-brown overflow-hidden h-full transition-colors duration-400">
+        <Image src="/images/login-bg.png" alt="" fill className="object-cover opacity-20" priority />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep-brown dark:from-[#1C1614] via-deep-brown/80 dark:via-[#1C1614]/80 to-transparent transition-colors duration-400" />
+        <div className="relative z-20 flex w-full h-full p-8 md:p-12 items-center justify-center overflow-hidden">
+           <div className="w-full max-w-[340px] flex flex-col gap-4 animate-vertical-marquee py-12">
+              {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
+                <ReviewCard key={i} review={review} />
+              ))}
+           </div>
+        </div>
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-deep-brown dark:from-[#1C1614] to-transparent z-30 transition-colors duration-400" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-deep-brown dark:from-[#1C1614] to-transparent z-30 transition-colors duration-400" />
+      </div>
+
+      {/* ── Right Side: Signup Form (45% Space) ── */}
+      <div className="w-full lg:w-[45%] flex items-center justify-center p-6 md:p-10 relative z-10 bg-cream border-l border-deep-brown/5 h-full overflow-hidden transition-colors duration-400">
         
         {/* Official Brand Logo Link */}
         <Link href="/" className="absolute top-8 left-8 flex items-center gap-3 group transition-transform duration-500 hover:scale-105 active:scale-95">
@@ -132,14 +147,14 @@ export default function SignupPage() {
                 <label className="block text-[9px] font-bold text-deep-brown/30 uppercase tracking-[0.2em] pl-1 font-body">Full Name</label>
                 <div className="relative group/field">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2"><UserIcon /></div>
-                  <input name="name" type="text" value={formData.name} onChange={handleChange} required className="w-full bg-surface-input/50 border border-deep-brown/10 rounded-xl pl-10 pr-4 py-3 text-deep-brown outline-none focus:border-soft-gold/30 focus:bg-surface-input transition-all text-xs shadow-inner" placeholder="Full name" />
+                  <input name="name" type="text" value={formData.name} onChange={handleChange} required className="w-full bg-surface-input/50 border border-deep-brown/10 rounded-xl pl-10 pr-4 py-3 text-white outline-none focus:border-soft-gold/30 focus:bg-surface-input transition-all text-xs shadow-inner" placeholder="Full name" />
                 </div>
               </div>
               <div className="space-y-1">
                 <label className="block text-[9px] font-bold text-deep-brown/30 uppercase tracking-[0.2em] pl-1 font-body">Email</label>
                 <div className="relative group/field">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2"><MailIcon /></div>
-                  <input name="email" type="email" value={formData.email} onChange={handleChange} required className="w-full bg-surface-input/50 border border-deep-brown/10 rounded-xl pl-10 pr-4 py-3 text-deep-brown outline-none focus:border-soft-gold/30 focus:bg-surface-input transition-all text-xs shadow-inner" placeholder="you@email.com" />
+                  <input name="email" type="email" value={formData.email} onChange={handleChange} required className="w-full bg-surface-input/50 border border-deep-brown/10 rounded-xl pl-10 pr-4 py-3 text-white outline-none focus:border-soft-gold/30 focus:bg-surface-input transition-all text-xs shadow-inner" placeholder="you@email.com" />
                 </div>
               </div>
             </div>
@@ -149,7 +164,7 @@ export default function SignupPage() {
                 <label className="block text-[9px] font-bold text-deep-brown/30 uppercase tracking-[0.2em] pl-1 font-body">Password</label>
                 <div className="relative">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2"><LockIcon /></div>
-                  <input name="password" type={showPassword ? "text" : "password"} value={formData.password} onChange={handleChange} required className="w-full bg-surface-input/50 border border-deep-brown/10 rounded-xl pl-10 pr-10 py-3 text-deep-brown outline-none focus:border-soft-gold/30 focus:bg-surface-input transition-all text-xs shadow-inner" placeholder="••••••••" />
+                  <input name="password" type={showPassword ? "text" : "password"} value={formData.password} onChange={handleChange} required className="w-full bg-surface-input/50 border border-deep-brown/10 rounded-xl pl-10 pr-10 py-3 text-white outline-none focus:border-soft-gold/30 focus:bg-surface-input transition-all text-xs shadow-inner" placeholder="••••••••" />
                   <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-deep-brown/20 hover:text-deep-brown transition-colors p-1">
                     <i className={showPassword ? "ri-eye-off-line text-sm !text-deep-brown/40" : "ri-eye-line text-sm !text-deep-brown/40"}></i>
                   </button>
@@ -159,7 +174,7 @@ export default function SignupPage() {
                 <label className="block text-[9px] font-bold text-deep-brown/30 uppercase tracking-[0.2em] pl-1 font-body">Confirm</label>
                 <div className="relative">
                   <div className="absolute left-4 top-1/2 -translate-y-1/2"><LockIcon /></div>
-                  <input name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleChange} required className="w-full bg-surface-input/50 border border-deep-brown/10 rounded-xl px-4 py-3 text-deep-brown outline-none focus:border-soft-gold/30 focus:bg-surface-input transition-all text-xs shadow-inner" placeholder="Re-enter" />
+                  <input name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleChange} required className="w-full bg-surface-input/50 border border-deep-brown/10 rounded-xl px-4 py-3 text-white outline-none focus:border-soft-gold/30 focus:bg-surface-input transition-all text-xs shadow-inner" placeholder="Re-enter" />
                 </div>
               </div>
             </div>
@@ -183,22 +198,6 @@ export default function SignupPage() {
           </p>
         </div>
       </div>
-
-      {/* ── Right Side: Vertical Review Carousel (55% Space) ── */}
-      <div className="hidden lg:flex flex-[55] relative bg-deep-brown overflow-hidden h-full transition-colors duration-400">
-        <Image src="/images/login-bg.png" alt="" fill className="object-cover opacity-20" priority />
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-deep-brown/80 to-deep-brown dark:via-[#1C1614]/80 dark:to-[#1C1614] transition-colors duration-400" />
-        <div className="relative z-20 flex w-full h-full p-8 md:p-12 items-center justify-center overflow-hidden">
-           <div className="w-full max-w-[340px] flex flex-col gap-4 animate-vertical-marquee py-12">
-              {[...reviews, ...reviews].map((review, i) => (
-                <ReviewCard key={i} review={review} />
-              ))}
-           </div>
-        </div>
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-deep-brown dark:from-[#1C1614] to-transparent z-30 transition-colors duration-400" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-deep-brown dark:from-[#1C1614] to-transparent z-30 transition-colors duration-400" />
-      </div>
-
     </div>
   );
 }
