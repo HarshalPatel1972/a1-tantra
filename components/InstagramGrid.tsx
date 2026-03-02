@@ -1,65 +1,67 @@
 "use client";
 
 export default function InstagramGrid() {
-  // const posts = [
-  //   { id: 1, emoji: "", alt: "Sacred Om symbol" },
-  //   { id: 2, emoji: "", alt: "Meditation candles" },
-  //   { id: 3, emoji: "", alt: "Mala beads" },
-  //   { id: 4, emoji: "", alt: "Spiritual energy" },
-  //   { id: 5, emoji: "", alt: "Lotus flower" },
-  //   { id: 6, emoji: "", alt: "Meditation pose" },
-  //   { id: 7, emoji: "", alt: "Heart energy" },
-  //   { id: 8, emoji: "", alt: "Moon energy" },
-  // ];
+  const posts = [
+    { id: 1, image: "/images/instagram/post1.png", alt: "Sacred Tantric Altar" },
+    { id: 2, image: "/images/instagram/post2.png", alt: "Meditation in Temple" },
+    { id: 3, image: "/images/instagram/post3.png", alt: "Sri Yantra Geometry" },
+    { id: 4, image: "/images/instagram/post4.png", alt: "Sacred Mudra Gesture" },
+  ];
 
   return (
-    <section className="py-2 md:py-3 bg-cream border-t border-deep-brown/20">
+    <section className="py-16 bg-cream border-t border-deep-brown/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header - Instagram Section Commented Out */}
-        {/* <div className="text-center mb-16">
+        {/* Header */}
+        <div className="text-center mb-12">
           <a
-            href="https://instagram.com/a1tantraofficial"
+            href="https://instagram.com/a1ta.ntra"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block"
+            className="inline-block group"
           >
-            <h2 className="serif-heading text-3xl font-bold text-deep-brown hover:text-accent-red transition">
-              @A1TantraOfficial
+            <h2 className="serif-heading text-4xl font-bold text-deep-brown group-hover:text-accent-red transition-colors duration-300">
+              @a1ta.ntra
             </h2>
+            <div className="h-0.5 w-0 group-hover:w-full bg-accent-red transition-all duration-300 mx-auto mt-1" />
           </a>
-          <p className="text-deep-brown/70 mt-2">
-            Follow for daily wisdom & sacred practices
+          <p className="text-deep-brown/60 mt-4 font-body text-lg italic">
+            Reflections and teachings on the sacred path
           </p>
-        </div> */}
+        </div>
 
-        {/* Instagram Grid - Commented Out */}
-        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* Instagram Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {posts.map((post) => (
             <a
               key={post.id}
-              href="https://instagram.com/a1tantraofficial"
+              href="https://instagram.com/a1ta.ntra"
               target="_blank"
               rel="noopener noreferrer"
-              className="aspect-square bg-gradient-to-br from-accent-red/20 to-soft-gold/20 rounded-lg flex items-center justify-center text-5xl hover:scale-105 transition duration-300 group"
+              className="relative aspect-square overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group"
             >
-              <span className="group-hover:text-6xl transition duration-300">
-                {post.emoji}
-              </span>
+              <img
+                src={post.image}
+                alt={post.alt}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <i className="ri-instagram-line text-cream text-4xl transform scale-50 group-hover:scale-100 transition-transform duration-300"></i>
+              </div>
             </a>
           ))}
-        </div> */}
+        </div>
 
-        {/* CTA - Commented Out */}
-        {/* <div className="text-center mt-12">
+        {/* CTA */}
+        <div className="text-center mt-12">
           <a
-            href="https://instagram.com/a1tantraofficial"
+            href="https://instagram.com/a1ta.ntra"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition"
+            className="inline-flex items-center gap-3 px-10 py-4 bg-accent-red text-cream font-nav font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-deep-brown transition-all duration-500 shadow-xl text-xs"
           >
-            FOLLOW ON INSTAGRAM
+            Visit Profile <i className="ri-arrow-right-line"></i>
           </a>
-        </div> */}
+        </div>
       </div>
     </section>
   );
