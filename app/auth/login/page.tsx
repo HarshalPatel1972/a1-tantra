@@ -16,16 +16,15 @@ const GoogleIcon = () => (
   </svg>
 );
 
-const EyeIcon = () => (
-  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+const MailIcon = () => (
+  <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
   </svg>
 );
 
-const EyeOffIcon = () => (
-  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+const LockIcon = () => (
+  <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
   </svg>
 );
 
@@ -59,208 +58,154 @@ export default function LoginPage() {
     }
   };
 
-  const handleSocialLogin = (provider: string) => {
-    alert(`${provider} login coming soon! For now, please use email & password.`);
-  };
-
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center p-6 overflow-hidden bg-[#0a0a0c]">
-      {/* ── Background: Atmospheric Experience ── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+    <div className="relative min-h-screen w-full flex items-center justify-center p-4 md:p-8 bg-[#0a0a0c] selection:bg-soft-gold/30">
+      {/* ── High-End Background ── */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <Image
           src="/images/login-bg.png"
           alt=""
           fill
-          className="object-cover opacity-60 scale-105"
+          className="object-cover opacity-60 transition-transform duration-[10s] animate-subtle-zoom"
           priority
         />
-        {/* Subtle glowing ambient layer */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/40 to-black/80" />
-        
-        {/* Floating dust/particle effect via CSS */}
-        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/dust.png')] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/40 to-black/80" />
       </div>
 
-      {/* ── Main Entrance Container ── */}
-      <div className="relative z-10 w-full max-w-[460px]">
-        {/* Floating Branding Sphere */}
-        <div className="mx-auto w-20 h-20 mb-8 relative translate-y-[-10px] animate-bounce-slow">
-          <div className="absolute inset-0 bg-soft-gold/30 rounded-full blur-2xl animate-pulse" />
-          <Link href="/" className="relative flex items-center justify-center w-full h-full bg-white/5 backdrop-blur-md rounded-full border border-white/20 hover:border-white/40 transition-all duration-500 shadow-2xl group overflow-hidden">
-            <span className="text-cream font-title text-2xl font-bold tracking-tighter group-hover:scale-110 transition-transform duration-500">A1</span>
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          </Link>
-        </div>
-
-        {/* The Sacred Glass Card */}
-        <div className="relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] p-8 md:p-12 shadow-[0_35px_100px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
-          {/* Edge reflection animation */}
-          <div className="absolute -top-[500px] -left-[100px] w-40 h-[1000px] bg-white/5 rotate-45 pointer-events-none translate-x-[-100%] group-hover:translate-x-[600px] transition-transform duration-[2000ms] ease-in-out" />
-
+      {/* ── Login Container ── */}
+      <div className="relative z-10 w-full max-w-[480px] perspective-1000">
+        <div className="bg-white/5 backdrop-blur-[40px] border border-white/10 rounded-[32px] p-8 md:p-12 shadow-[0_40px_100px_rgba(0,0,0,0.6)] relative overflow-hidden group">
+          
+          {/* Subtle Ambient Light Edge */}
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          
           {/* Header */}
           <div className="text-center mb-10">
-            <h1 className="serif-heading text-4xl md:text-5xl font-bold text-cream mb-3 tracking-tight">
-              Entrance
-            </h1>
-            <p className="text-cream/50 font-nav text-xs uppercase tracking-[0.3em] font-semibold">
-              To Your Sacred Sanctuary
+            <Link href="/" className="inline-block mb-8">
+              <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shadow-2xl hover:border-soft-gold/30 transition-all duration-500 group/logo">
+                <span className="text-white font-title text-2xl font-bold tracking-tight">A1</span>
+              </div>
+            </Link>
+            <h1 className="serif-heading text-4xl font-bold text-white mb-3">Sign in</h1>
+            <p className="text-white/40 text-sm font-medium tracking-wide">
+              Welcome back to your sacred space.
             </p>
           </div>
 
+          {/* Social Sign In */}
+          <button
+            onClick={() => alert("Google login coming soon!")}
+            className="w-full h-[56px] flex items-center justify-center gap-3 px-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-white font-semibold text-sm mb-8"
+          >
+            <GoogleIcon />
+            Continue with Google
+          </button>
+
+          <div className="relative mb-8 text-center">
+            <div className="absolute inset-x-0 top-1/2 h-px bg-white/5" />
+            <span className="relative px-4 bg-transparent text-[10px] uppercase font-black tracking-[0.3em] text-white/20">or sign in with email</span>
+          </div>
+
+          {/* Error Message */}
+          {error && (
+            <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-300 text-xs text-center">
+              {error}
+            </div>
+          )}
+
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2">
-              <label htmlFor="email" className="block text-xs font-bold text-cream/40 uppercase tracking-widest pl-1">
-                Email Identity
-              </label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-cream placeholder:text-white/20 placeholder:font-light outline-none focus:bg-white/10 focus:border-soft-gold/30 transition-all duration-300 font-body text-sm shadow-inner"
-                placeholder="you@sanctuary.com"
-              />
+            <div className="space-y-1.5">
+              <label htmlFor="email" className="block text-xs font-bold text-white/30 uppercase tracking-widest pl-1">Email address</label>
+              <div className="relative group/field">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2">
+                   <MailIcon />
+                </div>
+                <input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-4 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm"
+                  placeholder="Enter your email"
+                />
+              </div>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex items-center justify-between pl-1">
-                <label htmlFor="password" className="text-xs font-bold text-cream/40 uppercase tracking-widest">
-                  Key Phrase
-                </label>
-                <button
-                  type="button"
-                  className="text-[10px] text-soft-gold/60 hover:text-soft-gold font-bold uppercase tracking-wider transition-colors"
-                  onClick={() => alert("Spirit recovery requested...")}
-                >
-                  Forgot Key?
-                </button>
+            <div className="space-y-1.5">
+              <div className="flex items-center justify-between px-1">
+                <label htmlFor="password" className="text-xs font-bold text-white/30 uppercase tracking-widest">Password</label>
+                <button type="button" className="text-[10px] text-soft-gold hover:text-white font-bold uppercase tracking-wider transition-colors">Forgot?</button>
               </div>
-              <div className="relative group/pass">
+              <div className="relative">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2">
+                   <LockIcon />
+                </div>
                 <input
                   id="password"
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-cream placeholder:text-white/20 placeholder:font-light outline-none focus:bg-white/10 focus:border-soft-gold/30 transition-all duration-300 font-body text-sm shadow-inner"
-                  placeholder="Your sacred key..."
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-12 py-4 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm"
+                  placeholder="••••••••"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-cream transition-colors p-2"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 hover:text-white transition-colors p-1"
                 >
-                  {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+                  <i className={showPassword ? "ri-eye-off-line" : "ri-eye-line text-lg"}></i>
                 </button>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 py-1">
-              <button
+            <div className="flex items-center gap-3 pt-1">
+               <button
                 type="button"
                 onClick={() => setRememberMe(!rememberMe)}
-                className={`w-6 h-6 rounded-lg border flex items-center justify-center transition-all duration-500 ${
-                  rememberMe ? "bg-accent-red border-accent-red shadow-[0_0_15px_rgba(231,76,60,0.4)]" : "bg-white/5 border-white/10"
-                }`}
+                className={`w-5 h-5 rounded border flex items-center justify-center transition-all duration-300 ${rememberMe ? "bg-soft-gold border-soft-gold shadow-[0_0_10px_rgba(212,175,55,0.4)]" : "bg-white/5 border-white/10"}`}
               >
-                {rememberMe && <i className="ri-check-line text-cream font-bold"></i>}
+                {rememberMe && <i className="ri-check-line text-xs text-black font-bold"></i>}
               </button>
-              <span className="text-xs text-cream/40 font-medium select-none cursor-pointer hover:text-cream/60 transition-colors" onClick={() => setRememberMe(!rememberMe)}>
-                Remain present for 30 cycles
-              </span>
+              <span className="text-xs text-white/40 font-medium select-none cursor-pointer" onClick={() => setRememberMe(!rememberMe)}>Remember me</span>
             </div>
-
-            {/* Error Message */}
-            {error && (
-              <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-300 text-xs text-center animate-shake leading-relaxed">
-                {error}
-              </div>
-            )}
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-5 bg-cream text-deep-brown font-nav font-bold uppercase tracking-[0.2em] rounded-2xl relative overflow-hidden group disabled:opacity-50 transition-all duration-500 active:scale-95 shadow-[0_15px_30px_-5px_rgba(255,255,255,0.1)] mt-4"
+              className="w-full h-[60px] bg-white text-black font-bold uppercase tracking-[0.2em] rounded-2xl hover:bg-soft-gold transition-all duration-500 shadow-xl shadow-black/20 active:scale-[0.98] focus:ring-2 focus:ring-soft-gold/50 flex items-center justify-center"
             >
-              <span className="absolute inset-0 bg-soft-gold translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]" />
-              <span className="relative z-10 text-xs md:text-sm">
-                {loading ? "Aligning Energy..." : "Enter Sanctuary"}
-              </span>
+              {loading ? <i className="ri-loader-4-line animate-spin text-xl"></i> : "Sign in"}
             </button>
           </form>
 
-          {/* Quick Connect / Social */}
-          <div className="mt-10">
-            <div className="relative mb-8 text-center">
-              <div className="absolute inset-x-0 top-1/2 h-px bg-white/5" />
-              <span className="relative px-4 bg-[#0a0a0c]/40 backdrop-blur-xl text-[10px] uppercase font-bold tracking-[0.3em] text-cream/30">
-                Connection Paths
-              </span>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <button
-                onClick={() => handleSocialLogin("Google")}
-                className="flex items-center justify-center gap-3 px-4 py-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-cream font-bold text-[10px] uppercase tracking-widest"
-              >
-                <div className="w-5 h-5 flex items-center justify-center"><GoogleIcon /></div>
-                Google
-              </button>
-              <button
-                onClick={() => handleSocialLogin("Mirror")}
-                className="flex items-center justify-center gap-3 px-4 py-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-cream font-bold text-[10px] uppercase tracking-widest"
-              >
-                <i className="ri-shield-user-line text-lg text-cream/50"></i>
-                Guest
-              </button>
-            </div>
+          {/* Signup Link */}
+          <div className="mt-10 text-center">
+            <p className="text-white/40 text-xs font-medium tracking-wide">
+              Don&apos;t have an account?{" "}
+              <Link href="/auth/signup" className="text-white hover:text-soft-gold transition-colors font-bold underline underline-offset-4 decoration-white/20">
+                Create one free
+              </Link>
+            </p>
           </div>
         </div>
-
-        {/* Outer Links */}
-        <div className="mt-8 text-center space-y-4 animate-fade-in-up">
-          <p className="text-cream/30 font-nav text-xs uppercase font-bold tracking-[0.15em]">
-            New Seeker?{" "}
-            <Link href="/auth/signup" className="text-soft-gold hover:text-cream transition-colors duration-300 underline underline-offset-4 decoration-soft-gold/30">
-              Join the Lineage
-            </Link>
-          </p>
-          <div className="pt-4 flex items-center justify-center gap-6">
-            <Link href="/privacy" className="text-[10px] font-bold text-cream/20 uppercase tracking-[0.2em] hover:text-cream transition-colors">Privacy</Link>
-            <div className="w-1 h-1 rounded-full bg-cream/10" />
-            <Link href="/terms" className="text-[10px] font-bold text-cream/20 uppercase tracking-[0.2em] hover:text-cream transition-colors">Truths</Link>
-          </div>
+        
+        {/* Secondary Links */}
+        <div className="mt-8 flex justify-center gap-8 px-4 opacity-40 hover:opacity-100 transition-opacity">
+          <Link href="/privacy" className="text-[10px] font-bold text-white uppercase tracking-[0.2em]">Privacy</Link>
+          <Link href="/terms" className="text-[10px] font-bold text-white uppercase tracking-[0.2em]">Terms</Link>
         </div>
       </div>
 
       <style jsx global>{`
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(-10px); }
-          50% { transform: translateY(0); }
+        @keyframes subtle-zoom {
+          from { transform: scale(1); }
+          to { transform: scale(1.1); }
         }
-        .animate-bounce-slow {
-          animation: bounce-slow 4s ease-in-out infinite;
-        }
-        @keyframes shake {
-          0%, 100% { transform: translateX(0); }
-          25% { transform: translateX(-5px); }
-          75% { transform: translateX(5px); }
-        }
-        .animate-shake {
-          animation: shake 0.4s ease-in-out;
-        }
-        @keyframes fade-in-up {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 1s ease-out forwards;
-        }
-        .bg-radial-gradient {
-          background-image: radial-gradient(circle at center, var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to));
+        .animate-subtle-zoom {
+          animation: subtle-zoom 20s ease-out infinite alternate;
         }
       `}</style>
     </div>

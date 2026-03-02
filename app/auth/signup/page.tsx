@@ -16,16 +16,21 @@ const GoogleIcon = () => (
   </svg>
 );
 
-const EyeIcon = () => (
-  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+const UserIcon = () => (
+  <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
   </svg>
 );
 
-const EyeOffIcon = () => (
-  <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+const MailIcon = () => (
+  <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+  </svg>
+);
+
+const LockIcon = () => (
+  <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
   </svg>
 );
 
@@ -38,11 +43,11 @@ function getPasswordStrength(password: string): { score: number; label: string; 
   if (/[0-9]/.test(password)) score++;
   if (/[^A-Za-z0-9]/.test(password)) score++;
 
-  if (score <= 1) return { score: 1, label: "Weak Qi", color: "bg-red-400" };
-  if (score <= 2) return { score: 2, label: "Awakening", color: "bg-orange-400" };
-  if (score <= 3) return { score: 3, label: "Aligned", color: "bg-yellow-400" };
-  if (score <= 4) return { score: 4, label: "Resonant", color: "bg-green-400" };
-  return { score: 5, label: "Fully Transcendent", color: "bg-emerald-500" };
+  if (score <= 1) return { score: 1, label: "Weak", color: "bg-red-400" };
+  if (score <= 2) return { score: 2, label: "Fair", color: "bg-orange-400" };
+  if (score <= 3) return { score: 3, label: "Good", color: "bg-yellow-400" };
+  if (score <= 4) return { score: 4, label: "Strong", color: "bg-green-400" };
+  return { score: 5, label: "Excellent", color: "bg-emerald-500" };
 }
 
 export default function SignupPage() {
@@ -72,17 +77,17 @@ export default function SignupPage() {
     setError("");
 
     if (!agreeTerms) {
-      setError("Please accept the terms of our sacred community.");
+      setError("Please agree to the Terms of Service and Privacy Policy.");
       return;
     }
 
     if (formData.password !== formData.confirmPassword) {
-      setError("Key phrases do not resonate with each other.");
+      setError("Passwords do not match.");
       return;
     }
 
     if (formData.password.length < 6) {
-      setError("Your key phrase must be at least 6 tokens long.");
+      setError("Password must be at least 6 characters.");
       return;
     }
 
@@ -93,10 +98,10 @@ export default function SignupPage() {
       if (success) {
         router.push("/");
       } else {
-        setError("This identity already exists in our lineage.");
+        setError("An account with this email already exists.");
       }
     } catch (err) {
-      setError("The connection to the sanctuary was interrupted.");
+      setError("Something went wrong. Please try again later.");
       console.error(err);
     } finally {
       setLoading(false);
@@ -108,127 +113,143 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center p-6 overflow-hidden bg-[#0a0a0c]">
-      {/* ── Background: Atmospheric Experience ── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+    <div className="relative min-h-screen w-full flex items-center justify-center p-4 md:p-8 bg-[#0a0a0c] selection:bg-soft-gold/30">
+      {/* ── Background ── */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <Image
           src="/images/login-bg.png"
           alt=""
           fill
-          className="object-cover opacity-60 scale-110" // Slightly different scale for signup
+          className="object-cover opacity-60 transition-transform duration-[10s] animate-subtle-zoom"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/40 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/40 to-black/80" />
       </div>
 
-      {/* ── Initiation Container ── */}
-      <div className="relative z-10 w-full max-w-[500px]">
-        {/* Branding Sphere */}
-        <div className="mx-auto w-16 h-16 mb-8 relative animate-bounce-slow">
-          <div className="absolute inset-0 bg-soft-gold/30 rounded-full blur-2xl animate-pulse" />
-          <Link href="/" className="relative flex items-center justify-center w-full h-full bg-white/5 backdrop-blur-md rounded-full border border-white/20 hover:border-white/40 transition-all duration-500 shadow-2xl group overflow-hidden">
-            <span className="text-cream font-title text-xl font-bold tracking-tighter group-hover:scale-110 transition-transform duration-500">A1</span>
-          </Link>
-        </div>
-
-        {/* The Initiation Glass Card */}
-        <div className="relative bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[40px] p-8 md:p-10 shadow-[0_35px_100px_-15px_rgba(0,0,0,0.5)] overflow-hidden group">
+      {/* ── Signup Container ── */}
+      <div className="relative z-10 w-full max-w-[540px]">
+        <div className="bg-white/5 backdrop-blur-[40px] border border-white/10 rounded-[32px] p-8 md:p-12 shadow-[0_40px_100px_rgba(0,0,0,0.6)] relative overflow-hidden group">
+          
           {/* Header */}
-          <div className="text-center mb-10">
-            <h1 className="serif-heading text-4xl font-bold text-cream mb-2 tracking-tight">
-              Initiation
-            </h1>
-            <p className="text-cream/50 font-nav text-[10px] uppercase tracking-[0.4em] font-semibold">
-              Begin your sacred transit
+          <div className="text-center mb-8">
+            <Link href="/" className="inline-block mb-6">
+              <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shadow-2xl hover:border-soft-gold/30 transition-all duration-500">
+                <span className="text-white font-title text-xl font-bold tracking-tight">A1</span>
+              </div>
+            </Link>
+            <h1 className="serif-heading text-4xl font-bold text-white mb-2 tracking-tight">Create account</h1>
+            <p className="text-white/40 text-sm font-medium tracking-wide">
+              Begin your path to inner wisdom.
             </p>
+          </div>
+
+          {/* Social paths */}
+          <button
+            onClick={() => handleSocialSignup("Google")}
+            className="w-full h-[54px] flex items-center justify-center gap-3 px-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-white font-semibold text-sm mb-8"
+          >
+            <GoogleIcon />
+            Continue with Google
+          </button>
+
+          <div className="relative mb-8 text-center">
+            <div className="absolute inset-x-0 top-1/2 h-px bg-white/5" />
+            <span className="relative px-4 bg-transparent text-[10px] uppercase font-black tracking-[0.3em] text-white/20">or sign up with email</span>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <label className="block text-[10px] font-bold text-cream/40 uppercase tracking-widest pl-1">Name</label>
-                <input
-                  name="name"
-                  type="text"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-cream placeholder:text-white/10 outline-none focus:bg-white/10 focus:border-soft-gold/30 transition-all text-sm"
-                  placeholder="Full Name"
-                />
+              <div className="space-y-1.5">
+                <label className="block text-xs font-bold text-white/30 uppercase tracking-widest pl-1">Full Name</label>
+                <div className="relative group/field">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2"><UserIcon /></div>
+                  <input
+                    name="name"
+                    type="text"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm shadow-inner"
+                    placeholder="Enter name"
+                  />
+                </div>
               </div>
-              <div className="space-y-1">
-                <label className="block text-[10px] font-bold text-cream/40 uppercase tracking-widest pl-1">Email</label>
-                <input
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-cream placeholder:text-white/10 outline-none focus:bg-white/10 focus:border-soft-gold/30 transition-all text-sm"
-                  placeholder="you@sanctuary.com"
-                />
+              <div className="space-y-1.5">
+                <label className="block text-xs font-bold text-white/30 uppercase tracking-widest pl-1">Email address</label>
+                <div className="relative group/field">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2"><MailIcon /></div>
+                  <input
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm shadow-inner"
+                    placeholder="you@email.com"
+                  />
+                </div>
               </div>
             </div>
 
-            <div className="space-y-1">
-              <label className="block text-[10px] font-bold text-cream/40 uppercase tracking-widest pl-1">Primary Key Phrase</label>
+            <div className="space-y-1.5">
+              <label className="block text-xs font-bold text-white/30 uppercase tracking-widest pl-1">Password</label>
               <div className="relative">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2"><LockIcon /></div>
                 <input
                   name="password"
                   type={showPassword ? "text" : "password"}
                   value={formData.password}
                   onChange={handleChange}
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-cream placeholder:text-white/10 outline-none focus:bg-white/10 focus:border-soft-gold/30 transition-all text-sm"
-                  placeholder="Create your key phrase"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-12 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm shadow-inner"
+                  placeholder="Min. 6 characters"
                 />
-                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/20 hover:text-white">
-                  {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 hover:text-white p-1">
+                  <i className={showPassword ? "ri-eye-off-line" : "ri-eye-line text-lg"}></i>
                 </button>
               </div>
               {passwordStrength && (
                 <div className="px-1 pt-2">
                   <div className="flex gap-1 mb-1">
                     {[1, 2, 3, 4, 5].map((lvl) => (
-                      <div key={lvl} className={`h-0.5 flex-1 rounded-full ${lvl <= passwordStrength.score ? passwordStrength.color : "bg-white/5"}`} />
+                      <div key={lvl} className={`h-1 flex-1 rounded-full ${lvl <= passwordStrength.score ? passwordStrength.color : "bg-white/5"}`} />
                     ))}
                   </div>
-                  <p className="text-[10px] text-cream/30 font-bold uppercase tracking-tighter italic">{passwordStrength.label}</p>
+                  <p className="text-[10px] text-white/20 font-bold uppercase tracking-widest leading-none">{passwordStrength.label} Strength</p>
                 </div>
               )}
             </div>
 
-            <div className="space-y-1">
-              <label className="block text-[10px] font-bold text-cream/40 uppercase tracking-widest pl-1">Confirm Key Phrase</label>
+            <div className="space-y-1.5">
+              <label className="block text-xs font-bold text-white/30 uppercase tracking-widest pl-1">Confirm Password</label>
               <div className="relative">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2"><LockIcon /></div>
                 <input
                   name="confirmPassword"
                   type={showConfirm ? "text" : "password"}
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-cream placeholder:text-white/10 outline-none focus:bg-white/10 focus:border-soft-gold/30 transition-all text-sm"
-                  placeholder="Repeat your inner key"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-12 py-3.5 text-white outline-none focus:border-soft-gold/30 focus:bg-white/10 transition-all duration-300 text-sm shadow-inner"
+                  placeholder="Re-enter password"
                 />
-                <button type="button" onClick={() => setShowConfirm(!showConfirm)} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 hover:text-white">
-                  {showConfirm ? <EyeOffIcon /> : <EyeIcon />}
+                <button type="button" onClick={() => setShowConfirm(!showConfirm)} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/20 hover:text-white p-1">
+                   <i className={showConfirm ? "ri-eye-off-line" : "ri-eye-line text-lg"}></i>
                 </button>
               </div>
             </div>
 
-            <div className="flex items-start gap-3 py-2 cursor-pointer group/terms" onClick={() => setAgreeTerms(!agreeTerms)}>
-              <div className={`w-5 h-5 rounded-lg border flex-shrink-0 flex items-center justify-center transition-all ${agreeTerms ? "bg-accent-red border-accent-red" : "bg-white/5 border-white/10 group-hover/terms:border-white/30"}`}>
-                {agreeTerms && <i className="ri-check-line text-xs text-cream font-bold"></i>}
+            <div className="flex items-start gap-4 py-2 cursor-pointer group/terms" onClick={() => setAgreeTerms(!agreeTerms)}>
+              <div className={`w-5 h-5 rounded border flex-shrink-0 flex items-center justify-center transition-all ${agreeTerms ? "bg-soft-gold border-soft-gold shadow-[0_0_15px_rgba(212,175,55,0.4)]" : "bg-white/5 border-white/10 group-hover/terms:border-white/30"}`}>
+                {agreeTerms && <i className="ri-check-line text-xs text-black font-bold"></i>}
               </div>
-              <p className="text-[10px] text-cream/40 leading-relaxed font-bold uppercase tracking-wider">
-                I accept the <Link href="/terms" className="text-soft-gold underline decoration-soft-gold/30">sacred codes</Link> and <Link href="/privacy" className="text-soft-gold underline decoration-soft-gold/30">whispered privacy</Link> policies of this sanctuary.
+              <p className="text-xs text-white/40 leading-relaxed font-medium">
+                I agree to the <Link href="/terms" className="text-white hover:text-soft-gold underline decoration-white/20">Terms of Service</Link> and <Link href="/privacy" className="text-white hover:text-soft-gold underline decoration-white/20">Privacy Policy</Link>.
               </p>
             </div>
 
             {error && (
-              <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-300 text-[10px] text-center uppercase font-bold tracking-widest animate-shake">
+              <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-300 text-xs text-center font-bold tracking-wide">
                 {error}
               </div>
             )}
@@ -236,66 +257,31 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={loading || !agreeTerms}
-              className="w-full py-4 bg-cream text-deep-brown font-nav font-bold uppercase tracking-[0.2em] rounded-2xl relative overflow-hidden group disabled:opacity-30 transition-all active:scale-[0.98] shadow-2xl"
+              className="w-full h-[60px] bg-white text-black font-bold uppercase tracking-[0.2em] rounded-2xl hover:bg-soft-gold transition-all duration-500 active:scale-[0.98] shadow-2xl flex items-center justify-center"
             >
-              <span className="absolute inset-0 bg-soft-gold translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]" />
-              <span className="relative z-10 text-xs">
-                {loading ? "Igniting Spirit..." : "Begin Initiation"}
-              </span>
+              {loading ? <i className="ri-loader-4-line animate-spin text-xl"></i> : "Create account"}
             </button>
           </form>
 
-          {/* Social paths */}
-          <div className="mt-8">
-            <div className="relative mb-6 text-center">
-              <div className="absolute inset-x-0 top-1/2 h-px bg-white/5" />
-              <span className="relative px-4 bg-[#0a0a0c]/40 backdrop-blur-xl text-[9px] uppercase font-bold tracking-[0.4em] text-cream/20">Fast Transit</span>
-            </div>
-            <button
-              onClick={() => handleSocialSignup("Google")}
-              className="w-full flex items-center justify-center gap-3 px-4 py-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-cream font-bold text-[10px] uppercase tracking-widest"
-            >
-              <GoogleIcon /> Continue with Google
-            </button>
+          {/* Login Link */}
+          <div className="mt-8 text-center">
+            <p className="text-white/40 text-xs font-medium tracking-wide">
+              Already part of the lineage?{" "}
+              <Link href="/auth/login" className="text-white hover:text-soft-gold transition-colors font-bold underline underline-offset-4 decoration-white/20">
+                Sign in
+              </Link>
+            </p>
           </div>
-        </div>
-
-        {/* Outer Links */}
-        <div className="mt-8 text-center animate-fade-in-up">
-          <p className="text-cream/30 font-nav text-[10px] uppercase font-bold tracking-[0.2em]">
-            Already part of the lineage?{" "}
-            <Link href="/auth/login" className="text-soft-gold hover:text-cream transition-colors duration-300 underline underline-offset-4 decoration-soft-gold/30">
-              Return to Entrance
-            </Link>
-          </p>
         </div>
       </div>
 
       <style jsx global>{`
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(-10px); }
-          50% { transform: translateY(0); }
+        @keyframes subtle-zoom {
+          from { transform: scale(1); }
+          to { transform: scale(1.1); }
         }
-        .animate-bounce-slow {
-          animation: bounce-slow 4s ease-in-out infinite;
-        }
-        @keyframes shake {
-          0%, 100% { transform: translateX(0); }
-          25% { transform: translateX(-5px); }
-          75% { transform: translateX(5px); }
-        }
-        .animate-shake {
-          animation: shake 0.4s ease-in-out;
-        }
-        @keyframes fade-in-up {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up {
-          animation: fade-in-up 1s ease-out forwards;
-        }
-        .bg-radial-gradient {
-          background-image: radial-gradient(circle at center, var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to));
+        .animate-subtle-zoom {
+          animation: subtle-zoom 20s ease-out infinite alternate;
         }
       `}</style>
     </div>
