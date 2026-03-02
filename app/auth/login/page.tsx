@@ -70,6 +70,15 @@ export default function LoginPage() {
     <div className="h-screen w-screen flex flex-col lg:flex-row overflow-hidden fixed inset-0 bg-cream transition-colors duration-400">
       {/* ── Left Side: Login Form (45% Space) ── */}
       <div className="w-full lg:w-[45%] flex items-center justify-center p-6 md:p-10 relative z-10 bg-cream border-r border-deep-brown/5 h-full overflow-hidden transition-colors duration-400">
+        
+        {/* Minimalist Home Link */}
+        <Link href="/" className="absolute top-8 left-8 flex items-center gap-2 group">
+          <div className="w-8 h-8 rounded-full border border-deep-brown/10 flex items-center justify-center group-hover:border-soft-gold/40 transition-colors duration-500">
+            <span className="text-deep-brown font-title text-xs font-bold transition-colors duration-500">A1</span>
+          </div>
+          <span className="text-[10px] uppercase font-bold tracking-widest text-deep-brown/40 group-hover:text-deep-brown transition-colors">Home</span>
+        </Link>
+
         <div className="w-full max-w-[360px] flex flex-col justify-center h-full">
           <div className="mb-8">
             <h1 className="serif-heading text-3xl font-bold text-deep-brown mb-2 leading-tight">Sign in</h1>

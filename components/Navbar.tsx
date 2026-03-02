@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState, useMemo } from "react";
+import { usePathname } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { searchIndex } from "@/data/search-index";
@@ -121,6 +122,12 @@ export default function Navbar() {
   const [isExploreOpen, setIsExploreOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
   const { isDark, toggleTheme } = useTheme();
+  const pathname = usePathname();
+
+  // Hide Navbar on authentication pages for a cleaner immersive experience
+  if (pathname?.startsWith("/auth/")) {
+    return null;
+  }
 
   const searchResults = useMemo(() => {
     if (searchQuery.trim().length > 1) {
