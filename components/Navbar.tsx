@@ -107,25 +107,8 @@ const SunIcon = ({ className = "w-5 h-5" }) => (
 );
 
 const MoonIcon = ({ className = "w-5 h-5" }) => (
-  <svg className={className} viewBox="0 0 24 24">
-    {/* Crescent Moon (Default) */}
-    <path 
-      className="transition-opacity duration-300 group-hover:opacity-0" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth={2} 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
-      d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" 
-    />
-    {/* Full Moon (On Hover) */}
-    <circle 
-      className="opacity-0 transition-opacity duration-300 group-hover:opacity-100" 
-      cx="12" 
-      cy="12" 
-      r="9" 
-      fill="currentColor" 
-    />
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
   </svg>
 );
 
