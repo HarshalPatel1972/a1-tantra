@@ -4,3 +4,4 @@ A1 Tantra is a platform dedicated to teaching authentic Tantra practices for mod
 
 **Visit**: https://a1-tantra.vercel.app
 <!-- Achievement Quest: Active -->
+<!-- SEO Metadata: Verified -->
