@@ -7,7 +7,7 @@ export default function Footer() {
     {
       name: "Instagram",
       icon: "ri-instagram-line",
-      href: "https://instagram.com",
+      href: "https://instagram.com/a1ta.ntra",
       color: "#E4405F",
     },
     // {
@@ -34,12 +34,12 @@ export default function Footer() {
     //   href: "https://linkedin.com",
     //   color: "#0A66C2",
     // },
-    // {
-    //   name: "Email",
-    //   icon: "ri-mail-fill",
-    //   href: "mailto:hello@a1tantra.com",
-    //   color: "#E43A1D",
-    // },
+    {
+      name: "Email",
+      icon: "ri-mail-fill",
+      href: "mailto:hp842484n@gmail.com",
+      color: "#E43A1D",
+    },
   ];
 
   return (

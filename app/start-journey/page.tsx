@@ -64,6 +64,14 @@ Please send me personalized guidance to begin my Tantra journey.
       });
 
       if (success) {
+        // Google Ads Conversion tracking
+        if (typeof window !== 'undefined' && (window as any).gtag) {
+          (window as any).gtag('event', 'conversion', {
+            'send_to': 'AW-17953286510/_1xTCKWZ-oAcEO7S5fBC',
+            'value': 1.0,
+            'currency': 'INR'
+          });
+        }
         setSubmitted(true);
         setTimeout(() => {
           setStep(1);

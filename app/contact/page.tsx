@@ -18,8 +18,21 @@ export default function ContactPage() {
             </h1>
             <p className="text-lg text-deep-brown/70 max-w-2xl mx-auto">
               Have questions about A1 Tantra? We&apos;d love to hear from you. Send
-              us a message and we&apos;ll respond within 24 hours.
+              us a message or reach out directly at{" "}
+              <a href="mailto:hp842484n@gmail.com" className="text-accent-red font-bold hover:underline">
+                hp842484n@gmail.com
+              </a>
             </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-6">
+              <a 
+                href="https://wa.me/919217821866" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-2 bg-green-500/10 text-green-600 rounded-full font-bold text-sm border border-green-500/20 hover:bg-green-500 hover:text-white transition-all"
+              >
+                <i className="ri-whatsapp-line text-xl"></i> WhatsApp Us
+              </a>
+            </div>
           </div>
 
           <ContactForm />
