@@ -24,6 +24,8 @@ export const sendEmail = async (formData: EmailFormData): Promise<boolean> => {
         subject: formData.subject || "New Message from A1 Tantra",
         message: formData.message,
         reply_to: formData.reply_to || formData.from_email,
+        to_email: "hp842484n@gmail.com",
+        to_name: "Harshal Patel",
       }
     );
 
