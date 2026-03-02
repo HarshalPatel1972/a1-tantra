@@ -39,6 +39,12 @@ export const metadata: Metadata = {
   title: "A1 Tantra | Sacred Tantric Healing & Ancient Wisdom",
   description:
     "Discover authentic Tantra paths (Kriya, Yoga, Anuttarayoga) for modern seekers. Book a sacred healing session in India today.",
+  applicationName: "A1 Tantra",
+  appleWebApp: {
+    title: "A1 Tantra",
+    statusBarStyle: "default",
+    capable: true,
+  },
   keywords:
     "tantra, meditation, spiritual healing, kundalini, chakra, breathwork, tantra sessions india, sacred tantra",
   authors: [{ name: "A1 Tantra" }],
@@ -68,6 +74,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "A1 Tantra",
+            "alternateName": "A1 Tantra Sacred Healing",
+            "url": siteUrl,
+          }}
+        />
         <JsonLd
           data={{
             "@context": "https://schema.org",
