@@ -72,11 +72,6 @@ export default function LoginPage() {
       <div className="w-full lg:w-[42%] xl:w-[38%] flex items-center justify-center p-6 md:p-10 relative z-10 bg-[#070708] border-r border-white/5 h-full overflow-hidden">
         <div className="w-full max-w-[360px] flex flex-col justify-center h-full">
           <div className="mb-8">
-            <Link href="/" className="inline-block mb-6 group">
-              <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-soft-gold/40 transition-colors duration-500">
-                <span className="text-white font-title text-base font-bold">A1</span>
-              </div>
-            </Link>
             <h1 className="serif-heading text-3xl font-bold text-white mb-2 leading-tight">Sign in</h1>
             <p className="text-white/40 text-[13px] font-medium tracking-wide">Enter details to access your account.</p>
           </div>

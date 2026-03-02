@@ -95,11 +95,6 @@ export default function SignupPage() {
       <div className="w-full lg:w-[45%] xl:w-[40%] flex items-center justify-center p-6 md:p-10 relative z-10 bg-[#070708] border-r border-white/5 h-full overflow-hidden">
         <div className="w-full max-w-[420px] flex flex-col justify-center h-full">
           <div className="mb-8">
-            <Link href="/" className="inline-block mb-6 group">
-              <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-soft-gold/40 transition-colors duration-500">
-                <span className="text-white font-title text-base font-bold">A1</span>
-              </div>
-            </Link>
             <h1 className="serif-heading text-3xl font-bold text-white mb-2">Create account</h1>
             <p className="text-white/40 text-[13px] font-medium tracking-wide">Begin your path to inner wisdom.</p>
           </div>
