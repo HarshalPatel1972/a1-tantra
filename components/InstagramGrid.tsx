@@ -50,18 +50,6 @@ export default function InstagramGrid() {
             </a>
           ))}
         </div>
-
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <a
-            href="https://instagram.com/a1ta.ntra"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-accent-red text-cream font-nav font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-deep-brown transition-all duration-500 shadow-xl text-xs"
-          >
-            Visit Profile <i className="ri-arrow-right-line"></i>
-          </a>
-        </div>
       </div>
     </section>
   );
