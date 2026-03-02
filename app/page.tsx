@@ -104,8 +104,8 @@ export default function Home() {
       <RealTalk />
       <OurTantraServices />
       <UserReviews />
-      <BuildJourneyCTA />
-      <OriginStory />
+      {/* <BuildJourneyCTA />
+      <OriginStory /> */}
       <Newsletter />
       <InstagramGrid />
       <Footer />
