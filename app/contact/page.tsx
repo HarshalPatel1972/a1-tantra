@@ -17,11 +17,8 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-lg text-deep-brown/70 max-w-2xl mx-auto">
-              Have questions about A1 Tantra? We&apos;d love to hear from you. Send
-              us a message or reach out directly at{" "}
-              <a href="mailto:hp842484n@gmail.com" className="text-accent-red font-bold hover:underline">
-                hp842484n@gmail.com
-              </a>
+              Have questions about A1 Tantra? We&apos;d love to hear from you. 
+              Fill out the form below or reach out via WhatsApp for immediate guidance.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-6">
               <a 
