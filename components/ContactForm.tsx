@@ -14,6 +14,7 @@ function ContactFormContent() {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const service = searchParams.get("service");
@@ -35,6 +36,7 @@ function ContactFormContent() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
     try {
       const success = await sendEmail({
@@ -56,7 +58,11 @@ function ContactFormContent() {
         setSubmitted(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
         setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError("Something went wrong. Please check your internet connection or email configuration.");
       }
+    } catch (err) {
+      setError("An unexpected error occurred. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -67,6 +73,12 @@ function ContactFormContent() {
       {submitted && (
         <div className="p-4 bg-soft-gold/20 border border-soft-gold text-deep-brown rounded-lg">
           Thank you for reaching out. We&apos;ll be in touch soon.
+        </div>
+      )}
+
+      {error && (
+        <div className="p-4 bg-red-500/10 border border-red-500 text-red-600 rounded-lg text-sm">
+          {error}
         </div>
       )}
 

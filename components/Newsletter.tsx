@@ -7,13 +7,15 @@ export default function Newsletter() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
 
-    setLoading(true);
     try {
+      setLoading(true);
+      setError(null);
       const success = await sendNewsletterSignup(email);
       if (success) {
         // Google Ads Conversion tracking
@@ -27,7 +29,11 @@ export default function Newsletter() {
         setSubmitted(true);
         setEmail("");
         setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError("Something went wrong. Please check your internet or configuration.");
       }
+    } catch (err) {
+      setError("An unexpected error occurred.");
     } finally {
       setLoading(false);
     }
@@ -50,6 +56,12 @@ export default function Newsletter() {
         {submitted && (
           <div className="mb-8 p-4 bg-soft-gold/20 border border-soft-gold rounded-lg text-soft-gold text-center">
             Thank you! Check your email to confirm your subscription.
+          </div>
+        )}
+
+        {error && (
+          <div className="mb-8 p-4 bg-red-500/10 border border-red-500 text-red-600 rounded-lg text-sm text-center">
+            {error}
           </div>
         )}
 

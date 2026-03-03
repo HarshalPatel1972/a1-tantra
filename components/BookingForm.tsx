@@ -13,6 +13,7 @@ export default function BookingForm() {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const sessionTypes = [
     "Tantra Meditation Session",
@@ -32,9 +33,9 @@ export default function BookingForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-
     try {
+      setLoading(true);
+      setError(null);
       const success = await sendBookingRequest(
         formData.name,
         formData.email,
@@ -61,7 +62,11 @@ export default function BookingForm() {
           notes: "",
         });
         setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError("Failed to submit request. Please check your internet or configuration.");
       }
+    } catch (err) {
+      setError("An unexpected error occurred.");
     } finally {
       setLoading(false);
     }
@@ -72,6 +77,12 @@ export default function BookingForm() {
       {submitted && (
         <div className="mb-6 p-4 bg-soft-gold/20 border border-soft-gold text-deep-brown rounded-lg">
           Booking request submitted! We&apos;ll confirm your session soon.
+        </div>
+      )}
+
+      {error && (
+        <div className="mb-6 p-4 bg-red-500/10 border border-red-500 text-red-600 rounded-lg text-sm">
+          {error}
         </div>
       )}
 

@@ -15,6 +15,7 @@ export default function StartJourneyPage() {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const goals = [
     "Inner Peace & Meditation",
@@ -46,10 +47,9 @@ export default function StartJourneyPage() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
     try {
+      setLoading(true);
+      setError(null);
       const success = await sendEmail({
         from_name: formData.name,
         from_email: formData.email,
@@ -84,7 +84,11 @@ Please send me personalized guidance to begin my Tantra journey.
           });
           setSubmitted(false);
         }, 5000);
+      } else {
+        setError("Something went wrong. Please check your setup.");
       }
+    } catch (err) {
+      setError("An unexpected error occurred.");
     } finally {
       setLoading(false);
     }
@@ -122,6 +126,12 @@ Please send me personalized guidance to begin my Tantra journey.
             <div className="mb-8 p-4 bg-soft-gold/20 border border-soft-gold text-deep-brown rounded-lg text-center">
               Thank you! We&apos;ll send you personalized guidance to your email
               shortly.
+            </div>
+          )}
+
+          {error && (
+            <div className="mb-8 p-4 bg-red-500/10 border border-red-500 text-red-600 rounded-lg text-center text-sm">
+              {error}
             </div>
           )}
 
