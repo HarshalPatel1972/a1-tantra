@@ -64,6 +64,7 @@ export const metadata: Metadata = {
     shortcut: "/images/logo-main.png",
     apple: "/images/logo-main.png",
   },
+  manifest: "/manifest.json",
 };
 
 import Script from "next/script";

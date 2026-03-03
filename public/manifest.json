@@ -1,0 +1,20 @@
+{
+  "name": "A1 Tantra",
+  "short_name": "A1 Tantra",
+  "icons": [
+    {
+      "src": "/images/logo-main.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo-main.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FCF9F2",
+  "theme_color": "#1C1614"
+}
