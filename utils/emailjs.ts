@@ -19,13 +19,11 @@ export const sendEmail = async (formData: EmailFormData): Promise<boolean> => {
       process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
       {
-        from_name: formData.from_name,
-        from_email: formData.from_email,
-        subject: formData.subject || "New Message from A1 Tantra",
+        name: formData.from_name,
+        email: formData.from_email,
+        title: formData.subject || "New Message from A1 Tantra",
         message: formData.message,
         reply_to: formData.reply_to || formData.from_email,
-        to_email: "hp842484n@gmail.com",
-        to_name: "Harshal Patel",
       }
     );
 
