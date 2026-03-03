@@ -66,6 +66,8 @@ export const metadata: Metadata = {
   },
 };
 
+import Script from "next/script";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -100,36 +102,41 @@ export default function RootLayout({
             },
           }}
         />
-        {/* Remix Icon CDN - Lightweight & Reliable Icon Set */}
+        {/* Remix Icon CDN */}
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
         />
-        {/* Prevent flash of wrong theme on load */}
+        {/* Prevent flash of wrong theme */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('a1tantra-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`
-          }}
-        />
-        {/* GOOGLE ADS TRACKING (PHASE 2 ACTIVE) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17953286510"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17953286510');
-            `
           }}
         />
       </head>
       <body
         className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased font-sans bg-cream text-deep-brown`}
       >
+        {/* GOOGLE ADS TRACKING (PHASE 2 ACTIVE) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17953286510"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'AW-17953286510', {
+              'send_page_view': true,
+              'linker': { 'domains': ['a1-tantra.vercel.app'] }
+            });
+          `}
+        </Script>
+
         <ThemeProvider>
           <AuthProvider>
-            {/* <AnimatedGradientBg /> */}
             <Navbar />
             <main className="pt-24 md:pt-32 relative">{children}</main>
             <CallMeButton />
