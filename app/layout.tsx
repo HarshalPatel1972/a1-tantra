@@ -114,10 +114,6 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('a1tantra-theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`
           }}
         />
-      </head>
-      <body
-        className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased font-sans bg-cream text-deep-brown`}
-      >
         {/* GOOGLE ADS TRACKING (PHASE 2 ACTIVE) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17953286510"
@@ -135,7 +131,10 @@ export default function RootLayout({
             });
           `}
         </Script>
-
+      </head>
+      <body
+        className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased font-sans bg-cream text-deep-brown`}
+      >
         <ThemeProvider>
           <AuthProvider>
             <Navbar />
