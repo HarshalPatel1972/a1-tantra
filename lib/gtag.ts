@@ -1,11 +1,11 @@
 export const GOOGLE_TAG_ID = 'AW-17953286510';
 
 export const CONVERSION_LABELS = {
-  booking: 'LABEL_BOOKING',
-  whatsapp: 'LABEL_WHATSAPP',
-  contact: 'LABEL_CONTACT',
-  journey: 'LABEL_JOURNEY',
-  newsletter: 'LABEL_NEWSLETTER',
+  booking: 'dgu2CMHby4kcEO7S5fBC',
+  whatsapp: 'ekaDCMTby4kcEO7S5fBC',
+  contact: '037WCMfby4kcEO7S5fBC',
+  journey: 'puoICMrby4kcEO7S5fBC',
+  newsletter: 'lN1mCM3by4kcEO7S5fBC',
 };
 
 type ConversionType = keyof typeof CONVERSION_LABELS;
@@ -31,9 +31,9 @@ const trackConversion = (type: ConversionType, params: TrackingParams = {}) => {
   }
 };
 
-export const trackBooking = () => {
-  const transactionId = `book_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-  trackConversion('booking', { value: 500, transaction_id: transactionId });
+export const trackBooking = (transactionId?: string) => {
+  const id = transactionId || `book_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  trackConversion('booking', { value: 500, transaction_id: id });
 };
 
 export const trackWhatsApp = () => {
