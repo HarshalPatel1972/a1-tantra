@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { sendEmail } from "@/utils/emailjs";
+import { trackContactForm } from "@/lib/gtag";
 
 function ContactFormContent() {
   const searchParams = useSearchParams();
@@ -48,13 +49,7 @@ function ContactFormContent() {
 
       if (success) {
         // Google Ads Conversion tracking
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'conversion', {
-            'send_to': 'AW-17953286510/_1xTCKWZ-oAcEO7S5fBC',
-            'value': 1.0,
-            'currency': 'INR'
-          });
-        }
+        trackContactForm();
         setSubmitted(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
         setTimeout(() => setSubmitted(false), 5000);

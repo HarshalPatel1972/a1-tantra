@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { sendBookingRequest } from "@/utils/emailjs";
+import { trackBooking } from "@/lib/gtag";
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
@@ -46,13 +47,7 @@ export default function BookingForm() {
 
       if (success) {
         // Google Ads Conversion tracking
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'conversion', {
-            'send_to': 'AW-17953286510/_1xTCKWZ-oAcEO7S5fBC',
-            'value': 1.0,
-            'currency': 'INR'
-          });
-        }
+        trackBooking();
         setSubmitted(true);
         setFormData({
           name: "",

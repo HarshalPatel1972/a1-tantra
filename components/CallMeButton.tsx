@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { trackWhatsApp } from "@/lib/gtag";
 
 export default function CallMeButton() {
   const phoneNumber = "919217821866";
@@ -78,15 +79,7 @@ export default function CallMeButton() {
           aria-label="Open WhatsApp chat"
           onMouseEnter={() => setShowTooltip(true)}
           onMouseLeave={() => setShowTooltip(false)}
-          onClick={() => {
-            if (typeof window !== 'undefined' && (window as any).gtag) {
-              (window as any).gtag('event', 'conversion', {
-                'send_to': 'AW-17953286510/_1xTCKWZ-oAcEO7S5fBC',
-                'value': 1.0,
-                'currency': 'INR'
-              });
-            }
-          }}
+          onClick={() => trackWhatsApp()}
         >
           {/* Using Next.js Image with the string path now that the file is tracked */}
           <Image

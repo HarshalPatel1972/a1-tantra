@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { sendNewsletterSignup } from "@/utils/emailjs";
+import { trackNewsletter } from "@/lib/gtag";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
@@ -19,13 +20,7 @@ export default function Newsletter() {
       const success = await sendNewsletterSignup(email);
       if (success) {
         // Google Ads Conversion tracking
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'conversion', {
-            'send_to': 'AW-17953286510/_1xTCKWZ-oAcEO7S5fBC',
-            'value': 1.0,
-            'currency': 'INR'
-          });
-        }
+        trackNewsletter();
         setSubmitted(true);
         setEmail("");
         setTimeout(() => setSubmitted(false), 5000);
