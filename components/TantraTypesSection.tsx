@@ -455,18 +455,18 @@ export default function TantraTypesSection() {
                     <div className="h-10 w-[1px] bg-cream/20 hidden sm:block" />
                     <div className="flex flex-col items-center sm:items-end">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs text-white/60 line-through font-bold">
+                        <span className="text-xs text-[#F8F5F2]/50 line-through font-bold">
                            {tantraTypes[selectedTantra].originalPrice}
                         </span>
-                        <span className="text-[10px] bg-white text-[#E44426] px-2 py-0.5 rounded-full font-black animate-pulse shadow-lg">
+                        <span className="text-[11px] bg-[#D4AF37] text-black px-3 py-1 rounded-full font-black animate-pulse shadow-lg">
                            30% OFF
                         </span>
                       </div>
                       <div className="flex flex-col text-center sm:text-right">
-                        <span className="text-[10px] uppercase tracking-[0.3em] text-soft-gold font-black mb-1">
+                        <span className="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37]/80 font-black mb-1">
                           ONE-TIME CONTRIBUTION
                         </span>
-                        <span className="text-4xl sm:text-5xl font-black text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+                        <span className="text-4xl sm:text-5xl font-black text-[#D4AF37] drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
                           {tantraTypes[selectedTantra].price}
                         </span>
                       </div>
