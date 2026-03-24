@@ -105,17 +105,6 @@ button {
   font-family: var(--font-playfair), serif;
 }
 
-/* ------------------------------------------------ */
-/* FINAL FIX: MAKE REMIX ICONS ALWAYS VISIBLE       */
-/* ------------------------------------------------ */
-
-i[class^="ri-"],
-i[class*=" ri-"] {
-  color: var(--color-cream) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  line-height: 1 !important;
-}
 
 /* ------------------------------------------------ */
 /* Eye Comfort Mode overrides for standard colors   */
@@ -178,19 +167,5 @@ body, .bg-cream, .bg-white, nav {
 }
 
 .pause-on-hover:hover .animate-marquee {
-  animation-play-state: paused;
-}
-
-/* Auth Page Vertical Marquee */
-@keyframes vertical-marquee {
-  from { transform: translateY(0); }
-  to { transform: translateY(-25%); }
-}
-
-.animate-vertical-marquee {
-  animation: vertical-marquee 45s linear infinite;
-}
-
-.animate-vertical-marquee:hover {
   animation-play-state: paused;
 }
