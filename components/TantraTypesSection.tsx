@@ -305,14 +305,14 @@ export default function TantraTypesSection() {
             {/* Close Button - Clean & Persistent */}
             <button
               onClick={() => setSelectedTantra(null)}
-              className={`absolute top-4 right-4 sm:top-5 sm:right-5 z-[110] p-3 ${isDark ? "bg-white/10 hover:bg-white/20 text-white" : "bg-black/10 hover:bg-black/20 text-black"} rounded-full transition-all hover:rotate-90 group shadow-xl`}
+              className="absolute top-6 right-6 sm:top-8 sm:right-8 z-[110] p-4 bg-[#E44426] text-white rounded-full transition-all hover:rotate-90 group shadow-[0_10px_30px_rgba(228,68,38,0.4)] hover:scale-110 active:scale-95 border-2 border-white/20"
               aria-label="Close modal"
             >
               <svg
-                className="w-5 h-5 sm:w-6 sm:h-6"
+                className="w-7 h-7 sm:w-8 sm:h-8"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth={3}
+                strokeWidth={4}
                 viewBox="0 0 24 24"
               >
                 <path
@@ -455,26 +455,26 @@ export default function TantraTypesSection() {
                     <div className="h-10 w-[1px] bg-cream/20 hidden sm:block" />
                     <div className="flex flex-col items-center sm:items-end">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs text-cream/40 line-through font-bold">
+                        <span className="text-xs text-white/60 line-through font-bold">
                            {tantraTypes[selectedTantra].originalPrice}
                         </span>
-                        <span className="text-[10px] bg-accent-red px-2 py-0.5 rounded text-white font-black animate-pulse shadow-lg">
+                        <span className="text-[10px] bg-white text-[#E44426] px-2 py-0.5 rounded-full font-black animate-pulse shadow-lg">
                            30% OFF
                         </span>
                       </div>
                       <div className="flex flex-col text-center sm:text-right">
                         <span className="text-[10px] uppercase tracking-[0.3em] text-soft-gold font-black mb-1">
-                          Price
+                          ONE-TIME CONTRIBUTION
                         </span>
-                        <span className="text-4xl font-black text-white drop-shadow-lg">
+                        <span className="text-4xl sm:text-5xl font-black text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
                           {tantraTypes[selectedTantra].price}
                         </span>
                       </div>
                     </div>
                     <Link
-                      href="#tantra-paths"
+                      href="/book-session"
                       onClick={() => setSelectedTantra(null)}
-                      className="mt-4 sm:mt-0 px-10 py-5 bg-accent-red text-white font-black rounded-xl hover:bg-white hover:text-accent-red border-2 border-accent-red transition-all hover:scale-105 shadow-2xl uppercase tracking-widest text-xs"
+                      className="mt-4 sm:mt-0 px-10 py-5 bg-[#E44426] text-white font-black rounded-xl hover:bg-white hover:text-[#E44426] border-4 border-[#E44426] transition-all hover:scale-105 shadow-[0_20px_40px_-10px_rgba(228,68,38,0.5)] uppercase tracking-widest text-xs flex items-center justify-center min-w-[240px]"
                     >
                       Secure Special Price →
                     </Link>
