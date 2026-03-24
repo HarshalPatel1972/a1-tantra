@@ -235,35 +235,35 @@ export default function TantraTypesSection() {
                       </div>
 
                       <div className="flex flex-col gap-1 items-end">
-                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
-                          From
+                        <span className="text-xs uppercase tracking-wider text-white/80 font-black drop-shadow-md">
+                          Limited Offer
                         </span>
                         <div className="text-right flex flex-col items-end">
-                           <div className="flex items-center gap-2">
-                             <span className="text-[10px] text-white/50 line-through font-bold decoration-accent-red/60">
+                           <div className="flex items-center gap-2 mb-1">
+                             <span className="text-[11px] text-white/50 line-through font-bold decoration-accent-red">
                                {tantra.originalPrice}
                              </span>
-                             <span className="text-[10px] bg-accent-red/20 px-1 rounded text-accent-red font-black">
+                             <span className="text-[11px] bg-[#E44426] px-2 py-0.5 rounded-full text-white font-black shadow-lg animate-pulse">
                                SAVE 30%+
                              </span>
                            </div>
                           <span
                             style={{ mixBlendMode: "screen" }}
-                            className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg"
+                            className="font-title text-3xl md:text-5xl font-black text-yellow-100 drop-shadow-lg"
                           >
                             {tantra.price}
                           </span>
-                          <p className="text-[10px] text-white/60 font-medium uppercase tracking-[0.1em] mt-1 drop-shadow-sm">
-                            or 3 easy installments
+                          <p className="text-[10px] text-white underline decoration-soft-gold underline-offset-4 font-black uppercase tracking-[0.1em] mt-1 drop-shadow-sm">
+                            3 Installments Available
                           </p>
                         </div>
                       </div>
                     </div>
 
                     {/* What's Included Cardlet */}
-                    <div className="bg-white/5 border border-white/10 p-4 rounded-xl space-y-3 mt-4">
-                      <p className="text-[10px] font-black uppercase text-soft-gold tracking-widest bg-white/5 w-fit px-2 py-0.5 rounded border border-soft-gold/30">
-                        Inclusions
+                    <div className="bg-black/40 border border-white/20 p-4 rounded-xl space-y-3 mt-4 backdrop-blur-sm">
+                      <p className="text-[10px] font-black uppercase text-black tracking-widest bg-[#D4AF37] w-fit px-3 py-1 rounded shadow-lg">
+                        Included in Session
                       </p>
                       <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                         {[
@@ -272,8 +272,8 @@ export default function TantraTypesSection() {
                           "Session recording",
                           "7-day support",
                         ].map((item, i) => (
-                          <div key={i} className="flex items-center gap-2 text-[10px] text-white/80 font-medium tracking-tight">
-                            <span className="text-soft-gold shrink-0">✔</span> {item}
+                          <div key={i} className="flex items-center gap-2 text-[11px] text-white font-bold tracking-tight">
+                            <span className="text-[#D4AF37] shrink-0">✔</span> {item}
                           </div>
                         ))}
                       </div>
@@ -453,20 +453,30 @@ export default function TantraTypesSection() {
                       </span>
                     </div>
                     <div className="h-10 w-[1px] bg-cream/20 hidden sm:block" />
-                    <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-[0.3em] text-soft-gold font-black mb-1">
-                        Price
-                      </span>
-                      <span className="text-3xl font-black text-accent-red">
-                        {tantraTypes[selectedTantra].price}
-                      </span>
+                    <div className="flex flex-col items-center sm:items-end">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xs text-cream/40 line-through font-bold">
+                           {tantraTypes[selectedTantra].originalPrice}
+                        </span>
+                        <span className="text-[10px] bg-accent-red px-2 py-0.5 rounded text-white font-black animate-pulse shadow-lg">
+                           30% OFF
+                        </span>
+                      </div>
+                      <div className="flex flex-col text-center sm:text-right">
+                        <span className="text-[10px] uppercase tracking-[0.3em] text-soft-gold font-black mb-1">
+                          Price
+                        </span>
+                        <span className="text-4xl font-black text-white drop-shadow-lg">
+                          {tantraTypes[selectedTantra].price}
+                        </span>
+                      </div>
                     </div>
                     <Link
                       href="#tantra-paths"
                       onClick={() => setSelectedTantra(null)}
-                      className="mt-4 sm:mt-0 px-8 py-4 bg-accent-red text-white font-black rounded-xl hover:bg-accent-red/90 transition-all hover:scale-105 shadow-lg uppercase tracking-widest text-sm"
+                      className="mt-4 sm:mt-0 px-10 py-5 bg-accent-red text-white font-black rounded-xl hover:bg-white hover:text-accent-red border-2 border-accent-red transition-all hover:scale-105 shadow-2xl uppercase tracking-widest text-xs"
                     >
-                      Book Session
+                      Secure Special Price →
                     </Link>
                   </div>
                 </div>

@@ -88,7 +88,6 @@ export default function RootLayout({
             {/* <AnimatedGradientBg /> */}
             <Navbar />
             <main className="pt-24 md:pt-32 relative">{children}</main>
-            <CallMeButton />
             <ExitIntentPopup />
             <MobileStickyBook />
           </AuthProvider>
