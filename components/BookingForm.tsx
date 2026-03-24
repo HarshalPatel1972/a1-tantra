@@ -2,25 +2,30 @@
 
 import { useState } from "react";
 import { sendBookingRequest } from "@/utils/emailjs";
-import { trackBooking } from "@/lib/gtag";
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    date: "",
-    sessionType: "meditation",
-    notes: "",
+    phone: "",
+    sessionType: "Tantric Breathwork Session",
+    preferredTime: "Afternoon (1 PM - 5 PM)",
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const sessionTypes = [
     "Tantra Meditation Session",
     "Tantric Breathwork Session",
     "Chakra Balancing Session",
     "Sound Healing + Tantra Flow",
+    "Unsure (Free consultation first)",
+  ];
+
+  const timeSlots = [
+    "Morning (8 AM - 12 PM)",
+    "Afternoon (1 PM - 5 PM)",
+    "Evening (6 PM - 10 PM)",
+    "Flexible / Weekends",
   ];
 
   const handleChange = (
@@ -34,170 +39,147 @@ export default function BookingForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+
     try {
-      setLoading(true);
-      setError(null);
       const success = await sendBookingRequest(
         formData.name,
-        formData.email,
-        formData.date,
+        formData.phone,
         formData.sessionType,
-        formData.notes
+        formData.preferredTime
       );
 
       if (success) {
-        // Google Ads Conversion tracking
-        trackBooking();
         setSubmitted(true);
         setFormData({
           name: "",
-          email: "",
-          date: "",
-          sessionType: "meditation",
-          notes: "",
+          phone: "",
+          sessionType: "Tantric Breathwork Session",
+          preferredTime: "Afternoon (1 PM - 5 PM)",
         });
-        setTimeout(() => setSubmitted(false), 5000);
-      } else {
-        setError("Failed to submit request. Please check your internet or configuration.");
+        setTimeout(() => setSubmitted(false), 8000);
       }
-    } catch (err) {
-      setError("An unexpected error occurred.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-xl mx-auto">
       {submitted && (
-        <div className="mb-6 p-4 bg-soft-gold/20 border border-soft-gold text-deep-brown rounded-lg">
-          Booking request submitted! We&apos;ll confirm your session soon.
-        </div>
-      )}
-
-      {error && (
-        <div className="mb-6 p-4 bg-red-500/10 border border-red-500 text-red-600 rounded-lg text-sm">
-          {error}
+        <div className="mb-8 p-6 bg-soft-gold/10 border border-soft-gold/30 text-deep-brown rounded-2xl flex items-center gap-4 animate-fade-in">
+           <span className="text-3xl">🕉️</span>
+           <div>
+             <p className="font-title text-lg font-bold">Booking Request Sent!</p>
+             <p className="text-sm opacity-80 font-medium">We usually reply within 2-4 hours on WhatsApp.</p>
+           </div>
         </div>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="space-y-4">
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-semibold text-deep-brown mb-2"
+              className="block text-xs font-black uppercase tracking-widest text-deep-brown/60 mb-2"
             >
-              Full Name
+              Your Full Name
             </label>
             <input
               type="text"
               id="name"
               name="name"
+              placeholder="e.g. Rahul Sharma"
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
+              className="w-full px-5 py-4 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown"
             />
           </div>
 
           <div>
             <label
-              htmlFor="email"
-              className="block text-sm font-semibold text-deep-brown mb-2"
+              htmlFor="phone"
+              className="block text-xs font-black uppercase tracking-widest text-deep-brown/60 mb-2"
             >
-              Email Address
+              WhatsApp Number
             </label>
             <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+91"
+              value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label
-              htmlFor="date"
-              className="block text-sm font-semibold text-deep-brown mb-2"
-            >
-              Preferred Date
-            </label>
-            <input
-              type="date"
-              id="date"
-              name="date"
-              value={formData.date}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
+              className="w-full px-5 py-4 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown"
             />
           </div>
 
-          <div>
-            <label
-              htmlFor="sessionType"
-              className="block text-sm font-semibold text-deep-brown mb-2"
-            >
-              Session Type
-            </label>
-            <select
-              id="sessionType"
-              name="sessionType"
-              value={formData.sessionType}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white"
-            >
-              {sessionTypes.map((type) => (
-                <option key={type} value={type}>
-                  {type}
-                </option>
-              ))}
-            </select>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label
+                htmlFor="sessionType"
+                className="block text-xs font-black uppercase tracking-widest text-deep-brown/60 mb-2"
+              >
+                Interest
+              </label>
+              <select
+                id="sessionType"
+                name="sessionType"
+                value={formData.sessionType}
+                onChange={handleChange}
+                className="w-full px-5 py-4 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown"
+              >
+                {sessionTypes.map((type) => (
+                  <option key={type} value={type}>
+                    {type}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label
+                htmlFor="preferredTime"
+                className="block text-xs font-black uppercase tracking-widest text-deep-brown/60 mb-2"
+              >
+                Preferred Time
+              </label>
+              <select
+                id="preferredTime"
+                name="preferredTime"
+                value={formData.preferredTime}
+                onChange={handleChange}
+                className="w-full px-5 py-4 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown"
+              >
+                {timeSlots.map((slot) => (
+                  <option key={slot} value={slot}>
+                    {slot}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 
-        <div>
-          <label
-            htmlFor="notes"
-            className="block text-sm font-semibold text-deep-brown mb-2"
-          >
-            Additional Notes
-          </label>
-          <textarea
-            id="notes"
-            name="notes"
-            value={formData.notes}
-            onChange={handleChange}
-            rows={4}
-            placeholder="Tell us about your experience level, intentions, or any questions..."
-            className="w-full px-4 py-3 border border-deep-brown/30 rounded-sm focus:outline-none focus:ring-2 focus:ring-accent-red bg-white resize-none"
-          />
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button
-            type="submit"
-            disabled={loading}
-            className="flex-1 px-8 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition disabled:opacity-50"
-          >
-            {loading ? "Submitting..." : "REQUEST BOOKING"}
-          </button>
-          <a
-            href={`https://calendar.google.com/calendar/u/0/r`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 px-8 py-3 border-2 border-accent-red text-accent-red font-semibold rounded-sm hover:bg-accent-red hover:text-cream transition text-center"
-          >
-            VIEW CALENDAR
-          </a>
-        </div>
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full py-5 bg-accent-red text-white font-black rounded-xl hover:bg-deep-brown transition-all disabled:opacity-50 uppercase tracking-[0.2em] text-sm shadow-xl shadow-accent-red/20 flex items-center justify-center gap-3 group"
+        >
+          {loading ? (
+            "Sending..."
+          ) : (
+            <>
+              Request My Session 
+              <span className="group-hover:translate-x-2 transition-transform">→</span>
+            </>
+          )}
+        </button>
       </form>
     </div>
+  );
+}
   );
 }

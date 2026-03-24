@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { trackWhatsApp } from "@/lib/gtag";
 
 export default function CallMeButton() {
   const phoneNumber = "919217821866";
@@ -13,8 +12,8 @@ export default function CallMeButton() {
     // 1. Initial trigger after 3 seconds of page load
     const initialTimer = setTimeout(() => {
       setShowTooltip(true);
-      setTimeout(() => setShowTooltip(false), 8000);
-    }, 3000);
+      setTimeout(() => setShowTooltip(false), 10000); // Show for 10s
+    }, 8000); // 8 seconds delay
 
     // 2. "Stuck" trigger (no scrolling for 30 seconds)
     let inactivityTimer: NodeJS.Timeout;
@@ -64,7 +63,7 @@ export default function CallMeButton() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </span>
-            Chat with us for guidance
+            Chat with us — we reply in minutes!
           </div>
           {/* Tooltip Arrow */}
           <div className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-r-2 border-t-2 border-deep-brown rotate-45"></div>
@@ -79,17 +78,15 @@ export default function CallMeButton() {
           aria-label="Open WhatsApp chat"
           onMouseEnter={() => setShowTooltip(true)}
           onMouseLeave={() => setShowTooltip(false)}
-          onClick={() => trackWhatsApp()}
         >
           {/* Using Next.js Image with the string path now that the file is tracked */}
           <Image
-            src="/images/whatsapp.png"
+            src="/images/whatsapp.webp"
             alt="WhatsApp"
             width={64}
             height={64}
             className="w-12 h-12 md:w-16 md:h-16 object-contain drop-shadow-lg"
             priority
-            unoptimized
           />
         </a>
       </div>

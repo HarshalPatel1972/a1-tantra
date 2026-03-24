@@ -171,7 +171,7 @@ export default function TantraTypesSection() {
               <button
                 key={idx}
                 onClick={() => setSelectedTantra(idx)}
-                className="group relative h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                className="group relative min-h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
               >
                 {/* Background Image */}
                 <Image
@@ -214,7 +214,7 @@ export default function TantraTypesSection() {
                     {/* Description */}
                     <p
                       style={{ mixBlendMode: "lighten" }}
-                      className="font-body text-sm md:text-base text-yellow-200 leading-relaxed line-clamp-3 drop-shadow-md"
+                      className="font-body text-sm text-yellow-200 leading-relaxed drop-shadow-md line-clamp-2"
                     >
                       {tantra.description}
                     </p>
@@ -222,7 +222,7 @@ export default function TantraTypesSection() {
                     {/* Duration & Price Row */}
                     <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/30">
                       <div className="flex flex-col gap-1">
-                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
+                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md text-left">
                           Duration
                         </span>
                         <span className="font-nav text-base font-bold text-white drop-shadow-lg">
@@ -234,20 +234,41 @@ export default function TantraTypesSection() {
                         <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
                           From
                         </span>
-                        <span
-                          style={{ mixBlendMode: "screen" }}
-                          className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg"
-                        >
-                          {tantra.price}
-                        </span>
+                        <div className="text-right">
+                          <span
+                            style={{ mixBlendMode: "screen" }}
+                            className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg"
+                          >
+                            {tantra.price}
+                          </span>
+                          <p className="text-[10px] text-white/60 font-medium uppercase tracking-[0.1em] mt-1 drop-shadow-sm">
+                            or 3 easy installments
+                          </p>
+                        </div>
                       </div>
                     </div>
 
-                    {/* Click to Learn More */}
+                    {/* What's Included Cardlet */}
+                    <div className="bg-white/5 border border-white/10 p-4 rounded-xl space-y-3 mt-4">
+                      <p className="text-[10px] font-black uppercase text-soft-gold tracking-widest bg-white/5 w-fit px-2 py-0.5 rounded border border-soft-gold/30">
+                        Inclusions
+                      </p>
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+                        {[
+                          "Pre-session call",
+                          "Practice plan",
+                          "Session recording",
+                          "7-day support",
+                        ].map((item, i) => (
+                          <div key={i} className="flex items-center gap-2 text-[10px] text-white/80 font-medium tracking-tight">
+                            <span className="text-soft-gold shrink-0">✔</span> {item}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
                     <div className="pt-2">
-                      <span className="text-xs text-white/70 italic">
-                        Click to learn more →
-                      </span>
+                       <span className="text-xs text-white/70 italic font-medium">Click for details →</span>
                     </div>
                   </div>
                 </div>

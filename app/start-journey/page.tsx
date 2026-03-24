@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Footer from "@/components/Footer";
 import { sendEmail } from "@/utils/emailjs";
-import { trackJourney } from "@/lib/gtag";
 
 export default function StartJourneyPage() {
   const [step, setStep] = useState(1);
@@ -16,7 +15,6 @@ export default function StartJourneyPage() {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const goals = [
     "Inner Peace & Meditation",
@@ -48,9 +46,10 @@ export default function StartJourneyPage() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
     try {
-      setLoading(true);
-      setError(null);
       const success = await sendEmail({
         from_name: formData.name,
         from_email: formData.email,
@@ -65,8 +64,6 @@ Please send me personalized guidance to begin my Tantra journey.
       });
 
       if (success) {
-        // Google Ads Conversion tracking
-        trackJourney();
         setSubmitted(true);
         setTimeout(() => {
           setStep(1);
@@ -79,11 +76,7 @@ Please send me personalized guidance to begin my Tantra journey.
           });
           setSubmitted(false);
         }, 5000);
-      } else {
-        setError("Something went wrong. Please check your setup.");
       }
-    } catch (err) {
-      setError("An unexpected error occurred.");
     } finally {
       setLoading(false);
     }
@@ -91,7 +84,7 @@ Please send me personalized guidance to begin my Tantra journey.
 
   return (
     <div>
-      <div className="pt-4 pb-24 bg-cream min-h-screen">
+      <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Progress */}
           <div className="mb-12">
@@ -121,12 +114,6 @@ Please send me personalized guidance to begin my Tantra journey.
             <div className="mb-8 p-4 bg-soft-gold/20 border border-soft-gold text-deep-brown rounded-lg text-center">
               Thank you! We&apos;ll send you personalized guidance to your email
               shortly.
-            </div>
-          )}
-
-          {error && (
-            <div className="mb-8 p-4 bg-red-500/10 border border-red-500 text-red-600 rounded-lg text-center text-sm">
-              {error}
             </div>
           )}
 

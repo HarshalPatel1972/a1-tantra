@@ -8,10 +8,6 @@ interface User {
   email: string;
 }
 
-interface UserWithPassword extends User {
-  password?: string;
-}
-
 interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
@@ -32,7 +28,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const storedUser = localStorage.getItem("authUser");
     if (storedUser) {
       try {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setUser(JSON.parse(storedUser));
       } catch (err) {
         console.error("Failed to parse stored user:", err);
@@ -50,7 +45,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
       // Find user with matching email and password
       const foundUser = users.find(
-        (u: UserWithPassword) => u.email === email && u.password === password,
+        (u: any) => u.email === email && u.password === password,
       );
 
       if (foundUser) {
@@ -79,19 +74,19 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     try {
       // Get existing users
       const usersJson = localStorage.getItem("authUsers");
-      const users: UserWithPassword[] = usersJson ? JSON.parse(usersJson) : [];
+      const users = usersJson ? JSON.parse(usersJson) : [];
 
       // Check if email already exists
-      if (users.some((u: UserWithPassword) => u.email === email)) {
+      if (users.some((u: any) => u.email === email)) {
         return false;
       }
 
       // Create new user
-      const newUser: UserWithPassword = {
+      const newUser = {
         id: `user_${Date.now()}`,
         name,
         email,
-        password, // SECURITY WARNING: Plaintext storage. Use bcrypt/hashing in production.
+        password, // Note: In production, passwords should be hashed
       };
 
       users.push(newUser);

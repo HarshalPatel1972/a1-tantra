@@ -2,43 +2,74 @@
 
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/BookingForm";
+import ConsultationBanner from "@/components/ConsultationBanner";
 
 export default function BookingPage() {
+  const faqs = [
+    {
+      q: "Is this confidential?",
+      a: "Completely. All sessions are private and we never share your information. We maintain a sacred, safe space for all seekers."
+    },
+    {
+      q: "What if I've never tried Tantra before?",
+      a: "Perfect. Most of our seekers are beginners. Your guide will start from the very basics and adapt to your comfort level."
+    },
+    {
+      q: "How does an online session work?",
+      a: "Sessions happen via secure video call. You'll receive a private link and preparation instructions after your booking is confirmed."
+    }
+  ];
+
   return (
     <div>
-      <div className="pt-4 pb-24 bg-cream min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 relative py-8">
-            <h1 className="serif-heading text-5xl md:text-8xl font-bold text-deep-brown mb-4 relative">
-              Book a{" "}
-              <span className="text-brand-blue drop-shadow-[0_0_15px_rgba(29,78,216,0.3)]">
-                Session
+      <ConsultationBanner />
+      <div className="pt-24 pb-24 bg-cream min-h-screen">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 relative">
+            {/* Social Proof / Urgency Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm border border-deep-brown/10 rounded-full mb-8 shadow-sm scale-90 md:scale-100">
+               <span className="flex h-2 w-2 relative">
+                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+               </span>
+               <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-deep-brown/60">
+                 3 seekers booked this week · Next available: This week
+               </span>
+            </div>
+
+            <h1 className="font-title text-5xl md:text-7xl lg:text-8xl font-black text-deep-brown mb-6 leading-none">
+              Begin Your{" "}
+              <span className="text-accent-red italic underline decoration-1 underline-offset-8">
+                Journey
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-deep-brown/70 max-w-2xl mx-auto font-body">
-              Choose a session type that resonates with your journey and submit
-              your booking request.
+            <p className="text-base md:text-lg text-deep-brown/70 max-w-xl mx-auto font-body font-medium leading-relaxed">
+              Sessions fill up fast. Secure your spot today and start your transformation with an authentic guide.
             </p>
           </div>
 
-          <BookingForm />
+          <div className="bg-white/40 backdrop-blur-md p-8 md:p-12 rounded-[2rem] border border-deep-brown/5 shadow-2xl shadow-deep-brown/5 mb-16">
+            <BookingForm />
+          </div>
 
-          <div className="mt-12 p-8 bg-accent-red/10 border border-accent-red/20 rounded-lg max-w-2xl mx-auto">
-            <h3 className="serif-heading text-2xl font-bold text-deep-brown mb-2">
-              Need a different time?
-            </h3>
-            <p className="text-deep-brown/70 mb-4">
-              You can also view our availability directly on Google Calendar or
-              send us an email for custom session times.
-            </p>
-            <a
-              href="https://calendar.google.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-2 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition"
-            >
-              VIEW GOOGLE CALENDAR
-            </a>
+          {/* FAQ Section */}
+          <div className="max-w-xl mx-auto space-y-12">
+            <h2 className="font-title text-3xl md:text-4xl font-bold text-deep-brown text-center mb-12">
+              Common Questions
+            </h2>
+            <div className="space-y-8">
+              {faqs.map((faq, idx) => (
+                <div key={idx} className="space-y-3">
+                  <h3 className="font-title text-xl font-bold text-deep-brown flex items-start gap-3">
+                    <span className="text-accent-red">Q:</span>
+                    {faq.q}
+                  </h3>
+                  <p className="font-body text-deep-brown/70 leading-relaxed pl-8">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

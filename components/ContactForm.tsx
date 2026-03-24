@@ -1,12 +1,9 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 import { sendEmail } from "@/utils/emailjs";
-import { trackContactForm } from "@/lib/gtag";
 
-function ContactFormContent() {
-  const searchParams = useSearchParams();
+export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,17 +12,6 @@ function ContactFormContent() {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const service = searchParams.get("service");
-    if (service) {
-      setFormData((prev) => ({ 
-        ...prev, 
-        subject: `Inquiry: ${service.charAt(0).toUpperCase() + service.slice(1).replace(/-/g, ' ')}`
-      }));
-    }
-  }, [searchParams]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -37,7 +23,6 @@ function ContactFormContent() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
 
     try {
       const success = await sendEmail({
@@ -48,16 +33,10 @@ function ContactFormContent() {
       });
 
       if (success) {
-        // Google Ads Conversion tracking
-        trackContactForm();
         setSubmitted(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
         setTimeout(() => setSubmitted(false), 5000);
-      } else {
-        setError("Something went wrong. Please check your internet connection or email configuration.");
       }
-    } catch (err) {
-      setError("An unexpected error occurred. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -68,12 +47,6 @@ function ContactFormContent() {
       {submitted && (
         <div className="p-4 bg-soft-gold/20 border border-soft-gold text-deep-brown rounded-lg">
           Thank you for reaching out. We&apos;ll be in touch soon.
-        </div>
-      )}
-
-      {error && (
-        <div className="p-4 bg-red-500/10 border border-red-500 text-red-600 rounded-lg text-sm">
-          {error}
         </div>
       )}
 
@@ -157,13 +130,5 @@ function ContactFormContent() {
         {loading ? "Sending..." : "SEND MESSAGE"}
       </button>
     </form>
-  );
-}
-
-export default function ContactForm() {
-  return (
-    <Suspense fallback={<div className="text-center py-10">Loading form...</div>}>
-      <ContactFormContent />
-    </Suspense>
   );
 }

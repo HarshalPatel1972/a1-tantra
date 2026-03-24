@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import CallMeButton from "@/components/CallMeButton";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
+import MobileStickyBook from "@/components/MobileStickyBook";
 // import AnimatedGradientBg from "@/components/AnimatedGradientBg";
 
 const playfair = Playfair_Display({
@@ -34,19 +36,27 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "A1 Tantra - Sacred Tantric Wisdom & Healing Practices",
+  title: "A1 Tantra | Authentic Sacred Tantric Healing & Guidance India",
   description:
-    "Discover tantric wisdom, healing practices, and transformational paths guided with clarity, depth, and compassion.",
+    "Discover authentic Tantric wisdom with A1 Tantra. Expert-guided breathwork, chakra balancing & sacred sessions. Trusted by 500+ seekers across India. Book your session today.",
   keywords:
-    "tantra, meditation, spiritual healing, kundalini, chakra, breathwork",
+    "tantra, meditation, spiritual healing, kundalini, chakra, breathwork, authentic tantra, tantric healing",
   authors: [{ name: "A1 Tantra" }],
   openGraph: {
-    title: "A1 Tantra - Explore Tantra Together",
+    title: "A1 Tantra | Authentic Sacred Tantric Healing & Guidance India",
     description:
-      "A place to explore Tantra, together. Discover sacred wisdom and transformational practices.",
+      "A place to explore Tantra, together. Discover sacred wisdom and transformational practices with our expert-guided sessions.",
     url: siteUrl,
     siteName: "A1 Tantra",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "A1 Tantra Sacred Wisdom",
+      },
+    ],
   },
   verification: {
     google: "WhDnZ2n4fhioUkkNSKitD12Xj-8syFzF0PIySqty8bM",
@@ -79,6 +89,8 @@ export default function RootLayout({
             <Navbar />
             <main className="pt-24 md:pt-32 relative">{children}</main>
             <CallMeButton />
+            <ExitIntentPopup />
+            <MobileStickyBook />
           </AuthProvider>
         </ThemeProvider>
       </body>

@@ -31,16 +31,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const saved = localStorage.getItem("a1tantra-theme") as Theme | null;
     if (saved === "dark" || saved === "light") {
       setTheme(saved);
-    } else {
-      // Check for time-based theme (6 PM to 6 AM = Dark)
-      const hour = new Date().getHours();
-      const isNight = hour >= 18 || hour < 6;
-      
-      if (isNight) {
-        setTheme("dark");
-      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setTheme("dark");
-      }
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
     }
     setMounted(true);
   }, []);

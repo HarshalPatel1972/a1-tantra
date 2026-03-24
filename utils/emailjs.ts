@@ -46,22 +46,20 @@ export const sendNewsletterSignup = async (email: string): Promise<boolean> => {
 
 export const sendBookingRequest = async (
   name: string,
-  email: string,
-  date: string,
+  phone: string,
   sessionType: string,
-  notes?: string
+  preferredTime: string
 ): Promise<boolean> => {
   return sendEmail({
     from_name: name,
-    from_email: email,
+    from_email: "noreply@a1-tantra.com",
     subject: `Booking Request: ${sessionType}`,
     message: `
       Booking Request Details:
       Name: ${name}
-      Email: ${email}
-      Preferred Date: ${date}
+      Phone/WhatsApp: ${phone}
       Session Type: ${sessionType}
-      Additional Notes: ${notes || "None"}
+      Preferred Time: ${preferredTime}
     `,
   });
 };

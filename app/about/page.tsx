@@ -2,22 +2,23 @@
 
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import GuideSection from "@/components/GuideSection";
 
 export default function AboutPage() {
   return (
-    <div>
-      <div className="pt-32 pb-24 bg-cream min-h-screen">
+    <div className="bg-cream">
+      <div className="pt-32 pb-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="serif-heading text-5xl font-bold text-deep-brown mb-8">
-            About A1 Tantra
+          <h1 className="font-title text-6xl md:text-8xl font-black text-deep-brown mb-12 leading-none">
+            About <span className="text-accent-red italic">A1 Tantra</span>
           </h1>
 
-          <div className="prose prose-lg text-deep-brown/80 space-y-8 max-w-none">
-            <section>
-              <h2 className="serif-heading text-3xl font-bold text-deep-brown mb-4">
+          <div className="space-y-16">
+            <section className="space-y-6">
+              <h2 className="font-title text-3xl font-bold text-deep-brown">
                 Our Mission
               </h2>
-              <p>
+              <p className="font-body text-lg text-deep-brown/80 leading-relaxed">
                 A1 Tantra was created with a singular mission: to illuminate the
                 path of Tantra with authenticity, clarity, and compassion. In a
                 world where Tantra is often misunderstood, appropriated, or
@@ -26,111 +27,59 @@ export default function AboutPage() {
               </p>
             </section>
 
-            <section>
-              <h2 className="serif-heading text-3xl font-bold text-deep-brown mb-4">
+            <section className="space-y-6">
+              <h2 className="font-title text-3xl font-bold text-deep-brown">
                 Our Story
               </h2>
-              <p>
-                Founded by practitioners and scholars dedicated to authentic
-                Tantra, A1 Tantra emerged from a deep recognition that modern
-                seekers deserved access to genuine, well-researched teachings.
-                Every guide, practice, and resource on this platform has been
-                carefully reviewed by accomplished Tantra practitioners,
-                scholars, and lineage holders.
-              </p>
-              <p>
-                We believe that Tantra is not a shortcut to enlightenment, nor
-                is it merely about sexuality. It is a profound philosophical and
-                practical system with roots spanning thousands of years, diverse
-                schools of thought, and real, transformative power when
-                approached with reverence and dedication.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="serif-heading text-3xl font-bold text-deep-brown mb-4">
-                Our Values
-              </h2>
-              <ul className="space-y-3">
-                <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">•</span>
-                  <div>
-                    <strong className="text-deep-brown">Authenticity:</strong>{" "}
-                    We honor the lineages and traditions from which these
-                    teachings come.
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">•</span>
-                  <div>
-                    <strong className="text-deep-brown">Clarity:</strong> We
-                    make complex teachings accessible without diluting their
-                    depth.
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">•</span>
-                  <div>
-                    <strong className="text-deep-brown">Compassion:</strong> We
-                    meet seekers where they are, honoring all levels of
-                    practice.
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-accent-red text-xl">•</span>
-                  <div>
-                    <strong className="text-deep-brown">Safety:</strong> We
-                    create a space where sacred sexuality and transformation are
-                    discussed openly, respectfully, and responsibly.
-                  </div>
-                </li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="serif-heading text-3xl font-bold text-deep-brown mb-4">
-                The Advisory Panel
-              </h2>
-              <p>
-                At the heart of our authenticity is our Advisory Panel—a council
-                of accomplished Tantra practitioners, scholars, and lineage
-                holders who review all teachings on A1 Tantra. This diverse
-                group ensures that our content honors traditional knowledge
-                while remaining accessible to modern seekers.
-              </p>
-              <p>
-                Each member brings their own expertise: some are rooted in
-                Shakta Tantra traditions, others in Kundalini practices, Tibetan
-                Buddhism, and contemporary tantric studies. Together, they
-                create a multi-perspective approach to Tantra that is rigorous,
-                respectful, and radiant with living wisdom.
-              </p>
-              <Link
-                href="/advisory"
-                className="inline-block mt-6 px-6 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition"
-              >
-                MEET THE ADVISORY PANEL
-              </Link>
-            </section>
-
-            <section>
-              <h2 className="serif-heading text-3xl font-bold text-deep-brown mb-4">
-                Contact Us
-              </h2>
-              <p>
-                Have questions or want to collaborate? We&apos;d love to hear from
-                you.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-block mt-4 px-6 py-3 border-2 border-deep-brown text-deep-brown font-semibold rounded-sm hover:bg-deep-brown hover:text-cream transition"
-              >
-                SEND A MESSAGE
-              </Link>
+              <div className="font-body text-lg text-deep-brown/80 space-y-4 leading-relaxed">
+                <p>
+                  Founded by practitioners and scholars dedicated to authentic
+                  Tantra, A1 Tantra emerged from a deep recognition that modern
+                  seekers deserved access to genuine, well-researched teachings.
+                </p>
+                <p>
+                  We believe that Tantra is not a shortcut to enlightenment, nor
+                  is it merely about sexuality. It is a profound philosophical and
+                  practical system with roots spanning thousands of years.
+                </p>
+              </div>
             </section>
           </div>
         </div>
       </div>
+
+      <GuideSection />
+
+      <div className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="space-y-8">
+          <h2 className="font-title text-4xl font-bold text-deep-brown">
+            Our Values
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { t: "Authenticity", d: "We honor the tradition and lineages." },
+              { t: "Clarity", d: "Complex teachings made accessible." },
+              { t: "Compassion", d: "Meeting every seeker where they are." },
+              { t: "Safety", d: "Respectful and responsible discovery." }
+            ].map((v, i) => (
+              <div key={i} className="p-6 bg-white/50 border border-deep-brown/5 rounded-2xl">
+                <h3 className="font-title text-xl font-bold text-accent-red mb-2">{v.t}</h3>
+                <p className="font-body text-deep-brown/70">{v.d}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-12 text-center">
+             <Link
+                href="/contact"
+                className="inline-block px-10 py-5 bg-deep-brown text-cream font-black rounded-sm hover:bg-accent-red transition uppercase tracking-widest text-sm"
+              >
+                Connect With Us
+              </Link>
+          </div>
+        </section>
+      </div>
+
       <Footer />
     </div>
   );

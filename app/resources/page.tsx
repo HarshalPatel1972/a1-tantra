@@ -1,11 +1,7 @@
-import type { Metadata } from "next";
+"use client";
+
 import Footer from "@/components/Footer";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "Tantric Resources & Learning Guides | A1 Tantra",
-  description: "Explore our library of tantric resources, rituals, breathwork guides, and ancient wisdom for your spiritual journey.",
-};
 
 export default function ResourcesPage() {
   const resources = [
@@ -19,7 +15,7 @@ export default function ResourcesPage() {
 
   return (
     <div>
-      <div className="pt-4 pb-24 bg-cream min-h-screen">
+      <div className="pt-32 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="serif-heading text-5xl font-bold text-deep-brown mb-8 text-center">
             Resources
@@ -32,7 +28,7 @@ export default function ResourcesPage() {
             {resources.map((resource, idx) => (
               <Link
                 key={idx}
-                href="/contact?service=resources"
+                href="#"
                 className="p-8 border-2 border-deep-brown/20 hover:border-accent-red bg-white rounded-lg transition group"
               >
                 <div className="text-4xl mb-4">{resource.icon}</div>

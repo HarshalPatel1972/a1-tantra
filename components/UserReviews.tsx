@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const reviews = [
   {
     name: "Priya Sharma",
@@ -107,8 +109,8 @@ export default function UserReviews() {
         </div>
 
         {/* Marquee Track */}
-        <div className="flex overflow-hidden group">
-          <div className="flex gap-6 animate-marquee group-hover:[animation-play-state:paused] py-4">
+        <div className="flex overflow-hidden group pause-on-hover">
+          <div className="flex gap-6 animate-marquee py-4">
             {marqueeReviews.map((review, idx) => (
               <div
                 key={idx}
@@ -133,12 +135,15 @@ export default function UserReviews() {
                     </p>
                   </div>
 
-                  {/* Bottom: Author */}
+                   {/* Bottom: Author */}
                   <div className="flex items-center gap-4 pt-6 border-t border-soft-gold/10">
-                    <div className="w-12 h-12 rounded-full bg-linear-to-br from-soft-gold/30 to-soft-gold/10 border border-soft-gold/30 flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <span className="font-title text-base font-bold text-soft-gold">
-                        {review.name.charAt(0)}
-                      </span>
+                    <div className="w-12 h-12 rounded-full overflow-hidden border border-soft-gold/30 flex items-center justify-center flex-shrink-0 shadow-lg bg-deep-brown relative">
+                      <Image
+                        src={`https://api.dicebear.com/7.x/initials/svg?seed=${review.name}&backgroundColor=3f2f27&fontFamily=Playfair%20Display&fontWeight=700`}
+                        alt={review.name}
+                        fill
+                        className="p-1"
+                      />
                     </div>
                     <div className="min-w-0">
                       <h4 className="font-nav font-bold text-sm text-cream tracking-[0.1em] truncate group-hover:text-soft-gold transition-colors duration-300">
