@@ -65,29 +65,16 @@ export default function Newsletter() {
             <button
               type="submit"
               disabled={loading}
-              className="relative flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-deep-brown font-bold rounded-xl border-2 border-deep-brown group overflow-hidden transition-all duration-300 disabled:opacity-50"
+              className="relative flex items-center justify-center gap-3 px-10 py-4 bg-deep-brown text-cream font-black rounded-xl border-2 border-soft-gold group overflow-hidden transition-all duration-300 disabled:opacity-50 shadow-xl"
             >
-              {/* This is the fill layer */}
-              <span className="absolute inset-0 bg-accent-red translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
+              <span className="absolute inset-0 bg-accent-red -translate-x-full group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
               
-              <div className="relative z-10 flex items-center gap-2 group-hover:text-cream transition-colors duration-300">
-                <span className="font-bold tracking-wide">
-                  {loading ? "Subscribing..." : "SUBSCRIBE"}
+              <div className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-300">
+                <span className="font-bold tracking-widest text-sm">
+                  {loading ? "SAVING..." : "SUBSCRIBE"}
                 </span>
                 {!loading && (
-                  <svg
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 )}
               </div>
             </button>

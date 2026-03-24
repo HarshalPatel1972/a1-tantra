@@ -97,9 +97,9 @@ export default function WelcomeHome() {
                   {feature.description}
                 </p>
 
-                <button className="hidden md:group/btn relative md:inline-flex items-center gap-3 text-deep-brown font-bold text-sm uppercase tracking-widest overflow-hidden">
-                  <span className="relative z-10">Learn the path</span>
-                  <div className="w-8 h-[2px] bg-accent-red group-hover/btn:w-16 transition-all duration-500" />
+                <button className="hidden md:inline-flex items-center gap-3 px-6 py-2 bg-transparent text-deep-brown font-black text-xs uppercase tracking-widest border-2 border-deep-brown rounded-xl hover:bg-deep-brown hover:text-white transition-all">
+                  <span>Learn the path</span>
+                  <span className="text-xl">→</span>
                 </button>
               </div>
             </div>

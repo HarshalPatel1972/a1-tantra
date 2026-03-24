@@ -25,37 +25,24 @@ export default function BuildJourneyCTA() {
               priority
             />
             {/* Content Overlay */}
-            <div className="absolute inset-0 flex flex-col justify-center p-6 text-white">
-              <h2 className="serif-heading text-4xl font-bold mb-4 leading-tight drop-shadow-lg">
-                Start your Tantra Journey.
-              </h2>
-              <p className="text-base mb-6 leading-relaxed drop-shadow-md text-white font-medium">
-                Personalized guidance based on your energy, goals, and
-                resonance. Build a path uniquely yours.
-              </p>
-              <Link
-                href="/start-journey"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-cream text-deep-brown font-bold rounded-lg w-fit relative overflow-hidden group"
-              >
-                <span className="absolute inset-0 bg-deep-brown translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
-                <span className="relative z-10 flex items-center gap-2 group-hover:text-cream transition-colors duration-500">
-                  GET STARTED
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </span>
-              </Link>
-            </div>
+              <div className="absolute inset-0 flex flex-col justify-center p-6 text-white">
+                <h2 className="serif-heading text-4xl font-bold mb-4 leading-tight drop-shadow-lg">
+                  Start your Tantra Journey.
+                </h2>
+                <p className="text-base mb-6 leading-relaxed drop-shadow-md text-white font-medium">
+                  Personalized guidance based on your energy, goals, and
+                  resonance. Build a path uniquely yours.
+                </p>
+                <Link
+                  href="/start-journey"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-cream text-deep-brown font-black rounded-xl w-fit relative overflow-hidden group border-2 border-deep-brown shadow-xl active:scale-95 transition-all"
+                >
+                  <span className="absolute inset-0 bg-deep-brown translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
+                  <span className="relative z-10 flex items-center gap-2 group-hover:text-cream transition-colors duration-500">
+                    GET STARTED →
+                  </span>
+                </Link>
+              </div>
           </div>
 
           {/* Desktop: Left Content + Right Image */}
@@ -69,24 +56,11 @@ export default function BuildJourneyCTA() {
             </p>
             <Link
               href="/start-journey"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-deep-brown text-cream font-bold text-lg rounded-lg relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-deep-brown text-cream font-black text-lg rounded-xl relative overflow-hidden group border-2 border-soft-gold/30 shadow-2xl active:scale-95 transition-all"
             >
-              <span className="absolute inset-0 bg-red-600 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
-              <span className="relative z-10 flex items-center gap-3">
-                GET STARTED
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
+              <span className="absolute inset-0 bg-accent-red -translate-x-full group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
+              <span className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors duration-500">
+                GET STARTED →
               </span>
             </Link>
           </div>
