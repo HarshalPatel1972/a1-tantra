@@ -166,14 +166,14 @@ export default function BookingForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-5 bg-accent-red text-white font-black rounded-xl hover:bg-deep-brown transition-all disabled:opacity-50 uppercase tracking-[0.2em] text-sm shadow-xl shadow-accent-red/20 flex items-center justify-center gap-3 group"
+          className="w-full py-6 bg-[#E44426] text-white font-black rounded-xl hover:bg-white hover:text-[#E44426] border-4 border-[#E44426] transition-all disabled:opacity-50 uppercase tracking-[0.2em] text-sm shadow-[0_20px_40px_-10px_rgba(228,68,38,0.4)] flex items-center justify-center gap-3 group active:scale-95"
         >
           {loading ? (
-            "Sending..."
+            "PROCESSING..."
           ) : (
             <>
               Request My Session 
-              <span className="group-hover:translate-x-2 transition-transform">→</span>
+              <span className="group-hover:translate-x-2 transition-transform text-xl">→</span>
             </>
           )}
         </button>

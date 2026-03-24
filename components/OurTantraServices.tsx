@@ -86,10 +86,10 @@ export default function OurTantraServices() {
 
                 <Link 
                   href={service.link}
-                  className="group/btn relative inline-flex items-center gap-3 px-8 py-4 font-nav font-black text-xs uppercase tracking-[0.2em] overflow-hidden bg-accent-red text-white border-2 border-accent-red rounded-xl shadow-xl active:scale-95 transition-all"
+                  className="group/btn relative inline-flex items-center justify-center gap-3 px-10 py-5 font-nav font-black text-sm uppercase tracking-[0.2em] overflow-hidden bg-[#E44426] text-white border-4 border-[#E44426] rounded-xl shadow-[0_20px_40px_-10px_rgba(228,68,38,0.4)] active:scale-95 transition-all w-fit min-w-[240px]"
                 >
-                  <span className="relative z-10">Explore Service →</span>
-                  <span className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500 ease-out bg-deep-brown" />
+                  <span className="relative z-10 text-white">Explore Service →</span>
+                  <span className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-500 ease-out bg-[#3F2F27]" />
                 </Link>
               </div>
             </div>
