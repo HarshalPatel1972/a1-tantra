@@ -139,17 +139,17 @@ export default function UserReviews() {
                   <div className="flex items-center gap-4 pt-6 border-t border-soft-gold/10">
                     <div className="w-12 h-12 rounded-full overflow-hidden border border-soft-gold/30 flex items-center justify-center flex-shrink-0 shadow-lg bg-deep-brown relative">
                       <Image
-                        src={`https://api.dicebear.com/7.x/initials/svg?seed=${review.name}&backgroundColor=3f2f27&fontFamily=Playfair%20Display&fontWeight=700`}
+                        src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${review.name}`}
                         alt={review.name}
                         fill
-                        className="p-1"
+                        className="p-1 object-contain"
                       />
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-nav font-bold text-sm text-cream tracking-[0.1em] truncate group-hover:text-soft-gold transition-colors duration-300">
+                      <h4 className="font-nav font-bold text-sm tracking-[0.1em] truncate group-hover:text-accent-red transition-colors duration-300" style={{ color: "#3F2F27" }}>
                         {review.name}
                       </h4>
-                      <p className="text-[10px] text-cream/50 font-nav uppercase tracking-[0.2em] mt-0.5">
+                      <p className="text-[10px] font-nav uppercase tracking-[0.2em] mt-0.5 opacity-60" style={{ color: "#3F2F27" }}>
                         {review.location} &middot; {review.date}
                       </p>
                     </div>

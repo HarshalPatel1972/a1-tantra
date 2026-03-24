@@ -20,7 +20,8 @@ export default function ConsultationBanner() {
           onClick={() => trackWhatsApp()}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-2 bg-deep-brown text-soft-gold font-black rounded-lg hover:scale-105 transition-all shadow-lg text-xs md:text-sm uppercase tracking-widest border border-deep-brown"
+          className="px-6 py-2 font-black rounded-lg hover:scale-105 transition-all text-xs md:text-sm uppercase tracking-widest border border-black/20 shadow-xl"
+          style={{ backgroundColor: "#3F2F27", color: "#D4AF37" }}
         >
           Claim Free Call
         </Link>
