@@ -1,9 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { trackBooking } from "@/lib/gtag";
 
 export default function MobileStickyBook() {
+  const pathname = usePathname();
+  
+  // Hide on booking-related pages to avoid redundancy
+  if (pathname === "/book-session" || pathname === "/start-journey" || pathname === "/contact") {
+    return null;
+  }
+
   return (
     <div 
       className="md:hidden fixed bottom-0 left-0 right-0 z-[100] p-4 safe-area-pb"
