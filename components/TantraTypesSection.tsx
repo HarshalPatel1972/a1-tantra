@@ -25,6 +25,7 @@ export default function TantraTypesSection() {
         "Emphasizes external practices and ritual action: physical purity, ritual bathing, mantra recitation, offerings, and carefully structured ceremonial conduct. It is about aligning body and behavior with sacred intention.",
       duration: "90 min",
       price: "₹25,000",
+      originalPrice: "₹35,000",
       image: "/images/Kriya-Tantra.webp",
       fullDetails: {
         overview:
@@ -58,6 +59,7 @@ export default function TantraTypesSection() {
         "Balances outer ritual with inner meditative stability. Practitioners still perform ceremonies and symbolic actions, but the focus shifts more strongly toward devotion, visualization, and maintaining mindful awareness during activity.",
       duration: "120 min",
       price: "₹30,000",
+      originalPrice: "₹45,000",
       image: "/images/Carya-Tantra.webp",
       fullDetails: {
         overview:
@@ -91,6 +93,7 @@ export default function TantraTypesSection() {
         "Centers on internal practice and the union of mind with enlightened qualities. Visualization of deities, mantra, and subtle-energy awareness become primary, with less emphasis on elaborate external ritual and more on continuous meditative presence.",
       duration: "150 min",
       price: "₹40,000",
+      originalPrice: "₹60,000",
       image: "/images/Yoga-Tantra.webp",
       fullDetails: {
         overview:
@@ -124,6 +127,7 @@ export default function TantraTypesSection() {
         "Represents the most advanced level of tantra, working directly with subtle body, channels, winds, and innate awareness. It involves special internal practices aimed at complete union of wisdom and compassion, and realization of the nature of mind.",
       duration: "3 hours",
       price: "₹55,000",
+      originalPrice: "₹85,000",
       image: "/images/Anuttarayoga-Tantra.webp",
       fullDetails: {
         overview:
@@ -234,7 +238,15 @@ export default function TantraTypesSection() {
                         <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md">
                           From
                         </span>
-                        <div className="text-right">
+                        <div className="text-right flex flex-col items-end">
+                           <div className="flex items-center gap-2">
+                             <span className="text-[10px] text-white/50 line-through font-bold decoration-accent-red/60">
+                               {tantra.originalPrice}
+                             </span>
+                             <span className="text-[10px] bg-accent-red/20 px-1 rounded text-accent-red font-black">
+                               SAVE 30%+
+                             </span>
+                           </div>
                           <span
                             style={{ mixBlendMode: "screen" }}
                             className="font-title text-2xl md:text-3xl font-bold text-yellow-100 drop-shadow-lg"
