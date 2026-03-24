@@ -43,8 +43,8 @@ export default function CallMeButton() {
 
   return (
     <>
-      {/* Fixed WhatsApp Icon - Elevated on mobile to clear the sticky booking bar */}
-      <div className="fixed bottom-28 md:bottom-10 right-6 z-50 flex items-center">
+      {/* Fixed WhatsApp Icon - Desktop Only to keep Mobile clean */}
+      <div className="hidden md:flex fixed bottom-10 right-10 z-[100] items-center">
         {/* Animated Tooltip */}
         <div
           className={`
