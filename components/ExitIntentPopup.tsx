@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { sendEmail } from "@/utils/emailjs";
 import { trackNewsletter } from "@/lib/gtag";
 
 export default function ExitIntentPopup() {
@@ -8,6 +9,7 @@ export default function ExitIntentPopup() {
   const [hasShown, setHasShown] = useState(false);
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
@@ -21,13 +23,26 @@ export default function ExitIntentPopup() {
     return () => document.removeEventListener("mouseleave", handleMouseLeave);
   }, [hasShown]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      console.log("Newsletter signup:", email);
-      trackNewsletter();
-      setIsSubmitted(true);
-      setTimeout(() => setIsVisible(false), 3000);
+      setIsLoading(true);
+      try {
+        const success = await sendEmail({
+          from_name: "Sacred Seeker",
+          from_email: email,
+          subject: "Request: Sacred Tantra Starter Guide",
+          message: `User (${email}) has requested the free Sacred Tantra Starter Guide via the exit-intent popup.`,
+        });
+
+        if (success) {
+          trackNewsletter();
+          setIsSubmitted(true);
+          setTimeout(() => setIsVisible(false), 5000);
+        }
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -68,9 +83,10 @@ export default function ExitIntentPopup() {
               />
               <button
                 type="submit"
-                className="w-full py-4 bg-accent-red text-white font-bold rounded-xl hover:bg-deep-brown transition-all uppercase tracking-widest text-sm shadow-lg shadow-accent-red/20"
+                disabled={isLoading}
+                className="w-full py-4 bg-accent-red text-white font-bold rounded-xl hover:bg-deep-brown transition-all uppercase tracking-widest text-sm shadow-lg shadow-accent-red/20 disabled:opacity-50"
               >
-                Send Me the Guide
+                {isLoading ? "PREPARING..." : "Send Me the Guide"}
               </button>
             </form>
           </>
