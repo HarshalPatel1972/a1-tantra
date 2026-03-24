@@ -253,9 +253,9 @@ export default function TantraTypesSection() {
                           >
                             {tantra.price}
                           </span>
-                          <p className="text-[10px] text-white underline decoration-soft-gold underline-offset-4 font-black uppercase tracking-[0.1em] mt-1 drop-shadow-sm">
-                            3 Installments Available
-                          </p>
+                           <p className="text-[10px] text-white/50 font-black uppercase tracking-[0.15em] mt-1 drop-shadow-sm">
+                             OFFER PRICE &middot; LIMITED TIME
+                           </p>
                         </div>
                       </div>
                     </div>
@@ -439,7 +439,7 @@ export default function TantraTypesSection() {
                   <h3 className="font-title text-2xl sm:text-3xl text-cream font-bold mb-3">
                     Begin your {tantraTypes[selectedTantra].name}
                   </h3>
-                  <p className="text-cream/70 text-base mb-8 max-w-xl mx-auto">
+                  <p className="text-cream/90 text-base mb-8 max-w-xl mx-auto font-medium">
                     {tantraTypes[selectedTantra].fullDetails.practiceSchedule}
                   </p>
 
