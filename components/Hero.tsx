@@ -46,11 +46,11 @@ export default function Hero() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/start-journey"
-                  className="px-10 py-5 text-white font-nav font-black uppercase tracking-[0.2em] rounded-xl relative overflow-hidden group shadow-2xl text-center active:scale-95 transition-all w-full sm:w-auto"
+                  className="px-12 py-6 text-white font-nav font-black uppercase tracking-[0.2em] rounded-xl relative overflow-hidden group shadow-[0_20px_50px_rgba(29,78,216,0.5)] text-center active:scale-95 transition-all w-full sm:w-auto border-4 border-[#1e3a8a] flex items-center justify-center min-w-[280px]"
                   style={{ backgroundColor: "#1D4ED8" }}
                 >
-                  <span className="absolute inset-0 bg-blue-700 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
-                  <span className="relative z-10">START YOUR JOURNEY</span>
+                  <span className="absolute inset-0 bg-blue-700 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
+                  <span className="relative z-10">START YOUR JOURNEY →</span>
                 </Link>
               </div>
             </div>
