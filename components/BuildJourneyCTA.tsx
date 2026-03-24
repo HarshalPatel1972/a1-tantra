@@ -16,7 +16,7 @@ export default function BuildJourneyCTA() {
           {/* Mobile: Image with Content Overlay */}
           <div className="lg:hidden relative h-96 rounded-lg overflow-hidden shadow-2xl">
             <Image
-              src="/images/start-your.jpg"
+              src="/images/start-your.webp"
               alt="Start your Tantra journey"
               fill
               className="object-cover object-center blur-sm"
@@ -94,7 +94,7 @@ export default function BuildJourneyCTA() {
           {/* Right - Image (Desktop Only) */}
           <div className="hidden lg:block relative h-96 rounded-lg overflow-hidden shadow-2xl">
             <Image
-              src="/images/start-your.jpg"
+              src="/images/start-your.webp"
               alt="Start your Tantra journey"
               fill
               className="object-cover object-center"

@@ -25,7 +25,7 @@ export default function TantraTypesSection() {
         "Emphasizes external practices and ritual action: physical purity, ritual bathing, mantra recitation, offerings, and carefully structured ceremonial conduct. It is about aligning body and behavior with sacred intention.",
       duration: "90 min",
       price: "₹25,000",
-      image: "/images/Kriya-Tantra.jpg",
+      image: "/images/Kriya-Tantra.webp",
       fullDetails: {
         overview:
           "Kriya Tantra is the foundational path of tantric practice, emphasizing the sanctification of the body and actions through ritual and ceremony. It's ideal for beginners seeking structured, externally-focused spiritual practices.",
@@ -58,7 +58,7 @@ export default function TantraTypesSection() {
         "Balances outer ritual with inner meditative stability. Practitioners still perform ceremonies and symbolic actions, but the focus shifts more strongly toward devotion, visualization, and maintaining mindful awareness during activity.",
       duration: "120 min",
       price: "₹30,000",
-      image: "/images/Carya-Tantra.jpg",
+      image: "/images/Carya-Tantra.webp",
       fullDetails: {
         overview:
           "Carya Tantra bridges external ritual and internal meditation, combining the disciplined structure of Kriya Tantra with deeper mental cultivation. It's for practitioners ready to integrate inner and outer practices.",
@@ -91,7 +91,7 @@ export default function TantraTypesSection() {
         "Centers on internal practice and the union of mind with enlightened qualities. Visualization of deities, mantra, and subtle-energy awareness become primary, with less emphasis on elaborate external ritual and more on continuous meditative presence.",
       duration: "150 min",
       price: "₹40,000",
-      image: "/images/Yoga-Tantra.jpg",
+      image: "/images/Yoga-Tantra.webp",
       fullDetails: {
         overview:
           "Yoga Tantra focuses on the profound union of ordinary mind with enlightened qualities through internal visualization and subtle-energy work. It marks the transition from action-based to realization-based practice.",
@@ -124,7 +124,7 @@ export default function TantraTypesSection() {
         "Represents the most advanced level of tantra, working directly with subtle body, channels, winds, and innate awareness. It involves special internal practices aimed at complete union of wisdom and compassion, and realization of the nature of mind.",
       duration: "3 hours",
       price: "₹55,000",
-      image: "/images/Anuttarayoga-Tantra.jpg",
+      image: "/images/Anuttarayoga-Tantra.webp",
       fullDetails: {
         overview:
           "Anuttarayoga Tantra is the pinnacle of tantric practice, offering direct methods for achieving enlightenment through understanding the subtle dimensions of body, mind, and energy. It requires the greatest commitment and preparation.",
@@ -428,16 +428,13 @@ export default function TantraTypesSection() {
                         {tantraTypes[selectedTantra].price}
                       </span>
                     </div>
-                    <button
-                      onClick={() => {
-                        setSelectedTantra(null);
-                        const element = document.getElementById("tantra-paths");
-                        if (element) element.scrollIntoView({ behavior: "smooth" });
-                      }}
+                    <Link
+                      href="#tantra-paths"
+                      onClick={() => setSelectedTantra(null)}
                       className="mt-4 sm:mt-0 px-8 py-4 bg-accent-red text-white font-black rounded-xl hover:bg-accent-red/90 transition-all hover:scale-105 shadow-lg uppercase tracking-widest text-sm"
                     >
                       Book Session
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

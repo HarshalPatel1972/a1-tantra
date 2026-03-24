@@ -13,12 +13,14 @@ export default function Hero() {
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/image.png"
+              src="/images/image.webp"
               alt="Tantra exploration background"
               fill
               className="object-cover object-center"
               priority
               quality={90}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 1200px, 1600px"
+              fetchPriority="high"
             />
             {/* Dark overlay for text readability - darker gradient */}
             <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/60 to-black/50"></div>
@@ -82,9 +84,9 @@ export default function Hero() {
                   The Best Tantra Practices for Beginners
                 </p>
 
-                <Link href="/about" className="flex items-center font-body text-white font-semibold hover:text-cream transition drop-shadow-md">
+                <button className="flex items-center font-body text-white font-semibold hover:text-cream transition drop-shadow-md">
                   Explore →
-                </Link>
+                </button>
               </div>
             </div>
           </div>

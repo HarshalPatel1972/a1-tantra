@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState, useMemo } from "react";
-import { usePathname } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { searchIndex } from "@/data/search-index";
@@ -108,8 +107,8 @@ const SunIcon = ({ className = "w-5 h-5" }) => (
 );
 
 const MoonIcon = ({ className = "w-5 h-5" }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
   </svg>
 );
 
@@ -122,7 +121,6 @@ export default function Navbar() {
   const [isExploreOpen, setIsExploreOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
   const { isDark, toggleTheme } = useTheme();
-  const pathname = usePathname();
 
   const searchResults = useMemo(() => {
     if (searchQuery.trim().length > 1) {
@@ -157,16 +155,9 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { label: "THERAPIES", href: "/therapies" },
-    { label: "SESSIONS", href: "/sessions" },
     { label: "RESOURCES", href: "/resources" },
-    { label: "TANTRA PATHS", href: "/paths" },
+    { label: "TANTRA PATHS", href: "#tantra-paths" },
   ];
-
-  // Hide Navbar on authentication pages for a cleaner immersive experience
-  if (pathname?.startsWith("/auth/")) {
-    return null;
-  }
 
   return (
     <nav
@@ -200,12 +191,11 @@ export default function Navbar() {
           }}
         >
           <Image
-            src="/images/logo-main.png"
+            src="/images/logo-main.webp"
             alt="A1 Tantra Logo"
             width={80}
             height={80}
             priority
-            unoptimized
             className={`shrink-0 transition-all duration-700 ease-out object-contain relative -top-[0.05em] ${
               scrolled
                 ? "w-6 md:w-8 lg:w-10 xl:w-12 h-6 md:h-8 lg:h-10 xl:h-12"
@@ -335,14 +325,14 @@ export default function Navbar() {
               {/* Eye Comfort Toggle */}
               <button
                 onClick={toggleTheme}
-                className="relative w-10 h-10 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 hover:bg-deep-brown/5 group"
+                className="relative w-10 h-10 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 hover:bg-deep-brown/5"
                 aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
                 title={isDark ? "Light Mode" : "Eye Comfort Mode"}
               >
                 <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
                   <MoonIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
                 </span>
-                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100 group-hover:rotate-90' : 'opacity-0 -rotate-90 scale-0'}`}>
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`}>
                   <SunIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
                 </span>
               </button>
@@ -361,14 +351,14 @@ export default function Navbar() {
               {/* Eye Comfort Toggle */}
               <button
                 onClick={toggleTheme}
-                className="relative w-10 h-10 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 hover:bg-deep-brown/5 group"
+                className="relative w-10 h-10 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 hover:bg-deep-brown/5"
                 aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
                 title={isDark ? "Light Mode" : "Eye Comfort Mode"}
               >
                 <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
                   <MoonIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
                 </span>
-                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100 group-hover:rotate-90' : 'opacity-0 -rotate-90 scale-0'}`}>
+                <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`}>
                   <SunIcon className="w-[18px] lg:w-[20px] h-[18px] lg:h-[20px]" />
                 </span>
               </button>
@@ -403,12 +393,11 @@ export default function Navbar() {
           }}
         >
           <Image
-            src="/images/logo-main.png"
+            src="/images/logo-main.webp"
             alt="A1 Tantra Logo"
             width={40}
             height={40}
             priority
-            unoptimized
             className="shrink-0 object-contain"
           />
           <span className="tracking-tighter uppercase">A1 TANTRA</span>
@@ -419,13 +408,13 @@ export default function Navbar() {
           {/* Eye Comfort Toggle (Mobile) */}
           <button
             onClick={toggleTheme}
-            className="relative w-8 h-8 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300 group"
+            className="relative w-8 h-8 flex items-center justify-center rounded-full text-deep-brown hover:text-accent-red transition-all duration-300"
             aria-label={isDark ? "Switch to light mode" : "Switch to eye comfort mode"}
           >
             <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}>
               <MoonIcon className="w-[18px] h-[18px]" />
             </span>
-            <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100 group-hover:rotate-90' : 'opacity-0 -rotate-90 scale-0'}`}>
+            <span className={`absolute transition-all duration-500 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`}>
               <SunIcon className="w-[18px] h-[18px]" />
             </span>
           </button>
