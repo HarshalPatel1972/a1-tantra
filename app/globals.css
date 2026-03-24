@@ -166,6 +166,5 @@ body, .bg-cream, .bg-white, nav {
   animation: marquee 40s linear infinite;
 }
 
-.pause-on-hover:hover .animate-marquee {
-  animation-play-state: paused;
-}
+
+/* test comment */

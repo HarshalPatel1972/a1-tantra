@@ -109,7 +109,7 @@ export default function UserReviews() {
         </div>
 
         {/* Marquee Track */}
-        <div className="flex overflow-hidden group pause-on-hover">
+        <div className="flex overflow-hidden">
           <div className="flex gap-6 animate-marquee py-4">
             {marqueeReviews.map((review, idx) => (
               <div
