@@ -261,22 +261,22 @@ Please send me personalized guidance to begin my Tantra journey.
             )}
 
             {/* Navigation Buttons */}
-            <div className="flex gap-4 justify-between pt-8">
+            <div className="flex gap-4 justify-between pt-12 border-t border-deep-brown/10">
               <button
                 type="button"
                 onClick={() => setStep(Math.max(1, step - 1))}
-                disabled={step === 1}
-                className="px-6 py-3 border-2 border-deep-brown text-deep-brown font-semibold rounded-sm hover:bg-deep-brown hover:text-cream transition disabled:opacity-50"
+                disabled={step === 1 || loading}
+                className="px-8 py-4 border-4 border-[#3F2F27] text-[#3F2F27] font-black rounded-xl hover:bg-[#3F2F27] hover:text-white transition-all disabled:opacity-30 uppercase tracking-widest text-xs"
               >
-                BACK
+                ← BACK
               </button>
               {step < 4 ? (
                 <button
                   type="button"
                   onClick={() => setStep(step + 1)}
-                  className="px-6 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition"
+                  className="px-10 py-4 bg-[#E44426] text-white font-black rounded-xl border-4 border-[#E44426] hover:bg-white hover:text-[#E44426] transition-all shadow-xl uppercase tracking-widest text-xs flex items-center gap-2"
                 >
-                  CONTINUE
+                  CONTINUE <span className="text-xl">→</span>
                 </button>
               ) : (
                 <button
@@ -288,9 +288,9 @@ Please send me personalized guidance to begin my Tantra journey.
                     formData.goals.length === 0 ||
                     !formData.resonance
                   }
-                  className="px-6 py-3 bg-accent-red text-cream font-semibold rounded-sm hover:bg-deep-brown transition disabled:opacity-50"
+                  className="px-10 py-4 bg-[#E44426] text-white font-black rounded-xl border-4 border-[#E44426] hover:bg-white hover:text-[#E44426] transition-all shadow-xl disabled:opacity-50 uppercase tracking-widest text-xs flex items-center gap-2"
                 >
-                  {loading ? "SUBMITTING..." : "BEGIN MY JOURNEY"}
+                  {loading ? "PREPARING..." : "BEGIN MY JOURNEY"} 🚀
                 </button>
               )}
             </div>
