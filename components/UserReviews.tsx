@@ -139,10 +139,11 @@ export default function UserReviews() {
                   <div className="flex items-center gap-4 pt-6 border-t border-soft-gold/10">
                     <div className="w-12 h-12 rounded-full overflow-hidden border border-soft-gold/30 flex items-center justify-center flex-shrink-0 shadow-lg bg-deep-brown relative">
                       <Image
-                        src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${review.name}`}
+                        src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${review.name}`}
                         alt={review.name}
                         fill
-                        className="p-1 object-contain"
+                        className="p-1 object-cover"
+                        unoptimized
                       />
                     </div>
                     <div className="min-w-0">
