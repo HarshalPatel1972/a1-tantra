@@ -42,16 +42,65 @@ export default function Hero() {
                 compassion.
               </p>
 
-              {/* CTA BUTTONS */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* CTA BUTTONS & INTERACTIVE SELECTOR */}
+              <div className="flex flex-col sm:flex-row gap-4 w-full">
+                {/* Desktop Button (Hidden on Mobile) */}
                 <Link
                   href="/start-journey"
-                  className="px-12 py-6 text-white font-nav font-black uppercase tracking-[0.2em] rounded-xl relative overflow-hidden group shadow-[0_20px_50px_rgba(29,78,216,0.5)] text-center active:scale-95 transition-all w-full sm:w-auto border-4 border-[#1e3a8a] flex items-center justify-center min-w-[280px]"
+                  className="hidden sm:flex px-12 py-6 text-white font-nav font-black uppercase tracking-[0.2em] rounded-xl relative overflow-hidden group shadow-[0_20px_50px_rgba(29,78,216,0.5)] text-center active:scale-95 transition-all w-auto border-4 border-[#1e3a8a] items-center justify-center min-w-[280px]"
                   style={{ backgroundColor: "#1D4ED8" }}
                 >
                   <span className="absolute inset-0 bg-blue-700 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
                   <span className="relative z-10">START YOUR JOURNEY →</span>
                 </Link>
+
+                {/* Mobile Energy Selector (Hidden on Desktop) */}
+                <div className="flex flex-col w-full sm:hidden bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-5 gap-3 shadow-[0_30px_60px_rgba(0,0,0,0.6)] mt-2 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[#3F2F27]/40 pointer-events-none mix-blend-multiply"></div>
+                  
+                  <p className="text-[10px] text-[#D4AF37] uppercase tracking-[0.3em] font-black text-center mb-1 drop-shadow-md border-b border-white/10 pb-3 relative z-10">
+                    How is your energy right now?
+                  </p>
+                  
+                  <Link href="/therapies" className="group relative z-10 flex items-center justify-between w-full bg-white/10 border-2 border-white/10 hover:border-[#D4AF37]/50 rounded-2xl px-5 py-4 transition-all active:scale-95 shadow-lg overflow-hidden">
+                    <div className="absolute inset-0 bg-[#3F2F27] opacity-80 group-hover:opacity-90 transition-opacity -z-10"></div>
+                    <div className="flex items-center gap-4">
+                      <span className="text-2xl drop-shadow-md">⚡</span>
+                      <span className="text-white text-[11px] font-black uppercase tracking-[0.15em] drop-shadow-md">Feeling Drained</span>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#E44426] transition-colors border border-white/20">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/book-session" className="group relative z-10 flex items-center justify-between w-full bg-white/10 border-2 border-white/10 hover:border-[#D4AF37]/50 rounded-2xl px-5 py-4 transition-all active:scale-95 shadow-lg overflow-hidden">
+                    <div className="absolute inset-0 bg-[#3F2F27] opacity-80 group-hover:opacity-90 transition-opacity -z-10"></div>
+                    <div className="flex items-center gap-4">
+                      <span className="text-2xl drop-shadow-md">🪷</span>
+                      <span className="text-white text-[11px] font-black uppercase tracking-[0.15em] drop-shadow-md">Seeking Connection</span>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#E44426] transition-colors border border-white/20">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/sessions" className="group relative z-10 flex items-center justify-between w-full bg-white/10 border-2 border-white/10 hover:border-[#D4AF37]/50 rounded-2xl px-5 py-4 transition-all active:scale-95 shadow-lg overflow-hidden">
+                    <div className="absolute inset-0 bg-[#3F2F27] opacity-80 group-hover:opacity-90 transition-opacity -z-10"></div>
+                    <div className="flex items-center gap-4">
+                      <span className="text-2xl drop-shadow-md">🪢</span>
+                      <span className="text-white text-[11px] font-black uppercase tracking-[0.15em] drop-shadow-md">Mind Racing</span>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#E44426] transition-colors border border-white/20">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </Link>
+                </div>
               </div>
             </div>
 
