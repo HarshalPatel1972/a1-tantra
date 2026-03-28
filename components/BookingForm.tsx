@@ -155,17 +155,22 @@ export default function BookingForm() {
             >
               WhatsApp Number
             </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="e.g. 9876543210"
-              maxLength={10}
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="w-full px-5 py-4 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown"
-            />
+            <div className="relative flex items-center">
+              <span className="absolute left-5 text-deep-brown/50 font-bold border-r-2 border-deep-brown/10 pr-3 select-none pointer-events-none">
+                +91
+              </span>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="98765 43210"
+                maxLength={10}
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full pl-[4.5rem] pr-5 py-4 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown placeholder:text-deep-brown/30"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
