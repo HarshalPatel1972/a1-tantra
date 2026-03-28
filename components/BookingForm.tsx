@@ -50,10 +50,16 @@ export default function BookingForm() {
       return;
     }
 
-    const phoneRegex = /^\+?[\d\s\-()]{7,20}$/;
-    const digitCount = formData.phone.replace(/\D/g, '').length;
-    if (!phoneRegex.test(formData.phone) || digitCount < 7 || digitCount > 15) {
-      setError("Please enter a valid WhatsApp or phone number.");
+    // Phone validation strictly for India (10 digits, starting with 6, 7, 8, or 9, optional +91 or 0)
+    let coreNumber = formData.phone.replace(/\D/g, "");
+    if (coreNumber.length === 12 && coreNumber.startsWith("91")) {
+      coreNumber = coreNumber.substring(2);
+    } else if (coreNumber.length === 11 && coreNumber.startsWith("0")) {
+      coreNumber = coreNumber.substring(1);
+    }
+
+    if (coreNumber.length !== 10 || !/^[6-9]\d{9}$/.test(coreNumber)) {
+      setError("Please enter a valid 10-digit Indian mobile number.");
       return;
     }
     // -------------------------------------------
