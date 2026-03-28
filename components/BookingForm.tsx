@@ -12,6 +12,7 @@ export default function BookingForm() {
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const sessionTypes = [
     "Kriya Tantra Session",
@@ -35,10 +36,28 @@ export default function BookingForm() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (error) setError(null); // Clear error on typing
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
+
+    // --- SPAM PROTECTION / STRICT VALIDATION ---
+    const nameRegex = /^[a-zA-Z\s\-']{2,50}$/;
+    if (!nameRegex.test(formData.name)) {
+      setError("Please enter a valid human name (letters only).");
+      return;
+    }
+
+    const phoneRegex = /^\+?[\d\s\-()]{7,20}$/;
+    const digitCount = formData.phone.replace(/\D/g, '').length;
+    if (!phoneRegex.test(formData.phone) || digitCount < 7 || digitCount > 15) {
+      setError("Please enter a valid WhatsApp or phone number.");
+      return;
+    }
+    // -------------------------------------------
+
     setLoading(true);
 
     try {
@@ -58,7 +77,11 @@ export default function BookingForm() {
           preferredTime: "Afternoon (1 PM - 5 PM)",
         });
         setTimeout(() => setSubmitted(false), 8000);
+      } else {
+         setError("Something went wrong. Please try again.");
       }
+    } catch {
+       setError("Network error. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -67,12 +90,21 @@ export default function BookingForm() {
   return (
     <div className="max-w-xl mx-auto">
       {submitted && (
-        <div className="mb-8 p-6 bg-soft-gold/10 border border-soft-gold/30 text-deep-brown rounded-2xl flex items-center gap-4 animate-fade-in">
+        <div className="mb-8 p-6 bg-soft-gold/10 border border-soft-gold/30 text-deep-brown rounded-2xl flex items-center gap-4 animate-fade-in shadow-inner">
            <span className="text-3xl">🕉️</span>
            <div>
              <p className="font-title text-lg font-bold">Booking Request Sent!</p>
              <p className="text-sm opacity-80 font-medium">We usually reply within 2-4 hours on WhatsApp.</p>
            </div>
+        </div>
+      )}
+
+      {error && (
+        <div className="mb-8 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl flex items-center gap-3 animate-fade-in">
+           <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+           </svg>
+           <p className="text-sm font-bold">{error}</p>
         </div>
       )}
 
