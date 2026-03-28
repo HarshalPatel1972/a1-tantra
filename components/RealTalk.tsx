@@ -26,7 +26,7 @@ export default function RealTalk() {
   ];
 
   return (
-    <section className="py-24 bg-cream">
+    <section className="hidden sm:block py-24 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Simple, Clear Header */}
         <div className="max-w-3xl mb-16">
