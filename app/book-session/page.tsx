@@ -23,11 +23,11 @@ export default function BookingPage() {
   return (
     <div>
       <ConsultationBanner />
-      <div className="pt-24 pb-24 bg-cream min-h-screen">
+      <div className="pt-12 md:pt-16 pb-24 bg-cream min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 relative">
+          <div className="text-center mb-8 relative">
             {/* Social Proof / Urgency Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FFF0DF]/90 backdrop-blur-md border-2 border-[#D4AF37]/40 rounded-full mb-8 shadow-md scale-90 md:scale-100">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FFF0DF]/90 backdrop-blur-md border-2 border-[#D4AF37]/40 rounded-full mb-5 shadow-md scale-90 md:scale-100">
                <span className="flex h-2.5 w-2.5 relative">
                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-600"></span>
@@ -37,13 +37,13 @@ export default function BookingPage() {
                </span>
             </div>
 
-            <h1 className="font-title text-5xl md:text-7xl lg:text-8xl font-black text-deep-brown mb-6 leading-none">
+            <h1 className="font-title text-4xl md:text-5xl lg:text-6xl font-black text-deep-brown mb-3 leading-none">
               Begin Your{" "}
-              <span className="text-accent-red italic underline decoration-1 underline-offset-8">
+              <span className="text-accent-red italic underline decoration-1 underline-offset-4">
                 Journey
               </span>
             </h1>
-            <p className="text-base md:text-lg text-deep-brown/70 max-w-xl mx-auto font-body font-medium leading-relaxed">
+            <p className="text-sm md:text-base text-deep-brown/70 max-w-xl mx-auto font-body font-medium leading-relaxed">
               Sessions fill up fast. Secure your spot today and start your transformation with an authentic guide.
             </p>
           </div>
