@@ -13,6 +13,13 @@ export default function ExitIntentPopup() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    // Check if they already downloaded the guide previously so we don't annoy them
+    const hasDownloaded = localStorage.getItem("hasDownloadedTantraGuide");
+    if (hasDownloaded) {
+      setHasShown(true); 
+      return;
+    }
+
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY <= 0 && !hasShown) {
         setIsVisible(true);
@@ -29,7 +36,6 @@ export default function ExitIntentPopup() {
     if (email) {
       setIsLoading(true);
       try {
-        // 1. Notify the admin (Harshal) about the new lead
         await sendEmail({
           from_name: "Sacred Guide Seeker",
           from_email: email,
@@ -37,11 +43,11 @@ export default function ExitIntentPopup() {
           message: `Seeker Email: ${email}\n\nThis user has just downloaded the guide via the exit-intent popup. Time to follow up!`,
         });
 
-        // 2. Track the conversion
         trackNewsletter();
         setIsSubmitted(true);
         
-        // Don't auto-close if success is shown, let them download
+        // Save to local storage so it NEVER triggers for them again
+        localStorage.setItem("hasDownloadedTantraGuide", "true");
       } catch (err) {
         console.error("Popup Error:", err);
       } finally {
@@ -54,13 +60,14 @@ export default function ExitIntentPopup() {
 
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-      <div className="bg-[#FFF0DF] p-8 sm:p-12 rounded-3xl shadow-[0_30px_100px_rgba(0,0,0,0.5)] max-w-lg w-full relative border-2 border-soft-gold/30 overflow-hidden">
-        {/* Background Decorative Element */}
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-soft-gold/10 rounded-full blur-3xl pointer-events-none" />
+      {/* HARDCODED COLORS: Bypassing the dark mode CSS variables so contrast is always perfect against the hardcoded #FFF0DF background */}
+      <div className="bg-[#FFF0DF] p-8 sm:p-12 rounded-3xl shadow-[0_30px_100px_rgba(0,0,0,0.5)] max-w-lg w-full relative border-2 border-[#D4AF37]/30 overflow-hidden">
+        
+        <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
         
         <button
           onClick={() => setIsVisible(false)}
-          className="absolute top-6 right-6 text-deep-brown/40 hover:text-deep-brown transition-colors z-10"
+          className="absolute top-6 right-6 text-[#3F2F27]/40 hover:text-[#3F2F27] transition-colors z-10"
           aria-label="Close"
         >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,8 +82,8 @@ export default function ExitIntentPopup() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
              </div>
-            <h3 className="font-title text-3xl font-black text-deep-brown mb-3">Your Journey Begins!</h3>
-            <p className="text-deep-brown/70 mb-8 font-body">I've sent a notification to our team. In the meantime, you can access your guide instantly below.</p>
+            <h3 className="font-title text-3xl font-black text-[#3F2F27] mb-3">Your Journey Begins!</h3>
+            <p className="text-[#3F2F27]/80 mb-8 font-body">I've sent a notification to our team. In the meantime, you can access your guide instantly below.</p>
             
             <div className="flex flex-col gap-4">
               <Link
@@ -100,7 +107,7 @@ export default function ExitIntentPopup() {
 
               <button 
                 onClick={() => setIsVisible(false)}
-                className="text-deep-brown/40 hover:text-deep-brown text-[10px] uppercase font-bold tracking-widest mt-4"
+                className="text-[#3F2F27]/60 hover:text-[#3F2F27] text-[10px] uppercase font-bold tracking-widest mt-4"
               >
                 Close and return to site
               </button>
@@ -108,12 +115,12 @@ export default function ExitIntentPopup() {
           </div>
         ) : (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <span className="inline-block px-4 py-1.5 bg-accent-red/10 text-accent-red rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-4">
+            <span className="inline-block px-4 py-1.5 bg-[#E44426]/10 text-[#E44426] rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-4">
                Free Gift Wait!
             </span>
-            <h2 className="font-title text-4xl font-black text-deep-brown mb-4 leading-none">Before you go...</h2>
-            <p className="font-body text-lg text-deep-brown/80 mb-8 leading-relaxed">
-              Get our <span className="text-accent-red font-black underline decoration-2 underline-offset-4 decoration-accent-red/30">Sacred Tantra Starter Guide</span> for free and learn how to balance your energy in 10 minutes.
+            <h2 className="font-title text-4xl font-black text-[#3F2F27] mb-4 leading-none">Before you go...</h2>
+            <p className="font-body text-lg text-[#3F2F27] mb-8 leading-relaxed font-medium">
+              Get our <span className="text-[#E44426] font-black underline decoration-2 underline-offset-4 decoration-[#E44426]/30">Sacred Tantra Starter Guide</span> for free and learn how to balance your energy in 10 minutes.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -122,7 +129,7 @@ export default function ExitIntentPopup() {
                   type="email"
                   required
                   placeholder="name@example.com"
-                  className="w-full px-6 py-4 rounded-xl border-2 border-deep-brown/10 bg-white/50 focus:bg-white focus:outline-none focus:border-[#D4AF37] transition-all text-deep-brown font-medium"
+                  className="w-full px-6 py-4 rounded-xl border-2 border-[#3F2F27]/30 bg-white/90 focus:bg-white focus:outline-none focus:border-[#D4AF37] transition-all text-[#3F2F27] placeholder:text-[#3F2F27]/60 font-bold"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -144,7 +151,7 @@ export default function ExitIntentPopup() {
                   "Send Me the Guide →"
                 )}
               </button>
-              <p className="text-[10px] text-center text-deep-brown/40 font-bold uppercase tracking-widest mt-4">
+              <p className="text-[10px] text-center text-[#3F2F27]/60 font-bold uppercase tracking-widest mt-4">
                 No spam. Only sacred wisdom.
               </p>
             </form>
