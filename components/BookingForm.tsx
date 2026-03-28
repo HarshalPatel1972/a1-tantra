@@ -181,19 +181,26 @@ export default function BookingForm() {
               >
                 Interest
               </label>
-              <select
-                id="sessionType"
-                name="sessionType"
-                value={formData.sessionType}
-                onChange={handleChange}
-                className="w-full px-5 py-4 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown"
-              >
-                {sessionTypes.map((type) => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  id="sessionType"
+                  name="sessionType"
+                  value={formData.sessionType}
+                  onChange={handleChange}
+                  className="w-full px-5 py-4 pr-12 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown appearance-none cursor-pointer"
+                >
+                  {sessionTypes.map((type) => (
+                    <option key={type} value={type}>
+                      {type}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-accent-red">
+                  <svg className="w-6 h-6 stroke-[3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
             </div>
 
             <div>
@@ -203,19 +210,26 @@ export default function BookingForm() {
               >
                 Preferred Time
               </label>
-              <select
-                id="preferredTime"
-                name="preferredTime"
-                value={formData.preferredTime}
-                onChange={handleChange}
-                className="w-full px-5 py-4 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown"
-              >
-                {timeSlots.map((slot) => (
-                  <option key={slot} value={slot}>
-                    {slot}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  id="preferredTime"
+                  name="preferredTime"
+                  value={formData.preferredTime}
+                  onChange={handleChange}
+                  className="w-full px-5 py-4 pr-12 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown appearance-none cursor-pointer"
+                >
+                  {timeSlots.map((slot) => (
+                    <option key={slot} value={slot}>
+                      {slot}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-accent-red">
+                  <svg className="w-6 h-6 stroke-[3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>
