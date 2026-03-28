@@ -27,12 +27,12 @@ export default function BookingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 relative">
             {/* Social Proof / Urgency Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm border border-deep-brown/10 rounded-full mb-8 shadow-sm scale-90 md:scale-100">
-               <span className="flex h-2 w-2 relative">
-                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#FFF0DF]/90 backdrop-blur-md border-2 border-[#D4AF37]/40 rounded-full mb-8 shadow-md scale-90 md:scale-100">
+               <span className="flex h-2.5 w-2.5 relative">
+                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-600"></span>
                </span>
-               <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-deep-brown/60">
+               <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-[#3F2F27]">
                  3 seekers booked this week · Next available: This week
                </span>
             </div>
