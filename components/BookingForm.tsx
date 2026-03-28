@@ -35,7 +35,26 @@ export default function BookingForm() {
     >
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    
+    if (name === "phone") {
+      // Strip everything except numbers
+      let digitsOnly = value.replace(/\D/g, "");
+      
+      // If user pasted a number with country code, auto-fix it for them
+      if (digitsOnly.length > 10) {
+        if (digitsOnly.startsWith("91")) {
+          digitsOnly = digitsOnly.substring(2);
+        } else if (digitsOnly.startsWith("0")) {
+          digitsOnly = digitsOnly.substring(1);
+        }
+      }
+      
+      // Stop them from physically typing more than 10 digits
+      setFormData((prev) => ({ ...prev, phone: digitsOnly.slice(0, 10) }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+
     if (error) setError(null); // Clear error on typing
   };
 
@@ -50,15 +69,9 @@ export default function BookingForm() {
       return;
     }
 
-    // Phone validation strictly for India (10 digits, starting with 6, 7, 8, or 9, optional +91 or 0)
-    let coreNumber = formData.phone.replace(/\D/g, "");
-    if (coreNumber.length === 12 && coreNumber.startsWith("91")) {
-      coreNumber = coreNumber.substring(2);
-    } else if (coreNumber.length === 11 && coreNumber.startsWith("0")) {
-      coreNumber = coreNumber.substring(1);
-    }
-
-    if (coreNumber.length !== 10 || !/^[6-9]\d{9}$/.test(coreNumber)) {
+    // Since `handleChange` already guarantees `formData.phone` is max 10 digits
+    // of pure numbers, we just need to verify the length and starting digit.
+    if (formData.phone.length !== 10 || !/^[6-9]\d{9}$/.test(formData.phone)) {
       setError("Please enter a valid 10-digit Indian mobile number.");
       return;
     }
@@ -146,7 +159,8 @@ export default function BookingForm() {
               type="tel"
               id="phone"
               name="phone"
-              placeholder="+91"
+              placeholder="e.g. 9876543210"
+              maxLength={10}
               value={formData.phone}
               onChange={handleChange}
               required
