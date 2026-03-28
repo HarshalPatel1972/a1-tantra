@@ -6,28 +6,28 @@ import Image from "next/image";
 export default function SessionsGrid() {
   const sessions = [
     {
-      id: "meditation",
-      title: "Tantra Meditation Session",
-      image: "/images/Tantra-Meditation-Session.jpg",
-      description: "Deep meditative practices rooted in tantra.",
+      id: "kriya",
+      title: "Kriya Tantra Session",
+      image: "/images/Kriya-Tantra.webp",
+      description: "Action-based external practices, mudras, and purifying rituals.",
     },
     {
-      id: "breathwork",
-      title: "Tantric Breathwork Session",
-      image: "/images/Tantric-Breathwork-Session.jpg",
-      description: "Pranayama techniques for energy activation.",
+      id: "carya",
+      title: "Carya Tantra Session",
+      image: "/images/Carya-Tantra.webp",
+      description: "Methodical balance of outer action and inner visualization.",
     },
     {
-      id: "chakra",
-      title: "Chakra Balancing Session",
-      image: "/images/Chakra-Balancing-Session.jpg",
-      description: "Align and balance your energy centers.",
+      id: "yoga",
+      title: "Yoga Tantra Session",
+      image: "/images/Yoga-Tantra.webp",
+      description: "Internal practice emphasizing union and continuous presence.",
     },
     {
-      id: "sound-healing",
-      title: "Sound Healing + Tantra Flow",
-      image: "/images/Sound-Tantra.jpg",
-      description: "Sacred sounds for transformation.",
+      id: "anuttarayoga",
+      title: "Anuttarayoga Tantra Session",
+      image: "/images/Anuttarayoga-Tantra.webp",
+      description: "The highest yoga path of profound inner transformation.",
     },
   ];
 

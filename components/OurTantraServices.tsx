@@ -8,23 +8,23 @@ export default function OurTantraServices() {
     {
       title: "Tantra Sessions",
       description:
-        "Explore comprehensive online tantra sessions including meditation, breathwork, and chakra balancing designed to awaken your inner potential.",
+        "Explore comprehensive online tantra sessions strictly rooted in Kriya, Carya, Yoga, and Anuttarayoga paths to awaken your inner potential.",
       link: "/sessions",
-      image: "/images/Tantra-Meditation-Session.jpg",
+      image: "/images/Kriya-Tantra.webp",
       icon: "🧘",
     },
     {
-      title: "Spiritual Healing",
+      title: "Authentic Healing",
       description:
-        "Experience transformative spiritual healing through energy work and sacred practices to restore your energetic vitality.",
+        "Experience transformative spiritual healing exclusively through the four authentic Tantra frameworks to restore your energetic vitality.",
       link: "/therapies",
-      image: "/images/Chakra-Balancing-Session.jpg",
+      image: "/images/Yoga-Tantra.webp",
       icon: "✨",
     },
     {
       title: "Tantra Advisory",
       description:
-        "Expert guidance for couples to deepen intimacy, resolve conflicts, and restore harmony in their sacred partnership.",
+        "Expert sacred guidance for individuals and couples using classical tantric principles to deepen intimacy and resolve energetic blocks.",
       link: "/advisory",
       image: "/images/two-people-meditate.jpg",
       icon: "💕",

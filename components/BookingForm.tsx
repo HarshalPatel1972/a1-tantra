@@ -7,17 +7,17 @@ export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    sessionType: "Tantric Breathwork Session",
+    sessionType: "Kriya Tantra Session",
     preferredTime: "Afternoon (1 PM - 5 PM)",
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const sessionTypes = [
-    "Tantra Meditation Session",
-    "Tantric Breathwork Session",
-    "Chakra Balancing Session",
-    "Sound Healing + Tantra Flow",
+    "Kriya Tantra Session",
+    "Carya Tantra Session",
+    "Yoga Tantra Session",
+    "Anuttarayoga Tantra Session",
     "Unsure (Free consultation first)",
   ];
 
@@ -54,7 +54,7 @@ export default function BookingForm() {
         setFormData({
           name: "",
           phone: "",
-          sessionType: "Tantric Breathwork Session",
+          sessionType: "Kriya Tantra Session",
           preferredTime: "Afternoon (1 PM - 5 PM)",
         });
         setTimeout(() => setSubmitted(false), 8000);

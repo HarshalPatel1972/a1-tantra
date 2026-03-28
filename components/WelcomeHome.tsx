@@ -14,7 +14,7 @@ export default function WelcomeHome() {
       icon: "🕯️",
       title: "Learn Sacred Practices",
       description:
-        "Breathwork, yantra, mantra, mudras, meditations, and rituals explained for modern seekers.",
+        "Authentic practices rooted exclusively in Kriya, Carya, Yoga, and Anuttarayoga Tantra traditions.",
     },
     {
       icon: "✨",
