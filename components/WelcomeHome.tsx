@@ -34,7 +34,6 @@ export default function WelcomeHome() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24">
           {/* Left Content */}
           <div className="order-last lg:order-first">
-            <h2 className="font-title text-5xl md:text-7xl font-bold text-deep-brown mb-8 leading-tight">
             <h2 className="font-title text-4xl md:text-6xl font-bold text-deep-brown mb-6 leading-tight">
               Welcome home.
             </h2>
