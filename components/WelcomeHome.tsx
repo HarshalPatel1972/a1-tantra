@@ -25,7 +25,7 @@ export default function WelcomeHome() {
   ];
 
   return (
-    <section className="py-24 bg-cream relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-cream relative overflow-hidden">
       {/* Decorative Accents */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-[100px] -mr-48 -mt-48" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-soft-gold/10 rounded-full blur-[100px] -ml-48 -mb-48" />
@@ -35,9 +35,10 @@ export default function WelcomeHome() {
           {/* Left Content */}
           <div className="order-last lg:order-first">
             <h2 className="font-title text-5xl md:text-7xl font-bold text-deep-brown mb-8 leading-tight">
+            <h2 className="font-title text-4xl md:text-6xl font-bold text-deep-brown mb-6 leading-tight">
               Welcome home.
             </h2>
-            <p className="text-xl md:text-2xl text-deep-brown/80 leading-relaxed font-body italic mb-0">
+            <p className="text-lg md:text-xl text-deep-brown/80 leading-relaxed font-body italic mb-0">
               &quot;We&apos;re glad you found us. Whether you&apos;re new to
               Tantra or deep in your spiritual journey, A1 Tantra guides you
               gently, safely, and respectfully toward inner awakening.&quot;
@@ -46,7 +47,7 @@ export default function WelcomeHome() {
 
           {/* Right Image */}
           <div className="flex justify-center items-center">
-            <div className="relative w-full max-w-sm aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border-2 border-deep-brown/10 ring-8 ring-white/50 group">
+            <div className="relative w-full max-w-[300px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border-2 border-deep-brown/10 ring-8 ring-white/50 group">
               <Image
                 src="/images/candle.png"
                 alt="Sacred meditation candle"
@@ -59,19 +60,19 @@ export default function WelcomeHome() {
         </div>
 
         {/* Features - Path of Discovery (No Cards) */}
-        <div className="space-y-12 md:space-y-32">
+        <div className="space-y-12 md:space-y-24">
           {features.map((feature, idx) => (
             <div
               key={idx}
               className={`flex flex-col ${
                 idx % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"
-              } items-center gap-6 md:gap-24 group`}
+              } items-center gap-6 md:gap-16 group`}
             >
               {/* Feature Icon/Visual */}
               <div className="hidden md:flex w-full md:w-1/2 justify-center">
                 <div className="relative">
                   <div className="absolute inset-0 bg-soft-gold/20 rounded-full blur-[60px] scale-0 group-hover:scale-150 transition-transform duration-1000" />
-                  <div className="relative z-10 w-24 h-24 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center text-5xl md:text-6xl shadow-xl border border-deep-brown/5 transform group-hover:-rotate-12 transition-all duration-500">
+                  <div className="relative z-10 w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center text-4xl md:text-5xl shadow-xl border border-deep-brown/5 transform group-hover:-rotate-12 transition-all duration-500">
                     {feature.icon}
                   </div>
                 </div>
@@ -86,14 +87,14 @@ export default function WelcomeHome() {
                   </span>
                 </div>
 
-                <h3 className="font-title text-3xl sm:text-4xl md:text-5xl font-bold text-deep-brown mb-3 md:mb-6 leading-tight flex items-center justify-center md:justify-start gap-3 whitespace-nowrap md:whitespace-normal">
-                  <span className="md:hidden text-3xl sm:text-4xl">
+                <h3 className="font-title text-2xl sm:text-3xl md:text-4xl font-bold text-deep-brown mb-2 md:mb-4 leading-tight flex items-center justify-center md:justify-start gap-3 whitespace-nowrap md:whitespace-normal">
+                  <span className="md:hidden text-2xl sm:text-3xl">
                     {feature.icon}
                   </span>
                   <span>{feature.title}</span>
                 </h3>
 
-                <p className="text-lg md:text-xl text-deep-brown/60 leading-relaxed font-body max-w-lg mb-0 md:mb-8 mx-auto md:mx-0">
+                <p className="text-base md:text-lg text-deep-brown/60 leading-relaxed font-body max-w-lg mb-0 md:mb-6 mx-auto md:mx-0">
                   {feature.description}
                 </p>
 
