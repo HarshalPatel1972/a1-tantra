@@ -8,25 +8,25 @@ export default function SessionsGrid() {
     {
       id: "kriya",
       title: "Kriya Tantra Session",
-      image: "/images/Kriya-Tantra.webp",
+      image: "/images/Kriya-Tantra.png",
       description: "Action-based external practices, mudras, and purifying rituals.",
     },
     {
       id: "carya",
       title: "Carya Tantra Session",
-      image: "/images/Carya-Tantra.webp",
+      image: "/images/Carya-Tantra.png",
       description: "Methodical balance of outer action and inner visualization.",
     },
     {
       id: "yoga",
       title: "Yoga Tantra Session",
-      image: "/images/Yoga-Tantra.webp",
+      image: "/images/Yoga-Tantra.png",
       description: "Internal practice emphasizing union and continuous presence.",
     },
     {
       id: "anuttarayoga",
       title: "Anuttarayoga Tantra Session",
-      image: "/images/Anuttarayoga-Tantra.webp",
+      image: "/images/Anuttarayoga-Tantra.png",
       description: "The highest yoga path of profound inner transformation.",
     },
   ];

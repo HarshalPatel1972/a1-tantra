@@ -10,7 +10,7 @@ export default function OurTantraServices() {
       description:
         "Explore comprehensive online tantra sessions strictly rooted in Kriya, Carya, Yoga, and Anuttarayoga paths to awaken your inner potential.",
       link: "/sessions",
-      image: "/images/Kriya-Tantra.webp",
+      image: "/images/Kriya-Tantra.png",
       icon: "🧘",
     },
     {
@@ -18,7 +18,7 @@ export default function OurTantraServices() {
       description:
         "Experience transformative spiritual healing exclusively through the four authentic Tantra frameworks to restore your energetic vitality.",
       link: "/therapies",
-      image: "/images/Yoga-Tantra.webp",
+      image: "/images/Yoga-Tantra.png",
       icon: "✨",
     },
     {

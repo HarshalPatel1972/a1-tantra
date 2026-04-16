@@ -26,7 +26,7 @@ export default function TantraTypesSection() {
       duration: "90 min",
       price: "₹25,000",
       originalPrice: "₹35,000",
-      image: "/images/Kriya-Tantra.webp",
+      image: "/images/Kriya-Tantra.png",
       fullDetails: {
         overview:
           "Kriya Tantra is the foundational path of tantric practice, emphasizing the sanctification of the body and actions through ritual and ceremony. It's ideal for beginners seeking structured, externally-focused spiritual practices.",
@@ -60,7 +60,7 @@ export default function TantraTypesSection() {
       duration: "120 min",
       price: "₹30,000",
       originalPrice: "₹45,000",
-      image: "/images/Carya-Tantra.webp",
+      image: "/images/Carya-Tantra.png",
       fullDetails: {
         overview:
           "Carya Tantra bridges external ritual and internal meditation, combining the disciplined structure of Kriya Tantra with deeper mental cultivation. It's for practitioners ready to integrate inner and outer practices.",
@@ -94,7 +94,7 @@ export default function TantraTypesSection() {
       duration: "150 min",
       price: "₹40,000",
       originalPrice: "₹60,000",
-      image: "/images/Yoga-Tantra.webp",
+      image: "/images/Yoga-Tantra.png",
       fullDetails: {
         overview:
           "Yoga Tantra focuses on the profound union of ordinary mind with enlightened qualities through internal visualization and subtle-energy work. It marks the transition from action-based to realization-based practice.",
@@ -128,7 +128,7 @@ export default function TantraTypesSection() {
       duration: "3 hours",
       price: "₹55,000",
       originalPrice: "₹85,000",
-      image: "/images/Anuttarayoga-Tantra.webp",
+      image: "/images/Anuttarayoga-Tantra.png",
       fullDetails: {
         overview:
           "Anuttarayoga Tantra is the pinnacle of tantric practice, offering direct methods for achieving enlightenment through understanding the subtle dimensions of body, mind, and energy. It requires the greatest commitment and preparation.",
