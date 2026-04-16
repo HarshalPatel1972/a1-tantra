@@ -91,7 +91,7 @@ const marqueeReviews = [...reviews, ...reviews];
 
 export default function UserReviews() {
   return (
-    <section className="relative py-24 md:py-32 bg-deep-brown overflow-hidden">
+    <section id="reviews" className="relative py-24 md:py-32 bg-deep-brown overflow-hidden">
       {/* Ambient glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-soft-gold/[0.015] blur-3xl" />
