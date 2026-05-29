@@ -126,12 +126,12 @@ export default function Navbar() {
   const { isDark, toggleTheme } = useTheme();
 
   const isLandingPage = [
-    "/chakra-healing",
-    "/spiritual-healing",
-    "/anxiety-healing",
+    "/chakra-balancing",
     "/tantra-guidance",
-    "/couples-tantra"
+    "/meditation-coaching",
+    "/relationship-healing"
   ].includes(pathname);
+
 
   if (isLandingPage) {
     return (
@@ -447,7 +447,7 @@ export default function Navbar() {
                 style={{ backgroundColor: "#1D4ED8" }}
               >
                 <span className="absolute inset-0 bg-black/20 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
-                <span className="relative z-10">BOOK A SESSION</span>
+                <span className="relative z-10">BOOK THERAPY SESSION</span>
               </Link>
             </div>
           )}
@@ -657,7 +657,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
-                  <span className="relative z-10">BOOK A SESSION</span>
+                  <span className="relative z-10">BOOK THERAPY SESSION</span>
                 </Link>
               </>
             )}

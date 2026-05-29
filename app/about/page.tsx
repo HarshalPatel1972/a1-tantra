@@ -2,7 +2,7 @@
 
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import GuideSection from "@/components/GuideSection";
+import WhyClientsChooseUs from "@/components/WhyClientsChooseUs";
 
 export default function AboutPage() {
   return (
@@ -48,7 +48,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <GuideSection />
+      <WhyClientsChooseUs />
 
       <div className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <section className="space-y-8">

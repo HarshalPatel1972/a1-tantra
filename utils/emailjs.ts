@@ -48,7 +48,7 @@ export const sendBookingRequest = async (
   name: string,
   phone: string,
   sessionType: string,
-  preferredTime: string
+  city?: string
 ): Promise<boolean> => {
   return sendEmail({
     from_name: name,
@@ -59,28 +59,30 @@ export const sendBookingRequest = async (
       Name: ${name}
       Phone/WhatsApp: ${phone}
       Session Type: ${sessionType}
-      Preferred Time: ${preferredTime}
+      Preferred City: ${city || "Not Specified"}
     `,
   });
 };
 
+
 export const sendLeadRequest = async (
   name: string,
-  email: string,
   phone: string,
-  goal: string
+  goal: string,
+  city?: string
 ): Promise<boolean> => {
   return sendEmail({
     from_name: name,
-    from_email: email,
+    from_email: "noreply@a1-tantra.com",
     subject: `Discovery Call Request: ${goal}`,
     message: `
       Discovery Call Request Details:
       Name: ${name}
-      Email: ${email}
       WhatsApp Number: ${phone}
       Goal/Interest: ${goal}
+      Preferred City: ${city || "Not Specified"}
     `,
   });
 };
+
 

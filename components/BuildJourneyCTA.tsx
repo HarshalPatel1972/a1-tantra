@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function BuildJourneyCTA() {
   return (
-    <section className="py-8 md:py-12 bg-brand-blue text-cream relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-brand-blue text-cream relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-1/2 right-0 w-96 h-96 bg-cream rounded-full blur-3xl"></div>
@@ -25,44 +25,63 @@ export default function BuildJourneyCTA() {
               priority
             />
             {/* Content Overlay */}
-              <div className="absolute inset-0 flex flex-col justify-center p-6 text-white">
-                <h2 className="serif-heading text-4xl font-bold mb-4 leading-tight drop-shadow-lg">
-                  Start your Tantra Journey.
-                </h2>
-                <p className="text-base mb-6 leading-relaxed drop-shadow-md text-white font-medium">
-                  Personalized guidance based on your energy, goals, and
-                  resonance. Build a path uniquely yours.
-                </p>
-                <Link
-                  href="/start-journey"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-cream text-deep-brown font-black rounded-xl w-fit relative overflow-hidden group border-2 border-deep-brown shadow-xl active:scale-95 transition-all"
+            <div className="absolute inset-0 flex flex-col justify-center p-6 text-white bg-black/40">
+              <h2 className="serif-heading text-3xl font-bold mb-4 leading-tight drop-shadow-lg">
+                Ready to Begin Your In-Person Therapy?
+              </h2>
+              <p className="text-sm mb-6 leading-relaxed drop-shadow-md text-white font-medium">
+                Schedule a free 15-minute discovery call to discuss your goals, preferred location, and session details.
+              </p>
+              
+              <div className="flex flex-col gap-3">
+                <a
+                  href="#lead-form"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("lead-form");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="inline-flex items-center justify-center px-6 py-3.5 bg-[#E44426] text-white font-black rounded-xl w-full border-2 border-[#E44426] shadow-xl active:scale-95 transition-all text-xs uppercase tracking-widest cursor-pointer"
                 >
-                  <span className="absolute inset-0 bg-deep-brown translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
-                  <span className="relative z-10 flex items-center gap-2 group-hover:text-cream transition-colors duration-500">
-                    GET STARTED →
-                  </span>
+                  Book Free Discovery Call
+                </a>
+                <Link
+                  href="/book-session"
+                  className="inline-flex items-center justify-center px-6 py-3.5 bg-transparent text-white font-black rounded-xl w-full border-2 border-white/40 shadow-xl active:scale-95 transition-all text-xs uppercase tracking-widest"
+                >
+                  Book Therapy Session
                 </Link>
               </div>
+            </div>
           </div>
 
-          {/* Desktop: Left Content + Right Image */}
+          {/* Desktop: Left Content */}
           <div className="hidden lg:block">
             <h2 className="serif-heading text-5xl font-bold mb-6 leading-tight">
-              Start your Tantra Journey.
+              Ready to Begin Your In-Person Therapy?
             </h2>
             <p className="text-lg text-cream/90 mb-8 leading-relaxed">
-              Personalized guidance based on your energy, goals, and resonance.
-              Build a path uniquely yours.
+              Schedule a free 15-minute discovery call to discuss your goals, preferred location, and session details.
             </p>
-            <Link
-              href="/start-journey"
-              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-deep-brown text-cream font-black text-lg rounded-xl relative overflow-hidden group border-2 border-soft-gold/30 shadow-2xl active:scale-95 transition-all"
-            >
-              <span className="absolute inset-0 bg-accent-red -translate-x-full group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
-              <span className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors duration-500">
-                GET STARTED →
-              </span>
-            </Link>
+            <div className="flex gap-4">
+              <a
+                href="#lead-form"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById("lead-form");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#E44426] text-white font-black text-sm rounded-xl relative overflow-hidden group border-2 border-[#E44426] shadow-2xl active:scale-95 transition-all cursor-pointer"
+              >
+                <span className="relative z-10">Book Free Discovery Call</span>
+              </a>
+              <Link
+                href="/book-session"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-cream font-black text-sm rounded-xl relative overflow-hidden group border-2 border-cream/30 shadow-2xl active:scale-95 transition-all"
+              >
+                <span className="relative z-10">Book Therapy Session</span>
+              </Link>
+            </div>
           </div>
 
           {/* Right - Image (Desktop Only) */}

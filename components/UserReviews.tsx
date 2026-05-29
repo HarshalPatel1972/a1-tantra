@@ -7,7 +7,7 @@ const reviews = [
     name: "Priya Sharma",
     location: "Mumbai",
     comment:
-      "I came in stressed and skeptical. After three breathwork sessions, something shifted — I sleep better, think clearer, and my anxiety has genuinely reduced. Not magic, just really good guidance.",
+      "The chakra balancing session helped me feel calmer and more focused within days.",
     rating: 5,
     date: "Oct 2025",
   },
@@ -15,7 +15,7 @@ const reviews = [
     name: "Amit Patel",
     location: "Ahmedabad",
     comment:
-      "Ten years of meditation and I thought I'd seen it all. The energy work here was on another level. Practical, grounded, no fluff. Would recommend to anyone serious about inner work.",
+      "The relationship healing session helped my partner and me communicate without anger again.",
     rating: 5,
     date: "Jan 2026",
   },
@@ -23,7 +23,7 @@ const reviews = [
     name: "Rohan Mehra",
     location: "New Delhi",
     comment:
-      "Was looking for something deeper than YouTube tutorials. The chakra balancing session was intense — I actually felt things move. Still processing it weeks later.",
+      "The meditation coaching gave me concrete tools to stop my racing thoughts during panic attacks.",
     rating: 4,
     date: "Dec 2025",
   },
@@ -31,7 +31,7 @@ const reviews = [
     name: "Sanjana Iyer",
     location: "Chennai",
     comment:
-      "Honestly, I didn't expect much. But after the first session I felt a calm I hadn't experienced in years. My husband noticed the difference before I did. Booking again next month.",
+      "The tantra guidance session resolved deep emotional tension I didn't know I was holding.",
     rating: 5,
     date: "Feb 2026",
   },
@@ -39,7 +39,7 @@ const reviews = [
     name: "Ananya Rao",
     location: "Bangalore",
     comment:
-      "The approach is respectful and knowledgeable — they treat Tantra with the depth it deserves. I finally found a space that doesn't water it down into trends.",
+      "After the chakra balancing, my constant fatigue and mental fog completely cleared up.",
     rating: 5,
     date: "Nov 2025",
   },
@@ -47,25 +47,9 @@ const reviews = [
     name: "Vikram Singh",
     location: "Jaipur",
     comment:
-      "Complex concepts explained simply without losing the essence. The session was practical and I could immediately use what I learned. Great for beginners.",
+      "The in-person meditation sessions provided me a sanctuary. I feel deeply reconnected.",
     rating: 4,
     date: "Dec 2025",
-  },
-  {
-    name: "Meera Nair",
-    location: "Kochi",
-    comment:
-      "My friend dragged me here and I'm so glad she did. The guided meditation was the most present I've felt in months. Already signed up for the full journey.",
-    rating: 5,
-    date: "Jan 2026",
-  },
-  {
-    name: "Karan Deshmukh",
-    location: "Pune",
-    comment:
-      "As someone in tech, I needed something to balance the constant screen time. The sessions gave me tools I actually use daily now. Wish I'd found this sooner.",
-    rating: 4,
-    date: "Nov 2025",
   },
 ];
 
@@ -86,7 +70,6 @@ const StarRating = ({ rating }: { rating: number }) => (
   </div>
 );
 
-// Double the reviews for seamless marquee looping
 const marqueeReviews = [...reviews, ...reviews];
 
 export default function UserReviews() {
@@ -117,7 +100,6 @@ export default function UserReviews() {
                 className="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[420px]"
               >
                 <div className="h-full bg-white/[0.07] backdrop-blur-xl border border-soft-gold/15 rounded-2xl p-8 md:p-9 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:bg-white/[0.1] hover:border-soft-gold/40 transition-all duration-500">
-                  {/* Top: Stars + Quote icon */}
                   <div>
                     <div className="flex items-center justify-between mb-6">
                       <StarRating rating={review.rating} />
@@ -135,7 +117,6 @@ export default function UserReviews() {
                     </p>
                   </div>
 
-                   {/* Bottom: Author */}
                   <div className="flex items-center gap-4 pt-6 border-t border-soft-gold/10">
                     <div className="w-12 h-12 rounded-full overflow-hidden border border-soft-gold/30 flex items-center justify-center flex-shrink-0 shadow-lg bg-deep-brown relative">
                       <Image
@@ -147,10 +128,10 @@ export default function UserReviews() {
                       />
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-nav font-bold text-sm tracking-[0.1em] truncate group-hover:text-accent-red transition-colors duration-300" style={{ color: "#3F2F27" }}>
+                      <h4 className="font-nav font-bold text-sm tracking-[0.1em] truncate" style={{ color: "#F8F5F2" }}>
                         {review.name}
                       </h4>
-                      <p className="text-[10px] font-nav uppercase tracking-[0.2em] mt-0.5 opacity-60" style={{ color: "#3F2F27" }}>
+                      <p className="text-[10px] font-nav uppercase tracking-[0.2em] mt-0.5 opacity-60" style={{ color: "#D4AF37" }}>
                         {review.location} &middot; {review.date}
                       </p>
                     </div>

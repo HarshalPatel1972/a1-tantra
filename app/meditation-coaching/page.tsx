@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import LeadForm from "@/components/LeadForm";
 import FAQSection from "@/components/FAQSection";
 
-export default function TantraGuidancePage() {
+export default function MeditationCoachingPage() {
   return (
     <div className="bg-cream min-h-screen">
       {/* Landing Page Hero */}
@@ -13,26 +13,26 @@ export default function TantraGuidancePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Info Column */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#D4AF37]/10 border border-[#D4AF37]/20 rounded-full text-xs font-bold text-[#D4AF37] uppercase tracking-wider">
-                🧘 In-Person Guidance
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue/10 border border-brand-blue/20 rounded-full text-xs font-bold text-brand-blue uppercase tracking-wider">
+                🕯️ Nervous System Calm
               </div>
               <h1 className="font-title text-4xl sm:text-5xl lg:text-6xl font-black text-deep-brown leading-tight">
-                In-Person <span className="text-[#D4AF37] italic">Tantra Guidance</span> Sessions Across India
+                In-Person <span className="text-brand-blue italic">Meditation Coaching</span> Across India
               </h1>
               <p className="font-body text-lg text-deep-brown/80 leading-relaxed max-w-xl">
-                Study and experience authentic Tantra. Receive personalized physical instruction in Kriya, Carya, Yoga, and Anuttarayoga Tantra traditions with travel arrangements confirmed directly to your city.
+                Release stress, calm a racing mind, and regulate your nervous system. Get personalized physical guidance in breathwork and concentration techniques with direct travel coordinated to your city.
               </p>
               
               {/* Benefits Bullets */}
               <div className="space-y-3.5 pt-4">
                 {[
-                  "Instruction aligned with historical lineage frameworks",
-                  "Understand energetic blockages and unlock spiritual clarity",
-                  "Personalized physical meditations, mudras, and mantras",
-                  "Travel-to-city arrangements coordinated privately",
+                  "De-escalate stress and racing thoughts physically",
+                  "Learn custom breathwork and concentration tools",
+                  "Receive tailored 1-on-1 support for anxiety relief",
+                  "Physical travel-to-city arrangements coordinated directly",
                 ].map((b, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <span className="text-[#D4AF37] font-bold text-lg mt-0.5">✔</span>
+                    <span className="text-brand-blue font-bold text-lg mt-0.5">✔</span>
                     <span className="font-body text-base font-semibold text-deep-brown/85">{b}</span>
                   </div>
                 ))}
@@ -40,7 +40,7 @@ export default function TantraGuidancePage() {
 
               {/* Trust Indicators */}
               <div className="pt-6 border-t border-deep-brown/10 flex flex-wrap gap-6 text-xs font-bold text-deep-brown/65 uppercase tracking-widest">
-                <span>🔒 Secure & Confidential</span>
+                <span>🔒 Strict Confidentiality</span>
                 <span>🇮🇳 Travel across India</span>
                 <span>⭐ 4.9/5 satisfaction</span>
               </div>
@@ -48,7 +48,7 @@ export default function TantraGuidancePage() {
 
             {/* Right Form Column */}
             <div className="lg:col-span-5 relative z-25">
-              <LeadForm defaultGoal="Tantra Guidance" buttonText="Book Free Discovery Call" />
+              <LeadForm defaultGoal="Meditation Coaching" buttonText="Book Free Discovery Call" />
             </div>
           </div>
         </div>
@@ -58,29 +58,29 @@ export default function TantraGuidancePage() {
       <section className="py-20 bg-white border-y border-deep-brown/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-title text-3xl sm:text-4xl font-bold text-deep-brown text-center mb-12">
-            The In-Person Guidance Process
+            The In-Person Meditation Coaching Process
           </h2>
           
           <div className="space-y-8">
             {[
               {
                 step: "1",
-                t: "Initial Request",
-                d: "Submit our short request form. We schedule a free 15-minute call to discuss your current path and preferred city.",
+                t: "Submit Your Request",
+                d: "Tell us about your mental fatigue or stress levels. We discuss your city and preferred call details.",
               },
               {
                 step: "2",
-                t: "Confirm Travel & Schedule",
-                d: "We finalize dates, session location, and travel logistics directly. The practitioner travels to your city.",
+                t: "Confirm Travel & Location",
+                d: "We finalize scheduling, travel logistics, and location details. The practitioner travels to your city.",
               },
               {
                 step: "3",
-                t: "Conduct In-Person Session",
-                d: "Private, safe, and confidential physical instruction based on authentic tantric systems.",
+                t: "In-Person Somatic Release",
+                d: "We physically teach you breath techniques, focus structures, and release models in a safe space.",
               },
             ].map((s, idx) => (
               <div key={idx} className="flex gap-6 items-start p-6 bg-cream/30 border border-deep-brown/5 rounded-2xl">
-                <div className="w-10 h-10 rounded-xl bg-[#D4AF37] text-white flex items-center justify-center font-nav font-black text-lg shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-brand-blue text-white flex items-center justify-center font-nav font-black text-lg shrink-0">
                   {s.step}
                 </div>
                 <div>
@@ -99,8 +99,8 @@ export default function TantraGuidancePage() {
       {/* Final CTA */}
       <section className="py-16 bg-brand-blue text-cream text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4">Ready to Explore Authentic Tantra?</h2>
-          <p className="font-body text-base text-cream/85 mb-8 max-w-xl mx-auto">Request your consultation to coordinate in-person availability and travel dates.</p>
+          <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4">Ready to Calm Your Racing Mind?</h2>
+          <p className="font-body text-base text-cream/85 mb-8 max-w-xl mx-auto">Schedule your consultation now to align on travel dates and in-person slots.</p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
               href="#lead-form"

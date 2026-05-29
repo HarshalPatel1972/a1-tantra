@@ -8,23 +8,19 @@ export default function FAQSection() {
   const faqs = [
     {
       q: "Is this online?",
-      a: "Yes, all sessions and consultations are conducted fully online via secure, high-definition video calls (Google Meet or Zoom) across India. This allows you to explore authentic practices from the comfort and privacy of your own home.",
+      a: "No. All therapy sessions are conducted in person. After booking, session location and scheduling are discussed directly.",
     },
     {
-      q: "Is it confidential?",
-      a: "Absolutely. Confidentiality and safety are our highest priorities. All details shared during registration, the discovery call, and your sessions are kept strictly private. We maintain a non-judgmental, sacred container for all seekers.",
+      q: "Do you travel to my city?",
+      a: "Yes. Location availability and travel arrangements to your city in India are discussed directly during the consultation.",
     },
     {
-      q: "What happens during a session?",
-      a: "Every session is customized. Typically, a session consists of guided breathwork (pranayama), visualization, mudras, or meditation, tailored strictly to the authentic paths (Kriya, Carya, Yoga, or Anuttarayoga). There is no physical contact or performance required—only open, respectful participation.",
+      q: "How do bookings work?",
+      a: "Submit your request through our form and we will contact you on WhatsApp to confirm availability, city, and session details.",
     },
     {
-      q: "Do I need prior experience?",
-      a: "No prior experience in Tantra, yoga, or meditation is needed. We guide beginners gently with clear, simple, step-by-step instructions. If you are an advanced practitioner, we tailor teachings to deepen your existing lineage connection.",
-    },
-    {
-      q: "How long are sessions?",
-      a: "Standard sessions are 60 to 75 minutes long. The initial Discovery Call is 15 minutes and is fully free to help align on goals and ensure we are a good fit for your spiritual journey.",
+      q: "Can I speak before booking?",
+      a: "Yes. A free 15-minute discovery call is available. Just select 'Unsure / General Guidance' in the form to request a call.",
     },
   ];
 
@@ -46,13 +42,13 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="font-body text-deep-brown/60 max-w-xl mx-auto text-base">
-            Find answers to common questions about our sessions, confidentiality, and authentic Tantra.
+            Find answers to common questions about in-person sessions, locations, and booking procedures.
           </p>
           <div className="w-20 h-1 bg-accent-red mx-auto mt-6 rounded-full"></div>
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <div className="space-y-4 max-w-3xl mx-auto">
           {faqs.map((faq, idx) => {
             const isOpen = activeIndex === idx;
             return (

@@ -15,9 +15,9 @@ export default function LeadForm({
 }: LeadFormProps) {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     goal: defaultGoal,
+    city: "",
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -25,7 +25,6 @@ export default function LeadForm({
 
   const goals = [
     "Chakra Balancing",
-    "Spiritual Healing",
     "Tantra Guidance",
     "Meditation Coaching",
     "Relationship Healing",
@@ -38,10 +37,7 @@ export default function LeadForm({
     const { name, value } = e.target;
 
     if (name === "phone") {
-      // Strip non-numbers
       let digitsOnly = value.replace(/\D/g, "");
-      
-      // If country code is pasted, strip +91 or 91 or 0
       if (digitsOnly.length > 10) {
         if (digitsOnly.startsWith("91")) {
           digitsOnly = digitsOnly.substring(2);
@@ -68,16 +64,9 @@ export default function LeadForm({
       return;
     }
 
-    // Phone Validation (Indian Mobile Number format)
+    // Phone Validation
     if (formData.phone.length !== 10 || !/^[6-9]\d{9}$/.test(formData.phone)) {
       setError("Please enter a valid 10-digit Indian WhatsApp number.");
-      return;
-    }
-
-    // Email Validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setError("Please enter a valid email address.");
       return;
     }
 
@@ -86,9 +75,9 @@ export default function LeadForm({
     try {
       const success = await sendLeadRequest(
         formData.name,
-        formData.email,
         formData.phone,
-        formData.goal
+        formData.goal,
+        formData.city
       );
 
       if (success) {
@@ -96,9 +85,9 @@ export default function LeadForm({
         setSubmitted(true);
         setFormData({
           name: "",
-          email: "",
           phone: "",
           goal: defaultGoal,
+          city: "",
         });
         setTimeout(() => setSubmitted(false), 10000);
       } else {
@@ -113,19 +102,18 @@ export default function LeadForm({
 
   return (
     <div id="lead-form" className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
-      {/* Decorative gradient overlay */}
       <div className="absolute inset-0 bg-[#3F2F27]/10 pointer-events-none mix-blend-multiply"></div>
       
       <h3 className="font-title text-2xl font-bold text-white mb-6 drop-shadow-md text-center">
-        Book Your Free Discovery Call
+        Request In-Person Therapy
       </h3>
 
       {submitted && (
         <div className="mb-6 p-4 bg-emerald-500/20 border border-emerald-500/40 text-emerald-100 rounded-xl flex items-start gap-3 animate-fade-in relative z-10">
           <span className="text-2xl">🕉️</span>
           <div>
-            <p className="font-bold text-sm">Call Request Received!</p>
-            <p className="text-xs opacity-90 mt-0.5">We will reach out on WhatsApp within 2-4 hours to schedule your free 15-minute call.</p>
+            <p className="font-bold text-sm">Request Received!</p>
+            <p className="text-xs opacity-90 mt-0.5">We will reach out on WhatsApp within 2-4 hours to discuss goals, location, and scheduling details.</p>
           </div>
         </div>
       )}
@@ -157,22 +145,6 @@ export default function LeadForm({
         </div>
 
         <div>
-          <label htmlFor="lead-email" className="block text-[10px] font-black uppercase tracking-widest text-white/70 mb-1.5">
-            Email Address
-          </label>
-          <input
-            type="email"
-            id="lead-email"
-            name="email"
-            placeholder="e.g. rahul@example.com"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-3 bg-white/10 hover:bg-white/15 focus:bg-white border-2 border-white/20 focus:border-[#E44426] rounded-xl focus:outline-none font-body text-sm font-bold text-white focus:text-deep-brown placeholder:text-white/40 transition-all"
-          />
-        </div>
-
-        <div>
           <label htmlFor="lead-phone" className="block text-[10px] font-black uppercase tracking-widest text-white/70 mb-1.5">
             WhatsApp Number
           </label>
@@ -196,7 +168,7 @@ export default function LeadForm({
 
         <div>
           <label htmlFor="lead-goal" className="block text-[10px] font-black uppercase tracking-widest text-white/70 mb-1.5">
-            Your Goal / Focus Area
+            Therapy Path
           </label>
           <div className="relative">
             <select
@@ -218,6 +190,21 @@ export default function LeadForm({
               </svg>
             </div>
           </div>
+        </div>
+
+        <div>
+          <label htmlFor="lead-city" className="block text-[10px] font-black uppercase tracking-widest text-white/70 mb-1.5">
+            Preferred City (Optional)
+          </label>
+          <input
+            type="text"
+            id="lead-city"
+            name="city"
+            placeholder="e.g. Mumbai, Delhi, Bangalore"
+            value={formData.city}
+            onChange={handleChange}
+            className="w-full px-4 py-3 bg-white/10 hover:bg-white/15 focus:bg-white border-2 border-white/20 focus:border-[#E44426] rounded-xl focus:outline-none font-body text-sm font-bold text-white focus:text-deep-brown placeholder:text-white/40 transition-all"
+          />
         </div>
 
         <button

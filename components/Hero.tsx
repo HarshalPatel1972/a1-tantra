@@ -38,14 +38,12 @@ export default function Hero() {
               </h1>
 
               <p className="font-body text-lg text-white/95 mb-8 leading-relaxed max-w-2xl drop-shadow-md">
-                Discover sacred tantric wisdom, healing practices, and
-                transformational paths — guided with clarity, depth, and
-                compassion.
+                Personalized in-person tantra therapy sessions focused on healing, emotional balance, relationship growth, meditation, and chakra alignment.
               </p>
 
               {/* CTA BUTTONS & INTERACTIVE SELECTOR */}
               <div className="flex flex-col sm:flex-row gap-4 w-full">
-                {/* Desktop Button (Hidden on Mobile) */}
+                {/* Primary Button */}
                 <a
                   href="#lead-form"
                   onClick={(e) => {
@@ -53,60 +51,20 @@ export default function Hero() {
                     const el = document.getElementById("lead-form");
                     if (el) el.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="hidden sm:flex px-12 py-6 text-white font-nav font-black uppercase tracking-[0.2em] rounded-xl relative overflow-hidden group shadow-[0_20px_50px_rgba(29,78,216,0.5)] text-center active:scale-95 transition-all w-auto border-4 border-[#1e3a8a] items-center justify-center min-w-[280px] cursor-pointer"
-                  style={{ backgroundColor: "#1D4ED8" }}
+                  className="px-8 py-5 text-white font-nav text-xs font-black uppercase tracking-[0.15em] rounded-xl relative overflow-hidden group shadow-lg text-center active:scale-95 transition-all border-2 border-[#E44426] items-center justify-center min-w-[240px] cursor-pointer"
+                  style={{ backgroundColor: "#E44426" }}
                 >
-                  <span className="absolute inset-0 bg-blue-700 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
-                  <span className="relative z-10">Book Free Discovery Call →</span>
+                  <span className="absolute inset-0 bg-white/10 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
+                  <span className="relative z-10">Book Free Discovery Call</span>
                 </a>
 
-                {/* Mobile Energy Selector (Hidden on Desktop) */}
-                <div className="flex flex-col w-full sm:hidden bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-5 gap-3 shadow-[0_30px_60px_rgba(0,0,0,0.6)] mt-2 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[#3F2F27]/40 pointer-events-none mix-blend-multiply"></div>
-                  
-                  <p className="text-[10px] text-[#D4AF37] uppercase tracking-[0.3em] font-black text-center mb-1 drop-shadow-md border-b border-white/10 pb-3 relative z-10">
-                    How is your energy right now?
-                  </p>
-                  
-                  <Link href="/therapies" className="group relative z-10 flex items-center justify-between w-full bg-white/10 border-2 border-white/10 hover:border-[#D4AF37]/50 rounded-2xl px-5 py-4 transition-all active:scale-95 shadow-lg overflow-hidden">
-                    <div className="absolute inset-0 bg-[#3F2F27] opacity-80 group-hover:opacity-90 transition-opacity -z-10"></div>
-                    <div className="flex items-center gap-4">
-                      <span className="text-2xl drop-shadow-md">⚡</span>
-                      <span className="text-white text-[11px] font-black uppercase tracking-[0.15em] drop-shadow-md">Feeling Drained</span>
-                    </div>
-                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#E44426] transition-colors border border-white/20">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </Link>
-                  
-                  <Link href="/book-session" className="group relative z-10 flex items-center justify-between w-full bg-white/10 border-2 border-white/10 hover:border-[#D4AF37]/50 rounded-2xl px-5 py-4 transition-all active:scale-95 shadow-lg overflow-hidden">
-                    <div className="absolute inset-0 bg-[#3F2F27] opacity-80 group-hover:opacity-90 transition-opacity -z-10"></div>
-                    <div className="flex items-center gap-4">
-                      <span className="text-2xl drop-shadow-md">🪷</span>
-                      <span className="text-white text-[11px] font-black uppercase tracking-[0.15em] drop-shadow-md">Seeking Connection</span>
-                    </div>
-                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#E44426] transition-colors border border-white/20">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </Link>
-                  
-                  <Link href="/sessions" className="group relative z-10 flex items-center justify-between w-full bg-white/10 border-2 border-white/10 hover:border-[#D4AF37]/50 rounded-2xl px-5 py-4 transition-all active:scale-95 shadow-lg overflow-hidden">
-                    <div className="absolute inset-0 bg-[#3F2F27] opacity-80 group-hover:opacity-90 transition-opacity -z-10"></div>
-                    <div className="flex items-center gap-4">
-                      <span className="text-2xl drop-shadow-md">🪢</span>
-                      <span className="text-white text-[11px] font-black uppercase tracking-[0.15em] drop-shadow-md">Mind Racing</span>
-                    </div>
-                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#E44426] transition-colors border border-white/20">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </Link>
-                </div>
+                {/* Secondary Button */}
+                <Link
+                  href="/book-session"
+                  className="px-8 py-5 text-white font-nav text-xs font-black uppercase tracking-[0.15em] rounded-xl relative overflow-hidden group border-2 border-white/30 text-center hover:bg-white/10 active:scale-95 transition-all flex items-center justify-center min-w-[240px]"
+                >
+                  <span className="relative z-10">Book Therapy Session</span>
+                </Link>
               </div>
 
               {/* Social Proof and Trust Indicators */}
@@ -116,16 +74,16 @@ export default function Hero() {
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 text-white/90 text-sm font-semibold">
                   <div className="flex items-center gap-2 drop-shadow-sm">
-                    <span className="text-soft-gold">✔</span> Confidential Sessions
+                    <span className="text-soft-gold">✔</span> In-Person Sessions
                   </div>
                   <div className="flex items-center gap-2 drop-shadow-sm">
-                    <span className="text-soft-gold">✔</span> Online Across India
+                    <span className="text-soft-gold">✔</span> Across India
                   </div>
                   <div className="flex items-center gap-2 drop-shadow-sm">
-                    <span className="text-soft-gold">✔</span> Free 15-Min Discovery Call
+                    <span className="text-soft-gold">✔</span> Confidential & Private
                   </div>
                   <div className="flex items-center gap-2 drop-shadow-sm">
-                    <span className="text-soft-gold">✔</span> Personalized Guidance
+                    <span className="text-soft-gold">✔</span> Free Discovery Call
                   </div>
                 </div>
               </div>

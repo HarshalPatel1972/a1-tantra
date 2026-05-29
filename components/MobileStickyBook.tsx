@@ -75,7 +75,7 @@ export default function MobileStickyBook() {
         >
           <span className="text-lg mb-0.5">📅</span>
           <span className="text-[9px] uppercase font-black tracking-widest text-white">
-            Book Call
+            Book Session
           </span>
         </button>
       </div>

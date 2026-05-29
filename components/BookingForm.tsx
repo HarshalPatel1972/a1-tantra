@@ -2,31 +2,25 @@
 
 import { useState } from "react";
 import { sendBookingRequest } from "@/utils/emailjs";
+import { trackBooking } from "@/lib/gtag";
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    sessionType: "Kriya Tantra Session",
-    preferredTime: "Afternoon (1 PM - 5 PM)",
+    sessionType: "Chakra Balancing",
+    city: "",
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const sessionTypes = [
-    "Kriya Tantra Session",
-    "Carya Tantra Session",
-    "Yoga Tantra Session",
-    "Anuttarayoga Tantra Session",
-    "Unsure (Free consultation first)",
-  ];
-
-  const timeSlots = [
-    "Morning (8 AM - 12 PM)",
-    "Afternoon (1 PM - 5 PM)",
-    "Evening (6 PM - 10 PM)",
-    "Flexible / Weekends",
+    "Chakra Balancing",
+    "Tantra Guidance",
+    "Meditation Coaching",
+    "Relationship Healing",
+    "Unsure / General Guidance",
   ];
 
   const handleChange = (
@@ -37,10 +31,8 @@ export default function BookingForm() {
     const { name, value } = e.target;
     
     if (name === "phone") {
-      // Strip everything except numbers
       let digitsOnly = value.replace(/\D/g, "");
       
-      // If user pasted a number with country code, auto-fix it for them
       if (digitsOnly.length > 10) {
         if (digitsOnly.startsWith("91")) {
           digitsOnly = digitsOnly.substring(2);
@@ -49,33 +41,30 @@ export default function BookingForm() {
         }
       }
       
-      // Stop them from physically typing more than 10 digits
       setFormData((prev) => ({ ...prev, phone: digitsOnly.slice(0, 10) }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
 
-    if (error) setError(null); // Clear error on typing
+    if (error) setError(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
-    // --- SPAM PROTECTION / STRICT VALIDATION ---
+    // Name Validation
     const nameRegex = /^[a-zA-Z\s\-']{2,50}$/;
     if (!nameRegex.test(formData.name)) {
       setError("Please enter a valid human name (letters only).");
       return;
     }
 
-    // Since `handleChange` already guarantees `formData.phone` is max 10 digits
-    // of pure numbers, we just need to verify the length and starting digit.
+    // Phone Validation
     if (formData.phone.length !== 10 || !/^[6-9]\d{9}$/.test(formData.phone)) {
-      setError("Please enter a valid 10-digit Indian mobile number.");
+      setError("Please enter a valid 10-digit Indian WhatsApp number.");
       return;
     }
-    // -------------------------------------------
 
     setLoading(true);
 
@@ -84,16 +73,17 @@ export default function BookingForm() {
         formData.name,
         formData.phone,
         formData.sessionType,
-        formData.preferredTime
+        formData.city
       );
 
       if (success) {
+        trackBooking();
         setSubmitted(true);
         setFormData({
           name: "",
           phone: "",
-          sessionType: "Kriya Tantra Session",
-          preferredTime: "Afternoon (1 PM - 5 PM)",
+          sessionType: "Chakra Balancing",
+          city: "",
         });
         setTimeout(() => setSubmitted(false), 8000);
       } else {
@@ -179,7 +169,7 @@ export default function BookingForm() {
                 htmlFor="sessionType"
                 className="block text-xs font-black uppercase tracking-widest text-deep-brown/60 mb-2"
               >
-                Interest
+                Therapy Path
               </label>
               <div className="relative">
                 <select
@@ -205,31 +195,20 @@ export default function BookingForm() {
 
             <div>
               <label
-                htmlFor="preferredTime"
+                htmlFor="city"
                 className="block text-xs font-black uppercase tracking-widest text-deep-brown/60 mb-2"
               >
-                Preferred Time
+                Preferred City (Optional)
               </label>
-              <div className="relative">
-                <select
-                  id="preferredTime"
-                  name="preferredTime"
-                  value={formData.preferredTime}
-                  onChange={handleChange}
-                  className="w-full px-5 py-4 pr-12 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown appearance-none cursor-pointer"
-                >
-                  {timeSlots.map((slot) => (
-                    <option key={slot} value={slot}>
-                      {slot}
-                    </option>
-                  ))}
-                </select>
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-accent-red">
-                  <svg className="w-6 h-6 stroke-[3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </div>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="e.g. Mumbai, Delhi, Bangalore"
+                value={formData.city}
+                onChange={handleChange}
+                className="w-full px-5 py-4 border-2 border-deep-brown/10 rounded-xl focus:outline-none focus:border-accent-red bg-white font-body font-bold text-deep-brown placeholder:text-deep-brown/30"
+              />
             </div>
           </div>
         </div>
@@ -237,13 +216,13 @@ export default function BookingForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-6 bg-[#E44426] text-white font-black rounded-xl hover:bg-white hover:text-[#E44426] border-4 border-[#E44426] transition-all disabled:opacity-50 uppercase tracking-[0.2em] text-sm shadow-[0_20px_40px_-10px_rgba(228,68,38,0.4)] flex items-center justify-center gap-3 group active:scale-95"
+          className="w-full py-6 bg-[#E44426] text-white font-black rounded-xl hover:bg-white hover:text-[#E44426] border-4 border-[#E44426] transition-all disabled:opacity-50 uppercase tracking-[0.2em] text-sm shadow-[0_20px_40px_-10px_rgba(228,68,38,0.4)] flex items-center justify-center gap-3 group active:scale-95 cursor-pointer"
         >
           {loading ? (
             "PROCESSING..."
           ) : (
             <>
-              Request My Session 
+              Request My In-Person Session
               <span className="group-hover:translate-x-2 transition-transform text-xl">→</span>
             </>
           )}

@@ -12,11 +12,11 @@ export default function BookingPage() {
     },
     {
       q: "What if I've never tried Tantra before?",
-      a: "Perfect. Most of our seekers are beginners. Your guide will start from the very basics and adapt to your comfort level."
+      a: "Perfect. Most of our seekers are beginners. The therapy is tailored entirely to your comfort and experience level."
     },
     {
-      q: "How does an online session work?",
-      a: "Sessions happen via secure video call. You'll receive a private link and preparation instructions after your booking is confirmed."
+      q: "How do in-person sessions work?",
+      a: "All therapy sessions are conducted in person. After submitting your request, we coordinate location arrangements and schedule details directly."
     }
   ];
 
