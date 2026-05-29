@@ -114,7 +114,7 @@ button {
 
 /* Override bg-white in dark mode */
 .dark .bg-white {
-  background-color: var(--color-surface-card) !important;
+  background-color: var(--color-surface-card);
 }
 
 /* Override bg-stone variants in dark mode */
