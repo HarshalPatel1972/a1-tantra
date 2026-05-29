@@ -63,3 +63,24 @@ export const sendBookingRequest = async (
     `,
   });
 };
+
+export const sendLeadRequest = async (
+  name: string,
+  email: string,
+  phone: string,
+  goal: string
+): Promise<boolean> => {
+  return sendEmail({
+    from_name: name,
+    from_email: email,
+    subject: `Discovery Call Request: ${goal}`,
+    message: `
+      Discovery Call Request Details:
+      Name: ${name}
+      Email: ${email}
+      WhatsApp Number: ${phone}
+      Goal/Interest: ${goal}
+    `,
+  });
+};
+

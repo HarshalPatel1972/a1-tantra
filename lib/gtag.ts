@@ -51,3 +51,22 @@ export const trackJourney = () => {
 export const trackNewsletter = () => {
   trackConversion('newsletter', { value: 50 });
 };
+
+export const trackPhoneCall = () => {
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    try {
+      (window as any).gtag('event', 'phone_call_click', {
+        value: 100,
+        currency: 'INR',
+      });
+    } catch (error) {
+      console.error("Google Ads tracking error for phone call:", error);
+    }
+  }
+};
+
+export const trackDiscoveryCallSubmit = () => {
+  // Can reuse booking or track as high value lead
+  trackConversion('booking', { value: 400 });
+};
+

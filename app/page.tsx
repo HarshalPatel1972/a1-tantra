@@ -5,9 +5,6 @@ import Hero from "@/components/Hero";
 import WelcomeHome from "@/components/WelcomeHome";
 import RealTalk from "@/components/RealTalk";
 import TantraTypesSection from "@/components/TantraTypesSection";
-import SessionsGrid from "@/components/SessionsGrid";
-import BuildJourneyCTA from "@/components/BuildJourneyCTA";
-import OriginStory from "@/components/OriginStory";
 import OurTantraServices from "@/components/OurTantraServices";
 import UserReviews from "@/components/UserReviews";
 import InstagramInvite from "@/components/InstagramInvite";
@@ -16,6 +13,9 @@ import InstagramGrid from "@/components/InstagramGrid";
 import ConsultationBanner from "@/components/ConsultationBanner";
 import TrustBar from "@/components/TrustBar";
 import GuideSection from "@/components/GuideSection";
+import ChooseYourPath from "@/components/ChooseYourPath";
+import HowItWorks from "@/components/HowItWorks";
+import FAQSection from "@/components/FAQSection";
 
 export default function Home() {
   return (
@@ -23,15 +23,15 @@ export default function Home() {
       <ConsultationBanner />
       <Hero />
       <TrustBar />
+      <ChooseYourPath />
+      <UserReviews />
+      <HowItWorks />
+      <GuideSection />
       <WelcomeHome />
       <RealTalk />
       <TantraTypesSection />
-      {/* <SessionsGrid /> */}
       <OurTantraServices />
-      <GuideSection />
-      <UserReviews />
-      <BuildJourneyCTA />
-      {/* <OriginStory /> */}
+      <FAQSection />
       <InstagramInvite />
       <Newsletter />
       <InstagramGrid />

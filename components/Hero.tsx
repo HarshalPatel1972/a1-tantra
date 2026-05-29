@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import LeadForm from "./LeadForm";
 
 export default function Hero() {
   return (
@@ -32,11 +33,11 @@ export default function Hero() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center relative z-20 min-h-[700px] md:min-h-[750px] px-6 sm:px-12 py-20 md:py-24">
             {/* LEFT CONTENT */}
             <div className="lg:col-span-2">
-              <h1 className="font-title text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-2xl drop-shadow-lg">
-                A place to explore Tantra, together.
+              <h1 className="font-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-2xl drop-shadow-lg">
+                Find Clarity, Healing & Inner Balance Through Personalized Tantra Sessions
               </h1>
 
-              <p className="font-body text-lg text-white/95 mb-10 leading-relaxed max-w-2xl drop-shadow-md">
+              <p className="font-body text-lg text-white/95 mb-8 leading-relaxed max-w-2xl drop-shadow-md">
                 Discover sacred tantric wisdom, healing practices, and
                 transformational paths — guided with clarity, depth, and
                 compassion.
@@ -45,14 +46,19 @@ export default function Hero() {
               {/* CTA BUTTONS & INTERACTIVE SELECTOR */}
               <div className="flex flex-col sm:flex-row gap-4 w-full">
                 {/* Desktop Button (Hidden on Mobile) */}
-                <Link
-                  href="/start-journey"
-                  className="hidden sm:flex px-12 py-6 text-white font-nav font-black uppercase tracking-[0.2em] rounded-xl relative overflow-hidden group shadow-[0_20px_50px_rgba(29,78,216,0.5)] text-center active:scale-95 transition-all w-auto border-4 border-[#1e3a8a] items-center justify-center min-w-[280px]"
+                <a
+                  href="#lead-form"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("lead-form");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="hidden sm:flex px-12 py-6 text-white font-nav font-black uppercase tracking-[0.2em] rounded-xl relative overflow-hidden group shadow-[0_20px_50px_rgba(29,78,216,0.5)] text-center active:scale-95 transition-all w-auto border-4 border-[#1e3a8a] items-center justify-center min-w-[280px] cursor-pointer"
                   style={{ backgroundColor: "#1D4ED8" }}
                 >
                   <span className="absolute inset-0 bg-blue-700 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
-                  <span className="relative z-10">START YOUR JOURNEY →</span>
-                </Link>
+                  <span className="relative z-10">Book Free Discovery Call →</span>
+                </a>
 
                 {/* Mobile Energy Selector (Hidden on Desktop) */}
                 <div className="flex flex-col w-full sm:hidden bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-5 gap-3 shadow-[0_30px_60px_rgba(0,0,0,0.6)] mt-2 relative overflow-hidden">
@@ -102,23 +108,32 @@ export default function Hero() {
                   </Link>
                 </div>
               </div>
+
+              {/* Social Proof and Trust Indicators */}
+              <div className="mt-8 pt-6 border-t border-white/10 space-y-4 max-w-2xl relative z-10">
+                <p className="font-nav text-xs font-bold text-soft-gold uppercase tracking-[0.15em] drop-shadow-md">
+                  ⭐ 4.9/5 Client Satisfaction &nbsp;|&nbsp; 500+ Sessions Conducted
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 text-white/90 text-sm font-semibold">
+                  <div className="flex items-center gap-2 drop-shadow-sm">
+                    <span className="text-soft-gold">✔</span> Confidential Sessions
+                  </div>
+                  <div className="flex items-center gap-2 drop-shadow-sm">
+                    <span className="text-soft-gold">✔</span> Online Across India
+                  </div>
+                  <div className="flex items-center gap-2 drop-shadow-sm">
+                    <span className="text-soft-gold">✔</span> Free 15-Min Discovery Call
+                  </div>
+                  <div className="flex items-center gap-2 drop-shadow-sm">
+                    <span className="text-soft-gold">✔</span> Personalized Guidance
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* RIGHT CARD */}
-            <div className="lg:col-span-1 h-fit">
-              <div className="bg-white/15 backdrop-blur-md border border-white/40 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition">
-                <h3 className="font-title text-2xl font-bold text-white mb-3 drop-shadow-md">
-                  Guides
-                </h3>
-
-                <p className="font-body text-white/90 mb-4 text-sm leading-relaxed drop-shadow-sm">
-                  The Best Tantra Practices for Beginners
-                </p>
-
-                <button className="flex items-center font-body text-white font-semibold hover:text-cream transition drop-shadow-md">
-                  Explore →
-                </button>
-              </div>
+            {/* RIGHT CARD - Lead Form */}
+            <div className="lg:col-span-1 h-fit relative z-30">
+              <LeadForm />
             </div>
           </div>
 

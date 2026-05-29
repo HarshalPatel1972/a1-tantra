@@ -3,9 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState, useMemo } from "react";
+import { usePathname } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { searchIndex } from "@/data/search-index";
+
 
 // SVG Icon Components
 const SearchIcon = ({ className = "w-5 h-5" }) => (
@@ -113,6 +115,7 @@ const MoonIcon = ({ className = "w-5 h-5" }) => (
 );
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchHovered, setIsSearchHovered] = useState(false);
@@ -121,6 +124,72 @@ export default function Navbar() {
   const [isExploreOpen, setIsExploreOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
   const { isDark, toggleTheme } = useTheme();
+
+  const isLandingPage = [
+    "/chakra-healing",
+    "/spiritual-healing",
+    "/anxiety-healing",
+    "/tantra-guidance",
+    "/couples-tantra"
+  ].includes(pathname);
+
+  if (isLandingPage) {
+    return (
+      <nav className="fixed top-0 w-full z-50 transition-all duration-500 ease-out bg-cream/80 backdrop-blur-md border-b border-deep-brown/10 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex h-20 items-center justify-between">
+            {/* Logo */}
+            <Link
+              href="/"
+              className="font-bold tracking-tight text-brand-blue select-none flex items-center gap-2 text-[20px] sm:text-[24px]"
+              style={{
+                fontFamily: '"Vegawanty", sans-serif',
+                letterSpacing: "0.02em",
+                fontWeight: "700",
+              }}
+            >
+              <Image
+                src="/images/logo-main.webp"
+                alt="A1 Tantra Logo"
+                width={40}
+                height={40}
+                priority
+                className="shrink-0 object-contain w-8 h-8 sm:w-10 sm:h-10"
+              />
+              <span>A1 TANTRA</span>
+            </Link>
+
+            {/* Direct CTAs */}
+            <div className="flex items-center gap-4">
+              <a
+                href="tel:+919217821866"
+                onClick={() => {
+                  const { trackPhoneCall } = require("@/lib/gtag");
+                  trackPhoneCall();
+                }}
+                className="hidden sm:inline-flex items-center gap-2 text-deep-brown font-nav text-xs font-bold uppercase tracking-wider border border-deep-brown/20 rounded-xl px-4 py-2 hover:bg-deep-brown hover:text-cream transition cursor-pointer"
+              >
+                📞 Call Now
+              </a>
+              <a
+                href="https://wa.me/919217821866"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  const { trackWhatsApp } = require("@/lib/gtag");
+                  trackWhatsApp();
+                }}
+                className="inline-flex items-center gap-2 bg-[#25D366] text-white font-nav text-xs font-bold uppercase tracking-wider rounded-xl px-4 py-2 hover:bg-emerald-600 transition shadow-md cursor-pointer"
+              >
+                💬 WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+
 
   const searchResults = useMemo(() => {
     if (searchQuery.trim().length > 1) {
