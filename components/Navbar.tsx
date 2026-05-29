@@ -125,8 +125,13 @@ export default function Navbar() {
   const [isExploreOpen, setIsExploreOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
   const { isDark, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  const isLandingPage = [
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isLandingPage = mounted && [
     "/kriya-tantra",
     "/carya-tantra",
     "/yoga-tantra",

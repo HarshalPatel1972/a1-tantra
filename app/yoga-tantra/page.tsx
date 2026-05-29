@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from "@/components/Footer";
 import LeadForm from "@/components/LeadForm";
 import FAQSection from "@/components/FAQSection";

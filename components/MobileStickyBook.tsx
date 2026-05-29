@@ -1,11 +1,21 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { trackBooking, trackWhatsApp, trackPhoneCall } from "@/lib/gtag";
 
 export default function MobileStickyBook() {
   const pathname = usePathname();
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
   
   // Hide on contact/booking-related pages to avoid redundancy
   if (pathname === "/contact" || pathname === "/auth/login" || pathname === "/auth/signup" || pathname === "/book-session") {
