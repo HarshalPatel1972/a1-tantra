@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { searchIndex } from "@/data/search-index";
+import { trackPhoneCall, trackWhatsApp } from "@/lib/gtag";
 
 
 // SVG Icon Components
@@ -164,7 +165,6 @@ export default function Navbar() {
               <a
                 href="tel:+919217821866"
                 onClick={() => {
-                  const { trackPhoneCall } = require("@/lib/gtag");
                   trackPhoneCall();
                 }}
                 className="hidden sm:inline-flex items-center gap-2 text-deep-brown font-nav text-xs font-bold uppercase tracking-wider border border-deep-brown/20 rounded-xl px-4 py-2 hover:bg-deep-brown hover:text-cream transition cursor-pointer"
@@ -176,7 +176,6 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
-                  const { trackWhatsApp } = require("@/lib/gtag");
                   trackWhatsApp();
                 }}
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white font-nav text-xs font-bold uppercase tracking-wider rounded-xl px-4 py-2 hover:bg-emerald-600 transition shadow-md cursor-pointer"
