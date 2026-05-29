@@ -35,7 +35,7 @@ export default function HowSessionsWork() {
   ];
 
   return (
-    <section className="py-20 bg-[#1c1614] text-[#F8F5F2] relative overflow-hidden">
+    <section className="py-20 bg-deep-brown text-cream relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-soft-gold/[0.015] rounded-full blur-3xl pointer-events-none" />
 
