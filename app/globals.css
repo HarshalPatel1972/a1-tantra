@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Bigilla Display - Custom serif typeface */
 @font-face {
   font-family: "Bigilla Display";
