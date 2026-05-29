@@ -10,7 +10,9 @@ export default function ChooseYourPath() {
       description: "Focuses on ritual actions, mantra practice, purification disciplines, and structured spiritual practice.",
       duration: "75 Mins",
       type: "In-Person Therapy",
-      fee: "Discussed on Call",
+      originalPrice: "₹35,000",
+      price: "₹25,000",
+      discount: "30% OFF",
       travel: "Coordinated Across India",
       link: "/kriya-tantra",
       icon: "🕉️",
@@ -22,7 +24,9 @@ export default function ChooseYourPath() {
       description: "Balances ritual practice with inner meditative stability through devotion and visualization.",
       duration: "90 Mins",
       type: "In-Person Therapy",
-      fee: "Discussed on Call",
+      originalPrice: "₹45,000",
+      price: "₹30,000",
+      discount: "33% OFF",
       travel: "Coordinated Across India",
       link: "/carya-tantra",
       icon: "🧘",
@@ -34,7 +38,9 @@ export default function ChooseYourPath() {
       description: "Focuses on internal meditative transformation and energy visualization practices.",
       duration: "90 Mins",
       type: "In-Person Therapy",
-      fee: "Discussed on Call",
+      originalPrice: "₹60,000",
+      price: "₹40,000",
+      discount: "33% OFF",
       travel: "Coordinated Across India",
       link: "/yoga-tantra",
       icon: "🕯️",
@@ -46,7 +52,9 @@ export default function ChooseYourPath() {
       description: "Focuses on the non-dual union of wisdom and compassion for accelerated spiritual awakening.",
       duration: "120 Mins",
       type: "In-Person Therapy",
-      fee: "Discussed on Call",
+      originalPrice: "₹85,000",
+      price: "₹55,000",
+      discount: "35% OFF",
       travel: "Coordinated Across India",
       link: "/anuttarayoga-tantra",
       icon: "💕",
@@ -115,9 +123,13 @@ export default function ChooseYourPath() {
                     <span className="opacity-60">Type:</span>
                     <span>{p.type}</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="opacity-60">Fee:</span>
-                    <span>{p.fee}</span>
+                  <div className="flex justify-between items-center">
+                    <span className="opacity-60">Price:</span>
+                    <span className="flex items-center gap-1.5 font-bold">
+                      <span className="line-through text-deep-brown/40 group-hover:text-white/40 text-[10px]">{p.originalPrice}</span>
+                      <span className="text-accent-red group-hover:text-soft-gold">{p.price}</span>
+                      <span className="text-[9px] bg-accent-red/10 border border-accent-red/20 group-hover:bg-white/10 group-hover:border-white/20 px-1.5 py-0.5 rounded text-accent-red group-hover:text-soft-gold font-black">{p.discount}</span>
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="opacity-60">Travel:</span>

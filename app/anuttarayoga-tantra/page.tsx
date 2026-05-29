@@ -34,8 +34,12 @@ export default function AnuttarayogaTantraPage() {
                   <span>1-on-1 In-Person Therapy</span>
                 </div>
                 <div className="flex justify-between border-b border-deep-brown/5 pb-2">
-                  <span className="opacity-60">Consultation Fee:</span>
-                  <span>Coordinated on Call</span>
+                  <span className="opacity-60">Price:</span>
+                  <span className="flex items-center gap-2">
+                    <span className="line-through text-deep-brown/40 text-xs font-bold">₹85,000</span>
+                    <span className="text-[#E44426] text-base font-black">₹55,000</span>
+                    <span className="text-[10px] bg-[#E44426]/10 border border-[#E44426]/20 px-1.5 py-0.5 rounded text-[#E44426] font-black">35% OFF</span>
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="opacity-60">Travel Policy:</span>
@@ -120,7 +124,7 @@ export default function AnuttarayogaTantraPage() {
       <section className="py-16 bg-brand-blue text-cream text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4">Awaken to Non-Dual Union</h2>
-          <p className="font-body text-base text-cream/85 mb-8 max-w-xl mx-auto">Get in touch today to schedule your consultation and coordinate in-person availability for Anuttarayoga Tantra.</p>
+          <p className="font-body text-base text-cream/85 mb-8 max-w-xl mx-auto">Get in touch today to secure the special offer price of ₹55,000 (limited time offer) and coordinate in-person availability for Anuttarayoga Tantra.</p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
               href="#lead-form"
