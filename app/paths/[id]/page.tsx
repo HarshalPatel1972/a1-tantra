@@ -125,7 +125,7 @@ export default function PathDetailPage(props: {
             <div className="relative inline-block">
               <Link
                 href="/book-session"
-                className="relative z-10 inline-block px-12 py-5 bg-cream text-brand-blue font-bold uppercase tracking-[0.25em] rounded-sm hover:bg-deep-brown hover:text-white transition-all duration-700 shadow-[0_15px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden group"
+                className="relative z-10 inline-block px-12 py-5 bg-cream text-brand-blue font-bold uppercase tracking-[0.25em] rounded-sm hover:bg-deep-brown hover:text-white dark:hover:text-cream transition-all duration-700 shadow-[0_15px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden group"
               >
                 BOOK A SESSION
               </Link>

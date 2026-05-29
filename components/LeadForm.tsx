@@ -140,7 +140,7 @@ export default function LeadForm({
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 bg-white/10 hover:bg-white/15 focus:bg-white border-2 border-white/20 focus:border-[#E44426] rounded-xl focus:outline-none font-body text-sm font-bold text-white focus:text-deep-brown placeholder:text-white/40 transition-all"
+            className="w-full px-4 py-3 bg-white/10 hover:bg-white/15 focus:bg-white dark:focus:bg-surface-card border-2 border-white/20 focus:border-[#E44426] rounded-xl focus:outline-none font-body text-sm font-bold text-white focus:text-[#3F2F27] dark:focus:text-deep-brown placeholder:text-white/40 transition-all"
           />
         </div>
 
@@ -161,7 +161,7 @@ export default function LeadForm({
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full pl-16 pr-4 py-3 bg-white/10 hover:bg-white/15 focus:bg-white border-2 border-white/20 focus:border-[#E44426] rounded-xl focus:outline-none font-body text-sm font-bold text-white focus:text-deep-brown placeholder:text-white/40 transition-all"
+              className="w-full pl-16 pr-4 py-3 bg-white/10 hover:bg-white/15 focus:bg-white dark:focus:bg-surface-card border-2 border-white/20 focus:border-[#E44426] rounded-xl focus:outline-none font-body text-sm font-bold text-white focus:text-[#3F2F27] dark:focus:text-deep-brown placeholder:text-white/40 transition-all"
             />
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function LeadForm({
               name="goal"
               value={formData.goal}
               onChange={handleChange}
-              className="w-full px-4 py-3 pr-10 bg-white/10 hover:bg-white/15 focus:bg-white border-2 border-white/20 focus:border-[#E44426] rounded-xl focus:outline-none font-body text-sm font-bold text-white focus:text-deep-brown appearance-none cursor-pointer transition-all"
+              className="w-full px-4 py-3 pr-10 bg-white/10 hover:bg-white/15 focus:bg-white dark:focus:bg-surface-card border-2 border-white/20 focus:border-[#E44426] rounded-xl focus:outline-none font-body text-sm font-bold text-white focus:text-[#3F2F27] dark:focus:text-deep-brown appearance-none cursor-pointer transition-all"
             >
               {goals.map((g) => (
                 <option key={g} value={g} className="text-deep-brown bg-cream font-bold">
@@ -203,7 +203,7 @@ export default function LeadForm({
             placeholder="e.g. Mumbai, Delhi, Bangalore"
             value={formData.city}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white/10 hover:bg-white/15 focus:bg-white border-2 border-white/20 focus:border-[#E44426] rounded-xl focus:outline-none font-body text-sm font-bold text-white focus:text-deep-brown placeholder:text-white/40 transition-all"
+            className="w-full px-4 py-3 bg-white/10 hover:bg-white/15 focus:bg-white dark:focus:bg-surface-card border-2 border-white/20 focus:border-[#E44426] rounded-xl focus:outline-none font-body text-sm font-bold text-white focus:text-[#3F2F27] dark:focus:text-deep-brown placeholder:text-white/40 transition-all"
           />
         </div>
 

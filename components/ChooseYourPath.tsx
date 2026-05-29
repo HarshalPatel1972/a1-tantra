@@ -88,7 +88,7 @@ export default function ChooseYourPath() {
             <Link 
               key={idx} 
               href={p.link}
-              className="group bg-white hover:bg-deep-brown border border-deep-brown/5 hover:border-transparent rounded-2xl p-6 shadow-md hover:shadow-2xl flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-1.5 cursor-pointer relative overflow-hidden min-h-[420px]"
+              className="group bg-white dark:bg-surface-card hover:bg-deep-brown dark:hover:bg-surface-hover border border-deep-brown/5 dark:border-white/5 hover:border-transparent rounded-2xl p-6 shadow-md hover:shadow-2xl flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-1.5 cursor-pointer relative overflow-hidden min-h-[420px]"
             >
               {/* Subtle top indicator bar */}
               <div 
