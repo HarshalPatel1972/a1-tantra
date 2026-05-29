@@ -49,7 +49,7 @@ export default function BuildJourneyCTA() {
                   href="/book-session"
                   className="inline-flex items-center justify-center px-6 py-3.5 bg-transparent text-white font-black rounded-xl w-full border-2 border-white/40 shadow-xl active:scale-95 transition-all text-xs uppercase tracking-widest"
                 >
-                  Book Therapy Session
+                  Request Therapy Session
                 </Link>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function BuildJourneyCTA() {
                 href="/book-session"
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-cream font-black text-sm rounded-xl relative overflow-hidden group border-2 border-cream/30 shadow-2xl active:scale-95 transition-all"
               >
-                <span className="relative z-10">Book Therapy Session</span>
+                <span className="relative z-10">Request Therapy Session</span>
               </Link>
             </div>
           </div>

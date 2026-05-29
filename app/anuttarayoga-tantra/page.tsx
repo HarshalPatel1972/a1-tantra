@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import LeadForm from "@/components/LeadForm";
 import FAQSection from "@/components/FAQSection";
 
-export default function MeditationCoachingPage() {
+export default function AnuttarayogaTantraPage() {
   return (
     <div className="bg-cream min-h-screen">
       {/* Landing Page Hero */}
@@ -13,26 +13,46 @@ export default function MeditationCoachingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Info Column */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue/10 border border-brand-blue/20 rounded-full text-xs font-bold text-brand-blue uppercase tracking-wider">
-                🕯️ Nervous System Calm
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#E44426]/10 border border-[#E44426]/20 rounded-full text-xs font-bold text-[#E44426] uppercase tracking-wider">
+                💕 In-Person Anuttarayoga Tantra Session
               </div>
               <h1 className="font-title text-4xl sm:text-5xl lg:text-6xl font-black text-deep-brown leading-tight">
-                In-Person <span className="text-brand-blue italic">Meditation Coaching</span> Across India
+                In-Person <span className="text-[#E44426] italic">Anuttarayoga Tantra</span> Therapy Across India
               </h1>
               <p className="font-body text-lg text-deep-brown/80 leading-relaxed max-w-xl">
-                Release stress, calm a racing mind, and regulate your nervous system. Get personalized physical guidance in breathwork and concentration techniques with direct travel coordinated to your city.
+                The highest path of spiritual awakening. Anuttarayoga Tantra (Highest Union Tantra) focuses on the profound non-dual union of wisdom and compassion, employing advanced energy methods and deep meditative integration.
               </p>
               
+              {/* Details & Specs Card */}
+              <div className="bg-white/40 border border-deep-brown/5 rounded-2xl p-5 max-w-lg space-y-3 font-body text-sm font-semibold text-deep-brown/85">
+                <div className="flex justify-between border-b border-deep-brown/5 pb-2">
+                  <span className="opacity-60">Duration:</span>
+                  <span>120 Minutes</span>
+                </div>
+                <div className="flex justify-between border-b border-deep-brown/5 pb-2">
+                  <span className="opacity-60">Session Type:</span>
+                  <span>1-on-1 In-Person Therapy</span>
+                </div>
+                <div className="flex justify-between border-b border-deep-brown/5 pb-2">
+                  <span className="opacity-60">Consultation Fee:</span>
+                  <span>Coordinated on Call</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="opacity-60">Travel Policy:</span>
+                  <span>Practitioner travels to your city across India</span>
+                </div>
+              </div>
+
               {/* Benefits Bullets */}
               <div className="space-y-3.5 pt-4">
                 {[
-                  "De-escalate stress and racing thoughts physically",
-                  "Learn custom breathwork and concentration tools",
-                  "Receive tailored 1-on-1 support for anxiety relief",
-                  "Physical travel-to-city arrangements coordinated directly",
+                  "Accelerated spiritual awakening and consciousness expansion",
+                  "Integrate non-dual wisdom and compassionate energies",
+                  "Deep emotional release and profound somatic healing",
+                  "Practitioner travels directly to your preferred local venue",
                 ].map((b, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <span className="text-brand-blue font-bold text-lg mt-0.5">✔</span>
+                    <span className="text-accent-red font-bold text-lg mt-0.5">✔</span>
                     <span className="font-body text-base font-semibold text-deep-brown/85">{b}</span>
                   </div>
                 ))}
@@ -40,7 +60,7 @@ export default function MeditationCoachingPage() {
 
               {/* Trust Indicators */}
               <div className="pt-6 border-t border-deep-brown/10 flex flex-wrap gap-6 text-xs font-bold text-deep-brown/65 uppercase tracking-widest">
-                <span>🔒 Strict Confidentiality</span>
+                <span>🔒 Private & Confidential</span>
                 <span>🇮🇳 Travel across India</span>
                 <span>⭐ 4.9/5 satisfaction</span>
               </div>
@@ -48,7 +68,7 @@ export default function MeditationCoachingPage() {
 
             {/* Right Form Column */}
             <div className="lg:col-span-5 relative z-25">
-              <LeadForm defaultGoal="Meditation Coaching" buttonText="Book Free Discovery Call" />
+              <LeadForm defaultGoal="Anuttarayoga Tantra" buttonText="Book Free Discovery Call" />
             </div>
           </div>
         </div>
@@ -58,29 +78,29 @@ export default function MeditationCoachingPage() {
       <section className="py-20 bg-white border-y border-deep-brown/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-title text-3xl sm:text-4xl font-bold text-deep-brown text-center mb-12">
-            The In-Person Meditation Coaching Process
+            The In-Person Anuttarayoga Process
           </h2>
           
           <div className="space-y-8">
             {[
               {
                 step: "1",
-                t: "Submit Your Request",
-                d: "Tell us about your mental fatigue or stress levels. We discuss your city and preferred call details.",
+                t: "Request a Discovery Call",
+                d: "Submit your request. We will contact you on WhatsApp to discuss your spiritual evolution, readiness, and preferred city location.",
               },
               {
                 step: "2",
-                t: "Confirm Travel & Location",
-                d: "We finalize scheduling, travel logistics, and location details. The practitioner travels to your city.",
+                t: "Confirm Travel & Settings",
+                d: "We finalize scheduling, travel details, and fees. The practitioner travels directly to your location in India.",
               },
               {
                 step: "3",
-                t: "In-Person Somatic Release",
-                d: "We physically teach you breath techniques, focus structures, and release models in a safe space.",
+                t: "Conduct In-Person Therapy",
+                d: "Held physically in a completely private, safe space. The session guides you through advanced non-dual integration, breath cycles, and kundalini activation.",
               },
             ].map((s, idx) => (
               <div key={idx} className="flex gap-6 items-start p-6 bg-cream/30 border border-deep-brown/5 rounded-2xl">
-                <div className="w-10 h-10 rounded-xl bg-brand-blue text-white flex items-center justify-center font-nav font-black text-lg shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-accent-red text-white flex items-center justify-center font-nav font-black text-lg shrink-0">
                   {s.step}
                 </div>
                 <div>
@@ -99,8 +119,8 @@ export default function MeditationCoachingPage() {
       {/* Final CTA */}
       <section className="py-16 bg-brand-blue text-cream text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4">Ready to Calm Your Racing Mind?</h2>
-          <p className="font-body text-base text-cream/85 mb-8 max-w-xl mx-auto">Schedule your consultation now to align on travel dates and in-person slots.</p>
+          <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4">Awaken to Non-Dual Union</h2>
+          <p className="font-body text-base text-cream/85 mb-8 max-w-xl mx-auto">Get in touch today to schedule your consultation and coordinate in-person availability for Anuttarayoga Tantra.</p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
               href="#lead-form"

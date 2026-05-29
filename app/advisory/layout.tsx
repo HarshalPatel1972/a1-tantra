@@ -5,11 +5,11 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Relationship Tantra Consultation | Online Guidance | A1 Tantra",
+  title: "Relationship Tantra Consultation | In-Person Guidance | A1 Tantra",
   description:
-    "Get expert relationship tantra consultation online to improve connection, resolve conflicts, and restore harmony.",
+    "Get expert relationship tantra consultation in person to improve connection, resolve conflicts, and restore harmony.",
   keywords:
-    "tantra consultation, relationship guidance, couples tantra, online consultation, spiritual partnership",
+    "tantra consultation, relationship guidance, couples tantra, in-person consultation, spiritual partnership",
   alternates: {
     canonical: "/advisory",
   },

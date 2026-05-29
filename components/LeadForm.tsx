@@ -24,10 +24,10 @@ export default function LeadForm({
   const [error, setError] = useState<string | null>(null);
 
   const goals = [
-    "Chakra Balancing",
-    "Tantra Guidance",
-    "Meditation Coaching",
-    "Relationship Healing",
+    "Kriya Tantra",
+    "Carya Tantra",
+    "Yoga Tantra",
+    "Anuttarayoga Tantra",
     "Unsure / General Guidance",
   ];
 

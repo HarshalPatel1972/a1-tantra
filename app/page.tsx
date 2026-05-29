@@ -6,6 +6,7 @@ import ConsultationBanner from "@/components/ConsultationBanner";
 import TrustBar from "@/components/TrustBar";
 import ChooseYourPath from "@/components/ChooseYourPath";
 import HowSessionsWork from "@/components/HowSessionsWork";
+import SessionDelivery from "@/components/SessionDelivery";
 import WhyClientsChooseUs from "@/components/WhyClientsChooseUs";
 import UserReviews from "@/components/UserReviews";
 import FAQSection from "@/components/FAQSection";
@@ -19,6 +20,7 @@ export default function Home() {
       <TrustBar />
       <ChooseYourPath />
       <HowSessionsWork />
+      <SessionDelivery />
       <WhyClientsChooseUs />
       <UserReviews />
       <FAQSection />

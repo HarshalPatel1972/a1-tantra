@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import LeadForm from "@/components/LeadForm";
 import FAQSection from "@/components/FAQSection";
 
-export default function ChakraBalancingPage() {
+export default function YogaTantraPage() {
   return (
     <div className="bg-cream min-h-screen">
       {/* Landing Page Hero */}
@@ -13,23 +13,43 @@ export default function ChakraBalancingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Info Column */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#E44426]/10 border border-[#E44426]/20 rounded-full text-xs font-bold text-[#E44426] uppercase tracking-wider">
-                🕉️ In-Person Energy Healing
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1D4ED8]/10 border border-[#1D4ED8]/20 rounded-full text-xs font-bold text-[#1D4ED8] uppercase tracking-wider">
+                🕯️ In-Person Yoga Tantra Session
               </div>
               <h1 className="font-title text-4xl sm:text-5xl lg:text-6xl font-black text-deep-brown leading-tight">
-                In-Person <span className="text-accent-red italic">Chakra Balancing</span> Therapy Across India
+                In-Person <span className="text-[#1D4ED8] italic">Yoga Tantra</span> Therapy Across India
               </h1>
               <p className="font-body text-lg text-deep-brown/80 leading-relaxed max-w-xl">
-                Clear emotional blocks, release energy stagnation, and resolve chronic fatigue. Our practitioner travels directly to your location in India to conduct private, 1-on-1 chakra alignment sessions.
+                Achieve deep inner union. Yoga Tantra (Union Tantra) shifts the focus from external actions to internal meditative transformation and intricate energy visualization practices.
               </p>
               
+              {/* Details & Specs Card */}
+              <div className="bg-white/40 border border-deep-brown/5 rounded-2xl p-5 max-w-lg space-y-3 font-body text-sm font-semibold text-deep-brown/85">
+                <div className="flex justify-between border-b border-deep-brown/5 pb-2">
+                  <span className="opacity-60">Duration:</span>
+                  <span>90 Minutes</span>
+                </div>
+                <div className="flex justify-between border-b border-deep-brown/5 pb-2">
+                  <span className="opacity-60">Session Type:</span>
+                  <span>1-on-1 In-Person Therapy</span>
+                </div>
+                <div className="flex justify-between border-b border-deep-brown/5 pb-2">
+                  <span className="opacity-60">Consultation Fee:</span>
+                  <span>Coordinated on Call</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="opacity-60">Travel Policy:</span>
+                  <span>Practitioner travels to your city across India</span>
+                </div>
+              </div>
+
               {/* Benefits Bullets */}
               <div className="space-y-3.5 pt-4">
                 {[
-                  "Release deep-seated emotional blockages and mental fatigue",
-                  "Align the 7 vital energy centers physically and energetically",
-                  "Grounded, professional, and confidential setting",
-                  "Practitioner travels to your city for private sessions",
+                  "Accelerate internal meditative transformation",
+                  "Master visualization of complex internal energy channels",
+                  "Integrate breath, visualization, and mudra for alignment",
+                  "Practitioner travels directly to your preferred local venue",
                 ].map((b, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="text-accent-red font-bold text-lg mt-0.5">✔</span>
@@ -48,7 +68,7 @@ export default function ChakraBalancingPage() {
 
             {/* Right Form Column */}
             <div className="lg:col-span-5 relative z-25">
-              <LeadForm defaultGoal="Chakra Balancing" buttonText="Book Free Discovery Call" />
+              <LeadForm defaultGoal="Yoga Tantra" buttonText="Book Free Discovery Call" />
             </div>
           </div>
         </div>
@@ -58,25 +78,25 @@ export default function ChakraBalancingPage() {
       <section className="py-20 bg-white border-y border-deep-brown/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-title text-3xl sm:text-4xl font-bold text-deep-brown text-center mb-12">
-            The In-Person Chakra Balancing Process
+            The In-Person Yoga Tantra Process
           </h2>
           
           <div className="space-y-8">
             {[
               {
                 step: "1",
-                t: "Submit Your Request",
-                d: "Request a call by filling out our simplified form. We discuss your emotional state and coordinate your city location.",
+                t: "Request a Discovery Call",
+                d: "Submit your request. We will contact you on WhatsApp to discuss your energy alignment goals and preferred city location.",
               },
               {
                 step: "2",
-                t: "Confirm Session Arrangements",
-                d: "We finalize scheduling, location details, and fees. Our practitioner arranges travel directly to your city.",
+                t: "Confirm Travel Details",
+                d: "We discuss scheduling, travel arrangements, and fees. The practitioner travels to your city to finalize logistics.",
               },
               {
                 step: "3",
                 t: "Conduct In-Person Therapy",
-                d: "The session is held physically in a safe, quiet, and completely private setting. We use breathwork, mantras, and visualization.",
+                d: "Held physically in a completely private and secure setting. The session guides you through internal meditations, visualization, and breathwork.",
               },
             ].map((s, idx) => (
               <div key={idx} className="flex gap-6 items-start p-6 bg-cream/30 border border-deep-brown/5 rounded-2xl">
@@ -99,8 +119,8 @@ export default function ChakraBalancingPage() {
       {/* Final CTA */}
       <section className="py-16 bg-brand-blue text-cream text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4">Ready to Harmonize Your Energy?</h2>
-          <p className="font-body text-base text-cream/85 mb-8 max-w-xl mx-auto">Get in touch today to schedule your consultation and coordinate in-person availability.</p>
+          <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4">Deepen Your Inner Union</h2>
+          <p className="font-body text-base text-cream/85 mb-8 max-w-xl mx-auto">Get in touch today to schedule your consultation and coordinate in-person availability for Yoga Tantra.</p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
               href="#lead-form"

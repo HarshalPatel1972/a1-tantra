@@ -5,11 +5,11 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Tantra Services in India | Book Online Tantra Sessions | A1 Tantra",
+  title: "Tantra Services in India | In-Person Tantra Sessions | A1 Tantra",
   description:
-    "Explore tantra services in India. Book secure online tantra sessions for healing, relationship support, and guidance.",
+    "Explore tantra services in India. Book secure in-person tantra sessions for healing, relationship support, and guidance.",
   keywords:
-    "tantra services, tantra sessions, online tantra, tantra healing, spiritual healing India",
+    "tantra services, tantra sessions, in-person tantra, tantra healing, spiritual healing India",
   alternates: {
     canonical: "/sessions",
   },

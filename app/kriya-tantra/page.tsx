@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import LeadForm from "@/components/LeadForm";
 import FAQSection from "@/components/FAQSection";
 
-export default function RelationshipHealingPage() {
+export default function KriyaTantraPage() {
   return (
     <div className="bg-cream min-h-screen">
       {/* Landing Page Hero */}
@@ -13,23 +13,43 @@ export default function RelationshipHealingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Info Column */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent-red/10 border border-accent-red/20 rounded-full text-xs font-bold text-accent-red uppercase tracking-wider">
-                💕 Intimacy & Partner Harmony
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#E44426]/10 border border-[#E44426]/20 rounded-full text-xs font-bold text-[#E44426] uppercase tracking-wider">
+                🕉️ In-Person Kriya Tantra Session
               </div>
               <h1 className="font-title text-4xl sm:text-5xl lg:text-6xl font-black text-deep-brown leading-tight">
-                In-Person <span className="text-accent-red italic">Relationship Healing</span> Sessions Across India
+                In-Person <span className="text-accent-red italic">Kriya Tantra</span> Therapy Across India
               </h1>
               <p className="font-body text-lg text-deep-brown/80 leading-relaxed max-w-xl">
-                Deepen partner intimacy, rebuild emotional trust, and harmonize your relationship energies. We arrange private, secure travel to your location for custom joint in-person sessions.
+                Experience the foundational path of traditional Tantra. Kriya Tantra (Action Tantra) focuses on external ritual actions, mantra practice, and purification disciplines to align the physical and energetic body.
               </p>
               
+              {/* Details & Specs Card */}
+              <div className="bg-white/40 border border-deep-brown/5 rounded-2xl p-5 max-w-lg space-y-3 font-body text-sm font-semibold text-deep-brown/85">
+                <div className="flex justify-between border-b border-deep-brown/5 pb-2">
+                  <span className="opacity-60">Duration:</span>
+                  <span>75 Minutes</span>
+                </div>
+                <div className="flex justify-between border-b border-deep-brown/5 pb-2">
+                  <span className="opacity-60">Session Type:</span>
+                  <span>1-on-1 In-Person Therapy</span>
+                </div>
+                <div className="flex justify-between border-b border-deep-brown/5 pb-2">
+                  <span className="opacity-60">Consultation Fee:</span>
+                  <span>Coordinated on Call</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="opacity-60">Travel Policy:</span>
+                  <span>Practitioner travels to your city across India</span>
+                </div>
+              </div>
+
               {/* Benefits Bullets */}
               <div className="space-y-3.5 pt-4">
                 {[
-                  "Resolve persistent emotional blocks and communication fatigue",
-                  "Learn sacred, non-physical breathing and meditation rituals together",
-                  "Highly professional, respectful, and safe physical space",
-                  "Practitioner travels to your city for private joint sessions",
+                  "Clear deep physical and energetic blockages using sacred rituals",
+                  "Align energy flows through structured mantra chanting and mudras",
+                  "Grounded, professional, and completely confidential environment",
+                  "Practitioner coordinates travel to your preferred local venue",
                 ].map((b, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="text-accent-red font-bold text-lg mt-0.5">✔</span>
@@ -40,15 +60,15 @@ export default function RelationshipHealingPage() {
 
               {/* Trust Indicators */}
               <div className="pt-6 border-t border-deep-brown/10 flex flex-wrap gap-6 text-xs font-bold text-deep-brown/65 uppercase tracking-widest">
-                <span>🔒 Confidential Sessions</span>
-                <span>🇮🇳 Joint travel across India</span>
+                <span>🔒 Private & Confidential</span>
+                <span>🇮🇳 Travel across India</span>
                 <span>⭐ 4.9/5 satisfaction</span>
               </div>
             </div>
 
             {/* Right Form Column */}
             <div className="lg:col-span-5 relative z-25">
-              <LeadForm defaultGoal="Relationship Healing" buttonText="Book Free Discovery Call" />
+              <LeadForm defaultGoal="Kriya Tantra" buttonText="Book Free Discovery Call" />
             </div>
           </div>
         </div>
@@ -58,25 +78,25 @@ export default function RelationshipHealingPage() {
       <section className="py-20 bg-white border-y border-deep-brown/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-title text-3xl sm:text-4xl font-bold text-deep-brown text-center mb-12">
-            The In-Person Relationship Healing Process
+            The In-Person Kriya Tantra Process
           </h2>
           
           <div className="space-y-8">
             {[
               {
                 step: "1",
-                t: "Joint Call Request",
-                d: "Request a consultation. We coordinate a 15-minute call to discuss your relationship challenges and city details.",
+                t: "Request a Discovery Call",
+                d: "Fill out our brief form above. We will contact you on WhatsApp to discuss your spiritual goals and preferred city location.",
               },
               {
                 step: "2",
-                t: "Confirm Logistics",
-                d: "Scheduling, travel logistics, and location details are agreed upon securely. The practitioner travels to your city.",
+                t: "Confirm Travel & Location",
+                d: "We coordinate scheduling, travel logistics, and fees. The practitioner travels to your city and details are fully finalized.",
               },
               {
                 step: "3",
-                t: "In-Person Joint Rituals",
-                d: "A completely private and confidential session teaching you partner breathing, eye gazing, and energy alignment.",
+                t: "Participate in In-Person Therapy",
+                d: "The session is held physically in a private, quiet space. It combines physical purification disciplines, mudras, and meditative rituals.",
               },
             ].map((s, idx) => (
               <div key={idx} className="flex gap-6 items-start p-6 bg-cream/30 border border-deep-brown/5 rounded-2xl">
@@ -99,8 +119,8 @@ export default function RelationshipHealingPage() {
       {/* Final CTA */}
       <section className="py-16 bg-brand-blue text-cream text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4">Ready to Rebuild Your Connection?</h2>
-          <p className="font-body text-base text-cream/85 mb-8 max-w-xl mx-auto">Get in touch now to schedule your consultation and check our traveler calendar.</p>
+          <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4">Begin Your Traditional Tantra Journey</h2>
+          <p className="font-body text-base text-cream/85 mb-8 max-w-xl mx-auto">Get in touch today to schedule your consultation and coordinate in-person availability for Kriya Tantra.</p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
               href="#lead-form"

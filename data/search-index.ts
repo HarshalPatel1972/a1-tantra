@@ -37,7 +37,7 @@ export const searchIndex: SearchResult[] = [
   {
     title: "Therapies",
     description:
-      "Online spiritual healing and tantra therapy sessions for holistic growth.",
+      "In-person spiritual healing and tantra therapy sessions for holistic growth.",
     url: "/therapies",
     category: "Page",
   },
@@ -74,12 +74,12 @@ export const searchIndex: SearchResult[] = [
   {
     title: "Tantra Sessions in India",
     description:
-      "Comprehensive online tantra sessions: meditation, breathwork, chakra balancing.",
+      "Comprehensive in-person tantra sessions: meditation, breathwork, chakra balancing.",
     url: "/sessions",
     category: "Service",
   },
   {
-    title: "Online Spiritual Healing",
+    title: "In-Person Spiritual Healing",
     description: "Transformative energy work and energy-based tantra therapy.",
     url: "/therapies",
     category: "Service",

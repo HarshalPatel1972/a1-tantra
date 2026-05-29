@@ -8,7 +8,7 @@ export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    sessionType: "Chakra Balancing",
+    sessionType: "Kriya Tantra",
     city: "",
   });
   const [loading, setLoading] = useState(false);
@@ -16,10 +16,10 @@ export default function BookingForm() {
   const [error, setError] = useState<string | null>(null);
 
   const sessionTypes = [
-    "Chakra Balancing",
-    "Tantra Guidance",
-    "Meditation Coaching",
-    "Relationship Healing",
+    "Kriya Tantra",
+    "Carya Tantra",
+    "Yoga Tantra",
+    "Anuttarayoga Tantra",
     "Unsure / General Guidance",
   ];
 
@@ -82,7 +82,7 @@ export default function BookingForm() {
         setFormData({
           name: "",
           phone: "",
-          sessionType: "Chakra Balancing",
+          sessionType: "Kriya Tantra",
           city: "",
         });
         setTimeout(() => setSubmitted(false), 8000);
@@ -102,8 +102,8 @@ export default function BookingForm() {
         <div className="mb-8 p-6 bg-soft-gold/10 border border-soft-gold/30 text-deep-brown rounded-2xl flex items-center gap-4 animate-fade-in shadow-inner">
            <span className="text-3xl">🕉️</span>
            <div>
-             <p className="font-title text-lg font-bold">Booking Request Sent!</p>
-             <p className="text-sm opacity-80 font-medium">We usually reply within 2-4 hours on WhatsApp.</p>
+             <p className="font-title text-lg font-bold">Request Received!</p>
+             <p className="text-sm opacity-80 font-medium">We usually reply within 2-4 hours on WhatsApp to coordinate.</p>
            </div>
         </div>
       )}
@@ -222,7 +222,7 @@ export default function BookingForm() {
             "PROCESSING..."
           ) : (
             <>
-              Request My In-Person Session
+              Submit Booking Request
               <span className="group-hover:translate-x-2 transition-transform text-xl">→</span>
             </>
           )}

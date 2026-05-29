@@ -8,21 +8,13 @@ export default function MobileStickyBook() {
   const router = useRouter();
   
   // Hide on contact/booking-related pages to avoid redundancy
-  if (pathname === "/contact" || pathname === "/auth/login" || pathname === "/auth/signup") {
+  if (pathname === "/contact" || pathname === "/auth/login" || pathname === "/auth/signup" || pathname === "/book-session") {
     return null;
   }
 
   const handleBookCallClick = () => {
     trackBooking();
-    
-    // Check if lead form exists on current page (home or landing pages)
-    const leadForm = document.getElementById("lead-form");
-    if (leadForm) {
-      leadForm.scrollIntoView({ behavior: "smooth" });
-    } else {
-      // Fallback to book-session page
-      router.push("/book-session");
-    }
+    router.push("/book-session");
   };
 
   return (
@@ -75,7 +67,7 @@ export default function MobileStickyBook() {
         >
           <span className="text-lg mb-0.5">📅</span>
           <span className="text-[9px] uppercase font-black tracking-widest text-white">
-            Book Session
+            Request Session
           </span>
         </button>
       </div>

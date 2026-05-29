@@ -126,10 +126,10 @@ export default function Navbar() {
   const { isDark, toggleTheme } = useTheme();
 
   const isLandingPage = [
-    "/chakra-balancing",
-    "/tantra-guidance",
-    "/meditation-coaching",
-    "/relationship-healing"
+    "/kriya-tantra",
+    "/carya-tantra",
+    "/yoga-tantra",
+    "/anuttarayoga-tantra"
   ].includes(pathname);
 
 
@@ -447,7 +447,7 @@ export default function Navbar() {
                 style={{ backgroundColor: "#1D4ED8" }}
               >
                 <span className="absolute inset-0 bg-black/20 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 pointer-events-none"></span>
-                <span className="relative z-10">BOOK THERAPY SESSION</span>
+                <span className="relative z-10">REQUEST THERAPY SESSION</span>
               </Link>
             </div>
           )}
@@ -478,33 +478,7 @@ export default function Navbar() {
 
         {/* MOBILE RIGHT ICONS */}
         <div className="flex gap-4 items-center">
-          {/* WhatsApp Icon (Mobile only) - Unified Bubble */}
-          <Link
-            href="https://wa.me/919217821866"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 group transition-all active:scale-95"
-            aria-label="Chat on WhatsApp"
-          >
-            <div className="flex flex-col items-end text-right hidden xs:flex">
-               <span className="text-[9px] font-black text-[#1C1614] dark:text-white leading-none uppercase tracking-tighter">
-                 Chat with us
-               </span>
-               <span className="text-[8px] font-bold text-[#128C7E] dark:text-[#25D366] leading-none uppercase tracking-widest mt-0.5 whitespace-nowrap">
-                 Reply in mins 🟢
-               </span>
-            </div>
-            <div className="relative w-10 h-10 bg-white dark:bg-zinc-800 rounded-full flex items-center justify-center shadow-lg border-2 border-[#25D366]/40 group-hover:border-[#25D366] transition-all overflow-hidden group-hover:scale-105">
-               <svg
-                className="w-6 h-6 text-[#25D366] relative z-10"
-                fill="currentColor"
-                viewBox="0 0 448 512"
-              >
-                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.7 17.8 69.4 27.2 106.2 27.2h.1c122.3 0 222-99.6 222-222 0-59.3-23-115.1-65.1-157.1zM223.9 446.3c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 365.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 54 81.2 54 130.5 0 101.7-82.8 184.5-184.5 184.5zm100.5-138c-5.5-2.8-32.6-16.1-37.7-18-5.1-1.9-8.8-2.8-12.4 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.5-.3-8.5 2.4-11.2 2.5-2.6 5.5-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.2 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.4-29.9-17-41.2-4.5-10.9-9.1-9.3-12.4-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.6-13.3 37.2-26.2 4.6-12.9 4.6-24 3.2-26.2-1.3-2.2-5-3.5-10.5-6.3z" />
-              </svg>
-            </div>
-          </Link>
-          
+
           <div className="flex items-center gap-3">
             {/* Eye Comfort Toggle (Mobile) */}
             <button
@@ -657,7 +631,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none"></span>
-                  <span className="relative z-10">BOOK THERAPY SESSION</span>
+                  <span className="relative z-10">REQUEST THERAPY SESSION</span>
                 </Link>
               </>
             )}

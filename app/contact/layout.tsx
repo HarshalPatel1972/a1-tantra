@@ -5,7 +5,7 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Contact A1 Tantra | Get in Touch | Online Consultation",
+  title: "Contact A1 Tantra | Get in Touch | Request Consultation",
   description:
     "Contact A1 Tantra for questions about tantra services, sessions, or consultation. We respond within 24 hours.",
   keywords:
