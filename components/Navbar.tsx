@@ -127,9 +127,30 @@ export default function Navbar() {
   const { isDark, toggleTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  // ALL hooks must be declared before any conditional returns — React Rules of Hooks
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Scroll listener — always registered, ignored on landing pages via isLandingPage check
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const searchResults = useMemo(() => {
+    if (searchQuery.trim().length > 1) {
+      return searchIndex
+        .filter(
+          (item) =>
+            item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.description.toLowerCase().includes(searchQuery.toLowerCase()),
+        )
+        .slice(0, 5);
+    }
+    return [];
+  }, [searchQuery]);
 
   const isLandingPage = mounted && [
     "/kriya-tantra",
@@ -138,7 +159,7 @@ export default function Navbar() {
     "/anuttarayoga-tantra"
   ].includes(pathname);
 
-
+  // Conditional returns are only allowed AFTER all hooks have been called
   if (isLandingPage) {
     return (
       <nav className="fixed top-0 w-full z-50 transition-all duration-500 ease-out bg-cream/80 backdrop-blur-md border-b border-deep-brown/10 shadow-lg">
@@ -193,26 +214,6 @@ export default function Navbar() {
       </nav>
     );
   }
-
-
-  const searchResults = useMemo(() => {
-    if (searchQuery.trim().length > 1) {
-      return searchIndex
-        .filter(
-          (item) =>
-            item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.description.toLowerCase().includes(searchQuery.toLowerCase()),
-        )
-        .slice(0, 5);
-    }
-    return [];
-  }, [searchQuery]);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
