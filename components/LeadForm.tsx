@@ -24,8 +24,8 @@ export default function LeadForm({
   const [error, setError] = useState<string | null>(null);
 
   const goals = [
-    "Kriya Tantra",
     "Carya Tantra",
+    "Kriya Tantra",
     "Yoga Tantra",
     "Anuttarayoga Tantra",
     "Unsure / General Guidance",

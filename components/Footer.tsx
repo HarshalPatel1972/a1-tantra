@@ -55,18 +55,18 @@ export default function Footer() {
             <ul className="space-y-2 text-sm font-body">
               <li>
                 <Link
-                  href="/paths/kriya"
-                  className="hover:text-soft-gold transition"
-                >
-                  Kriya Tantra
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/paths/carya"
                   className="hover:text-soft-gold transition"
                 >
                   Carya Tantra
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/paths/kriya"
+                  className="hover:text-soft-gold transition"
+                >
+                  Kriya Tantra
                 </Link>
               </li>
               <li>

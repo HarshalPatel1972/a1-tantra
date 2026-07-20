@@ -16,8 +16,8 @@ export default function BookingForm() {
   const [error, setError] = useState<string | null>(null);
 
   const sessionTypes = [
-    "Kriya Tantra",
     "Carya Tantra",
+    "Kriya Tantra",
     "Yoga Tantra",
     "Anuttarayoga Tantra",
     "Unsure / General Guidance",

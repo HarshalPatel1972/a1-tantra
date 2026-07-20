@@ -19,45 +19,11 @@ export default function TantraTypesSection() {
 
   const tantraTypes = [
     {
-      name: "Kriya Tantra",
-      subtitle: "ACTION TANTRA",
-      description:
-        "Emphasizes external practices and ritual action: physical purity, ritual bathing, mantra recitation, offerings, and carefully structured ceremonial conduct. It is about aligning body and behavior with sacred intention.",
-      duration: "90 min",
-      price: "₹25,000",
-      originalPrice: "₹35,000",
-      image: "/images/Kriya-Tantra.png",
-      fullDetails: {
-        overview:
-          "Kriya Tantra is the foundational path of tantric practice, emphasizing the sanctification of the body and actions through ritual and ceremony. It's ideal for beginners seeking structured, externally-focused spiritual practices.",
-        keyFocus: [
-          "Physical purification through ritual bathing and cleansing",
-          "Mantra recitation with proper intonation and rhythm",
-          "Ceremonial offerings and structured devotional practices",
-          "Alignment of bodily conduct with spiritual intention",
-          "Sacred geometry and ritual arrangement",
-        ],
-        benefits: [
-          "Develops discipline and dedication to practice",
-          "Creates a stable foundation for deeper spiritual work",
-          "Purifies the body and energy channels",
-          "Cultivates respect for sacred traditions",
-          "Establishes connection between body and spirit",
-        ],
-        whotakes:
-          "Ideal for beginners, individuals seeking structured practices, those with strong devotional inclinations, and practitioners who benefit from external rituals.",
-        prerequisites:
-          "Basic understanding of tantric philosophy, openness to ritual, physical mobility for ceremonial practices",
-        practiceSchedule:
-          "90-minute guided sessions covering theory, ritual instruction, and supervised practice",
-      },
-    },
-    {
       name: "Carya Tantra",
       subtitle: "METHOD TANTRA",
       description:
         "Balances outer ritual with inner meditative stability. Practitioners still perform ceremonies and symbolic actions, but the focus shifts more strongly toward devotion, visualization, and maintaining mindful awareness during activity.",
-      duration: "120 min",
+      duration: "90 min",
       price: "₹30,000",
       originalPrice: "₹45,000",
       image: "/images/Carya-Tantra.png",
@@ -83,7 +49,41 @@ export default function TantraTypesSection() {
         prerequisites:
           "Completion of Kriya Tantra or equivalent foundational practice, ability to sustain attention during extended sessions",
         practiceSchedule:
-          "120-minute sessions with 30 minutes of foundational theory, 50 minutes of guided ritual, and 40 minutes of integrated meditation",
+          "90-minute sessions with 30 minutes of foundational theory, 30 minutes of guided ritual, and 30 minutes of integrated meditation",
+      },
+    },
+    {
+      name: "Kriya Tantra",
+      subtitle: "ACTION TANTRA",
+      description:
+        "Emphasizes external practices and ritual action: physical purity, ritual bathing, mantra recitation, offerings, and carefully structured ceremonial conduct. It is about aligning body and behavior with sacred intention.",
+      duration: "120 min",
+      price: "₹50,000",
+      originalPrice: "₹70,000",
+      image: "/images/Kriya-Tantra.png",
+      fullDetails: {
+        overview:
+          "Kriya Tantra is the foundational path of tantric practice, emphasizing the sanctification of the body and actions through ritual and ceremony. It's ideal for beginners seeking structured, externally-focused spiritual practices.",
+        keyFocus: [
+          "Physical purification through ritual bathing and cleansing",
+          "Mantra recitation with proper intonation and rhythm",
+          "Ceremonial offerings and structured devotional practices",
+          "Alignment of bodily conduct with spiritual intention",
+          "Sacred geometry and ritual arrangement",
+        ],
+        benefits: [
+          "Develops discipline and dedication to practice",
+          "Creates a stable foundation for deeper spiritual work",
+          "Purifies the body and energy channels",
+          "Cultivates respect for sacred traditions",
+          "Establishes connection between body and spirit",
+        ],
+        whotakes:
+          "Ideal for beginners, individuals seeking structured practices, those with strong devotional inclinations, and practitioners who benefit from external rituals.",
+        prerequisites:
+          "Basic understanding of tantric philosophy, openness to ritual, physical mobility for ceremonial practices",
+        practiceSchedule:
+          "120-minute guided sessions covering theory, ritual instruction, and supervised practice",
       },
     },
     {
@@ -91,9 +91,9 @@ export default function TantraTypesSection() {
       subtitle: "UNION TANTRA",
       description:
         "Centers on internal practice and the union of mind with enlightened qualities. Visualization of deities, mantra, and subtle-energy awareness become primary, with less emphasis on elaborate external ritual and more on continuous meditative presence.",
-      duration: "150 min",
-      price: "₹40,000",
-      originalPrice: "₹60,000",
+      duration: "180 min",
+      price: "₹80,000",
+      originalPrice: "₹1,20,000",
       image: "/images/Yoga-Tantra.png",
       fullDetails: {
         overview:
@@ -125,9 +125,9 @@ export default function TantraTypesSection() {
       subtitle: "HIGHEST UNION TANTRA",
       description:
         "Represents the most advanced level of tantra, working directly with subtle body, channels, winds, and innate awareness. It involves special internal practices aimed at complete union of wisdom and compassion, and realization of the nature of mind.",
-      duration: "3 hours",
-      price: "₹55,000",
-      originalPrice: "₹85,000",
+      duration: "240 min",
+      price: "₹1,00,000",
+      originalPrice: "₹1,50,000",
       image: "/images/Anuttarayoga-Tantra.png",
       fullDetails: {
         overview:

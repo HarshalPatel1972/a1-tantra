@@ -6,16 +6,16 @@ import Image from "next/image";
 export default function SessionsGrid() {
   const sessions = [
     {
-      id: "kriya",
-      title: "Kriya Tantra Session",
-      image: "/images/Kriya-Tantra.png",
-      description: "Action-based external practices, mudras, and purifying rituals.",
-    },
-    {
       id: "carya",
       title: "Carya Tantra Session",
       image: "/images/Carya-Tantra.png",
       description: "Methodical balance of outer action and inner visualization.",
+    },
+    {
+      id: "kriya",
+      title: "Kriya Tantra Session",
+      image: "/images/Kriya-Tantra.png",
+      description: "Action-based external practices, mudras, and purifying rituals.",
     },
     {
       id: "yoga",
