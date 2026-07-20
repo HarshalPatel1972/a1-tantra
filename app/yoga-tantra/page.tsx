@@ -101,7 +101,7 @@ export default function YogaTantraPage() {
                   style={{ borderBottom: "1px solid rgba(99,160,255,0.15)" }}
                 >
                   <span style={{ opacity: 0.6 }}>Duration:</span>
-                  <span>90 Minutes</span>
+                  <span>180 Minutes</span>
                 </div>
                 <div
                   className="flex justify-between pb-2"
@@ -116,8 +116,8 @@ export default function YogaTantraPage() {
                 >
                   <span style={{ opacity: 0.6 }}>Price:</span>
                   <span className="flex items-center gap-2">
-                    <span className="line-through text-xs font-bold" style={{ color: "rgba(220,235,255,0.35)" }}>₹60,000</span>
-                    <span className="text-base font-black" style={{ color: "#80B8FF" }}>₹40,000</span>
+                    <span className="line-through text-xs font-bold" style={{ color: "rgba(220,235,255,0.35)" }}>₹1,20,000</span>
+                    <span className="text-base font-black" style={{ color: "#80B8FF" }}>₹80,000</span>
                     <span
                       className="text-[10px] px-1.5 py-0.5 rounded font-black border"
                       style={{
@@ -241,7 +241,7 @@ export default function YogaTantraPage() {
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4 text-white">Deepen Your Inner Union</h2>
           <p className="font-body text-base mb-8 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.85)" }}>
-            Get in touch today to secure the special offer price of ₹40,000 (limited time offer) and coordinate in-person availability for Yoga Tantra.
+            Get in touch today to secure the special offer price of ₹80,000 (limited time offer) and coordinate in-person availability for Yoga Tantra.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
