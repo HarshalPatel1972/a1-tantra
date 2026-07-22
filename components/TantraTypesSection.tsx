@@ -19,7 +19,7 @@ export default function TantraTypesSection() {
 
   const tantraTypes = [
     {
-      name: "Carya Tantra",
+      name: "Kaya Tantra",
       subtitle: "METHOD TANTRA",
       description:
         "Balances outer ritual with inner meditative stability. Practitioners still perform ceremonies and symbolic actions, but the focus shifts more strongly toward devotion, visualization, and maintaining mindful awareness during activity.",
@@ -29,7 +29,7 @@ export default function TantraTypesSection() {
       image: "/images/Carya-Tantra.png",
       fullDetails: {
         overview:
-          "Carya Tantra bridges external ritual and internal meditation, combining the disciplined structure of Kriya Tantra with deeper mental cultivation. It's for practitioners ready to integrate inner and outer practices.",
+          "Kaya Tantra bridges external ritual and internal meditation, combining disciplined structure with deeper mental cultivation. It's for practitioners ready to integrate inner and outer practices.",
         keyFocus: [
           "Ritual action paired with inner visualization",
           "Devotional focus combined with mindful awareness",
@@ -41,19 +41,19 @@ export default function TantraTypesSection() {
           "Balances external and internal spiritual development",
           "Deepens concentration and mental stability",
           "Creates coherence between actions and intentions",
-          "Accelerates spiritual progress beyond Kriya Tantra",
+          "Accelerates spiritual progress beyond basic practices",
           "Prepares foundation for advanced practices",
         ],
         whotakes:
-          "Practitioners who have mastered Kriya Tantra basics, those seeking to integrate action with awareness, individuals drawn to both ritual and meditation.",
+          "Practitioners seeking to integrate action with awareness, individuals drawn to both ritual and meditation.",
         prerequisites:
-          "Completion of Kriya Tantra or equivalent foundational practice, ability to sustain attention during extended sessions",
+          "Openness to foundational practices, ability to sustain attention during extended sessions",
         practiceSchedule:
           "90-minute sessions with 30 minutes of foundational theory, 30 minutes of guided ritual, and 30 minutes of integrated meditation",
       },
     },
     {
-      name: "Kriya Tantra",
+      name: "Energy Healing",
       subtitle: "ACTION TANTRA",
       description:
         "Emphasizes external practices and ritual action: physical purity, ritual bathing, mantra recitation, offerings, and carefully structured ceremonial conduct. It is about aligning body and behavior with sacred intention.",
@@ -63,7 +63,7 @@ export default function TantraTypesSection() {
       image: "/images/Kriya-Tantra.png",
       fullDetails: {
         overview:
-          "Kriya Tantra is the foundational path of tantric practice, emphasizing the sanctification of the body and actions through ritual and ceremony. It's ideal for beginners seeking structured, externally-focused spiritual practices.",
+          "Energy Healing is a foundational path of tantric practice, emphasizing the sanctification of the body and actions through ritual and ceremony. It's ideal for seekers needing structured energy cleansing and healing.",
         keyFocus: [
           "Physical purification through ritual bathing and cleansing",
           "Mantra recitation with proper intonation and rhythm",
@@ -79,7 +79,7 @@ export default function TantraTypesSection() {
           "Establishes connection between body and spirit",
         ],
         whotakes:
-          "Ideal for beginners, individuals seeking structured practices, those with strong devotional inclinations, and practitioners who benefit from external rituals.",
+          "Ideal for beginners, individuals seeking structured energy practices, those with strong devotional inclinations, and practitioners who benefit from external rituals.",
         prerequisites:
           "Basic understanding of tantric philosophy, openness to ritual, physical mobility for ceremonial practices",
         practiceSchedule:
@@ -87,7 +87,7 @@ export default function TantraTypesSection() {
       },
     },
     {
-      name: "Yoga Tantra",
+      name: "Soul Tantra",
       subtitle: "UNION TANTRA",
       description:
         "Centers on internal practice and the union of mind with enlightened qualities. Visualization of deities, mantra, and subtle-energy awareness become primary, with less emphasis on elaborate external ritual and more on continuous meditative presence.",
@@ -97,7 +97,7 @@ export default function TantraTypesSection() {
       image: "/images/Yoga-Tantra.png",
       fullDetails: {
         overview:
-          "Yoga Tantra focuses on the profound union of ordinary mind with enlightened qualities through internal visualization and subtle-energy work. It marks the transition from action-based to realization-based practice.",
+          "Soul Tantra focuses on the profound union of ordinary mind with enlightened qualities through internal visualization and subtle-energy work. It marks the transition from action-based to realization-based practice.",
         keyFocus: [
           "Deity visualization and identification with enlightened forms",
           "Subtle energy channel (nadi) and wind (prana) cultivation",
@@ -115,13 +115,13 @@ export default function TantraTypesSection() {
         whotakes:
           "Advanced practitioners with strong meditation foundation, those serious about rapid spiritual transformation, individuals committed to daily practice.",
         prerequisites:
-          "Mastery of Carya Tantra, established meditation practice (minimum 1 year), ability to maintain focus for extended periods",
+          "Mastery of foundational Tantra, established meditation practice, ability to maintain focus for extended periods",
         practiceSchedule:
-          "150-minute advanced sessions with 20 minutes of theory, 40 minutes of visualization instruction, and 90 minutes of guided meditation practice",
+          "180-minute advanced sessions with theory, visualization instruction, and guided meditation practice",
       },
     },
     {
-      name: "Anuttarayoga Tantra",
+      name: "Divine Tantra",
       subtitle: "HIGHEST UNION TANTRA",
       description:
         "Represents the most advanced level of tantra, working directly with subtle body, channels, winds, and innate awareness. It involves special internal practices aimed at complete union of wisdom and compassion, and realization of the nature of mind.",
@@ -131,7 +131,7 @@ export default function TantraTypesSection() {
       image: "/images/Anuttarayoga-Tantra.png",
       fullDetails: {
         overview:
-          "Anuttarayoga Tantra is the pinnacle of tantric practice, offering direct methods for achieving enlightenment through understanding the subtle dimensions of body, mind, and energy. It requires the greatest commitment and preparation.",
+          "Divine Tantra is the pinnacle of tantric practice, offering direct methods for achieving enlightenment through understanding the subtle dimensions of body, mind, and energy. It requires the greatest commitment and preparation.",
         keyFocus: [
           "Transformation of subtle body anatomy and energy patterns",
           "Advanced generation and completion stage practices",
@@ -150,9 +150,9 @@ export default function TantraTypesSection() {
         whotakes:
           "Highly committed practitioners with substantial experience, those with unwavering dedication to enlightenment, advanced meditators ready for the most profound teachings.",
         prerequisites:
-          "Mastery of Yoga Tantra, minimum 3+ years serious daily meditation practice, proper guru-student relationship, ethical foundation, intellectual understanding of emptiness",
+          "Mastery of Soul Tantra, serious daily meditation practice, proper guide relationship, ethical foundation, intellectual understanding of emptiness",
         practiceSchedule:
-          "3-hour intensive sessions with advanced theory, complex visualization practices, subtle energy manipulation, and deep meditation states",
+          "240-minute intensive sessions with advanced theory, complex visualization practices, subtle energy manipulation, and deep meditation states",
       },
     },
   ];
@@ -175,113 +175,68 @@ export default function TantraTypesSection() {
               <button
                 key={idx}
                 onClick={() => setSelectedTantra(idx)}
-                className="group relative min-h-[500px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                className="group relative bg-white dark:bg-surface-card hover:bg-[#3F2F27] dark:hover:bg-surface-hover border-2 border-deep-brown/10 dark:border-white/10 hover:border-soft-gold rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 text-left flex flex-col justify-between cursor-pointer transform hover:-translate-y-1 active:scale-[0.99]"
               >
-                {/* Background Image */}
-                <Image
-                  src={tantra.image}
-                  alt={tantra.name}
-                  fill
-                  className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
-                  quality={90}
-                />
+                {/* Image Container with Overlay */}
+                <div className="relative h-64 w-full overflow-hidden">
+                  <Image
+                    src={tantra.image}
+                    alt={tantra.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700 brightness-95 group-hover:brightness-100"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
-                {/* Dark Overlay - Enhanced for Text Readability */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/70 to-black/30"></div>
+                  {/* Subtitle Badge */}
+                  <span className="absolute top-4 left-4 text-[10px] font-black uppercase tracking-[0.2em] bg-accent-red text-cream px-3 py-1 rounded-md shadow-md">
+                    {tantra.subtitle}
+                  </span>
 
-                {/* Additional Overlay for Better Text Contrast */}
-                <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/40"></div>
+                  {/* Quick Specs Overlay */}
+                  <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end text-cream">
+                    <div>
+                      <span className="text-xs uppercase tracking-wider opacity-75 font-nav font-semibold block">
+                        Duration
+                      </span>
+                      <span className="font-title text-lg font-bold">
+                        {tantra.duration}
+                      </span>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-xs uppercase tracking-wider opacity-75 font-nav font-semibold block">
+                        Price
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="line-through text-cream/50 text-xs font-bold">
+                          {tantra.originalPrice}
+                        </span>
+                        <span className="font-title text-2xl font-bold text-soft-gold">
+                          {tantra.price}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                {/* Content Container */}
-                <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8 z-10">
-                  {/* Top Section */}
+                {/* Card Body */}
+                <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    {/* Title - With enhanced visibility */}
-                    <h3
-                      style={{ mixBlendMode: "lighten" }}
-                      className="font-title text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg"
-                    >
+                    <h3 className="font-title text-2xl font-bold text-deep-brown group-hover:text-soft-gold mb-3 transition-colors">
                       {tantra.name}
                     </h3>
-
-                    {/* Subtitle - Dynamic bright color for maximum contrast */}
-                    <p
-                      style={{ mixBlendMode: "lighten" }}
-                      className="font-nav text-xs font-bold uppercase tracking-widest text-yellow-100 drop-shadow-lg"
-                    >
-                      {tantra.subtitle}
+                    <p className="font-body text-sm text-deep-brown/70 group-hover:text-cream/80 leading-relaxed mb-6">
+                      {tantra.description}
                     </p>
                   </div>
 
-                  {/* Bottom Section */}
-                  <div className="space-y-4">
-                    {/* Description */}
-                    <p
-                      style={{ mixBlendMode: "lighten" }}
-                      className="font-body text-sm text-yellow-200 leading-relaxed drop-shadow-md line-clamp-2"
-                    >
-                      {tantra.description}
-                    </p>
-
-                    {/* Duration & Price Row */}
-                    <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/30">
-                      <div className="flex flex-col gap-1">
-                        <span className="text-xs uppercase tracking-wider text-white/80 font-semibold drop-shadow-md text-left">
-                          Duration
-                        </span>
-                        <span className="font-nav text-base font-bold text-white drop-shadow-lg">
-                          {tantra.duration}
-                        </span>
-                      </div>
-
-                      <div className="flex flex-col gap-1 items-end">
-                        <span className="text-xs uppercase tracking-wider text-white/80 font-black drop-shadow-md">
-                          Limited Offer
-                        </span>
-                        <div className="text-right flex flex-col items-end">
-                           <div className="flex items-center gap-2 mb-1">
-                             <span className="text-[11px] text-white/50 line-through font-bold decoration-accent-red">
-                               {tantra.originalPrice}
-                             </span>
-                             <span className="text-[11px] bg-[#E44426] px-2 py-0.5 rounded-full text-white font-black shadow-lg animate-pulse">
-                               SAVE 30%+
-                             </span>
-                           </div>
-                          <span
-                            style={{ mixBlendMode: "screen" }}
-                            className="font-title text-3xl md:text-5xl font-black text-yellow-100 drop-shadow-lg"
-                          >
-                            {tantra.price}
-                          </span>
-                           <p className="text-[10px] text-white/50 font-black uppercase tracking-[0.15em] mt-1 drop-shadow-sm">
-                             OFFER PRICE &middot; LIMITED TIME
-                           </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* What's Included Cardlet */}
-                    <div className="bg-black/40 border border-white/20 p-4 rounded-xl space-y-3 mt-4 backdrop-blur-sm">
-                      <p className="text-[10px] font-black uppercase text-black tracking-widest bg-[#D4AF37] w-fit px-3 py-1 rounded shadow-lg">
-                        Included in Session
-                      </p>
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                        {[
-                          "Pre-session call",
-                          "Practice plan",
-                          "Session recording",
-                          "7-day support",
-                        ].map((item, i) => (
-                          <div key={i} className="flex items-center gap-2 text-[11px] text-white font-bold tracking-tight">
-                            <span className="text-[#D4AF37] shrink-0">✔</span> {item}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="pt-2">
-                       <span className="text-xs text-white/70 italic font-medium">Click for details →</span>
-                    </div>
+                  {/* Card Action */}
+                  <div className="flex items-center justify-between pt-4 border-t border-deep-brown/10 group-hover:border-cream/20">
+                    <span className="text-xs font-bold font-nav uppercase tracking-wider text-accent-red group-hover:text-soft-gold transition-colors">
+                      Click to View Full Details
+                    </span>
+                    <span className="text-accent-red group-hover:text-soft-gold text-xl group-hover:translate-x-2 transition-all">
+                      →
+                    </span>
                   </div>
                 </div>
               </button>
@@ -290,196 +245,265 @@ export default function TantraTypesSection() {
         </div>
       </section>
 
-      {/* DETAILED MODAL */}
+      {/* Modal Popup */}
       {selectedTantra !== null && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8"
-          style={{ backgroundColor: isDark ? "#000000" : "#2A221E" }}
-          onClick={() => setSelectedTantra(null)}
+        <div 
+          style={modalThemeStyle}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm overflow-y-auto animate-fade-in"
         >
-          <div
-            className={`bg-cream rounded-3xl ${isDark ? "shadow-none border border-white/10" : "shadow-2xl border border-deep-brown/10"} w-full max-w-4xl max-h-[90%] overflow-y-auto relative`}
-            style={{ ...modalThemeStyle, backgroundColor: isDark ? "#1C1614" : "#FFF0DF" }}
-            onClick={(e) => e.stopPropagation()}
+          <div 
+            className="bg-cream border-2 border-soft-gold rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative animate-scale-up"
+            style={{
+              backgroundColor: "var(--color-cream)",
+              borderColor: "var(--color-soft-gold)",
+            }}
           >
-            {/* Close Button - Clean & Persistent */}
-            <button
-              onClick={() => setSelectedTantra(null)}
-              className="absolute top-6 right-6 sm:top-8 sm:right-8 z-[110] p-4 bg-[#E44426] text-white rounded-full transition-all hover:rotate-90 group shadow-[0_10px_30px_rgba(228,68,38,0.4)] hover:scale-110 active:scale-95 border-2 border-white/20"
-              aria-label="Close modal"
+            {/* Sticky Header */}
+            <div 
+              className="sticky top-0 bg-cream border-b border-deep-brown/10 p-6 flex justify-between items-center z-10"
+              style={{
+                backgroundColor: "var(--color-cream)",
+                borderBottomColor: "rgba(212,175,55,0.2)",
+              }}
             >
-              <svg
-                className="w-7 h-7 sm:w-8 sm:h-8"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={4}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-
-            {/* Header - Reduced Height Hero */}
-            <div className="relative h-48 sm:h-64 md:h-[320px] w-full">
-              <Image
-                src={tantraTypes[selectedTantra].image}
-                alt={tantraTypes[selectedTantra].name}
-                fill
-                className="object-cover object-center"
-                quality={100}
-                priority
-              />
-              <div className={`absolute inset-0 bg-gradient-to-t from-cream via-cream/40 ${isDark ? "to-black/40" : "to-transparent"}`}></div>
-              <div className={`absolute inset-0 bg-gradient-to-b ${isDark ? "from-black/60" : "from-black/20"} via-transparent to-transparent`}></div>
-
-              {/* Title Section */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 md:p-10">
-                <p className="font-nav text-xs sm:text-sm md:text-base uppercase tracking-[0.4em] text-accent-red font-black mb-1 filter drop-shadow-sm">
+              <div>
+                <span 
+                  className="text-xs font-black uppercase tracking-widest text-accent-red block mb-1"
+                  style={{ color: "var(--color-accent-red)" }}
+                >
                   {tantraTypes[selectedTantra].subtitle}
-                </p>
-                <h1 className="font-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-deep-brown">
+                </span>
+                <h3 
+                  className="font-title text-3xl font-bold text-deep-brown"
+                  style={{ color: "var(--color-deep-brown)" }}
+                >
                   {tantraTypes[selectedTantra].name}
-                </h1>
+                </h3>
               </div>
+              <button
+                onClick={() => setSelectedTantra(null)}
+                className="w-10 h-10 rounded-full bg-deep-brown/10 hover:bg-accent-red hover:text-cream text-deep-brown font-bold flex items-center justify-center transition cursor-pointer"
+                style={{
+                  color: "var(--color-deep-brown)",
+                }}
+              >
+                ✕
+              </button>
             </div>
 
-            {/* Content Area - Optimized for Readability & Scrolling */}
-            <div className="bg-cream p-6 sm:p-8 md:p-10 pt-4 space-y-10 sm:space-y-12">
-              {/* Overview Section */}
-              <div className="max-w-3xl">
-                <h2 className="font-title text-2xl sm:text-3xl font-bold text-soft-gold mb-4">
+            {/* Modal Body */}
+            <div className="p-6 md:p-8 space-y-8 font-body">
+              {/* Image & Quick Info Header */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                <div className="relative h-48 rounded-2xl overflow-hidden shadow-md">
+                  <Image
+                    src={tantraTypes[selectedTantra].image}
+                    alt={tantraTypes[selectedTantra].name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div 
+                  className="md:col-span-2 space-y-3 p-4 bg-surface-card rounded-2xl border border-deep-brown/10"
+                  style={{
+                    backgroundColor: "var(--color-surface-card)",
+                    borderColor: "rgba(212,175,55,0.2)",
+                  }}
+                >
+                  <div className="flex justify-between items-center border-b border-deep-brown/10 pb-2">
+                    <span 
+                      className="text-xs uppercase tracking-wider font-bold opacity-60"
+                      style={{ color: "var(--color-deep-brown)" }}
+                    >
+                      Duration
+                    </span>
+                    <span 
+                      className="font-bold text-deep-brown"
+                      style={{ color: "var(--color-deep-brown)" }}
+                    >
+                      {tantraTypes[selectedTantra].duration}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center border-b border-deep-brown/10 pb-2">
+                    <span 
+                      className="text-xs uppercase tracking-wider font-bold opacity-60"
+                      style={{ color: "var(--color-deep-brown)" }}
+                    >
+                      Price
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <span 
+                        className="line-through text-xs font-bold opacity-50"
+                        style={{ color: "var(--color-deep-brown)" }}
+                      >
+                        {tantraTypes[selectedTantra].originalPrice}
+                      </span>
+                      <span 
+                        className="font-bold text-lg text-accent-red"
+                        style={{ color: "var(--color-accent-red)" }}
+                      >
+                        {tantraTypes[selectedTantra].price}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span 
+                      className="text-xs uppercase tracking-wider font-bold opacity-60"
+                      style={{ color: "var(--color-deep-brown)" }}
+                    >
+                      Format
+                    </span>
+                    <span 
+                      className="font-bold text-deep-brown text-xs"
+                      style={{ color: "var(--color-deep-brown)" }}
+                    >
+                      In-Person (India Travel Coordinated)
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Overview */}
+              <div>
+                <h4 
+                  className="font-title text-xl font-bold mb-3 text-deep-brown"
+                  style={{ color: "var(--color-deep-brown)" }}
+                >
                   Overview
-                </h2>
-                <p className="text-lg sm:text-xl text-deep-brown leading-relaxed font-body font-medium italic border-l-4 sm:border-l-8 border-accent-red pl-6 sm:pl-8">
-                  &quot;{tantraTypes[selectedTantra].fullDetails.overview}&quot;
+                </h4>
+                <p 
+                  className="text-deep-brown/80 leading-relaxed text-base"
+                  style={{ color: "var(--color-deep-brown)" }}
+                >
+                  {tantraTypes[selectedTantra].fullDetails.overview}
                 </p>
               </div>
 
-              {/* Functional Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
-                {/* Key Focus Area */}
-                <div className="space-y-5">
-                  <h2 className="font-title text-xl sm:text-2xl font-bold text-deep-brown flex items-center gap-3">
-                    <span className="w-8 h-8 bg-deep-brown text-cream rounded-full flex items-center justify-center text-sm font-black">
-                      01
-                    </span>
-                    Core Focus
-                  </h2>
-                  <div className="space-y-3">
-                    {tantraTypes[selectedTantra].fullDetails.keyFocus.map(
-                      (focus, i) => (
-                        <div
-                          key={i}
-                          className="flex gap-3 items-center p-3 bg-surface-card rounded-xl shadow-sm border border-deep-brown/5"
+              {/* Key Focus Areas */}
+              <div>
+                <h4 
+                  className="font-title text-xl font-bold mb-3 text-deep-brown"
+                  style={{ color: "var(--color-deep-brown)" }}
+                >
+                  Key Practices & Focus Areas
+                </h4>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {tantraTypes[selectedTantra].fullDetails.keyFocus.map(
+                    (item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 p-3 bg-surface-card rounded-xl border border-deep-brown/5 text-sm"
+                        style={{
+                          backgroundColor: "var(--color-surface-card)",
+                          borderColor: "rgba(212,175,55,0.15)",
+                          color: "var(--color-deep-brown)",
+                        }}
+                      >
+                        <span 
+                          className="text-accent-red font-bold"
+                          style={{ color: "var(--color-accent-red)" }}
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-accent-red shrink-0" />
-                          <p className="text-sm sm:text-base text-deep-brown font-body font-bold">
-                            {focus}
-                          </p>
-                        </div>
-                      ),
-                    )}
-                  </div>
-                </div>
-
-                {/* Benefits Area */}
-                <div className="space-y-5">
-                  <h2 className="font-title text-xl sm:text-2xl font-bold text-deep-brown flex items-center gap-3">
-                    <span className="w-8 h-8 bg-accent-red text-white rounded-full flex items-center justify-center text-sm font-black">
-                      02
-                    </span>
-                    The Outcome
-                  </h2>
-                  <div className="space-y-3">
-                    {tantraTypes[selectedTantra].fullDetails.benefits.map(
-                      (benefit, i) => (
-                        <div
-                          key={i}
-                          className="flex gap-3 items-center p-3 bg-soft-gold/10 rounded-xl"
-                        >
-                          <span className="text-xl shrink-0">✨</span>
-                          <p className="text-sm sm:text-base text-deep-brown font-body font-bold">
-                            {benefit}
-                          </p>
-                        </div>
-                      ),
-                    )}
-                  </div>
-                </div>
+                          ✦
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    )
+                  )}
+                </ul>
               </div>
 
-              {/* Practical Details */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 bg-surface-card border border-deep-brown/10 rounded-2xl">
-                  <h3 className="font-title text-xl font-bold text-deep-brown mb-3 text-center">
-                    Eligibility
-                  </h3>
-                  <p className="text-center text-deep-brown/70 font-body text-base font-bold">
+              {/* Benefits */}
+              <div>
+                <h4 
+                  className="font-title text-xl font-bold mb-3 text-deep-brown"
+                  style={{ color: "var(--color-deep-brown)" }}
+                >
+                  Expected Transformation & Benefits
+                </h4>
+                <ul className="space-y-2">
+                  {tantraTypes[selectedTantra].fullDetails.benefits.map(
+                    (benefit, i) => (
+                      <li 
+                        key={i} 
+                        className="flex items-center gap-3 text-sm"
+                        style={{ color: "var(--color-deep-brown)" }}
+                      >
+                        <span 
+                          className="text-soft-gold text-lg"
+                          style={{ color: "var(--color-soft-gold)" }}
+                        >
+                          ✔
+                        </span>
+                        <span>{benefit}</span>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+
+              {/* Who Should Take This & Prerequisites */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-deep-brown/10">
+                <div 
+                  className="p-4 bg-surface-card rounded-2xl border border-deep-brown/5"
+                  style={{
+                    backgroundColor: "var(--color-surface-card)",
+                    borderColor: "rgba(212,175,55,0.15)",
+                  }}
+                >
+                  <h5 
+                    className="font-title text-sm font-bold uppercase tracking-wider text-accent-red mb-2"
+                    style={{ color: "var(--color-accent-red)" }}
+                  >
+                    Who This Is For
+                  </h5>
+                  <p 
+                    className="text-xs text-deep-brown/80 leading-relaxed"
+                    style={{ color: "var(--color-deep-brown)" }}
+                  >
                     {tantraTypes[selectedTantra].fullDetails.whotakes}
                   </p>
                 </div>
-                <div className="p-6 bg-surface-card border border-deep-brown/10 rounded-2xl">
-                  <h3 className="font-title text-xl font-bold text-deep-brown mb-3 text-center">
+                <div 
+                  className="p-4 bg-surface-card rounded-2xl border border-deep-brown/5"
+                  style={{
+                    backgroundColor: "var(--color-surface-card)",
+                    borderColor: "rgba(212,175,55,0.15)",
+                  }}
+                >
+                  <h5 
+                    className="font-title text-sm font-bold uppercase tracking-wider text-soft-gold mb-2"
+                    style={{ color: "var(--color-soft-gold)" }}
+                  >
                     Prerequisites
-                  </h3>
-                  <p className="text-center text-deep-brown/70 font-body text-base font-bold">
+                  </h5>
+                  <p 
+                    className="text-xs text-deep-brown/80 leading-relaxed"
+                    style={{ color: "var(--color-deep-brown)" }}
+                  >
                     {tantraTypes[selectedTantra].fullDetails.prerequisites}
                   </p>
                 </div>
               </div>
 
-              {/* Call to Action Bar - Compact version */}
-              <div className="mt-8 bg-deep-brown rounded-3xl p-6 sm:p-10 text-center shadow-xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-48 h-48 bg-accent-red/10 rounded-full blur-3xl -mr-24 -mt-24" />
-                <div className="relative z-10">
-                  <h3 className="font-title text-2xl sm:text-3xl text-cream font-bold mb-3">
-                    Begin your {tantraTypes[selectedTantra].name}
-                  </h3>
-                  <p className="text-cream/90 text-base mb-8 max-w-xl mx-auto font-medium">
-                    {tantraTypes[selectedTantra].fullDetails.practiceSchedule}
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
-                    <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-[0.3em] text-soft-gold font-black mb-1">
-                        Duration
-                      </span>
-                      <span className="text-2xl font-black text-cream">
-                        {tantraTypes[selectedTantra].duration}
-                      </span>
-                    </div>
-                    <div className="h-10 w-[1px] bg-cream/20 hidden sm:block" />
-                    <div className="flex flex-col items-center sm:items-end">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs text-[#F8F5F2]/50 line-through font-bold">
-                           {tantraTypes[selectedTantra].originalPrice}
-                        </span>
-                        <span className="text-[11px] bg-[#D4AF37] text-black px-3 py-1 rounded-full font-black animate-pulse shadow-lg">
-                           30% OFF
-                        </span>
-                      </div>
-                      <div className="flex flex-col text-center sm:text-right">
-                        <span className="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37]/80 font-black mb-1">
-                          ONE-TIME CONTRIBUTION
-                        </span>
-                        <span className="text-4xl sm:text-5xl font-black text-[#D4AF37] drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
-                          {tantraTypes[selectedTantra].price}
-                        </span>
-                      </div>
-                    </div>
-                    <Link
-                      href="/book-session"
-                      onClick={() => setSelectedTantra(null)}
-                      className="mt-4 sm:mt-0 px-10 py-5 bg-[#E44426] text-white font-black rounded-xl hover:bg-white hover:text-[#E44426] border-4 border-[#E44426] transition-all hover:scale-105 shadow-[0_20px_40px_-10px_rgba(228,68,38,0.5)] uppercase tracking-widest text-xs flex items-center justify-center min-w-[240px]"
-                    >
-                      Secure Special Price →
-                    </Link>
-                  </div>
-                </div>
+              {/* Action Buttons */}
+              <div className="pt-6 flex flex-col sm:flex-row gap-4 justify-end border-t border-deep-brown/10">
+                <button
+                  onClick={() => setSelectedTantra(null)}
+                  className="px-6 py-3 border border-deep-brown/30 text-deep-brown font-bold rounded-xl hover:bg-deep-brown/10 transition text-sm cursor-pointer"
+                  style={{
+                    borderColor: "rgba(212,175,55,0.3)",
+                    color: "var(--color-deep-brown)",
+                  }}
+                >
+                  Close Window
+                </button>
+                <Link
+                  href="/book-session"
+                  onClick={() => setSelectedTantra(null)}
+                  className="px-8 py-3 bg-[#E44426] text-white font-bold rounded-xl hover:bg-black transition text-sm text-center shadow-lg cursor-pointer"
+                >
+                  Book This Session →
+                </Link>
               </div>
             </div>
           </div>

@@ -7,25 +7,25 @@ export default function SessionsGrid() {
   const sessions = [
     {
       id: "carya",
-      title: "Carya Tantra Session",
+      title: "Kaya Tantra Session",
       image: "/images/Carya-Tantra.png",
       description: "Methodical balance of outer action and inner visualization.",
     },
     {
       id: "kriya",
-      title: "Kriya Tantra Session",
+      title: "Energy Healing Session",
       image: "/images/Kriya-Tantra.png",
       description: "Action-based external practices, mudras, and purifying rituals.",
     },
     {
       id: "yoga",
-      title: "Yoga Tantra Session",
+      title: "Soul Tantra Session",
       image: "/images/Yoga-Tantra.png",
       description: "Internal practice emphasizing union and continuous presence.",
     },
     {
       id: "anuttarayoga",
-      title: "Anuttarayoga Tantra Session",
+      title: "Divine Tantra Session",
       image: "/images/Anuttarayoga-Tantra.png",
       description: "The highest yoga path of profound inner transformation.",
     },

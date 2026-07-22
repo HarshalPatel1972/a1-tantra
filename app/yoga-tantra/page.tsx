@@ -61,7 +61,7 @@ export default function YogaTantraPage() {
                   color: "#80B8FF",
                 }}
               >
-                🕯️ In-Person Yoga Tantra Session
+                🕯️ In-Person Soul Tantra Session
               </div>
 
               <h1
@@ -78,13 +78,13 @@ export default function YogaTantraPage() {
                     backgroundClip: "text",
                   }}
                 >
-                  Yoga Tantra
+                  Soul Tantra
                 </span>{" "}
                 Therapy Across India
               </h1>
 
               <p className="font-body text-lg leading-relaxed max-w-xl" style={{ color: "rgba(220,235,255,0.8)" }}>
-                Achieve deep inner union. Yoga Tantra (Union Tantra) shifts the focus from external actions to internal meditative transformation and intricate energy visualization practices.
+                Achieve deep inner union. Soul Tantra (Union Tantra) shifts the focus from external actions to internal meditative transformation and intricate energy visualization practices.
               </p>
 
               {/* Details & Specs Card */}
@@ -167,7 +167,7 @@ export default function YogaTantraPage() {
 
             {/* Right Form Column */}
             <div className="lg:col-span-5 relative z-25">
-              <LeadForm defaultGoal="Yoga Tantra" buttonText="Book Free Discovery Call" />
+              <LeadForm defaultGoal="Soul Tantra" buttonText="Book Free Discovery Call" />
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function YogaTantraPage() {
       <section className="py-20" style={{ background: "#040A18", borderTop: "1px solid rgba(29,78,216,0.2)", borderBottom: "1px solid rgba(29,78,216,0.2)" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-title text-3xl sm:text-4xl font-bold text-center mb-12" style={{ color: "#F0F5FF" }}>
-            The In-Person Yoga Tantra Process
+            The In-Person Soul Tantra Process
           </h2>
 
           <div className="space-y-6">
@@ -241,7 +241,7 @@ export default function YogaTantraPage() {
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4 text-white">Deepen Your Inner Union</h2>
           <p className="font-body text-base mb-8 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.85)" }}>
-            Get in touch today to secure the special offer price of ₹80,000 (limited time offer) and coordinate in-person availability for Yoga Tantra.
+            Get in touch today to secure the special offer price of ₹80,000 (limited time offer) and coordinate in-person availability for Soul Tantra.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a

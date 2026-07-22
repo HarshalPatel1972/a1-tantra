@@ -23,7 +23,7 @@ export const searchIndex: SearchResult[] = [
   {
     title: "Tantra Paths",
     description:
-      "Explore authentic tantric traditions: Kriya, Carya, Yoga, and Anuttarayoga.",
+      "Explore authentic tantric traditions: Kaya Tantra, Energy Healing, Soul Tantra, and Divine Tantra.",
     url: "/#tantra-paths",
     category: "Page",
   },
@@ -94,28 +94,28 @@ export const searchIndex: SearchResult[] = [
 
   // Tantra Paths (from TantraTypesSection)
   {
-    title: "Kriya Tantra (Action Tantra)",
-    description:
-      "Foundational path emphasizing ritual action, physical purity, and structured ceremonial conduct.",
-    url: "/#tantra-paths",
-    category: "Tantra Path",
-  },
-  {
-    title: "Carya Tantra (Method Tantra)",
+    title: "Kaya Tantra (Method Tantra)",
     description:
       "Balances outer ritual with inner meditative stability and devotional visualization.",
     url: "/#tantra-paths",
     category: "Tantra Path",
   },
   {
-    title: "Yoga Tantra (Union Tantra)",
+    title: "Energy Healing (Action Tantra)",
+    description:
+      "Foundational path emphasizing ritual action, physical purity, and structured ceremonial conduct.",
+    url: "/#tantra-paths",
+    category: "Tantra Path",
+  },
+  {
+    title: "Soul Tantra (Union Tantra)",
     description:
       "Centers on internal practice, visualization of deities, and subtle-energy awareness.",
     url: "/#tantra-paths",
     category: "Tantra Path",
   },
   {
-    title: "Anuttarayoga Tantra (Highest Union)",
+    title: "Divine Tantra (Highest Union)",
     description:
       "The peak of tantric practice, integrating non-dual awareness and the most profound transformations.",
     url: "/#tantra-paths",

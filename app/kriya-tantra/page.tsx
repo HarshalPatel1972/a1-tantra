@@ -61,7 +61,7 @@ export default function KriyaTantraPage() {
                   color: "#FF7A5A",
                 }}
               >
-                🕉️ In-Person Kriya Tantra Session
+                🕉️ In-Person Energy Healing Session
               </div>
 
               <h1
@@ -78,13 +78,13 @@ export default function KriyaTantraPage() {
                     backgroundClip: "text",
                   }}
                 >
-                  Kriya Tantra
+                  Energy Healing
                 </span>{" "}
                 Therapy Across India
               </h1>
 
               <p className="font-body text-lg leading-relaxed max-w-xl" style={{ color: "rgba(255,235,225,0.8)" }}>
-                Experience the foundational path of traditional Tantra. Kriya Tantra (Action Tantra) focuses on external ritual actions, mantra practice, and purification disciplines to align the physical and energetic body.
+                Experience the foundational path of traditional Tantra. Energy Healing (Action Tantra) focuses on external ritual actions, mantra practice, and purification disciplines to align the physical and energetic body.
               </p>
 
               {/* Details & Specs Card */}
@@ -167,7 +167,7 @@ export default function KriyaTantraPage() {
 
             {/* Right Form Column */}
             <div className="lg:col-span-5 relative z-25">
-              <LeadForm defaultGoal="Kriya Tantra" buttonText="Book Free Discovery Call" />
+              <LeadForm defaultGoal="Energy Healing" buttonText="Book Free Discovery Call" />
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function KriyaTantraPage() {
       <section className="py-20" style={{ background: "#120804", borderTop: "1px solid rgba(228,68,38,0.15)", borderBottom: "1px solid rgba(228,68,38,0.15)" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-title text-3xl sm:text-4xl font-bold text-center mb-12" style={{ color: "#FFF5F0" }}>
-            The In-Person Kriya Tantra Process
+            The In-Person Energy Healing Process
           </h2>
 
           <div className="space-y-6">
@@ -239,9 +239,9 @@ export default function KriyaTantraPage() {
           }}
         />
         <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4 text-white">Begin Your Traditional Tantra Journey</h2>
+          <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4 text-white">Begin Your Energy Healing Journey</h2>
           <p className="font-body text-base mb-8 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.85)" }}>
-            Get in touch today to secure the special offer price of ₹50,000 (limited time offer) and coordinate in-person availability for Kriya Tantra.
+            Get in touch today to secure the special offer price of ₹50,000 (limited time offer) and coordinate in-person availability for Energy Healing.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a

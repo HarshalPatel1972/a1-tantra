@@ -8,7 +8,7 @@ export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    sessionType: "Kriya Tantra",
+    sessionType: "Kaya Tantra",
     city: "",
   });
   const [loading, setLoading] = useState(false);
@@ -16,10 +16,10 @@ export default function BookingForm() {
   const [error, setError] = useState<string | null>(null);
 
   const sessionTypes = [
-    "Carya Tantra",
-    "Kriya Tantra",
-    "Yoga Tantra",
-    "Anuttarayoga Tantra",
+    "Kaya Tantra",
+    "Energy Healing",
+    "Soul Tantra",
+    "Divine Tantra",
     "Unsure / General Guidance",
   ];
 
@@ -82,7 +82,7 @@ export default function BookingForm() {
         setFormData({
           name: "",
           phone: "",
-          sessionType: "Kriya Tantra",
+          sessionType: "Kaya Tantra",
           city: "",
         });
         setTimeout(() => setSubmitted(false), 8000);

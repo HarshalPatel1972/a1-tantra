@@ -8,7 +8,7 @@ export default function OurTantraServices() {
     {
       title: "Tantra Sessions",
       description:
-        "Explore comprehensive online tantra sessions strictly rooted in Kriya, Carya, Yoga, and Anuttarayoga paths to awaken your inner potential.",
+        "Explore comprehensive online tantra sessions strictly rooted in Kaya Tantra, Energy Healing, Soul Tantra, and Divine Tantra paths to awaken your inner potential.",
       link: "/sessions",
       image: "/images/Kriya-Tantra.png",
       icon: "🧘",

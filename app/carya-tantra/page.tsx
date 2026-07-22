@@ -61,7 +61,7 @@ export default function CaryaTantraPage() {
                   color: "#F5D060",
                 }}
               >
-                🧘 In-Person Carya Tantra Session
+                🧘 In-Person Kaya Tantra Session
               </div>
 
               <h1
@@ -78,13 +78,13 @@ export default function CaryaTantraPage() {
                     backgroundClip: "text",
                   }}
                 >
-                  Carya Tantra
+                  Kaya Tantra
                 </span>{" "}
                 Therapy Across India
               </h1>
 
               <p className="font-body text-lg leading-relaxed max-w-xl" style={{ color: "rgba(255,248,220,0.8)" }}>
-                Harmonize the inner and outer worlds. Carya Tantra (Method Tantra) balances ritual action with internal meditative stability through structured devotion, energy movement, and visualization.
+                Harmonize the inner and outer worlds. Kaya Tantra (Method Tantra) balances ritual action with internal meditative stability through structured devotion, energy movement, and visualization.
               </p>
 
               {/* Details & Specs Card */}
@@ -167,7 +167,7 @@ export default function CaryaTantraPage() {
 
             {/* Right Form Column */}
             <div className="lg:col-span-5 relative z-25">
-              <LeadForm defaultGoal="Carya Tantra" buttonText="Book Free Discovery Call" />
+              <LeadForm defaultGoal="Kaya Tantra" buttonText="Book Free Discovery Call" />
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function CaryaTantraPage() {
       <section className="py-20" style={{ background: "#0F0D02", borderTop: "1px solid rgba(212,175,55,0.15)", borderBottom: "1px solid rgba(212,175,55,0.15)" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-title text-3xl sm:text-4xl font-bold text-center mb-12" style={{ color: "#FFFBF0" }}>
-            The In-Person Carya Tantra Process
+            The In-Person Kaya Tantra Process
           </h2>
 
           <div className="space-y-6">
@@ -241,7 +241,7 @@ export default function CaryaTantraPage() {
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <h2 className="font-title text-3xl sm:text-4xl font-bold mb-4 text-white">Connect Your Inner & Outer Practice</h2>
           <p className="font-body text-base mb-8 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.85)" }}>
-            Get in touch today to secure the special offer price of ₹30,000 (limited time offer) and coordinate in-person availability for Carya Tantra.
+            Get in touch today to secure the special offer price of ₹30,000 (limited time offer) and coordinate in-person availability for Kaya Tantra.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a

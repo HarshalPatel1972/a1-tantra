@@ -16,7 +16,7 @@ export default function LeadForm({
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    goal: defaultGoal,
+    goal: defaultGoal || "Kaya Tantra",
     city: "",
   });
   const [loading, setLoading] = useState(false);
@@ -24,10 +24,10 @@ export default function LeadForm({
   const [error, setError] = useState<string | null>(null);
 
   const goals = [
-    "Carya Tantra",
-    "Kriya Tantra",
-    "Yoga Tantra",
-    "Anuttarayoga Tantra",
+    "Kaya Tantra",
+    "Energy Healing",
+    "Soul Tantra",
+    "Divine Tantra",
     "Unsure / General Guidance",
   ];
 
@@ -86,7 +86,7 @@ export default function LeadForm({
         setFormData({
           name: "",
           phone: "",
-          goal: defaultGoal,
+          goal: defaultGoal || "Kaya Tantra",
           city: "",
         });
         setTimeout(() => setSubmitted(false), 10000);

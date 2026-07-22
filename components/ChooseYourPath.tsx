@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function ChooseYourPath() {
   const paths = [
     {
-      title: "Carya Tantra",
+      title: "Kaya Tantra",
       subtitle: "Method Tantra",
       description: "Balances ritual practice with inner meditative stability through devotion and visualization.",
       duration: "90 Mins",
@@ -19,7 +19,7 @@ export default function ChooseYourPath() {
       accent: "#D4AF37",
     },
     {
-      title: "Kriya Tantra",
+      title: "Energy Healing",
       subtitle: "Action Tantra",
       description: "Focuses on ritual actions, mantra practice, purification disciplines, and structured spiritual practice.",
       duration: "120 Mins",
@@ -33,7 +33,7 @@ export default function ChooseYourPath() {
       accent: "#E44426",
     },
     {
-      title: "Yoga Tantra",
+      title: "Soul Tantra",
       subtitle: "Union Tantra",
       description: "Focuses on internal meditative transformation and energy visualization practices.",
       duration: "180 Mins",
@@ -47,7 +47,7 @@ export default function ChooseYourPath() {
       accent: "#1D4ED8",
     },
     {
-      title: "Anuttarayoga Tantra",
+      title: "Divine Tantra",
       subtitle: "Highest Union Tantra",
       description: "Focuses on the non-dual union of wisdom and compassion for accelerated spiritual awakening.",
       duration: "240 Mins",
