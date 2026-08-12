@@ -170,7 +170,15 @@ export default function ChooseYourPath() {
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-col gap-2.5 font-nav text-xs font-black uppercase tracking-wider text-[#E44426] group-hover:text-soft-gold transition-colors duration-300 border-t border-deep-brown/10 group-hover:border-white/10 pt-4">
+              <div className="mt-6 flex flex-col gap-2.5 font-nav text-xs font-black uppercase tracking-wider border-t border-deep-brown/10 group-hover:border-white/10 pt-4">
+                <Link 
+                  href={p.link}
+                  className="w-full py-2.5 bg-accent-red hover:bg-[#C73318] text-white rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-xs font-black group/link"
+                >
+                  <span>Book Consultation</span>
+                  <span className="text-xs group-hover/link:translate-x-1 transition-transform">→</span>
+                </Link>
+
                 {p.timeline && (
                   <button 
                     onClick={() => setSelectedPath(p)}
@@ -180,14 +188,6 @@ export default function ChooseYourPath() {
                     <span className="text-xs">✦</span>
                   </button>
                 )}
-                
-                <Link 
-                  href={p.link}
-                  className={`w-full flex items-center justify-between group/link text-accent-red group-hover:text-white hover:text-soft-gold transition-colors py-1 ${!p.timeline ? 'mt-2' : ''}`}
-                >
-                  <span>Book Consultation</span>
-                  <span className="group-hover/link:translate-x-1 transition-transform">→</span>
-                </Link>
               </div>
             </div>
           ))}
