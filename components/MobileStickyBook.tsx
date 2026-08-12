@@ -9,6 +9,7 @@ export default function MobileStickyBook() {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -25,10 +26,26 @@ export default function MobileStickyBook() {
       attributeFilter: ["class"],
     });
 
-    return () => observer.disconnect();
+    let scrollTimeout: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      setIsScrolling(true);
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 3000);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(scrollTimeout);
+    };
   }, []);
 
-  if (!mounted || isModalOpen) {
+  if (!mounted) {
     return null;
   }
   
@@ -42,9 +59,15 @@ export default function MobileStickyBook() {
     router.push("/book-session");
   };
 
+  const showBar = isScrolling && !isModalOpen;
+
   return (
     <div 
-      className="md:hidden fixed bottom-0 left-0 right-0 z-[100] px-4 py-3 safe-area-pb transition-opacity duration-300"
+      className={`md:hidden fixed bottom-0 left-0 right-0 z-[100] px-4 py-3 safe-area-pb transition-all duration-500 ease-in-out transform ${
+        showBar 
+          ? "translate-y-0 opacity-100" 
+          : "translate-y-full opacity-0 pointer-events-none"
+      }`}
       style={{ 
         backgroundColor: "#1c1614", 
         borderTop: "1px solid rgba(212, 175, 55, 0.25)", 
