@@ -1,10 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ChooseYourPath() {
   const [selectedPath, setSelectedPath] = useState<any>(null);
+
+  useEffect(() => {
+    if (selectedPath) {
+      document.body.classList.add("modal-open");
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.classList.remove("modal-open");
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.classList.remove("modal-open");
+      document.body.style.overflow = "";
+    };
+  }, [selectedPath]);
 
   const paths = [
     {
@@ -21,7 +35,7 @@ export default function ChooseYourPath() {
       icon: "🧘",
       accent: "#D4AF37",
       journeyTitle: "The Session Structure",
-      journeySubtitle: "A carefully curated 90-minute journey designed to transition you from the noise of the external world into a state of profound internal presence.",
+      journeySubtitle: "A carefully curated 90-minute session structure designed to transition you from the noise of the external world into a state of profound internal presence.",
       timeline: [
         { min: "2 MIN", title: "Talk Session & Orientation", desc: "The session starts with a concise orientation in which the therapist outlines the approach, techniques, and structure of the session. This initial discussion is designed to create clarity, build trust, and ensure the client feels relaxed and well-informed about what to expect." },
         { min: "30 MIN", title: "Welcome Hug (Standing Marma Touch)", desc: "In this phase, the healing process begins with dry, rhythmic touch techniques performed while the client remains in a standing position. The therapist gently works on specific marma points (vital energy centers) to stimulate energy flow and prepare the body for deeper healing. These precise, non-oiled touches help activate the nervous system and promote grounding." },
@@ -42,7 +56,8 @@ export default function ChooseYourPath() {
       link: "/kriya-tantra",
       icon: "🕉️",
       accent: "#E44426",
-      journeyTitle: "The 120-Minute Journey",
+      journeyTitle: "The Session Structure",
+      journeySubtitle: "A carefully curated 120-minute session structure designed for deep energetic alignment, physical tension release, and holistic internal healing.",
       timeline: [
         { min: "2 MIN", title: "Talk Session", desc: "The session starts with a concise orientation in which the therapist outlines the approach, techniques, and structure of the session. This initial discussion is designed to create clarity, build trust, and ensure the client feels relaxed and well-informed." },
         { min: "30 MIN", title: "Welcome Hug (Standing Marma Activation)", desc: "Healing begins with dry, rhythmic touch techniques in a standing position. The therapist gently works on specific marma points to stimulate energy flow and prepare the body for deeper healing, promoting grounding and a receptive state." },
@@ -105,7 +120,7 @@ export default function ChooseYourPath() {
           {paths.map((p, idx) => (
             <div 
               key={idx} 
-              className="group bg-white dark:bg-surface-card hover:bg-[#3F2F27] dark:hover:bg-surface-hover border border-deep-brown/5 dark:border-white/5 hover:border-transparent rounded-2xl p-6 shadow-md hover:shadow-2xl flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-1.5 relative overflow-hidden min-h-[420px]"
+              className="group bg-white dark:bg-surface-card hover:bg-[#3F2F27] dark:hover:bg-surface-hover border border-deep-brown/5 dark:border-white/5 hover:border-soft-gold/40 rounded-2xl p-6 shadow-md hover:shadow-2xl flex flex-col justify-between transition-colors duration-500 relative overflow-hidden min-h-[420px]"
             >
               {/* Subtle top indicator bar */}
               <div 
@@ -115,7 +130,7 @@ export default function ChooseYourPath() {
 
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-cream group-hover:bg-white/10 flex items-center justify-center text-2xl shadow-sm group-hover:rotate-6 transition-all duration-500">
+                  <div className="w-12 h-12 rounded-xl bg-cream group-hover:bg-white/10 flex items-center justify-center text-2xl shadow-sm transition-transform duration-500">
                     {p.icon}
                   </div>
                   <span className="text-[10px] font-black tracking-widest text-accent-red group-hover:text-soft-gold uppercase border border-accent-red/20 group-hover:border-soft-gold/30 px-2 py-1 rounded">
@@ -155,19 +170,20 @@ export default function ChooseYourPath() {
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-col gap-3 font-nav text-xs font-black uppercase tracking-wider text-[#E44426] group-hover:text-soft-gold transition-colors duration-300 border-t border-deep-brown/10 group-hover:border-white/10 pt-4">
+              <div className="mt-6 flex flex-col gap-2.5 font-nav text-xs font-black uppercase tracking-wider text-[#E44426] group-hover:text-soft-gold transition-colors duration-300 border-t border-deep-brown/10 group-hover:border-white/10 pt-4">
                 {p.timeline && (
                   <button 
                     onClick={() => setSelectedPath(p)}
-                    className="w-full py-2 bg-cream group-hover:bg-white/5 text-deep-brown group-hover:text-white border border-deep-brown/10 group-hover:border-white/10 rounded-lg hover:border-accent-red transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-2.5 bg-cream/80 group-hover:bg-white/10 text-deep-brown group-hover:text-soft-gold border border-deep-brown/10 group-hover:border-soft-gold/30 rounded-xl hover:bg-soft-gold hover:text-deep-brown transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-xs font-bold"
                   >
                     <span>Read More</span>
+                    <span className="text-xs">✦</span>
                   </button>
                 )}
                 
                 <Link 
                   href={p.link}
-                  className={`w-full flex items-center justify-between group/link hover:text-deep-brown dark:hover:text-white ${!p.timeline ? 'mt-2' : ''}`}
+                  className={`w-full flex items-center justify-between group/link text-accent-red group-hover:text-white hover:text-soft-gold transition-colors py-1 ${!p.timeline ? 'mt-2' : ''}`}
                 >
                   <span>Book Consultation</span>
                   <span className="group-hover/link:translate-x-1 transition-transform">→</span>
@@ -178,50 +194,69 @@ export default function ChooseYourPath() {
         </div>
       </div>
 
-      {/* Modal Popup for Session Structure */}
+      {/* Modern Luxury Modal Popup for Session Structure */}
       {selectedPath && (
         <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm overflow-y-auto"
+          className="fixed inset-0 z-[200] flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto animate-fade-in"
           onClick={() => setSelectedPath(null)}
         >
           <div 
-            className="bg-[#EBE5DB] rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
+            className="bg-gradient-to-b from-[#251D19] via-[#1E1714] to-[#15100E] border border-[#D4AF37]/30 rounded-3xl max-w-3xl w-full max-h-[88vh] overflow-y-auto shadow-[0_25px_80px_rgba(0,0,0,0.9)] relative text-white"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Top Gold Glowing Accent */}
+            <div className="h-1 w-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent sticky top-0 z-20"></div>
+
             {/* Modal Header */}
-            <div className="sticky top-0 bg-[#EBE5DB] border-b border-deep-brown/10 p-6 md:p-8 flex justify-between items-start z-10">
-              <div className="text-center w-full">
-                <h3 className="font-title text-3xl md:text-4xl text-[#4A3C38] font-normal mb-3">
+            <div className="sticky top-1 bg-[#1E1714]/95 backdrop-blur-md border-b border-white/10 p-6 md:p-8 flex justify-between items-start z-10">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-3 py-0.5 bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.25em] rounded-full">
+                    Sacred Session
+                  </span>
+                  <span className="px-2.5 py-0.5 bg-[#E44426]/20 border border-[#E44426]/40 text-[#F07460] text-[10px] font-black uppercase tracking-wider rounded-full">
+                    {selectedPath.duration}
+                  </span>
+                </div>
+                <h3 className="font-title text-2xl sm:text-3xl md:text-4xl font-bold text-[#F8F5F2] tracking-wide">
                   {selectedPath.journeyTitle}
                 </h3>
                 {selectedPath.journeySubtitle && (
-                  <p className="font-body text-[#5F534F] max-w-2xl mx-auto text-sm">
+                  <p className="font-body text-white/70 text-xs sm:text-sm mt-2 leading-relaxed max-w-xl">
                     {selectedPath.journeySubtitle}
                   </p>
                 )}
               </div>
               <button
                 onClick={() => setSelectedPath(null)}
-                className="absolute right-6 top-6 w-10 h-10 rounded-full bg-black/5 hover:bg-black/10 text-[#4A3C38] flex items-center justify-center transition cursor-pointer"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#E44426] hover:text-white text-white/70 border border-white/10 transition-all flex items-center justify-center cursor-pointer shrink-0 ml-4"
+                aria-label="Close modal"
               >
                 ✕
               </button>
             </div>
 
-            {/* Timeline Body */}
-            <div className="p-6 md:p-10">
-              <div className="space-y-8 relative before:absolute before:inset-0 before:ml-10 before:-translate-x-px md:before:ml-[5.5rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-[#B3A9A3] before:to-transparent">
+            {/* Timeline Content */}
+            <div className="p-6 md:p-8 space-y-6">
+              <div className="relative pl-6 md:pl-8 space-y-6 before:absolute before:left-2 md:before:left-3 before:top-3 before:bottom-3 before:w-0.5 before:bg-gradient-to-b before:from-[#D4AF37] via-[#E44426] before:to-[#D4AF37]">
                 {selectedPath.timeline?.map((step: any, idx: number) => (
-                  <div key={idx} className="relative flex items-start gap-6 md:gap-10">
-                    <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#523F45] text-[#EFEAE5] flex flex-col items-center justify-center z-10 shadow-lg border-4 border-[#EBE5DB]">
-                      <span className="font-bold text-xl md:text-2xl leading-none">{step.min.split(" ")[0]}</span>
-                      <span className="text-xs uppercase tracking-widest font-semibold">{step.min.split(" ")[1]}</span>
+                  <div key={idx} className="relative group/step">
+                    {/* Glowing Node Dot */}
+                    <div className="absolute -left-6 md:-left-8 top-1.5 w-4 h-4 rounded-full bg-[#1E1714] border-2 border-[#D4AF37] group-hover/step:border-[#E44426] group-hover/step:scale-125 transition-all shadow-[0_0_10px_rgba(212,175,55,0.5)] flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] group-hover/step:bg-[#E44426]"></div>
                     </div>
-                    <div className="pt-2 md:pt-4 flex-1">
-                      <h4 className="text-xl md:text-2xl text-[#4A3C38] font-normal mb-2">
-                        {step.title}
-                      </h4>
-                      <p className="font-body text-[#5F534F] text-sm md:text-base leading-relaxed">
+
+                    {/* Step Card */}
+                    <div className="bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-[#D4AF37]/40 p-5 rounded-2xl transition-all duration-300 shadow-md">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <h4 className="font-title text-lg md:text-xl font-bold text-[#F8F5F2]">
+                          {step.title}
+                        </h4>
+                        <span className="px-3 py-0.5 bg-gradient-to-r from-[#E44426] to-[#D4AF37] text-white text-[11px] font-black rounded-lg shadow-sm tracking-wider uppercase">
+                          {step.min}
+                        </span>
+                      </div>
+                      <p className="font-body text-xs sm:text-sm text-white/80 leading-relaxed">
                         {step.desc}
                       </p>
                     </div>
@@ -229,24 +264,40 @@ export default function ChooseYourPath() {
                 ))}
               </div>
 
-              {/* Optional Quote */}
+              {/* Quote / Essence Card */}
               {selectedPath.quote && (
-                <div className="mt-12 p-6 md:p-8 bg-[#DFD9CE] rounded-xl border border-[#C5BFB5]">
-                  <p className="font-body italic text-[#4A3C38] text-center text-sm md:text-base font-medium">
+                <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#D4AF37]/10 via-white/[0.04] to-[#D4AF37]/10 border border-[#D4AF37]/30 text-center relative overflow-hidden">
+                  <div className="text-[#D4AF37] text-3xl font-serif leading-none mb-1 opacity-50">“</div>
+                  <p className="font-body italic text-white/90 text-xs sm:text-sm md:text-base font-medium px-2 leading-relaxed">
                     {selectedPath.quote}
                   </p>
                 </div>
               )}
             </div>
-            
-            {/* Modal Footer */}
-            <div className="p-6 border-t border-deep-brown/10 bg-[#DFD9CE] flex justify-center rounded-b-3xl">
-               <Link 
-                  href={selectedPath.link}
-                  className="px-8 py-3 bg-[#523F45] text-[#EBE5DB] font-bold rounded-lg hover:bg-black transition-colors"
+
+            {/* Modal Sticky Footer */}
+            <div className="sticky bottom-0 bg-[#171210]/95 backdrop-blur-md p-4 sm:p-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 z-10 rounded-b-3xl">
+              <div className="text-xs text-white/60 flex items-center gap-3">
+                <span>Investment: <strong className="text-soft-gold text-sm font-bold">{selectedPath.price}</strong></span>
+                <span className="opacity-40">•</span>
+                <span>Duration: <strong className="text-white text-xs">{selectedPath.duration}</strong></span>
+              </div>
+              <div className="flex items-center gap-3 w-full sm:w-auto">
+                <button
+                  onClick={() => setSelectedPath(null)}
+                  className="flex-1 sm:flex-none px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:bg-white/10 text-xs font-bold transition cursor-pointer text-center"
                 >
-                  Book This Session
+                  Close
+                </button>
+                <Link
+                  href={selectedPath.link}
+                  onClick={() => setSelectedPath(null)}
+                  className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#E44426] to-[#C73318] text-white hover:from-[#C73318] hover:to-[#A62711] text-xs font-black uppercase tracking-wider shadow-lg hover:shadow-red-900/40 transition-all text-center flex items-center justify-center gap-1.5"
+                >
+                  <span>Book Consultation</span>
+                  <span>→</span>
                 </Link>
+              </div>
             </div>
           </div>
         </div>
