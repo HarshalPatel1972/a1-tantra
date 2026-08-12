@@ -236,37 +236,35 @@ export default function ChooseYourPath() {
               </button>
             </div>
 
-            {/* Timeline Content */}
-            <div className="p-6 md:p-8 space-y-6">
-              <div className="relative pl-6 md:pl-8 space-y-6 before:absolute before:left-2 md:before:left-3 before:top-3 before:bottom-3 before:w-0.5 before:bg-gradient-to-b before:from-[#D4AF37] via-[#E44426] before:to-[#D4AF37]">
-                {selectedPath.timeline?.map((step: any, idx: number) => (
-                  <div key={idx} className="relative group/step">
-                    {/* Glowing Node Dot */}
-                    <div className="absolute -left-6 md:-left-8 top-1.5 w-4 h-4 rounded-full bg-[#1E1714] border-2 border-[#D4AF37] group-hover/step:border-[#E44426] group-hover/step:scale-125 transition-all shadow-[0_0_10px_rgba(212,175,55,0.5)] flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] group-hover/step:bg-[#E44426]"></div>
+            {/* Clean Structured Phase Cards */}
+            <div className="p-6 md:p-8 space-y-4">
+              {selectedPath.timeline?.map((step: any, idx: number) => (
+                <div 
+                  key={idx} 
+                  className="bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-[#D4AF37]/40 p-5 rounded-2xl transition-all duration-300 shadow-md"
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2.5 border-b border-white/10">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-7 h-7 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] font-bold text-xs flex items-center justify-center font-nav shrink-0">
+                        {idx + 1}
+                      </span>
+                      <h4 className="font-title text-base sm:text-lg md:text-xl font-bold text-[#F8F5F2]">
+                        {step.title}
+                      </h4>
                     </div>
-
-                    {/* Step Card */}
-                    <div className="bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-[#D4AF37]/40 p-5 rounded-2xl transition-all duration-300 shadow-md">
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                        <h4 className="font-title text-lg md:text-xl font-bold text-[#F8F5F2]">
-                          {step.title}
-                        </h4>
-                        <span className="px-3 py-0.5 bg-gradient-to-r from-[#E44426] to-[#D4AF37] text-white text-[11px] font-black rounded-lg shadow-sm tracking-wider uppercase">
-                          {step.min}
-                        </span>
-                      </div>
-                      <p className="font-body text-xs sm:text-sm text-white/80 leading-relaxed">
-                        {step.desc}
-                      </p>
-                    </div>
+                    <span className="px-3 py-0.5 bg-gradient-to-r from-[#E44426] to-[#D4AF37] text-white text-[11px] font-black rounded-lg shadow-sm tracking-wider uppercase font-nav">
+                      {step.min}
+                    </span>
                   </div>
-                ))}
-              </div>
+                  <p className="font-body text-xs sm:text-sm text-white/80 leading-relaxed font-normal">
+                    {step.desc}
+                  </p>
+                </div>
+              ))}
 
               {/* Quote / Essence Card */}
               {selectedPath.quote && (
-                <div className="mt-8 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#D4AF37]/10 via-white/[0.04] to-[#D4AF37]/10 border border-[#D4AF37]/30 text-center relative overflow-hidden">
+                <div className="mt-6 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#D4AF37]/10 via-white/[0.04] to-[#D4AF37]/10 border border-[#D4AF37]/30 text-center relative overflow-hidden">
                   <div className="text-[#D4AF37] text-3xl font-serif leading-none mb-1 opacity-50">“</div>
                   <p className="font-body italic text-white/90 text-xs sm:text-sm md:text-base font-medium px-2 leading-relaxed">
                     {selectedPath.quote}
