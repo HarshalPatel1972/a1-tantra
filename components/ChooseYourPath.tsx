@@ -243,18 +243,13 @@ export default function ChooseYourPath() {
                   key={idx} 
                   className="bg-white dark:bg-white/[0.03] hover:bg-cream dark:hover:bg-white/[0.06] border border-deep-brown/10 dark:border-white/10 hover:border-accent-red/40 dark:hover:border-[#D4AF37]/40 p-5 rounded-2xl transition-all duration-300 shadow-xs"
                 >
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2.5 border-b border-deep-brown/10 dark:border-white/10">
-                    <div className="flex items-center gap-2.5">
-                      <span className="w-7 h-7 rounded-full bg-accent-red/10 border border-accent-red/30 text-accent-red dark:bg-[#D4AF37]/15 dark:border-[#D4AF37]/40 dark:text-[#D4AF37] font-bold text-xs flex items-center justify-center font-nav shrink-0">
-                        {idx + 1}
-                      </span>
-                      <h4 className="font-title text-base sm:text-lg md:text-xl font-bold text-deep-brown dark:text-[#F8F5F2]">
-                        {step.title}
-                      </h4>
-                    </div>
-                    <span className="px-3 py-0.5 bg-gradient-to-r from-accent-red to-[#D4AF37] text-white text-[11px] font-black rounded-lg shadow-xs tracking-wider uppercase font-nav">
+                  <div className="flex items-center gap-3 mb-3 pb-2.5 border-b border-deep-brown/10 dark:border-white/10">
+                    <span className="px-3 py-1 bg-accent-red/15 dark:bg-[#D4AF37]/20 border border-accent-red/30 dark:border-[#D4AF37]/40 text-black dark:text-white font-black text-xs sm:text-sm rounded-xl tracking-wider uppercase font-nav shrink-0 shadow-xs">
                       {step.min}
                     </span>
+                    <h4 className="font-title text-base sm:text-lg md:text-xl font-bold text-deep-brown dark:text-[#F8F5F2]">
+                      {step.title}
+                    </h4>
                   </div>
                   <p className="font-body text-xs sm:text-sm text-deep-brown/80 dark:text-white/80 leading-relaxed font-normal">
                     {step.desc}
