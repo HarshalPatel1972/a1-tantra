@@ -120,33 +120,33 @@ export default function ChooseYourPath() {
           {paths.map((p, idx) => (
             <div 
               key={idx} 
-              className="group bg-white dark:bg-surface-card hover:bg-[#3F2F27] dark:hover:bg-surface-hover border border-deep-brown/5 dark:border-white/5 hover:border-soft-gold/40 rounded-2xl p-6 shadow-md hover:shadow-2xl flex flex-col justify-between transition-colors duration-500 relative overflow-hidden min-h-[420px]"
+              className="bg-white dark:bg-surface-card hover:bg-[#FAF6F0] dark:hover:bg-[#332A25] border border-deep-brown/10 dark:border-white/10 hover:border-accent-red/40 dark:hover:border-soft-gold/40 rounded-2xl p-6 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden min-h-[420px]"
             >
               {/* Subtle top indicator bar */}
               <div 
-                className="absolute top-0 left-0 right-0 h-1.5 transition-colors duration-500" 
+                className="absolute top-0 left-0 right-0 h-1.5" 
                 style={{ backgroundColor: p.accent }}
               />
 
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-cream group-hover:bg-white/10 flex items-center justify-center text-2xl shadow-sm transition-transform duration-500">
+                  <div className="w-12 h-12 rounded-xl bg-cream dark:bg-white/10 flex items-center justify-center text-2xl shadow-xs">
                     {p.icon}
                   </div>
-                  <span className="text-[10px] font-black tracking-widest text-accent-red group-hover:text-soft-gold uppercase border border-accent-red/20 group-hover:border-soft-gold/30 px-2 py-1 rounded">
+                  <span className="text-[10px] font-black tracking-widest text-accent-red dark:text-soft-gold uppercase border border-accent-red/20 dark:border-soft-gold/30 px-2 py-1 rounded">
                     {p.subtitle}
                   </span>
                 </div>
                 
-                <h3 className="font-title text-xl font-bold text-deep-brown group-hover:text-white mb-2 transition-colors duration-300">
+                <h3 className="font-title text-xl font-bold text-deep-brown dark:text-white mb-2">
                   {p.title}
                 </h3>
-                <p className="font-body text-xs text-deep-brown/60 group-hover:text-white/70 leading-relaxed mb-5">
+                <p className="font-body text-xs text-deep-brown/70 dark:text-white/70 leading-relaxed mb-5">
                   {p.description}
                 </p>
                 
                 {/* Details Section */}
-                <div className="space-y-1.5 font-body text-xs font-semibold text-deep-brown/85 group-hover:text-white/90 border-t border-deep-brown/5 group-hover:border-white/5 pt-4">
+                <div className="space-y-1.5 font-body text-xs font-semibold text-deep-brown dark:text-white/90 border-t border-deep-brown/10 dark:border-white/10 pt-4">
                   <div className="flex justify-between">
                     <span className="opacity-60">Duration:</span>
                     <span>{p.duration}</span>
@@ -158,9 +158,9 @@ export default function ChooseYourPath() {
                   <div className="flex justify-between items-center">
                     <span className="opacity-60">Price:</span>
                     <span className="flex items-center gap-1.5 font-bold">
-                      <span className="line-through text-deep-brown/40 group-hover:text-white/40 text-[10px]">{p.originalPrice}</span>
-                      <span className="text-accent-red group-hover:text-soft-gold">{p.price}</span>
-                      <span className="text-[9px] bg-accent-red/10 border border-accent-red/20 group-hover:bg-white/10 group-hover:border-white/20 px-1.5 py-0.5 rounded text-accent-red group-hover:text-soft-gold font-black">{p.discount}</span>
+                      <span className="line-through text-deep-brown/40 dark:text-white/40 text-[10px]">{p.originalPrice}</span>
+                      <span className="text-accent-red dark:text-soft-gold font-bold">{p.price}</span>
+                      <span className="text-[9px] bg-accent-red/10 border border-accent-red/20 dark:bg-white/10 dark:border-white/20 px-1.5 py-0.5 rounded text-accent-red dark:text-soft-gold font-black">{p.discount}</span>
                     </span>
                   </div>
                   <div className="flex justify-between">
@@ -170,10 +170,11 @@ export default function ChooseYourPath() {
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-col gap-2.5 font-nav text-xs font-black uppercase tracking-wider border-t border-deep-brown/10 group-hover:border-white/10 pt-4">
+              {/* High Contrast Consistent Buttons */}
+              <div className="mt-6 flex flex-col gap-2.5 font-nav text-xs font-black uppercase tracking-wider border-t border-deep-brown/10 dark:border-white/10 pt-4">
                 <Link 
                   href={p.link}
-                  className="w-full py-2.5 bg-accent-red hover:bg-[#C73318] text-white rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-xs font-black group/link"
+                  className="w-full py-2.5 bg-accent-red hover:bg-[#C73318] text-white rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-xs font-black group/link cursor-pointer"
                 >
                   <span>Book Consultation</span>
                   <span className="text-xs group-hover/link:translate-x-1 transition-transform">→</span>
@@ -182,7 +183,7 @@ export default function ChooseYourPath() {
                 {p.timeline && (
                   <button 
                     onClick={() => setSelectedPath(p)}
-                    className="w-full py-2.5 bg-cream/80 group-hover:bg-white/10 text-deep-brown group-hover:text-soft-gold border border-deep-brown/10 group-hover:border-soft-gold/30 rounded-xl hover:bg-soft-gold hover:text-deep-brown transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-xs font-bold"
+                    className="w-full py-2.5 bg-[#FFF0DF] hover:bg-accent-red hover:text-white text-deep-brown border border-accent-red/30 dark:bg-white/10 dark:hover:bg-soft-gold dark:hover:text-deep-brown dark:text-white dark:border-white/20 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-xs font-bold"
                   >
                     <span>Read More</span>
                     <span className="text-xs">✦</span>
