@@ -194,42 +194,42 @@ export default function ChooseYourPath() {
         </div>
       </div>
 
-      {/* Modern Luxury Modal Popup for Session Structure */}
+      {/* Light/Dark Theme Responsive Modal Popup for Session Structure */}
       {selectedPath && (
         <div 
-          className="fixed inset-0 z-[200] flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto animate-fade-in"
+          className="fixed inset-0 z-[200] flex items-center justify-center p-3 sm:p-6 bg-black/70 backdrop-blur-md overflow-y-auto animate-fade-in"
           onClick={() => setSelectedPath(null)}
         >
           <div 
-            className="bg-gradient-to-b from-[#251D19] via-[#1E1714] to-[#15100E] border border-[#D4AF37]/30 rounded-3xl max-w-3xl w-full max-h-[88vh] overflow-y-auto shadow-[0_25px_80px_rgba(0,0,0,0.9)] relative text-white"
+            className="bg-[#F8F4EE] dark:bg-gradient-to-b dark:from-[#251D19] dark:via-[#1E1714] dark:to-[#15100E] border border-deep-brown/15 dark:border-[#D4AF37]/30 rounded-3xl max-w-3xl w-full max-h-[88vh] overflow-y-auto shadow-[0_25px_80px_rgba(0,0,0,0.4)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.9)] relative text-deep-brown dark:text-white"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Top Gold Glowing Accent */}
-            <div className="h-1 w-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent sticky top-0 z-20"></div>
+            {/* Top Glowing Accent */}
+            <div className="h-1.5 w-full bg-gradient-to-r from-accent-red via-[#D4AF37] to-accent-red sticky top-0 z-20"></div>
 
             {/* Modal Header */}
-            <div className="sticky top-1 bg-[#1E1714]/95 backdrop-blur-md border-b border-white/10 p-6 md:p-8 flex justify-between items-start z-10">
+            <div className="sticky top-1.5 bg-[#F8F4EE]/95 dark:bg-[#1E1714]/95 backdrop-blur-md border-b border-deep-brown/10 dark:border-white/10 p-6 md:p-8 flex justify-between items-start z-10">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="px-3 py-0.5 bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.25em] rounded-full">
+                  <span className="px-3 py-0.5 bg-accent-red/10 border border-accent-red/20 text-accent-red dark:bg-[#D4AF37]/15 dark:border-[#D4AF37]/30 dark:text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.25em] rounded-full">
                     Sacred Session
                   </span>
-                  <span className="px-2.5 py-0.5 bg-[#E44426]/20 border border-[#E44426]/40 text-[#F07460] text-[10px] font-black uppercase tracking-wider rounded-full">
+                  <span className="px-2.5 py-0.5 bg-accent-red/10 border border-accent-red/20 text-accent-red dark:bg-[#E44426]/20 dark:border-[#E44426]/40 dark:text-[#F07460] text-[10px] font-black uppercase tracking-wider rounded-full">
                     {selectedPath.duration}
                   </span>
                 </div>
-                <h3 className="font-title text-2xl sm:text-3xl md:text-4xl font-bold text-[#F8F5F2] tracking-wide">
+                <h3 className="font-title text-2xl sm:text-3xl md:text-4xl font-bold text-deep-brown dark:text-[#F8F5F2] tracking-wide">
                   {selectedPath.journeyTitle}
                 </h3>
                 {selectedPath.journeySubtitle && (
-                  <p className="font-body text-white/70 text-xs sm:text-sm mt-2 leading-relaxed max-w-xl">
+                  <p className="font-body text-deep-brown/70 dark:text-white/70 text-xs sm:text-sm mt-2 leading-relaxed max-w-xl">
                     {selectedPath.journeySubtitle}
                   </p>
                 )}
               </div>
               <button
                 onClick={() => setSelectedPath(null)}
-                className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#E44426] hover:text-white text-white/70 border border-white/10 transition-all flex items-center justify-center cursor-pointer shrink-0 ml-4"
+                className="w-10 h-10 rounded-full bg-deep-brown/5 hover:bg-accent-red hover:text-white text-deep-brown/70 border border-deep-brown/10 dark:bg-white/5 dark:hover:bg-[#E44426] dark:hover:text-white dark:text-white/70 dark:border-white/10 transition-all flex items-center justify-center cursor-pointer shrink-0 ml-4"
                 aria-label="Close modal"
               >
                 ✕
@@ -241,22 +241,22 @@ export default function ChooseYourPath() {
               {selectedPath.timeline?.map((step: any, idx: number) => (
                 <div 
                   key={idx} 
-                  className="bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-[#D4AF37]/40 p-5 rounded-2xl transition-all duration-300 shadow-md"
+                  className="bg-white dark:bg-white/[0.03] hover:bg-cream dark:hover:bg-white/[0.06] border border-deep-brown/10 dark:border-white/10 hover:border-accent-red/40 dark:hover:border-[#D4AF37]/40 p-5 rounded-2xl transition-all duration-300 shadow-xs"
                 >
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2.5 border-b border-white/10">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2.5 border-b border-deep-brown/10 dark:border-white/10">
                     <div className="flex items-center gap-2.5">
-                      <span className="w-7 h-7 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/40 text-[#D4AF37] font-bold text-xs flex items-center justify-center font-nav shrink-0">
+                      <span className="w-7 h-7 rounded-full bg-accent-red/10 border border-accent-red/30 text-accent-red dark:bg-[#D4AF37]/15 dark:border-[#D4AF37]/40 dark:text-[#D4AF37] font-bold text-xs flex items-center justify-center font-nav shrink-0">
                         {idx + 1}
                       </span>
-                      <h4 className="font-title text-base sm:text-lg md:text-xl font-bold text-[#F8F5F2]">
+                      <h4 className="font-title text-base sm:text-lg md:text-xl font-bold text-deep-brown dark:text-[#F8F5F2]">
                         {step.title}
                       </h4>
                     </div>
-                    <span className="px-3 py-0.5 bg-gradient-to-r from-[#E44426] to-[#D4AF37] text-white text-[11px] font-black rounded-lg shadow-sm tracking-wider uppercase font-nav">
+                    <span className="px-3 py-0.5 bg-gradient-to-r from-accent-red to-[#D4AF37] text-white text-[11px] font-black rounded-lg shadow-xs tracking-wider uppercase font-nav">
                       {step.min}
                     </span>
                   </div>
-                  <p className="font-body text-xs sm:text-sm text-white/80 leading-relaxed font-normal">
+                  <p className="font-body text-xs sm:text-sm text-deep-brown/80 dark:text-white/80 leading-relaxed font-normal">
                     {step.desc}
                   </p>
                 </div>
@@ -264,9 +264,9 @@ export default function ChooseYourPath() {
 
               {/* Quote / Essence Card */}
               {selectedPath.quote && (
-                <div className="mt-6 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#D4AF37]/10 via-white/[0.04] to-[#D4AF37]/10 border border-[#D4AF37]/30 text-center relative overflow-hidden">
-                  <div className="text-[#D4AF37] text-3xl font-serif leading-none mb-1 opacity-50">“</div>
-                  <p className="font-body italic text-white/90 text-xs sm:text-sm md:text-base font-medium px-2 leading-relaxed">
+                <div className="mt-6 p-5 sm:p-6 rounded-2xl bg-cream dark:bg-gradient-to-r dark:from-[#D4AF37]/10 dark:via-white/[0.04] dark:to-[#D4AF37]/10 border border-accent-red/20 dark:border-[#D4AF37]/30 text-center relative overflow-hidden">
+                  <div className="text-accent-red dark:text-[#D4AF37] text-3xl font-serif leading-none mb-1 opacity-50">“</div>
+                  <p className="font-body italic text-deep-brown/90 dark:text-white/90 text-xs sm:text-sm md:text-base font-medium px-2 leading-relaxed">
                     {selectedPath.quote}
                   </p>
                 </div>
@@ -274,23 +274,23 @@ export default function ChooseYourPath() {
             </div>
 
             {/* Modal Sticky Footer */}
-            <div className="sticky bottom-0 bg-[#171210]/95 backdrop-blur-md p-4 sm:p-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 z-10 rounded-b-3xl">
-              <div className="text-xs text-white/60 flex items-center gap-3">
-                <span>Investment: <strong className="text-soft-gold text-sm font-bold">{selectedPath.price}</strong></span>
+            <div className="sticky bottom-0 bg-[#EFEAE2]/95 dark:bg-[#171210]/95 backdrop-blur-md p-4 sm:p-6 border-t border-deep-brown/10 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 z-10 rounded-b-3xl">
+              <div className="text-xs text-deep-brown/70 dark:text-white/60 flex items-center gap-3">
+                <span>Investment: <strong className="text-accent-red dark:text-soft-gold text-sm font-bold">{selectedPath.price}</strong></span>
                 <span className="opacity-40">•</span>
-                <span>Duration: <strong className="text-white text-xs">{selectedPath.duration}</strong></span>
+                <span>Duration: <strong className="text-deep-brown dark:text-white text-xs font-semibold">{selectedPath.duration}</strong></span>
               </div>
               <div className="flex items-center gap-3 w-full sm:w-auto">
                 <button
                   onClick={() => setSelectedPath(null)}
-                  className="flex-1 sm:flex-none px-5 py-2.5 rounded-xl border border-white/20 text-white/80 hover:text-white hover:bg-white/10 text-xs font-bold transition cursor-pointer text-center"
+                  className="flex-1 sm:flex-none px-5 py-2.5 rounded-xl border border-deep-brown/20 text-deep-brown hover:bg-deep-brown/5 dark:border-white/20 dark:text-white/80 dark:hover:text-white dark:hover:bg-white/10 text-xs font-bold transition cursor-pointer text-center"
                 >
                   Close
                 </button>
                 <Link
                   href={selectedPath.link}
                   onClick={() => setSelectedPath(null)}
-                  className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#E44426] to-[#C73318] text-white hover:from-[#C73318] hover:to-[#A62711] text-xs font-black uppercase tracking-wider shadow-lg hover:shadow-red-900/40 transition-all text-center flex items-center justify-center gap-1.5"
+                  className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-accent-red text-white hover:bg-[#C73318] text-xs font-black uppercase tracking-wider shadow-md hover:shadow-lg transition-all text-center flex items-center justify-center gap-1.5"
                 >
                   <span>Book Consultation</span>
                   <span>→</span>
