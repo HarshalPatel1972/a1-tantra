@@ -120,7 +120,7 @@ export default function ChooseYourPath() {
           {paths.map((p, idx) => (
             <div 
               key={idx} 
-              className="bg-white dark:bg-surface-card hover:bg-[#FAF6F0] dark:hover:bg-[#332A25] border border-deep-brown/10 dark:border-white/10 hover:border-accent-red/40 dark:hover:border-soft-gold/40 rounded-2xl p-6 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden min-h-[420px]"
+              className="bg-white dark:bg-surface-card border border-deep-brown/10 dark:border-white/10 hover:border-accent-red/60 dark:hover:border-soft-gold/60 rounded-2xl p-6 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all duration-300 relative overflow-hidden min-h-[420px]"
             >
               {/* Subtle top indicator bar */}
               <div 
@@ -170,20 +170,21 @@ export default function ChooseYourPath() {
                 </div>
               </div>
 
-              {/* High Contrast Consistent Buttons */}
+              {/* High Contrast Distinct Buttons */}
               <div className="mt-6 flex flex-col gap-2.5 font-nav text-xs font-black uppercase tracking-wider border-t border-deep-brown/10 dark:border-white/10 pt-4">
                 <Link 
                   href={p.link}
-                  className="w-full py-2.5 bg-accent-red hover:bg-[#C73318] text-white rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-xs font-black group/link cursor-pointer"
+                  className="w-full py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md font-black tracking-widest text-center cursor-pointer group/link bg-[#E44426] hover:bg-[#B8321B] text-white"
+                  style={{ backgroundColor: "#E44426", color: "#FFFFFF" }}
                 >
-                  <span>Book Consultation</span>
-                  <span className="text-xs group-hover/link:translate-x-1 transition-transform">→</span>
+                  <span className="text-white">Book Consultation</span>
+                  <span className="text-xs text-white group-hover/link:translate-x-1 transition-transform">→</span>
                 </Link>
 
                 {p.timeline && (
                   <button 
                     onClick={() => setSelectedPath(p)}
-                    className="w-full py-2.5 bg-[#FFF0DF] hover:bg-accent-red hover:text-white text-deep-brown border border-accent-red/30 dark:bg-white/10 dark:hover:bg-soft-gold dark:hover:text-deep-brown dark:text-white dark:border-white/20 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-xs font-bold"
+                    className="w-full py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-md font-black tracking-widest text-center bg-[#3F2F27] hover:bg-[#251B17] text-white dark:bg-[#D4AF37] dark:hover:bg-[#B89628] dark:text-[#1C1614]"
                   >
                     <span>Read More</span>
                     <span className="text-xs">✦</span>
@@ -206,7 +207,7 @@ export default function ChooseYourPath() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Glowing Accent */}
-            <div className="h-1.5 w-full bg-gradient-to-r from-accent-red via-[#D4AF37] to-accent-red sticky top-0 z-20"></div>
+            <div className="h-1.5 w-full bg-gradient-to-r from-[#E44426] via-[#D4AF37] to-[#E44426] sticky top-0 z-20"></div>
 
             {/* Modal Header */}
             <div className="sticky top-1.5 bg-[#F8F4EE]/95 dark:bg-[#1E1714]/95 backdrop-blur-md border-b border-deep-brown/10 dark:border-white/10 p-6 md:p-8 flex justify-between items-start z-10">
@@ -286,7 +287,8 @@ export default function ChooseYourPath() {
                 <Link
                   href={selectedPath.link}
                   onClick={() => setSelectedPath(null)}
-                  className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-accent-red text-white hover:bg-[#C73318] text-xs font-black uppercase tracking-wider shadow-md hover:shadow-lg transition-all text-center flex items-center justify-center gap-1.5"
+                  className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl text-white hover:bg-[#B8321B] text-xs font-black uppercase tracking-wider shadow-md hover:shadow-lg transition-all text-center flex items-center justify-center gap-1.5"
+                  style={{ backgroundColor: "#E44426", color: "#FFFFFF" }}
                 >
                   <span>Book Consultation</span>
                   <span>→</span>
