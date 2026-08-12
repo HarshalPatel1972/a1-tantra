@@ -8,12 +8,27 @@ export default function MobileStickyBook() {
   const pathname = usePathname();
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+
+    const checkModalState = () => {
+      setIsModalOpen(document.body.classList.contains("modal-open"));
+    };
+
+    checkModalState();
+
+    const observer = new MutationObserver(checkModalState);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
   }, []);
 
-  if (!mounted) {
+  if (!mounted || isModalOpen) {
     return null;
   }
   
@@ -29,7 +44,7 @@ export default function MobileStickyBook() {
 
   return (
     <div 
-      className="md:hidden fixed bottom-0 left-0 right-0 z-[100] px-4 py-3 safe-area-pb"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-[100] px-4 py-3 safe-area-pb transition-opacity duration-300"
       style={{ 
         backgroundColor: "#1c1614", 
         borderTop: "1px solid rgba(212, 175, 55, 0.25)", 
