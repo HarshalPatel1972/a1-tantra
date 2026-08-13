@@ -68,7 +68,7 @@ export default function ChooseYourPath() {
     {
       title: "Soul Tantra",
       subtitle: "Union Tantra",
-      description: "Focuses on internal meditative transformation and energy visualization practices.",
+      description: "Focuses on internal meditative transformation, therapeutic touch, and energy visualization practices.",
       duration: "180 Mins",
       type: "In-Person Therapy",
       originalPrice: "₹1,20,000",
@@ -78,6 +78,14 @@ export default function ChooseYourPath() {
       link: "/yoga-tantra",
       icon: "🕯️",
       accent: "#1D4ED8",
+      journeyTitle: "The Session Structure",
+      journeySubtitle: "Soul Tantra therapy integrates elements of touch and professional cuddling to create a deeply relaxing and healing experience designed to help you feel safe, cherished, and cared for.",
+      timeline: [
+        { min: "2 MIN", title: "Introduction & Orientation", desc: "The session begins with a brief introduction where the therapist explains the techniques and methods used. This helps the client feel comfortable and aware of the session's flow." },
+        { min: "30 MIN", title: "Healing Shower Ritual", desc: "A powerful cleansing and energy-balancing ritual utilizing water, sea salt, fresh rose petals, and herbal scrubs to renew the body and mind. Healing sea salt clears negativity while fresh flower petals attract positive energy, cleansing the skin, mind, and soul." },
+        { min: "90 MIN", title: "Tantric Oil Therapy", desc: "Designed for deep relaxation and energetic renewal. Custom-blended tantric oil nourishes the skin and stimulates circulation, while full-body strokes release physical stress and calm the nervous system. Mindful tantric touch promotes emotional release and deep alignment." },
+        { min: "60 MIN", title: "Professional Cuddle Session", desc: "The final phase involves professional cuddling including hugging positions, hand holding, eye gazing, and personalized cuddle positions tailored to the client's comfort level, ensuring a warm, nurturing, and safe experience." }
+      ]
     },
     {
       title: "Divine Tantra",
