@@ -8,6 +8,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { searchIndex } from "@/data/search-index";
 import { trackPhoneCall, trackWhatsApp } from "@/lib/gtag";
+import IndependenceDayBanner from "@/components/IndependenceDayBanner";
 
 
 // SVG Icon Components
@@ -163,6 +164,7 @@ export default function Navbar() {
   if (isLandingPage) {
     return (
       <nav className="fixed top-0 w-full z-50 transition-all duration-500 ease-out bg-cream/80 backdrop-blur-md border-b border-deep-brown/10 shadow-lg">
+        <IndependenceDayBanner />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
@@ -248,6 +250,9 @@ export default function Navbar() {
         }
       `}
     >
+      {/* Independence Day Banner */}
+      <IndependenceDayBanner />
+
       {/* DESKTOP NAVBAR */}
       <div className="hidden md:flex relative w-full h-[90px] xl:h-[100px] items-center px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16">
         {/* LEFT SIDE - LOGO & TITLE */}
