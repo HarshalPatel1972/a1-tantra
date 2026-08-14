@@ -68,7 +68,7 @@ export default function ChooseYourPath() {
     {
       title: "Soul Tantra",
       subtitle: "Union Tantra",
-      description: "Focuses on internal meditative transformation, therapeutic touch, and energy visualization practices.",
+      description: "Soul Tantra therapy is a therapeutic practice that integrates elements of touch and professional cuddling to create a deeply relaxing and healing experience designed to help individuals feel safe, cherished, and cared for, promoting wellbeing, confidence, and peace of mind.",
       duration: "180 Mins",
       type: "In-Person Therapy",
       originalPrice: "₹1,20,000",
@@ -79,12 +79,12 @@ export default function ChooseYourPath() {
       icon: "🕯️",
       accent: "#1D4ED8",
       journeyTitle: "The Session Structure",
-      journeySubtitle: "Soul Tantra therapy integrates elements of touch and professional cuddling to create a deeply relaxing and healing experience designed to help you feel safe, cherished, and cared for.",
+      journeySubtitle: "Soul Tantra therapy is a therapeutic practice that integrates elements of touch and professional cuddling to create a deeply relaxing and healing experience. It is designed to help individuals feel safe, cherished, and cared for, promoting wellbeing, confidence, and peace of mind.",
       timeline: [
-        { min: "2 MIN", title: "Introduction & Orientation", desc: "The session begins with a brief introduction where the therapist explains the techniques and methods used. This helps the client feel comfortable and aware of the session's flow." },
-        { min: "30 MIN", title: "Healing Shower Ritual", desc: "A powerful cleansing and energy-balancing ritual utilizing water, sea salt, fresh rose petals, and herbal scrubs to renew the body and mind. Healing sea salt clears negativity while fresh flower petals attract positive energy, cleansing the skin, mind, and soul." },
-        { min: "90 MIN", title: "Tantric Oil Therapy", desc: "Designed for deep relaxation and energetic renewal. Custom-blended tantric oil nourishes the skin and stimulates circulation, while full-body strokes release physical stress and calm the nervous system. Mindful tantric touch promotes emotional release and deep alignment." },
-        { min: "60 MIN", title: "Professional Cuddle Session", desc: "The final phase involves professional cuddling including hugging positions, hand holding, eye gazing, and personalized cuddle positions tailored to the client's comfort level, ensuring a warm, nurturing, and safe experience." }
+        { min: "2 MIN", title: "Introduction", desc: "The session begins with a brief introduction where the therapist explains the techniques and methods used. This helps the client feel comfortable and aware of the session's flow." },
+        { min: "30 MIN", title: "Healing Shower Ritual", desc: "In this tantra tradition, healing shower is a powerful cleansing and energy balancing ritual, which deliberately utilizes the natural forces of water, salt, rose petals, and herbal scrubs to renew the body and convert into positive energy. Water in tantra is not used as a medium of physical purification but is done throughout in the mind, the body, and the soul. In this treatment, warm/cold water is splashed on the entire body enriched with healing sea salt to get rid of negativity, fresh flower petals to attract positive energy, and natural scrubs made of natural ingredients in order to cleanse the skin and feel light and fresh." },
+        { min: "90 MIN", title: "Tantric Oil Therapy", desc: "This 90 minute tantric oil therapy session is designed for deep relaxation and energetic renewal. It begins with the application of our custom blended tantric oil, which nourishes the skin and stimulates circulation. The therapist then uses a series of full body strokes and relaxation techniques to calm your nervous system and release physical stress. Central to the session is the integration of mindful tantric touch. This process promotes emotional release, cleansing, and a deep sense of alignment between your body, mind, and spirit, leaving you feeling profoundly relaxed, rejuvenated, and connected to your inner essence." },
+        { min: "60 MIN", title: "Cuddle Session", desc: "The final phase of the session involves professional cuddling. This includes a variety of comforting actions such as hugging positions, hand holding, eye gazing, and different cuddle positions. The session is personalized to the client's comfort level, ensuring a warm and nurturing experience." }
       ]
     },
     {
@@ -149,7 +149,7 @@ export default function ChooseYourPath() {
                 <h3 className="font-title text-xl font-bold text-deep-brown dark:text-white mb-2">
                   {p.title}
                 </h3>
-                <p className="font-body text-xs text-deep-brown/70 dark:text-white/70 leading-relaxed mb-5">
+                <p className="font-body text-xs text-deep-brown/70 dark:text-white/70 leading-relaxed mb-5 line-clamp-4">
                   {p.description}
                 </p>
                 
