@@ -54,13 +54,13 @@ const reviews = [
 ];
 
 const StarRating = ({ rating }: { rating: number }) => (
-  <div className="flex gap-0.5">
+  <div className="flex gap-1">
     {[1, 2, 3, 4, 5].map((star) => (
       <svg
         key={star}
         className={`w-4 h-4 ${
-          star <= rating ? "text-[#FFD700]" : "text-white/10"
-        } drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]`}
+          star <= rating ? "text-[#FFD700]" : "text-white/20"
+        } drop-shadow-[0_0_8px_rgba(255,215,0,0.5)]`}
         fill="currentColor"
         viewBox="0 0 20 20"
       >
@@ -74,20 +74,20 @@ const marqueeReviews = [...reviews, ...reviews];
 
 export default function UserReviews() {
   return (
-    <section id="reviews" className="relative py-24 md:py-32 bg-deep-brown overflow-hidden">
-      {/* Ambient glow */}
+    <section id="reviews" className="relative py-20 md:py-28 bg-[#1C1614] text-white overflow-hidden border-t border-deep-brown/10">
+      {/* Ambient warm glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-soft-gold/[0.015] blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full bg-[#D4AF37]/[0.03] blur-3xl" />
       </div>
 
       <div className="relative">
         {/* Header row */}
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 mb-16">
-          <p className="text-[11px] font-nav font-bold text-soft-gold/50 uppercase tracking-[0.4em] mb-4">
-            Testimonials
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 mb-12 text-center md:text-left">
+          <p className="text-xs font-nav font-black text-[#D4AF37] uppercase tracking-[0.35em] mb-3">
+            Real Transformations
           </p>
-          <h2 className="font-title text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight max-w-2xl">
-            What Seekers Say
+          <h2 className="font-title text-3xl md:text-5xl font-bold text-[#F8F5F2] leading-tight max-w-2xl">
+            What Seekers Say About Their Journeys
           </h2>
         </div>
 
@@ -97,28 +97,22 @@ export default function UserReviews() {
             {marqueeReviews.map((review, idx) => (
               <div
                 key={idx}
-                className="flex-shrink-0 w-[85vw] sm:w-[400px] lg:w-[420px]"
+                className="flex-shrink-0 w-[85vw] sm:w-[380px] lg:w-[400px]"
               >
-                <div className="h-full bg-white/[0.07] backdrop-blur-xl border border-soft-gold/15 rounded-2xl p-8 md:p-9 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:bg-white/[0.1] hover:border-soft-gold/40 transition-all duration-500">
+                <div className="h-full bg-[#2A221E] border border-[#D4AF37]/25 rounded-2xl p-7 flex flex-col justify-between shadow-xl hover:border-[#D4AF37]/50 transition-all duration-300">
                   <div>
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center justify-between mb-5">
                       <StarRating rating={review.rating} />
-                      <svg
-                        className="w-10 h-10 text-soft-gold/20 group-hover:text-soft-gold/40 transition-colors duration-500"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M14.017 21v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1h-4a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6h-2zm-12 0v-3a2 2 0 012-2h3a1 1 0 001-1V9a1 1 0 00-1-1H3a1 1 0 01-1-1V5a1 1 0 011-1h5a2 2 0 012 2v9a6 6 0 01-6 6H2z" />
-                      </svg>
+                      <span className="text-2xl opacity-40">“</span>
                     </div>
 
-                    <p className="font-body text-[15px] md:text-base text-cream leading-relaxed mb-8 transition-colors duration-500 italic font-medium">
+                    <p className="font-body text-sm sm:text-base text-[#E8DDD4] leading-relaxed mb-6 italic">
                       &quot;{review.comment}&quot;
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-4 pt-6 border-t border-soft-gold/10">
-                    <div className="w-12 h-12 rounded-full overflow-hidden border border-soft-gold/30 flex items-center justify-center flex-shrink-0 shadow-lg bg-deep-brown relative">
+                  <div className="flex items-center gap-3.5 pt-5 border-t border-white/10">
+                    <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0 shadow-md bg-[#1C1614] relative">
                       <Image
                         src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${review.name}`}
                         alt={review.name}
@@ -128,11 +122,12 @@ export default function UserReviews() {
                       />
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-nav font-bold text-sm tracking-[0.1em] truncate" style={{ color: "#F8F5F2" }}>
+                      {/* High Contrast Name & Location in Light and Dark Mode */}
+                      <h4 className="font-nav font-black text-sm tracking-wide text-white">
                         {review.name}
                       </h4>
-                      <p className="text-[10px] font-nav uppercase tracking-[0.2em] mt-0.5 opacity-60" style={{ color: "#D4AF37" }}>
-                        {review.location} &middot; {review.date}
+                      <p className="text-[11px] font-nav font-bold uppercase tracking-wider text-[#D4AF37] mt-0.5 opacity-100">
+                        {review.location} &middot; <span className="text-white/80">{review.date}</span>
                       </p>
                     </div>
                   </div>
@@ -142,32 +137,43 @@ export default function UserReviews() {
           </div>
         </div>
 
-        {/* Bottom trust line */}
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 mt-14">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-cream/25">
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-1.5">
-                {reviews.slice(0, 5).map((r, i) => (
-                  <div
-                    key={i}
-                    className="w-6 h-6 rounded-full bg-soft-gold/10 border border-deep-brown flex items-center justify-center text-[8px] font-bold text-soft-gold/60"
-                  >
-                    {r.name.charAt(0)}
-                  </div>
-                ))}
+        {/* Premium UI/UX Trust Metrics Bar (Replaced P A R S A initials with high-end badges) */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+            
+            {/* Metric 1 */}
+            <div className="bg-[#2A221E] border border-[#D4AF37]/30 rounded-2xl p-4 flex items-center justify-center gap-3 shadow-lg hover:border-[#D4AF37]/60 transition-all">
+              <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-lg text-[#D4AF37] font-black">
+                👥
               </div>
-              <span className="text-[10px] font-nav font-bold uppercase tracking-[0.2em] ml-1">
-                500+ seekers
-              </span>
+              <div className="text-left">
+                <p className="font-nav font-black text-base text-white tracking-wide">500+ Seekers</p>
+                <p className="text-[10px] font-nav font-bold uppercase tracking-wider text-[#D4AF37]">Transformed Across India</p>
+              </div>
             </div>
-            <div className="hidden md:block w-[1px] h-3 bg-cream/10" />
-            <span className="text-[10px] font-nav font-bold uppercase tracking-[0.2em]">
-              4.9 avg rating
-            </span>
-            <div className="hidden md:block w-[1px] h-3 bg-cream/10" />
-            <span className="text-[10px] font-nav font-bold uppercase tracking-[0.2em]">
-              Verified experiences
-            </span>
+
+            {/* Metric 2 */}
+            <div className="bg-[#2A221E] border border-[#D4AF37]/30 rounded-2xl p-4 flex items-center justify-center gap-3 shadow-lg hover:border-[#D4AF37]/60 transition-all">
+              <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-lg text-[#FFD700] font-black">
+                ⭐
+              </div>
+              <div className="text-left">
+                <p className="font-nav font-black text-base text-white tracking-wide">4.9 Avg Rating</p>
+                <p className="text-[10px] font-nav font-bold uppercase tracking-wider text-[#D4AF37]">Based on 120+ Reviews</p>
+              </div>
+            </div>
+
+            {/* Metric 3 */}
+            <div className="bg-[#2A221E] border border-[#D4AF37]/30 rounded-2xl p-4 flex items-center justify-center gap-3 shadow-lg hover:border-[#D4AF37]/60 transition-all">
+              <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-lg text-[#10B981] font-black">
+                🛡️
+              </div>
+              <div className="text-left">
+                <p className="font-nav font-black text-base text-white tracking-wide">Verified Experiences</p>
+                <p className="text-[10px] font-nav font-bold uppercase tracking-wider text-[#10B981]">100% Confidential & Safe</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
