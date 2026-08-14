@@ -90,7 +90,7 @@ export default function ChooseYourPath() {
     {
       title: "Divine Tantra",
       subtitle: "Highest Union Tantra",
-      description: "Focuses on the non-dual union of wisdom and compassion for accelerated spiritual awakening.",
+      description: "Divine Tantra therapy is a luxurious, deeply immersive 4-hour session designed to unlock your body's natural ability to release stress and tension, providing physical, emotional, and mental rejuvenation.",
       duration: "240 Mins",
       type: "In-Person Therapy",
       originalPrice: "₹1,50,000",
@@ -100,6 +100,18 @@ export default function ChooseYourPath() {
       link: "/anuttarayoga-tantra",
       icon: "💕",
       accent: "#7C3AED",
+      journeyTitle: "The Session Structure",
+      journeySubtitle: "Divine Tantra therapy is a luxurious, deeply immersive 4-hour session. Designed to unlock your body's natural ability to release stress and tension, this therapy provides an excellent experience of physical, emotional, and mental rejuvenation.",
+      timeline: [
+        { min: "2 MIN", title: "Introduction", desc: "The session begins with a brief introduction where the therapist explains the techniques and methods used. This helps the client feel comfortable and aware of the session's flow." },
+        { min: "20 MIN", title: "Welcome Hug", desc: "In this process the body is gently introduced to the healing process of tantra therapy through light, dry touch, which helps activate important energy points. It works like an energetic welcome. The session is done in a standing position, allowing the therapist to better understand body posture, pressure points, and energy flow, while slowly helping the nervous system relax and become calm." },
+        { min: "30 MIN", title: "Healing Shower", desc: "In the tantra tradition, healing shower is a powerful cleansing ritual that utilizes the natural forces of water, salt, rose petals, and herbal-based scrubs to renew the body and convert into positive energy. In this treatment, a stream of warm water is splashed with sea salt to get rid of negativity, fresh flower petals to attract positive energy, and natural herbal scrubs." },
+        { min: "30 MIN", title: "Breathing Process", desc: "In the tantric tradition, breathing is considered the bridge between body, mind, and spirit. Through conscious, rhythmic breathing, energy is directed along the body's subtle channels, helping to release tension and awaken inner vitality. These breathing techniques not only deepen relaxation but also support emotional balance and spiritual integration." },
+        { min: "60 MIN", title: "Tantric Oil Therapy", desc: "It begins with the application of our custom-blended tantric oil, which nourishes the skin. The therapist uses a series of full-body strokes and relaxation techniques to calm your nervous system and release physical stress. Central to the session is the integration of mindful tantric touch, including gentle palpation, which helps natural energy flow. This process promotes emotional release, cleansing, and a deep sense of alignment between body and mind, leaving you feeling profoundly relaxed and connected to your inner essence." },
+        { min: "10 MIN", title: "Snacks Time", desc: "During this time, you will be served light snacks such as cashews, chips, and chocolates. This thoughtful pause enhances the overall experience, keeping you refreshed and balanced for the continuation of your calm." },
+        { min: "30 MIN", title: "Feathery Touches", desc: "Feathery touches refer to extremely light, delicate sensory stimulations that mimic the whisper-soft sensation of a feather brushing against the skin. This specific type of tactile contact triggers the parasympathetic nervous system, moving the body out of fight-or-flight and into a deeply relaxed, restorative state." },
+        { min: "60 MIN", title: "Cuddle Session", desc: "The final phase of the session involves professional cuddling. This includes a variety of comforting actions such as hugging, hand holding, eye gazing, and different cuddle positions. The session is personalized to the client's comfort level, ensuring a warm and good experience." }
+      ]
     },
   ];
 
